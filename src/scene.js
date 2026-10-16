@@ -739,10 +739,12 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
   halo.add(haloA, haloB, bead);
   stage.add(halo);
 
-  // Floating marble samples (positioned exclusively to the right to keep hero text clear)
+  // Floating marble samples
   const slabDefs = [
-    { key: 'calacatta', pos: [3.8, 5.2, -0.6], rot: [-0.25, -0.6, 0.3] },
-    { key: 'botticino', pos: [4.2, 1.8, 1.2], rot: [-0.45, -0.65, -0.12] },
+    { key: 'rosa', pos: [-3.5, 5.7, -0.8], rot: [0.35, 0.7, -0.25] },
+    { key: 'calacatta', pos: [3.25, 5.6, 0.2], rot: [-0.25, -0.6, 0.3] },
+    { key: 'nero', pos: [-3.8, 1.9, 1.3], rot: [0.55, 0.45, 0.18] },
+    { key: 'botticino', pos: [3.35, 1.8, 1.4], rot: [-0.45, -0.65, -0.12] },
   ];
   const slabGeo = new RoundedBoxGeometry(1.05, 1.05, 0.08, 4, 0.03);
   const slabs = slabDefs.map((d, i) => {
@@ -773,22 +775,20 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     H = canvas.clientHeight || window.innerHeight;
     renderer.setSize(W, H, false);
     camera.aspect = W / H;
-    isMobile = W < 900 || W / H < 0.95;
+    isMobile = W < 821 || W / H < 0.9;
 
     if (isMobile) {
       camBase.set(0, 4.2, 23);
       lookBase.set(0, 2.2, 0);
-      stage.position.set(0, -3.1, 0);
-      stage.scale.setScalar(0.78);
     } else {
-      camBase.set(0, 3.6, 16);
+      camBase.set(0, 3.7, 15.5);
       lookBase.set(0, 3.25, 0);
-      const vh = 2 * camBase.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
-      const vw = vh * camera.aspect;
-      // Position stage clearly in the right half of the canvas with plenty of margin
-      stage.position.set(Math.max(vw * 0.24, 4.2), 0.1, 0);
-      stage.scale.setScalar(0.82);
     }
+    const vh = 2 * camBase.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
+    const vw = vh * camera.aspect;
+    stage.position.x = isMobile ? 0 : Math.min(vw * 0.2, 4.6);
+    stage.position.y = isMobile ? -3.1 : 0;
+    stage.scale.setScalar(isMobile ? 0.9 : 1);
 
     sun.position.set(stage.position.x + 6, 11, 7);
     sun.target.position.set(stage.position.x, 2.5, 0);
@@ -1023,12 +1023,11 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     pointer.sx += (pointer.nx - pointer.sx) * (1 - Math.exp(-dt * 3));
     pointer.sy += (pointer.ny - pointer.sy) * (1 - Math.exp(-dt * 3));
     camera.position.set(
-      camBase.x + camIntro.x + pointer.sx * 0.45,
-      camBase.y + camIntro.y - pointer.sy * 0.3,
+      camBase.x + camIntro.x + pointer.sx * 0.7,
+      camBase.y + camIntro.y - pointer.sy * 0.45,
       camBase.z + camIntro.z
     );
-    // Keep camera looking directly forward without oblique skew that drags stage into center
-    lookAt.set(isMobile ? 0 : 0.8, lookBase.y, lookBase.z);
+    lookAt.set(lookBase.x + stage.position.x * 0.92, lookBase.y, lookBase.z);
     camera.lookAt(lookAt);
 
     // Halo

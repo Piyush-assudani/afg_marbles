@@ -270,9 +270,55 @@ button {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .38 0 0 0 0 .3 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Niche — cleanly disabled to keep hero typography completely uncluttered */
+/* Niche — arched backdrop placed behind the 3D temple */
 .niche {
-  display: none !important;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 252, 246, 0.6) 55%, rgba(255, 252, 246, 0) 100%);
+  box-shadow: inset 0 1px 0 rgba(176, 138, 79, 0.25);
+  will-change: transform;
+}
+
+.niche::before,
+.niche::after {
+  content: '';
+  position: absolute;
+  border-radius: inherit;
+  pointer-events: none;
+  -webkit-mask: linear-gradient(180deg, #000 40%, transparent 92%);
+  mask: linear-gradient(180deg, #000 40%, transparent 92%);
+}
+
+.niche::before {
+  inset: 0;
+  border: 1px solid rgba(176, 138, 79, 0.35);
+  border-bottom: 0;
+}
+
+.niche::after {
+  inset: -18px -18px 0;
+  border: 1px solid rgba(176, 138, 79, 0.16);
+  border-bottom: 0;
+}
+
+.niche__word {
+  position: absolute;
+  left: 50%;
+  top: 34%;
+  transform: translate(-50%, -50%);
+  font-family: var(--serif);
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(176, 138, 79, 0.38);
+  user-select: none;
 }
 
 /* =========================================================
@@ -487,9 +533,9 @@ button {
   left: var(--pad);
   top: 50%;
   transform: translateY(-50%);
-  width: min(600px, 46vw);
+  width: min(720px, 50vw);
   pointer-events: none;
-  padding-top: 0;
+  padding-top: 40px;
 }
 
 .hero__content a,
@@ -500,13 +546,13 @@ button {
 .hero__eyebrow {
   display: flex;
   align-items: center;
-  gap: 14px;
-  font-size: 10.5px;
+  gap: 16px;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--gold-3);
-  margin-bottom: clamp(12px, 1.8vh, 20px);
+  margin-bottom: 26px;
 }
 
 .hero__eyebrow-line {
@@ -519,9 +565,9 @@ button {
 .hero__title {
   font-family: var(--serif);
   font-weight: 300;
-  font-size: clamp(38px, 4.4vw, 76px);
-  line-height: 0.98;
-  letter-spacing: -0.02em;
+  font-size: clamp(52px, 6.9vw, 124px);
+  line-height: 0.94;
+  letter-spacing: -0.025em;
   color: var(--ink);
 }
 
@@ -564,10 +610,10 @@ button {
 }
 
 .hero__lead {
-  margin: clamp(12px, 1.6vh, 18px) 0 clamp(16px, 2.2vh, 24px);
-  max-width: 430px;
-  font-size: clamp(13px, 0.95vw, 15px);
-  line-height: 1.62;
+  margin: 30px 0 38px;
+  max-width: 440px;
+  font-size: 15.5px;
+  line-height: 1.75;
   color: var(--ink-2);
 }
 
@@ -668,11 +714,11 @@ button {
 
 .hero__stats {
   display: flex;
-  gap: clamp(18px, 2.4vw, 36px);
-  margin-top: clamp(14px, 2vh, 24px);
-  padding-top: clamp(12px, 1.6vh, 18px);
+  gap: clamp(28px, 3.4vw, 56px);
+  margin-top: 54px;
+  padding-top: 26px;
   border-top: 1px solid var(--line);
-  max-width: 500px;
+  max-width: 520px;
 }
 
 .stat {
@@ -683,10 +729,11 @@ button {
 
 .stat__num {
   font-family: var(--serif);
-  font-size: clamp(26px, 2.2vw, 36px);
+  font-size: clamp(34px, 3vw, 46px);
   font-weight: 400;
   line-height: 1;
   font-variant-numeric: lining-nums tabular-nums;
+  color: var(--ink);
 }
 
 .stat__num sup {
@@ -816,29 +863,12 @@ button {
 .stage-caption {
   position: absolute;
   z-index: 5;
-  bottom: clamp(24px, 4vh, 44px);
-  right: clamp(140px, 20vw, 300px);
+  top: 0;
+  left: 0;
   text-align: center;
+  transform: translate(-50%, 0);
   pointer-events: none;
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  padding: 12px 24px;
-  border-radius: 16px;
-  border: 1px solid rgba(176, 138, 79, 0.22);
-  box-shadow: 0 10px 30px -10px rgba(28, 24, 19, 0.12);
-  transition: opacity 0.35s ease;
-}
-
-@media (max-width: 900px) {
-  .stage-caption {
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
-    bottom: 20px;
-    width: max-content;
-    max-width: 90vw;
-  }
+  will-change: transform;
 }
 
 .stage-caption__hint {
@@ -893,7 +923,18 @@ button {
    HOTSPOTS
    ========================================================= */
 .hotspot {
-  display: none !important;
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  pointer-events: auto;
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: opacity 0.6s var(--ease);
+}
+
+.hotspot.is-visible {
+  opacity: 1;
 }
 
 .hotspot__dot {
@@ -2728,36 +2769,7 @@ button {
   }
 }
 
-/* =========================================================
-   TOP ANNOUNCEMENT BAR (Inspired by SS1)
-   ========================================================= */
-.top-announcement-bar {
-  background: var(--ink);
-  color: #eed6aa;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  padding: 8px 16px;
-  overflow: hidden;
-  position: relative;
-  z-index: 101;
-  border-bottom: 1px solid rgba(176, 138, 79, 0.3);
-}
 
-.announcement-track {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  text-align: center;
-}
-
-.ann-sep {
-  opacity: 0.4;
-  color: var(--gold-2);
-}
 
 /* =========================================================
    STICKY SIDE TABS (Inspired by SS1)

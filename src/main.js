@@ -487,8 +487,32 @@ async function init() {
         cursorLabel.textContent = st ? st.name.split(' ')[0] : 'SELECT';
       }
     },
-    onFrame: () => {
-      // 3D stage and caption layout handled cleanly via CSS without erratic jumping
+    onFrame: (state) => {
+      // Sync 2D Backdrop Niche with 3D camera projection
+      if (state.niche && niche) {
+        const { left, top, width, height } = state.niche;
+        niche.style.transform = `translate3d(${left}px, ${top}px, 0)`;
+        niche.style.width = `${width}px`;
+        niche.style.height = `${height}px`;
+        niche.style.borderRadius = `${width / 2}px ${width / 2}px 0 0`;
+        niche.style.fontSize = `${width * 0.16}px`;
+      }
+
+      // Sync 2D Stage Caption position
+      if (state.caption && stageCaption) {
+        stageCaption.style.transform = `translate3d(${state.caption.x}px, ${state.caption.y}px, 0) translate(-50%, 0)`;
+      }
+
+      // Sync 3D Anchored Hotspots
+      if (state.hotspots) {
+        state.hotspots.forEach((hs) => {
+          const el = hs.id === 'pillar' ? hsPillar : hsKalash;
+          if (el) {
+            el.style.transform = `translate3d(${hs.x}px, ${hs.y}px, 0)`;
+            el.classList.toggle('is-visible', hs.visible);
+          }
+        });
+      }
     },
   });
 

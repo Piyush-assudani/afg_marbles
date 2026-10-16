@@ -103,18 +103,7 @@
     />
   </head>
   <body>
-    <!-- ============ TOP ANNOUNCEMENT BAR (Inspired by SS1) ============ -->
-    <div class="top-announcement-bar" role="region" aria-label="Atelier Notice">
-      <div class="announcement-track">
-        <span>ONLY LIMITED COMMISSIONS ANNUALLY</span>
-        <span class="ann-sep">|</span>
-        <span>100% PURE MAKRANA CALCITE MARBLE</span>
-        <span class="ann-sep">|</span>
-        <span>GLOBAL ISPM-15 CRATING &amp; ON-SITE INSTALLATION</span>
-        <span class="ann-sep">|</span>
-        <span>CHOSEN BY ROYAL RESIDENCES &amp; ESTATES WORLDWIDE</span>
-      </div>
-    </div>
+
 
     <!-- ============ STICKY SIDE TABS (Inspired by SS1) ============ -->
     <div class="sticky-side-tabs" aria-hidden="true">
@@ -216,16 +205,32 @@
     <main>
       <!-- ============ HERO 3D SECTION ============ -->
       <section class="hero" id="hero" aria-label="A.F.G Marble &amp; Arts — Hero">
-        <canvas id="webgl" class="hero__canvas" aria-label="Interactive 3D Temple Viewport"></canvas>
-
-        <!-- Conflicting Niche & Hotspots cleanly disabled for pure, uncluttered luxury aesthetic -->
-        <div class="niche" id="niche" style="display:none;" aria-hidden="true">
-          <span class="niche__word" id="niche-word"></span>
+        <!-- Backdrop niche (positioned from 3D stage) -->
+        <div class="niche" id="niche" aria-hidden="true">
+          <span class="niche__word" id="niche-word">MAKRANA</span>
         </div>
-        <div class="hotspot" id="hs-pillar" style="display:none;"></div>
-        <div class="hotspot" id="hs-kalash" style="display:none;"></div>
 
-        <!-- Hero Copy (strictly left-bounded with zero overlap) -->
+        <!-- WebGL -->
+        <canvas class="webgl" id="webgl" aria-label="Interactive 3D marble temple"></canvas>
+        <div class="grain" aria-hidden="true"></div>
+
+        <!-- Hotspots anchored to 3D -->
+        <div class="hotspot hotspot--left" id="hs-pillar">
+          <span class="hotspot__dot"></span>
+          <div class="hotspot__card">
+            <strong>Hand-carved Pillars</strong>
+            <span>120+ hours of chisel work</span>
+          </div>
+        </div>
+        <div class="hotspot" id="hs-kalash">
+          <span class="hotspot__dot"></span>
+          <div class="hotspot__card">
+            <strong>24K Gold-leaf Kalash</strong>
+            <span>Gilded by master artisans</span>
+          </div>
+        </div>
+
+        <!-- ============ HERO COPY ============ -->
         <div class="hero__content">
           <p class="hero__eyebrow"><span class="hero__eyebrow-line"></span>Makrana Marble Artisans · Est. 1987 · Rajasthan</p>
 
@@ -268,7 +273,7 @@
           </dl>
         </div>
 
-        <!-- Stage Caption (safely positioned below 3D temple on right) -->
+        <!-- ============ STAGE CAPTION ============ -->
         <div class="stage-caption" id="stage-caption">
           <p class="stage-caption__hint">
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15.5-6.2M21 12a9 9 0 0 1-15.5 6.2"/><path d="M18.5 2v4h-4M5.5 22v-4h4"/></svg>
@@ -278,7 +283,7 @@
           <p class="stage-caption__origin" id="stone-origin">Makrana, Rajasthan — The stone of the Taj Mahal</p>
         </div>
 
-        <!-- Stone Rail -->
+        <!-- ============ STONE RAIL ============ -->
         <aside class="stone-rail glass" id="stone-rail" aria-label="Choose your marble">
           <span class="stone-rail__label">Stone</span>
           <div class="stone-rail__swatches" role="radiogroup" id="swatches"></div>
