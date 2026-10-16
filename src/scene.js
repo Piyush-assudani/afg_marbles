@@ -739,12 +739,10 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
   halo.add(haloA, haloB, bead);
   stage.add(halo);
 
-  // Floating marble samples
+  // Floating marble samples (positioned exclusively to the right to keep hero text clear)
   const slabDefs = [
-    { key: 'rosa', pos: [-3.5, 5.7, -0.8], rot: [0.35, 0.7, -0.25] },
-    { key: 'calacatta', pos: [3.25, 5.6, 0.2], rot: [-0.25, -0.6, 0.3] },
-    { key: 'nero', pos: [-3.8, 1.9, 1.3], rot: [0.55, 0.45, 0.18] },
-    { key: 'botticino', pos: [3.35, 1.8, 1.4], rot: [-0.45, -0.65, -0.12] },
+    { key: 'calacatta', pos: [3.8, 5.2, -0.6], rot: [-0.25, -0.6, 0.3] },
+    { key: 'botticino', pos: [4.2, 1.8, 1.2], rot: [-0.45, -0.65, -0.12] },
   ];
   const slabGeo = new RoundedBoxGeometry(1.05, 1.05, 0.08, 4, 0.03);
   const slabs = slabDefs.map((d, i) => {

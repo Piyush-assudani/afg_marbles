@@ -187,11 +187,239 @@ function setupMobileMenu() {
 }
 
 /* ------------------------------------------------------------------
+   Scroll Header & Smooth Section Navigation
+------------------------------------------------------------------- */
+function setupScrollNav() {
+  const onScroll = () => {
+    if (window.scrollY > 40) {
+      nav.classList.add('is-scrolled');
+    } else {
+      nav.classList.remove('is-scrolled');
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Smooth scroll links & auto close mobile menu
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
+      const href = anchor.getAttribute('href');
+      if (!href || href === '#' || href.startsWith('#terms') || href.startsWith('#privacy')) return;
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        if (mobileMenu && mobileMenu.classList.contains('is-open')) {
+          mobileMenu.classList.remove('is-open');
+          if (burger) burger.setAttribute('aria-expanded', 'false');
+        }
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+}
+
+/* ------------------------------------------------------------------
+   Curated Creations Filter Tabs
+------------------------------------------------------------------- */
+function setupGalleryFilter() {
+  const tabs = document.querySelectorAll('.filter-tabs .tab-btn');
+  const cards = document.querySelectorAll('.creations-grid .creation-card');
+  if (!tabs.length || !cards.length) return;
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach((t) => t.classList.remove('is-active'));
+      tab.classList.add('is-active');
+
+      const filter = tab.getAttribute('data-filter');
+      cards.forEach((card) => {
+        const cat = card.getAttribute('data-category');
+        const matches = filter === 'all' || cat === filter;
+        if (matches) {
+          card.style.display = 'flex';
+          gsap.fromTo(card, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' });
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+}
+
+/* ------------------------------------------------------------------
+   Masterpiece Lightbox Modal
+------------------------------------------------------------------- */
+function setupLightbox() {
+  const modal = document.getElementById('lightbox-modal');
+  const closeBtn = document.getElementById('lightbox-close');
+  const img = document.getElementById('lightbox-img');
+  const caption = document.getElementById('lightbox-caption');
+  const waBtn = document.getElementById('lightbox-wa-btn');
+  if (!modal || !closeBtn || !img) return;
+
+  function openLightbox(src, title) {
+    img.src = src;
+    img.alt = title || 'A.F.G Marble Masterpiece';
+    if (caption) caption.textContent = title || '';
+    if (waBtn) {
+      const msg = encodeURIComponent(
+        `Hello A.F.G Marble & Arts, I am interested in commissioning a creation like: "${title || 'Masterpiece'}". Please share pricing, custom dimensions, and stone options.`
+      );
+      waBtn.href = `https://wa.me/919829012345?text=${msg}`;
+    }
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.btn-lightbox').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const src = btn.getAttribute('data-src');
+      const title = btn.getAttribute('data-title');
+      if (src) openLightbox(src, title);
+    });
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeLightbox();
+  });
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeLightbox();
+  });
+}
+
+/* ------------------------------------------------------------------
+   Terms & Privacy Policy Modals
+------------------------------------------------------------------- */
+function setupLegalModals() {
+  const termsModal = document.getElementById('terms-modal');
+  const termsClose = document.getElementById('terms-close');
+  const privacyModal = document.getElementById('privacy-modal');
+  const privacyClose = document.getElementById('privacy-close');
+
+  function openModal(m) {
+    if (!m) return;
+    m.classList.add('is-open');
+    m.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(m) {
+    if (!m) return;
+    m.classList.remove('is-open');
+    m.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  // Terms triggers
+  document.querySelectorAll('#btn-open-terms, #link-terms, a[href="#terms-modal"]').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal(termsModal);
+    });
+  });
+
+  if (termsClose) {
+    termsClose.addEventListener('click', () => closeModal(termsModal));
+  }
+  if (termsModal) {
+    termsModal.addEventListener('click', (e) => {
+      if (e.target === termsModal) closeModal(termsModal);
+    });
+  }
+
+  // Privacy triggers
+  document.querySelectorAll('#btn-open-privacy, #link-privacy, a[href="#privacy-modal"]').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal(privacyModal);
+    });
+  });
+
+  if (privacyClose) {
+    privacyClose.addEventListener('click', () => closeModal(privacyModal));
+  }
+  if (privacyModal) {
+    privacyModal.addEventListener('click', (e) => {
+      if (e.target === privacyModal) closeModal(privacyModal);
+    });
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeModal(termsModal);
+      closeModal(privacyModal);
+    }
+  });
+}
+
+/* ------------------------------------------------------------------
+   Commission Consultation Inquiry Form
+------------------------------------------------------------------- */
+function setupCommissionForm() {
+  const form = document.getElementById('commission-form');
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = form.elements['name']?.value?.trim() || '';
+    const phone = form.elements['phone']?.value?.trim() || '';
+    const email = form.elements['email']?.value?.trim() || 'Not specified';
+    const project = form.elements['project']?.value || 'Custom Marble Masterpiece';
+    const stone = form.elements['stone']?.value || 'Makrana Pure White';
+    const message = form.elements['message']?.value?.trim() || 'No additional details specified.';
+
+    const text = encodeURIComponent(
+      `*New Bespoke Commission Inquiry | A.F.G Marble & Arts*\n` +
+      `━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
+      `• *Client Name:* ${name}\n` +
+      `• *Phone / WA:* ${phone}\n` +
+      `• *Email:* ${email}\n` +
+      `• *Requirement:* ${project}\n` +
+      `• *Preferred Stone:* ${stone}\n` +
+      `• *Details / Dimensions:* ${message}\n` +
+      `━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
+      `Please connect with our master stone architect.`
+    );
+
+    const waUrl = `https://wa.me/919829012345?text=${text}`;
+
+    const submitBtn = form.querySelector('#btn-submit-inquiry');
+    if (submitBtn) {
+      submitBtn.innerHTML = `<span>✓ Connecting to Atelier Master Sculptor...</span>`;
+      submitBtn.style.background = '#25D366';
+      submitBtn.style.color = '#fff';
+      submitBtn.style.borderColor = '#25D366';
+    }
+
+    setTimeout(() => {
+      window.open(waUrl, '_blank', 'noopener,noreferrer');
+      if (submitBtn) {
+        submitBtn.innerHTML = `<span>Inquiry Sent ✓ (Open WhatsApp)</span>`;
+      }
+    }, 400);
+  });
+}
+
+/* ------------------------------------------------------------------
    App Initialization
 ------------------------------------------------------------------- */
 async function init() {
   setupCursor();
   setupMobileMenu();
+  setupScrollNav();
+  setupGalleryFilter();
+  setupLightbox();
+  setupLegalModals();
+  setupCommissionForm();
 
   const exp = createExperience({
     canvas,
