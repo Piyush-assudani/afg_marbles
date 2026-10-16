@@ -219,6 +219,37 @@ function setupMobileMenu() {
 }
 
 /* ------------------------------------------------------------------
+   Desktop Mega Menu Hover Grace Period
+------------------------------------------------------------------- */
+function setupMegaMenu() {
+  const dropdown = document.querySelector('.nav-item-dropdown');
+  const flyout = document.querySelector('.mega-menu-flyout');
+  if (!dropdown || !flyout) return;
+
+  let timer;
+  const open = () => {
+    clearTimeout(timer);
+    dropdown.classList.add('is-hovered');
+  };
+  const close = () => {
+    timer = setTimeout(() => {
+      dropdown.classList.remove('is-hovered');
+    }, 220);
+  };
+
+  dropdown.addEventListener('mouseenter', open);
+  dropdown.addEventListener('mouseleave', close);
+  flyout.addEventListener('mouseenter', open);
+  flyout.addEventListener('mouseleave', close);
+
+  flyout.querySelectorAll('a').forEach((a) => {
+    a.addEventListener('click', () => {
+      dropdown.classList.remove('is-hovered');
+    });
+  });
+}
+
+/* ------------------------------------------------------------------
    Scroll Header & Smooth Section Navigation
 ------------------------------------------------------------------- */
 function setupScrollNav() {
@@ -499,6 +530,7 @@ function setupBeforeAfter() {
 async function init() {
   setupCursor();
   setupMobileMenu();
+  setupMegaMenu();
   setupScrollNav();
   setupGalleryFilter();
   setupLightbox();
