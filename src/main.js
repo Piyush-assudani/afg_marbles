@@ -410,6 +410,48 @@ function setupCommissionForm() {
 }
 
 /* ------------------------------------------------------------------
+   Interactive Before & After Comparison Slider (Inspired by SS2)
+------------------------------------------------------------------- */
+function setupBeforeAfter() {
+  const container = document.getElementById('ba-slider');
+  const afterWrapper = document.getElementById('ba-after-wrapper');
+  const divider = document.getElementById('ba-divider');
+  const range = document.getElementById('ba-range');
+  if (!container || !afterWrapper || !divider || !range) return;
+
+  const updateSlider = (val) => {
+    const pct = Math.max(0, Math.min(100, val));
+    afterWrapper.style.clipPath = `polygon(${pct}% 0, 100% 0, 100% 100%, ${pct}% 100%)`;
+    divider.style.left = `${pct}%`;
+    range.value = pct;
+  };
+
+  range.addEventListener('input', (e) => {
+    updateSlider(parseFloat(e.target.value));
+  });
+
+  let isDragging = false;
+  const onMove = (clientX) => {
+    const rect = container.getBoundingClientRect();
+    const pct = ((clientX - rect.left) / rect.width) * 100;
+    updateSlider(pct);
+  };
+
+  container.addEventListener('pointerdown', (e) => {
+    isDragging = true;
+    onMove(e.clientX);
+  });
+  window.addEventListener('pointermove', (e) => {
+    if (isDragging) onMove(e.clientX);
+  });
+  window.addEventListener('pointerup', () => {
+    isDragging = false;
+  });
+
+  updateSlider(50);
+}
+
+/* ------------------------------------------------------------------
    App Initialization
 ------------------------------------------------------------------- */
 async function init() {
@@ -420,6 +462,7 @@ async function init() {
   setupLightbox();
   setupLegalModals();
   setupCommissionForm();
+  setupBeforeAfter();
 
   const exp = createExperience({
     canvas,
@@ -455,18 +498,27 @@ async function init() {
         niche.style.fontSize = `${width * 0.16}px`;
       }
 
-      // Sync 2D Stage Caption position
+      // Sync 2D Stage Caption position (guarantee zero text overlap)
       if (state.caption) {
-        stageCaption.style.transform = `translate3d(${state.caption.x}px, ${state.caption.y}px, 0) translate(-50%, 0)`;
+        const isMobile = window.innerWidth <= 900;
+        const clampedX = isMobile
+          ? window.innerWidth * 0.5
+          : Math.max(state.caption.x, window.innerWidth * 0.58);
+        stageCaption.style.transform = `translate3d(${clampedX}px, ${state.caption.y}px, 0) translate(-50%, 0)`;
       }
 
-      // Sync 3D Anchored Hotspots
+      // Sync 3D Anchored Hotspots (guarantee zero text overlap)
       if (state.hotspots) {
         state.hotspots.forEach((hs) => {
           const el = hs.id === 'pillar' ? hsPillar : hsKalash;
           if (el) {
-            el.style.transform = `translate3d(${hs.x}px, ${hs.y}px, 0)`;
-            el.classList.toggle('is-visible', hs.visible);
+            const isTooFarLeft = window.innerWidth > 900 && hs.x < window.innerWidth * 0.52;
+            if (isTooFarLeft) {
+              el.classList.remove('is-visible');
+            } else {
+              el.style.transform = `translate3d(${hs.x}px, ${hs.y}px, 0)`;
+              el.classList.toggle('is-visible', hs.visible);
+            }
           }
         });
       }

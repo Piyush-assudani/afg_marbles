@@ -1838,6 +1838,8 @@ button {
   padding: clamp(36px, 5vw, 64px);
   background: #ffffff;
   border-radius: 24px;
+  border: 1px solid rgba(176, 138, 79, 0.22);
+  box-shadow: 0 30px 80px -25px rgba(28, 24, 19, 0.08);
 }
 
 .commission-info .sec-title {
@@ -2264,8 +2266,9 @@ button {
 }
 
 /* =========================================================
-   FLOATING WHATSAPP BUTTON
+   FLOATING CONCIERGE WHATSAPP BUTTON
    ========================================================= */
+.floating-wa,
 .floating-whatsapp {
   position: fixed;
   z-index: 99;
@@ -2274,23 +2277,23 @@ button {
 }
 
 .floating-wa-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: #25d366;
+  background: linear-gradient(135deg, #1f7d45 0%, #25d366 100%);
   color: #ffffff;
-  padding: 12px 18px 12px 14px;
+  padding: 12px 20px 12px 14px;
   border-radius: 999px;
-  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 12px 32px -6px rgba(37, 211, 102, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.25) inset;
   font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
 }
 
 .floating-wa-btn:hover {
-  transform: scale(1.05) translateY(-2px);
-  box-shadow: 0 16px 36px rgba(37, 211, 102, 0.55);
+  transform: scale(1.04) translateY(-2px);
+  box-shadow: 0 16px 38px -4px rgba(37, 211, 102, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.4) inset;
 }
 
 .floating-wa-tooltip {
@@ -2757,5 +2760,584 @@ button {
 
   .fountains-hero-media-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   TOP ANNOUNCEMENT BAR (Inspired by SS1)
+   ========================================================= */
+.top-announcement-bar {
+  background: var(--ink);
+  color: #eed6aa;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  overflow: hidden;
+  position: relative;
+  z-index: 101;
+  border-bottom: 1px solid rgba(176, 138, 79, 0.3);
+}
+
+.announcement-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.ann-sep {
+  opacity: 0.4;
+  color: var(--gold-2);
+}
+
+/* =========================================================
+   STICKY SIDE TABS (Inspired by SS1)
+   ========================================================= */
+.sticky-side-tabs {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sticky-side-tab {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  padding: 18px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  border-radius: 0 8px 8px 0;
+  box-shadow: -4px 6px 18px rgba(0, 0, 0, 0.15);
+  transition: transform 0.35s var(--ease), background 0.3s;
+}
+
+.tab-insta {
+  background: #1c1813;
+  color: #fff;
+  border-left: 2px solid #b08a4f;
+}
+
+.tab-insta:hover {
+  transform: rotate(180deg) translateX(4px);
+  background: #332b22;
+}
+
+.tab-contact {
+  background: #b08a4f;
+  color: #fff;
+}
+
+.tab-contact:hover {
+  transform: rotate(180deg) translateX(4px);
+  background: #8c6a36;
+}
+
+/* =========================================================
+   NAV MEGA MENU FLYOUT (Inspired by SS1)
+   ========================================================= */
+.nav-item-dropdown {
+  position: relative;
+}
+
+.dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dropdown-arrow {
+  transition: transform 0.35s var(--ease);
+}
+
+.nav-item-dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.mega-menu-flyout {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-35%) translateY(10px);
+  width: min(840px, 90vw);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid rgba(176, 138, 79, 0.25);
+  border-radius: 20px;
+  box-shadow: 0 30px 70px -15px rgba(28, 24, 19, 0.25);
+  padding: 28px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.35s var(--ease);
+  z-index: 100;
+}
+
+.nav-item-dropdown:hover .mega-menu-flyout {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-35%) translateY(0);
+}
+
+.mega-menu-inner {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 28px;
+}
+
+.mega-categories-col {
+  border-right: 1px solid var(--line);
+  padding-right: 20px;
+}
+
+.mega-col-title {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-3);
+  margin-bottom: 16px;
+}
+
+.mega-categories-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mega-categories-col a {
+  font-size: 13.5px;
+  color: var(--ink-2);
+  transition: color 0.25s, transform 0.25s;
+  display: block;
+}
+
+.mega-categories-col a:hover {
+  color: var(--ink);
+  transform: translateX(4px);
+}
+
+.mega-cards-col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.mega-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+  transition: transform 0.35s var(--ease);
+}
+
+.mega-card:hover {
+  transform: translateY(-4px);
+}
+
+.mega-card-img {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f4efe7;
+  border: 1px solid var(--line);
+}
+
+.mega-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--ease);
+}
+
+.mega-card:hover .mega-card-img img {
+  transform: scale(1.08);
+}
+
+.mega-card span {
+  font-family: var(--display);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.nav-social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-2);
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.4);
+  transition: all 0.3s;
+}
+
+.nav-social-btn:hover {
+  background: #1c1813;
+  color: #fff;
+  border-color: #1c1813;
+}
+
+/* =========================================================
+   SECTION 3: BEFORE & AFTER SLIDER (Inspired by SS2)
+   ========================================================= */
+.sec-before-after {
+  padding: clamp(80px, 10vw, 130px) 0;
+  background: #ffffff;
+  border-bottom: 1px solid var(--line);
+}
+
+.ba-slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 40px auto 0 auto;
+  aspect-ratio: 16 / 9.5;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px -25px rgba(28, 24, 19, 0.25);
+  border: 1.5px solid rgba(176, 138, 79, 0.25);
+  user-select: none;
+  cursor: ew-resize;
+  background: #ede6dc;
+}
+
+.ba-image-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ba-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ba-after {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+  will-change: clip-path;
+}
+
+.ba-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: #ffffff;
+  transform: translateX(-50%);
+  pointer-events: none;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.ba-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid var(--gold);
+  color: var(--ink);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s var(--ease);
+}
+
+.ba-slider-container:hover .ba-handle {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.ba-badge {
+  position: absolute;
+  top: 20px;
+  background: rgba(28, 24, 19, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 5;
+}
+
+.ba-badge-before {
+  left: 20px;
+}
+
+.ba-badge-after {
+  right: 20px;
+  background: rgba(176, 138, 79, 0.9);
+}
+
+.ba-range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 20;
+}
+
+/* =========================================================
+   SECTION 4: INSTAGRAM ATELIER FEED (Inspired by SS2)
+   ========================================================= */
+.sec-instagram {
+  padding: clamp(70px, 9vw, 110px) 0;
+  background: radial-gradient(75% 65% at 50% 35%, #ffffff 0%, #f7f1e6 100%);
+  border-bottom: 1px solid var(--line);
+}
+
+.insta-header-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 38px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.insta-profile {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.insta-avatar {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, #b08a4f, #d8bb84, #8c6a36);
+  box-shadow: 0 8px 20px -6px rgba(176, 138, 79, 0.35);
+}
+
+.insta-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: contain;
+  background: #ffffff;
+}
+
+.insta-verified {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.insta-username-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.insta-username-row h3 {
+  font-family: var(--display);
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.insta-official-pill {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-3);
+  background: rgba(176, 138, 79, 0.12);
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.insta-handle-sub {
+  font-size: 13px;
+  color: var(--ink-2);
+  margin-bottom: 6px;
+}
+
+.insta-stats {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--ink-3);
+}
+
+.insta-stats strong {
+  color: var(--ink);
+}
+
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+
+.insta-card {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #ede6dc;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 24px -10px rgba(0, 0, 0, 0.12);
+}
+
+.insta-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+}
+
+.insta-card:hover img {
+  transform: scale(1.08);
+}
+
+.insta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(28, 24, 19, 0.85);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: #fff;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.35s var(--ease);
+}
+
+.insta-card:hover .insta-overlay {
+  opacity: 1;
+}
+
+.insta-overlay-icon {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-2);
+  margin-bottom: 6px;
+}
+
+.insta-overlay p {
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+/* =========================================================
+   GIANT LUXURY WATERMARK IN FOOTER
+   ========================================================= */
+.footer-huge-name {
+  font-family: var(--display);
+  font-size: clamp(48px, 10vw, 150px);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: rgba(28, 24, 19, 0.05);
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 0.88;
+  margin: 50px 0 20px 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.footer-socials {
+  margin-top: 18px;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-2);
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s;
+}
+
+.footer-social-link:hover {
+  background: #1c1813;
+  color: #fff;
+  border-color: #1c1813;
+}
+
+/* Responsive updates */
+@media (max-width: 1200px) {
+  .insta-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .top-announcement-bar {
+    font-size: 9px;
+    padding: 6px 12px;
+  }
+
+  .mega-menu-flyout {
+    display: none;
+  }
+
+  .sticky-side-tabs {
+    display: none;
+  }
+
+  .insta-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

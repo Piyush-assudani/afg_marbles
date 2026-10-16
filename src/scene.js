@@ -773,7 +773,7 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     H = canvas.clientHeight || window.innerHeight;
     renderer.setSize(W, H, false);
     camera.aspect = W / H;
-    isMobile = W < 821 || W / H < 0.9;
+    isMobile = W < 900 || W / H < 0.95;
 
     if (isMobile) {
       camBase.set(0, 4.2, 23);
@@ -784,8 +784,9 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     }
     const vh = 2 * camBase.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
     const vw = vh * camera.aspect;
-    stage.position.x = isMobile ? 0 : Math.min(vw * 0.2, 4.6);
-    stage.position.y = isMobile ? -3.1 : 0;
+    // Position stage securely in the right half of the screen
+    stage.position.x = isMobile ? 0 : Math.max(vw * 0.22, 3.8);
+    stage.position.y = isMobile ? -3.1 : -0.15;
     stage.scale.setScalar(isMobile ? 0.9 : 1);
 
     sun.position.set(stage.position.x + 6, 11, 7);
