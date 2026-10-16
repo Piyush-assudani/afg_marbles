@@ -33,6 +33,7 @@
 html {
   scroll-behavior: smooth;
   height: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -1116,52 +1117,66 @@ button {
    MOBILE MENU
    ========================================================= */
 .mobile-menu {
-  position: absolute;
-  z-index: 9;
+  position: fixed;
+  z-index: 200;
   inset: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 18px;
-  padding: 0 var(--pad);
-  background: rgba(247, 243, 236, 0.92);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 85px var(--pad) 40px;
+  background: rgba(247, 243, 236, 0.98);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
   clip-path: inset(0 0 100% 0);
-  transition: clip-path 0.9s var(--ease);
+  transition: clip-path 0.7s var(--ease);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobile-menu__header {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-bottom: 24px;
-  padding-bottom: 16px;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
   border-bottom: 1px solid var(--line);
 }
 
 .mobile-menu__brand {
   font-family: var(--display);
-  font-size: 17px;
-  letter-spacing: 0.2em;
+  font-size: 16px;
+  letter-spacing: 0.18em;
   font-weight: 600;
   color: var(--ink);
 }
 
 .mobile-menu a {
   font-family: var(--serif);
-  font-size: 36px;
-  font-weight: 300;
+  font-size: clamp(20px, 5.2vw, 28px);
+  font-weight: 400;
+  color: var(--ink);
+  padding: 4px 0;
+  transition: color 0.3s;
+}
+
+.mobile-menu a:hover {
+  color: var(--gold-3);
 }
 
 .mobile-menu__cta {
-  margin-top: 16px;
+  margin-top: 14px;
+  padding: 12px 20px;
+  background: #1c1813;
+  color: #fff !important;
+  border-radius: 999px;
+  text-align: center;
   font-family: var(--sans) !important;
-  font-size: 12px !important;
+  font-size: 11.5px !important;
   font-weight: 600 !important;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold-3);
+  box-shadow: 0 4px 14px rgba(28, 24, 19, 0.2);
 }
 
 /* =========================================================
@@ -2252,9 +2267,9 @@ button {
   border-top: 1px solid rgba(28, 24, 19, 0.06);
   text-align: center;
   font-family: var(--display);
-  font-size: clamp(16px, 2.8vw, 32px);
+  font-size: clamp(12px, 2.7vw, 32px);
   font-weight: 500;
-  letter-spacing: 0.42em;
+  letter-spacing: clamp(0.18em, 1vw, 0.42em);
   text-transform: uppercase;
   color: rgba(28, 24, 19, 0.12);
   white-space: nowrap;
@@ -2497,6 +2512,60 @@ button {
 
   .footer-top {
     grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 14px;
+  }
+
+  .footer-legal-links {
+    justify-content: center;
+  }
+
+  .filter-tabs {
+    gap: 6px;
+    padding: 4px;
+    margin-top: 22px;
+  }
+
+  .tab-btn {
+    padding: 8px 15px;
+    font-size: 11px;
+  }
+
+  .commission-wrapper {
+    padding: 24px 18px;
+    border-radius: 18px;
+  }
+
+  .btn-form-submit {
+    height: 52px;
+    font-size: 11px;
+  }
+
+  .floating-wa-btn {
+    width: 52px;
+    height: 52px;
+  }
+
+  .floating-wa-btn svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .modal-backdrop {
+    padding: 12px;
+  }
+
+  .modal-document {
+    padding: 24px 16px;
+  }
+
+  .modal-lightbox {
+    padding: 18px 12px;
   }
 }
 
