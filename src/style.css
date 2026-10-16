@@ -82,34 +82,32 @@ button {
   text-align: center;
 }
 
-.loader__mark {
-  width: 42px;
-  height: 50px;
-  color: var(--gold);
-  margin-bottom: 22px;
+.loader__logo {
+  width: 140px;
+  height: auto;
+  max-height: 80px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 4px 18px rgba(176, 138, 79, 0.25));
+  animation: logoPulse 2.4s ease-in-out infinite alternate;
 }
 
-.loader__mark path {
-  stroke-dasharray: 120;
-  stroke-dashoffset: 120;
-  animation: draw 2.2s var(--ease) forwards;
-}
-
-.loader__mark path:nth-child(2) {
-  animation-delay: 0.25s;
-}
-
-@keyframes draw {
-  to {
-    stroke-dashoffset: 0;
+@keyframes logoPulse {
+  0% {
+    transform: scale(0.97);
+    opacity: 0.92;
+  }
+  100% {
+    transform: scale(1.02);
+    opacity: 1;
   }
 }
 
 .loader__brand {
   font-family: var(--display);
-  font-size: 30px;
-  letter-spacing: 0.42em;
-  margin-right: -0.42em;
+  font-size: 24px;
+  letter-spacing: 0.32em;
+  margin-right: -0.32em;
 }
 
 .loader__tag {
@@ -343,31 +341,41 @@ button {
   justify-self: start;
 }
 
-.logo__mark {
-  width: 28px;
-  height: 34px;
-  color: var(--gold);
+.logo__img {
+  width: 56px;
+  height: 32px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(176, 138, 79, 0.2));
+  transition: transform 0.4s var(--ease);
+}
+
+.logo:hover .logo__img {
+  transform: scale(1.06);
 }
 
 .logo__text {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
 }
 
 .logo__name {
   font-family: var(--display);
-  font-size: 22px;
-  letter-spacing: 0.36em;
-  line-height: 1;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  line-height: 1.1;
+  color: var(--ink);
+  white-space: nowrap;
 }
 
 .logo__sub {
   font-size: 8.5px;
   font-weight: 500;
-  letter-spacing: 0.34em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--ink-3);
+  white-space: nowrap;
 }
 
 .nav__links {
@@ -1075,13 +1083,26 @@ button {
   transition: clip-path 0.9s var(--ease);
 }
 
-.mobile-menu.is-open {
-  clip-path: inset(0 0 0 0);
+.mobile-menu__header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.mobile-menu__brand {
+  font-family: var(--display);
+  font-size: 17px;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  color: var(--ink);
 }
 
 .mobile-menu a {
   font-family: var(--serif);
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 300;
 }
 
@@ -1229,6 +1250,23 @@ button {
 
   .hero__lead {
     margin: 22px 0 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .logo__img {
+    width: 44px;
+    height: 26px;
+  }
+
+  .logo__name {
+    font-size: 15px;
+    letter-spacing: 0.16em;
+  }
+
+  .logo__sub {
+    font-size: 7.5px;
+    letter-spacing: 0.18em;
   }
 }
 

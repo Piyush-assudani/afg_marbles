@@ -1,12 +1,12 @@
 <div align="center">
 
-  <img src="public/afg-logo.jpeg" alt="A.F.G Marble Logo" width="220" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);" />
+  <img src="public/afg-logo.svg" alt="A.F.G Marble &amp; Arts Logo" width="280" />
 
-  # A.F.G MARBLE
-  ### Shilpā Marble Atelier — Handcrafted Marble Temples & Pooja Rooms
+  # A.F.G MARBLE &amp; ARTS
+  ### Handcrafted Marble Temples, Palatial Fountains &amp; Royal Stonecraft · Makrana &amp; Jaipur
 
   <p align="center">
-    <strong>An immersive, ultra-luxury interactive 3D WebGL experience bringing four generations of Rajasthani artisanal stonecraft into the modern digital age.</strong>
+    <strong>An immersive, ultra-luxury interactive 3D WebGL experience bringing four generations of Rajasthani master stonecraft into the modern digital age.</strong>
   </p>
 
   <p align="center">
@@ -23,7 +23,7 @@
 
 ## 🏛️ Executive Summary
 
-**A.F.G Marble (Shilpā Marble Atelier)** crafts bespoke marble temples, pooja rooms, and murtis sculpted from world-renowned Makrana marble by fourth-generation master artisans of Rajasthan. 
+**A.F.G Marble &amp; Arts** crafts bespoke marble temples, palatial cascading fountains, sacred pooja rooms, and murtis sculpted from world-renowned Makrana marble by master artisans of Rajasthan. 
 
 This repository houses the flagship interactive 3D web application — an architectural showcase engineered with **Three.js**, custom **GLSL triplanar shaders**, **GSAP animations**, and an editorial luxury design system. It allows clients worldwide to inspect temple craftsmanship, explore stone textures in real-time, and experience physical temple lighting in true 3D.
 
@@ -177,6 +177,6 @@ finalColor += vec3(1.0, 0.84, 0.3) * edge * 2.2; // 24K gold luminescence
 
 ## 📄 License & Credits
 
-- **Brand & Atelier:** [A.F.G Marble](https://github.com/PiyushASSUDANI123/afg_marbles) / Shilpā Marble Atelier, Jaipur, Rajasthan.
-- **Heritage Craft:** Dedicated to the master marble artisans preserving century-old Indian temple craftsmanship.
-- **License:** Proprietary & Private — All rights reserved by A.F.G Marble.
+- **Brand & Atelier:** [A.F.G Marble & Arts](https://github.com/PiyushASSUDANI123/afg_marbles), Makrana & Jaipur, Rajasthan.
+- **Heritage Craft:** Dedicated to the master marble artisans preserving century-old Indian temple and palatial stonecraft.
+- **License:** Proprietary & Private — All rights reserved by A.F.G Marble & Arts.
