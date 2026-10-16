@@ -394,7 +394,7 @@ function setupCommissionForm() {
 
     const submitBtn = form.querySelector('#btn-submit-inquiry');
     if (submitBtn) {
-      submitBtn.innerHTML = `<span>✓ Connecting to Atelier Master Sculptor...</span>`;
+      submitBtn.innerHTML = `<span>Connecting to Atelier Master Sculptor...</span>`;
       submitBtn.style.background = '#25D366';
       submitBtn.style.color = '#fff';
       submitBtn.style.borderColor = '#25D366';
@@ -403,7 +403,7 @@ function setupCommissionForm() {
     setTimeout(() => {
       window.open(waUrl, '_blank', 'noopener,noreferrer');
       if (submitBtn) {
-        submitBtn.innerHTML = `<span>Inquiry Sent ✓ (Open WhatsApp)</span>`;
+        submitBtn.innerHTML = `<span>Inquiry Dispatched (Open WhatsApp)</span>`;
       }
     }, 400);
   });
