@@ -487,41 +487,8 @@ async function init() {
         cursorLabel.textContent = st ? st.name.split(' ')[0] : 'SELECT';
       }
     },
-    onFrame: (state) => {
-      // Sync 2D Backdrop Niche with 3D camera projection
-      if (state.niche) {
-        const { left, top, width, height } = state.niche;
-        niche.style.transform = `translate3d(${left}px, ${top}px, 0)`;
-        niche.style.width = `${width}px`;
-        niche.style.height = `${height}px`;
-        niche.style.borderRadius = `${width / 2}px ${width / 2}px 0 0`;
-        niche.style.fontSize = `${width * 0.16}px`;
-      }
-
-      // Sync 2D Stage Caption position (guarantee zero text overlap)
-      if (state.caption) {
-        const isMobile = window.innerWidth <= 900;
-        const clampedX = isMobile
-          ? window.innerWidth * 0.5
-          : Math.max(state.caption.x, window.innerWidth * 0.58);
-        stageCaption.style.transform = `translate3d(${clampedX}px, ${state.caption.y}px, 0) translate(-50%, 0)`;
-      }
-
-      // Sync 3D Anchored Hotspots (guarantee zero text overlap)
-      if (state.hotspots) {
-        state.hotspots.forEach((hs) => {
-          const el = hs.id === 'pillar' ? hsPillar : hsKalash;
-          if (el) {
-            const isTooFarLeft = window.innerWidth > 900 && hs.x < window.innerWidth * 0.52;
-            if (isTooFarLeft) {
-              el.classList.remove('is-visible');
-            } else {
-              el.style.transform = `translate3d(${hs.x}px, ${hs.y}px, 0)`;
-              el.classList.toggle('is-visible', hs.visible);
-            }
-          }
-        });
-      }
+    onFrame: () => {
+      // 3D stage and caption layout handled cleanly via CSS without erratic jumping
     },
   });
 

@@ -270,55 +270,9 @@ button {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .38 0 0 0 0 .3 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Niche — arched backdrop placed behind the 3D temple */
+/* Niche — cleanly disabled to keep hero typography completely uncluttered */
 .niche {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  pointer-events: none;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 252, 246, 0.6) 55%, rgba(255, 252, 246, 0) 100%);
-  box-shadow: inset 0 1px 0 rgba(176, 138, 79, 0.25);
-  will-change: transform;
-}
-
-.niche::before,
-.niche::after {
-  content: '';
-  position: absolute;
-  border-radius: inherit;
-  pointer-events: none;
-  -webkit-mask: linear-gradient(180deg, #000 40%, transparent 92%);
-  mask: linear-gradient(180deg, #000 40%, transparent 92%);
-}
-
-.niche::before {
-  inset: 0;
-  border: 1px solid rgba(176, 138, 79, 0.35);
-  border-bottom: 0;
-}
-
-.niche::after {
-  inset: -18px -18px 0;
-  border: 1px solid rgba(176, 138, 79, 0.16);
-  border-bottom: 0;
-}
-
-.niche__word {
-  position: absolute;
-  left: 50%;
-  top: 34%;
-  transform: translate(-50%, -50%);
-  font-family: var(--serif);
-  font-weight: 300;
-  letter-spacing: 0.06em;
-  line-height: 1;
-  white-space: nowrap;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(176, 138, 79, 0.38);
-  user-select: none;
+  display: none !important;
 }
 
 /* =========================================================
@@ -862,12 +816,29 @@ button {
 .stage-caption {
   position: absolute;
   z-index: 5;
-  top: 0;
-  left: 0;
+  bottom: clamp(24px, 4vh, 44px);
+  right: clamp(140px, 20vw, 300px);
   text-align: center;
-  transform: translate(-50%, 0);
   pointer-events: none;
-  will-change: transform;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 12px 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(176, 138, 79, 0.22);
+  box-shadow: 0 10px 30px -10px rgba(28, 24, 19, 0.12);
+  transition: opacity 0.35s ease;
+}
+
+@media (max-width: 900px) {
+  .stage-caption {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    bottom: 20px;
+    width: max-content;
+    max-width: 90vw;
+  }
 }
 
 .stage-caption__hint {
@@ -922,18 +893,7 @@ button {
    HOTSPOTS
    ========================================================= */
 .hotspot {
-  position: absolute;
-  z-index: 4;
-  top: 0;
-  left: 0;
-  pointer-events: auto;
-  opacity: 0;
-  will-change: transform, opacity;
-  transition: opacity 0.6s var(--ease);
-}
-
-.hotspot.is-visible {
-  opacity: 1;
+  display: none !important;
 }
 
 .hotspot__dot {
@@ -2266,7 +2226,7 @@ button {
 }
 
 /* =========================================================
-   FLOATING CONCIERGE WHATSAPP BUTTON
+   FLOATING WHATSAPP BUTTON (Original WhatsApp Icon Only)
    ========================================================= */
 .floating-wa,
 .floating-whatsapp {
@@ -2277,27 +2237,41 @@ button {
 }
 
 .floating-wa-btn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 10px;
-  background: linear-gradient(135deg, #1f7d45 0%, #25d366 100%);
-  color: #ffffff;
-  padding: 12px 20px 12px 14px;
-  border-radius: 999px;
-  box-shadow: 0 12px 32px -6px rgba(37, 211, 102, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.25) inset;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  background-color: #25d366;
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), background-color 0.3s;
 }
 
 .floating-wa-btn:hover {
-  transform: scale(1.04) translateY(-2px);
-  box-shadow: 0 16px 38px -4px rgba(37, 211, 102, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.4) inset;
+  transform: scale(1.08) translateY(-2px);
+  background-color: #20ba5a;
+  box-shadow: 0 14px 32px rgba(37, 211, 102, 0.6);
 }
 
-.floating-wa-tooltip {
-  white-space: nowrap;
+.floating-wa-btn svg {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .floating-wa,
+  .floating-whatsapp {
+    bottom: 20px;
+    right: 20px;
+  }
+  .floating-wa-btn {
+    width: 50px;
+    height: 50px;
+  }
+  .floating-wa-btn svg {
+    width: 26px;
+    height: 26px;
+  }
 }
 
 /* =========================================================
@@ -2346,15 +2320,6 @@ button {
 
   .footer-top {
     grid-template-columns: 1fr;
-  }
-
-  .floating-wa-tooltip {
-    display: none;
-  }
-
-  .floating-wa-btn {
-    padding: 14px;
-    border-radius: 50%;
   }
 }
 

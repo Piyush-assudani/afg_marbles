@@ -778,16 +778,17 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     if (isMobile) {
       camBase.set(0, 4.2, 23);
       lookBase.set(0, 2.2, 0);
+      stage.position.set(0, -3.1, 0);
+      stage.scale.setScalar(0.78);
     } else {
-      camBase.set(0, 3.7, 15.5);
+      camBase.set(0, 3.6, 16);
       lookBase.set(0, 3.25, 0);
+      const vh = 2 * camBase.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
+      const vw = vh * camera.aspect;
+      // Position stage clearly in the right half of the canvas with plenty of margin
+      stage.position.set(Math.max(vw * 0.24, 4.2), 0.1, 0);
+      stage.scale.setScalar(0.82);
     }
-    const vh = 2 * camBase.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
-    const vw = vh * camera.aspect;
-    // Position stage securely in the right half of the screen
-    stage.position.x = isMobile ? 0 : Math.max(vw * 0.22, 3.8);
-    stage.position.y = isMobile ? -3.1 : -0.15;
-    stage.scale.setScalar(isMobile ? 0.9 : 1);
 
     sun.position.set(stage.position.x + 6, 11, 7);
     sun.target.position.set(stage.position.x, 2.5, 0);
@@ -1022,11 +1023,12 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     pointer.sx += (pointer.nx - pointer.sx) * (1 - Math.exp(-dt * 3));
     pointer.sy += (pointer.ny - pointer.sy) * (1 - Math.exp(-dt * 3));
     camera.position.set(
-      camBase.x + camIntro.x + pointer.sx * 0.7,
-      camBase.y + camIntro.y - pointer.sy * 0.45,
+      camBase.x + camIntro.x + pointer.sx * 0.45,
+      camBase.y + camIntro.y - pointer.sy * 0.3,
       camBase.z + camIntro.z
     );
-    lookAt.set(lookBase.x + stage.position.x * 0.92, lookBase.y, lookBase.z);
+    // Keep camera looking directly forward without oblique skew that drags stage into center
+    lookAt.set(isMobile ? 0 : 0.8, lookBase.y, lookBase.z);
     camera.lookAt(lookAt);
 
     // Halo
