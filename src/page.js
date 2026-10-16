@@ -1,5 +1,27 @@
 // Subpage script for A.F.G Marble & Arts
 document.addEventListener('DOMContentLoaded', () => {
+  // Resilient Asset & Image Resolver (works in dev, production build, and direct file preview)
+  const resolveAssets = () => {
+    const isFile = window.location.protocol === 'file:';
+    document.querySelectorAll('img').forEach((img) => {
+      const orig = img.getAttribute('src') || '';
+      if (isFile && orig.startsWith('/')) {
+        img.src = '.' + (orig.startsWith('/public') ? '' : '/public') + orig;
+      }
+      img.addEventListener('error', () => {
+        const cur = img.getAttribute('src') || '';
+        if (cur.startsWith('/gallery/')) {
+          img.src = './public' + cur;
+        } else if (cur.startsWith('./public/gallery/')) {
+          img.src = cur.replace('./public', '');
+        } else if (cur.startsWith('/afg-logo')) {
+          img.src = './public' + cur;
+        }
+      });
+    });
+  };
+  resolveAssets();
+
   const burger = document.getElementById('burger');
   const mobileMenu = document.getElementById('mobile-menu');
   const nav = document.getElementById('nav');

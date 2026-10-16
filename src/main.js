@@ -355,6 +355,11 @@ function setupLegalModals() {
   document.querySelectorAll('#btn-open-terms, #link-terms, a[href="#terms-modal"]').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
+      if (mobileMenu && mobileMenu.classList.contains('is-open')) {
+        mobileMenu.classList.remove('is-open');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        burger?.setAttribute('aria-expanded', 'false');
+      }
       openModal(termsModal);
     });
   });
@@ -372,6 +377,11 @@ function setupLegalModals() {
   document.querySelectorAll('#btn-open-privacy, #link-privacy, a[href="#privacy-modal"]').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
+      if (mobileMenu && mobileMenu.classList.contains('is-open')) {
+        mobileMenu.classList.remove('is-open');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        burger?.setAttribute('aria-expanded', 'false');
+      }
       openModal(privacyModal);
     });
   });
