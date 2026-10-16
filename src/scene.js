@@ -739,29 +739,9 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
   halo.add(haloA, haloB, bead);
   stage.add(halo);
 
-  // Floating marble samples
-  const slabDefs = [
-    { key: 'rosa', pos: [-3.5, 5.7, -0.8], rot: [0.35, 0.7, -0.25] },
-    { key: 'calacatta', pos: [3.25, 5.6, 0.2], rot: [-0.25, -0.6, 0.3] },
-    { key: 'nero', pos: [-3.8, 1.9, 1.3], rot: [0.55, 0.45, 0.18] },
-    { key: 'botticino', pos: [3.35, 1.8, 1.4], rot: [-0.45, -0.65, -0.12] },
-  ];
-  const slabGeo = new RoundedBoxGeometry(1.05, 1.05, 0.08, 4, 0.03);
-  const slabs = slabDefs.map((d, i) => {
-    const mat = new THREE.MeshPhysicalMaterial({
-      map: textures[d.key],
-      roughness: 0.16,
-      clearcoat: 1,
-      clearcoatRoughness: 0.06,
-    });
-    const mesh = new THREE.Mesh(slabGeo, mat);
-    mesh.castShadow = true;
-    mesh.position.set(...d.pos);
-    mesh.rotation.set(...d.rot);
-    mesh.userData = { key: d.key, base: new THREE.Vector3(...d.pos), rot: new THREE.Euler(...d.rot), i, hover: 0, spin: 0 };
-    stage.add(mesh);
-    return mesh;
-  });
+  // Floating marble samples (removed as requested)
+  const slabDefs = [];
+  const slabs = [];
 
   const dust = buildDust();
   stage.add(dust);
