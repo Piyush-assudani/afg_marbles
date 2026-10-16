@@ -180,9 +180,37 @@ function animateStats() {
 ------------------------------------------------------------------- */
 function setupMobileMenu() {
   if (!burger || !mobileMenu) return;
-  burger.addEventListener('click', () => {
-    const isOpen = mobileMenu.classList.toggle('is-open');
-    burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+  const toggle = (force) => {
+    const isOpen = typeof force === 'boolean' ? force : !mobileMenu.classList.contains('is-open');
+    if (isOpen) {
+      mobileMenu.classList.add('is-open');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      burger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    } else {
+      mobileMenu.classList.remove('is-open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+  };
+
+  burger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggle();
+  });
+
+  mobileMenu.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      toggle(false);
+    });
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
+      toggle(false);
+    }
   });
 }
 
