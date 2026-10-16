@@ -23,18 +23,22 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenu.classList.add('is-open');
         mobileMenu.setAttribute('aria-hidden', 'false');
         burger.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
       } else {
         mobileMenu.classList.remove('is-open');
         mobileMenu.setAttribute('aria-hidden', 'true');
         burger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
       }
     };
 
     burger.addEventListener('click', (e) => {
       e.stopPropagation();
       toggle();
+    });
+
+    document.addEventListener('click', (e) => {
+      if (mobileMenu.classList.contains('is-open') && !mobileMenu.contains(e.target) && !burger.contains(e.target)) {
+        toggle(false);
+      }
     });
 
     mobileMenu.querySelectorAll('a').forEach((link) => {
