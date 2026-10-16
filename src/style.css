@@ -1264,57 +1264,72 @@ button {
   }
 
   .hero__content {
-    top: 76px;
+    top: 72px;
     transform: none;
     width: auto;
-    left: 18px;
-    right: 18px;
+    left: 20px;
+    right: 20px;
     padding-top: 0;
   }
 
   .hero__eyebrow {
-    font-size: 9px;
+    font-size: 8.5px;
     letter-spacing: 0.22em;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     gap: 8px;
   }
 
-  .hero__eyebrow .eyebrow-line {
-    width: 22px;
+  .hero__eyebrow .hero__eyebrow-line {
+    width: 20px;
   }
 
   .hero__title {
-    font-size: clamp(28px, 7.8vw, 40px);
-    line-height: 1.08;
+    font-size: clamp(26px, 7.2vw, 34px);
+    line-height: 1.05;
     letter-spacing: -0.02em;
   }
 
+  .hero__title .line--indent {
+    padding-left: 0.6em;
+  }
+
   .hero__lead {
-    font-size: 12.5px;
-    line-height: 1.48;
-    margin: 10px 0 16px;
+    font-size: 12px;
+    line-height: 1.45;
+    margin: 8px 0 14px;
     max-width: 320px;
     color: var(--ink-2);
   }
 
-  .btn-primary {
-    height: 44px;
-    padding-left: 18px;
-    padding-right: 6px;
+  .hero__ctas {
+    justify-content: flex-start;
+    margin-top: 2px;
+  }
+
+  .btn-hero-explore {
+    display: inline-flex;
+    align-items: center;
     gap: 10px;
+    height: 40px;
+    padding: 0 16px 0 18px;
     font-size: 10px;
     letter-spacing: 0.14em;
     border-radius: 999px;
+    width: auto;
+    max-width: fit-content;
+    background: rgba(28, 24, 19, 0.05);
+    border: 1px solid rgba(176, 138, 79, 0.35);
+    color: var(--ink);
   }
 
-  .btn-primary__icon {
-    width: 32px;
-    height: 32px;
+  .btn-hero-explore__icon {
+    width: 22px;
+    height: 22px;
   }
 
-  .btn-primary__icon svg {
-    width: 14px;
-    height: 14px;
+  .btn-hero-explore__icon svg {
+    width: 11px;
+    height: 11px;
   }
 
   .btn-ghost {
@@ -1327,19 +1342,20 @@ button {
 
   .stone-rail {
     top: auto;
-    bottom: 20px;
+    bottom: 16px;
     left: 50%;
     right: auto;
     transform: translateX(-50%);
     flex-direction: row;
-    padding: 6px 12px;
-    gap: 8px;
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    padding: 5px 12px;
+    gap: 7px;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(176, 138, 79, 0.28);
     border-radius: 999px;
-    box-shadow: 0 8px 24px rgba(28, 24, 19, 0.12);
+    box-shadow: 0 10px 25px -4px rgba(28, 24, 19, 0.15);
+    z-index: 10;
   }
 
   .stone-rail__label {

@@ -758,8 +758,8 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     isMobile = W < 821 || W / H < 0.9;
 
     if (isMobile) {
-      camBase.set(0, 4.6, 25.5);
-      lookBase.set(0, 1.8, 0);
+      camBase.set(0, 3.8, 23.5);
+      lookBase.set(0, 1.4, 0);
     } else {
       camBase.set(0, 3.7, 15.5);
       lookBase.set(0, 3.25, 0);
@@ -767,8 +767,8 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     const vh = 2 * camBase.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
     const vw = vh * camera.aspect;
     stage.position.x = isMobile ? 0 : Math.min(vw * 0.2, 4.6);
-    stage.position.y = isMobile ? -4.5 : 0;
-    stage.scale.setScalar(isMobile ? 0.82 : 1);
+    stage.position.y = isMobile ? -3.5 : 0;
+    stage.scale.setScalar(isMobile ? 0.74 : 1);
 
     sun.position.set(stage.position.x + 6, 11, 7);
     sun.target.position.set(stage.position.x, 2.5, 0);
