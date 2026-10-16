@@ -616,12 +616,19 @@
             </p>
 
             <!-- Filter Tabs -->
-            <div class="filter-tabs" role="tablist">
-              <button class="tab-btn is-active" data-filter="all">All Masterpieces</button>
-              <button class="tab-btn" data-filter="mandir">Marble Temples &amp; Mandirs</button>
-              <button class="tab-btn" data-filter="fountain">Palatial Fountains</button>
-              <button class="tab-btn" data-filter="chhatri">Chhatris &amp; Sandstone</button>
-              <button class="tab-btn" data-filter="sanctum">Pooja Sanctums</button>
+            <div class="filter-tabs-wrapper">
+              <div class="filter-tabs" id="filter-tabs" role="tablist">
+                <button class="tab-btn is-active" data-filter="all">All Masterpieces</button>
+                <button class="tab-btn" data-filter="mandir">Marble Temples &amp; Mandirs</button>
+                <button class="tab-btn" data-filter="fountain">Palatial Fountains</button>
+                <button class="tab-btn" data-filter="chhatri">Chhatris &amp; Sandstone</button>
+                <button class="tab-btn" data-filter="sanctum">Pooja Sanctums</button>
+              </div>
+              <button class="filter-tabs-arrow" id="filter-tabs-arrow" aria-label="Slide to see more categories" type="button">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 18l6-6-6-6"/>
+                </svg>
+              </button>
             </div>
           </div>
 

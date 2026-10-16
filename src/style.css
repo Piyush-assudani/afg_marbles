@@ -1598,6 +1598,18 @@ button {
   border-bottom: 1px solid var(--line);
 }
 
+.filter-tabs-wrapper {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  max-width: 100%;
+}
+
+.filter-tabs-arrow {
+  display: none !important;
+}
+
 .filter-tabs {
   display: inline-flex;
   gap: 6px;
@@ -2603,6 +2615,254 @@ button {
   .form-row {
     grid-template-columns: 1fr;
   }
+
+  /* Filter Tabs Mobile Slider with Arrow Cue */
+  .filter-tabs-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 24px auto 0;
+  }
+
+  .filter-tabs-wrapper::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 48px;
+    background: linear-gradient(to right, transparent, rgba(247, 243, 236, 0.96) 80%);
+    pointer-events: none;
+    border-radius: 0 999px 999px 0;
+    z-index: 3;
+  }
+
+  .filter-tabs {
+    display: flex !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 0 !important;
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    padding: 6px 48px 6px 8px !important;
+    gap: 8px !important;
+    border-radius: 999px;
+  }
+
+  .filter-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn {
+    padding: 8px 16px !important;
+    font-size: 11px !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  .filter-tabs-arrow {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--gold);
+    border: 1.5px solid var(--gold);
+    box-shadow: -4px 0 12px rgba(247, 243, 236, 0.9), 0 4px 14px rgba(28, 24, 19, 0.25);
+    z-index: 5;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+    animation: filterArrowPulse 2.4s infinite ease-in-out;
+  }
+
+  @keyframes filterArrowPulse {
+    0%, 100% {
+      transform: translateY(-50%) scale(1);
+      box-shadow: 0 4px 12px rgba(176, 138, 79, 0.35);
+    }
+    50% {
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 4px 18px rgba(176, 138, 79, 0.65);
+    }
+  }
+
+  .filter-tabs-arrow svg {
+    transition: transform 0.3s ease;
+  }
+
+  .filter-tabs-arrow.is-end svg {
+    transform: rotate(180deg);
+  }
+
+  /* Luxury Mobile Footer Redesign (SS2 Fix) */
+  .footer {
+    padding: clamp(48px, 8vw, 64px) 0 28px !important;
+    background: linear-gradient(180deg, #FDFBF7 0%, #F5EFE6 100%) !important;
+    border-top: 1px solid rgba(176, 138, 79, 0.28) !important;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 28px 18px !important;
+    margin-bottom: 32px !important;
+  }
+
+  .footer-brand,
+  .footer-col-brand {
+    grid-column: 1 / -1 !important;
+    padding-bottom: 22px;
+    border-bottom: 1px solid rgba(176, 138, 79, 0.2);
+    margin-bottom: 4px;
+  }
+
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .footer-brand-name {
+    font-size: 16px !important;
+    letter-spacing: 0.18em !important;
+  }
+
+  .footer-tagline {
+    font-size: 13px !important;
+    line-height: 1.65 !important;
+    color: var(--ink-2) !important;
+    margin-bottom: 14px !important;
+    max-width: 100% !important;
+  }
+
+  .footer-addr {
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+    color: var(--ink-3) !important;
+    margin-bottom: 16px !important;
+    padding: 10px 14px !important;
+    background: rgba(176, 138, 79, 0.06) !important;
+    border-left: 2px solid var(--gold) !important;
+    border-radius: 4px;
+  }
+
+  .footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .footer-social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 15px !important;
+    background: rgba(28, 24, 19, 0.04) !important;
+    border: 1px solid rgba(176, 138, 79, 0.32) !important;
+    border-radius: 999px;
+    font-size: 11.5px !important;
+    font-weight: 600;
+    color: var(--ink) !important;
+    transition: all 0.3s ease;
+  }
+
+  .footer-social-link:hover {
+    background: var(--ink) !important;
+    color: var(--ivory) !important;
+  }
+
+  .footer-links-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-links-col h4 {
+    font-size: 10.5px !important;
+    letter-spacing: 0.22em !important;
+    margin-bottom: 14px !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gold-3) !important;
+  }
+
+  .footer-links-col h4::after {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .footer-links-col ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links-col a {
+    font-size: 12.5px !important;
+    line-height: 1.45 !important;
+    color: var(--ink-2) !important;
+    display: inline-block;
+    padding: 2px 0;
+  }
+
+  .footer-links-col:nth-child(4) {
+    grid-column: 1 / -1;
+    padding-top: 18px;
+    border-top: 1px dashed rgba(176, 138, 79, 0.22);
+    margin-top: 4px;
+  }
+
+  .footer-links-col:nth-child(4) ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 16px;
+  }
+
+  .footer-bottom {
+    padding-top: 22px !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 12px !important;
+  }
+
+  .footer-bottom p {
+    font-size: 11px !important;
+    line-height: 1.5 !important;
+    color: var(--ink-3) !important;
+  }
+
+  .footer-legal-links {
+    justify-content: center !important;
+    gap: 14px !important;
+  }
+
+  .footer-legal-links a {
+    font-size: 11.5px !important;
+  }
+
+  .footer-single-line-brand {
+    margin-top: 24px !important;
+    padding-top: 16px !important;
+    font-size: clamp(13px, 4.2vw, 22px) !important;
+    letter-spacing: 0.22em !important;
+    opacity: 0.2 !important;
+  }
 }
 
 @media (max-width: 600px) {
@@ -2621,32 +2881,6 @@ button {
 
   .workflow-steps {
     grid-template-columns: 1fr;
-  }
-
-  .footer-top {
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    text-align: center;
-    gap: 14px;
-  }
-
-  .footer-legal-links {
-    justify-content: center;
-  }
-
-  .filter-tabs {
-    gap: 6px;
-    padding: 4px;
-    margin-top: 22px;
-  }
-
-  .tab-btn {
-    padding: 8px 15px;
-    font-size: 11px;
   }
 
   .commission-wrapper {

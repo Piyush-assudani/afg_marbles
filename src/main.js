@@ -305,8 +305,43 @@ function setupGalleryFilter() {
           card.style.display = 'none';
         }
       });
+      tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     });
   });
+}
+
+/* ------------------------------------------------------------------
+   Mobile Filter Tabs Horizontal Scroll Arrow Indicator
+------------------------------------------------------------------- */
+function setupFilterTabsScroll() {
+  const rail = document.getElementById('filter-tabs');
+  const arrow = document.getElementById('filter-tabs-arrow');
+  if (!rail || !arrow) return;
+
+  function updateArrow() {
+    const maxScroll = rail.scrollWidth - rail.clientWidth - 10;
+    if (rail.scrollLeft >= maxScroll) {
+      arrow.classList.add('is-end');
+      arrow.setAttribute('aria-label', 'Slide back to start');
+    } else {
+      arrow.classList.remove('is-end');
+      arrow.setAttribute('aria-label', 'Slide to see more categories');
+    }
+  }
+
+  rail.addEventListener('scroll', updateArrow, { passive: true });
+
+  arrow.addEventListener('click', () => {
+    const maxScroll = rail.scrollWidth - rail.clientWidth - 10;
+    if (rail.scrollLeft >= maxScroll) {
+      rail.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      rail.scrollBy({ left: 190, behavior: 'smooth' });
+    }
+  });
+
+  updateArrow();
+  window.addEventListener('resize', updateArrow, { passive: true });
 }
 
 /* ------------------------------------------------------------------
@@ -533,6 +568,7 @@ async function init() {
   setupMegaMenu();
   setupScrollNav();
   setupGalleryFilter();
+  setupFilterTabsScroll();
   setupLightbox();
   setupLegalModals();
   setupCommissionForm();
