@@ -222,7 +222,7 @@ function setupMobileMenu() {
 }
 
 /* ------------------------------------------------------------------
-   Desktop Mega Menu Hover Grace Period
+   Desktop Mega Menu Hover Grace Period & Interactive Category Tabs
 ------------------------------------------------------------------- */
 function setupMegaMenu() {
   const dropdown = document.querySelector('.nav-item-dropdown');
@@ -230,20 +230,52 @@ function setupMegaMenu() {
   if (!dropdown || !flyout) return;
 
   let timer;
+  const trigger = dropdown.querySelector('.dropdown-trigger');
+
   const open = () => {
     clearTimeout(timer);
     dropdown.classList.add('is-hovered');
+    if (trigger) trigger.setAttribute('aria-expanded', 'true');
   };
   const close = () => {
     timer = setTimeout(() => {
       dropdown.classList.remove('is-hovered');
-    }, 220);
+      if (trigger) trigger.setAttribute('aria-expanded', 'false');
+    }, 240);
   };
 
   dropdown.addEventListener('mouseenter', open);
   dropdown.addEventListener('mouseleave', close);
   flyout.addEventListener('mouseenter', open);
   flyout.addEventListener('mouseleave', close);
+
+  // Dynamic Interactive Category Switching on Hover
+  const catItems = flyout.querySelectorAll('.mega-cat-item');
+  const panels = flyout.querySelectorAll('.mega-panel');
+
+  catItems.forEach((item) => {
+    const activate = () => {
+      const tabName = item.dataset.megaTab;
+      catItems.forEach((ci) => ci.classList.remove('is-active'));
+      item.classList.add('is-active');
+
+      panels.forEach((p) => {
+        if (p.dataset.panel === tabName) {
+          p.classList.add('is-active');
+        } else {
+          p.classList.remove('is-active');
+        }
+      });
+    };
+
+    item.addEventListener('mouseenter', activate);
+    item.addEventListener('focusin', activate);
+    item.addEventListener('click', (e) => {
+      if (!e.target.closest('a')) {
+        activate();
+      }
+    });
+  });
 
   flyout.querySelectorAll('a').forEach((a) => {
     a.addEventListener('click', () => {
