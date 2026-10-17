@@ -608,8 +608,11 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     antialias: true,
     alpha: true,
     powerPreference: 'high-performance',
+    stencil: false,
   });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  // Supersample on 1x displays to remove jagged/pixelated edges; cap at 2 for perf
+  const isSmallScreen = window.innerWidth < 821;
+  renderer.setPixelRatio(Math.min(Math.max(window.devicePixelRatio, isSmallScreen ? 1.5 : 1.75), 2));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.NeutralToneMapping ?? THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.02;
@@ -637,6 +640,9 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     const t = loader.load(s.url);
     t.colorSpace = THREE.SRGBColorSpace;
     t.wrapS = t.wrapT = THREE.MirroredRepeatWrapping;
+    t.generateMipmaps = true;
+    t.minFilter = THREE.LinearMipmapLinearFilter;
+    t.magFilter = THREE.LinearFilter;
     t.anisotropy = maxAniso;
     textures[s.key] = t;
   });
@@ -651,7 +657,7 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
 
   const sun = new THREE.DirectionalLight('#fff1dc', 2.6);
   sun.castShadow = true;
-  sun.shadow.mapSize.set(2048, 2048);
+  sun.shadow.mapSize.set(isSmallScreen ? 2048 : 4096, isSmallScreen ? 2048 : 4096);
   sun.shadow.camera.near = 1;
   sun.shadow.camera.far = 30;
   sun.shadow.camera.left = -7;
@@ -660,7 +666,7 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
   sun.shadow.camera.bottom = -4;
   sun.shadow.bias = -0.0004;
   sun.shadow.normalBias = 0.02;
-  sun.shadow.radius = 6;
+  sun.shadow.radius = 8;
   scene.add(sun, sun.target);
 
   const rim = new THREE.DirectionalLight('#ffe2b8', 1.4);
@@ -753,6 +759,8 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
   function layout() {
     W = canvas.clientWidth || window.innerWidth;
     H = canvas.clientHeight || window.innerHeight;
+    const isSmall = W < 821;
+    renderer.setPixelRatio(Math.min(Math.max(window.devicePixelRatio, isSmall ? 1.75 : 2), 2));
     renderer.setSize(W, H, false);
     camera.aspect = W / H;
     isMobile = W < 821 || W / H < 0.9;
@@ -787,7 +795,8 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
   const pointer = { x: 0, y: 0, nx: 0, ny: 0, sx: 0, sy: 0, inside: false };
   const drag = { active: false, lastX: 0, lastT: 0, v: 0, moved: 0 };
   let rotVel = 0;
-  let autoSpeed = 0.12;
+  let smoothDt = 1 / 60;
+  let autoSpeed = 0.085;
   let introDone = false;
   const raycaster = new THREE.Raycaster();
   const ndc = new THREE.Vector2();
@@ -940,14 +949,14 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     tl.to(halo.scale, { x: 1, y: 1, z: 1, duration: 2.2, ease: 'expo.out' }, 0.9);
     tl.fromTo(halo.rotation, { z: -1.2 }, { z: 0, duration: 2.6, ease: 'expo.out' }, 0.9);
     slabs.forEach((s, i) => {
-      tl.to(s.scale, { x: 1, y: 1, z: 1, duration: 1.6, ease: 'back.out(1.6)' }, 1.2 + i * 0.12);
+      tl.to(s.scale, { x: 1, y: 1, z: 1, duration: 2, ease: 'expo.out' }, 1.2 + i * 0.12);
     });
     tl.to(dust.material.uniforms.uOpacity, { value: 1, duration: 2.5 }, 1);
     // Ceremonial stone reveal on load: sweep a golden line up the temple
     tl.call(() => {
       const u = templeMat.userData.uniforms;
       u.uMapB.value = textures.makrana;
-      gsap.fromTo(u.uMix, { value: 0 }, { value: 1, duration: 2.2, ease: 'power2.inOut', onComplete: () => (u.uMix.value = 0) });
+      gsap.fromTo(u.uMix, { value: 0 }, { value: 1, duration: 2.6, ease: 'sine.inOut', onComplete: () => (u.uMix.value = 0) });
     }, null, 1.5);
     return tl;
   }
@@ -993,18 +1002,21 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
   }
 
   function tick() {
-    const dt = Math.min(clock.getDelta(), 0.05);
+    // Smoothed delta prevents micro-stutter from frame-time spikes
+    const rawDt = Math.min(clock.getDelta(), 0.05);
+    smoothDt += (rawDt - smoothDt) * 0.12;
+    const dt = smoothDt;
     const t = clock.elapsedTime;
 
     // Turntable
     if (introDone && !drag.active) {
-      rotVel += (autoSpeed - rotVel) * (1 - Math.exp(-dt * 1.4));
+      rotVel += (autoSpeed - rotVel) * (1 - Math.exp(-dt * 0.9));
       turntable.rotation.y += rotVel * dt;
     }
 
     // Camera parallax
-    pointer.sx += (pointer.nx - pointer.sx) * (1 - Math.exp(-dt * 3));
-    pointer.sy += (pointer.ny - pointer.sy) * (1 - Math.exp(-dt * 3));
+    pointer.sx += (pointer.nx - pointer.sx) * (1 - Math.exp(-dt * 1.8));
+    pointer.sy += (pointer.ny - pointer.sy) * (1 - Math.exp(-dt * 1.8));
     camera.position.set(
       camBase.x + camIntro.x + pointer.sx * 0.7,
       camBase.y + camIntro.y - pointer.sy * 0.45,
@@ -1022,7 +1034,7 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     slabs.forEach((s) => {
       const u = s.userData;
       const target = hovered === s ? 1 : 0;
-      u.hover += (target - u.hover) * (1 - Math.exp(-dt * 8));
+      u.hover += (target - u.hover) * (1 - Math.exp(-dt * 5));
       s.position.set(
         u.base.x - pointer.sx * 0.25 * (1 + u.i * 0.2),
         u.base.y + Math.sin(t * 0.7 + u.i * 1.7) * 0.16,

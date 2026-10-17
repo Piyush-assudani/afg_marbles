@@ -1,6 +1,8 @@
 import gsap from 'gsap';
 import { createExperience, STONES } from './scene.js';
 import './style.css';
+import './premium.css';
+import { initPremium } from './premium.js';
 
 /* ------------------------------------------------------------------
    DOM Elements
@@ -573,6 +575,7 @@ async function init() {
   setupLegalModals();
   setupCommissionForm();
   setupBeforeAfter();
+  initPremium();
 
   const exp = createExperience({
     canvas,
@@ -637,18 +640,22 @@ async function init() {
   await exp.ready;
   await exp.warmup();
 
-  // Dismiss loader with a smooth reveal clip
-  gsap.to(loader, {
-    clipPath: 'inset(0 0 100% 0)',
-    duration: 1.1,
-    ease: 'power4.inOut',
-    onComplete: () => {
-      loader.style.display = 'none';
-      // Trigger 3D scene camera & assembly intro
-      exp.intro();
-      // Animate text & UI elements
-      animateEntrance();
-    },
+  // Dismiss loader with a silky curtain lift, overlapping the 3D intro (no dead frame)
+  const handoff = gsap.timeline();
+  handoff.to(loader.querySelector('.loader__inner') || loader, {
+    opacity: 0,
+    y: -24,
+    filter: 'blur(6px)',
+    duration: 0.9,
+    ease: 'power2.in',
+  });
+  handoff.to(loader, { clipPath: 'inset(0 0 100% 0)', duration: 1.5, ease: 'expo.inOut' }, 0.35);
+  handoff.add(() => {
+    exp.intro();
+    animateEntrance();
+  }, 0.95);
+  handoff.add(() => {
+    loader.style.display = 'none';
   });
 }
 
@@ -665,16 +672,16 @@ function animateEntrance() {
   const titleLines = document.querySelectorAll('.hero__title .line > span');
   tl.fromTo(
     titleLines,
-    { y: '110%' },
-    { y: '0%', duration: 1.6, stagger: 0.12 },
+    { y: '110%', filter: 'blur(10px)' },
+    { y: '0%', filter: 'blur(0px)', duration: 2, stagger: 0.14, ease: 'expo.out', clearProps: 'filter' },
     0.4
   );
 
   // Eyebrow, lead text, CTAs
-  tl.fromTo('.hero__eyebrow-line', { scaleX: 0 }, { scaleX: 1, duration: 1.2 }, 0.6);
-  tl.fromTo('.hero__eyebrow', { opacity: 0, x: -15 }, { opacity: 1, x: 0, duration: 1.2 }, 0.7);
-  tl.fromTo('.hero__lead', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1.4 }, 0.9);
-  tl.fromTo('.hero__ctas > *', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1.4, stagger: 0.15 }, 1.1);
+  tl.fromTo('.hero__eyebrow-line', { scaleX: 0 }, { scaleX: 1, duration: 1.6, ease: 'power3.inOut' }, 0.6);
+  tl.fromTo('.hero__eyebrow', { opacity: 0, x: -15, filter: 'blur(6px)' }, { opacity: 1, x: 0, filter: 'blur(0px)', duration: 1.6, clearProps: 'filter' }, 0.7);
+  tl.fromTo('.hero__lead', { opacity: 0, y: 24, filter: 'blur(6px)' }, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.8, clearProps: 'filter' }, 0.95);
+  tl.fromTo('.hero__ctas > *', { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 1.8, stagger: 0.15 }, 1.15);
 
   // Stone rail & stats
   tl.fromTo(stoneRail, { x: 40, opacity: 0 }, { x: 0, opacity: 1, duration: 1.4 }, 1.0);

@@ -4105,3 +4105,78 @@ button {
   }
 }
 
+
+/* =========================================================
+   TYPOGRAPHY REFINEMENT v2 — Haute couture editorial
+   Italiana (display) · Bodoni Moda (headings/italic accents) · Jost (text)
+   ========================================================= */
+html {
+  text-rendering: optimizeLegibility;
+  font-kerning: normal;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+}
+
+body {
+  font-weight: 400;
+  letter-spacing: 0.005em;
+}
+
+h1, h2, h3, .sec-title, .hero__title {
+  text-wrap: balance;
+}
+
+p { text-wrap: pretty; }
+
+.hero__title {
+  font-family: 'Italiana', 'Bodoni Moda', serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 0.98;
+}
+
+.hero__title em {
+  font-family: 'Bodoni Moda', serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.sec-title {
+  font-family: 'Bodoni Moda', var(--serif);
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  line-height: 1.12;
+}
+
+.sec-eyebrow,
+.hero__eyebrow {
+  font-family: var(--sans);
+  font-weight: 500;
+  letter-spacing: 0.34em;
+}
+
+.sec-subtitle {
+  font-weight: 300;
+  font-size: 16.5px;
+  line-height: 1.8;
+  color: var(--ink-2);
+}
+
+.logo__name,
+.footer-brand-name,
+.loader__brand {
+  font-family: 'Marcellus', serif;
+  font-weight: 400;
+  letter-spacing: 0.24em;
+}
+
+.nav__links a {
+  font-family: var(--sans);
+  font-weight: 400;
+  letter-spacing: 0.2em;
+}
+
+.loader__tag {
+  font-family: 'Bodoni Moda', serif;
+  font-style: italic;
+}
