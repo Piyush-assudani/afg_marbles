@@ -2588,6 +2588,13 @@ button {
   text-decoration: none;
 }
 
+.footer-logo img {
+  width: 56px;
+  height: 32px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 .footer-brand-name {
   font-family: var(--display);
   font-size: 17px;
@@ -2757,23 +2764,34 @@ button {
   position: absolute;
   top: 16px;
   right: 18px;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: rgba(28, 24, 19, 0.08);
-  font-size: 24px;
-  line-height: 1;
-  display: grid;
-  place-items: center;
+  border: 1px solid rgba(28, 24, 19, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--ink);
   cursor: pointer;
-  z-index: 10;
-  transition: background 0.3s ease;
+  z-index: 50;
+  transition: all 0.25s var(--ease);
+  padding: 0;
+}
+
+.modal-close svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  pointer-events: none;
+  transition: transform 0.25s var(--ease);
 }
 
 .modal-close:hover {
   background: var(--ink);
   color: var(--ivory);
+  transform: rotate(90deg) scale(1.06);
 }
 
 /* Luxury Enlarged Lightbox Modal */
@@ -2781,12 +2799,12 @@ button {
   position: relative;
   max-width: min(1140px, 94vw);
   max-height: 94vh;
-  padding: 24px 28px 20px;
+  padding: 18px 24px 20px;
   text-align: center;
   background: #171310;
-  border: 1px solid rgba(216, 187, 132, 0.45);
+  border: 1.5px solid rgba(216, 187, 132, 0.45);
   border-radius: 22px;
-  box-shadow: 0 40px 100px -15px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(216, 187, 132, 0.2);
+  box-shadow: 0 40px 100px -15px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(216, 187, 132, 0.2);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2794,22 +2812,39 @@ button {
 }
 
 .modal-lightbox .modal-close {
-  top: 16px;
-  right: 18px;
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(216, 187, 132, 0.3);
+  top: 14px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  background: rgba(26, 21, 17, 0.92);
+  border: 1.5px solid rgba(216, 187, 132, 0.55);
   color: #fbf6ee;
-  font-size: 26px;
-  z-index: 30;
-  transition: all 0.25s var(--ease);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+  transition: all 0.3s var(--ease);
+}
+
+.modal-lightbox .modal-close svg {
+  width: 19px;
+  height: 19px;
+  stroke: #fbf6ee;
 }
 
 .modal-lightbox .modal-close:hover {
   background: #b08a4f;
-  color: #1c1813;
-  transform: scale(1.08);
+  border-color: #ffd88a;
+  color: #171310;
+  transform: rotate(90deg) scale(1.12);
+  box-shadow: 0 12px 30px rgba(176, 138, 79, 0.5);
+}
+
+.modal-lightbox .modal-close:hover svg {
+  stroke: #171310;
 }
 
 .lightbox-nav-btn {
@@ -2858,6 +2893,7 @@ button {
   border-radius: 14px;
   background: #0d0b09;
   border: 1px solid rgba(216, 187, 132, 0.2);
+  margin-top: 10px;
   margin-bottom: 16px;
 }
 

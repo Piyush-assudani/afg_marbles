@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://afgmarbles.com/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://afgmarbles.com/gallery/mandir-luxury-sanctum.webp</image:loc>
+      <image:title>Bespoke Makrana Pure White Marble Mandir</image:title>
+      <image:caption>Handcrafted luxury marble home temple with intricate arches and gold inlays by A.F.G Marble &amp; Arts</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://afgmarbles.com/gallery/fountain-estate-triple.webp</image:loc>
+      <image:title>Palatial Triple Tier Estate Marble Fountain</image:title>
+      <image:caption>Monumental hand-carved white marble fountain with fluted basins for luxury residences</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://afgmarbles.com/gallery/mandir-pure-white-om.webp</image:loc>
+      <image:title>Pure White Om Calcite Mandir Consecrated Installation</image:title>
+      <image:caption>Makrana calcite marble home temple with mirror polish and warm illumination</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Pooja Sanctums & Mandirs -->
+  <url>
+    <loc>https://afgmarbles.com/pooja-sanctums.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://afgmarbles.com/gallery/mandir-gold-leaf-mandap.webp</image:loc>
+      <image:title>Gold Leaf Mandap Pooja Sanctum</image:title>
+      <image:caption>Grand garbhagriha marble temple with 24K gold leafing and fluted columns</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://afgmarbles.com/gallery/mandir-radha-krishna.webp</image:loc>
+      <image:title>Radha Krishna Marble Sanctum</image:title>
+      <image:caption>Makrana marble home mandir with hand-carved deity alcoves and jaali backdrops</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Palatial Fountains -->
+  <url>
+    <loc>https://afgmarbles.com/palatial-fountains.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://afgmarbles.com/gallery/fountain-palatial-night.webp</image:loc>
+      <image:title>Illuminated Palatial Tiered Marble Fountain</image:title>
+      <image:caption>Multi-tier courtyard marble fountain engineered for estates and resorts</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://afgmarbles.com/gallery/fountain-lotus-topdown.webp</image:loc>
+      <image:title>Lotus Scalloped Basin Marble Fountain</image:title>
+      <image:caption>Classical scalloped lotus bowl fountain carved from a single block of calcite marble</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Noble Stone & Materials Guide -->
+  <url>
+    <loc>https://afgmarbles.com/materials-guide.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://afgmarbles.com/gallery/stone-makrana-calcite-slab.webp</image:loc>
+      <image:title>Certified Pure Makrana White Calcite Marble</image:title>
+      <image:caption>99% calcite Makrana white marble slab showcasing natural non-porous crystalline structure</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Atelier Experience Centres & Consultation -->
+  <url>
+    <loc>https://afgmarbles.com/contact.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Terms & Conditions -->
+  <url>
+    <loc>https://afgmarbles.com/terms-and-conditions.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://afgmarbles.com/privacy-policy.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+</urlset>

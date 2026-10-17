@@ -1,0 +1,51 @@
+# ==============================================================================
+# A.F.G MARBLE & ARTS — Official Robots.txt
+# https://afgmarbles.com
+# ==============================================================================
+
+# Search Engine Crawlers
+User-agent: *
+Allow: /
+Disallow: /tmp/
+Disallow: /scratch/
+
+# Specific Directives for AI Search & Generative Engines (AI SEO / GEO)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Cohere-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Sitemap Declarations
+Sitemap: https://afgmarbles.com/sitemap.xml
+Host: https://afgmarbles.com
