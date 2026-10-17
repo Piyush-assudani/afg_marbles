@@ -380,39 +380,103 @@ function setupFilterTabsScroll() {
 }
 
 /* ------------------------------------------------------------------
-   Masterpiece Lightbox Modal
+   Masterpiece Lightbox Modal (Click-to-Enlarge)
 ------------------------------------------------------------------- */
 function setupLightbox() {
   const modal = document.getElementById('lightbox-modal');
   const closeBtn = document.getElementById('lightbox-close');
+  const prevBtn = document.getElementById('lightbox-prev');
+  const nextBtn = document.getElementById('lightbox-next');
   const img = document.getElementById('lightbox-img');
   const caption = document.getElementById('lightbox-caption');
   const waBtn = document.getElementById('lightbox-wa-btn');
   if (!modal || !closeBtn || !img) return;
 
-  function openLightbox(src, title) {
-    img.src = src;
-    img.alt = title || 'A.F.G Marble Masterpiece';
-    if (caption) caption.textContent = title || '';
+  // Collect all gallery items across the page for seamless browsing
+  let gallery = [];
+  let currentIndex = 0;
+
+  function buildGallery() {
+    gallery = [];
+    const mediaNodes = document.querySelectorAll(
+      '.sanctum-hero-media, .creation-card .card-media, .cx-slide__media, .insta-item, .bento__cell, .craft-media, .vastu-card-media'
+    );
+    mediaNodes.forEach((node) => {
+      const btn = node.querySelector('.btn-lightbox');
+      const imgEl = node.querySelector('img');
+      const src = btn?.getAttribute('data-src') || imgEl?.currentSrc || imgEl?.getAttribute('src');
+      if (!src) return;
+
+      let title = btn?.getAttribute('data-title');
+      if (!title) {
+        const parentCard = node.closest('.sanctum-hero-card, .creation-card, .cx-slide, .craft-card, .vastu-card, .bento__cell, figure');
+        const heading = parentCard?.querySelector('h3, h4, figcaption');
+        title = heading?.textContent?.trim() || imgEl?.alt || 'A.F.G Marble Masterpiece';
+      }
+
+      if (!gallery.some((item) => item.src === src)) {
+        gallery.push({ src, title });
+      }
+    });
+  }
+
+  buildGallery();
+
+  function renderCurrentItem() {
+    if (gallery.length === 0) return;
+    const item = gallery[currentIndex];
+    img.src = item.src;
+    img.alt = item.title;
+    if (caption) caption.textContent = item.title;
     if (waBtn) {
       const msg = encodeURIComponent(
-        `Hello A.F.G Marble & Arts, I am interested in commissioning a creation like: "${title || 'Masterpiece'}". Please share pricing, custom dimensions, and stone options.`
+        `Hello A.F.G Marble & Arts, I am interested in commissioning a creation like: "${item.title}". Please share pricing, custom dimensions, and stone options.`
       );
       waBtn.href = `https://wa.me/919829012345?text=${msg}`;
     }
-    modal.classList.add('is-open');
+  }
+
+  function openLightbox(src, title) {
+    if (!src) return;
+    buildGallery();
+
+    const foundIdx = gallery.findIndex((item) => item.src === src || src.endsWith(item.src));
+    if (foundIdx !== -1) {
+      currentIndex = foundIdx;
+    } else {
+      gallery.unshift({ src, title: title || 'A.F.G Marble Masterpiece' });
+      currentIndex = 0;
+    }
+
+    renderCurrentItem();
+
+    modal.classList.add('is-open', 'is-active');
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   }
 
   function closeLightbox() {
-    modal.classList.remove('is-open');
+    modal.classList.remove('is-open', 'is-active');
     modal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   }
 
+  function nextItem() {
+    if (gallery.length === 0) return;
+    currentIndex = (currentIndex + 1) % gallery.length;
+    renderCurrentItem();
+  }
+
+  function prevItem() {
+    if (gallery.length === 0) return;
+    currentIndex = (currentIndex - 1 + gallery.length) % gallery.length;
+    renderCurrentItem();
+  }
+
+  // 1. Explicit .btn-lightbox triggers
   document.querySelectorAll('.btn-lightbox').forEach((btn) => {
     btn.addEventListener('click', (e) => {
+      e.preventDefault();
       e.stopPropagation();
       const src = btn.getAttribute('data-src');
       const title = btn.getAttribute('data-title');
@@ -420,12 +484,56 @@ function setupLightbox() {
     });
   });
 
-  closeBtn.addEventListener('click', closeLightbox);
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeLightbox();
+  // 2. Direct click on any media container or its image
+  const zoomableSelectors = [
+    '.sanctum-hero-media',
+    '.creation-card .card-media',
+    '.cx-slide__media',
+    '.insta-item',
+    '.bento__cell',
+    '.craft-media',
+    '.vastu-card-media'
+  ];
+
+  document.querySelectorAll(zoomableSelectors.join(', ')).forEach((container) => {
+    container.style.cursor = 'zoom-in';
+    container.addEventListener('click', (e) => {
+      // Don't hijack whatsapp inquiry links or buttons
+      if (e.target.closest('a') && !e.target.closest('.btn-lightbox')) return;
+      e.preventDefault();
+      e.stopPropagation();
+
+      const btn = container.querySelector('.btn-lightbox');
+      const imgEl = container.querySelector('img');
+      const src = btn?.getAttribute('data-src') || imgEl?.currentSrc || imgEl?.getAttribute('src');
+
+      let title = btn?.getAttribute('data-title');
+      if (!title) {
+        const parentCard = container.closest('.sanctum-hero-card, .creation-card, .cx-slide, .craft-card, .vastu-card, .bento__cell, figure');
+        const heading = parentCard?.querySelector('h3, h4, figcaption');
+        title = heading?.textContent?.trim() || imgEl?.alt || 'A.F.G Marble Masterpiece';
+      }
+
+      if (src) openLightbox(src, title);
+    });
   });
+
+  // Navigation handlers
+  if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prevItem(); });
+  if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); nextItem(); });
+  closeBtn.addEventListener('click', closeLightbox);
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal || e.target.classList.contains('modal-backdrop')) {
+      closeLightbox();
+    }
+  });
+
   window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeLightbox();
+    if (!modal.classList.contains('is-open') && !modal.classList.contains('is-active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') nextItem();
+    if (e.key === 'ArrowLeft') prevItem();
   });
 }
 
@@ -440,14 +548,14 @@ function setupLegalModals() {
 
   function openModal(m) {
     if (!m) return;
-    m.classList.add('is-open');
+    m.classList.add('is-open', 'is-active');
     m.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   }
 
   function closeModal(m) {
     if (!m) return;
-    m.classList.remove('is-open');
+    m.classList.remove('is-open', 'is-active');
     m.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   }

@@ -1914,15 +1914,30 @@
     <div class="modal-backdrop" id="lightbox-modal" aria-hidden="true">
       <div class="modal-box modal-lightbox">
         <button class="modal-close" id="lightbox-close" aria-label="Close image">&times;</button>
-        <img id="lightbox-img" src="" alt="Enlarged masterpiece" />
-        <p class="lightbox-caption" id="lightbox-caption"></p>
-        <div class="lightbox-cta">
-          <a href="#" id="lightbox-wa-btn" target="_blank" rel="noopener noreferrer" class="btn-primary magnetic">
-            <span class="btn-primary__text">Inquire About This Creation</span>
-            <span class="btn-primary__icon">
-              <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.55-3.69 8.24-8.22 8.24z"/></svg>
-            </span>
-          </a>
+        <button class="lightbox-nav-btn lightbox-prev" id="lightbox-prev" type="button" aria-label="Previous masterpiece">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button class="lightbox-nav-btn lightbox-next" id="lightbox-next" type="button" aria-label="Next masterpiece">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
+        
+        <div class="lightbox-img-wrapper">
+          <img id="lightbox-img" src="" alt="Enlarged masterpiece" />
+        </div>
+        
+        <div class="lightbox-footer">
+          <div class="lightbox-meta">
+            <span class="lightbox-eyebrow">A.F.G Marble &amp; Arts · Masterpiece Atelier</span>
+            <p class="lightbox-caption" id="lightbox-caption"></p>
+          </div>
+          <div class="lightbox-cta">
+            <a href="#" id="lightbox-wa-btn" target="_blank" rel="noopener noreferrer" class="btn-primary magnetic">
+              <span class="btn-primary__text">Inquire About This Creation</span>
+              <span class="btn-primary__icon">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.55-3.69 8.24-8.22 8.24z"/></svg>
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </div>

@@ -2407,18 +2407,20 @@ button {
   position: fixed;
   inset: 0;
   z-index: 300;
-  background: rgba(28, 24, 19, 0.72);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(10, 8, 6, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   display: grid;
   place-items: center;
   padding: 24px;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+  z-index: 9999;
 }
 
-.modal-backdrop.is-active {
+.modal-backdrop.is-active,
+.modal-backdrop.is-open {
   opacity: 1;
   visibility: visible;
 }
@@ -2429,14 +2431,15 @@ button {
   border-radius: 20px;
   max-width: 900px;
   width: 100%;
-  max-height: 85vh;
+  max-height: 88vh;
   overflow-y: auto;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
   transform: scale(0.95);
-  transition: transform 0.4s var(--ease);
+  transition: transform 0.35s var(--ease);
 }
 
-.modal-backdrop.is-active .modal-box {
+.modal-backdrop.is-active .modal-box,
+.modal-backdrop.is-open .modal-box {
   transform: scale(1);
 }
 
@@ -2463,30 +2466,144 @@ button {
   color: var(--ivory);
 }
 
+/* Luxury Enlarged Lightbox Modal */
 .modal-lightbox {
-  max-width: 760px;
-  padding: 24px;
+  position: relative;
+  max-width: min(1140px, 94vw);
+  max-height: 94vh;
+  padding: 24px 28px 20px;
   text-align: center;
+  background: #171310;
+  border: 1px solid rgba(216, 187, 132, 0.45);
+  border-radius: 22px;
+  box-shadow: 0 40px 100px -15px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(216, 187, 132, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
 }
 
-.modal-lightbox img {
+.modal-lightbox .modal-close {
+  top: 16px;
+  right: 18px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(216, 187, 132, 0.3);
+  color: #fbf6ee;
+  font-size: 26px;
+  z-index: 30;
+  transition: all 0.25s var(--ease);
+}
+
+.modal-lightbox .modal-close:hover {
+  background: #b08a4f;
+  color: #1c1813;
+  transform: scale(1.08);
+}
+
+.lightbox-nav-btn {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(24, 20, 16, 0.85);
+  border: 1px solid rgba(216, 187, 132, 0.45);
+  color: #fbf6ee;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 25;
+  transition: all 0.25s var(--ease);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-nav-btn:hover {
+  background: #b08a4f;
+  color: #171310;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 12px 30px rgba(176, 138, 79, 0.4);
+}
+
+.lightbox-prev {
+  left: 20px;
+}
+
+.lightbox-next {
+  right: 20px;
+}
+
+.lightbox-img-wrapper {
+  position: relative;
   width: 100%;
-  max-height: 60vh;
-  object-fit: contain;
-  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 68vh;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #0d0b09;
+  border: 1px solid rgba(216, 187, 132, 0.2);
   margin-bottom: 16px;
+}
+
+.lightbox-img-wrapper img {
+  max-width: 100%;
+  max-height: 68vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.4s var(--ease);
+}
+
+.lightbox-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(216, 187, 132, 0.2);
+}
+
+.lightbox-meta {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+  flex: 1;
+}
+
+.lightbox-eyebrow {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-3);
 }
 
 .lightbox-caption {
   font-family: var(--serif);
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 500;
-  color: var(--ink);
-  margin-bottom: 18px;
+  color: #fbf6ee;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
 }
 
 .lightbox-cta {
-  display: inline-block;
+  flex-shrink: 0;
 }
 
 .modal-document {
@@ -3012,6 +3129,7 @@ button {
   aspect-ratio: 16 / 11;
   overflow: hidden;
   background: #f2ece2;
+  cursor: zoom-in;
 }
 
 .sanctum-hero-media img {
@@ -3023,6 +3141,43 @@ button {
 
 .sanctum-hero-card:hover .sanctum-hero-media img {
   transform: scale(1.05);
+}
+
+.sanctum-hero-media .btn-lightbox {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(216, 187, 132, 0.4);
+  color: var(--ink);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  z-index: 5;
+  transition: all 0.3s var(--ease);
+}
+
+.sanctum-hero-card:hover .sanctum-hero-media .btn-lightbox,
+.creation-card:hover .card-media .btn-lightbox {
+  background: #b08a4f;
+  color: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0 8px 24px rgba(176, 138, 79, 0.4);
+}
+
+.card-media,
+.cx-slide__media,
+.insta-item,
+.bento__cell,
+.craft-media,
+.vastu-card-media {
+  cursor: zoom-in;
 }
 
 .sanctum-hero-content {
