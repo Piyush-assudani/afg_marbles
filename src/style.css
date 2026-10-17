@@ -3414,14 +3414,14 @@ button {
   top: 100%;
   left: 50%;
   transform: translate3d(-50%, 12px, 0);
-  width: min(1320px, calc(100vw - 48px));
-  background: rgba(251, 249, 245, 0.97);
-  backdrop-filter: blur(32px) saturate(180%);
-  -webkit-backdrop-filter: blur(32px) saturate(180%);
-  border: 1px solid rgba(216, 187, 132, 0.35);
-  border-radius: 22px;
-  box-shadow: 0 40px 90px -20px rgba(28, 24, 19, 0.22);
-  padding: 32px 36px 20px;
+  width: min(1120px, calc(100vw - 32px));
+  max-width: calc(100vw - 32px);
+  box-sizing: border-box;
+  background: #faf7f2; /* 100% solid opaque luxury ivory - zero background bleed-through */
+  border: 1px solid rgba(216, 187, 132, 0.45);
+  border-radius: 18px;
+  box-shadow: 0 32px 80px -12px rgba(28, 24, 19, 0.28), 0 8px 24px -4px rgba(176, 138, 79, 0.12);
+  padding: 20px 22px 14px;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -3430,6 +3430,7 @@ button {
     transform 0.28s var(--ease),
     visibility 0.28s;
   z-index: 1000;
+  overflow: hidden;
 }
 
 /* Hover bridge between nav and mega menu */
@@ -3453,17 +3454,21 @@ button {
 
 .mega-menu-inner {
   display: grid;
-  grid-template-columns: 290px 1fr;
-  gap: 36px;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 20px;
   align-items: stretch;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* ---------- Categories Column ---------- */
 .mega-categories-col {
   border-right: 1px solid rgba(28, 24, 19, 0.1);
-  padding-right: 24px;
+  padding-right: 16px;
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .mega-col-title {
@@ -3471,39 +3476,42 @@ button {
   font-family: var(--sans);
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.26em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--gold-3);
-  margin-bottom: 18px;
-  padding-left: 12px;
+  margin-bottom: 14px;
+  padding-left: 8px;
 }
 
 .mega-cat-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
+  min-width: 0;
 }
 
 .mega-cat-item {
   border-radius: 12px;
   transition: all 0.25s var(--ease);
+  min-width: 0;
 }
 
 .mega-cat-link {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 12px 14px;
+  gap: 12px;
+  padding: 10px 12px;
   border-radius: 12px;
   color: var(--ink);
   transition: all 0.25s var(--ease);
   position: relative;
+  min-width: 0;
 }
 
 .mega-cat-num {
   font-family: var(--serif);
-  font-size: 14px;
+  font-size: 13px;
   color: var(--gold-3);
   opacity: 0.7;
   font-weight: 500;
@@ -3516,23 +3524,31 @@ button {
   flex-direction: column;
   gap: 2px;
   flex: 1;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .mega-cat-name {
   font-family: var(--sans);
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 550;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   color: var(--ink);
   transition: color 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .mega-cat-desc {
   font-family: var(--sans);
-  font-size: 11px;
+  font-size: 10.5px;
   color: var(--ink-3);
   font-weight: 400;
   letter-spacing: 0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .mega-cat-chevron {
@@ -3569,12 +3585,16 @@ button {
 /* ---------- Showcase Column ---------- */
 .mega-showcase-col {
   position: relative;
-  min-height: 320px;
+  min-height: 290px;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .mega-panel {
   display: none;
   animation: megaFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  min-width: 0;
+  width: 100%;
 }
 
 .mega-panel.is-active {
@@ -3596,22 +3616,27 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
-  padding: 0 4px;
+  margin-bottom: 14px;
+  padding: 0 2px;
+  min-width: 0;
 }
 
 .mega-panel-tag {
   font-family: var(--sans);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--ink-3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 12px;
 }
 
 .mega-panel-viewall {
   font-family: var(--sans);
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -3620,6 +3645,8 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .mega-panel-viewall:hover {
@@ -3629,40 +3656,49 @@ button {
 
 .mega-cards-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .mega-card {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  border-radius: 14px;
-  padding: 8px;
-  background: transparent;
-  transition: all 0.3s var(--ease);
+  gap: 6px;
+  border-radius: 10px;
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(28, 24, 19, 0.06);
+  transition: all 0.25s var(--ease);
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .mega-card:hover {
-  background: rgba(255, 255, 255, 0.65);
-  transform: translateY(-4px);
-  box-shadow: 0 14px 30px -10px rgba(28, 24, 19, 0.12);
+  background: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -8px rgba(28, 24, 19, 0.12);
+  border-color: rgba(216, 187, 132, 0.35);
 }
 
 .mega-card-img {
   position: relative;
   width: 100%;
-  aspect-ratio: 3.8 / 4.4;
-  border-radius: 12px;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
   overflow: hidden;
   background: var(--ivory-2);
   border: 1px solid rgba(28, 24, 19, 0.08);
+  box-sizing: border-box;
 }
 
 .mega-card-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: transform 0.8s var(--ease);
 }
 
@@ -3672,55 +3708,64 @@ button {
 
 .mega-badge {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 6px;
+  left: 6px;
   font-family: var(--sans);
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #fbf6ee;
-  background: rgba(20, 16, 12, 0.65);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(20, 16, 12, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   border: 1px solid rgba(216, 187, 132, 0.35);
-  padding: 4px 8px;
+  padding: 2.5px 6px;
   border-radius: 999px;
   pointer-events: none;
+  z-index: 2;
 }
 
 .mega-card-info {
   display: flex;
   flex-direction: column;
-  gap: 3px;
-  padding: 0 4px;
+  gap: 2px;
+  padding: 2px 2px 0;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .mega-card-info h4 {
   font-family: var(--serif);
-  font-size: 14.5px;
+  font-size: 11.5px;
   font-weight: 500;
   color: var(--ink);
   line-height: 1.25;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .mega-card-info p {
   font-family: var(--sans);
-  font-size: 11px;
+  font-size: 10px;
   color: var(--ink-3);
-  line-height: 1.4;
+  line-height: 1.3;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 /* ---------- Mega Menu Bottom Footer Bar ---------- */
 .mega-menu-footer {
-  margin-top: 24px;
-  padding-top: 16px;
+  margin-top: 18px;
+  padding-top: 14px;
   border-top: 1px solid rgba(28, 24, 19, 0.08);
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: var(--sans);
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--ink-2);
 }
 
