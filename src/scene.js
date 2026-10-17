@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import gsap from 'gsap';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
-import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -21,7 +21,7 @@ export const STONES = [
  * Polished marble with seamless triplanar mapping (object space) and an
  * animated, gold-edged "wipe" used to transform the temple between stones.
  */
-function makeMarbleMaterial(map, { scale = 0.2, minY = 0, maxY = 7, roughness = 0.2 } = {}) {
+function makeMarbleMaterial(map, { scale = 0.52, minY = 0.25, maxY = 5.55, roughness = 0.2 } = {}) {
   const uniforms = {
     uMapA: { value: map },
     uMapB: { value: map },
@@ -29,6 +29,7 @@ function makeMarbleMaterial(map, { scale = 0.2, minY = 0, maxY = 7, roughness = 
     uScale: { value: scale },
     uMinY: { value: minY },
     uMaxY: { value: maxY },
+    uTurntableInverse: { value: new THREE.Matrix4() },
   };
 
   const mat = new THREE.MeshPhysicalMaterial({
@@ -48,14 +49,17 @@ function makeMarbleMaterial(map, { scale = 0.2, minY = 0, maxY = 7, roughness = 
       .replace(
         '#include <common>',
         /* glsl */ `#include <common>
-        varying vec3 vTriPos;
-        varying vec3 vTriNormal;`
+        uniform mat4 uTurntableInverse;
+        varying vec3 vTurntablePos;
+        varying vec3 vTurntableNormal;`
       )
       .replace(
         '#include <begin_vertex>',
         /* glsl */ `#include <begin_vertex>
-        vTriPos = position;
-        vTriNormal = normal;`
+        vec4 wPos = modelMatrix * vec4(position, 1.0);
+        vec4 ttPos = uTurntableInverse * wPos;
+        vTurntablePos = ttPos.xyz;
+        vTurntableNormal = normalize((uTurntableInverse * modelMatrix * vec4(normal, 0.0)).xyz);`
       );
 
     shader.fragmentShader = shader.fragmentShader
@@ -68,8 +72,8 @@ function makeMarbleMaterial(map, { scale = 0.2, minY = 0, maxY = 7, roughness = 
         uniform float uScale;
         uniform float uMinY;
         uniform float uMaxY;
-        varying vec3 vTriPos;
-        varying vec3 vTriNormal;
+        varying vec3 vTurntablePos;
+        varying vec3 vTurntableNormal;
 
         vec3 triplanar(sampler2D t, vec3 p, vec3 n) {
           vec3 b = pow(abs(n), vec3(6.0));
@@ -83,22 +87,27 @@ function makeMarbleMaterial(map, { scale = 0.2, minY = 0, maxY = 7, roughness = 
       .replace(
         '#include <map_fragment>',
         /* glsl */ `#include <map_fragment>
-        vec3 tN = normalize(vTriNormal);
-        vec3 stoneA = triplanar(uMapA, vTriPos, tN);
-        vec3 stoneB = triplanar(uMapB, vTriPos, tN);
-        float hN = (vTriPos.y - uMinY) / (uMaxY - uMinY);
-        float wNoise = (stoneA.r + stoneB.g) * 0.5 - 0.5;
-        float wEdge = mix(-0.14, 1.14, uMix);
-        float wH = hN + wNoise * 0.22;
-        float wMask = 1.0 - smoothstep(wEdge - 0.01, wEdge + 0.01, wH);
+        vec3 tN = normalize(vTurntableNormal);
+        vec3 stoneA = triplanar(uMapA, vTurntablePos, tN);
+        vec3 stoneB = triplanar(uMapB, vTurntablePos, tN);
+
+        // Continuous vertical height across the entire mandir from plinth (0.27) to finials (5.50)
+        float hN = clamp((vTurntablePos.y - uMinY) / (uMaxY - uMinY), 0.0, 1.0);
+        float wNoise = (stoneA.r * 0.65 + stoneB.g * 0.35) - 0.5;
+        float wEdge = mix(-0.16, 1.16, uMix);
+        float wH = hN + wNoise * 0.16;
+        float wMask = 1.0 - smoothstep(wEdge - 0.02, wEdge + 0.02, wH);
         diffuseColor.rgb *= mix(stoneA, stoneB, wMask);
+
         float wActive = step(0.0005, uMix) * step(uMix, 0.9995);
-        float wLine = (1.0 - smoothstep(0.0, 0.02, abs(wH - wEdge))) * wActive;`
+        float dist = abs(wH - wEdge);
+        float wLine = (1.0 - smoothstep(0.0, 0.032, dist)) * wActive;
+        float wGlow = (1.0 - smoothstep(0.0, 0.12, dist)) * wActive;`
       )
       .replace(
         '#include <emissivemap_fragment>',
         /* glsl */ `#include <emissivemap_fragment>
-        totalEmissiveRadiance += vec3(1.0, 0.7, 0.32) * wLine * 2.4;`
+        totalEmissiveRadiance += (vec3(1.0, 0.86, 0.45) * wLine * 4.6 + vec3(1.0, 0.58, 0.18) * wGlow * 2.0);`
       );
   };
 
@@ -121,198 +130,8 @@ function makeGoldMaterial() {
 
 const v2 = (x, y) => new THREE.Vector2(x, y);
 
-function rbox(w, h, d, r, x = 0, y = 0, z = 0) {
-  const g = new RoundedBoxGeometry(w, h, d, 3, r);
-  g.translate(x, y, z);
-  return g;
-}
-
 function lathe(points, segments = 48) {
   return new THREE.LatheGeometry(points, segments);
-}
-
-function smoothProfile(ctrl, divisions = 64) {
-  return new THREE.SplineCurve(ctrl.map(([x, y]) => v2(x, y))).getPoints(divisions);
-}
-
-/** Carved temple pillar profile (radius, height) */
-function pillarGeometry(H) {
-  const p = [
-    [0.0001, 0], [0.27, 0], [0.27, 0.1], [0.24, 0.12], [0.24, 0.17], [0.27, 0.2],
-    [0.27, 0.24], [0.22, 0.28], [0.18, 0.33], [0.16, 0.4], [0.15, 0.48],
-    [0.143, H * 0.5], [0.138, H * 0.74], [0.15, H * 0.8], [0.19, H * 0.85],
-    [0.225, H * 0.885], [0.205, H * 0.905], [0.245, H * 0.93], [0.275, H * 0.955],
-    [0.275, H], [0.0001, H],
-  ].map(([x, y]) => v2(x, y));
-  return lathe(p, 48);
-}
-
-/** Fluted onion dome (shikhara) */
-function domeGeometry(scale = 1, ribs = 16, ribDepth = 0.04) {
-  const curve = smoothProfile(
-    [
-      [0.9, 0], [1.0, 0.12], [1.06, 0.36], [1.0, 0.66], [0.82, 0.95],
-      [0.52, 1.24], [0.26, 1.46], [0.11, 1.6], [0.06, 1.68],
-    ],
-    80
-  );
-  const pts = [v2(0.0001, 0), ...curve, v2(0.0001, 1.72)].map((p) => p.multiplyScalar(scale));
-  const geo = lathe(pts, 96);
-
-  const pos = geo.attributes.position;
-  const k = ribs / 2;
-  for (let i = 0; i < pos.count; i++) {
-    const x = pos.getX(i);
-    const y = pos.getY(i) / scale;
-    const z = pos.getZ(i);
-    const a = Math.atan2(z, x);
-    const fade = THREE.MathUtils.smoothstep(y, 0.05, 0.3) * (1 - THREE.MathUtils.smoothstep(y, 1.35, 1.6));
-    const f = 1 - ribDepth * fade * (1 - Math.abs(Math.cos(k * a)));
-    pos.setX(i, x * f);
-    pos.setZ(i, z * f);
-  }
-  geo.computeVertexNormals();
-  return geo;
-}
-
-/** Gilded kalash finial */
-function kalashGeometry(scale = 1) {
-  const curve = smoothProfile(
-    [
-      [0.12, 0], [0.15, 0.04], [0.09, 0.09], [0.17, 0.17], [0.2, 0.26], [0.16, 0.35],
-      [0.07, 0.41], [0.11, 0.46], [0.06, 0.5], [0.085, 0.56], [0.04, 0.68], [0.012, 0.78],
-    ],
-    80
-  );
-  const pts = [v2(0.0001, 0), ...curve, v2(0.0001, 0.8)].map((p) => p.multiplyScalar(scale));
-  return lathe(pts, 40);
-}
-
-/** Small drum ring under domes */
-function drumGeometry(r = 1, h = 0.32) {
-  const p = [
-    [0.0001, 0], [r * 1.06, 0], [r * 1.06, h * 0.2], [r, h * 0.26], [r, h * 0.78],
-    [r * 1.04, h * 0.86], [r * 1.04, h], [0.0001, h],
-  ].map(([x, y]) => v2(x, y));
-  return lathe(p, 96);
-}
-
-/** Multifoil (Mughal/Rajput cusped) arch outline points */
-function archPoints({ r, amp, lobes, spring, off = 0, N = 160 }) {
-  const rr = (t) => r - amp * (1 - Math.abs(Math.sin(lobes * t)));
-  const jx = r - amp;
-  const pts = [v2(-(jx + off), 0), v2(-(jx + off), spring)];
-  for (let i = 0; i <= N; i++) {
-    const t = Math.PI - (i / N) * Math.PI;
-    const R = rr(t) + off;
-    pts.push(v2(Math.cos(t) * R, spring + Math.sin(t) * R));
-  }
-  pts.push(v2(jx + off, spring), v2(jx + off, 0));
-  return pts;
-}
-
-/** Arch panel (marble) + gold inlay outline, both in local panel space */
-function archPanel({ w, h, jamb, spring, lobes = 7, amp = 0.06, depth = 0.1 }) {
-  const r = w / 2 - jamb;
-  const inner = archPoints({ r, amp, lobes, spring });
-
-  const shape = new THREE.Shape();
-  shape.moveTo(-w / 2, 0);
-  shape.lineTo(inner[0].x, 0);
-  inner.forEach((p) => shape.lineTo(p.x, p.y));
-  shape.lineTo(w / 2, 0);
-  shape.lineTo(w / 2, h);
-  shape.lineTo(-w / 2, h);
-  shape.lineTo(-w / 2, 0);
-
-  const bevel = 0.02;
-  const marble = new THREE.ExtrudeGeometry(shape, {
-    depth,
-    bevelEnabled: true,
-    bevelThickness: bevel,
-    bevelSize: bevel,
-    bevelSegments: 2,
-    curveSegments: 4,
-  });
-  marble.translate(0, 0, -depth / 2);
-
-  const trimPts = archPoints({ r, amp, lobes, spring, off: 0.06, N: 220 }).map(
-    (p) => new THREE.Vector3(p.x, p.y, depth / 2 + bevel + 0.004)
-  );
-  const curve = new THREE.CatmullRomCurve3(trimPts, false, 'catmullrom', 0.0);
-  const trim = new THREE.TubeGeometry(curve, 400, 0.014, 6, false);
-
-  return { marble, trim };
-}
-
-/** Procedural gold lotus mandala (canvas) */
-function mandalaTexture() {
-  const c = document.createElement('canvas');
-  c.width = c.height = 1024;
-  const g = c.getContext('2d');
-  g.translate(512, 512);
-  const grad = g.createLinearGradient(-420, -420, 420, 420);
-  grad.addColorStop(0, '#fbe6b0');
-  grad.addColorStop(0.45, '#c8963e');
-  grad.addColorStop(0.7, '#f3d590');
-  grad.addColorStop(1, '#b07f33');
-  g.strokeStyle = grad;
-  g.fillStyle = grad;
-  g.lineCap = 'round';
-
-  g.lineWidth = 7;
-  [480, 452].forEach((r) => {
-    g.beginPath();
-    g.arc(0, 0, r, 0, Math.PI * 2);
-    g.stroke();
-  });
-  for (let i = 0; i < 64; i++) {
-    const a = (i / 64) * Math.PI * 2;
-    g.beginPath();
-    g.arc(Math.cos(a) * 466, Math.sin(a) * 466, 5, 0, Math.PI * 2);
-    g.fill();
-  }
-  for (let i = 0; i < 16; i++) {
-    g.save();
-    g.rotate((i * Math.PI) / 8);
-    g.lineWidth = 6;
-    g.beginPath();
-    g.moveTo(0, -150);
-    g.bezierCurveTo(78, -230, 64, -370, 0, -428);
-    g.bezierCurveTo(-64, -370, -78, -230, 0, -150);
-    g.stroke();
-    g.beginPath();
-    g.moveTo(0, -196);
-    g.bezierCurveTo(30, -250, 26, -330, 0, -372);
-    g.bezierCurveTo(-26, -330, -30, -250, 0, -196);
-    g.fill();
-    g.restore();
-  }
-  for (let i = 0; i < 8; i++) {
-    g.save();
-    g.rotate((i * Math.PI) / 4 + Math.PI / 8);
-    g.lineWidth = 6;
-    g.beginPath();
-    g.moveTo(0, -70);
-    g.bezierCurveTo(56, -110, 50, -180, 0, -220);
-    g.bezierCurveTo(-50, -180, -56, -110, 0, -70);
-    g.stroke();
-    g.restore();
-  }
-  g.lineWidth = 6;
-  [130, 66].forEach((r) => {
-    g.beginPath();
-    g.arc(0, 0, r, 0, Math.PI * 2);
-    g.stroke();
-  });
-  g.beginPath();
-  g.arc(0, 0, 30, 0, Math.PI * 2);
-  g.fill();
-
-  const tex = new THREE.CanvasTexture(c);
-  tex.colorSpace = THREE.SRGBColorSpace;
-  tex.anisotropy = 8;
-  return tex;
 }
 
 function radialTexture(stops, size = 256) {
@@ -326,213 +145,6 @@ function radialTexture(stops, size = 256) {
   const tex = new THREE.CanvasTexture(c);
   tex.colorSpace = THREE.SRGBColorSpace;
   return tex;
-}
-
-/* ------------------------------------------------------------------
-   Temple builder
-------------------------------------------------------------------- */
-
-function buildTemple(marble, gold) {
-  const temple = new THREE.Group();
-  const layers = [];
-  const anchors = {};
-
-  const newLayer = (name) => {
-    const g = new THREE.Group();
-    g.name = name;
-    temple.add(g);
-    layers.push(g);
-    return g;
-  };
-  const add = (layer, geo, mat = marble) => {
-    const m = new THREE.Mesh(geo, mat);
-    m.castShadow = true;
-    m.receiveShadow = true;
-    layer.add(m);
-    return m;
-  };
-
-  const Y0 = 0.3; // top of podium
-  const H = 2.3; // pillar height
-  const PX = 1.55;
-  const PZ = 1.05;
-
-  /* --- Adhisthana (stepped base) --- */
-  const L1 = newLayer('base');
-  add(L1, rbox(4.4, 0.34, 3.4, 0.04, 0, Y0 + 0.17, 0));
-  add(L1, rbox(4.06, 0.3, 3.06, 0.04, 0, Y0 + 0.49, 0));
-  add(L1, rbox(4.09, 0.035, 3.09, 0.012, 0, Y0 + 0.66, 0), gold);
-  add(L1, rbox(3.76, 0.26, 2.76, 0.04, 0, Y0 + 0.8, 0));
-  const baseTop = Y0 + 0.93;
-
-  /* --- Pillars --- */
-  const L2 = newLayer('pillars');
-  [[-PX, PZ], [PX, PZ], [-PX, -PZ], [PX, -PZ]].forEach(([x, z]) => {
-    const p = pillarGeometry(H);
-    p.translate(x, baseTop, z);
-    add(L2, p);
-    [[0.46, 0.158], [H * 0.79, 0.146]].forEach(([y, r]) => {
-      const ring = new THREE.TorusGeometry(r, 0.02, 10, 48);
-      ring.rotateX(Math.PI / 2);
-      ring.translate(x, baseTop + y, z);
-      add(L2, ring, gold);
-    });
-  });
-  anchors.pillar = new THREE.Vector3(-PX - 0.18, baseTop + H * 0.62, PZ + 0.1);
-
-  /* --- Arches, back wall & sanctum --- */
-  const L3 = newLayer('arches');
-  const front = archPanel({ w: PX * 2, h: H, jamb: 0.32, spring: 0.8, lobes: 7, amp: 0.06 });
-  front.marble.translate(0, baseTop, PZ);
-  front.trim.translate(0, baseTop, PZ);
-  add(L3, front.marble);
-  add(L3, front.trim, gold);
-
-  [1, -1].forEach((side) => {
-    const sp = archPanel({ w: PZ * 2, h: H, jamb: 0.3, spring: 1.25, lobes: 5, amp: 0.05 });
-    const m = new THREE.Matrix4().makeRotationY((side * Math.PI) / 2);
-    m.setPosition(side * PX, baseTop, 0);
-    sp.marble.applyMatrix4(m);
-    sp.trim.applyMatrix4(m);
-    add(L3, sp.marble);
-    add(L3, sp.trim, gold);
-  });
-
-  add(L3, rbox(PX * 2, H, 0.12, 0.02, 0, baseTop + H / 2, -PZ));
-
-  // Gold mandala inlay on the sanctum wall
-  const medallion = new THREE.Mesh(
-    new THREE.PlaneGeometry(1.25, 1.25),
-    new THREE.MeshStandardMaterial({
-      map: mandalaTexture(),
-      transparent: true,
-      alphaTest: 0.05,
-      metalness: 0.9,
-      roughness: 0.28,
-    })
-  );
-  medallion.position.set(0, baseTop + 1.28, -PZ + 0.07);
-  L3.add(medallion);
-
-  // Diya + flame
-  const diyaGeo = lathe(
-    [v2(0.0001, 0), v2(0.06, 0), v2(0.12, 0.03), v2(0.15, 0.07), v2(0.14, 0.08), v2(0.06, 0.05), v2(0.0001, 0.05)],
-    32
-  );
-  diyaGeo.translate(0, baseTop, 0.15);
-  add(L3, diyaGeo, gold);
-  const stand = rbox(0.9, 0.28, 0.5, 0.03, 0, baseTop + 0.14, -PZ + 0.32);
-  add(L3, stand);
-  add(L3, rbox(0.92, 0.025, 0.52, 0.01, 0, baseTop + 0.285, -PZ + 0.32), gold);
-
-  const flameMat = new THREE.SpriteMaterial({
-    map: radialTexture([
-      [0, 'rgba(255,250,225,1)'],
-      [0.25, 'rgba(255,205,110,0.95)'],
-      [0.6, 'rgba(255,140,40,0.35)'],
-      [1, 'rgba(255,120,20,0)'],
-    ]),
-    transparent: true,
-    depthWrite: false,
-    toneMapped: false,
-  });
-  const flame = new THREE.Sprite(flameMat);
-  flame.scale.set(0.09, 0.18, 1);
-  flame.position.set(0, baseTop + 0.16, 0.15);
-  L3.add(flame);
-
-  const glow = new THREE.Sprite(
-    new THREE.SpriteMaterial({
-      map: radialTexture([
-        [0, 'rgba(255,190,100,0.55)'],
-        [0.4, 'rgba(255,170,80,0.18)'],
-        [1, 'rgba(255,170,80,0)'],
-      ]),
-      transparent: true,
-      depthWrite: false,
-      toneMapped: false,
-    })
-  );
-  glow.scale.set(1.1, 1.1, 1);
-  glow.position.copy(flame.position);
-  L3.add(glow);
-
-  const diyaLight = new THREE.PointLight('#ffb15e', 3, 3.2, 1.6);
-  diyaLight.position.set(0, baseTop + 0.35, 0.2);
-  L3.add(diyaLight);
-
-  /* --- Entablature & chajja --- */
-  const L4 = newLayer('entablature');
-  const eTop = baseTop + H;
-  add(L4, rbox(3.78, 0.14, 2.78, 0.03, 0, eTop + 0.07, 0));
-  add(L4, rbox(3.8, 0.035, 2.8, 0.012, 0, eTop + 0.157, 0), gold);
-  add(L4, rbox(4.24, 0.1, 3.24, 0.035, 0, eTop + 0.225, 0));
-  add(L4, rbox(3.5, 0.22, 2.5, 0.03, 0, eTop + 0.385, 0));
-  const pTop = eTop + 0.495;
-
-  // Gilded lotus buds along the parapet
-  const budGeo = kalashGeometry(0.32);
-  const budPositions = [];
-  for (let x = -1.5; x <= 1.501; x += 0.5) {
-    budPositions.push([x, 1.08], [x, -1.08]);
-  }
-  for (let z = -0.54; z <= 0.541; z += 0.54) {
-    budPositions.push([1.58, z], [-1.58, z]);
-  }
-  const buds = new THREE.InstancedMesh(budGeo, gold, budPositions.length);
-  const dummy = new THREE.Object3D();
-  budPositions.forEach(([x, z], i) => {
-    dummy.position.set(x, pTop, z);
-    dummy.updateMatrix();
-    buds.setMatrixAt(i, dummy.matrix);
-  });
-  buds.castShadow = true;
-  L4.add(buds);
-
-  /* --- Dome & chhatris --- */
-  const L5 = newLayer('dome');
-  const drum = drumGeometry(0.94, 0.32);
-  drum.translate(0, pTop, 0);
-  add(L5, drum);
-  const dRing = new THREE.TorusGeometry(0.985, 0.024, 12, 96);
-  dRing.rotateX(Math.PI / 2);
-  dRing.translate(0, pTop + 0.3, 0);
-  add(L5, dRing, gold);
-
-  const dTop = pTop + 0.32;
-  const dome = domeGeometry(1, 16, 0.045);
-  dome.translate(0, dTop, 0);
-  add(L5, dome);
-
-  [[-1.38, 0.88], [1.38, 0.88], [-1.38, -0.88], [1.38, -0.88]].forEach(([x, z]) => {
-    const d = drumGeometry(0.28, 0.12);
-    d.translate(x, pTop, z);
-    add(L5, d);
-    const cd = domeGeometry(0.3, 12, 0.05);
-    cd.translate(x, pTop + 0.12, z);
-    add(L5, cd);
-    const ck = kalashGeometry(0.42);
-    ck.translate(x, pTop + 0.12 + 0.3 * 1.7, z);
-    add(L5, ck, gold);
-  });
-
-  /* --- Kalash --- */
-  const L6 = newLayer('kalash');
-  const kY = dTop + 1.72 - 0.05;
-  const kalash = kalashGeometry(1);
-  kalash.translate(0, kY, 0);
-  add(L6, kalash, gold);
-  anchors.kalash = new THREE.Vector3(0.08, kY + 0.3, 0);
-
-  return {
-    temple,
-    layers,
-    anchors,
-    flame,
-    glow,
-    diyaLight,
-    height: kY + 0.8,
-  };
 }
 
 /* ------------------------------------------------------------------
@@ -610,7 +222,6 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     powerPreference: 'high-performance',
     stencil: false,
   });
-  // Supersample on 1x displays to remove jagged/pixelated edges; cap at 2 for perf
   const isSmallScreen = window.innerWidth < 821;
   renderer.setPixelRatio(Math.min(Math.max(window.devicePixelRatio, isSmallScreen ? 1.5 : 1.75), 2));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -626,13 +237,22 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
   scene.environmentIntensity = 0.85;
 
   const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 100);
-  const camBase = new THREE.Vector3(0, 3.6, 15);
-  const lookBase = new THREE.Vector3(0, 3.3, 0);
+  const camBase = new THREE.Vector3(0, 3.7, 15.5);
+  const lookBase = new THREE.Vector3(0, 3.25, 0);
   const camIntro = { z: 0, y: 0, x: 0 };
   const lookAt = new THREE.Vector3();
 
-  /* --- Textures --- */
-  const manager = new THREE.LoadingManager();
+  /* --- Textures & Model Loading --- */
+  let readyResolve;
+  const ready = new Promise((resolve) => {
+    readyResolve = resolve;
+  });
+
+  const manager = new THREE.LoadingManager(
+    () => readyResolve?.(),
+    (_url, loaded, total) => onProgress?.(loaded / total),
+    (url) => console.warn('Loading warning on asset:', url)
+  );
   const loader = new THREE.TextureLoader(manager);
   const maxAniso = renderer.capabilities.getMaxAnisotropy();
   const textures = {};
@@ -646,10 +266,50 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     t.anisotropy = maxAniso;
     textures[s.key] = t;
   });
-  const ready = new Promise((resolve) => {
-    manager.onProgress = (_url, loaded, total) => onProgress?.(loaded / total);
-    manager.onLoad = resolve;
+
+  const templeMat = makeMarbleMaterial(textures.makrana, { scale: 0.18, minY: 0.25, maxY: 5.55 });
+  const podiumMat = makeMarbleMaterial(textures.calacatta, { scale: 0.17, roughness: 0.16 });
+  const gold = makeGoldMaterial();
+
+  const pickables = [];
+  const mandirGroup = new THREE.Group();
+
+  const gltfLoader = new GLTFLoader(manager);
+  const gltfPromise = new Promise((resolve, reject) => {
+    gltfLoader.load(
+      `${BASE}models/mandir_premium_v4.glb`,
+      (gltf) => {
+        const mandir = gltf.scene;
+        mandir.scale.setScalar(2.25);
+        mandir.position.set(0, 0.3, 0);
+
+        mandir.traverse((child) => {
+          if (child.isMesh) {
+            child.castShadow = true;
+            child.receiveShadow = true;
+            pickables.push(child);
+
+            const matName = child.material?.name || '';
+            // Apply marble triplanar shader to the marble surfaces
+            if (matName.includes('Marble_White') || matName.includes('Marble_Cream') || matName.includes('Ivory_Gloss') || matName.includes('Marble_Dark')) {
+              child.material = templeMat;
+            } else if (matName.includes('Gold')) {
+              child.material = gold;
+            }
+          }
+        });
+
+        mandirGroup.add(mandir);
+        resolve(gltf);
+      },
+      undefined,
+      (err) => {
+        console.error('Failed to load mandir_premium_v4.glb:', err);
+        reject(err);
+      }
+    );
   });
+
 
   /* --- Lights --- */
   const hemi = new THREE.HemisphereLight('#fff7ec', '#d9c8ad', 0.9);
@@ -678,10 +338,6 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
   const turntable = new THREE.Group();
   stage.add(turntable);
 
-  const templeMat = makeMarbleMaterial(textures.makrana, { scale: 0.19, minY: 0.3, maxY: 7 });
-  const podiumMat = makeMarbleMaterial(textures.calacatta, { scale: 0.17, roughness: 0.16 });
-  const gold = makeGoldMaterial();
-
   // Podium (turntable)
   const podiumLayer = new THREE.Group();
   const podium = new THREE.Mesh(
@@ -699,15 +355,21 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
   podiumLayer.add(podium, podiumRing);
   turntable.add(podiumLayer);
 
-  const T = buildTemple(templeMat, gold);
-  turntable.add(T.temple);
+  // Add the 3D mandir model to turntable
+  turntable.add(mandirGroup);
 
+  // Sanctum Diya Light inside the mandir
+  const diyaLight = new THREE.PointLight('#ffaa44', 3.8, 8, 1.8);
+  diyaLight.position.set(0, 2.7, 0.35);
+  turntable.add(diyaLight);
+
+  // Hotspot Anchors for Pillar and Kalash
   const hotspotAnchors = {
     pillar: new THREE.Object3D(),
     kalash: new THREE.Object3D(),
   };
-  hotspotAnchors.pillar.position.copy(T.anchors.pillar);
-  hotspotAnchors.kalash.position.copy(T.anchors.kalash);
+  hotspotAnchors.pillar.position.set(-1.05, 3.0, 0.35);
+  hotspotAnchors.kalash.position.set(0, 5.25, 0.1);
   turntable.add(hotspotAnchors.pillar, hotspotAnchors.kalash);
 
   // Shadow catcher + soft contact shadow
@@ -744,10 +406,6 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
   const bead = new THREE.Mesh(new THREE.SphereGeometry(0.07, 24, 24), gold);
   halo.add(haloA, haloB, bead);
   stage.add(halo);
-
-  // Floating marble samples (removed as requested)
-  const slabDefs = [];
-  const slabs = [];
 
   const dust = buildDust();
   stage.add(dust);
@@ -800,8 +458,6 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
   let introDone = false;
   const raycaster = new THREE.Raycaster();
   const ndc = new THREE.Vector2();
-  const pickables = [...slabs];
-  T.temple.traverse((o) => o.isMesh && pickables.push(o));
   pickables.push(podium);
   let hovered = null;
   let hoverKey = '';
@@ -891,10 +547,33 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     const u = templeMat.userData.uniforms;
     u.uMapB.value = textures[key];
     u.uMix.value = 0;
-    rotVel += 2.2;
+
+    // Gently orient the mandir to face its front presentation angle so sanctum & ॐ stay in full view
+    const frontAngle = 0.38;
+    const turns = Math.round((turntable.rotation.y - frontAngle) / (Math.PI * 2));
+    const targetY = turns * (Math.PI * 2) + frontAngle;
+    rotVel = 0;
+    gsap.to(turntable.rotation, {
+      y: targetY,
+      duration: 1.4,
+      ease: 'power2.out',
+    });
+
+    // Swirl golden dust particles during transformation
+    if (dust?.material?.uniforms?.uOpacity) {
+      gsap.to(dust.material.uniforms.uOpacity, {
+        value: 1.6,
+        duration: 0.9,
+        yoyo: true,
+        repeat: 1,
+        ease: 'power2.out',
+      });
+    }
+
+    // Majestic vertical energy wave across the full height of the mandir
     gsap.to(u.uMix, {
       value: 1,
-      duration: 2,
+      duration: 2.2,
       ease: 'power2.inOut',
       onComplete: () => {
         u.uMapA.value = textures[key];
@@ -902,18 +581,18 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
         transitioning = false;
       },
     });
-    gsap.fromTo(T.diyaLight, { intensity: 7 }, { intensity: 3, duration: 2, ease: 'power2.out' });
-    const slab = slabs.find((s) => s.userData.key === key);
-    if (slab) gsap.to(slab.userData, { spin: slab.userData.spin + Math.PI * 2, duration: 1.6, ease: 'expo.out' });
+
+    if (diyaLight) {
+      gsap.fromTo(diyaLight, { intensity: 7.5 }, { intensity: 3.8, duration: 2.2, ease: 'power2.out' });
+    }
     return true;
   }
 
   /* --- Intro --- */
   function prepareIntro() {
-    T.layers.forEach((l) => (l.visible = false));
+    mandirGroup.visible = false;
     podiumLayer.visible = false;
     halo.scale.setScalar(0.001);
-    slabs.forEach((s) => s.scale.setScalar(0.001));
     contact.material.opacity = 0;
   }
 
@@ -938,20 +617,18 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
       { x: 1, y: 1, z: 1, duration: 1.6, ease: 'expo.out', onStart: () => (podiumLayer.visible = true) },
       0.1
     );
-    T.layers.forEach((layer, i) => {
-      tl.fromTo(
-        layer.position,
-        { y: 3.2 + i * 0.4 },
-        { y: 0, duration: 1.7, ease: 'expo.out', onStart: () => (layer.visible = true) },
-        0.3 + i * 0.13
-      );
-    });
+
+    tl.fromTo(
+      mandirGroup.position,
+      { y: 3.2 },
+      { y: 0, duration: 1.8, ease: 'expo.out', onStart: () => (mandirGroup.visible = true) },
+      0.3
+    );
+
     tl.to(halo.scale, { x: 1, y: 1, z: 1, duration: 2.2, ease: 'expo.out' }, 0.9);
     tl.fromTo(halo.rotation, { z: -1.2 }, { z: 0, duration: 2.6, ease: 'expo.out' }, 0.9);
-    slabs.forEach((s, i) => {
-      tl.to(s.scale, { x: 1, y: 1, z: 1, duration: 2, ease: 'expo.out' }, 1.2 + i * 0.12);
-    });
     tl.to(dust.material.uniforms.uOpacity, { value: 1, duration: 2.5 }, 1);
+
     // Ceremonial stone reveal on load: sweep a golden line up the temple
     tl.call(() => {
       const u = templeMat.userData.uniforms;
@@ -1014,6 +691,15 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
       turntable.rotation.y += rotVel * dt;
     }
 
+    // Update turntable inverse matrix for stone mapping
+    if (templeMat.userData.uniforms?.uTurntableInverse) {
+      turntable.updateWorldMatrix(true, false);
+      templeMat.userData.uniforms.uTurntableInverse.value.copy(turntable.matrixWorld).invert();
+    }
+    if (podiumMat.userData.uniforms?.uTurntableInverse) {
+      podiumMat.userData.uniforms.uTurntableInverse.value.copy(turntable.matrixWorld).invert();
+    }
+
     // Camera parallax
     pointer.sx += (pointer.nx - pointer.sx) * (1 - Math.exp(-dt * 1.8));
     pointer.sy += (pointer.ny - pointer.sy) * (1 - Math.exp(-dt * 1.8));
@@ -1030,29 +716,9 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     haloB.rotation.x = Math.cos(t * 0.3) * 0.3;
     bead.position.set(Math.cos(t * 0.5) * 3.25, Math.sin(t * 0.5) * 3.25, 0);
 
-    // Slabs
-    slabs.forEach((s) => {
-      const u = s.userData;
-      const target = hovered === s ? 1 : 0;
-      u.hover += (target - u.hover) * (1 - Math.exp(-dt * 5));
-      s.position.set(
-        u.base.x - pointer.sx * 0.25 * (1 + u.i * 0.2),
-        u.base.y + Math.sin(t * 0.7 + u.i * 1.7) * 0.16,
-        u.base.z + u.hover * 0.6
-      );
-      s.rotation.set(
-        u.rot.x + Math.sin(t * 0.5 + u.i) * 0.12,
-        u.rot.y + Math.cos(t * 0.4 + u.i) * 0.15 + u.spin - u.hover * u.rot.y * 0.8,
-        u.rot.z + Math.sin(t * 0.3 + u.i * 2) * 0.06
-      );
-      if (s.scale.x > 0.01 && introDone) s.scale.setScalar(1 + u.hover * 0.14);
-    });
-
     // Diya flicker
     const flick = Math.sin(t * 13) * 0.08 + Math.sin(t * 7.3) * 0.06 + Math.sin(t * 23.7) * 0.04;
-    T.flame.scale.set(0.09 + flick * 0.05, 0.18 + flick * 0.12, 1);
-    T.glow.material.opacity = 0.85 + flick;
-    if (!gsap.isTweening(T.diyaLight)) T.diyaLight.intensity = 3 + flick * 6;
+    if (diyaLight && !gsap.isTweening(diyaLight)) diyaLight.intensity = 3.5 + flick * 5;
 
     dust.material.uniforms.uTime.value = t;
 
@@ -1063,9 +729,8 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
   }
 
   async function warmup() {
-    // Compile all programs while everything is visible (hidden behind loader)
-    if (renderer.compileAsync) await renderer.compileAsync(scene, camera);
-    else renderer.compile(scene, camera);
+    await gltfPromise;
+    renderer.compile(scene, camera);
     renderer.render(scene, camera);
     prepareIntro();
   }

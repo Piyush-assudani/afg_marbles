@@ -888,6 +888,19 @@ button {
 .swatch.is-active::after {
   opacity: 1;
   transform: scale(1);
+  box-shadow: 0 0 12px rgba(176, 138, 79, 0.45);
+  animation: swatchPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes swatchPulse {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(176, 138, 79, 0.35);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(212, 175, 55, 0.7);
+    transform: scale(1.08);
+  }
 }
 
 .swatch__tip {
@@ -3031,8 +3044,8 @@ button {
 @media (max-width: 600px) {
   .floating-wa,
   .floating-whatsapp {
-    bottom: 20px;
-    right: 20px;
+    bottom: 74px;
+    right: 18px;
   }
   .floating-wa-btn {
     width: 50px;

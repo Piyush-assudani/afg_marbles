@@ -73,7 +73,7 @@ function selectStone(idx, exp) {
   activeStoneIndex = idx;
   const stone = STONES[idx];
 
-  // Update Swatch UI
+  // Update Swatch UI with spring bounce
   const swatches = Array.from(swatchesContainer.children);
   swatches.forEach((sw, i) => {
     const isActive = i === idx;
@@ -81,7 +81,23 @@ function selectStone(idx, exp) {
     sw.setAttribute('aria-checked', isActive ? 'true' : 'false');
   });
 
+  const activeBtn = swatches[idx];
+  if (activeBtn) {
+    gsap.fromTo(
+      activeBtn,
+      { scale: 0.8 },
+      {
+        scale: 1.2,
+        duration: 0.35,
+        ease: 'back.out(2.6)',
+        onComplete: () => gsap.to(activeBtn, { scale: 1.0, duration: 0.22, ease: 'power2.out' }),
+      }
+    );
+  }
+
+  // Stone index number roll
   stoneIdx.textContent = String(idx + 1).padStart(2, '0');
+  gsap.fromTo(stoneIdx, { y: -10, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: 'power2.out' });
 
   // Trigger 3D wipe shader
   exp.setStone(stone.key);
@@ -90,6 +106,7 @@ function selectStone(idx, exp) {
   gsap.to([stoneName, stoneOrigin], {
     y: -12,
     opacity: 0,
+    filter: 'blur(4px)',
     duration: 0.25,
     ease: 'power2.in',
     onComplete: () => {
@@ -99,8 +116,14 @@ function selectStone(idx, exp) {
 
       gsap.fromTo(
         [stoneName, stoneOrigin],
-        { y: 14, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.5, ease: 'power2.out', stagger: 0.08 }
+        { y: 16, opacity: 0, filter: 'blur(6px)' },
+        { y: 0, opacity: 1, filter: 'blur(0px)', duration: 0.55, ease: 'power2.out', stagger: 0.08, clearProps: 'filter' }
+      );
+
+      gsap.fromTo(
+        nicheWord,
+        { opacity: 0, scale: 0.94, filter: 'blur(10px)' },
+        { opacity: 1, scale: 1, filter: 'blur(0px)', duration: 0.85, ease: 'expo.out', clearProps: 'filter' }
       );
     },
   });
