@@ -1,6 +1,6 @@
 # ==============================================================================
 # A.F.G MARBLE & ARTS — Official Robots.txt
-# https://afgmarbles.com
+# https://afgmarbel.com
 # ==============================================================================
 
 # Search Engine Crawlers
@@ -47,5 +47,5 @@ User-agent: CCBot
 Allow: /
 
 # Sitemap Declarations
-Sitemap: https://afgmarbles.com/sitemap.xml
-Host: https://afgmarbles.com
+Sitemap: https://afgmarbel.com/sitemap.xml
+Host: https://afgmarbel.com

@@ -244,7 +244,7 @@ function initFrameShield() {
   } catch (err) {
     // If blocked by cross-origin policy, blank out document
     try {
-      document.body.innerHTML = '<div style="padding:40px;text-align:center;font-family:sans-serif;">Direct access required. Visit <a href="https://afgmarbles.com/">afgmarbles.com</a></div>';
+      document.body.innerHTML = '<div style="padding:40px;text-align:center;font-family:sans-serif;">Direct access required. Visit <a href="https://afgmarbel.com/">afgmarbel.com</a></div>';
     } catch (e) {}
   }
 }
