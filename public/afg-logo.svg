@@ -53,9 +53,9 @@
   <text x="260" y="260" 
         text-anchor="middle" 
         fill="url(#bronzeGrad)" 
-        font-family="'Manrope', 'Cinzel', 'Trajan Pro', serif" 
+        font-family="'Jost', 'Marcellus', 'Bodoni Moda', serif" 
         font-size="16.5" 
-        font-weight="600" 
+        font-weight="500" 
         letter-spacing="7">MARBLE &amp; ARTS</text>
 
   <!-- Right Rule Line -->

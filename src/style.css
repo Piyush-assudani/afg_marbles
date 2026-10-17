@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300..700;1,6..96,300..700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Italiana&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Marcellus&display=swap');
+
 /* =========================================================
    SHILPĀ — Marble Atelier · Design System
    ========================================================= */
@@ -13,9 +15,9 @@
   --gold-3: #8c6a36;
   --line: rgba(28, 24, 19, 0.12);
 
-  --serif: 'Cormorant Garamond', Georgia, serif;
-  --sans: 'Manrope', system-ui, -apple-system, sans-serif;
-  --display: 'Cinzel', 'Italiana', 'Cormorant Garamond', serif;
+  --serif: 'Bodoni Moda', 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Jost', system-ui, -apple-system, sans-serif;
+  --display: 'Marcellus', 'Bodoni Moda', 'Italiana', serif;
 
   --pad: clamp(20px, 3.6vw, 64px);
   --ease: cubic-bezier(0.19, 1, 0.22, 1);
@@ -573,10 +575,11 @@ button {
 
 .hero__title {
   font-family: var(--serif);
-  font-weight: 300;
+  font-weight: 350;
+  font-optical-sizing: auto;
   font-size: clamp(52px, 6.9vw, 124px);
   line-height: 0.94;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
   color: var(--ink);
 }
 
@@ -1463,9 +1466,10 @@ button {
   font-family: var(--serif);
   font-size: clamp(34px, 4vw, 54px);
   font-weight: 400;
-  line-height: 1.1;
+  line-height: 1.15;
   color: var(--ink);
   letter-spacing: -0.015em;
+  font-optical-sizing: auto;
 }
 
 .sec-subtitle {
