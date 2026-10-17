@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300..700;1,6..96,300..700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Italiana&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Marcellus&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Marcellus&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 
 /* =========================================================
    SHILPĀ — Marble Atelier · Design System
@@ -15,9 +15,9 @@
   --gold-3: #8c6a36;
   --line: rgba(28, 24, 19, 0.12);
 
-  --serif: 'Bodoni Moda', 'Cormorant Garamond', Georgia, serif;
-  --sans: 'Jost', system-ui, -apple-system, sans-serif;
-  --display: 'Marcellus', 'Bodoni Moda', 'Italiana', serif;
+  --serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --display: 'Marcellus', 'Playfair Display', serif;
 
   --pad: clamp(20px, 3.6vw, 64px);
   --ease: cubic-bezier(0.19, 1, 0.22, 1);
@@ -4107,8 +4107,8 @@ button {
 
 
 /* =========================================================
-   TYPOGRAPHY REFINEMENT v2 — Haute couture editorial
-   Italiana (display) · Bodoni Moda (headings/italic accents) · Jost (text)
+   TYPOGRAPHY REFINEMENT v3 — Royal Bespoke Heritage
+   Playfair Display (Headings & Fluid Italics) · Plus Jakarta Sans (Clean Modern Sans & Wide Eyebrows) · Marcellus (Roman Display & Brand Inscriptions)
    ========================================================= */
 html {
   text-rendering: optimizeLegibility;
@@ -4117,66 +4117,89 @@ html {
 }
 
 body {
+  font-family: var(--sans);
   font-weight: 400;
-  letter-spacing: 0.005em;
+  letter-spacing: -0.005em;
+  color: var(--ink);
 }
 
 h1, h2, h3, .sec-title, .hero__title {
   text-wrap: balance;
+  font-feature-settings: 'kern' 1, 'liga' 1;
 }
 
 p { text-wrap: pretty; }
 
 .hero__title {
-  font-family: 'Italiana', 'Bodoni Moda', serif;
+  font-family: var(--serif);
   font-weight: 400;
-  letter-spacing: -0.01em;
-  line-height: 0.98;
+  letter-spacing: -0.018em;
+  line-height: 1.08;
 }
 
 .hero__title em {
-  font-family: 'Bodoni Moda', serif;
+  font-family: var(--serif);
   font-style: italic;
   font-weight: 400;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
+  color: var(--gold-3);
 }
 
 .sec-title {
-  font-family: 'Bodoni Moda', var(--serif);
+  font-family: var(--serif);
   font-weight: 400;
-  letter-spacing: -0.022em;
-  line-height: 1.12;
+  letter-spacing: -0.015em;
+  line-height: 1.16;
+}
+
+.sec-title em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold-3);
 }
 
 .sec-eyebrow,
 .hero__eyebrow {
   font-family: var(--sans);
   font-weight: 500;
-  letter-spacing: 0.34em;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
 }
 
 .sec-subtitle {
-  font-weight: 300;
-  font-size: 16.5px;
-  line-height: 1.8;
+  font-family: var(--sans);
+  font-weight: 350;
+  font-size: 16px;
+  line-height: 1.78;
   color: var(--ink-2);
 }
 
 .logo__name,
 .footer-brand-name,
 .loader__brand {
-  font-family: 'Marcellus', serif;
+  font-family: var(--display);
   font-weight: 400;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.logo__sub,
+.footer-brand-sub {
+  font-family: var(--sans);
+  font-weight: 400;
+  letter-spacing: 0.22em;
 }
 
 .nav__links a {
   font-family: var(--sans);
-  font-weight: 400;
-  letter-spacing: 0.2em;
+  font-weight: 450;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 .loader__tag {
-  font-family: 'Bodoni Moda', serif;
+  font-family: var(--serif);
   font-style: italic;
+  font-weight: 400;
 }

@@ -7,30 +7,43 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 
 /* ---------- Scroll reveals ---------- */
 function setupReveals() {
+  document.documentElement.classList.add('js');
   const els = document.querySelectorAll('[data-reveal]');
   if (!els.length) return;
+
+  const markVisible = (el) => el.classList.add('is-in');
+
   if (reduceMotion || !('IntersectionObserver' in window)) {
-    els.forEach((el) => el.classList.add('is-in'));
+    els.forEach(markVisible);
     return;
   }
+
   const io = new IntersectionObserver(
     (entries) => {
       entries.forEach((e) => {
         if (e.isIntersecting) {
-          e.target.classList.add('is-in');
+          markVisible(e.target);
           io.unobserve(e.target);
         }
       });
     },
-    { rootMargin: '0px 0px -12% 0px', threshold: 0.08 }
+    { rootMargin: '350px 0px 350px 0px', threshold: 0 }
   );
-  els.forEach((el, idx) => {
+
+  els.forEach((el) => {
     // auto-stagger siblings inside grids that don't set --i
     if (!el.style.getPropertyValue('--i') && el.parentElement) {
       const sibs = [...el.parentElement.children].filter((c) => c.hasAttribute('data-reveal'));
       if (sibs.length > 1) el.style.setProperty('--i', sibs.indexOf(el));
     }
-    io.observe(el);
+
+    // Eagerly reveal if within initial viewport range or close
+    const r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight + 400 && r.bottom > -200) {
+      markVisible(el);
+    } else {
+      io.observe(el);
+    }
   });
 }
 
@@ -38,22 +51,22 @@ function setupReveals() {
 function setupScrollScenes() {
   const scrubs = [...document.querySelectorAll('[data-scrub]')];
   const parallax = [...document.querySelectorAll('[data-parallax]')];
-  if (reduceMotion || (!scrubs.length && !parallax.length)) {
-    scrubs.forEach((s) => s.style.setProperty('--p', 1));
-    return;
-  }
+  if (!scrubs.length && !parallax.length) return;
 
-  const state = scrubs.map(() => ({ cur: 0, target: 0 }));
+  // Ensure default visible frame
+  scrubs.forEach((s) => s.style.setProperty('--p', 1));
+  if (reduceMotion) return;
+
+  const state = scrubs.map(() => ({ cur: 1, target: 1 }));
   let vh = window.innerHeight;
   window.addEventListener('resize', () => (vh = window.innerHeight), { passive: true });
 
   function loop() {
     scrubs.forEach((el, i) => {
       const r = el.getBoundingClientRect();
-      // 0 when section top hits bottom of viewport → 1 when top reaches 15% from top
       const raw = (vh - r.top) / (vh * 0.85);
-      state[i].target = Math.max(0, Math.min(1, raw));
-      state[i].cur += (state[i].target - state[i].cur) * 0.085; // eased lerp for buttery motion
+      state[i].target = Math.max(0.2, Math.min(1, raw));
+      state[i].cur += (state[i].target - state[i].cur) * 0.085;
       if (Math.abs(state[i].target - state[i].cur) > 0.0005) {
         el.style.setProperty('--p', state[i].cur.toFixed(4));
       }
@@ -61,6 +74,7 @@ function setupScrollScenes() {
 
     parallax.forEach((el) => {
       const host = el.parentElement;
+      if (!host) return;
       const r = host.getBoundingClientRect();
       if (r.bottom < -100 || r.top > vh + 100) return;
       const speed = parseFloat(el.dataset.parallax) || 0.15;

@@ -54,7 +54,7 @@ Inspect the temple across 5 world-class luxury marble stones with seamless live 
 ### 🎨 4. Haute Couture Editorial UI / UX
 - **Custom Magnetic Cursor:** Fluid physics cursor with magnetic attraction to interactive triggers and dynamic label states (`Drag`, `Inspect`).
 - **Glassmorphism Stone Rail:** Floating stone selector rail displaying stone origins, historical notes, and active swatch indicators.
-- **Kinetic Typography:** Editorial luxury pairing featuring *Bodoni Moda*, *Marcellus*, *Italiana*, and *Jost*.
+- **Kinetic Typography:** Editorial luxury pairing featuring *Playfair Display*, *Plus Jakarta Sans*, *Marcellus*, and *Cormorant Garamond*.
 - **Smooth Inertia & Parallax:** Fluid rotation physics with inertia dampening and subtle mouse/gyro parallax responsiveness.
 
 ---
@@ -68,7 +68,7 @@ Inspect the temple across 5 world-class luxury marble stones with seamless live 
 | **Shader Programming**| Custom GLSL (Triplanar mapping, Animated Wipe with Gold Trim) |
 | **Animation Engine** | [GSAP 3.15](https://greensock.com/gsap/) (Timelines, Staggers, Easing) |
 | **Styling & Design** | Vanilla CSS (CSS Custom Properties, Glassmorphism, Micro-interactions) |
-| **Typography** | Bodoni Moda, Marcellus, Italiana, Jost (Google Fonts) |
+| **Typography** | Playfair Display, Plus Jakarta Sans, Marcellus, Cormorant Garamond (Google Fonts) |
 
 ---
 
