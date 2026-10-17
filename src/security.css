@@ -1,0 +1,179 @@
+/* =========================================================
+   A.F.G MARBLE & ARTS — CONTENT PROTECTION & ASSET SHIELD
+   1. Context Menu & Right-Click Blocking
+   2. User-Select & Drag Prevention
+   3. Clipboard Interception
+   4. DevTools Deterrence
+   5. Transparent Image Overlays & Watermarks
+   6. Screen Capture Veil (FLAG_SECURE web emulation)
+   7. Hotlinking & Frame Shielding
+   8. Obfuscation & Bot Deterrence
+   ========================================================= */
+
+/* ---------- 2. Global Selection & Drag Prevention ---------- */
+html,
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Allow patron interaction in forms */
+input,
+textarea,
+select,
+option,
+[contenteditable="true"] {
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: text !important;
+  pointer-events: auto !important;
+}
+
+/* Prevent image dragging across all platforms */
+img,
+picture,
+video,
+canvas,
+svg {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+/* ---------- 5. Watermarking & Transparent Overlays ---------- */
+/* Host container for shielded images */
+.shield-host {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Transparent overlay sitting directly above sensitive photos */
+.img-shield {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  background: transparent;
+  pointer-events: auto;
+  cursor: default;
+}
+
+/* Subtle luxury watermarking stamp on portfolio items */
+.watermark-stamp {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: rgba(20, 16, 12, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(216, 187, 132, 0.28);
+  border-radius: 999px;
+  pointer-events: none;
+  opacity: 0.85;
+  transition: opacity 0.4s ease;
+}
+
+.watermark-stamp svg {
+  width: 12px;
+  height: 12px;
+  color: var(--gold-2);
+}
+
+.watermark-stamp span {
+  font-family: var(--sans);
+  font-size: 8.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #fbf6ee;
+}
+
+/* ---------- 6. Mobile / PWA Screen Capture Veil (FLAG_SECURE) ---------- */
+#screen-capture-veil {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: #14100c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+#screen-capture-veil.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#screen-capture-veil .veil-brand {
+  font-family: var(--display);
+  font-size: 15px;
+  letter-spacing: 0.28em;
+  color: var(--gold-2);
+  text-transform: uppercase;
+}
+
+#screen-capture-veil .veil-tag {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: rgba(251, 246, 238, 0.65);
+}
+
+/* ---------- Luxury Security Micro-Toast ---------- */
+#security-toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translate3d(-50%, 30px, 0);
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 22px;
+  background: rgba(24, 20, 16, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(216, 187, 132, 0.35);
+  border-radius: 999px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  color: #fbf6ee;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#security-toast.is-shown {
+  opacity: 1;
+  transform: translate3d(-50%, 0, 0);
+  pointer-events: auto;
+}
+
+#security-toast svg {
+  color: var(--gold-2);
+  flex-shrink: 0;
+}
+
+#security-toast span {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 450;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fbf6ee;
+}

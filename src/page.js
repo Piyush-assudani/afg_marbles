@@ -1,5 +1,9 @@
+import './security.css';
+import { initSecurity } from './security.js';
+
 // Subpage script for A.F.G Marble & Arts
 document.addEventListener('DOMContentLoaded', () => {
+  initSecurity();
   // Resilient Asset & Image Resolver (works in dev, production build, and direct file preview)
   const resolveAssets = () => {
     const isFile = window.location.protocol === 'file:';

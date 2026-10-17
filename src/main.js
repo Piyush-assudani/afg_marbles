@@ -3,6 +3,7 @@ import { createExperience, STONES } from './scene.js';
 import './style.css';
 import './premium.css';
 import { initPremium } from './premium.js';
+import { initSecurity } from './security.js';
 
 /* ------------------------------------------------------------------
    DOM Elements
@@ -576,6 +577,7 @@ async function init() {
   setupCommissionForm();
   setupBeforeAfter();
   initPremium();
+  initSecurity();
 
   const exp = createExperience({
     canvas,

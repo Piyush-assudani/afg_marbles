@@ -1,0 +1,18 @@
+# A.F.G Marble & Arts — Hotlinking Protection & Asset Shielding
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  # Allow blank referrers (e.g. direct visits) and own domain/localhost
+  RewriteCond %{HTTP_REFERER} !^$
+  RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?localhost [NC]
+  RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?127\.0\.0\.1 [NC]
+  RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?afgmarbles\.com [NC]
+  # Forbid external third-party hotlinking of images & 3D assets
+  RewriteRule \.(jpg|jpeg|png|gif|webp|svg|glb|gltf|bin)$ - [NC,F,L]
+</IfModule>
+
+# Security Headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
