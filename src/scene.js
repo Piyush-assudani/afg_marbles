@@ -2,6 +2,8 @@ import * as THREE from 'three';
 import gsap from 'gsap';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -254,30 +256,84 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     (url) => console.warn('Loading warning on asset:', url)
   );
   const loader = new THREE.TextureLoader(manager);
+  const bgLoader = new THREE.TextureLoader();
   const maxAniso = renderer.capabilities.getMaxAnisotropy();
   const textures = {};
-  STONES.forEach((s) => {
-    const t = loader.load(s.url);
+
+  function applyTexSettings(t) {
     t.colorSpace = THREE.SRGBColorSpace;
     t.wrapS = t.wrapT = THREE.MirroredRepeatWrapping;
     t.generateMipmaps = true;
     t.minFilter = THREE.LinearMipmapLinearFilter;
     t.magFilter = THREE.LinearFilter;
     t.anisotropy = maxAniso;
-    textures[s.key] = t;
+    return t;
+  }
+
+  // Preload initial essential textures so page displays fast without blocking:
+  ['makrana', 'calacatta'].forEach((key) => {
+    const s = STONES.find((item) => item.key === key);
+    if (s) {
+      textures[key] = applyTexSettings(loader.load(s.url));
+    }
+  });
+
+  // Load secondary stone textures in background
+  STONES.forEach((s) => {
+    if (!textures[s.key]) {
+      textures[s.key] = applyTexSettings(bgLoader.load(s.url));
+    }
   });
 
   const templeMat = makeMarbleMaterial(textures.makrana, { scale: 0.18, minY: 0.25, maxY: 5.55 });
   const podiumMat = makeMarbleMaterial(textures.calacatta, { scale: 0.17, roughness: 0.16 });
   const gold = makeGoldMaterial();
 
+  const sanctumDiscMat = new THREE.MeshPhysicalMaterial({
+    color: 0xfffcf5,
+    map: textures.makrana,
+    roughness: 0.14,
+    metalness: 0.02,
+    clearcoat: 0.9,
+    clearcoatRoughness: 0.06,
+  });
+
+  const omGold = new THREE.MeshPhysicalMaterial({
+    color: new THREE.Color('#ffdf88'),
+    emissive: new THREE.Color('#ffd166'),
+    emissiveIntensity: 0.35,
+    metalness: 0.95,
+    roughness: 0.16,
+    clearcoat: 1,
+    clearcoatRoughness: 0.05,
+  });
+
+  const meenakariBlue = new THREE.MeshPhysicalMaterial({
+    color: new THREE.Color('#0d2146'),
+    metalness: 0.15,
+    roughness: 0.18,
+    clearcoat: 1,
+    clearcoatRoughness: 0.06,
+  });
+
   const pickables = [];
   const mandirGroup = new THREE.Group();
 
+  const dracoLoader = new DRACOLoader(manager);
+  dracoLoader.setDecoderPath(`${BASE}draco/`);
+  dracoLoader.preload();
+
   const gltfLoader = new GLTFLoader(manager);
+  gltfLoader.setDRACOLoader(dracoLoader);
+  gltfLoader.setMeshoptDecoder(MeshoptDecoder);
+
+  const urlParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
+  const isDarkModel = urlParams?.get('model') === 'dark' || urlParams?.get('theme') === 'dark';
+  const modelFile = isDarkModel ? 'mandir_heavy_dark.glb' : 'mandir_heavy_ivory.glb';
+
   const gltfPromise = new Promise((resolve, reject) => {
     gltfLoader.load(
-      `${BASE}models/mandir_premium_v4.glb`,
+      `${BASE}models/${modelFile}`,
       (gltf) => {
         const mandir = gltf.scene;
         mandir.scale.setScalar(2.25);
@@ -290,8 +346,20 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
             pickables.push(child);
 
             const matName = child.material?.name || '';
-            // Apply marble triplanar shader to the marble surfaces
-            if (matName.includes('Marble_White') || matName.includes('Marble_Cream') || matName.includes('Ivory_Gloss') || matName.includes('Marble_Dark')) {
+            const meshName = child.name || '';
+
+            // Sacred Sanctum centerpiece:
+            if (meshName === 'om_symbol') {
+              child.material = omGold;
+            } else if (meshName === 'om_disc') {
+              child.material = sanctumDiscMat;
+            } else if (meshName === 'fan_feathers_inner') {
+              child.material = meenakariBlue;
+            } else if (
+              matName.includes('Marble_White') ||
+              matName.includes('Marble_Cream') ||
+              (isDarkModel && matName.includes('Marble_Dark'))
+            ) {
               child.material = templeMat;
             } else if (matName.includes('Gold')) {
               child.material = gold;
@@ -304,7 +372,7 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
       },
       undefined,
       (err) => {
-        console.error('Failed to load mandir_premium_v4.glb:', err);
+        console.error(`Failed to load ${modelFile}:`, err);
         reject(err);
       }
     );
@@ -548,6 +616,25 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     u.uMapB.value = textures[key];
     u.uMix.value = 0;
 
+    // Coordinate the turntable podium marble seamlessly with selected stone
+    const uPodium = podiumMat.userData.uniforms;
+    if (uPodium) {
+      uPodium.uMapB.value = textures[key];
+      uPodium.uMix.value = 0;
+      gsap.to(uPodium.uMix, {
+        value: 1,
+        duration: 2.2,
+        ease: 'power2.inOut',
+        onComplete: () => {
+          uPodium.uMapA.value = textures[key];
+          uPodium.uMix.value = 0;
+        },
+      });
+    }
+
+    const isNero = key === 'nero';
+    gsap.to(u.uScale, { value: isNero ? 0.14 : 0.18, duration: 1.5, ease: 'power2.out' });
+
     // Gently orient the mandir to face its front presentation angle so sanctum & ॐ stay in full view
     const frontAngle = 0.38;
     const turns = Math.round((turntable.rotation.y - frontAngle) / (Math.PI * 2));
@@ -583,7 +670,17 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     });
 
     if (diyaLight) {
-      gsap.fromTo(diyaLight, { intensity: 7.5 }, { intensity: 3.8, duration: 2.2, ease: 'power2.out' });
+      gsap.fromTo(
+        diyaLight,
+        { intensity: 7.5 },
+        { intensity: isNero ? 5.4 : 3.8, duration: 2.2, ease: 'power2.out' }
+      );
+    }
+    if (sun) {
+      gsap.to(sun, { intensity: isNero ? 3.0 : 2.6, duration: 2.2, ease: 'power2.out' });
+    }
+    if (rim) {
+      gsap.to(rim, { intensity: isNero ? 2.0 : 1.4, duration: 2.2, ease: 'power2.out' });
     }
     return true;
   }

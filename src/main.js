@@ -455,7 +455,7 @@ function setupLightbox() {
       const msg = encodeURIComponent(
         `Hello A.F.G Marble & Arts, I am interested in commissioning a creation like: "${item.title}". Please share pricing, custom dimensions, and stone options.`
       );
-      waBtn.href = `https://wa.me/919829012345?text=${msg}`;
+      waBtn.href = `https://wa.me/917597417274?text=${msg}`;
     }
   }
 
@@ -664,7 +664,7 @@ function setupCommissionForm() {
       `Please connect with our master stone architect.`
     );
 
-    const waUrl = `https://wa.me/919829012345?text=${text}`;
+    const waUrl = `https://wa.me/917597417274?text=${text}`;
 
     const submitBtn = form.querySelector('#btn-submit-inquiry');
     if (submitBtn) {
@@ -805,20 +805,19 @@ async function init() {
   await exp.ready;
   await exp.warmup();
 
-  // Dismiss loader with a silky curtain lift, overlapping the 3D intro (no dead frame)
+  // Dismiss loader with a snappy, silky curtain lift, overlapping the 3D intro (no dead frame)
   const handoff = gsap.timeline();
   handoff.to(loader.querySelector('.loader__inner') || loader, {
     opacity: 0,
-    y: -24,
-    filter: 'blur(6px)',
-    duration: 0.9,
-    ease: 'power2.in',
+    y: -16,
+    duration: 0.35,
+    ease: 'power2.out',
   });
-  handoff.to(loader, { clipPath: 'inset(0 0 100% 0)', duration: 1.5, ease: 'expo.inOut' }, 0.35);
+  handoff.to(loader, { clipPath: 'inset(0 0 100% 0)', duration: 0.65, ease: 'power3.inOut' }, 0.15);
   handoff.add(() => {
     exp.intro();
     animateEntrance();
-  }, 0.95);
+  }, 0.3);
   handoff.add(() => {
     loader.style.display = 'none';
   });

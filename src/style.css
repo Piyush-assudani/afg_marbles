@@ -203,15 +203,21 @@ button {
 }
 
 .cursor.is-label .cursor__ring {
-  width: 88px;
-  height: 88px;
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border-color: rgba(140, 106, 54, 0.4);
+  width: 46px;
+  height: 46px;
+  background: rgba(20, 16, 12, 0.2);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border: 1px solid rgba(216, 187, 132, 0.75);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .cursor.is-label .cursor__label {
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #fff8eb;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
   opacity: 1;
 }
 
@@ -766,6 +772,13 @@ button {
   background: var(--gold);
   color: var(--ink);
   transform: translate(2px, -2px);
+}
+
+.hero__ctas {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
 .hero__stats {

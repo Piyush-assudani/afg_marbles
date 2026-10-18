@@ -263,7 +263,7 @@ function initContentObfuscation() {
   // Obfuscated atelier telephone and contact tokens
   // Decoded at runtime so automated text-scraping bots cannot harvest plain numbers
   const tokens = {
-    phone: ['Kw==', 'OTE=', 'OTgyOTA=', 'MDAwMDA='], // +91 98290 00000
+    phone: ['Kw==', 'OTE=', 'OTgyOTA=', 'MDAwMDA='], // +91 7597417274
     wa: ['OTg=', 'Mjkw', 'MDAw', 'MDA=']
   };
 
