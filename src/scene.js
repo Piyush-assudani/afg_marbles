@@ -245,14 +245,27 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
   const lookAt = new THREE.Vector3();
 
   /* --- Textures & Model Loading --- */
+  let readyResolved = false;
   let readyResolve;
   const ready = new Promise((resolve) => {
-    readyResolve = resolve;
+    readyResolve = () => {
+      if (!readyResolved) {
+        readyResolved = true;
+        resolve();
+      }
+    };
   });
+
+  // Safety fallback: never keep user waiting more than 2.8s
+  setTimeout(() => {
+    readyResolve();
+  }, 2800);
 
   const manager = new THREE.LoadingManager(
     () => readyResolve?.(),
-    (_url, loaded, total) => onProgress?.(loaded / total),
+    (_url, loaded, total) => {
+      if (total > 0) onProgress?.(loaded / total);
+    },
     (url) => console.warn('Loading warning on asset:', url)
   );
   const loader = new THREE.TextureLoader(manager);
@@ -319,12 +332,15 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
   const pickables = [];
   const mandirGroup = new THREE.Group();
 
-  const dracoLoader = new DRACOLoader(manager);
-  dracoLoader.setDecoderPath(`${BASE}draco/`);
-  dracoLoader.preload();
-
   const gltfLoader = new GLTFLoader(manager);
-  gltfLoader.setDRACOLoader(dracoLoader);
+  // Attach DRACOLoader lazily without manager preloading to prevent worker hangs
+  try {
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath(`${BASE}draco/`);
+    gltfLoader.setDRACOLoader(dracoLoader);
+  } catch (e) {
+    console.warn('Draco setup:', e);
+  }
   gltfLoader.setMeshoptDecoder(MeshoptDecoder);
 
   const urlParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
@@ -358,6 +374,7 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
             } else if (
               matName.includes('Marble_White') ||
               matName.includes('Marble_Cream') ||
+              matName.includes('Ivory_Gloss') ||
               (isDarkModel && matName.includes('Marble_Dark'))
             ) {
               child.material = templeMat;
@@ -368,11 +385,14 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
         });
 
         mandirGroup.add(mandir);
+        mandirGroup.visible = true;
         resolve(gltf);
+        readyResolve();
       },
       undefined,
       (err) => {
         console.error(`Failed to load ${modelFile}:`, err);
+        readyResolve();
         reject(err);
       }
     );
@@ -497,15 +517,18 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
       lookBase.set(0, isShort ? 1.0 : 1.2, 0);
       stage.position.y = isShort ? -2.7 : -3.0;
       stage.scale.setScalar(isShort ? 0.65 : 0.70);
+      stage.position.x = 0;
     } else {
-      camBase.set(0, 3.7, 15.5);
+      const isLaptop = W < 1520 || H < 860;
+      camBase.set(0, isLaptop ? 3.65 : 3.7, isLaptop ? 16.0 : 15.5);
       lookBase.set(0, 3.25, 0);
-      stage.position.y = 0;
-      stage.scale.setScalar(1);
+      stage.position.y = isLaptop ? -0.1 : 0;
+      stage.scale.setScalar(isLaptop ? 0.88 : 1.0);
+      const vh = 2 * camBase.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
+      const vw = vh * camera.aspect;
+      // Fixed right-column placement with clean margin so temple never collides with hero headline text
+      stage.position.x = Math.min(Math.max(vw * 0.25, isLaptop ? 3.8 : 4.2), 5.4);
     }
-    const vh = 2 * camBase.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
-    const vw = vh * camera.aspect;
-    stage.position.x = isMobile ? 0 : Math.min(vw * 0.2, 4.6);
 
     sun.position.set(stage.position.x + 6, 11, 7);
     sun.target.position.set(stage.position.x, 2.5, 0);
@@ -687,16 +710,22 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
 
   /* --- Intro --- */
   function prepareIntro() {
-    mandirGroup.visible = false;
-    podiumLayer.visible = false;
+    mandirGroup.visible = true;
+    podiumLayer.visible = true;
     halo.scale.setScalar(0.001);
     contact.material.opacity = 0;
   }
 
   function intro() {
+    introDone = true;
+    mandirGroup.visible = true;
+    podiumLayer.visible = true;
+
     const tl = gsap.timeline({
       onComplete: () => {
         introDone = true;
+        mandirGroup.visible = true;
+        podiumLayer.visible = true;
       },
     });
     turntable.rotation.y = -Math.PI * 0.95;
@@ -711,14 +740,14 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     tl.fromTo(
       podiumLayer.scale,
       { x: 0.4, y: 0.4, z: 0.4 },
-      { x: 1, y: 1, z: 1, duration: 1.6, ease: 'expo.out', onStart: () => (podiumLayer.visible = true) },
+      { x: 1, y: 1, z: 1, duration: 1.6, ease: 'expo.out' },
       0.1
     );
 
     tl.fromTo(
       mandirGroup.position,
       { y: 3.2 },
-      { y: 0, duration: 1.8, ease: 'expo.out', onStart: () => (mandirGroup.visible = true) },
+      { y: 0, duration: 1.8, ease: 'expo.out' },
       0.3
     );
 

@@ -742,12 +742,29 @@ async function init() {
   initPremium();
   initSecurity();
 
+  // Dynamic progressive loader ticker so the user immediately sees active movement (never stuck at 0%)
+  let currentPct = 15;
+  loaderBar.style.transform = `scaleX(0.15)`;
+  loaderCount.textContent = '15';
+
+  const progressTicker = setInterval(() => {
+    if (currentPct < 90) {
+      currentPct += Math.floor(Math.random() * 8) + 4;
+      if (currentPct > 90) currentPct = 90;
+      loaderBar.style.transform = `scaleX(${currentPct / 100})`;
+      loaderCount.textContent = currentPct;
+    }
+  }, 85);
+
   const exp = createExperience({
     canvas,
     onProgress: (ratio) => {
-      const pct = Math.round(ratio * 100);
-      loaderBar.style.transform = `scaleX(${ratio})`;
-      loaderCount.textContent = pct;
+      const realPct = Math.round(ratio * 100);
+      if (realPct > currentPct) {
+        currentPct = Math.min(96, realPct);
+        loaderBar.style.transform = `scaleX(${currentPct / 100})`;
+        loaderCount.textContent = currentPct;
+      }
     },
     onHover: (hoverInfo) => {
       currentHoverType = hoverInfo;
@@ -801,9 +818,19 @@ async function init() {
     if (idx !== -1) selectStone(idx, exp);
   });
 
-  // Wait for 3D textures load & GPU compilation
-  await exp.ready;
-  await exp.warmup();
+  // Guarantee loader lifts in max 2.5s even on slow 3G / edge networks
+  const maxWaitPromise = new Promise((resolve) => setTimeout(resolve, 2500));
+  await Promise.race([exp.ready, maxWaitPromise]);
+
+  clearInterval(progressTicker);
+  loaderBar.style.transform = `scaleX(1)`;
+  loaderCount.textContent = '100';
+
+  try {
+    await Promise.race([exp.warmup(), new Promise((resolve) => setTimeout(resolve, 400))]);
+  } catch (err) {
+    console.warn('Warmup skipped:', err);
+  }
 
   // Dismiss loader with a snappy, silky curtain lift, overlapping the 3D intro (no dead frame)
   const handoff = gsap.timeline();
@@ -820,6 +847,7 @@ async function init() {
   }, 0.3);
   handoff.add(() => {
     loader.style.display = 'none';
+    loader.style.pointerEvents = 'none';
   });
 }
 
