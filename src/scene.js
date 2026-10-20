@@ -443,6 +443,40 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
   podiumLayer.add(podium, podiumRing);
   turntable.add(podiumLayer);
 
+  // Illuminated golden halo ring under turntable (matches mockup under-podium floor glow)
+  const glowRingGeo = new THREE.RingGeometry(2.98, 3.24, 96);
+  const glowRingMat = new THREE.MeshBasicMaterial({
+    color: new THREE.Color('#ffc44d'),
+    side: THREE.DoubleSide,
+    transparent: true,
+    opacity: 0.88,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+  });
+  const glowRing = new THREE.Mesh(glowRingGeo, glowRingMat);
+  glowRing.rotation.x = -Math.PI / 2;
+  glowRing.position.y = 0.008;
+  stage.add(glowRing);
+
+  // Soft radiant floor diffusion
+  const glowSoftGeo = new THREE.RingGeometry(3.06, 4.2, 96);
+  const glowSoftMat = new THREE.MeshBasicMaterial({
+    map: radialTexture([
+      [0, 'rgba(255, 195, 75, 0.72)'],
+      [0.35, 'rgba(255, 175, 50, 0.28)'],
+      [1, 'rgba(255, 160, 40, 0)'],
+    ]),
+    side: THREE.DoubleSide,
+    transparent: true,
+    opacity: 0.82,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+  });
+  const glowSoft = new THREE.Mesh(glowSoftGeo, glowSoftMat);
+  glowSoft.rotation.x = -Math.PI / 2;
+  glowSoft.position.y = 0.004;
+  stage.add(glowSoft);
+
   // Add the 3D mandir model to turntable
   turntable.add(mandirGroup);
 
@@ -520,19 +554,19 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
       stage.position.x = 0;
     } else {
       const isLaptop = W < 1520 || H < 860;
-      camBase.set(0, isLaptop ? 3.6 : 3.65, isLaptop ? 15.6 : 15.2);
-      lookBase.set(0, 3.2, 0);
-      stage.position.y = isLaptop ? -0.04 : 0.0;
-      stage.scale.setScalar(isLaptop ? 0.85 : 0.95);
+      camBase.set(0, isLaptop ? 3.4 : 3.5, isLaptop ? 15.2 : 14.8);
+      lookBase.set(0, 2.8, 0);
+      stage.position.y = isLaptop ? -0.32 : -0.28;
+      stage.scale.setScalar(isLaptop ? 0.80 : 0.88);
       const vh = 2 * camBase.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
       const vw = vh * camera.aspect;
-      // Fixed right-column placement with clean margin so temple never collides with hero headline text
-      stage.position.x = Math.min(Math.max(vw * 0.26, isLaptop ? 4.1 : 4.3), 5.5);
+      // Centered inside palace archway: ~60% across viewport
+      stage.position.x = Math.min(Math.max(vw * 0.125, isLaptop ? 1.7 : 1.9), 2.5);
     }
 
-    sun.position.set(stage.position.x + 6, 11, 7);
+    sun.position.set(stage.position.x + 5, 11, 7);
     sun.target.position.set(stage.position.x, 2.5, 0);
-    rim.position.set(stage.position.x - 6, 6, -8);
+    rim.position.set(stage.position.x - 5, 6, -8);
     rim.target.position.set(stage.position.x, 3, 0);
 
     camera.updateProjectionMatrix();

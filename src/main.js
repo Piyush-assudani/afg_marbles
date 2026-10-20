@@ -66,6 +66,22 @@ function buildSwatches(exp) {
 
     swatchesContainer.appendChild(btn);
   });
+
+  const arrowPrev = document.getElementById('stone-arrow-prev');
+  const arrowNext = document.getElementById('stone-arrow-next');
+
+  if (arrowPrev) {
+    arrowPrev.onclick = () => {
+      const prevIdx = (activeStoneIndex - 1 + STONES.length) % STONES.length;
+      selectStone(prevIdx, exp);
+    };
+  }
+  if (arrowNext) {
+    arrowNext.onclick = () => {
+      const nextIdx = (activeStoneIndex + 1) % STONES.length;
+      selectStone(nextIdx, exp);
+    };
+  }
 }
 
 function selectStone(idx, exp) {
@@ -95,38 +111,45 @@ function selectStone(idx, exp) {
     );
   }
 
-  // Stone index number roll
-  stoneIdx.textContent = String(idx + 1).padStart(2, '0');
-  gsap.fromTo(stoneIdx, { y: -10, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: 'power2.out' });
+  // Stone index number roll if present
+  if (stoneIdx) {
+    stoneIdx.textContent = String(idx + 1).padStart(2, '0');
+    gsap.fromTo(stoneIdx, { y: -10, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: 'power2.out' });
+  }
 
   // Trigger 3D wipe shader
   exp.setStone(stone.key);
 
-  // Animate Caption & Backdrop word
-  gsap.to([stoneName, stoneOrigin], {
-    y: -12,
-    opacity: 0,
-    filter: 'blur(4px)',
-    duration: 0.25,
-    ease: 'power2.in',
-    onComplete: () => {
-      stoneName.innerHTML = `<span>${stone.name}</span>`;
-      stoneOrigin.innerHTML = `<span>${stone.origin} — ${stone.note}</span>`;
-      nicheWord.textContent = stone.word;
+  // Animate Stone Card & Backdrop word
+  const targets = [stoneName, stoneOrigin].filter(Boolean);
+  if (targets.length) {
+    gsap.to(targets, {
+      y: -12,
+      opacity: 0,
+      filter: 'blur(4px)',
+      duration: 0.25,
+      ease: 'power2.in',
+      onComplete: () => {
+        if (stoneName) stoneName.innerHTML = `<span>${stone.name.toUpperCase()}</span>`;
+        if (stoneOrigin) stoneOrigin.innerHTML = `<span>${(stone.note || stone.origin).toUpperCase()}</span>`;
+        if (nicheWord) nicheWord.textContent = stone.word;
 
-      gsap.fromTo(
-        [stoneName, stoneOrigin],
-        { y: 16, opacity: 0, filter: 'blur(6px)' },
-        { y: 0, opacity: 1, filter: 'blur(0px)', duration: 0.55, ease: 'power2.out', stagger: 0.08, clearProps: 'filter' }
-      );
+        gsap.fromTo(
+          targets,
+          { y: 16, opacity: 0, filter: 'blur(6px)' },
+          { y: 0, opacity: 1, filter: 'blur(0px)', duration: 0.55, ease: 'power2.out', stagger: 0.08, clearProps: 'filter' }
+        );
 
-      gsap.fromTo(
-        nicheWord,
-        { opacity: 0, scale: 0.94, filter: 'blur(10px)' },
-        { opacity: 1, scale: 1, filter: 'blur(0px)', duration: 0.85, ease: 'expo.out', clearProps: 'filter' }
-      );
-    },
-  });
+        if (nicheWord) {
+          gsap.fromTo(
+            nicheWord,
+            { opacity: 0, scale: 0.94, filter: 'blur(10px)' },
+            { opacity: 1, scale: 1, filter: 'blur(0px)', duration: 0.85, ease: 'expo.out', clearProps: 'filter' }
+          );
+        }
+      },
+    });
+  }
 }
 
 /* ------------------------------------------------------------------
@@ -185,7 +208,7 @@ function setupCursor() {
    Count-up Animation for Stats
 ------------------------------------------------------------------- */
 function animateStats() {
-  const statNums = document.querySelectorAll('.stat__num span[data-count]');
+  const statNums = document.querySelectorAll('.stat__num span[data-count], .ribbon-stat__num span[data-count]');
   statNums.forEach((el) => {
     const target = parseInt(el.getAttribute('data-count'), 10);
     const obj = { val: 0 };
@@ -193,7 +216,7 @@ function animateStats() {
       val: target,
       duration: 2.2,
       ease: 'power3.out',
-      delay: 1.2,
+      delay: 0.6,
       onUpdate: () => {
         el.textContent = Math.floor(obj.val).toLocaleString();
       },
@@ -872,14 +895,16 @@ function animateEntrance() {
   );
 
   // Eyebrow, lead text, CTAs
-  tl.fromTo('.hero__eyebrow-line', { scaleX: 0 }, { scaleX: 1, duration: 1.6, ease: 'power3.inOut' }, 0.6);
   tl.fromTo('.hero__eyebrow', { opacity: 0, x: -15, filter: 'blur(6px)' }, { opacity: 1, x: 0, filter: 'blur(0px)', duration: 1.6, clearProps: 'filter' }, 0.7);
   tl.fromTo('.hero__lead', { opacity: 0, y: 24, filter: 'blur(6px)' }, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.8, clearProps: 'filter' }, 0.95);
   tl.fromTo('.hero__ctas > *', { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 1.8, stagger: 0.15 }, 1.15);
 
-  // Stone rail & stats
-  tl.fromTo(stoneRail, { x: 40, opacity: 0 }, { x: 0, opacity: 1, duration: 1.4 }, 1.0);
-  tl.fromTo('.hero__stats', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1.4 }, 1.2);
+  // Stone block badge, floating detail card, stone rail & stats ribbon matching mockup
+  tl.fromTo('.hero-stone-card', { opacity: 0, scale: 0.92, filter: 'blur(6px)' }, { opacity: 1, scale: 1, filter: 'blur(0px)', duration: 1.4, clearProps: 'filter' }, 1.0);
+  tl.fromTo('.hero-feature-card', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1.4 }, 1.1);
+  tl.fromTo(stoneRail, { x: 40, opacity: 0 }, { x: 0, opacity: 1, duration: 1.4 }, 1.15);
+  tl.fromTo('.hero__stats-ribbon', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1.4 }, 1.25);
+  tl.fromTo('.hero__scroll-indicator', { opacity: 0 }, { opacity: 1, duration: 1.2 }, 1.35);
 
   // Trigger stat count up
   animateStats();
