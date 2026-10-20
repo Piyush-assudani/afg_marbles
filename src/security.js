@@ -142,7 +142,7 @@ function initDevToolsBlock() {
   // Console Warning Banner
   try {
     const bannerStyle = 'color: #d8bb84; background: #14100c; font-size: 13px; font-weight: 500; padding: 10px 16px; border: 1px solid #d8bb84; border-radius: 4px;';
-    console.log('%c🏛️ A.F.G MARBLE & ARTS — PROTECTED INTELLECTUAL PROPERTY\nAll 3D models, architectural drawings, and photography are proprietary stonecraft assets. Unauthorized harvesting or scraping is strictly prohibited.', bannerStyle);
+    console.log('%cA.F.G MARBLE & ARTS — PROTECTED INTELLECTUAL PROPERTY\nAll 3D models, architectural drawings, and photography are proprietary stonecraft assets. Unauthorized harvesting or scraping is strictly prohibited.', bannerStyle);
   } catch (err) {}
 }
 

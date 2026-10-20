@@ -520,10 +520,10 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
       stage.position.x = 0;
     } else {
       const isLaptop = W < 1520 || H < 860;
-      camBase.set(0, isLaptop ? 3.65 : 3.7, isLaptop ? 16.0 : 15.5);
-      lookBase.set(0, 3.25, 0);
-      stage.position.y = isLaptop ? -0.1 : 0;
-      stage.scale.setScalar(isLaptop ? 0.88 : 1.0);
+      camBase.set(0, isLaptop ? 3.8 : 3.75, isLaptop ? 16.2 : 15.6);
+      lookBase.set(0, isLaptop ? 3.38 : 3.3, 0);
+      stage.position.y = isLaptop ? 0.42 : 0.38;
+      stage.scale.setScalar(isLaptop ? 0.85 : 0.96);
       const vh = 2 * camBase.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
       const vw = vh * camera.aspect;
       // Fixed right-column placement with clean margin so temple never collides with hero headline text
@@ -773,7 +773,7 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     l: new THREE.Vector3(-3.7, 0, -2.6),
     r: new THREE.Vector3(3.7, 0, -2.6),
     t: new THREE.Vector3(0, 8.1, -2.6),
-    cap: new THREE.Vector3(0, -0.15, 3.2),
+    cap: new THREE.Vector3(0, 0.08, 2.95),
   };
 
   function project(v) {

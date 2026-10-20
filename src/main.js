@@ -793,9 +793,11 @@ async function init() {
         niche.style.fontSize = `${width * 0.16}px`;
       }
 
-      // Sync 2D Stage Caption position
+      // Sync 2D Stage Caption position (guarantee clean margin above marquee ribbon)
       if (state.caption && stageCaption) {
-        stageCaption.style.transform = `translate3d(${state.caption.x}px, ${state.caption.y}px, 0) translate(-50%, 0)`;
+        const h = canvas.clientHeight || window.innerHeight;
+        const safeY = Math.min(state.caption.y, h - 82);
+        stageCaption.style.transform = `translate3d(${state.caption.x}px, ${safeY}px, 0) translate(-50%, 0)`;
       }
 
       // Sync 3D Anchored Hotspots

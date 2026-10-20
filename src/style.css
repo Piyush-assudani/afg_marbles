@@ -1304,6 +1304,35 @@ button {
     font-size: 14px;
     line-height: 1.6;
   }
+
+  .hero__stats {
+    margin-top: 24px;
+    padding-top: 14px;
+    gap: clamp(18px, 2.4vw, 36px);
+  }
+
+  .stat__num {
+    font-size: clamp(26px, 2.2vw, 36px);
+  }
+
+  .stat__label {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+  }
+
+  .stage-caption__name {
+    font-size: 22px;
+  }
+
+  .stage-caption__hint {
+    font-size: 8px;
+    margin-bottom: 3px;
+  }
+
+  .stage-caption__origin {
+    font-size: 8.5px;
+    margin-top: 3px;
+  }
 }
 
 @media (max-width: 1120px) {
