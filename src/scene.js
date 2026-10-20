@@ -547,21 +547,21 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
 
     if (isMobile) {
       const isShort = H < 740;
-      camBase.set(0, isShort ? 3.3 : 3.6, isShort ? 24 : 22.5);
-      lookBase.set(0, isShort ? 1.0 : 1.2, 0);
-      stage.position.y = isShort ? -2.7 : -3.0;
-      stage.scale.setScalar(isShort ? 0.65 : 0.70);
+      camBase.set(0, isShort ? 3.1 : 3.3, isShort ? 21.5 : 20.5);
+      lookBase.set(0, isShort ? 1.5 : 1.7, 0);
+      stage.position.y = isShort ? -1.7 : -1.9;
+      stage.scale.setScalar(isShort ? 0.60 : 0.66);
       stage.position.x = 0;
     } else {
       const isLaptop = W < 1520 || H < 860;
-      camBase.set(0, isLaptop ? 3.4 : 3.5, isLaptop ? 15.2 : 14.8);
-      lookBase.set(0, 2.8, 0);
-      stage.position.y = isLaptop ? -0.32 : -0.28;
-      stage.scale.setScalar(isLaptop ? 0.80 : 0.88);
+      camBase.set(0, isLaptop ? 3.45 : 3.5, isLaptop ? 14.9 : 14.5);
+      lookBase.set(0, 2.75, 0);
+      stage.position.y = isLaptop ? -0.34 : -0.30;
+      stage.scale.setScalar(isLaptop ? 0.82 : 0.90);
       const vh = 2 * camBase.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
       const vw = vh * camera.aspect;
-      // Centered inside palace archway: ~60% across viewport
-      stage.position.x = Math.min(Math.max(vw * 0.125, isLaptop ? 1.7 : 1.9), 2.5);
+      // Centered perfectly inside palace archway: ~60% across viewport
+      stage.position.x = Math.min(Math.max(vw * 0.11, isLaptop ? 1.5 : 1.7), 2.3);
     }
 
     sun.position.set(stage.position.x + 5, 11, 7);

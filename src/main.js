@@ -130,8 +130,16 @@ function selectStone(idx, exp) {
       duration: 0.25,
       ease: 'power2.in',
       onComplete: () => {
-        if (stoneName) stoneName.innerHTML = `<span>${stone.name.toUpperCase()}</span>`;
-        if (stoneOrigin) stoneOrigin.innerHTML = `<span>${(stone.note || stone.origin).toUpperCase()}</span>`;
+        if (stoneName) {
+          const parts = stone.name.toUpperCase().split(' ');
+          stoneName.innerHTML = `<span>${parts[0]}<br />${parts.slice(1).join(' ')}</span>`;
+        }
+        if (stoneOrigin) {
+          const noteText = (stone.note || stone.origin).toUpperCase();
+          const noteWords = noteText.split(' ');
+          const mid = Math.ceil(noteWords.length / 2);
+          stoneOrigin.innerHTML = `<span>${noteWords.slice(0, mid).join(' ')}<br />${noteWords.slice(mid).join(' ')}</span>`;
+        }
         if (nicheWord) nicheWord.textContent = stone.word;
 
         gsap.fromTo(
