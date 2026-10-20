@@ -1507,11 +1507,13 @@ button {
 
 @media (max-height: 760px) and (min-width: 821px) {
   .hero__stats {
-    margin-top: 34px;
+    bottom: 16px;
+    margin: 0;
+    padding-top: 12px;
   }
 
   .hero__lead {
-    margin: 22px 0 28px;
+    margin: 16px 0 22px;
   }
 }
 
