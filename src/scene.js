@@ -225,7 +225,7 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     stencil: false,
   });
   const isSmallScreen = window.innerWidth < 821;
-  renderer.setPixelRatio(Math.min(Math.max(window.devicePixelRatio, isSmallScreen ? 1.5 : 1.75), 2));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.NeutralToneMapping ?? THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.02;
@@ -405,7 +405,7 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
 
   const sun = new THREE.DirectionalLight('#fff1dc', 2.6);
   sun.castShadow = true;
-  sun.shadow.mapSize.set(isSmallScreen ? 2048 : 4096, isSmallScreen ? 2048 : 4096);
+  sun.shadow.mapSize.set(isSmallScreen ? 1024 : 2048, isSmallScreen ? 1024 : 2048);
   sun.shadow.camera.near = 1;
   sun.shadow.camera.far = 30;
   sun.shadow.camera.left = -7;
@@ -414,7 +414,7 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
   sun.shadow.camera.bottom = -4;
   sun.shadow.bias = -0.0004;
   sun.shadow.normalBias = 0.02;
-  sun.shadow.radius = 8;
+  sun.shadow.radius = 3.5;
   scene.add(sun, sun.target);
 
   const rim = new THREE.DirectionalLight('#ffe2b8', 1.4);
@@ -541,10 +541,9 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
   window.addEventListener('resize', layout);
 
   /* --- Interaction --- */
-  const pointer = { x: 0, y: 0, nx: 0, ny: 0, sx: 0, sy: 0, inside: false };
+  const pointer = { x: 0, y: 0, nx: 0, ny: 0, sx: 0, sy: 0, inside: false, dirty: false };
   const drag = { active: false, lastX: 0, lastT: 0, v: 0, moved: 0 };
   let rotVel = 0;
-  let smoothDt = 1 / 60;
   let autoSpeed = 0.085;
   let introDone = false;
   const raycaster = new THREE.Raycaster();
@@ -567,12 +566,13 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     pointer.nx = (e.clientX / window.innerWidth) * 2 - 1;
     pointer.ny = (e.clientY / window.innerHeight) * 2 - 1;
     pointer.inside = true;
+    pointer.dirty = true;
     if (drag.active) {
       const now = performance.now();
       const dx = e.clientX - drag.lastX;
       const dt = Math.max((now - drag.lastT) / 1000, 0.008);
-      turntable.rotation.y += dx * 0.0065;
-      drag.v = THREE.MathUtils.clamp((dx * 0.0065) / dt, -7, 7);
+      turntable.rotation.y += dx * 0.0092;
+      drag.v = THREE.MathUtils.clamp((dx * 0.0092) / dt, -8, 8);
       drag.moved += Math.abs(dx);
       drag.lastX = e.clientX;
       drag.lastT = now;
@@ -804,16 +804,35 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     return s;
   }
 
+  let isVisible = true;
+  let animating = true;
+  if (typeof IntersectionObserver !== 'undefined') {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+        if (isVisible && !animating) {
+          animating = true;
+          clock.getDelta(); // flush delta so no time jump
+          requestAnimationFrame(tick);
+        }
+      },
+      { threshold: 0.02 }
+    );
+    observer.observe(canvas);
+  }
+
   function tick() {
-    // Smoothed delta prevents micro-stutter from frame-time spikes
-    const rawDt = Math.min(clock.getDelta(), 0.05);
-    smoothDt += (rawDt - smoothDt) * 0.12;
-    const dt = smoothDt;
+    if (!isVisible) {
+      animating = false;
+      return;
+    }
+
+    const dt = Math.min(clock.getDelta(), 0.04);
     const t = clock.elapsedTime;
 
     // Turntable
     if (introDone && !drag.active) {
-      rotVel += (autoSpeed - rotVel) * (1 - Math.exp(-dt * 0.9));
+      rotVel += (autoSpeed - rotVel) * (1 - Math.exp(-dt * 2.2));
       turntable.rotation.y += rotVel * dt;
     }
 
@@ -826,9 +845,9 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
       podiumMat.userData.uniforms.uTurntableInverse.value.copy(turntable.matrixWorld).invert();
     }
 
-    // Camera parallax
-    pointer.sx += (pointer.nx - pointer.sx) * (1 - Math.exp(-dt * 1.8));
-    pointer.sy += (pointer.ny - pointer.sy) * (1 - Math.exp(-dt * 1.8));
+    // Camera parallax (silky, responsive follow without lag)
+    pointer.sx += (pointer.nx - pointer.sx) * (1 - Math.exp(-dt * 5.2));
+    pointer.sy += (pointer.ny - pointer.sy) * (1 - Math.exp(-dt * 5.2));
     camera.position.set(
       camBase.x + camIntro.x + pointer.sx * 0.7,
       camBase.y + camIntro.y - pointer.sy * 0.45,
@@ -848,7 +867,12 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
 
     dust.material.uniforms.uTime.value = t;
 
-    pick();
+    // Raycast only when pointer moves and not dragging
+    if (pointer.dirty && !drag.active) {
+      pick();
+      pointer.dirty = false;
+    }
+
     renderer.render(scene, camera);
     onFrame?.(frameState());
     requestAnimationFrame(tick);

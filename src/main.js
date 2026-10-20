@@ -144,8 +144,8 @@ function setupCursor() {
   });
 
   function renderCursor() {
-    rx += (cx - rx) * 0.22;
-    ry += (cy - ry) * 0.22;
+    rx += (cx - rx) * 0.38;
+    ry += (cy - ry) * 0.38;
 
     cursor.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
     const ring = cursor.querySelector('.cursor__ring');
