@@ -1306,8 +1306,8 @@ button {
   }
 
   .hero__stats {
-    margin-top: 24px;
-    padding-top: 14px;
+    margin-top: 36px;
+    padding-top: 18px;
     gap: clamp(18px, 2.4vw, 36px);
   }
 

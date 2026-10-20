@@ -520,14 +520,14 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
       stage.position.x = 0;
     } else {
       const isLaptop = W < 1520 || H < 860;
-      camBase.set(0, isLaptop ? 3.8 : 3.75, isLaptop ? 16.2 : 15.6);
-      lookBase.set(0, isLaptop ? 3.38 : 3.3, 0);
-      stage.position.y = isLaptop ? 0.42 : 0.38;
-      stage.scale.setScalar(isLaptop ? 0.85 : 0.96);
+      camBase.set(0, isLaptop ? 3.65 : 3.7, isLaptop ? 15.8 : 15.4);
+      lookBase.set(0, 3.25, 0);
+      stage.position.y = isLaptop ? 0.08 : 0.12;
+      stage.scale.setScalar(isLaptop ? 0.85 : 0.95);
       const vh = 2 * camBase.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
       const vw = vh * camera.aspect;
       // Fixed right-column placement with clean margin so temple never collides with hero headline text
-      stage.position.x = Math.min(Math.max(vw * 0.25, isLaptop ? 3.8 : 4.2), 5.4);
+      stage.position.x = Math.min(Math.max(vw * 0.26, isLaptop ? 4.1 : 4.3), 5.5);
     }
 
     sun.position.set(stage.position.x + 6, 11, 7);
