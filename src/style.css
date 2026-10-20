@@ -782,12 +782,18 @@ button {
 }
 
 .hero__stats {
+  position: absolute;
+  left: var(--pad);
+  bottom: 26px;
+  z-index: 5;
   display: flex;
-  gap: clamp(28px, 3.4vw, 56px);
-  margin-top: 54px;
-  padding-top: 26px;
+  gap: clamp(24px, 3.2vw, 48px);
+  margin: 0;
+  padding-top: 18px;
   border-top: 1px solid var(--line);
   max-width: 520px;
+  width: auto;
+  pointer-events: auto;
 }
 
 .stat {
@@ -1306,9 +1312,9 @@ button {
   }
 
   .hero__stats {
-    margin-top: 36px;
-    padding-top: 18px;
-    gap: clamp(18px, 2.4vw, 36px);
+    bottom: 18px;
+    padding-top: 14px;
+    gap: clamp(16px, 2.2vw, 32px);
   }
 
   .stat__num {

@@ -520,9 +520,9 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
       stage.position.x = 0;
     } else {
       const isLaptop = W < 1520 || H < 860;
-      camBase.set(0, isLaptop ? 3.65 : 3.7, isLaptop ? 15.8 : 15.4);
-      lookBase.set(0, 3.25, 0);
-      stage.position.y = isLaptop ? 0.08 : 0.12;
+      camBase.set(0, isLaptop ? 3.6 : 3.65, isLaptop ? 15.6 : 15.2);
+      lookBase.set(0, 3.2, 0);
+      stage.position.y = isLaptop ? -0.04 : 0.0;
       stage.scale.setScalar(isLaptop ? 0.85 : 0.95);
       const vh = 2 * camBase.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
       const vw = vh * camera.aspect;
@@ -773,7 +773,7 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     l: new THREE.Vector3(-3.7, 0, -2.6),
     r: new THREE.Vector3(3.7, 0, -2.6),
     t: new THREE.Vector3(0, 8.1, -2.6),
-    cap: new THREE.Vector3(0, 0.08, 2.95),
+    cap: new THREE.Vector3(0, 0.40, 2.85),
   };
 
   function project(v) {
