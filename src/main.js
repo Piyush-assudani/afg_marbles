@@ -743,18 +743,18 @@ async function init() {
   initSecurity();
 
   // Dynamic progressive loader ticker so the user immediately sees active movement (never stuck at 0%)
-  let currentPct = 15;
-  loaderBar.style.transform = `scaleX(0.15)`;
-  loaderCount.textContent = '15';
+  let currentPct = 25;
+  loaderBar.style.transform = `scaleX(0.25)`;
+  loaderCount.textContent = '25';
 
   const progressTicker = setInterval(() => {
-    if (currentPct < 90) {
-      currentPct += Math.floor(Math.random() * 8) + 4;
-      if (currentPct > 90) currentPct = 90;
+    if (currentPct < 92) {
+      currentPct += Math.floor(Math.random() * 8) + 6;
+      if (currentPct > 92) currentPct = 92;
       loaderBar.style.transform = `scaleX(${currentPct / 100})`;
       loaderCount.textContent = currentPct;
     }
-  }, 85);
+  }, 45);
 
   const exp = createExperience({
     canvas,
@@ -820,8 +820,8 @@ async function init() {
     if (idx !== -1) selectStone(idx, exp);
   });
 
-  // Guarantee loader lifts in max 2.5s even on slow 3G / edge networks
-  const maxWaitPromise = new Promise((resolve) => setTimeout(resolve, 2500));
+  // Guarantee loader lifts quickly (max 1.8s safety cutoff)
+  const maxWaitPromise = new Promise((resolve) => setTimeout(resolve, 1800));
   await Promise.race([exp.ready, maxWaitPromise]);
 
   clearInterval(progressTicker);
@@ -829,7 +829,7 @@ async function init() {
   loaderCount.textContent = '100';
 
   try {
-    await Promise.race([exp.warmup(), new Promise((resolve) => setTimeout(resolve, 400))]);
+    await Promise.race([exp.warmup(), new Promise((resolve) => setTimeout(resolve, 120))]);
   } catch (err) {
     console.warn('Warmup skipped:', err);
   }
@@ -838,15 +838,15 @@ async function init() {
   const handoff = gsap.timeline();
   handoff.to(loader.querySelector('.loader__inner') || loader, {
     opacity: 0,
-    y: -16,
-    duration: 0.35,
+    y: -14,
+    duration: 0.25,
     ease: 'power2.out',
   });
-  handoff.to(loader, { clipPath: 'inset(0 0 100% 0)', duration: 0.65, ease: 'power3.inOut' }, 0.15);
+  handoff.to(loader, { clipPath: 'inset(0 0 100% 0)', duration: 0.48, ease: 'power3.inOut' }, 0.08);
   handoff.add(() => {
     exp.intro();
     animateEntrance();
-  }, 0.3);
+  }, 0.18);
   handoff.add(() => {
     loader.style.display = 'none';
     loader.style.pointerEvents = 'none';

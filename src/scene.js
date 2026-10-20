@@ -256,10 +256,10 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     };
   });
 
-  // Safety fallback: never keep user waiting more than 2.8s
+  // Safety fallback: never keep user waiting more than 2.0s
   setTimeout(() => {
     readyResolve();
-  }, 2800);
+  }, 2000);
 
   const manager = new THREE.LoadingManager(
     () => readyResolve?.(),
