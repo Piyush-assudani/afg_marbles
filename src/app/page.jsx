@@ -4,6 +4,7 @@ import HeroSection from '../components/HeroSection';
 import ProductCard from '../components/ProductCard';
 import DifferenceTable from '../components/DifferenceTable';
 import ConsultationCard from '../components/ConsultationCard';
+import PricingPhilosophy from '../components/PricingPhilosophy';
 import { PRODUCTS } from '../products.js';
 
 export default function HomePage() {
@@ -79,6 +80,9 @@ export default function HomePage() {
 
       {/* ============ THE AFG DIFFERENCE ============ */}
       <DifferenceTable onOpenInquiry={handleOpenInquiry} />
+
+      {/* ============ PRICING PHILOSOPHY & INVESTMENT TIERS (Tilak Reference) ============ */}
+      <PricingPhilosophy onOpenInquiry={handleOpenInquiry} />
 
       {/* ============ ALL WE NEED IS YOUR SPACE DIMENSIONS ============ */}
       <ConsultationCard onOpenInquiry={handleOpenInquiry} />

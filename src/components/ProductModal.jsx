@@ -4,14 +4,30 @@ import { useState, useEffect } from 'react';
 export default function ProductModal({ product, onClose, onInquire, onToast }) {
   const [activeAngleIdx, setActiveAngleIdx] = useState(0);
 
+  const angles = product?.angles || [];
+
+  const nextAngle = () => {
+    if (angles.length > 1) {
+      setActiveAngleIdx((prev) => (prev + 1) % angles.length);
+    }
+  };
+
+  const prevAngle = () => {
+    if (angles.length > 1) {
+      setActiveAngleIdx((prev) => (prev - 1 + angles.length) % angles.length);
+    }
+  };
+
   useEffect(() => {
     setActiveAngleIdx(0);
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowRight') nextAngle();
+      if (e.key === 'ArrowLeft') prevAngle();
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [product, onClose]);
+  }, [product, onClose, angles.length]);
 
   if (!product) return null;
 
@@ -64,13 +80,33 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
         <div className="product-modal__grid">
           {/* Left: Multi-Angle Interactive Gallery */}
           <div className="product-modal__gallery">
-            <div className="gallery-main-view">
+            <div className="gallery-main-view" style={{ position: 'relative' }}>
               <img
                 src={currentAngle.src}
                 alt={`${product.title} - ${currentAngle.label}`}
                 className="gallery-main-img"
               />
               <span className="gallery-active-badge">{currentAngle.tag || currentAngle.label}</span>
+              {angles.length > 1 && (
+                <>
+                  <button
+                    type="button"
+                    className="modal-gallery-arrow modal-gallery-arrow--prev"
+                    onClick={prevAngle}
+                    aria-label="Previous angle"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    type="button"
+                    className="modal-gallery-arrow modal-gallery-arrow--next"
+                    onClick={nextAngle}
+                    aria-label="Next angle"
+                  >
+                    ›
+                  </button>
+                </>
+              )}
             </div>
             <p className="gallery-angle-desc">{currentAngle.desc}</p>
 

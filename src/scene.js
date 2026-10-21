@@ -405,7 +405,7 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
 
   const sun = new THREE.DirectionalLight('#fff1dc', 2.6);
   sun.castShadow = true;
-  sun.shadow.mapSize.set(isSmallScreen ? 1024 : 2048, isSmallScreen ? 1024 : 2048);
+  sun.shadow.mapSize.set(1024, 1024);
   sun.shadow.camera.near = 1;
   sun.shadow.camera.far = 30;
   sun.shadow.camera.left = -7;
@@ -540,7 +540,7 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     W = canvas.clientWidth || window.innerWidth;
     H = canvas.clientHeight || window.innerHeight;
     const isSmall = W < 821;
-    renderer.setPixelRatio(Math.min(Math.max(window.devicePixelRatio, isSmall ? 1.75 : 2), 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, isSmall ? 1.4 : 1.5));
     renderer.setSize(W, H, false);
     camera.aspect = W / H;
     isMobile = W < 821 || W / H < 0.9;

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import ProductCard from '../../components/ProductCard';
 import DifferenceTable from '../../components/DifferenceTable';
 import ConsultationCard from '../../components/ConsultationCard';
+import PricingPhilosophy from '../../components/PricingPhilosophy';
 import { PRODUCTS } from '../../products.js';
 
 export default function PoojaSanctumsPage() {
@@ -94,6 +95,9 @@ export default function PoojaSanctumsPage() {
 
       {/* ============ THE AFG DIFFERENCE ============ */}
       <DifferenceTable onOpenInquiry={handleOpenInquiry} />
+
+      {/* ============ PRICING PHILOSOPHY & INVESTMENT TIERS ============ */}
+      <PricingPhilosophy onOpenInquiry={handleOpenInquiry} />
 
       {/* ============ ALL WE NEED IS YOUR SPACE DIMENSIONS ============ */}
       <ConsultationCard onOpenInquiry={handleOpenInquiry} />
