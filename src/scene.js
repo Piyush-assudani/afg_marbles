@@ -118,11 +118,12 @@ function makeMarbleMaterial(map, { scale = 0.52, minY = 0.25, maxY = 5.55, rough
 
 function makeGoldMaterial() {
   return new THREE.MeshPhysicalMaterial({
-    color: new THREE.Color('#e7c27c'),
-    metalness: 1,
-    roughness: 0.22,
-    clearcoat: 0.4,
-    clearcoatRoughness: 0.2,
+    color: new THREE.Color('#f5cc76'),
+    metalness: 0.96,
+    roughness: 0.16,
+    clearcoat: 0.7,
+    clearcoatRoughness: 0.08,
+    reflectivity: 0.95,
   });
 }
 
@@ -230,7 +231,7 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
   renderer.toneMapping = THREE.NeutralToneMapping ?? THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.02;
   renderer.shadowMap.enabled = true;
-  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.shadowMap.type = THREE.PCFShadowMap;
   renderer.setClearColor(0x000000, 0);
 
   const scene = new THREE.Scene();
@@ -266,7 +267,7 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     (_url, loaded, total) => {
       if (total > 0) onProgress?.(loaded / total);
     },
-    (url) => console.warn('Loading warning on asset:', url)
+    () => {} // Silent asset warning handler to avoid terminal noise
   );
   const loader = new THREE.TextureLoader(manager);
   const bgLoader = new THREE.TextureLoader();
@@ -307,18 +308,18 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     map: textures.makrana,
     roughness: 0.14,
     metalness: 0.02,
-    clearcoat: 0.9,
-    clearcoatRoughness: 0.06,
+    clearcoat: 0.95,
+    clearcoatRoughness: 0.05,
   });
 
   const omGold = new THREE.MeshPhysicalMaterial({
-    color: new THREE.Color('#ffdf88'),
+    color: new THREE.Color('#ffe18a'),
     emissive: new THREE.Color('#ffd166'),
-    emissiveIntensity: 0.35,
-    metalness: 0.95,
-    roughness: 0.16,
+    emissiveIntensity: 0.45,
+    metalness: 0.96,
+    roughness: 0.14,
     clearcoat: 1,
-    clearcoatRoughness: 0.05,
+    clearcoatRoughness: 0.04,
   });
 
   const meenakariBlue = new THREE.MeshPhysicalMaterial({
@@ -329,23 +330,86 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     clearcoatRoughness: 0.06,
   });
 
+  // Dedicated luxury palace materials for the authentic 256-mesh model:
+  const rubyJewel = new THREE.MeshPhysicalMaterial({
+    color: new THREE.Color('#9e0b1c'),
+    emissive: new THREE.Color('#4a030b'),
+    emissiveIntensity: 0.35,
+    metalness: 0.1,
+    roughness: 0.08,
+    clearcoat: 1.0,
+    clearcoatRoughness: 0.03,
+  });
+
+  const sapphireJewel = new THREE.MeshPhysicalMaterial({
+    color: new THREE.Color('#0a2e5c'),
+    emissive: new THREE.Color('#03142e'),
+    emissiveIntensity: 0.3,
+    metalness: 0.1,
+    roughness: 0.08,
+    clearcoat: 1.0,
+    clearcoatRoughness: 0.03,
+  });
+
+  const emeraldJewel = new THREE.MeshPhysicalMaterial({
+    color: new THREE.Color('#08522e'),
+    emissive: new THREE.Color('#022413'),
+    emissiveIntensity: 0.3,
+    metalness: 0.1,
+    roughness: 0.08,
+    clearcoat: 1.0,
+    clearcoatRoughness: 0.03,
+  });
+
+  const lampGlowMat = new THREE.MeshStandardMaterial({
+    color: new THREE.Color('#fff0b3'),
+    emissive: new THREE.Color('#ffaa22'),
+    emissiveIntensity: 2.4,
+    roughness: 0.3,
+  });
+
+  const diyaFlameMat = new THREE.MeshStandardMaterial({
+    color: new THREE.Color('#fff4cc'),
+    emissive: new THREE.Color('#ff7700'),
+    emissiveIntensity: 3.0,
+    roughness: 0.2,
+  });
+
+  const carvedPeacockIvory = new THREE.MeshPhysicalMaterial({
+    color: new THREE.Color('#fcfaf5'),
+    roughness: 0.14,
+    metalness: 0.02,
+    clearcoat: 0.95,
+    clearcoatRoughness: 0.05,
+  });
+
+  const royalVelvetMaroon = new THREE.MeshStandardMaterial({
+    color: new THREE.Color('#480d16'),
+    roughness: 0.85,
+    metalness: 0.05,
+  });
+
   const pickables = [];
   const mandirGroup = new THREE.Group();
 
+  // Divine Sanctum interior illumination (warm spiritual aura inside garbhagriha)
+  const sanctumGlow = new THREE.PointLight('#ffc060', 3.4, 7.5, 1.8);
+  sanctumGlow.position.set(0, 2.6, 0.45);
+  mandirGroup.add(sanctumGlow);
+
   const gltfLoader = new GLTFLoader(manager);
-  // Attach DRACOLoader lazily without manager preloading to prevent worker hangs
   try {
     const dracoLoader = new DRACOLoader();
     dracoLoader.setDecoderPath(`${BASE}draco/`);
     gltfLoader.setDRACOLoader(dracoLoader);
-  } catch (e) {
-    console.warn('Draco setup:', e);
+  } catch (_e) {
+    // Silent fallback
   }
   gltfLoader.setMeshoptDecoder(MeshoptDecoder);
 
   const urlParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
   const isDarkModel = urlParams?.get('model') === 'dark' || urlParams?.get('theme') === 'dark';
-  const modelFile = isDarkModel ? 'mandir_heavy_dark.glb' : 'mandir_heavy_ivory.glb';
+  const modelFile = isDarkModel ? 'mandir_heavy_dark.glb' : 'mandir_premium_v4.glb';
 
   const gltfPromise = new Promise((resolve, reject) => {
     gltfLoader.load(
@@ -353,7 +417,7 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
       (gltf) => {
         const mandir = gltf.scene;
         mandir.scale.setScalar(2.25);
-        mandir.position.set(0, 0.3, 0);
+        mandir.position.set(0, 0.30, 0);
 
         mandir.traverse((child) => {
           if (child.isMesh) {
@@ -363,14 +427,31 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
 
             const matName = child.material?.name || '';
             const meshName = child.name || '';
+            const lowerName = meshName.toLowerCase();
 
             // Sacred Sanctum centerpiece:
             if (meshName === 'om_symbol') {
               child.material = omGold;
             } else if (meshName === 'om_disc') {
               child.material = sanctumDiscMat;
+            } else if (meshName === 'om_ring' || meshName === 'fan_inner_tips') {
+              child.material = gold;
             } else if (meshName === 'fan_feathers_inner') {
               child.material = meenakariBlue;
+            } else if (lowerName.includes('peacock') && (lowerName.includes('body') || lowerName.includes('neck') || lowerName.includes('head'))) {
+              child.material = carvedPeacockIvory;
+            } else if (lowerName.includes('eyes_blue') || lowerName.includes('gems_blue') || lowerName.includes('diamonds_blue') || matName.includes('Gem_Sapphire')) {
+              child.material = sapphireJewel;
+            } else if (lowerName.includes('eyes_red') || lowerName.includes('gems_red') || lowerName.includes('diamonds_red') || matName.includes('Gem_Ruby')) {
+              child.material = rubyJewel;
+            } else if (matName.includes('Gem_Emerald') || matName.includes('Enamel_Green')) {
+              child.material = emeraldJewel;
+            } else if (lowerName.includes('flame') || matName.includes('Diya_Flame')) {
+              child.material = diyaFlameMat;
+            } else if (lowerName.includes('bulb') || matName.includes('Lamp_Glow') || matName.includes('LED_Warm')) {
+              child.material = lampGlowMat;
+            } else if (matName.includes('Velvet')) {
+              child.material = royalVelvetMaroon;
             } else if (
               matName.includes('Marble_White') ||
               matName.includes('Marble_Cream') ||
@@ -378,8 +459,10 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
               (isDarkModel && matName.includes('Marble_Dark'))
             ) {
               child.material = templeMat;
-            } else if (matName.includes('Gold')) {
+            } else if (matName.includes('Gold') || lowerName.includes('wing_gold') || lowerName.includes('crest') || lowerName.includes('beak') || lowerName.includes('feet') || lowerName.includes('tail_fan')) {
               child.material = gold;
+            } else if (child.material) {
+              child.material.side = THREE.DoubleSide;
             }
           }
         });
@@ -390,10 +473,24 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
         readyResolve();
       },
       undefined,
-      (err) => {
-        console.error(`Failed to load ${modelFile}:`, err);
-        readyResolve();
-        reject(err);
+      (_err) => {
+        gltfLoader.load(
+          `${BASE}models/mandir_heavy_ivory.glb`,
+          (fallbackGltf) => {
+            const fallbackMandir = fallbackGltf.scene;
+            fallbackMandir.scale.setScalar(2.25);
+            fallbackMandir.position.set(0, 0.30, 0);
+            mandirGroup.add(fallbackMandir);
+            mandirGroup.visible = true;
+            resolve(fallbackGltf);
+            readyResolve();
+          },
+          undefined,
+          (fatalErr) => {
+            readyResolve();
+            reject(fatalErr);
+          }
+        );
       }
     );
   });
@@ -520,12 +617,12 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
   contact.position.y = 0.002;
   stage.add(contact);
 
-  // Golden halo behind the temple
+  // Golden prabhavali halo framing the temple
   const halo = new THREE.Group();
-  halo.position.set(0, 4.1, -2.6);
-  const haloA = new THREE.Mesh(new THREE.TorusGeometry(3.25, 0.016, 12, 220), gold);
-  const haloB = new THREE.Mesh(new THREE.TorusGeometry(3.6, 0.006, 8, 220), gold);
-  const bead = new THREE.Mesh(new THREE.SphereGeometry(0.07, 24, 24), gold);
+  halo.position.set(0, 3.9, -1.8);
+  const haloA = new THREE.Mesh(new THREE.TorusGeometry(2.35, 0.014, 12, 220), gold);
+  const haloB = new THREE.Mesh(new THREE.TorusGeometry(2.65, 0.006, 8, 220), gold);
+  const bead = new THREE.Mesh(new THREE.SphereGeometry(0.065, 24, 24), gold);
   halo.add(haloA, haloB, bead);
   stage.add(halo);
 
@@ -555,14 +652,14 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
       stage.position.x = 0;
     } else {
       const isLaptop = W < 1520 || H < 860;
-      camBase.set(0, isLaptop ? 3.45 : 3.5, isLaptop ? 14.0 : 13.5);
-      lookBase.set(0, isLaptop ? 2.85 : 2.9, 0);
-      stage.position.y = isLaptop ? -0.38 : -0.34;
-      stage.scale.setScalar(isLaptop ? 0.94 : 1.04);
+      camBase.set(0, isLaptop ? 3.3 : 3.4, isLaptop ? 15.5 : 15.0);
+      lookBase.set(0, isLaptop ? 2.5 : 2.6, 0);
+      stage.position.y = isLaptop ? -0.46 : -0.42;
+      stage.scale.setScalar(isLaptop ? 0.92 : 1.0);
       const vh = 2 * camBase.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
       const vw = vh * camera.aspect;
       // Positioned strictly in right half of viewport (50% right)
-      stage.position.x = Math.min(Math.max(vw * 0.16, isLaptop ? 2.1 : 2.45), 3.0);
+      stage.position.x = Math.min(Math.max(vw * 0.18, isLaptop ? 2.35 : 2.7), 3.3);
     }
 
     sun.position.set(stage.position.x + 5, 11, 7);
@@ -755,40 +852,23 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     introDone = true;
     mandirGroup.visible = true;
     podiumLayer.visible = true;
+    mandirGroup.position.set(0, 0, 0);
+    podiumLayer.scale.set(1, 1, 1);
+    contact.material.opacity = 1;
+    halo.scale.set(1, 1, 1);
 
     const tl = gsap.timeline({
       onComplete: () => {
         introDone = true;
-        mandirGroup.visible = true;
-        podiumLayer.visible = true;
       },
     });
-    turntable.rotation.y = -Math.PI * 0.95;
-    camIntro.z = 7;
-    camIntro.y = 2.4;
-    camIntro.x = -2;
+    turntable.rotation.y = -0.15;
+    camIntro.z = 0;
+    camIntro.y = 0;
+    camIntro.x = 0;
 
-    tl.to(camIntro, { z: 0, y: 0, x: 0, duration: 3.4, ease: 'expo.out' }, 0);
-    tl.to(turntable.rotation, { y: 0.45, duration: 3.6, ease: 'expo.out' }, 0);
-    tl.to(contact.material, { opacity: 1, duration: 1.6, ease: 'power2.out' }, 0.1);
-
-    tl.fromTo(
-      podiumLayer.scale,
-      { x: 0.4, y: 0.4, z: 0.4 },
-      { x: 1, y: 1, z: 1, duration: 1.6, ease: 'expo.out' },
-      0.1
-    );
-
-    tl.fromTo(
-      mandirGroup.position,
-      { y: 3.2 },
-      { y: 0, duration: 1.8, ease: 'expo.out' },
-      0.3
-    );
-
-    tl.to(halo.scale, { x: 1, y: 1, z: 1, duration: 2.2, ease: 'expo.out' }, 0.9);
-    tl.fromTo(halo.rotation, { z: -1.2 }, { z: 0, duration: 2.6, ease: 'expo.out' }, 0.9);
-    tl.to(dust.material.uniforms.uOpacity, { value: 1, duration: 2.5 }, 1);
+    tl.to(turntable.rotation, { y: 0.05, duration: 1.8, ease: 'power2.out' }, 0);
+    tl.to(dust.material.uniforms.uOpacity, { value: 1, duration: 1.5 }, 0.5);
 
     // Ceremonial stone reveal on load: sweep a golden line up the temple
     tl.call(() => {
@@ -800,7 +880,8 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
   }
 
   /* --- Loop --- */
-  const clock = new THREE.Clock();
+  let lastTime = performance.now();
+  let elapsedTime = 0;
   const tmp = new THREE.Vector3();
   const tmp2 = new THREE.Vector3();
   const camDir = new THREE.Vector3();
@@ -847,7 +928,7 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
         isVisible = entry.isIntersecting;
         if (isVisible && !animating) {
           animating = true;
-          clock.getDelta(); // flush delta so no time jump
+          lastTime = performance.now();
           requestAnimationFrame(tick);
         }
       },
@@ -862,8 +943,11 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
       return;
     }
 
-    const dt = Math.min(clock.getDelta(), 0.04);
-    const t = clock.elapsedTime;
+    const now = performance.now();
+    const dt = Math.min((now - lastTime) / 1000, 0.04);
+    lastTime = now;
+    elapsedTime += dt;
+    const t = elapsedTime;
 
     // Turntable
     if (introDone && !drag.active) {
@@ -929,16 +1013,63 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
 
   requestAnimationFrame(tick);
 
+  function setLightingMode(mode) {
+    if (mode === 'daylight') {
+      gsap.to(hemi.color, { r: 1.0, g: 0.97, b: 0.92, duration: 0.6 });
+      gsap.to(hemi, { intensity: 0.9, duration: 0.6 });
+      gsap.to(sun.color, { r: 1.0, g: 0.95, b: 0.86, duration: 0.6 });
+      gsap.to(sun, { intensity: 2.6, duration: 0.6 });
+      gsap.to(sanctumGlow, { intensity: 3.4, duration: 0.6 });
+      if (glowRingMat) gsap.to(glowRingMat, { opacity: 0.88, duration: 0.6 });
+    } else if (mode === 'aarti') {
+      gsap.to(hemi.color, { r: 0.85, g: 0.55, b: 0.28, duration: 0.6 });
+      gsap.to(hemi, { intensity: 0.55, duration: 0.6 });
+      gsap.to(sun.color, { r: 1.0, g: 0.62, b: 0.22, duration: 0.6 });
+      gsap.to(sun, { intensity: 1.4, duration: 0.6 });
+      gsap.to(sanctumGlow, { intensity: 8.5, duration: 0.6 });
+      gsap.to(sanctumGlow.color, { r: 1.0, g: 0.55, b: 0.1, duration: 0.6 });
+      if (glowRingMat) gsap.to(glowRingMat, { opacity: 1.0, duration: 0.6 });
+    } else if (mode === 'consecration') {
+      gsap.to(hemi.color, { r: 0.95, g: 0.85, b: 0.5, duration: 0.6 });
+      gsap.to(hemi, { intensity: 1.2, duration: 0.6 });
+      gsap.to(sun.color, { r: 1.0, g: 0.9, b: 0.6, duration: 0.6 });
+      gsap.to(sun, { intensity: 3.2, duration: 0.6 });
+      gsap.to(sanctumGlow, { intensity: 6.0, duration: 0.6 });
+      gsap.to(sanctumGlow.color, { r: 1.0, g: 0.88, b: 0.35, duration: 0.6 });
+      if (glowRingMat) gsap.to(glowRingMat, { opacity: 0.95, duration: 0.6 });
+    }
+  }
+
+  function setWireframe(enable) {
+    mandirGroup.traverse((child) => {
+      if (child.isMesh && child.material) {
+        if (Array.isArray(child.material)) {
+          child.material.forEach((m) => (m.wireframe = enable));
+        } else {
+          child.material.wireframe = enable;
+        }
+      }
+    });
+  }
+
+  function setAutoRotate(enable) {
+    autoSpeed = enable ? 0.15 : 0.0;
+  }
+
   return {
     ready,
     warmup,
     intro,
     setStone,
+    setLightingMode,
+    setWireframe,
+    setAutoRotate,
     isTransitioning: () => transitioning,
     onSlabClick: (fn) => (clickHandler = fn),
     get isMobile() {
       return isMobile;
     },
+    __sceneState: typeof window !== 'undefined' ? (window.__sceneState = { mandirGroup, turntable, camera, stage, pickables }) : null
   };
 }
 

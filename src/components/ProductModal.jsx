@@ -19,6 +19,14 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
   };
 
   useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, []);
+
+  useEffect(() => {
     setActiveAngleIdx(0);
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') onClose();
@@ -38,14 +46,27 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
     desc: product.title
   };
 
+  const getProductUrl = () => {
+    if (typeof window === 'undefined') return '';
+    const origin = window.location.origin;
+    const cat = product?.category;
+    let path = '/pooja-sanctums';
+    if (cat === 'fountain') path = '/palatial-fountains';
+    else if (cat === 'chhatri') path = '/heritage-chhatris';
+    else if (cat === 'murti') path = '/marble-deities';
+    else if (cat === 'jaali') path = '/jaali-screens';
+    else if (cat === 'inlay') path = '/pietra-dura-inlay';
+    return `${origin}${path}#product/${product.id}`;
+  };
+
   const handleShareWhatsApp = () => {
-    const shareUrl = `${window.location.origin}/pooja-sanctums#product/${product.id}`;
-    const text = `Take a look at this breathtaking ${product.title} from A.F.G Marble & Arts: ${shareUrl}`;
+    const shareUrl = getProductUrl();
+    const text = `Look at this architectural masterpiece from A.F.G Marble & Arts: "${product.title}" (${product.scale}, ${product.primaryStone}): ${shareUrl}`;
     window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
   };
 
   const handleCopyLink = () => {
-    const shareUrl = `${window.location.origin}/pooja-sanctums#product/${product.id}`;
+    const shareUrl = getProductUrl();
     if (navigator.clipboard) {
       navigator.clipboard.writeText(shareUrl).then(() => {
         onToast?.('Dossier link copied to clipboard!');
@@ -56,7 +77,7 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
   };
 
   const handleNativeShare = () => {
-    const shareUrl = `${window.location.origin}/pooja-sanctums#product/${product.id}`;
+    const shareUrl = getProductUrl();
     if (navigator.share) {
       navigator
         .share({
@@ -70,9 +91,11 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
     }
   };
 
+  const [activeTab, setActiveTab] = useState('specs');
+
   return (
-    <div className="product-modal-backdrop" onClick={onClose}>
-      <div className="product-modal" onClick={(e) => e.stopPropagation()}>
+    <div className="product-modal-backdrop is-open" onClick={onClose}>
+      <div className="product-modal is-open" onClick={(e) => e.stopPropagation()}>
         <button className="modal-close-btn" onClick={onClose} aria-label="Close product view">
           ✕
         </button>
@@ -142,32 +165,138 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
                 <strong>Primary Stone:</strong> {product.primaryStone}
               </div>
               <div className="pm-pill">
-                <strong>Rating:</strong> {product.rating || '5.0 (Artisan Verified)'}
+                <strong>Certification:</strong> Certified 99% Calcite Bedrock
               </div>
             </div>
 
-            <div className="pm-section">
-              <h4>Architectural Narrative</h4>
-              <p>{product.fullDesc}</p>
+            {/* Bespoke Sizing Notice (Direct clarity: No fixed checkout prices, custom to client space) */}
+            <div
+              style={{
+                padding: '10px 14px',
+                background: 'rgba(176, 138, 79, 0.08)',
+                borderRadius: '8px',
+                borderLeft: '3px solid #b08a4f',
+                marginBottom: '16px',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}
+            >
+              <div>
+                <strong style={{ fontSize: '12px', color: '#1c1813', display: 'block' }}>
+                  Commissioned to Your Exact Space Dimensions
+                </strong>
+                <span style={{ fontSize: '11px', color: '#6b5f52' }}>
+                  3D CAD elevations &amp; marble volume estimates provided within 24 hours
+                </span>
+              </div>
+              <span style={{ fontSize: '11px', fontWeight: 700, color: '#8c6a36' }}>Bespoke</span>
             </div>
 
-            {product.specs && (
-              <div className="pm-section">
-                <h4>Noble Specifications &amp; Shastra Compliance</h4>
-                <div className="pm-specs-grid">
-                  {product.specs.map((s, idx) => (
-                    <div key={idx} className="pm-spec-row">
-                      <span className="pm-spec-label">{s.label}:</span>
-                      <span className="pm-spec-value">{s.value}</span>
+            {/* Deep Specification Tabs */}
+            <div
+              style={{
+                display: 'flex',
+                borderBottom: '1px solid rgba(28, 24, 19, 0.14)',
+                marginBottom: '16px',
+                gap: '8px',
+              }}
+            >
+              {[
+                { id: 'specs', label: 'Architecture & Specs' },
+                { id: 'vastu', label: 'Vastu & Mineral Science' },
+                { id: 'shipping', label: 'Crating & Assembly' },
+              ].map((tab) => (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setActiveTab(tab.id)}
+                  style={{
+                    padding: '8px 12px',
+                    fontSize: '12px',
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                    background: 'transparent',
+                    border: 'none',
+                    borderBottom: activeTab === tab.id ? '2px solid #b08a4f' : '2px solid transparent',
+                    color: activeTab === tab.id ? '#1c1813' : '#8a8073',
+                    transition: 'all 0.2s ease',
+                  }}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Tab 1: Architecture & Specs */}
+            {activeTab === 'specs' && (
+              <>
+                <div className="pm-section">
+                  <h4>Architectural Narrative</h4>
+                  <p>{product.fullDesc}</p>
+                </div>
+
+                {product.specs && (
+                  <div className="pm-section">
+                    <h4>Architectural Specifications</h4>
+                    <div className="pm-specs-grid">
+                      {product.specs.map((s, idx) => (
+                        <div key={idx} className="pm-spec-row">
+                          <span className="pm-spec-label">{s.label}:</span>
+                          <span className="pm-spec-value">{s.value}</span>
+                        </div>
+                      ))}
                     </div>
-                  ))}
+                  </div>
+                )}
+              </>
+            )}
+
+            {/* Tab 2: Vastu & Mineral Science */}
+            {activeTab === 'vastu' && (
+              <div className="pm-section">
+                <h4>Sacred Sthapatya Veda &amp; Calcite Purity</h4>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '13px', color: '#4a4239', lineHeight: 1.6 }}>
+                  <div style={{ background: '#fcfaf6', padding: '12px 14px', borderRadius: '6px', border: '1px solid rgba(176,138,79,0.15)' }}>
+                    <strong style={{ color: '#1c1813', display: 'block', marginBottom: '4px' }}>Ayadi Metric: Dhana &amp; Vriddhi Aya</strong>
+                    <span>Perimeter and height conform to sacred Golden Ratio harmonic frequencies to ensure maximum auspiciousness for home worship.</span>
+                  </div>
+                  <div style={{ background: '#fcfaf6', padding: '12px 14px', borderRadius: '6px', border: '1px solid rgba(176,138,79,0.15)' }}>
+                    <strong style={{ color: '#1c1813', display: 'block', marginBottom: '4px' }}>Zero-Yellowing Calcite Mineral Structure</strong>
+                    <span>Certified 99% pure CaCO3 calcite mined directly from Makrana. Completely non-porous (absorption &lt; 0.04%). Safe for daily milk, honey, ghee, and oil lamp rituals.</span>
+                  </div>
+                  <div style={{ background: '#fcfaf6', padding: '12px 14px', borderRadius: '6px', border: '1px solid rgba(176,138,79,0.15)' }}>
+                    <strong style={{ color: '#1c1813', display: 'block', marginBottom: '4px' }}>Smoke Dissipation Spire Engineering</strong>
+                    <span>Concealed draft flues at the shikhara apex allow camphor and agarbatti smoke to naturally vent without blackening the marble.</span>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Tab 3: Crating & Assembly */}
+            {activeTab === 'shipping' && (
+              <div className="pm-section">
+                <h4>International Crating &amp; White-Glove Installation</h4>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '13px', color: '#4a4239', lineHeight: 1.6 }}>
+                  <div style={{ background: '#fcfaf6', padding: '12px 14px', borderRadius: '6px', border: '1px solid rgba(176,138,79,0.15)' }}>
+                    <strong style={{ color: '#1c1813', display: 'block', marginBottom: '4px' }}>ISPM-15 Certified Pine Crates</strong>
+                    <span>Custom fumigated marine plywood casing with 50mm high-density shock EVA foam lining and external Tip-N-Tell shock monitors.</span>
+                  </div>
+                  <div style={{ background: '#fcfaf6', padding: '12px 14px', borderRadius: '6px', border: '1px solid rgba(176,138,79,0.15)' }}>
+                    <strong style={{ color: '#1c1813', display: 'block', marginBottom: '4px' }}>4 to 6 Hour Dry-Joint Assembly</strong>
+                    <span>Interlocking modular stone blocks are discretely numbered. Requires zero wet mortar or cement, enabling clean indoor setup.</span>
+                  </div>
+                  <div style={{ background: '#fcfaf6', padding: '12px 14px', borderRadius: '6px', border: '1px solid rgba(176,138,79,0.15)' }}>
+                    <strong style={{ color: '#1c1813', display: 'block', marginBottom: '4px' }}>Worldwide Customs Clearance</strong>
+                    <span>Seamless doorstep transit across USA, UK, UAE, Australia, Canada, Singapore, and pan-India.</span>
+                  </div>
                 </div>
               </div>
             )}
 
             {/* Share Dossier Row */}
-            <div className="pm-share-row">
-              <span className="pm-share-label">Share Creation:</span>
+            <div className="pm-share-row" style={{ marginTop: '16px' }}>
+              <span className="pm-share-label">Direct Share Creation:</span>
               <button
                 type="button"
                 className="btn-share-icon"
@@ -225,13 +354,13 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
               </button>
               <a
                 href={`https://wa.me/917597417274?text=${encodeURIComponent(
-                  `Hello AFG Marble, I am interested in inquiring about the "${product.title}" (${product.scale}, ${product.primaryStone}). Please share pricing and CAD elevation details.`
+                  `Namaste AFG Marble, I am inquiring about "${product.title}" (${product.scale}, ${product.primaryStone}). Please share 3D CAD drawings and bespoke volume-based estimate.\n\nProduct Link: ${getProductUrl()}`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-outline-gold"
               >
-                <span>Instant WhatsApp Price &amp; CAD</span>
+                <span>Instant WhatsApp 3D CAD &amp; Pricing</span>
               </a>
             </div>
           </div>

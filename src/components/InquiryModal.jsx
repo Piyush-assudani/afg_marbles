@@ -16,6 +16,14 @@ export default function InquiryModal({ initialProduct, onClose, onToast }) {
   const [submittedLead, setSubmittedLead] = useState(null);
 
   useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, []);
+
+  useEffect(() => {
     if (initialProduct?.title) {
       setFormData((prev) => ({
         ...prev,

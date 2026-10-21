@@ -8,6 +8,26 @@ export default function HeroSection({ onOpenInquiry }) {
   const canvasRef = useRef(null);
   const expRef = useRef(null);
   const [activeStoneIndex, setActiveStoneIndex] = useState(0);
+  const [lightingMode, setLightingMode] = useState('daylight');
+  const [isWireframe, setIsWireframe] = useState(false);
+  const [isRotating, setIsRotating] = useState(true);
+
+  const handleLightingChange = (mode) => {
+    setLightingMode(mode);
+    expRef.current?.setLightingMode?.(mode);
+  };
+
+  const handleToggleWireframe = () => {
+    const next = !isWireframe;
+    setIsWireframe(next);
+    expRef.current?.setWireframe?.(next);
+  };
+
+  const handleToggleRotate = () => {
+    const next = !isRotating;
+    setIsRotating(next);
+    expRef.current?.setAutoRotate?.(next);
+  };
 
   useEffect(() => {
     if (!canvasRef.current) return;
@@ -165,24 +185,36 @@ export default function HeroSection({ onOpenInquiry }) {
         }
       }, 500);
 
-      // Entrance sequence
-      const entranceTl = gsap.timeline({ defaults: { ease: 'expo.out' } });
+      // Entrance sequence with fail-safe visibility (never hide critical content)
+      const entranceTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
       const titleLines = document.querySelectorAll('.hero__title .line > span');
       if (titleLines.length) {
-        entranceTl.fromTo(
+        entranceTl.from(
           titleLines,
-          { y: '50%', opacity: 0 },
-          { y: '0%', opacity: 1, duration: 1.4, stagger: 0.1, ease: 'expo.out' },
-          0.1
+          { y: 18, duration: 0.8, stagger: 0.08, clearProps: 'all' },
+          0.05
         );
       }
-      entranceTl.fromTo('.hero__eyebrow', { opacity: 0, x: -15 }, { opacity: 1, x: 0, duration: 1.0 }, 0.2);
-      entranceTl.fromTo('.hero__lead', { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 1.2 }, 0.4);
-      entranceTl.fromTo('.hero__ctas > *', { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 1.2, stagger: 0.12 }, 0.55);
-      entranceTl.fromTo('.hero-stone-card', { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 1.1 }, 0.5);
-      entranceTl.fromTo('.hero-feature-card', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1.1 }, 0.65);
-      entranceTl.fromTo('#stone-rail', { x: 30, opacity: 0 }, { x: 0, opacity: 1, duration: 1.1 }, 0.75);
-      entranceTl.fromTo('.hero__stats-ribbon', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1.1 }, 0.85);
+      entranceTl.from('.hero__eyebrow', { x: -10, duration: 0.6, clearProps: 'all' }, 0.1);
+      entranceTl.from('.hero__lead', { y: 14, duration: 0.7, clearProps: 'all' }, 0.15);
+      entranceTl.from('.hero__ctas > *', { y: 14, duration: 0.7, stagger: 0.08, clearProps: 'all' }, 0.2);
+      entranceTl.from('.hero-stone-card', { scale: 0.95, duration: 0.8, clearProps: 'all' }, 0.25);
+      entranceTl.from('#stone-rail', { x: 20, duration: 0.8, clearProps: 'all' }, 0.3);
+      entranceTl.from('.hero__stats-ribbon', { y: 15, duration: 0.8, clearProps: 'all' }, 0.35);
+
+      // Instant visibility guarantee
+      document.querySelectorAll('.hero__content, .hero__title .line > span, .hero__eyebrow, .hero__lead, .hero__ctas, .hero__ctas > *, .hero-stone-card, #stone-rail, .hero__stats-ribbon').forEach((el) => {
+        el.style.opacity = '1';
+      });
+
+      setTimeout(() => {
+        document.querySelectorAll('.hero__content, .hero__title .line > span, .hero__eyebrow, .hero__lead, .hero__ctas, .hero__ctas > *, .hero-stone-card, #stone-rail, .hero__stats-ribbon').forEach((el) => {
+          el.style.opacity = '1';
+        });
+        document.querySelectorAll('.hero__title .line > span').forEach((el) => {
+          el.style.transform = 'none';
+        });
+      }, 400);
 
       // Count-up stats animation
       const statNums = document.querySelectorAll('.ribbon-stat__num span[data-count]');
@@ -191,12 +223,17 @@ export default function HeroSection({ onOpenInquiry }) {
         const obj = { val: 0 };
         gsap.to(obj, {
           val: target,
-          duration: 2.2,
-          ease: 'power3.out',
-          delay: 0.3,
+          duration: 1.8,
+          ease: 'power2.out',
+          delay: 0.2,
           onUpdate: () => {
-            el.textContent = Math.floor(obj.val).toLocaleString();
+            if (obj.val > 0) {
+              el.textContent = Math.floor(obj.val).toLocaleString();
+            }
           },
+          onComplete: () => {
+            el.textContent = target.toLocaleString();
+          }
         });
       });
     } catch (err) {
@@ -231,11 +268,9 @@ export default function HeroSection({ onOpenInquiry }) {
         </p>
 
         <h1 className="hero__title">
-          <span className="line"><span>Sacred</span></span>
-          <span className="line"><span>Devotion,</span></span>
+          <span className="line"><span>Sacred Devotion,</span></span>
           <span className="line line--italic"><span><em>sculpted</em></span></span>
-          <span className="line"><span>in eternal</span></span>
-          <span className="line"><span>marble</span></span>
+          <span className="line"><span>in eternal marble</span></span>
         </h1>
 
         <p className="hero__lead">
@@ -271,6 +306,58 @@ export default function HeroSection({ onOpenInquiry }) {
           THE STONE OF<br />THE TAJ MAHAL
         </span>
         <div className="hero-stone-card__line" aria-hidden="true"></div>
+      </div>
+
+      {/* ============ 3D SANCTUM LIGHTING & BLUEPRINT CONTROLS ============ */}
+      <div className="hero-3d-toolbar" aria-label="3D Sanctum Atmosphere Controller">
+        <div className="toolbar-group">
+          <span className="toolbar-label">Ambience:</span>
+          <button
+            type="button"
+            className={`toolbar-btn ${lightingMode === 'daylight' ? 'is-active' : ''}`}
+            onClick={() => handleLightingChange('daylight')}
+            title="Surya / Pure Daylight Illumination"
+          >
+            ☀️ Surya
+          </button>
+          <button
+            type="button"
+            className={`toolbar-btn ${lightingMode === 'aarti' ? 'is-active' : ''}`}
+            onClick={() => handleLightingChange('aarti')}
+            title="Sandhya / Aarti Diya Inner Glow"
+          >
+            🪔 Aarti Glow
+          </button>
+          <button
+            type="button"
+            className={`toolbar-btn ${lightingMode === 'consecration' ? 'is-active' : ''}`}
+            onClick={() => handleLightingChange('consecration')}
+            title="Consecration / Ethereal Sanctum Aura"
+          >
+            🕉️ Consecration
+          </button>
+        </div>
+
+        <div className="toolbar-divider" aria-hidden="true" />
+
+        <div className="toolbar-group">
+          <button
+            type="button"
+            className={`toolbar-btn ${isWireframe ? 'is-active' : ''}`}
+            onClick={handleToggleWireframe}
+            title="Sthapatya Veda 3D CAD Blueprint Wireframe"
+          >
+            📐 CAD Mesh
+          </button>
+          <button
+            type="button"
+            className={`toolbar-btn ${isRotating ? 'is-active' : ''}`}
+            onClick={handleToggleRotate}
+            title="Toggle Continuous 360 Rotation"
+          >
+            {isRotating ? '⏸️ Pause' : '🔄 360°'}
+          </button>
+        </div>
       </div>
 
       {/* ============ FLOATING FEATURE CARD ============ */}

@@ -32,8 +32,10 @@ export default function LayoutClientWrapper({ children }) {
 
   return (
     <>
-      <AnnouncementBar />
-      <Navbar onOpenInquiry={(p) => setInquiryModalData(p)} />
+      <header className="site-header-container">
+        <AnnouncementBar />
+        <Navbar onOpenInquiry={(p) => setInquiryModalData(p)} />
+      </header>
 
       <main>{children}</main>
 

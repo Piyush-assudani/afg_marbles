@@ -712,3 +712,21 @@ html.js [data-reveal='lines'].is-in > span {
     clip-path: none !important;
   }
 }
+
+/* Responsive Rules for Tilak-Style Feature Sections */
+@media (max-width: 960px) {
+  .steps-nav-strip {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .steps-nav-strip {
+    grid-template-columns: 1fr !important;
+  }
+  .portfolio-filter-tabs button {
+    font-size: 11px !important;
+    padding: 7px 12px !important;
+  }
+}
+

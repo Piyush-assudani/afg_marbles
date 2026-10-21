@@ -1,15 +1,36 @@
 'use client';
+import { useState } from 'react';
 import Link from 'next/link';
 import HeroSection from '../components/HeroSection';
 import ProductCard from '../components/ProductCard';
 import DifferenceTable from '../components/DifferenceTable';
 import ConsultationCard from '../components/ConsultationCard';
 import PricingPhilosophy from '../components/PricingPhilosophy';
+import BeforeAfterSlider from '../components/BeforeAfterSlider';
+import FiveStepJourney from '../components/FiveStepJourney';
+import AyadiCalculator from '../components/AyadiCalculator';
+import TempleAnatomy from '../components/TempleAnatomy';
+import ExperienceCentre from '../components/ExperienceCentre';
+import ArchitecturalFaq from '../components/ArchitecturalFaq';
+import RoyalProjectsPreview from '../components/RoyalProjectsPreview';
+import QuarryTimeline from '../components/QuarryTimeline';
 import { PRODUCTS } from '../products.js';
 
 export default function HomePage() {
-  const mandirs = PRODUCTS.filter((p) => p.category === 'mandir').slice(0, 3);
-  const fountains = PRODUCTS.filter((p) => p.category === 'fountain').slice(0, 2);
+  const [activeCategory, setActiveCategory] = useState('all');
+
+  const filteredProducts = activeCategory === 'all'
+    ? PRODUCTS.slice(0, 6)
+    : PRODUCTS.filter((p) => {
+        if (activeCategory === 'craft') {
+          return p.category === 'murti' || p.category === 'jaali' || p.category === 'inlay';
+        }
+        return p.category === activeCategory;
+      });
+
+  const fountains = PRODUCTS.filter((p) => p.category === 'fountain').slice(0, 3);
+  const chhatris = PRODUCTS.filter((p) => p.category === 'chhatri').slice(0, 2);
+  const sanctums = PRODUCTS.filter((p) => p.category === 'sanctum').slice(0, 2);
 
   const handleOpenProduct = (product) => {
     if (typeof window !== 'undefined' && window.afgOpenProduct) {
@@ -22,6 +43,15 @@ export default function HomePage() {
       window.afgOpenInquiry(product);
     }
   };
+
+  const categories = [
+    { id: 'all', label: 'All Masterpieces', count: PRODUCTS.length },
+    { id: 'mandir', label: 'Mandirs & Temples', count: PRODUCTS.filter((p) => p.category === 'mandir').length },
+    { id: 'fountain', label: 'Palatial Fountains', count: PRODUCTS.filter((p) => p.category === 'fountain').length },
+    { id: 'chhatri', label: 'Heritage Chhatris', count: PRODUCTS.filter((p) => p.category === 'chhatri').length },
+    { id: 'sanctum', label: 'Contemporary Sanctums', count: PRODUCTS.filter((p) => p.category === 'sanctum').length },
+    { id: 'craft', label: 'Deities & Jaali Art', count: PRODUCTS.filter((p) => p.category === 'murti' || p.category === 'jaali' || p.category === 'inlay').length },
+  ];
 
   return (
     <>
@@ -81,30 +111,84 @@ export default function HomePage() {
       {/* ============ THE AFG DIFFERENCE ============ */}
       <DifferenceTable onOpenInquiry={handleOpenInquiry} />
 
+      {/* ============ INTERACTIVE BEFORE & AFTER SLIDER (Yard Dry-Fit to Consecrated Sanctum) ============ */}
+      <BeforeAfterSlider />
+
+      {/* ============ 5-STEP JOURNEY (Matching Tilak Feature) ============ */}
+      <FiveStepJourney onOpenInquiry={handleOpenInquiry} />
+
       {/* ============ PRICING PHILOSOPHY & INVESTMENT TIERS (Tilak Reference) ============ */}
       <PricingPhilosophy onOpenInquiry={handleOpenInquiry} />
 
       {/* ============ ALL WE NEED IS YOUR SPACE DIMENSIONS ============ */}
       <ConsultationCard onOpenInquiry={handleOpenInquiry} />
 
-      {/* ============ FEATURED POOJA SANCTUMS (INTERACTIVE MULTI-ANGLE CARDS) ============ */}
+      {/* ============ INTERACTIVE E-COMMERCE ARCHITECTURAL PORTFOLIO ============ */}
       <section className="sec-collections" id="collections" style={{ padding: '80px 0' }}>
         <div className="sec-container">
-          <div className="sec-header text-center" style={{ marginBottom: '48px' }}>
+          <div className="sec-header text-center" style={{ marginBottom: '32px' }}>
             <span className="card-badge" style={{ position: 'static', display: 'inline-block', marginBottom: '12px' }}>
-              THE ARCHITECTURAL PORTFOLIO
+              THE MASTERPIECE CATALOG
             </span>
             <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.5vw, 44px)', color: '#1c1813' }}>
-              Consecrated Pooja Sanctums &amp; Mandirs
+              Architectural Portfolio &amp; Creations
             </h2>
             <div className="gold-rule center" style={{ margin: '14px auto 20px' }}></div>
-            <p className="sub-lead" style={{ maxWidth: '720px', margin: '0 auto', fontSize: '15px', color: '#6b5f52', lineHeight: 1.6 }}>
-              Every sanctum is sculpted from flawless monolithic blocks of Makrana Albeta marble. Hover or click the angle tabs to inspect front, 3/4 perspective, jali doors, and architectural elevations directly on each creation.
+            <p className="sub-lead" style={{ maxWidth: '760px', margin: '0 auto', fontSize: '15px', color: '#6b5f52', lineHeight: 1.6 }}>
+              Inspect every angle, examine dry-joint stonework, or directly share any creation. Every piece is sculpted to order to your exact space dimensions.
             </p>
           </div>
 
+          {/* Interactive Category Filter Pills Bar */}
+          <div
+            className="portfolio-filter-tabs"
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              flexWrap: 'wrap',
+              gap: '10px',
+              marginBottom: '40px',
+            }}
+          >
+            {categories.map((cat) => (
+              <button
+                key={cat.id}
+                type="button"
+                onClick={() => setActiveCategory(cat.id)}
+                style={{
+                  padding: '9px 18px',
+                  borderRadius: '999px',
+                  fontSize: '12px',
+                  fontWeight: 600,
+                  letterSpacing: '0.04em',
+                  cursor: 'pointer',
+                  transition: 'all 0.25s ease',
+                  border: activeCategory === cat.id ? '1px solid #b08a4f' : '1px solid rgba(28, 24, 19, 0.16)',
+                  background: activeCategory === cat.id ? '#1c1813' : '#fcfaf6',
+                  color: activeCategory === cat.id ? '#ecd39b' : '#383026',
+                  boxShadow: activeCategory === cat.id ? '0 4px 16px rgba(28, 24, 19, 0.15)' : 'none',
+                }}
+              >
+                <span>{cat.label}</span>
+                <span
+                  style={{
+                    marginLeft: '8px',
+                    fontSize: '10px',
+                    opacity: activeCategory === cat.id ? 0.9 : 0.6,
+                    padding: '2px 6px',
+                    borderRadius: '10px',
+                    background: activeCategory === cat.id ? 'rgba(212, 175, 55, 0.25)' : 'rgba(0, 0, 0, 0.06)',
+                  }}
+                >
+                  {cat.count}
+                </span>
+              </button>
+            ))}
+          </div>
+
+          {/* Products Grid */}
           <div className="creations-grid">
-            {mandirs.map((product) => (
+            {filteredProducts.map((product) => (
               <ProductCard
                 key={product.id}
                 product={product}
@@ -114,14 +198,20 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="sec-cta-wrap text-center" style={{ marginTop: '48px' }}>
+          <div className="sec-cta-wrap text-center" style={{ marginTop: '48px', display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap' }}>
             <Link href="/pooja-sanctums" className="btn-primary">
-              <span className="btn-primary__text">View All Pooja Sanctums &amp; Mandirs</span>
+              <span className="btn-primary__text">Explore All 15+ Pooja Sanctums</span>
               <span className="btn-primary__icon">→</span>
+            </Link>
+            <Link href="/palatial-fountains" className="btn-outline-gold">
+              <span>View Water Architecture</span>
             </Link>
           </div>
         </div>
       </section>
+
+      {/* ============ INTERACTIVE AYADI VASTU CALCULATOR & CAD REQUEST ============ */}
+      <AyadiCalculator onOpenInquiry={handleOpenInquiry} />
 
       {/* ============ PALATIAL FOUNTAINS PREVIEW ============ */}
       <section className="sec-fountains-preview" style={{ padding: '80px 0', background: '#f5eee1' }}>
@@ -158,6 +248,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ============ ROYAL HERITAGE LANDMARKS (COMPLETED COMMISSIONS) ============ */}
+      <RoyalProjectsPreview />
 
       {/* ============ SILAWAT CRAFT & WORKSHOP TEASER ============ */}
       <section className="sec-workshop-teaser" style={{ padding: '80px 0' }}>
@@ -220,58 +313,201 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ============ CLIENT REVIEWS & GLOBAL REACH ============ */}
-      <section className="sec-reviews" style={{ padding: '80px 0', background: '#fcfaf6' }}>
+      {/* ============ MAKRANA PROVENANCE & CALCITE JOURNEY ============ */}
+      <QuarryTimeline />
+
+      {/* ============ HERITAGE CHHATRI & PAVILION SHOWCASE ============ */}
+      <section className="sec-chhatris-preview" style={{ padding: '80px 0', background: '#fcfaf6' }}>
         <div className="sec-container">
           <div className="sec-header text-center" style={{ marginBottom: '48px' }}>
             <span className="card-badge" style={{ position: 'static', display: 'inline-block', marginBottom: '12px' }}>
-              ESTEEMED PATRONS
+              MONUMENTAL HERITAGE ARCHITECTURE
             </span>
             <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.5vw, 44px)', color: '#1c1813' }}>
-              Commissioned Across the World
+              Heritage Chhatris &amp; Royal Pavilions
             </h2>
             <div className="gold-rule center" style={{ margin: '14px auto 20px' }}></div>
             <p className="sub-lead" style={{ maxWidth: '720px', margin: '0 auto', fontSize: '15px', color: '#6b5f52', lineHeight: 1.6 }}>
-              From historic grand estates in Rajasthan to private penthouses in London, Manhattan, and Dubai.
+              Octagonal marble pavilions with ribbed domes, fluted monolith pillars, and pierced jali balustrades — Rajasthan&apos;s iconic gift to monumental garden and estate architecture.
             </p>
           </div>
 
           <div className="creations-grid">
-            <div className="creation-card" style={{ padding: '28px' }}>
-              <div className="review-stars" style={{ color: '#b08a4f', fontSize: '18px', marginBottom: '14px' }}>★★★★★</div>
-              <p className="review-text" style={{ fontStyle: 'italic', color: '#383026', fontSize: '14px', lineHeight: 1.6, marginBottom: '18px' }}>
-                &ldquo;The purity of the Makrana Albeta marble is unmatched. When our home mandir arrived in London, perfectly crated without a single scratch, our entire family was moved to tears by the detail of the peacock arches.&rdquo;
-              </p>
-              <div className="review-author">
-                <strong style={{ display: 'block', color: '#1c1813', fontSize: '14px' }}>Dr. Vikram &amp; Sunita Patel</strong>
-                <span style={{ fontSize: '12px', color: '#8a8073' }}>Highgate, London, UK · Royal Garbhagriha Commission</span>
-              </div>
-            </div>
+            {chhatris.map((product) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                onOpenProduct={handleOpenProduct}
+                onOpenInquiry={handleOpenInquiry}
+              />
+            ))}
+          </div>
 
-            <div className="creation-card" style={{ padding: '28px' }}>
-              <div className="review-stars" style={{ color: '#b08a4f', fontSize: '18px', marginBottom: '14px' }}>★★★★★</div>
-              <p className="review-text" style={{ fontStyle: 'italic', color: '#383026', fontSize: '14px', lineHeight: 1.6, marginBottom: '18px' }}>
-                &ldquo;We wanted a courtyard cascading fountain in deep Nero Marquina and Makrana marble for our Alibaug villa. The water balance and stone chiseling are beyond palace quality.&rdquo;
-              </p>
-              <div className="review-author">
-                <strong style={{ display: 'block', color: '#1c1813', fontSize: '14px' }}>Ananya &amp; Sameer Mehta</strong>
-                <span style={{ fontSize: '12px', color: '#8a8073' }}>Worli, Mumbai &amp; Alibaug · 3-Tier Palatial Fountain</span>
-              </div>
-            </div>
-
-            <div className="creation-card" style={{ padding: '28px' }}>
-              <div className="review-stars" style={{ color: '#b08a4f', fontSize: '18px', marginBottom: '14px' }}>★★★★★</div>
-              <p className="review-text" style={{ fontStyle: 'italic', color: '#383026', fontSize: '14px', lineHeight: 1.6, marginBottom: '18px' }}>
-                &ldquo;AFG’s 3D CAD team incorporated our exact space dimensions down to the centimeter. The dry-fit trial video they sent before shipping gave us 100% confidence. Truly India’s premier marble atelier.&rdquo;
-              </p>
-              <div className="review-author">
-                <strong style={{ display: 'block', color: '#1c1813', fontSize: '14px' }}>Harshavardhan Singhania</strong>
-                <span style={{ fontSize: '12px', color: '#8a8073' }}>Emirates Hills, Dubai, UAE · Bespoke Ayadi Sanctum</span>
-              </div>
-            </div>
+          <div className="sec-cta-wrap text-center" style={{ marginTop: '48px' }}>
+            <Link href="/heritage-chhatris" className="btn-primary">
+              <span className="btn-primary__text">Explore All Heritage Chhatris</span>
+              <span className="btn-primary__icon">→</span>
+            </Link>
           </div>
         </div>
       </section>
+
+      {/* ============ SACRED ANATOMY OF A MAKRANA SANCTUM ============ */}
+      <TempleAnatomy />
+
+      {/* ============ CONTEMPORARY SANCTUMS & POOJA ROOMS ============ */}
+      <section className="sec-sanctums-preview" style={{ padding: '80px 0' }}>
+        <div className="sec-container">
+          <div className="sec-header text-center" style={{ marginBottom: '48px' }}>
+            <span className="card-badge" style={{ position: 'static', display: 'inline-block', marginBottom: '12px' }}>
+              MODERN DEVOTIONAL SPACES
+            </span>
+            <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.5vw, 44px)', color: '#1c1813' }}>
+              Contemporary Pooja Sanctums
+            </h2>
+            <div className="gold-rule center" style={{ margin: '14px auto 20px' }}></div>
+            <p className="sub-lead" style={{ maxWidth: '720px', margin: '0 auto', fontSize: '15px', color: '#6b5f52', lineHeight: 1.6 }}>
+              Clean-line minimalist marble sanctums designed for modern villas and penthouses — backlit Om mandalas, floating marble platforms, and concealed brass inlay work.
+            </p>
+          </div>
+
+          <div className="creations-grid">
+            {sanctums.map((product) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                onOpenProduct={handleOpenProduct}
+                onOpenInquiry={handleOpenInquiry}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ NOBLE STONE LIBRARY VISUAL GALLERY ============ */}
+      <section className="sec-stone-library" style={{ padding: '80px 0', background: '#f5eee1' }}>
+        <div className="sec-container">
+          <div className="sec-header text-center" style={{ marginBottom: '48px' }}>
+            <span className="card-badge" style={{ position: 'static', display: 'inline-block', marginBottom: '12px' }}>
+              THE NOBLE STONE LIBRARY
+            </span>
+            <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.5vw, 44px)', color: '#1c1813' }}>
+              Our Stone Collection
+            </h2>
+            <div className="gold-rule center" style={{ margin: '14px auto 20px' }}></div>
+            <p className="sub-lead" style={{ maxWidth: '720px', margin: '0 auto', fontSize: '15px', color: '#6b5f52', lineHeight: 1.6 }}>
+              From the virgin calcite seams of Makrana to the dramatic veined depths of Nero Marquina — every stone is hand-selected at the quarry face.
+            </p>
+          </div>
+
+          <div className="stone-gallery-grid" style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gap: '20px'
+          }}>
+            {[
+              { src: '/gallery/stone-makrana-calcite-slab.webp', name: 'Pure Makrana Albeta', desc: '99% CaCO₃ purity · Taj Mahal calcite stratum' },
+              { src: '/gallery/stone-nero-marquina-black.webp', name: 'Nero Marquina', desc: 'Deep black with white crystalline veining' },
+              { src: '/gallery/stone-calacatta-oro-gold.webp', name: 'Calacatta Oro Gold', desc: 'Warm gold veins through pristine white base' },
+              { src: '/gallery/stone-translucent-green-onyx.webp', name: 'Translucent Green Onyx', desc: 'Backlit translucent stone for sanctum glow' },
+              { src: '/gallery/stone-botticino-classico.webp', name: 'Botticino Classico', desc: 'Warm ivory with delicate honey veining' }
+            ].map((stone, idx) => (
+              <div key={idx} className="stone-card" style={{
+                borderRadius: '12px',
+                overflow: 'hidden',
+                background: '#fff',
+                boxShadow: '0 4px 24px rgba(28,24,19,0.08)',
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                cursor: 'pointer'
+              }}
+                onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 12px 40px rgba(28,24,19,0.14)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 24px rgba(28,24,19,0.08)'; }}
+              >
+                <div style={{ height: '200px', overflow: 'hidden' }}>
+                  <img src={stone.src} alt={stone.name} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }} />
+                </div>
+                <div style={{ padding: '16px 18px' }}>
+                  <h4 style={{ fontFamily: 'var(--serif)', fontSize: '16px', color: '#1c1813', marginBottom: '4px' }}>{stone.name}</h4>
+                  <p style={{ fontSize: '12px', color: '#8a8073', lineHeight: 1.4 }}>{stone.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="sec-cta-wrap text-center" style={{ marginTop: '48px' }}>
+            <Link href="/materials-guide" className="btn-primary">
+              <span className="btn-primary__text">Explore Makrana Calcite Science Guide</span>
+              <span className="btn-primary__icon">→</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ ATELIER CRAFT PROCESS GALLERY ============ */}
+      <section className="sec-craft-process" style={{ padding: '80px 0' }}>
+        <div className="sec-container">
+          <div className="sec-header text-center" style={{ marginBottom: '48px' }}>
+            <span className="card-badge" style={{ position: 'static', display: 'inline-block', marginBottom: '12px' }}>
+              FROM BEDROCK TO SANCTUM
+            </span>
+            <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.5vw, 44px)', color: '#1c1813' }}>
+              The 5-Stage Silawat Process
+            </h2>
+            <div className="gold-rule center" style={{ margin: '14px auto 20px' }}></div>
+          </div>
+
+          <div className="craft-process-grid" style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+            gap: '24px'
+          }}>
+            {[
+              { step: '01', title: 'Quarry Selection', img: '/gallery/atelier-sculptor-chisel-block.webp', desc: 'Ultrasonic pulse velocity testing at virgin Makrana calcite seams to ensure zero micro-fractures.' },
+              { step: '02', title: 'Master Sculpting', img: '/gallery/mandir-pure-makrana.webp', desc: '4th-generation Silawat guild artisans hand-chisel every motif using traditional hammer-and-flat-chisel technique.' },
+              { step: '03', title: 'Pre-Assembly Trial', img: '/gallery/atelier-yard-preassembly.webp', desc: 'Complete dry-fit assembly in our Jaipur yard with 4K walkthrough video sent for client verification.' },
+              { step: '04', title: 'ISPM-15 Export Crating', img: '/gallery/atelier-ispm15-crating-export.webp', desc: 'Fumigated marine plywood crates lined with 50mm high-density shock EVA foam for international dispatch.' }
+            ].map((item, idx) => (
+              <div key={idx} className="craft-step-card" style={{
+                borderRadius: '12px',
+                overflow: 'hidden',
+                background: '#fcfaf6',
+                border: '1px solid rgba(176, 138, 79, 0.15)',
+                transition: 'transform 0.3s ease',
+              }}
+                onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-6px)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; }}
+              >
+                <div style={{ height: '200px', overflow: 'hidden', position: 'relative' }}>
+                  <img src={item.img} alt={item.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <span style={{
+                    position: 'absolute', top: '12px', left: '12px',
+                    background: 'rgba(20, 17, 14, 0.85)', color: '#ecd39b',
+                    padding: '4px 12px', borderRadius: '999px', fontSize: '11px', fontWeight: 700,
+                    letterSpacing: '0.08em'
+                  }}>STAGE {item.step}</span>
+                </div>
+                <div style={{ padding: '18px 20px' }}>
+                  <h4 style={{ fontFamily: 'var(--serif)', fontSize: '18px', color: '#1c1813', marginBottom: '8px' }}>{item.title}</h4>
+                  <p style={{ fontSize: '13px', color: '#6b5f52', lineHeight: 1.6 }}>{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="sec-cta-wrap text-center" style={{ marginTop: '48px' }}>
+            <Link href="/atelier-workshop" className="btn-primary">
+              <span className="btn-primary__text">Discover the Full Atelier Process</span>
+              <span className="btn-primary__icon">→</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ EXPERIENCE CENTRES & GLOBAL REACH ============ */}
+      <ExperienceCentre onOpenInquiry={handleOpenInquiry} />
+
+      {/* ============ ARCHITECTURAL FREQUENTLY ASKED QUESTIONS ============ */}
+      <ArchitecturalFaq onOpenInquiry={handleOpenInquiry} />
     </>
   );
 }

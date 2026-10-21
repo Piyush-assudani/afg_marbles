@@ -59,8 +59,12 @@ export default function DifferenceTable({ onOpenInquiry }) {
                 <tr>
                   <th style={{ width: '28%' }}>FEATURE</th>
                   <th className="th-afg" style={{ width: '38%' }}>
-                    <span className="th-badge">OFFICIAL ATELIER</span>
-                    A.F.G MARBLE &amp; ARTS
+                    <span className="th-badge" style={{ display: 'inline-block', marginBottom: '6px' }}>
+                      OFFICIAL ATELIER
+                    </span>
+                    <span style={{ display: 'block', fontSize: '15px', letterSpacing: '0.04em' }}>
+                      A.F.G MARBLE &amp; ARTS
+                    </span>
                   </th>
                   <th className="th-other" style={{ width: '34%' }}>
                     LOCAL COMMERCIAL VENDORS
