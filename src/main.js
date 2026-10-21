@@ -342,13 +342,39 @@ function setupMegaMenu() {
    Scroll Header & Smooth Section Navigation
 ------------------------------------------------------------------- */
 function setupScrollNav() {
+  const wa = document.querySelector('.floating-wa, .floating-whatsapp');
+  const scrollIndicator = document.querySelector('.hero__scroll-indicator');
+  const hasHero = !!document.querySelector('.hero');
+
   const onScroll = () => {
-    if (window.scrollY > 40) {
+    const y = window.scrollY;
+
+    // Header nav styling
+    if (y > 40) {
       nav.classList.add('is-scrolled');
     } else {
       nav.classList.remove('is-scrolled');
     }
+
+    // Hero scroll indicator: fade out smoothly when user begins scrolling
+    if (scrollIndicator) {
+      if (y > 60) {
+        scrollIndicator.classList.add('is-hidden');
+      } else {
+        scrollIndicator.classList.remove('is-hidden');
+      }
+    }
+
+    // Floating WhatsApp button: glide down past hero to standard bottom right
+    if (wa) {
+      if (!hasHero || y > 260) {
+        wa.classList.add('is-scrolled');
+      } else {
+        wa.classList.remove('is-scrolled');
+      }
+    }
   };
+
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
