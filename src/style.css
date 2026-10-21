@@ -1613,16 +1613,18 @@ button {
 
 @media (max-width: 1280px) {
   .hero-stone-card {
-    right: max(6vw, 90px);
+    right: max(4vw, 50px);
     padding: 14px 18px;
   }
   .hero-feature-card {
-    right: max(6vw, 80px);
-    bottom: 96px;
+    right: max(4vw, 50px);
+    bottom: 110px;
   }
   .hero__stats-ribbon {
-    right: 90px;
-    padding: 10px 18px;
+    left: 0;
+    bottom: 0;
+    width: clamp(640px, 62vw, 840px);
+    padding: 0 clamp(18px, 2.8vw, 36px);
   }
   .ribbon-stat__num {
     font-size: 22px;
@@ -1632,7 +1634,7 @@ button {
   }
 }
 
-@media (max-width: 1120px) {
+@media (max-width: 1024px) {
   .nav__links {
     display: none;
   }
@@ -1641,34 +1643,13 @@ button {
     display: block;
   }
 
-  .nav {
-    grid-template-columns: 1fr auto;
-  }
-
-  .hero-stone-card {
-    right: 18px;
-    top: 45%;
-    width: 165px;
-    padding: 16px 18px;
-  }
-
-  .hero-feature-card {
-    right: 18px;
-    bottom: 96px;
-  }
-
-  .hero__scroll-indicator {
+  .hero__scroll-indicator,
+  .hero-stone-card,
+  .hero-feature-card,
+  .stone-rail,
+  .hero__stats-ribbon,
+  .hotspot {
     display: none !important;
-  }
-
-  .hero__stats-ribbon {
-    right: 20px;
-    left: 20px;
-    bottom: 20px;
-    justify-content: space-around;
-    gap: 12px;
-    padding: 11px 20px;
-    overflow: visible;
   }
 }
 
