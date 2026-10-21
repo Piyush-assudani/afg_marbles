@@ -1012,19 +1012,22 @@ button {
 .hero__stats-ribbon {
   position: absolute;
   z-index: 5;
-  left: var(--pad);
-  right: 120px;
-  bottom: 22px;
+  left: 0;
+  bottom: 0;
+  width: clamp(720px, 72vw, 980px);
+  height: 84px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  padding: 13px 32px;
-  border-radius: 20px;
+  justify-content: space-between;
+  padding: 0 clamp(24px, 4vw, 56px) 0 clamp(20px, 3.6vw, 44px);
+  border-top-right-radius: 80px;
+  border-radius: 0 80px 0 0;
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.95);
-  box-shadow: 0 10px 32px rgba(50, 35, 20, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.95);
+  border-right: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 -2px 20px rgba(50, 35, 20, 0.04);
   pointer-events: auto;
 }
 
@@ -1104,37 +1107,33 @@ button {
 .hero__scroll-indicator {
   position: absolute;
   z-index: 6;
-  right: 28px;
-  bottom: 20px;
+  right: clamp(24px, 4vw, 56px);
+  bottom: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
   text-decoration: none;
-  color: #6b6052;
-  transition: color 0.3s;
+  transition: transform 0.3s ease;
 }
 
-.hero__scroll-indicator:hover {
-  color: #1a1612;
-}
-
-.scroll-mouse {
-  width: 20px;
-  height: 32px;
-  border-radius: 999px;
-  border: 1.8px solid currentColor;
-  position: relative;
+.scroll-mouse-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(50, 35, 20, 0.08);
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding-top: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.scroll-mouse__wheel {
-  width: 3px;
-  height: 6px;
-  border-radius: 2px;
-  background: currentColor;
+.hero__scroll-indicator:hover .scroll-mouse-btn {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(50, 35, 20, 0.12);
+}
+
+.scroll-mouse-btn svg line {
   animation: mouseScroll 2s ease-in-out infinite;
 }
 
@@ -1144,8 +1143,8 @@ button {
     transform: translateY(0);
   }
   50% {
-    opacity: 0.3;
-    transform: translateY(8px);
+    opacity: 0.2;
+    transform: translateY(3px);
   }
   100% {
     opacity: 1;
@@ -1153,16 +1152,55 @@ button {
   }
 }
 
-.scroll-mouse__text,
 .scroll-label {
   font-family: var(--sans);
-  font-size: 7.5px;
+  font-size: 8px;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
+  line-height: 1.35;
+  color: #3e3831;
   text-transform: uppercase;
   text-align: center;
-  line-height: 1.2;
+  margin-top: 6px;
   white-space: nowrap;
+}
+
+.scroll-plumb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.scroll-plumb__line {
+  width: 1px;
+  height: 10px;
+  background: rgba(184, 134, 63, 0.45);
+}
+
+.scroll-plumb__cross {
+  position: relative;
+  width: 36px;
+  height: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-plumb__hbar {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: rgba(184, 134, 63, 0.45);
+}
+
+.scroll-plumb__dot {
+  position: relative;
+  z-index: 1;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ba8b48;
 }
 
 /* =========================================================
