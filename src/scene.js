@@ -560,8 +560,8 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
       stage.scale.setScalar(isLaptop ? 0.94 : 1.04);
       const vh = 2 * camBase.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
       const vw = vh * camera.aspect;
-      // Centered perfectly inside palace archway: ~60% across viewport
-      stage.position.x = Math.min(Math.max(vw * 0.11, isLaptop ? 1.5 : 1.7), 2.3);
+      // Positioned clearly in right half of viewport (~65% across)
+      stage.position.x = Math.min(Math.max(vw * 0.14, isLaptop ? 1.9 : 2.2), 2.8);
     }
 
     sun.position.set(stage.position.x + 5, 11, 7);

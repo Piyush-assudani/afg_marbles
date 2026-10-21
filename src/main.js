@@ -4,6 +4,7 @@ import './style.css';
 import './premium.css';
 import { initPremium } from './premium.js';
 import { initSecurity } from './security.js';
+import { PRODUCTS, getProductById, saveInquiry } from './products.js';
 
 /* ------------------------------------------------------------------
    DOM Elements
@@ -783,6 +784,531 @@ function setupBeforeAfter() {
 }
 
 /* ------------------------------------------------------------------
+   Toast Notification Utility
+------------------------------------------------------------------- */
+let toastTimeout = null;
+export function showToast(message) {
+  const toast = document.getElementById('toast-notify');
+  const textEl = document.getElementById('toast-text');
+  if (!toast || !textEl) return;
+  textEl.textContent = message;
+  toast.classList.add('is-active');
+  clearTimeout(toastTimeout);
+  toastTimeout = setTimeout(() => {
+    toast.classList.remove('is-active');
+  }, 3200);
+}
+
+/* ------------------------------------------------------------------
+   Bespoke Space & Inquiry Form (Persists to LocalStorage & WhatsApp)
+------------------------------------------------------------------- */
+let openInquiryModal = () => {};
+
+function setupBespokeInquiryModal() {
+  const modal = document.getElementById('inquiry-modal');
+  const backdrop = document.getElementById('inq-backdrop');
+  const closeBtn = document.getElementById('inq-close-btn');
+  const form = document.getElementById('inquiry-form');
+  const formWrapper = document.getElementById('inquiry-form-wrapper');
+  const successView = document.getElementById('inquiry-success-view');
+  const closeSuccessBtn = document.getElementById('btn-close-success');
+  const successRefEl = document.getElementById('success-ref-id');
+  const successWaLink = document.getElementById('success-wa-link');
+
+  const inqProductId = document.getElementById('inq-product-id');
+  const inqProductTitle = document.getElementById('inq-product-title');
+  const inqProductTag = document.getElementById('inq-product-tag');
+  const inqProductNameLabel = document.getElementById('inq-product-name-label');
+
+  if (!modal || !form) return;
+
+  openInquiryModal = function(productInfo = null) {
+    formWrapper.style.display = 'block';
+    successView.style.display = 'none';
+
+    if (productInfo && productInfo.title) {
+      inqProductId.value = productInfo.id || '';
+      inqProductTitle.value = productInfo.title;
+      inqProductNameLabel.textContent = productInfo.title;
+      inqProductTag.style.display = 'flex';
+      if (productInfo.stone) {
+        const stoneSelect = document.getElementById('inq-stone');
+        if (stoneSelect) {
+          const matchOpt = Array.from(stoneSelect.options).find(o => 
+            productInfo.stone.toLowerCase().includes(o.value.toLowerCase()) || 
+            o.value.toLowerCase().includes(productInfo.stone.toLowerCase())
+          );
+          if (matchOpt) matchOpt.selected = true;
+        }
+      }
+    } else {
+      inqProductId.value = '';
+      inqProductTitle.value = 'General Atelier Concept Discovery';
+      inqProductTag.style.display = 'none';
+    }
+
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
+
+  function closeInquiry() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  closeBtn?.addEventListener('click', closeInquiry);
+  backdrop?.addEventListener('click', closeInquiry);
+  closeSuccessBtn?.addEventListener('click', closeInquiry);
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeInquiry();
+  });
+
+  // Hook up the Consultation CTA button from "THE AFG DIFFERENCE" section
+  const consultationBtn = document.getElementById('btn-open-consultation');
+  if (consultationBtn) {
+    consultationBtn.addEventListener('click', () => {
+      openInquiryModal(null);
+    });
+  }
+
+  // Handle Form Submission
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = form.elements['name']?.value?.trim();
+    const phone = form.elements['phone']?.value?.trim();
+    const location = form.elements['location']?.value?.trim();
+    const stone = form.elements['stone']?.value;
+    const width = form.elements['width']?.value?.trim() || 'Custom';
+    const depth = form.elements['depth']?.value?.trim() || 'Custom';
+    const height = form.elements['height']?.value?.trim() || 'Custom';
+    const notes = form.elements['notes']?.value?.trim() || 'No additional notes provided.';
+    const productTitle = inqProductTitle.value || 'Custom Commission';
+    const productId = inqProductId.value || '';
+
+    if (!name || !phone || !location) {
+      alert('Please provide your Full Name, WhatsApp Number, and City.');
+      return;
+    }
+
+    // Save to LocalStorage via products.js
+    const saved = saveInquiry({
+      name,
+      phone,
+      location,
+      stone,
+      dimensions: `${width} (W) × ${depth} (D) × ${height} (H)`,
+      notes,
+      productTitle,
+      productId
+    });
+
+    // Update success view
+    successRefEl.textContent = saved.id;
+
+    const waText = 
+      `*A.F.G MARBLE & ARTS — BESPOKE INQUIRY [${saved.id}]*\n\n` +
+      `*Client:* ${name}\n` +
+      `*WhatsApp:* ${phone}\n` +
+      `*Destination City:* ${location}\n` +
+      `*Masterpiece / Sanctum:* ${productTitle}\n` +
+      `*Stone Selection:* ${stone}\n` +
+      `*Space Dimensions:* ${width} Width × ${depth} Depth × ${height} Height\n` +
+      `*Vastu / Deities / Notes:* ${notes}\n\n` +
+      `_Please prepare the architectural 3D drawings and bespoke quotation._`;
+
+    successWaLink.href = `https://wa.me/917597417274?text=${encodeURIComponent(waText)}`;
+
+    formWrapper.style.display = 'none';
+    successView.style.display = 'block';
+    showToast(`Inquiry dossier ${saved.id} registered`);
+  });
+}
+
+/* ------------------------------------------------------------------
+   Dynamic SPA Product Modal & Multi-Angle Catalog
+   (No HTML reload, Pure JavaScript with Hash Navigation)
+------------------------------------------------------------------- */
+function setupDynamicProductExperience() {
+  const modal = document.getElementById('product-modal');
+  const pmBackdrop = document.getElementById('pm-backdrop');
+  const pmCloseBtn = document.getElementById('pm-close-btn');
+  const pmContent = document.getElementById('pm-content');
+  if (!modal || !pmContent) return;
+
+  let currentProductId = null;
+  let currentAngleIndex = 0;
+
+  function renderProduct(productId) {
+    const product = getProductById(productId);
+    if (!product) return;
+    currentProductId = product.id;
+    currentAngleIndex = 0;
+
+    const angles = product.angles && product.angles.length > 0 ? product.angles : [
+      { label: 'Front Elevation', tag: 'Full View', src: '/gallery/sanctum-pooja-luxe.webp', desc: product.fullDesc }
+    ];
+
+    const specsHtml = product.specs.map(spec => `
+      <div class="spec-row">
+        <dt class="spec-label">${spec.label}</dt>
+        <dd class="spec-val">${spec.value}</dd>
+      </div>
+    `).join('');
+
+    const thumbnailsHtml = angles.map((angle, idx) => `
+      <button type="button" class="angle-thumb ${idx === 0 ? 'is-active' : ''}" data-angle-idx="${idx}" aria-label="View ${angle.label}">
+        <img src="${angle.src}" alt="${product.title} - ${angle.label}" loading="lazy" />
+        <span class="angle-thumb-tag">${angle.tag || angle.label}</span>
+      </button>
+    `).join('');
+
+    pmContent.innerHTML = `
+      <div class="pm-split-layout">
+        <!-- LEFT: Multi-Angle Interactive Gallery -->
+        <div class="pm-gallery-col">
+          <div class="pm-main-display">
+            <img id="pm-active-image" class="pm-active-img" src="${angles[0].src}" alt="${product.title} - ${angles[0].label}" />
+            <div class="pm-image-badge">
+              <span id="pm-angle-tag">${angles[0].tag || 'Primary Angle'}</span>
+              <span class="pm-angle-counter"><span id="pm-cur-idx">1</span> / ${angles.length}</span>
+            </div>
+            <button type="button" class="pm-zoom-btn" id="pm-zoom-btn" aria-label="Full-Screen Zoom">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="pm-angle-desc-card">
+            <strong id="pm-angle-title">${angles[0].label}</strong>
+            <p id="pm-angle-desc">${angles[0].desc || product.tagline}</p>
+          </div>
+
+          <!-- Thumbnails Strip -->
+          <div class="pm-thumbnails-bar" id="pm-thumbnails">
+            ${thumbnailsHtml}
+          </div>
+        </div>
+
+        <!-- RIGHT: Architectural Marble Dossier & Specifications -->
+        <div class="pm-info-col">
+          <div class="pm-info-header">
+            <div class="pm-category-pill">${product.categoryName || 'Bespoke Marble Sanctum'}</div>
+            <h2 class="pm-product-title" id="pm-title">${product.title}</h2>
+            <p class="pm-tagline">${product.tagline}</p>
+            <div class="pm-rating-bar">
+              <span class="pm-stars">★★★★★</span>
+              <span class="pm-rating-val">${product.rating || '5.0'}</span>
+              <span class="pm-reviews">(${product.reviewsCount || 42} Atelier Commissions)</span>
+            </div>
+          </div>
+
+          <div class="pm-summary-pills">
+            <div class="summary-pill">
+              <span class="pill-title">Stone Variety</span>
+              <strong class="pill-value">${product.primaryStone}</strong>
+            </div>
+            <div class="summary-pill">
+              <span class="pill-title">Dimensions</span>
+              <strong class="pill-value">${product.scale}</strong>
+            </div>
+            <div class="summary-pill">
+              <span class="pill-title">Certification</span>
+              <strong class="pill-value">Ayadi Vastu Compliant</strong>
+            </div>
+          </div>
+
+          <div class="pm-desc-box">
+            <h4>Atelier Architectural Notes</h4>
+            <p>${product.fullDesc}</p>
+          </div>
+
+          <div class="pm-specs-section">
+            <h4 class="pm-specs-heading">Architectural &amp; Material Specifications</h4>
+            <div class="pm-specs-grid">
+              ${specsHtml}
+            </div>
+          </div>
+
+          <!-- Action & Personal Share Bar -->
+          <div class="pm-actions-group">
+            <button type="button" class="btn-pm-inquire" id="btn-pm-inquire">
+              <span>Request Bespoke Quotation &amp; 3D Plan</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M5 12h14M13 5l7 7-7 7"/>
+              </svg>
+            </button>
+
+            <div class="pm-share-bar">
+              <span class="share-prompt">Personal Share:</span>
+              <button type="button" class="btn-share-tool btn-share-wa" id="pm-share-wa" title="Share on WhatsApp">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/>
+                </svg>
+                <span>WhatsApp</span>
+              </button>
+
+              <button type="button" class="btn-share-tool btn-share-copy" id="pm-share-copy" title="Copy Masterpiece Deep-Link">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy Link</span>
+              </button>
+
+              <a href="https://wa.me/917597417274?text=${encodeURIComponent('Hello AFG Marble & Arts, I am viewing ' + product.title + ' and would like to speak directly with the Master Silawat artisan.')}" target="_blank" rel="noopener noreferrer" class="btn-share-tool btn-share-chat" title="Direct Atelier Chat">
+                <span>Direct Artisan Desk</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Hook up thumbnail switching
+    const activeImg = pmContent.querySelector('#pm-active-image');
+    const angleTag = pmContent.querySelector('#pm-angle-tag');
+    const angleCounter = pmContent.querySelector('#pm-cur-idx');
+    const angleTitle = pmContent.querySelector('#pm-angle-title');
+    const angleDesc = pmContent.querySelector('#pm-angle-desc');
+    const thumbBtns = pmContent.querySelectorAll('.angle-thumb');
+
+    thumbBtns.forEach((tBtn) => {
+      tBtn.addEventListener('click', () => {
+        const idx = parseInt(tBtn.getAttribute('data-angle-idx'), 10) || 0;
+        currentAngleIndex = idx;
+        const targetAngle = angles[idx];
+
+        thumbBtns.forEach((b) => b.classList.remove('is-active'));
+        tBtn.classList.add('is-active');
+
+        // Smooth image switch with subtle crossfade
+        activeImg.style.opacity = '0.35';
+        setTimeout(() => {
+          activeImg.src = targetAngle.src;
+          activeImg.alt = `${product.title} - ${targetAngle.label}`;
+          activeImg.style.opacity = '1';
+        }, 120);
+
+        angleTag.textContent = targetAngle.tag || targetAngle.label;
+        angleCounter.textContent = (idx + 1).toString();
+        angleTitle.textContent = targetAngle.label;
+        angleDesc.textContent = targetAngle.desc || product.tagline;
+      });
+    });
+
+    // Zoom trigger -> uses existing lightbox for high-res viewing
+    const zoomBtn = pmContent.querySelector('#pm-zoom-btn');
+    if (zoomBtn) {
+      zoomBtn.addEventListener('click', () => {
+        const curAngle = angles[currentAngleIndex];
+        const lbImg = document.getElementById('lightbox-img');
+        const lbCaption = document.getElementById('lightbox-caption');
+        const lbModal = document.getElementById('lightbox-modal');
+        if (lbImg && lbModal) {
+          lbImg.src = curAngle.src;
+          if (lbCaption) lbCaption.textContent = `${product.title} — ${curAngle.label}`;
+          lbModal.classList.add('is-open', 'is-active');
+        }
+      });
+    }
+
+    // Inquiry trigger from modal
+    const pmInquireBtn = pmContent.querySelector('#btn-pm-inquire');
+    if (pmInquireBtn) {
+      pmInquireBtn.addEventListener('click', () => {
+        openInquiryModal({
+          id: product.id,
+          title: product.title,
+          stone: product.primaryStone,
+          scale: product.scale
+        });
+      });
+    }
+
+    // Share handlers
+    const shareWaBtn = pmContent.querySelector('#pm-share-wa');
+    if (shareWaBtn) {
+      shareWaBtn.addEventListener('click', () => {
+        const productUrl = `${window.location.origin}${window.location.pathname}#product/${product.id}`;
+        const msg = `*A.F.G MARBLE & ARTS — Masterpiece Dossier*\n\n*${product.title}*\n${product.tagline}\nScale: ${product.scale}\nStone: ${product.primaryStone}\n\nView details & multi-angle gallery:\n${productUrl}`;
+        window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank');
+      });
+    }
+
+    const shareCopyBtn = pmContent.querySelector('#pm-share-copy');
+    if (shareCopyBtn) {
+      shareCopyBtn.addEventListener('click', async () => {
+        const productUrl = `${window.location.origin}${window.location.pathname}#product/${product.id}`;
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(productUrl);
+          } else {
+            const ta = document.createElement('textarea');
+            ta.value = productUrl;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+          }
+          showToast(`Direct link copied: ${product.title}`);
+        } catch (e) {
+          showToast(`Direct link: ${productUrl}`);
+        }
+      });
+    }
+  }
+
+  function openProductDetail(productId, updateHash = true) {
+    renderProduct(productId);
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+
+    if (updateHash && window.location.hash !== `#product/${productId}`) {
+      window.location.hash = `product/${productId}`;
+    }
+  }
+
+  function closeProductDetail() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (window.location.hash.startsWith('#product/')) {
+      history.pushState('', document.title, window.location.pathname + window.location.search);
+    }
+  }
+
+  pmCloseBtn?.addEventListener('click', closeProductDetail);
+  pmBackdrop?.addEventListener('click', closeProductDetail);
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+      closeProductDetail();
+    }
+  });
+
+  // SPA Hash Routing
+  function handleHashRoute() {
+    const hash = window.location.hash;
+    const match = hash.match(/^#product\/([a-zA-Z0-9_-]+)/);
+    if (match && match[1]) {
+      openProductDetail(match[1], false);
+    } else if (modal.classList.contains('is-open')) {
+      closeProductDetail();
+    }
+  }
+
+  window.addEventListener('hashchange', handleHashRoute);
+  // Initial check
+  if (window.location.hash.startsWith('#product/')) {
+    setTimeout(handleHashRoute, 250);
+  }
+
+  // Hook up creation cards in the catalog
+  document.querySelectorAll('.creation-card').forEach((card, index) => {
+    // Map card index to our products list if not explicit
+    const fallbackId = PRODUCTS[index % PRODUCTS.length]?.id;
+    const prodId = card.getAttribute('data-product-id') || fallbackId;
+    card.setAttribute('data-product-id', prodId);
+
+    // Clicking card image or title opens product view
+    const titleEl = card.querySelector('h3');
+    const imgEl = card.querySelector('.card-media img');
+    [titleEl, imgEl].forEach((el) => {
+      if (!el) return;
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        openProductDetail(prodId);
+      });
+    });
+
+    // Add buttons to card actions if not already present
+    const cardActions = card.querySelector('.card-actions');
+    if (cardActions && !cardActions.querySelector('.btn-card-explore')) {
+      const exploreBtn = document.createElement('button');
+      exploreBtn.type = 'button';
+      exploreBtn.className = 'btn-card-explore';
+      exploreBtn.innerHTML = `<span>Multi-Angle &amp; Specs</span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>`;
+      exploreBtn.addEventListener('click', () => openProductDetail(prodId));
+
+      const shareBtn = document.createElement('button');
+      shareBtn.type = 'button';
+      shareBtn.className = 'btn-card-share';
+      shareBtn.setAttribute('aria-label', 'Share Masterpiece');
+      shareBtn.setAttribute('title', 'Share Masterpiece');
+      shareBtn.innerHTML = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>`;
+      shareBtn.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        const p = getProductById(prodId);
+        const url = `${window.location.origin}${window.location.pathname}#product/${p.id}`;
+        try {
+          if (navigator.share) {
+            await navigator.share({ title: p.title, text: p.tagline, url });
+          } else {
+            await navigator.clipboard.writeText(url);
+            showToast(`Direct link copied: ${p.title}`);
+          }
+        } catch (err) {
+          showToast(`Direct link: ${url}`);
+        }
+      });
+
+      cardActions.prepend(shareBtn);
+      cardActions.prepend(exploreBtn);
+    }
+  });
+
+  // Global triggers with [data-open-product]
+  document.querySelectorAll('[data-open-product]').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const pid = btn.getAttribute('data-open-product');
+      if (pid) openProductDetail(pid);
+    });
+  });
+}
+
+/* ------------------------------------------------------------------
+   Floating Quick Dock (SHOP, CALL US, Back-to-Top)
+------------------------------------------------------------------- */
+function setupFloatingQuickDock() {
+  const dock = document.getElementById('floating-quick-dock');
+  const shopBtn = document.getElementById('dock-btn-shop');
+  const callBtn = document.getElementById('dock-btn-call');
+  const topBtn = document.getElementById('dock-btn-top');
+
+  if (!dock) return;
+
+  function onScroll() {
+    if (window.scrollY > 400) {
+      topBtn?.classList.add('is-visible');
+    } else {
+      topBtn?.classList.remove('is-visible');
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  topBtn?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  shopBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    const creationsSec = document.getElementById('creations');
+    if (creationsSec) {
+      creationsSec.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+}
+
+/* ------------------------------------------------------------------
    App Initialization
 ------------------------------------------------------------------- */
 async function init() {
@@ -796,6 +1322,9 @@ async function init() {
   setupLegalModals();
   setupCommissionForm();
   setupBeforeAfter();
+  setupBespokeInquiryModal();
+  setupDynamicProductExperience();
+  setupFloatingQuickDock();
   initPremium();
   initSecurity();
 
