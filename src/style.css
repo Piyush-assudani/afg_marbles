@@ -1730,12 +1730,7 @@ button {
   }
 
   .hero__lead {
-    display: block !important;
-    font-size: 13.5px;
-    line-height: 1.55;
-    margin: 10px 0 18px;
-    color: #5c5246;
-    max-width: 340px;
+    display: none !important;
   }
 
   .hero__ctas {
