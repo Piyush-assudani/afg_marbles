@@ -547,10 +547,10 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
 
     if (isMobile) {
       const isShort = H < 740;
-      camBase.set(0, isShort ? 3.1 : 3.3, isShort ? 21.5 : 20.5);
-      lookBase.set(0, isShort ? 1.5 : 1.7, 0);
-      stage.position.y = isShort ? -1.7 : -1.9;
-      stage.scale.setScalar(isShort ? 0.60 : 0.66);
+      camBase.set(0, isShort ? 3.0 : 3.15, isShort ? 18.2 : 17.5);
+      lookBase.set(0, isShort ? 1.6 : 1.75, 0);
+      stage.position.y = isShort ? -1.65 : -1.75;
+      stage.scale.setScalar(isShort ? 0.76 : 0.82);
       stage.position.x = 0;
     } else {
       const isLaptop = W < 1520 || H < 860;

@@ -1661,9 +1661,14 @@ button {
   .hero__scroll-indicator,
   .hero-stone-card,
   .hero-feature-card,
-  .stone-rail,
   .hotspot {
     display: none !important;
+  }
+
+  .stone-rail {
+    right: 14px;
+    top: 48%;
+    transform: translateY(-50%);
   }
 }
 
@@ -1859,10 +1864,9 @@ button {
     flex-shrink: 0;
   }
 
-  /* Colliding in-hero widgets hidden on mobile */
+  /* Colliding in-hero widgets hidden on mobile (stone-rail active) */
   .hero-stone-card,
   .hero-feature-card,
-  .stone-rail,
   .hero__scroll-indicator,
   .hotspot {
     display: none !important;
@@ -1874,18 +1878,52 @@ button {
     right: 14px !important;
   }
 
-  .stone-rail__swatches {
+  /* Mobile Stone Shade Change Palette */
+  .stone-rail {
+    display: flex !important;
+    position: absolute;
+    right: 10px;
+    top: 48%;
+    transform: translateY(-50%);
     flex-direction: column;
-    gap: 7px;
+    align-items: center;
+    padding: 7px 5px;
+    gap: 6px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 24px rgba(40, 28, 16, 0.12);
+    z-index: 15;
+  }
+
+  .stone-rail__arrow,
+  .stone-rail__label {
+    display: none !important;
+  }
+
+  .stone-rail__swatches {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
   }
 
   .swatch {
     width: 25px;
     height: 25px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .swatch.is-active {
+    box-shadow: 0 0 0 2px #d4af37, 0 4px 10px rgba(180, 140, 50, 0.35);
+    transform: scale(1.1);
   }
 
   .swatch__tip {
-    display: none;
+    display: none !important;
   }
 
   .stage-caption {
