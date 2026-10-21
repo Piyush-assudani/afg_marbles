@@ -1018,76 +1018,83 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 14px 28px;
+  padding: 13px 32px;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.76);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(240, 230, 215, 0.85);
-  box-shadow: 0 12px 35px rgba(50, 35, 20, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 32px rgba(50, 35, 20, 0.05);
   pointer-events: auto;
 }
 
 .ribbon-stat {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 13px;
   flex: 1;
   justify-content: center;
 }
 
 .ribbon-stat__icon {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: rgba(184, 134, 63, 0.12);
-  color: #a4783b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  border-radius: 0;
+  width: auto;
+  height: auto;
+  color: #b8863f;
   flex-shrink: 0;
+}
+
+.ribbon-stat__icon svg {
+  display: block;
+  width: 33px;
+  height: 33px;
+  color: #b8863f;
+  stroke: #b8863f;
 }
 
 .ribbon-stat__content {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
 }
 
 .ribbon-stat__num {
-  font-family: var(--serif);
-  font-size: 28px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 27px;
   font-weight: 500;
-  line-height: 1;
-  color: #1a1612;
+  line-height: 1.05;
+  color: #14110e;
+  letter-spacing: -0.01em;
 }
 
-.ribbon-stat__num sup {
-  font-size: 0.55em;
-  color: #a4783b;
-  margin-left: 2px;
-  font-weight: 600;
-}
-
-.ribbon-stat__num--serif {
-  font-size: 24px;
-  font-style: italic;
-  font-weight: 400;
-  color: #1a1612;
+.ribbon-stat__num--text {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.05;
+  color: #14110e;
+  letter-spacing: -0.01em;
+  font-style: normal;
 }
 
 .ribbon-stat__label {
   font-family: var(--sans);
   font-size: 11.5px;
   font-weight: 450;
-  color: #6b6052;
-  letter-spacing: 0.01em;
+  color: #6b6357;
+  letter-spacing: 0.005em;
   white-space: nowrap;
 }
 
 .ribbon-divider {
   width: 1px;
-  height: 38px;
-  background: rgba(28, 24, 19, 0.1);
+  height: 32px;
+  background: rgba(28, 24, 19, 0.15);
   flex-shrink: 0;
 }
 
@@ -1570,6 +1577,9 @@ button {
   .ribbon-stat__num {
     font-size: 22px;
   }
+  .ribbon-stat__num--text {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 1120px) {
@@ -1759,7 +1769,7 @@ button {
     right: 12px;
     height: auto;
     min-height: 52px;
-    border-radius: 14px;
+    border-radius: 16px;
     padding: 8px 14px;
     gap: 16px;
     overflow-x: auto;
@@ -1772,22 +1782,23 @@ button {
   }
 
   .ribbon-stat__icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
+    background: none;
+    border: none;
+    width: auto;
+    height: auto;
   }
 
   .ribbon-stat__icon svg {
-    width: 18px;
-    height: 18px;
+    width: 25px;
+    height: 25px;
   }
 
   .ribbon-stat__num {
-    font-size: 18px;
+    font-size: 19px;
   }
 
-  .ribbon-stat__num--serif {
-    font-size: 16px;
+  .ribbon-stat__num--text {
+    font-size: 18px;
   }
 
   .ribbon-stat__label {
@@ -1795,7 +1806,7 @@ button {
   }
 
   .ribbon-divider {
-    height: 26px;
+    height: 24px;
   }
 
   .hotspot {
