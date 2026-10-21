@@ -19,15 +19,26 @@ export default function MandirHeroCanvas() {
     if (!canvasRef.current) return;
     let destroyed = false;
 
-    import('../scene.js').then(({ initScene }) => {
+    import('../scene.js').then((mod) => {
       if (destroyed || !canvasRef.current) return;
       try {
-        const scene = initScene(canvasRef.current, {
-          onReady: () => {
+        const initFn = mod.initScene || mod.createExperience || mod.default;
+        if (typeof initFn === 'function') {
+          const scene = initFn({
+            canvas: canvasRef.current,
+            onProgress: () => {},
+            onHover: () => {},
+            onFrame: () => {}
+          });
+          scene.ready?.then(() => {
             setIsLoaded(true);
-          }
-        });
-        sceneRef.current = scene;
+            scene.intro?.();
+          });
+          setTimeout(() => {
+            scene.intro?.();
+          }, 400);
+          sceneRef.current = scene;
+        }
       } catch (err) {
         console.error('Failed to initialize 3D scene:', err);
       }

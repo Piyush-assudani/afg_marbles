@@ -43,7 +43,7 @@ export default function PalatialFountainsPage() {
       {/* ============ FOUNTAINS CATALOG GRID ============ */}
       <section className="subpage-body">
         <div className="sec-container">
-          <div className="products-grid-2">
+          <div className="creations-grid">
             {fountains.map((product) => (
               <ProductCard
                 key={product.id}

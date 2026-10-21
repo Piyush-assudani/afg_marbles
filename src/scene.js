@@ -920,6 +920,13 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     prepareIntro();
   }
 
+  // Auto-run intro when 3D asset is ready as safety net so mandir is never hidden
+  gltfPromise.then(() => {
+    if (!introDone) {
+      intro();
+    }
+  }).catch(() => {});
+
   requestAnimationFrame(tick);
 
   return {
@@ -934,3 +941,7 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     },
   };
 }
+
+export { createExperience as initScene };
+export default createExperience;
+

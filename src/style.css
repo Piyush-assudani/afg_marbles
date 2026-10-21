@@ -267,9 +267,11 @@ button {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .webgl,
+  .webgl {
+    cursor: grab;
+  }
   .webgl.is-dragging {
-    cursor: none;
+    cursor: grabbing;
   }
 }
 

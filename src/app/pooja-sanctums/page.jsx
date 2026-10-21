@@ -79,7 +79,7 @@ export default function PoojaSanctumsPage() {
       {/* ============ SANCTUMS CATALOG GRID ============ */}
       <section className="subpage-body">
         <div className="sec-container">
-          <div className="products-grid-3">
+          <div className="creations-grid">
             {filtered.map((product) => (
               <ProductCard
                 key={product.id}
