@@ -3,20 +3,23 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-export default function Navbar({ onOpenInquiry }) {
+export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
   const pathname = usePathname();
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [internalScrolled, setInternalScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [megaMenuOpen, setMegaMenuOpen] = useState(false);
   const megaMenuTimeout = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30);
+      setInternalScrolled(window.scrollY > 40);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const isScrolled = propIsScrolled !== undefined ? propIsScrolled : internalScrolled;
 
   // Close menus on route change
   useEffect(() => {
@@ -37,14 +40,14 @@ export default function Navbar({ onOpenInquiry }) {
 
   return (
     <>
-      <header className={`nav ${isScrolled ? 'nav--scrolled' : ''}`} id="nav">
+      <div className={`nav ${isScrolled ? 'nav--scrolled is-scrolled' : 'is-at-top'}`} id="nav">
         <Link href="/" className="logo" id="logo" aria-label="A.F.G Marble & Arts Home">
           <img
             src="/afg-logo.svg"
             alt="A.F.G Marble & Arts"
             className="logo__img"
-            width={56}
-            height={32}
+            width={38}
+            height={22}
             onError={(e) => {
               e.currentTarget.onerror = null;
               e.currentTarget.src = '/afg-logo.png';
@@ -52,7 +55,7 @@ export default function Navbar({ onOpenInquiry }) {
           />
           <span className="logo__text">
             <span className="logo__name">A.F.G MARBLE &amp; ARTS</span>
-            <span className="logo__sub">Makrana · Jaipur, Rajasthan</span>
+            <span className="logo__sub">Makrana · Jaipur</span>
           </span>
         </Link>
 
@@ -339,8 +342,8 @@ export default function Navbar({ onOpenInquiry }) {
             href="/bespoke-consultation"
             className="nav__cta-btn"
           >
-            <span>Bespoke Consultation</span>
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2">
+            <span>Consult Atelier</span>
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.2">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </Link>
@@ -356,7 +359,7 @@ export default function Navbar({ onOpenInquiry }) {
             <span></span>
           </button>
         </div>
-      </header>
+      </div>
 
       {/* Luxury Mobile Dropdown Menu with Complete Directory */}
       <div className={`mobile-menu ${mobileOpen ? 'is-open' : ''}`} id="mobile-menu" aria-hidden={!mobileOpen}>

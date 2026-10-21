@@ -11,6 +11,7 @@ export default function LayoutClientWrapper({ children }) {
   const [inquiryModalData, setInquiryModalData] = useState(null);
   const [productModalData, setProductModalData] = useState(null);
   const [toastMessage, setToastMessage] = useState('');
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const showToast = (msg) => {
     setToastMessage(msg);
@@ -25,16 +26,25 @@ export default function LayoutClientWrapper({ children }) {
     window.afgOpenProduct = (product) => setProductModalData(product);
     window.afgToast = (msg) => showToast(msg);
 
+    // Scroll listener to toggle merged hero nav vs floating capsule dock
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 40);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
     // Disable custom cursor if any old css was attached
     const cursor = document.getElementById('cursor');
     if (cursor) cursor.style.display = 'none';
+
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <>
-      <header className="site-header-container">
+      <header className={`site-header-container ${isScrolled ? 'is-scrolled' : 'is-at-top'}`}>
         <AnnouncementBar />
-        <Navbar onOpenInquiry={(p) => setInquiryModalData(p)} />
+        <Navbar isScrolled={isScrolled} onOpenInquiry={(p) => setInquiryModalData(p)} />
       </header>
 
       <main>{children}</main>
