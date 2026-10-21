@@ -1693,12 +1693,16 @@ button {
 
   .hero__content {
     top: 74px;
+    bottom: 78px;
     transform: none;
     width: auto;
     left: 20px;
     right: 20px;
     padding-top: 0;
     max-width: 440px;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
   }
 
   .hero__eyebrow {
@@ -1736,9 +1740,10 @@ button {
 
   .hero__ctas {
     justify-content: flex-start;
-    gap: 14px;
-    margin-top: 4px;
-    flex-wrap: wrap;
+    margin-top: auto;
+    margin-bottom: 0;
+    pointer-events: auto;
+    z-index: 10;
   }
 
   .btn-hero-primary {
