@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import MandirHeroCanvas from '../components/MandirHeroCanvas';
+import ProductCard from '../components/ProductCard';
 import DifferenceTable from '../components/DifferenceTable';
 import ConsultationCard from '../components/ConsultationCard';
 import { PRODUCTS } from '../products.js';
@@ -87,13 +88,63 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ============ ROYAL PATRON TRUST BAR ============ */}
+      <section className="sec-royal-trust-bar">
+        <div className="sec-container">
+          <div className="trust-pillars-grid">
+            <div className="trust-pillar-card">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+              </svg>
+              <div>
+                <strong>Direct Makrana Bedrock</strong>
+                <p>Mined from virgin calcite seams in Makrana with certified 99% CaCO3 purity.</p>
+              </div>
+            </div>
+
+            <div className="trust-pillar-card">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg>
+              <div>
+                <strong>Zero-Yellowing Warranty</strong>
+                <p>Pure crystalline structure never stains from daily puja ghee, abhishek milk, or oil lamps.</p>
+              </div>
+            </div>
+
+            <div className="trust-pillar-card">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+              </svg>
+              <div>
+                <strong>Generational Silawats</strong>
+                <p>Hand-chiseling with strict Ayadi Vastu mathematical harmony since 1987.</p>
+              </div>
+            </div>
+
+            <div className="trust-pillar-card">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg>
+              <div>
+                <strong>100% Pre-Assembly Trial</strong>
+                <p>Assembled in our Jaipur yard with 4K walkthrough video before international export.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ============ THE AFG DIFFERENCE ============ */}
       <DifferenceTable onOpenInquiry={handleOpenInquiry} />
 
       {/* ============ ALL WE NEED IS YOUR SPACE DIMENSIONS ============ */}
       <ConsultationCard onOpenInquiry={handleOpenInquiry} />
 
-      {/* ============ FEATURED POOJA SANCTUMS ============ */}
+      {/* ============ FEATURED POOJA SANCTUMS (INTERACTIVE MULTI-ANGLE CARDS) ============ */}
       <section className="sec-collections" id="collections">
         <div className="sec-container">
           <div className="sec-header text-center">
@@ -101,57 +152,18 @@ export default function HomePage() {
             <h2>Consecrated Pooja Sanctums &amp; Mandirs</h2>
             <div className="gold-rule center"></div>
             <p className="sub-lead">
-              Every sanctum is sculpted from flawless monolithic blocks of Makrana Albeta marble, featuring Ayadi Vastu proportions, jali filigree, and illuminated sanctums.
+              Every sanctum is sculpted from flawless monolithic blocks of Makrana Albeta marble. Hover or click the angle tabs to inspect front, 3/4 perspective, jali doors, and architectural elevations directly on each creation.
             </p>
           </div>
 
           <div className="products-grid-3">
             {mandirs.map((product) => (
-              <div key={product.id} className="product-card">
-                <div className="product-card__media" onClick={() => handleOpenProduct(product)}>
-                  <img
-                    src={product.angles[0]?.src || '/gallery/mandir-pure-makrana.webp'}
-                    alt={product.title}
-                    loading="lazy"
-                  />
-                  <span className="product-badge">{product.badge}</span>
-                  <div className="product-card__overlay">
-                    <span className="btn-view-dossier">View Multi-Angle Dossier ({product.angles.length} Angles) →</span>
-                  </div>
-                </div>
-
-                <div className="product-card__content">
-                  <div className="product-card__category">{product.primaryStone}</div>
-                  <h3 className="product-card__title" onClick={() => handleOpenProduct(product)}>
-                    {product.title}
-                  </h3>
-                  <p className="product-card__desc">{product.tagline}</p>
-
-                  <div className="product-card__meta">
-                    <div className="meta-dim">
-                      <strong>Scale:</strong> {product.scale}
-                    </div>
-                  </div>
-
-                  <div className="product-card__actions">
-                    <button
-                      type="button"
-                      className="btn-primary-sm"
-                      onClick={() => handleOpenProduct(product)}
-                    >
-                      <span>Explore Multi-Angle ({product.angles.length} Views)</span>
-                      <span>→</span>
-                    </button>
-                    <button
-                      type="button"
-                      className="btn-outline-sm"
-                      onClick={() => handleOpenInquiry(product)}
-                    >
-                      <span>Inquire</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
+              <ProductCard
+                key={product.id}
+                product={product}
+                onOpenProduct={handleOpenProduct}
+                onOpenInquiry={handleOpenInquiry}
+              />
             ))}
           </div>
 
@@ -178,51 +190,12 @@ export default function HomePage() {
 
           <div className="products-grid-2">
             {fountains.map((product) => (
-              <div key={product.id} className="product-card product-card--wide">
-                <div className="product-card__media" onClick={() => handleOpenProduct(product)}>
-                  <img
-                    src={product.angles[0]?.src || '/gallery/fountain-monolithic-fluted-basin.webp'}
-                    alt={product.title}
-                    loading="lazy"
-                  />
-                  <span className="product-badge">{product.badge}</span>
-                  <div className="product-card__overlay">
-                    <span className="btn-view-dossier">View Fountain Dossier ({product.angles.length} Angles) →</span>
-                  </div>
-                </div>
-
-                <div className="product-card__content">
-                  <div className="product-card__category">{product.primaryStone}</div>
-                  <h3 className="product-card__title" onClick={() => handleOpenProduct(product)}>
-                    {product.title}
-                  </h3>
-                  <p className="product-card__desc">{product.tagline}</p>
-
-                  <div className="product-card__meta">
-                    <div className="meta-dim">
-                      <strong>Dimensions:</strong> {product.scale}
-                    </div>
-                  </div>
-
-                  <div className="product-card__actions">
-                    <button
-                      type="button"
-                      className="btn-primary-sm"
-                      onClick={() => handleOpenProduct(product)}
-                    >
-                      <span>Multi-Angle Water Flow ({product.angles.length} Views)</span>
-                      <span>→</span>
-                    </button>
-                    <button
-                      type="button"
-                      className="btn-outline-sm"
-                      onClick={() => handleOpenInquiry(product)}
-                    >
-                      <span>Inquire</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
+              <ProductCard
+                key={product.id}
+                product={product}
+                onOpenProduct={handleOpenProduct}
+                onOpenInquiry={handleOpenInquiry}
+              />
             ))}
           </div>
 

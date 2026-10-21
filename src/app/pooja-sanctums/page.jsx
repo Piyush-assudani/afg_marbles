@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import ProductCard from '../../components/ProductCard';
 import DifferenceTable from '../../components/DifferenceTable';
 import ConsultationCard from '../../components/ConsultationCard';
 import { PRODUCTS } from '../../products.js';
@@ -38,7 +39,7 @@ export default function PoojaSanctumsPage() {
           <h1>Handcrafted Marble Mandirs &amp; Pooja Sanctums</h1>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
-            Every sanctum is sculpted from flawless monolithic blocks of authentic Makrana Calcite marble. Designed in strict mathematical accordance with Ayadi Vastu Shastra for lifelong divine energy.
+            Every sanctum is sculpted from flawless monolithic blocks of authentic Makrana Calcite marble. Designed in strict mathematical accordance with Ayadi Vastu Shastra for lifelong divine energy. Hover or tap the thumbnail angles below to inspect front, 3/4 perspective, jali doors, and architectural elevation.
           </p>
 
           {/* Filter Pills */}
@@ -80,65 +81,12 @@ export default function PoojaSanctumsPage() {
         <div className="sec-container">
           <div className="products-grid-3">
             {filtered.map((product) => (
-              <div key={product.id} className="product-card">
-                <div className="product-card__media" onClick={() => handleOpenProduct(product)}>
-                  <img
-                    src={product.angles[0]?.src || '/gallery/mandir-pure-makrana.webp'}
-                    alt={product.title}
-                    loading="lazy"
-                  />
-                  <span className="product-badge">{product.badge}</span>
-                  <div className="product-card__overlay">
-                    <span className="btn-view-dossier">View Multi-Angle Dossier ({product.angles.length} Angles) →</span>
-                  </div>
-                </div>
-
-                <div className="product-card__content">
-                  <div className="product-card__category">{product.primaryStone}</div>
-                  <h3 className="product-card__title" onClick={() => handleOpenProduct(product)}>
-                    {product.title}
-                  </h3>
-                  <p className="product-card__desc">{product.tagline}</p>
-
-                  <div className="product-card__meta">
-                    <div className="meta-dim">
-                      <strong>Dimensions:</strong> {product.scale}
-                    </div>
-                  </div>
-
-                  {/* Multi-angle preview thumbnails */}
-                  <div className="card-mini-angles-row">
-                    {product.angles.slice(0, 4).map((a, i) => (
-                      <span key={i} className="mini-angle-pill" onClick={() => handleOpenProduct(product)}>
-                        {a.tag || a.label}
-                      </span>
-                    ))}
-                    {product.angles.length > 4 && (
-                      <span className="mini-angle-pill more" onClick={() => handleOpenProduct(product)}>
-                        +{product.angles.length - 4} more
-                      </span>
-                    )}
-                  </div>
-
-                  <div className="product-card__actions">
-                    <button
-                      type="button"
-                      className="btn-primary-sm"
-                      onClick={() => handleOpenProduct(product)}
-                    >
-                      <span>Explore Multi-Angle ({product.angles.length} Views)</span>
-                      <span>→</span>
-                    </button>
-                    <button
-                      type="button"
-                      className="btn-outline-sm"
-                      onClick={() => handleOpenInquiry(product)}
-                    >
-                      <span>Inquire</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
+              <ProductCard
+                key={product.id}
+                product={product}
+                onOpenProduct={handleOpenProduct}
+                onOpenInquiry={handleOpenInquiry}
+              />
             ))}
           </div>
         </div>

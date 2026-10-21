@@ -2,6 +2,8 @@ node_modules
 dist
 .next
 legacy-html-backup
+video1_frames
+video2_frames
 .DS_Store
 *.local
 All Photos AFG Marbls
