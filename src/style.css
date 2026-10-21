@@ -612,7 +612,7 @@ button {
   left: var(--pad);
   top: max(130px, 46%);
   transform: translateY(-50%);
-  width: min(620px, 44vw);
+  width: min(680px, 46vw);
   pointer-events: none;
   padding-top: 0;
 }
@@ -658,7 +658,7 @@ button {
 .hero__title {
   font-family: 'Playfair Display', Georgia, serif;
   font-weight: 400;
-  font-size: clamp(48px, 5.2vw, 82px);
+  font-size: clamp(54px, 5.8vw, 92px);
   line-height: 0.98;
   letter-spacing: -0.022em;
   color: #14110e;
@@ -1544,12 +1544,12 @@ button {
    ========================================================= */
 @media (min-width: 821px) and (max-width: 1520px) {
   .hero__content {
-    width: min(520px, 41vw);
-    max-width: 520px;
+    width: min(640px, 45vw);
+    max-width: 640px;
   }
 
   .hero__title {
-    font-size: clamp(38px, 4.7vw, 76px);
+    font-size: clamp(50px, 5.5vw, 86px);
     line-height: 0.98;
   }
 
@@ -1558,26 +1558,26 @@ button {
   }
 
   .hero__lead {
-    max-width: 400px;
-    font-size: 14.5px;
-    line-height: 1.65;
+    max-width: 480px;
+    font-size: 15px;
+    line-height: 1.62;
     margin: 20px 0 28px;
   }
 
   .hero__eyebrow {
-    margin-bottom: 14px;
+    margin-bottom: 16px;
   }
 }
 
 @media (max-height: 860px) and (min-width: 821px) {
   .hero__content {
-    top: 96px;
+    top: 92px;
     transform: none;
-    width: min(520px, 41vw);
+    width: min(620px, 44vw);
   }
 
   .hero__title {
-    font-size: clamp(36px, 4.4vw, 68px);
+    font-size: clamp(46px, 5.2vw, 80px);
     line-height: 0.98;
   }
 
@@ -1587,8 +1587,8 @@ button {
 
   .hero__lead {
     margin: 16px 0 24px;
-    max-width: 390px;
-    font-size: 14px;
+    max-width: 460px;
+    font-size: 14.5px;
     line-height: 1.6;
   }
 

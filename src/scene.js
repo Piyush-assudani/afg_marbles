@@ -554,10 +554,10 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
       stage.position.x = 0;
     } else {
       const isLaptop = W < 1520 || H < 860;
-      camBase.set(0, isLaptop ? 3.45 : 3.5, isLaptop ? 14.9 : 14.5);
-      lookBase.set(0, 2.75, 0);
-      stage.position.y = isLaptop ? -0.34 : -0.30;
-      stage.scale.setScalar(isLaptop ? 0.82 : 0.90);
+      camBase.set(0, isLaptop ? 3.45 : 3.5, isLaptop ? 14.0 : 13.5);
+      lookBase.set(0, isLaptop ? 2.85 : 2.9, 0);
+      stage.position.y = isLaptop ? -0.38 : -0.34;
+      stage.scale.setScalar(isLaptop ? 0.94 : 1.04);
       const vh = 2 * camBase.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
       const vw = vh * camera.aspect;
       // Centered perfectly inside palace archway: ~60% across viewport
