@@ -165,41 +165,9 @@ function selectStone(idx, exp) {
    Custom Cursor Logic
 ------------------------------------------------------------------- */
 function setupCursor() {
-  let cx = window.innerWidth / 2;
-  let cy = window.innerHeight / 2;
-  let rx = cx;
-  let ry = cy;
+  if (cursor) cursor.style.display = 'none';
 
-  window.addEventListener('pointermove', (e) => {
-    cx = e.clientX;
-    cy = e.clientY;
-  });
-
-  function renderCursor() {
-    rx += (cx - rx) * 0.38;
-    ry += (cy - ry) * 0.38;
-
-    cursor.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
-    const ring = cursor.querySelector('.cursor__ring');
-    if (ring) {
-      ring.style.transform = `translate3d(${rx - cx}px, ${ry - cy}px, 0) translate(-50%, -50%)`;
-    }
-    requestAnimationFrame(renderCursor);
-  }
-  requestAnimationFrame(renderCursor);
-
-  // Link magnetic & cursor hover triggers
-  const interactiveEls = document.querySelectorAll('a, button, .swatch, .magnetic');
-  interactiveEls.forEach((el) => {
-    el.addEventListener('mouseenter', () => {
-      if (!currentHoverType) cursor.classList.add('is-link');
-    });
-    el.addEventListener('mouseleave', () => {
-      if (!currentHoverType) cursor.classList.remove('is-link');
-    });
-  });
-
-  // Magnetic effect for primary buttons
+  // Magnetic effect for primary buttons (clean system cursor)
   document.querySelectorAll('.magnetic').forEach((btn) => {
     btn.addEventListener('mousemove', (e) => {
       const rect = btn.getBoundingClientRect();

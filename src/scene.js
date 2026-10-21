@@ -5,7 +5,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 
-const BASE = import.meta.env.BASE_URL;
+const BASE = '/';
 
 export const STONES = [
   { key: 'makrana', name: 'Makrana White', origin: 'Makrana, Rajasthan', note: 'The stone of the Taj Mahal', word: 'MAKRANA' },
@@ -547,10 +547,11 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
 
     if (isMobile) {
       const isShort = H < 740;
-      camBase.set(0, isShort ? 3.0 : 3.15, isShort ? 18.2 : 17.5);
-      lookBase.set(0, isShort ? 1.6 : 1.75, 0);
-      stage.position.y = isShort ? -1.65 : -1.75;
-      stage.scale.setScalar(isShort ? 0.76 : 0.82);
+      camBase.set(0, isShort ? 2.9 : 3.05, isShort ? 17.5 : 16.8);
+      lookBase.set(0, isShort ? 1.5 : 1.65, 0);
+      // Temple clearly elevated to top half on mobile so text is below
+      stage.position.y = isShort ? 0.25 : 0.38;
+      stage.scale.setScalar(isShort ? 0.74 : 0.80);
       stage.position.x = 0;
     } else {
       const isLaptop = W < 1520 || H < 860;
@@ -560,8 +561,8 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
       stage.scale.setScalar(isLaptop ? 0.94 : 1.04);
       const vh = 2 * camBase.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
       const vw = vh * camera.aspect;
-      // Positioned clearly in right half of viewport (~65% across)
-      stage.position.x = Math.min(Math.max(vw * 0.14, isLaptop ? 1.9 : 2.2), 2.8);
+      // Positioned strictly in right half of viewport (50% right)
+      stage.position.x = Math.min(Math.max(vw * 0.16, isLaptop ? 2.1 : 2.45), 3.0);
     }
 
     sun.position.set(stage.position.x + 5, 11, 7);

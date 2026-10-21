@@ -152,10 +152,7 @@ button {
    CURSOR
    ========================================================= */
 .cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 150;
+  display: none !important;
   pointer-events: none;
 }
 
@@ -1692,8 +1689,8 @@ button {
   }
 
   .hero__content {
-    top: 74px;
-    bottom: 78px;
+    top: auto;
+    bottom: 80px;
     transform: none;
     width: auto;
     left: 20px;
@@ -1702,6 +1699,7 @@ button {
     max-width: 440px;
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     pointer-events: none;
   }
 

@@ -14,6 +14,7 @@ export default defineConfig({
         sanctums: resolve(__dirname, 'pooja-sanctums.html'),
         fountains: resolve(__dirname, 'palatial-fountains.html'),
         materials: resolve(__dirname, 'materials-guide.html'),
+        workshop: resolve(__dirname, 'atelier-workshop.html'),
         contact: resolve(__dirname, 'contact.html'),
       },
     },
