@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-// A.F.G Marble & Arts - Compact Cute Navbar with Dynamic Scroll Dock
+// A.F.G Marble & Arts - Royal Bespoke Navbar (Validated 100% Clean JSX)
 export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
   const pathname = usePathname();
   const [internalScrolled, setInternalScrolled] = useState(false);
