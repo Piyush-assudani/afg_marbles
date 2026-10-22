@@ -14,6 +14,9 @@ import ExperienceCentre from '../components/ExperienceCentre';
 import ArchitecturalFaq from '../components/ArchitecturalFaq';
 import RoyalProjectsPreview from '../components/RoyalProjectsPreview';
 import QuarryTimeline from '../components/QuarryTimeline';
+import SanctumConfigurator from '../components/SanctumConfigurator';
+import YardLiveFeed from '../components/YardLiveFeed';
+import StonePurityLab from '../components/StonePurityLab';
 import { PRODUCTS } from '../products.js';
 
 export default function HomePage() {
@@ -121,7 +124,8 @@ export default function HomePage() {
       <PricingPhilosophy onOpenInquiry={handleOpenInquiry} />
 
       {/* ============ ALL WE NEED IS YOUR SPACE DIMENSIONS ============ */}
-      <ConsultationCard onOpenInquiry={handleOpenInquiry} />
+      {/* ============ INTERACTIVE BESPOKE SANCTUM CONFIGURATOR (UNIQUE ATELIER STUDIO) ============ */}
+      <SanctumConfigurator onOpenInquiry={handleOpenInquiry} />
 
       {/* ============ INTERACTIVE E-COMMERCE ARCHITECTURAL PORTFOLIO ============ */}
       <section className="sec-collections" id="collections" style={{ padding: '80px 0' }}>
@@ -251,6 +255,9 @@ export default function HomePage() {
 
       {/* ============ ROYAL HERITAGE LANDMARKS (COMPLETED COMMISSIONS) ============ */}
       <RoyalProjectsPreview />
+
+      {/* ============ DIRECT JAIPUR YARD LIVE INSPECTION FEED & PROOF ============ */}
+      <YardLiveFeed onOpenInquiry={handleOpenInquiry} />
 
       {/* ============ SILAWAT CRAFT & WORKSHOP TEASER ============ */}
       <section className="sec-workshop-teaser" style={{ padding: '80px 0' }}>
@@ -442,6 +449,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ============ 100-YEAR CALCITE SCIENCE & PURITY LAB ============ */}
+      <StonePurityLab onOpenInquiry={handleOpenInquiry} />
 
       {/* ============ ATELIER CRAFT PROCESS GALLERY ============ */}
       <section className="sec-craft-process" style={{ padding: '80px 0' }}>

@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import QuickDock from '../components/QuickDock';
 import InquiryModal from '../components/InquiryModal';
 import ProductModal from '../components/ProductModal';
+import AtelierSoundscape from '../components/AtelierSoundscape';
 
 export default function LayoutClientWrapper({ children }) {
   const [inquiryModalData, setInquiryModalData] = useState(null);
@@ -50,6 +51,7 @@ export default function LayoutClientWrapper({ children }) {
       <main>{children}</main>
 
       <Footer />
+      <AtelierSoundscape />
       <QuickDock onOpenInquiry={(p) => setInquiryModalData(p)} />
 
       {/* Dynamic Product Dossier Modal */}
