@@ -9,12 +9,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "vite:dev": "vite",
-    "vite:build": "vite build"
-  },
-  "devDependencies": {
-    "vite": "^8.3.0"
+    "start": "next start"
   },
   "dependencies": {
     "gsap": "^3.15.0",
