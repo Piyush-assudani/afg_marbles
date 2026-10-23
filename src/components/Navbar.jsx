@@ -212,6 +212,15 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
                           </div>
                         </Link>
                       </li>
+                      <li>
+                        <Link href="/temple-maintenance-guide" onClick={() => setMegaMenuOpen(false)}>
+                          <span className="mega-num">12</span>
+                          <div className="mega-item-info">
+                            <strong>Temple Care &amp; Abhishek Guide</strong>
+                            <span>Daily Ritual Protocols &amp; Upkeep</span>
+                          </div>
+                        </Link>
+                      </li>
                     </ul>
                   </div>
 
@@ -221,19 +230,10 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
                     <ul className="mega-links-list">
                       <li>
                         <Link href="/bespoke-consultation" onClick={() => setMegaMenuOpen(false)}>
-                          <span className="mega-num">12</span>
+                          <span className="mega-num">13</span>
                           <div className="mega-item-info">
                             <strong>3D CAD Space Consultation</strong>
                             <span>Custom Dimensions to Blueprint</span>
-                          </div>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/about-afg" onClick={() => setMegaMenuOpen(false)}>
-                          <span className="mega-num">13</span>
-                          <div className="mega-item-info">
-                            <strong>About AFG Guild</strong>
-                            <span>Generational Silawat Artisans</span>
                           </div>
                         </Link>
                       </li>
@@ -256,26 +256,17 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
                         </Link>
                       </li>
                       <li>
-                        <Link href="/temple-maintenance-guide" onClick={() => setMegaMenuOpen(false)}>
+                        <Link href="/about-afg" onClick={() => setMegaMenuOpen(false)}>
                           <span className="mega-num">16</span>
                           <div className="mega-item-info">
-                            <strong>Temple Care &amp; Abhishek Guide</strong>
-                            <span>Daily Ritual Protocols &amp; Upkeep</span>
-                          </div>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/about-afg" onClick={() => setMegaMenuOpen(false)}>
-                          <span className="mega-num">17</span>
-                          <div className="mega-item-info">
-                            <strong>AFG Lineage Since 1987</strong>
-                            <span>Four Decades of Sacred Artistry</span>
+                            <strong>About AFG Guild Heritage</strong>
+                            <span>Generational Silawat Master Artisans</span>
                           </div>
                         </Link>
                       </li>
                       <li>
                         <Link href="/contact" onClick={() => setMegaMenuOpen(false)}>
-                          <span className="mega-num">18</span>
+                          <span className="mega-num">17</span>
                           <div className="mega-item-info">
                             <strong>Jaipur &amp; Makrana Studios</strong>
                             <span>Studio Walkthroughs &amp; Visits</span>
@@ -293,8 +284,9 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
                         <img src="/gallery/sanctum-peacock-arch.webp" alt="Sanctum 3D CAD Blueprint" />
                       </div>
                       <div className="mega-feature-card__body">
-                        <h5>Bespoke 3D CAD Sanctum Blueprint</h5>
-                        <p>Share your room dimensions. Receive a consecrated 3D Ayadi Vastu blueprint within 24 hours.</p>
+                        <span className="mega-feature-card__badge">✦ 24-HOUR TURNAROUND</span>
+                        <h5>Bespoke 3D CAD Sanctum</h5>
+                        <p>Share your room dimensions down to the centimeter. Receive a consecrated 3D Ayadi Vastu layout.</p>
                         <Link
                           href="/bespoke-consultation"
                           className="mega-feature-card__cta"

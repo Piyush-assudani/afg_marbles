@@ -7293,10 +7293,10 @@ section, .sec-difference, .sec-pricing-philosophy, .sec-consultation-banner, .se
 
 .mega-menu__inner {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) 250px;
-  padding: 18px 22px;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) 245px;
+  padding: 16px 22px 18px;
   gap: 16px;
-  align-items: stretch;
+  align-items: start;
   box-sizing: border-box;
 }
 
@@ -7319,7 +7319,6 @@ section, .sec-difference, .sec-pricing-philosophy, .sec-consultation-banner, .se
   min-width: 0;
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
 .mega-menu__header {
@@ -7329,8 +7328,8 @@ section, .sec-difference, .sec-pricing-philosophy, .sec-consultation-banner, .se
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #b08a4f;
-  margin-bottom: 12px;
-  padding-bottom: 6px;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
   border-bottom: 1px solid rgba(176, 138, 79, 0.2);
   white-space: nowrap;
   overflow: hidden;
@@ -7341,7 +7340,7 @@ section, .sec-difference, .sec-pricing-philosophy, .sec-consultation-banner, .se
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 2px;
   margin: 0;
   padding: 0;
 }
@@ -7355,7 +7354,7 @@ section, .sec-difference, .sec-pricing-philosophy, .sec-consultation-banner, .se
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 6px 8px;
+  padding: 5px 8px;
   border-radius: 6px;
   transition: all 0.2s ease;
   background: transparent;
@@ -7372,7 +7371,7 @@ section, .sec-difference, .sec-pricing-philosophy, .sec-consultation-banner, .se
 
 .mega-num {
   font-family: var(--display);
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 600;
   color: #b08a4f;
   min-width: 18px;
@@ -7389,7 +7388,7 @@ section, .sec-difference, .sec-pricing-philosophy, .sec-consultation-banner, .se
 .mega-item-info strong {
   display: block;
   font-family: var(--serif);
-  font-size: 13px;
+  font-size: 12.5px;
   color: #1c1813;
   line-height: 1.25;
   white-space: nowrap;
@@ -7399,7 +7398,7 @@ section, .sec-difference, .sec-pricing-philosophy, .sec-consultation-banner, .se
 
 .mega-item-info span {
   display: block;
-  font-size: 10.5px;
+  font-size: 10px;
   color: #6b5f52;
   margin-top: 1px;
   white-space: nowrap;
@@ -7413,17 +7412,22 @@ section, .sec-difference, .sec-pricing-philosophy, .sec-consultation-banner, .se
   background: #ffffff;
   border-radius: 10px;
   overflow: hidden;
-  border: 1px solid rgba(176, 138, 79, 0.22);
-  box-shadow: 0 4px 16px rgba(28, 24, 19, 0.06);
-  flex: 1;
-  min-height: 0;
+  border: 1px solid rgba(176, 138, 79, 0.28);
+  box-shadow: 0 4px 16px rgba(28, 24, 19, 0.08);
   box-sizing: border-box;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mega-feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(28, 24, 19, 0.12);
+  border-color: rgba(176, 138, 79, 0.45);
 }
 
 .mega-feature-card__media {
   position: relative;
   width: 100%;
-  height: 85px;
+  height: 95px;
   overflow: hidden;
   background: #f4eee2;
   flex-shrink: 0;
@@ -7441,19 +7445,35 @@ section, .sec-difference, .sec-pricing-philosophy, .sec-consultation-banner, .se
 }
 
 .mega-feature-card__body {
-  padding: 10px 12px;
+  padding: 10px 12px 12px;
   display: flex;
   flex-direction: column;
-  flex: 1;
-  min-height: 0;
+  gap: 5px;
   box-sizing: border-box;
+}
+
+.mega-feature-card__badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-family: var(--sans);
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8c6426;
+  background: rgba(176, 138, 79, 0.12);
+  padding: 2px 7px;
+  border-radius: 3px;
+  border: 1px solid rgba(176, 138, 79, 0.25);
+  margin-bottom: 2px;
 }
 
 .mega-feature-card__body h5 {
   font-family: var(--serif);
-  font-size: 12.5px;
+  font-size: 13px;
+  font-weight: 600;
   color: #1c1813;
-  margin-bottom: 4px;
+  margin: 0;
   line-height: 1.25;
   white-space: nowrap;
   overflow: hidden;
@@ -7464,9 +7484,9 @@ section, .sec-difference, .sec-pricing-philosophy, .sec-consultation-banner, .se
   font-size: 10px;
   color: #6b5f52;
   line-height: 1.35;
-  margin-bottom: 8px;
+  margin: 0 0 6px 0;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -7478,12 +7498,13 @@ section, .sec-difference, .sec-pricing-philosophy, .sec-consultation-banner, .se
   gap: 6px;
   background: linear-gradient(135deg, #b88636 0%, #8c6220 100%);
   color: #ffffff !important;
+  font-family: var(--sans);
   font-size: 10.5px;
   font-weight: 600;
-  padding: 7px 10px;
+  letter-spacing: 0.03em;
+  padding: 8px 12px;
   border-radius: 6px;
   text-decoration: none;
-  margin-top: auto;
   border: 1px solid rgba(176, 138, 79, 0.5);
   box-shadow: 0 4px 12px rgba(184, 134, 63, 0.25);
   transition: all 0.2s ease;
