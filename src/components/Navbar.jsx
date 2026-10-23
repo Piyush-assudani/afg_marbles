@@ -294,7 +294,7 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
                       </div>
                       <div className="mega-feature-card__body">
                         <h5>Bespoke 3D CAD Sanctum Blueprint</h5>
-                        <p>Share your room dimensions down to the centimeter. Receive a consecrated Ayadi Vastu layout within 24 hours.</p>
+                        <p>Share your room dimensions. Receive a consecrated 3D Ayadi Vastu blueprint within 24 hours.</p>
                         <Link
                           href="/bespoke-consultation"
                           className="mega-feature-card__cta"

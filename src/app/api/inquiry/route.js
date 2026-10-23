@@ -3,29 +3,41 @@ import fs from 'fs';
 import path from 'path';
 import nodemailer from 'nodemailer';
 
-const DATA_DIR = path.join(process.cwd(), 'data');
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
+
+// Use /tmp in serverless/Vercel environments where process.cwd() is read-only
+const DATA_DIR = process.env.VERCEL
+  ? path.join('/tmp', 'data')
+  : path.join(process.cwd(), 'data');
 const INQUIRIES_FILE = path.join(DATA_DIR, 'inquiries.json');
 const OUTBOX_FILE = path.join(DATA_DIR, 'email_outbox.json');
 
 function ensureDataFiles() {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
-  }
-  if (!fs.existsSync(INQUIRIES_FILE)) {
-    fs.writeFileSync(INQUIRIES_FILE, JSON.stringify([], null, 2), 'utf-8');
-  }
-  if (!fs.existsSync(OUTBOX_FILE)) {
-    fs.writeFileSync(OUTBOX_FILE, JSON.stringify([], null, 2), 'utf-8');
+  try {
+    if (!fs.existsSync(DATA_DIR)) {
+      fs.mkdirSync(DATA_DIR, { recursive: true });
+    }
+    if (!fs.existsSync(INQUIRIES_FILE)) {
+      fs.writeFileSync(INQUIRIES_FILE, JSON.stringify([], null, 2), 'utf-8');
+    }
+    if (!fs.existsSync(OUTBOX_FILE)) {
+      fs.writeFileSync(OUTBOX_FILE, JSON.stringify([], null, 2), 'utf-8');
+    }
+  } catch (err) {
+    console.warn('File storage skipped in read-only environment:', err?.message);
   }
 }
 
 function saveInquiryRecord(inquiry) {
   try {
     ensureDataFiles();
-    const raw = fs.readFileSync(INQUIRIES_FILE, 'utf-8');
-    const list = JSON.parse(raw || '[]');
-    list.unshift(inquiry);
-    fs.writeFileSync(INQUIRIES_FILE, JSON.stringify(list, null, 2), 'utf-8');
+    if (fs.existsSync(INQUIRIES_FILE)) {
+      const raw = fs.readFileSync(INQUIRIES_FILE, 'utf-8');
+      const list = JSON.parse(raw || '[]');
+      list.unshift(inquiry);
+      fs.writeFileSync(INQUIRIES_FILE, JSON.stringify(list, null, 2), 'utf-8');
+    }
   } catch (err) {
     console.error('Failed to save inquiry to file:', err);
   }
@@ -34,10 +46,12 @@ function saveInquiryRecord(inquiry) {
 function recordEmailOutbox(emailRecord) {
   try {
     ensureDataFiles();
-    const raw = fs.readFileSync(OUTBOX_FILE, 'utf-8');
-    const outbox = JSON.parse(raw || '[]');
-    outbox.unshift(emailRecord);
-    fs.writeFileSync(OUTBOX_FILE, JSON.stringify(outbox, null, 2), 'utf-8');
+    if (fs.existsSync(OUTBOX_FILE)) {
+      const raw = fs.readFileSync(OUTBOX_FILE, 'utf-8');
+      const outbox = JSON.parse(raw || '[]');
+      outbox.unshift(emailRecord);
+      fs.writeFileSync(OUTBOX_FILE, JSON.stringify(outbox, null, 2), 'utf-8');
+    }
   } catch (err) {
     console.error('Failed to log email to outbox:', err);
   }
