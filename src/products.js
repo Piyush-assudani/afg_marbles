@@ -188,7 +188,7 @@ export const PRODUCTS = [
     tagline: 'Monumental 3-tier water fountain with acanthus leaf basins and lion head spouts',
     authenticity: 'Weather-Treated Crystalline Calcite',
     scale: '7.8ft Height · 12ft Catch Pool Diameter',
-    primaryStone: 'White Crystalline Makrana Marble',
+    primaryStone: 'Rajnagar White Marble',
     fullDesc:
       'Engineered for palatial courtyard driveways, private resorts, and royal estates, this 3-tier cascading marble fountain produces a soothing harmonic water cadence. Sculpted from monolithic marble drums with hand-chiseled acanthus leaf scalloped lips, four guardian lion spouts, and a heavy bottom pedestal designed to withstand all outdoor weather conditions without discoloration.',
     angles: [
@@ -236,7 +236,7 @@ export const PRODUCTS = [
     tagline: 'Radial 16-petal lotus basin with central bubbling orb and water cascade',
     authenticity: 'Pure Calcite & Bidasar Gold',
     scale: '4.5ft Height · 8ft Basin Diameter',
-    primaryStone: 'Makrana White & Bidasar Gold Inlay',
+    primaryStone: 'Rajnagar White Marble',
     fullDesc:
       'Inspired by the water pavilions of Lake Pichola in Udaipur, the Courtyard Lotus Fountain features a 16-petal radiating marble bowl chiseled from a single monolithic marble block. Water gently bubbles from the central marble sphere, overflowing smoothly across the petal lips into the lower collection pool with zero splashing.',
     angles: [
@@ -323,7 +323,7 @@ export const PRODUCTS = [
     tagline: 'Contemporary clean-line marble sanctum with gold filigree and floating platform',
     authenticity: 'Select High-Translucency Calcite',
     scale: '7.0ft W × 3.5ft D × 9.0ft H',
-    primaryStone: 'Translucent Makrana Pure White',
+    primaryStone: 'Vietnam Pure White Marble',
     fullDesc:
       'Blending centuries-old stone craftsmanship with clean contemporary architecture, the Monolithic Pooja Sanctum is tailored for modern designer residences. Featuring seamless vertical slab clad walls, floating marble steps with hidden warm gold LED coves, a backlit Om mandala, and laser-precise brass inlays embedded flush into pristine Makrana stone.',
     angles: [
@@ -362,22 +362,28 @@ export const PRODUCTS = [
   },
   {
     id: 'black-marquina-cascade-fountain',
-    title: 'The Nero Marquina Royal Basin Fountain',
+    title: 'The Rajnagar Royal Multi-Tier Basin Fountain',
     category: 'fountain',
     categoryName: 'Palatial Fountains',
-    badge: 'Contrast Statement',
-    tagline: 'Deep black marble tiered fountain with white crystalline lightning veins',
-    authenticity: 'Natural Nero Marquina & Makrana Calcite',
+    badge: 'Estate Feature',
+    tagline: 'Pure Rajnagar white marble tiered fountain with gentle water cascades',
+    authenticity: '100% Rajnagar Fountain Calcite',
     scale: '6.0ft Height · 9ft Basin Diameter',
-    primaryStone: 'Natural Nero Marquina & Makrana Calcite',
+    primaryStone: 'Rajnagar White Marble',
     fullDesc:
-      'For clients desiring dramatic contrast against light stone courtyards, this piece marries deep Nero Marquina marble with crisp Makrana white water lips. Water creates a brilliant crystalline sheet over the dark polished stone, accentuating the natural white lightning veins that traverse each hand-turned basin.',
+      'Engineered specifically for luxury estate driveways and gardens, this fountain is chiseled from solid Rajnagar white calcite marble. Durable and resistant to all weather conditions, it maintains its pristine natural stone brilliance under continuous water flow.',
     angles: [
       {
         label: 'Main Water Cascade',
         tag: 'Cascade Angle',
-        src: '/gallery/fountain-black-marquina-cascade.webp',
-        desc: 'Dramatic contrasting fountain cascading over deep black and white marble tiers.'
+        src: '/gallery/fountain-palatial-night.webp',
+        desc: 'Dramatic illuminated fountain cascading over hand-turned white marble tiers.'
+      },
+      {
+        label: 'Courtyard Garden View',
+        tag: 'Estate View',
+        src: '/gallery/fountain-french-courtyard.webp',
+        desc: 'Courtyard garden installation with crystalline water cascade.'
       },
       {
         label: 'Sculpted Horses Base',
@@ -479,7 +485,7 @@ export const PRODUCTS = [
     badge: 'Estate Feature',
     tagline: 'Monumental multi-tier fountain sculpted for formal estate garden parterres',
     scale: '9.5ft Height · 15ft Outer Ring',
-    primaryStone: 'Pure Makrana White Marble',
+    primaryStone: 'Rajnagar White Marble',
     fullDesc:
       'Hand-turned from solid marble monoliths, this monumental fountain is engineered for large estate parterres, formal botanical landscapes, and hotel courtyards. Features scalloped shell basins and zero-splash water engineering.',
     angles: [

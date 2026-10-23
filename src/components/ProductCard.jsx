@@ -407,11 +407,11 @@ export default function ProductCard({ product, onOpenProduct, onOpenInquiry }) {
 
         {/* ============ LUXURY ACTION BUTTONS & INSTANT SHARING ============ */}
         <div style={{ marginTop: 'auto', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-          {/* Primary Action: Direct WhatsApp Atelier Inquiry */}
+          {/* Primary Action: Open Tilak-Style Smart Inquiry Modal */}
           <button
             type="button"
-            className="btn-whatsapp-pill"
-            onClick={handleDirectWhatsApp}
+            className="btn-inquire-pill"
+            onClick={() => onOpenInquiry?.(product)}
             style={{
               width: '100%',
               display: 'flex',
@@ -419,27 +419,52 @@ export default function ProductCard({ product, onOpenProduct, onOpenInquiry }) {
               justifyContent: 'center',
               gap: '9px',
               padding: '12px 20px',
-              background: 'linear-gradient(135deg, #1c1813 0%, #2b241c 100%)',
-              color: '#ecd39b',
+              background: 'linear-gradient(135deg, #7c4d28 0%, #522f14 100%)',
+              color: '#ffffff',
               borderRadius: '999px',
-              fontSize: '12px',
+              fontSize: '12.5px',
               fontWeight: 600,
-              letterSpacing: '0.06em',
+              letterSpacing: '0.04em',
               textTransform: 'uppercase',
-              border: '1px solid rgba(212, 175, 55, 0.45)',
+              border: 'none',
               cursor: 'pointer',
-              boxShadow: '0 4px 16px rgba(28, 24, 19, 0.16)',
+              boxShadow: '0 4px 16px rgba(124, 77, 40, 0.28)',
               transition: 'all 0.3s ease',
             }}
           >
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="#25d366">
-              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.074-1.803-.412-1.493-.623-2.457-2.148-2.531-2.249-.074-.099-.607-.808-.607-1.543s.385-1.096.521-1.246c.137-.149.3-.187.4-.187.1 0 .2.001.288.006.096.005.226-.036.353.27.13.315.444 1.085.483 1.164.039.08.065.174.013.277-.052.104-.078.169-.156.259-.078.091-.164.202-.234.271-.078.078-.16.162-.069.319.091.156.404.667.868 1.08.597.532 1.099.697 1.255.775.156.078.247.065.338-.039.091-.104.39-.455.494-.611.104-.156.208-.13.351-.078.143.052.909.429 1.065.507.156.078.26.117.299.182.039.065.039.378-.105.783z" />
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
             </svg>
-            <span>Inquire on WhatsApp</span>
+            <span>Inquire &amp; Get Price</span>
           </button>
 
-          {/* Secondary Dual Row: Direct Share & Dossier View */}
+          {/* Secondary Dual Row: Direct WhatsApp & View Details */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+            <button
+              type="button"
+              className="btn-whatsapp-pill"
+              onClick={handleDirectWhatsApp}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '6px',
+                padding: '9px 12px',
+                background: '#25D366',
+                color: '#ffffff',
+                borderRadius: '999px',
+                fontSize: '11px',
+                fontWeight: 600,
+                border: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+              }}
+            >
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.074-1.803-.412-1.493-.623-2.457-2.148-2.531-2.249-.074-.099-.607-.808-.607-1.543s.385-1.096.521-1.246c.137-.149.3-.187.4-.187.1 0 .2.001.288.006.096.005.226-.036.353.27.13.315.444 1.085.483 1.164.039.08.065.174.013.277-.052.104-.078.169-.156.259-.078.091-.164.202-.234.271-.078.078-.16.162-.069.319.091.156.404.667.868 1.08.597.532 1.099.697 1.255.775.156.078.247.065.338-.039.091-.104.39-.455.494-.611.104-.156.208-.13.351-.078.143.052.909.429 1.065.507.156.078.26.117.299.182.039.065.039.378-.105.783z" />
+              </svg>
+              <span>WhatsApp</span>
+            </button>
             {/* Direct Share Button */}
             <button
               type="button"

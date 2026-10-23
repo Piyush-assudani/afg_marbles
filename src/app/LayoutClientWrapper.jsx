@@ -51,7 +51,6 @@ export default function LayoutClientWrapper({ children }) {
       <main>{children}</main>
 
       <Footer />
-      <AtelierSoundscape />
       <QuickDock onOpenInquiry={(p) => setInquiryModalData(p)} />
 
       {/* Dynamic Product Dossier Modal */}

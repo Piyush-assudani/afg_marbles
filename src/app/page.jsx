@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import HeroSection from '../components/HeroSection';
+import AtelierRibbon from '../components/AtelierRibbon';
+import MakranaVisualShowcase from '../components/MakranaVisualShowcase';
 import ProductCard from '../components/ProductCard';
 import DifferenceTable from '../components/DifferenceTable';
 import ConsultationCard from '../components/ConsultationCard';
@@ -61,50 +63,51 @@ export default function HomePage() {
       {/* ============ EXACT 3D HERO SECTION (WITH ROTATING TEMPLE & STONE RAIL) ============ */}
       <HeroSection onOpenInquiry={handleOpenInquiry} />
 
+      {/* ============ FOUR DECADES OF STONE PORTFOLIO RIBBON ============ */}
+      <AtelierRibbon />
+
+      {/* ============ MAKRANA PURE WHITE MARBLE VISUAL SHOWCASE ============ */}
+      <MakranaVisualShowcase onOpenInquiry={handleOpenInquiry} />
+
       {/* ============ ROYAL PATRON TRUST BAR ============ */}
-      <section className="sec-royal-trust-bar">
+      <section className="sec-royal-trust-bar" aria-label="Imperial Stone Assurances">
         <div className="sec-container">
-          <div className="trust-pillars-grid">
-            <div className="trust-pillar-card">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.8">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-              </svg>
-              <div>
-                <strong>Direct Makrana Bedrock</strong>
-                <p>Mined from virgin calcite seams in Makrana with certified 99% CaCO3 purity.</p>
-              </div>
+          <div className="royal-trust-flex">
+            <div className="royal-trust-badge">
+              <span className="royal-trust-badge__star">✦</span>
+              <span className="royal-trust-badge__title">IMPERIAL GUARANTEE</span>
             </div>
-
-            <div className="trust-pillar-card">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.8">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M12 6v6l4 2" />
-              </svg>
-              <div>
-                <strong>Zero-Yellowing Warranty</strong>
-                <p>Pure crystalline structure never stains from daily puja ghee, abhishek milk, or oil lamps.</p>
+            <div className="royal-trust-hallmarks">
+              <div className="hallmark-item">
+                <span className="hallmark-item__dot">✦</span>
+                <div className="hallmark-item__text">
+                  <strong>Direct Makrana Bedrock</strong>
+                  <span>99.2% Pure Calcite</span>
+                </div>
               </div>
-            </div>
-
-            <div className="trust-pillar-card">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.8">
-                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-              </svg>
-              <div>
-                <strong>Generational Silawats</strong>
-                <p>Hand-chiseling with strict Ayadi Vastu mathematical harmony since 1987.</p>
+              <div className="hallmark-divider" aria-hidden="true"></div>
+              <div className="hallmark-item">
+                <span className="hallmark-item__dot">✦</span>
+                <div className="hallmark-item__text">
+                  <strong>Zero-Yellowing Warranty</strong>
+                  <span>Puja Ghee &amp; Abhishek Proof</span>
+                </div>
               </div>
-            </div>
-
-            <div className="trust-pillar-card">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.8">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                <line x1="8" y1="21" x2="16" y2="21" />
-                <line x1="12" y1="17" x2="12" y2="21" />
-              </svg>
-              <div>
-                <strong>100% Pre-Assembly Trial</strong>
-                <p>Assembled in our Jaipur yard with 4K walkthrough video before international export.</p>
+              <div className="hallmark-divider" aria-hidden="true"></div>
+              <div className="hallmark-item">
+                <span className="hallmark-item__dot">✦</span>
+                <div className="hallmark-item__text">
+                  <strong>3rd-Gen Silawat Lineage</strong>
+                  <span>Hand Chiseled Sthapatya</span>
+                </div>
+              </div>
+              <div className="hallmark-divider" aria-hidden="true"></div>
+              <div className="hallmark-item">
+                <span className="hallmark-item__dot">✦</span>
+                <div className="hallmark-item__text">
+                  <strong>100% Pre-Assembly Trial</strong>
+                  <span>Jaipur Yard 4K Inspection</span>
+                </div>
               </div>
             </div>
           </div>

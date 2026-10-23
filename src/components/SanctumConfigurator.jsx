@@ -50,44 +50,34 @@ const STYLES = [
 
 const STONES = [
   {
-    id: 'makrana-albeta',
-    name: 'Pure Makrana Albeta (99% Calcite)',
-    origin: 'Makrana Bedrock · Taj Mahal Vein',
-    colorHex: '#faf7f0',
+    id: 'makrana-pure',
+    name: 'Makrana Pure White Marble',
+    origin: 'Makrana Bedrock, Rajasthan · Taj Mahal Vein',
+    colorHex: '#ffffff',
     borderHex: '#d4af37',
     addedWeight: 0,
-    porosity: '0.04% (Zero-Staining)',
-    tag: 'THE ROYAL BENCHMARK'
+    porosity: '0.04% (99.2% Calcite · Zero-Staining)',
+    tag: 'TEMPLE SPECIALIST'
   },
   {
-    id: 'makrana-dungri',
-    name: 'Makrana Dungri Pristine',
-    origin: 'Makrana Old Quarry Seam',
-    colorHex: '#f0ece1',
-    borderHex: '#a68244',
-    addedWeight: 100,
-    porosity: '0.06% (Lifetime Calcite)',
-    tag: 'ANCIENT TEMPLE CLASSIC'
+    id: 'vietnam-white',
+    name: 'Vietnam Pure White Marble',
+    origin: 'Luc Yen Seam, Vietnam',
+    colorHex: '#fcfcfc',
+    borderHex: '#c4baa6',
+    addedWeight: 50,
+    porosity: '0.05% (Pure Snow White)',
+    tag: 'CONTEMPORARY & DEITIES'
   },
   {
-    id: 'nero-marquina',
-    name: 'Nero Marquina Obsidian',
-    origin: 'Deep Basque Monolith Seam',
-    colorHex: '#181615',
-    borderHex: '#88542c',
-    addedWeight: 350,
-    porosity: '0.09% (Bold Royal Contrast)',
-    tag: 'MIDNIGHT OPULENCE'
-  },
-  {
-    id: 'honey-onyx',
-    name: 'Translucent Backlit Green/Honey Onyx',
-    origin: 'Baluchistan Rare Veins',
-    colorHex: '#ded3b6',
-    borderHex: '#c2954c',
-    addedWeight: 220,
-    porosity: '0.12% (65% Light Transmission)',
-    tag: 'DIVINE LUMINESCENCE'
+    id: 'rajnagar-white',
+    name: 'Rajnagar White Marble',
+    origin: 'Rajnagar Bedrock, Rajasthan',
+    colorHex: '#f3efe8',
+    borderHex: '#b08a4f',
+    addedWeight: 80,
+    porosity: '0.06% (Hydraulic Dense Calcite)',
+    tag: 'FOUNTAIN SPECIALIST'
   }
 ];
 

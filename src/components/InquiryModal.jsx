@@ -1,18 +1,27 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { saveInquiry } from '../products.js';
+import { MessageSquare, Send, CheckCircle2, Phone, X } from 'lucide-react';
+
+const CORE_MARBLES = [
+  'Makrana Pure White Marble (Temples & Mandirs)',
+  'Vietnam Pure White Marble (Temples & Deities)',
+  'Rajnagar White Marble (Fountains)',
+];
 
 export default function InquiryModal({ initialProduct, onClose, onToast }) {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    location: '',
-    dimensions: '',
-    stone: 'Makrana Pure Albeta Calcite',
-    productTitle: initialProduct?.title || 'Bespoke Architectural Project',
-    notes: ''
+    projectTitle: initialProduct?.title || initialProduct?.caption || initialProduct?.name || 'Makrana Pure White Mandir',
+    stone: initialProduct?.stone || 'Makrana Pure White Marble (Temples & Mandirs)',
+    message: '',
   });
 
+  const [imageSrc, setImageSrc] = useState(
+    initialProduct?.image || initialProduct?.src || '/gallery/mandir-pure-makrana.webp'
+  );
+
+  const [loading, setLoading] = useState(false);
   const [submittedLead, setSubmittedLead] = useState(null);
 
   useEffect(() => {
@@ -24,12 +33,14 @@ export default function InquiryModal({ initialProduct, onClose, onToast }) {
   }, []);
 
   useEffect(() => {
-    if (initialProduct?.title) {
+    if (initialProduct) {
+      const title = initialProduct.title || initialProduct.caption || initialProduct.name || 'Bespoke Marble Project';
+      const img = initialProduct.image || initialProduct.src || '/gallery/mandir-pure-makrana.webp';
       setFormData((prev) => ({
         ...prev,
-        productTitle: initialProduct.title,
-        dimensions: initialProduct.scale || ''
+        projectTitle: title,
       }));
+      setImageSrc(img);
     }
   }, [initialProduct]);
 
@@ -37,194 +48,233 @@ export default function InquiryModal({ initialProduct, onClose, onToast }) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const getDirectWhatsAppUrl = () => {
+    const cleanPhone = '917597417274';
+    const text = `*INQUIRY - A.F.G MARBLE & ARTS*
+• *Name:* ${formData.name || 'Prospective Patron'}
+• *Mobile:* ${formData.phone || 'Provided on chat'}
+• *Selected Project:* ${formData.projectTitle}
+• *Marble Material:* ${formData.stone}${formData.message ? `\n• *Requirements:* ${formData.message}` : ''}
+
+_Sent via Website Inquiry Popup_`;
+    return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(text)}`;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name.trim() || !formData.phone.trim()) {
-      alert('Please provide your name and contact phone number.');
+      alert('Please provide your name and phone/WhatsApp number.');
       return;
     }
 
-    const saved = saveInquiry(formData);
-    setSubmittedLead(saved);
-    onToast?.(`Inquiry ${saved.id} recorded successfully!`);
-  };
+    setLoading(true);
+    try {
+      const res = await fetch('/api/inquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...formData,
+          image: imageSrc,
+        }),
+      });
 
-  const generateWhatsAppLink = () => {
-    if (!submittedLead) return '#';
-    const text = `*NEW ARCHITECTURAL INQUIRY [${submittedLead.id}]*
-• *Name:* ${submittedLead.name}
-• *Phone:* ${submittedLead.phone}
-• *Location:* ${submittedLead.location || 'Not specified'}
-• *Creation/Project:* ${submittedLead.productTitle}
-• *Dimensions:* ${submittedLead.dimensions || 'To be measured'}
-• *Preferred Stone:* ${submittedLead.stone}
-• *Notes:* ${submittedLead.notes || 'None'}
-
-_Sent via A.F.G Marble & Arts Official Dossier Portal_`;
-    return `https://wa.me/917597417274?text=${encodeURIComponent(text)}`;
+      const data = await res.json();
+      if (data.success) {
+        setSubmittedLead({
+          id: data.inquiryId,
+          name: formData.name,
+          phone: formData.phone,
+          projectTitle: formData.projectTitle,
+          stone: formData.stone,
+          whatsappUrl: data.whatsappUrl || getDirectWhatsAppUrl(),
+        });
+        onToast?.(`Inquiry ${data.inquiryId} registered successfully!`);
+      } else {
+        alert(data.error || 'Failed to submit inquiry. Please try again.');
+      }
+    } catch (err) {
+      console.error('Submission error:', err);
+      // Fallback lead register
+      const fallbackId = `AFG-${Date.now().toString().slice(-6)}`;
+      setSubmittedLead({
+        id: fallbackId,
+        name: formData.name,
+        phone: formData.phone,
+        projectTitle: formData.projectTitle,
+        stone: formData.stone,
+        whatsappUrl: getDirectWhatsAppUrl(),
+      });
+      onToast?.(`Inquiry recorded!`);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <div className="product-modal-backdrop" onClick={onClose}>
-      <div className="inquiry-modal-card" onClick={(e) => e.stopPropagation()}>
-        <button className="modal-close-btn" onClick={onClose} aria-label="Close inquiry form">
-          ✕
+    <div className="product-modal-backdrop" onClick={onClose} role="dialog" aria-modal="true" aria-label="Marble Inquiry Popup">
+      <div className="tilak-popup-card" onClick={(e) => e.stopPropagation()}>
+        {/* Prominent Close Button */}
+        <button className="tilak-popup__close" onClick={onClose} aria-label="Close dialog">
+          <X size={18} />
         </button>
 
         {!submittedLead ? (
-          <div className="inquiry-form-wrap">
-            <div className="inquiry-header">
-              <span className="card-badge">DIRECT ATELIER DOSSIER</span>
-              <h3>Bespoke Commission &amp; Space Measurement</h3>
-              <p>
-                Your measurements and requirements will be reviewed by our Master Sthapati. All inquiries receive an official dossier number and direct architectural follow-up.
-              </p>
+          <div className="tilak-popup__grid">
+            {/* Left Column: Large HD Marble Project Visual */}
+            <div className="tilak-popup__visual">
+              <img
+                src={imageSrc}
+                alt={formData.projectTitle}
+                className="tilak-popup__img"
+                loading="eager"
+              />
+              <div className="tilak-popup__visual-overlay">
+                <span className="tilak-popup__badge">A.F.G MARBLE · MAKRANA</span>
+                <h4 className="tilak-popup__project-name">{formData.projectTitle}</h4>
+                <p className="tilak-popup__stone-tag">{formData.stone}</p>
+              </div>
             </div>
 
-            <form onSubmit={handleSubmit} className="inquiry-form">
-              <div className="form-row-2">
-                <div className="form-field">
-                  <label>Your Full Name *</label>
+            {/* Right Column: Clean, Simple Inquiry Form */}
+            <div className="tilak-popup__content">
+              <div className="tilak-popup__head">
+                <span className="tilak-popup__subhead">Direct Inquiry</span>
+                <h3 className="tilak-popup__title">Get Best Price &amp; Details</h3>
+                <p className="tilak-popup__desc">
+                  Share your contact details. Our Makrana marble expert will send drawings, pricing, and video walkthroughs.
+                </p>
+              </div>
+
+              <form onSubmit={handleSubmit} className="tilak-popup__form">
+                <div className="tilak-form__field">
+                  <label htmlFor="inquiry-name">Your Full Name *</label>
                   <input
+                    id="inquiry-name"
                     type="text"
                     name="name"
                     required
-                    placeholder="e.g. Rajesh Singhania"
+                    placeholder="Enter your name"
                     value={formData.name}
                     onChange={handleChange}
+                    autoFocus
                   />
                 </div>
-                <div className="form-field">
-                  <label>Contact Phone / WhatsApp *</label>
+
+                <div className="tilak-form__field">
+                  <label htmlFor="inquiry-phone">Mobile / WhatsApp Number *</label>
                   <input
+                    id="inquiry-phone"
                     type="tel"
                     name="phone"
                     required
-                    placeholder="+91 98765 43210"
+                    placeholder="e.g. +91 98765 43210"
                     value={formData.phone}
                     onChange={handleChange}
                   />
                 </div>
-              </div>
 
-              <div className="form-row-2">
-                <div className="form-field">
-                  <label>City &amp; Country</label>
-                  <input
-                    type="text"
-                    name="location"
-                    placeholder="e.g. Mumbai / London / Dubai"
-                    value={formData.location}
+                <div className="tilak-form__field">
+                  <label htmlFor="inquiry-stone">Selected Marble Material</label>
+                  <select
+                    id="inquiry-stone"
+                    name="stone"
+                    value={formData.stone}
                     onChange={handleChange}
-                  />
-                </div>
-                <div className="form-field">
-                  <label>Available Space (W × D × H in ft)</label>
-                  <input
-                    type="text"
-                    name="dimensions"
-                    placeholder="e.g. 7ft W × 4ft D × 9ft H"
-                    value={formData.dimensions}
-                    onChange={handleChange}
-                  />
-                </div>
-              </div>
-
-              <div className="form-row-2">
-                <div className="form-field">
-                  <label>Select Preferred Noble Stone</label>
-                  <select name="stone" value={formData.stone} onChange={handleChange}>
-                    <option value="Makrana Pure Albeta Calcite">Makrana Pure Albeta Calcite (Taj Mahal Stone)</option>
-                    <option value="Makrana Dungri Natural Vein">Makrana Dungri Natural Vein</option>
-                    <option value="Makrana Kumari Pure White">Makrana Kumari Pure White</option>
-                    <option value="Bansi Paharpur Pink Sandstone">Bansi Paharpur Pink Sandstone</option>
-                    <option value="Italian Calacatta Oro / Botticino">Italian Calacatta Oro / Botticino</option>
-                    <option value="Illuminated Onyx Altar Inlay">Illuminated Translucent Onyx Altar</option>
+                  >
+                    {CORE_MARBLES.map((m) => (
+                      <option key={m} value={m}>
+                        {m}
+                      </option>
+                    ))}
                   </select>
                 </div>
-                <div className="form-field">
-                  <label>Creation Reference</label>
+
+                <div className="tilak-form__field">
+                  <label htmlFor="inquiry-message">Dimensions or Requirements (Optional)</label>
                   <input
+                    id="inquiry-message"
                     type="text"
-                    name="productTitle"
-                    value={formData.productTitle}
+                    name="message"
+                    placeholder="e.g. 5ft x 3ft Mandir for home in Mumbai"
+                    value={formData.message}
                     onChange={handleChange}
                   />
                 </div>
-              </div>
 
-              <div className="form-field">
-                <label>Specific Carving or Vastu Requirements</label>
-                <textarea
-                  name="notes"
-                  rows="3"
-                  placeholder="Mention desired deities, bell dome, brass inlay, LED halo, or delivery timeline..."
-                  value={formData.notes}
-                  onChange={handleChange}
-                ></textarea>
-              </div>
+                {/* Clear Actions: Submit + WhatsApp */}
+                <div className="tilak-form__actions">
+                  <button
+                    type="submit"
+                    className="tilak-btn tilak-btn--primary"
+                    disabled={loading}
+                  >
+                    {loading ? (
+                      <span>Submitting...</span>
+                    ) : (
+                      <>
+                        <span>Submit Inquiry</span>
+                        <Send size={15} />
+                      </>
+                    )}
+                  </button>
 
-              <div className="form-actions">
-                <button type="submit" className="btn-primary w-full">
-                  <span className="btn-primary__text">Submit &amp; Generate Dossier</span>
-                  <span className="btn-primary__icon">→</span>
-                </button>
-              </div>
-            </form>
+                  <a
+                    href={getDirectWhatsAppUrl()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="tilak-btn tilak-btn--whatsapp"
+                  >
+                    <MessageSquare size={16} />
+                    <span>Inquire on WhatsApp</span>
+                  </a>
+                </div>
+              </form>
+            </div>
           </div>
         ) : (
-          <div className="inquiry-success-view text-center">
-            <div className="success-icon-badge">
-              <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#b08a4f" strokeWidth="2.5">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
+          /* Confirmation / Success Screen */
+          <div className="tilak-popup__success">
+            <div className="tilak-success__icon">
+              <CheckCircle2 size={44} color="#15803d" />
             </div>
-            <span className="card-badge">LEAD RECORDED IN ATELIER REGISTRY</span>
-            <h3>Dossier Reference: {submittedLead.id}</h3>
-            <p className="success-lead-p">
-              Thank you, <strong>{submittedLead.name}</strong>. Your space dimensions and project specifications have been logged in our master ledger.
+            <span className="tilak-popup__subhead">Inquiry Registered</span>
+            <h3 className="tilak-popup__title">Thank You, {submittedLead.name}!</h3>
+            <p className="tilak-popup__desc">
+              Your inquiry reference is <strong>#{submittedLead.id}</strong>. An official notification has been sent to our desk. Our master artisan will call you shortly.
             </p>
 
-            <div className="success-dossier-card">
-              <div className="sd-row">
-                <span>Dossier ID:</span>
-                <strong>{submittedLead.id}</strong>
+            <div className="tilak-success__details">
+              <div className="tilak-detail-row">
+                <span>Selected Project:</span>
+                <strong>{submittedLead.projectTitle}</strong>
               </div>
-              <div className="sd-row">
-                <span>Project:</span>
-                <strong>{submittedLead.productTitle}</strong>
-              </div>
-              <div className="sd-row">
-                <span>Dimensions:</span>
-                <strong>{submittedLead.dimensions || 'To be measured'}</strong>
-              </div>
-              <div className="sd-row">
-                <span>Stone:</span>
+              <div className="tilak-detail-row">
+                <span>Material:</span>
                 <strong>{submittedLead.stone}</strong>
+              </div>
+              <div className="tilak-detail-row">
+                <span>Contact Number:</span>
+                <strong>{submittedLead.phone}</strong>
               </div>
             </div>
 
-            <div className="success-actions">
+            <div className="tilak-success__actions">
               <a
-                href={generateWhatsAppLink()}
+                href={submittedLead.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary"
-                style={{ width: '100%', justifyContent: 'center' }}
+                className="tilak-btn tilak-btn--whatsapp tilak-btn--large"
               >
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                  <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z" />
-                </svg>
-                <span className="btn-primary__text">Continue to WhatsApp with Dossier</span>
-                <span className="btn-primary__icon">→</span>
+                <MessageSquare size={18} />
+                <span>Chat Directly on WhatsApp</span>
               </a>
+
               <button
                 type="button"
-                className="btn-text-link"
-                style={{ marginTop: '16px' }}
+                className="tilak-btn tilak-btn--outline"
                 onClick={onClose}
               >
-                Return to Gallery
+                Close Window
               </button>
             </div>
           </div>

@@ -93,39 +93,39 @@ export default function MaterialsGuidePage() {
               <div className="media-caption-badge">Illuminated Onyx &amp; Inlay</div>
             </div>
             <div className="page-info-block">
-              <span className="card-badge">NOBLE MATERIAL PALETTE</span>
-              <h2>Global Stones &amp; Heritage Sandstones</h2>
+              <span className="card-badge">AUTHENTIC MATERIAL PALETTE</span>
+              <h2>Selected Noble White Marbles</h2>
               <div className="gold-rule"></div>
               <p>
-                While Makrana white remains our cornerstone for consecrated pooja sanctums, our master artisans also sculpt in prized European and Indian stones selected for courtyards and palatial villas.
+                In strict adherence to architectural tradition and durability benchmarks, our atelier crafts exclusively with three certified white marble varieties:
               </p>
               <ul className="spec-list-luxury">
                 <li>
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#b08a4f" strokeWidth="2.4">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span><strong>Bansi Paharpur Pink Sandstone:</strong> The noble pink stone of Rajasthan palaces and monumental temple shrines like the Ayodhya Ram Mandir.</span>
+                  <span><strong>Makrana Pure White Marble (Temples):</strong> Mined from Makrana, Rajasthan. 99% pure calcite structure—the revered Taj Mahal stone with an absolute zero-yellowing lifetime warranty.</span>
                 </li>
                 <li>
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#b08a4f" strokeWidth="2.4">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span><strong>Italian Calacatta Oro &amp; Botticino:</strong> Warm golden-veined European marbles ideal for classical fountains and luxury foyer pedestals.</span>
+                  <span><strong>Vietnam Pure White Marble (Temples &amp; Deities):</strong> Immaculate, uniform snow-white crystalline grain. Highly sought after for contemporary minimalist sanctums and divine deity statues.</span>
                 </li>
                 <li>
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#b08a4f" strokeWidth="2.4">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span><strong>Translucent Honey &amp; Green Onyx:</strong> Illuminated altar backdrops that glow with radiant spiritual warmth when lit from behind.</span>
+                  <span><strong>Rajnagar White Marble (Fountains):</strong> Heavy, hydraulic dense white calcite specially selected for monumental estate fountains, garden water cascades, and courtyards.</span>
                 </li>
               </ul>
               <div className="info-actions" style={{ marginTop: '24px' }}>
                 <button
                   type="button"
                   className="btn-primary"
-                  onClick={() => handleOpenInquiry('Request Noble Stone Physical Samples')}
+                  onClick={() => handleOpenInquiry('Request Certified Marble Physical Samples')}
                 >
-                  <span className="btn-primary__text">Request Stone Samples</span>
+                  <span className="btn-primary__text">Request Material Samples</span>
                   <span className="btn-primary__icon">→</span>
                 </button>
               </div>

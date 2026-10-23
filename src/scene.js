@@ -8,11 +8,9 @@ import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 const BASE = '/';
 
 export const STONES = [
-  { key: 'makrana', name: 'Makrana White', origin: 'Makrana, Rajasthan', note: 'The stone of the Taj Mahal', word: 'MAKRANA' },
-  { key: 'calacatta', name: 'Calacatta Oro', origin: 'Tuscany, Italy', note: 'Veined in liquid gold', word: 'CALACATTA' },
-  { key: 'botticino', name: 'Botticino Classico', origin: 'Brescia, Italy', note: 'Warm, timeless, serene', word: 'BOTTICINO' },
-  { key: 'rosa', name: 'Rosa Portogallo', origin: 'Alentejo, Portugal', note: 'The blush of first light', word: 'ROSA' },
-  { key: 'nero', name: 'Nero Marquina', origin: 'Basque Country, Spain', note: 'Bold, regal, unforgettable', word: 'NERO' },
+  { key: 'makrana', name: 'Makrana Pure White', origin: 'Makrana, Rajasthan', note: 'Temple Construction · Taj Mahal Bedrock', word: 'MAKRANA' },
+  { key: 'vietnam', name: 'Vietnam Pure White', origin: 'Luc Yen, Vietnam', note: 'Temple Construction · Crystalline White', word: 'VIETNAM' },
+  { key: 'rajnagar', name: 'Rajnagar White', origin: 'Rajnagar, Rajasthan', note: 'Fountain Specialist · Durable Calcite', word: 'RAJNAGAR' },
 ].map((s) => ({ ...s, url: `${BASE}textures/${s.key}.jpg` }));
 
 /* ------------------------------------------------------------------
@@ -659,7 +657,7 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
       const vh = 2 * camBase.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
       const vw = vh * camera.aspect;
       // Positioned strictly in right half of viewport (50% right)
-      stage.position.x = Math.min(Math.max(vw * 0.18, isLaptop ? 2.35 : 2.7), 3.3);
+      stage.position.x = Math.min(Math.max(vw * 0.24, isLaptop ? 2.6 : 3.0), 3.8);
     }
 
     sun.position.set(stage.position.x + 5, 11, 7);

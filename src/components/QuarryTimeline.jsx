@@ -52,67 +52,43 @@ export default function QuarryTimeline() {
           </p>
         </div>
 
-        {/* 4-Step Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '24px', marginBottom: '48px' }}>
-          {steps.map((st) => (
-            <div
-              key={st.num}
-              style={{
-                background: '#ffffff',
-                borderRadius: '16px',
-                padding: '30px 24px',
-                border: '1px solid rgba(176, 138, 79, 0.22)',
-                boxShadow: '0 10px 30px rgba(28, 24, 19, 0.04)',
-                position: 'relative',
-                display: 'flex',
-                flexDirection: 'column',
-              }}
-            >
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  marginBottom: '16px',
-                }}
-              >
-                <span
-                  style={{
-                    fontFamily: 'var(--serif)',
-                    fontSize: '28px',
-                    fontWeight: 700,
-                    color: '#b08a4f',
-                    lineHeight: 1,
-                  }}
-                >
-                  {st.num}
-                </span>
-                <span
-                  style={{
-                    fontSize: '11px',
-                    fontWeight: 600,
-                    background: 'rgba(176, 138, 79, 0.12)',
-                    color: '#8c6a36',
-                    padding: '3px 8px',
-                    borderRadius: '4px',
-                  }}
-                >
-                  {st.badge}
-                </span>
+        {/* Architectural Linear Timeline Rail */}
+        <div className="quarry-timeline-wrapper">
+          <div className="quarry-timeline-conduit" aria-hidden="true">
+            <div className="quarry-timeline-conduit__line"></div>
+          </div>
+
+          <div className="quarry-timeline-grid">
+            {steps.map((st, i) => (
+              <div key={st.num} className="quarry-timeline-card">
+                {/* Station Node Marker */}
+                <div className="quarry-station-node" aria-hidden="true">
+                  <span className="quarry-station-node__ring"></span>
+                  <span className="quarry-station-node__core">0{i + 1}</span>
+                </div>
+
+                <div className="quarry-card-inner">
+                  <div className="quarry-card-header">
+                    <span className="quarry-phase-tag">PHASE {st.num}</span>
+                    <span className="quarry-badge-spec">{st.badge}</span>
+                  </div>
+
+                  <h3 className="quarry-card-title">
+                    {st.title}
+                  </h3>
+
+                  <div className="quarry-location">
+                    <span className="quarry-location__pin">📍</span>
+                    <span>{st.location}</span>
+                  </div>
+
+                  <p className="quarry-card-desc">
+                    {st.desc}
+                  </p>
+                </div>
               </div>
-
-              <h3 style={{ fontFamily: 'var(--serif)', fontSize: '19px', color: '#1c1813', lineHeight: 1.35, marginBottom: '8px' }}>
-                {st.title}
-              </h3>
-              <span style={{ fontSize: '11px', color: '#8c6a36', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px', display: 'block' }}>
-                📍 {st.location}
-              </span>
-
-              <p style={{ fontSize: '13px', color: '#5a4f43', lineHeight: 1.6, marginTop: 'auto' }}>
-                {st.desc}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         {/* Action Center */}
