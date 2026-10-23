@@ -50,6 +50,10 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Marcellus&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
           rel="stylesheet"
         />
+        {/* Preload critical hero 3D model, texture, and backdrop for instant first render */}
+        <link rel="preload" href="/models/mandir_premium_v4.glb" as="fetch" crossOrigin="anonymous" />
+        <link rel="preload" href="/textures/makrana.jpg" as="image" />
+        <link rel="preload" href="/hero-palace-backdrop.jpg" as="image" />
       </head>
       <body suppressHydrationWarning>
         <LayoutClientWrapper>{children}</LayoutClientWrapper>

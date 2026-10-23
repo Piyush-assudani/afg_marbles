@@ -255,10 +255,10 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     };
   });
 
-  // Safety fallback: never keep user waiting more than 2.0s
+  // Safety fallback: never keep user waiting more than 800ms
   setTimeout(() => {
     readyResolve();
-  }, 2000);
+  }, 800);
 
   const manager = new THREE.LoadingManager(
     () => readyResolve?.(),
@@ -282,17 +282,15 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     return t;
   }
 
-  // Preload initial essential textures so page displays fast without blocking:
-  ['makrana', 'vietnam', 'rajnagar'].forEach((key) => {
-    const s = STONES.find((item) => item.key === key);
-    if (s) {
-      textures[key] = applyTexSettings(loader.load(s.url));
-    }
-  });
+  // Preload primary essential texture (Makrana) with high priority via manager
+  const sMakrana = STONES.find((item) => item.key === 'makrana');
+  if (sMakrana) {
+    textures['makrana'] = applyTexSettings(loader.load(sMakrana.url));
+  }
 
-  // Load secondary stone textures in background
+  // Secondary stone textures (Vietnam, Rajnagar) loaded asynchronously in background
   STONES.forEach((s) => {
-    if (!textures[s.key]) {
+    if (s.key !== 'makrana' && !textures[s.key]) {
       textures[s.key] = applyTexSettings(bgLoader.load(s.url));
     }
   });
@@ -872,26 +870,14 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     podiumLayer.scale.set(1, 1, 1);
     contact.material.opacity = 1;
     halo.scale.set(1, 1, 1);
+    turntable.rotation.y = 0.05;
+    dust.material.uniforms.uOpacity.value = 1;
 
     const tl = gsap.timeline({
       onComplete: () => {
         introDone = true;
       },
     });
-    turntable.rotation.y = -0.15;
-    camIntro.z = 0;
-    camIntro.y = 0;
-    camIntro.x = 0;
-
-    tl.to(turntable.rotation, { y: 0.05, duration: 1.8, ease: 'power2.out' }, 0);
-    tl.to(dust.material.uniforms.uOpacity, { value: 1, duration: 1.5 }, 0.5);
-
-    // Ceremonial stone reveal on load: sweep a golden line up the temple
-    tl.call(() => {
-      const u = templeMat.userData.uniforms;
-      u.uMapB.value = textures.makrana;
-      gsap.fromTo(u.uMix, { value: 0 }, { value: 1, duration: 2.6, ease: 'sine.inOut', onComplete: () => (u.uMix.value = 0) });
-    }, null, 1.5);
     return tl;
   }
 

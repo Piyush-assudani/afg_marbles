@@ -167,7 +167,7 @@ export default function HeroSection({ onOpenInquiry }) {
 
       expRef.current = exp;
 
-      // Start the 3D temple intro immediately so it's fully visible and rotating!
+      // Start 3D temple immediately so it is fully visible and smoothly rotating
       exp.ready.then(() => {
         if (!isDestroyed) {
           exp.intro();
@@ -175,24 +175,15 @@ export default function HeroSection({ onOpenInquiry }) {
         }
       });
 
-      setTimeout(() => {
-        if (!isDestroyed && exp) {
-          exp.intro();
-          setIsLoaded(true);
-        }
-      }, 400);
+      // Instant visibility without staggered delay or pop-in lag
+      setIsLoaded(true);
 
-      // Entrance animation sequence with fail-safe visibility
-      const entranceTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-      const titleLines = document.querySelectorAll('.hero__title .line > span');
-      if (titleLines.length) {
-        entranceTl.from(titleLines, { y: 22, opacity: 0, duration: 0.8, stagger: 0.08, clearProps: 'all' }, 0.05);
-      }
-      entranceTl.from('.hero__lead', { y: 16, opacity: 0, duration: 0.7, clearProps: 'all' }, 0.15);
-      entranceTl.from('.hero__ctas > *', { y: 14, opacity: 0, duration: 0.7, clearProps: 'all' }, 0.22);
-      entranceTl.from('.hero-stone-card', { scale: 0.94, opacity: 0, duration: 0.8, clearProps: 'all' }, 0.28);
-      entranceTl.from('#stone-rail', { x: 25, opacity: 0, duration: 0.8, clearProps: 'all' }, 0.35);
-      entranceTl.from('.hero__stats-ribbon', { y: 18, opacity: 0, duration: 0.8, clearProps: 'all' }, 0.42);
+      // Fast unified entrance (all hero content appears together as a cohesive luxury unit)
+      gsap.fromTo(
+        ['.hero__content', '.hero-stone-card', '#stone-rail', '.hero__stats-ribbon'],
+        { opacity: 0, y: 10 },
+        { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out', clearProps: 'all' }
+      );
 
       // Instant visibility guarantee
       const allHeroElements = document.querySelectorAll(
@@ -200,33 +191,6 @@ export default function HeroSection({ onOpenInquiry }) {
       );
       allHeroElements.forEach((el) => {
         el.style.opacity = '1';
-      });
-
-      setTimeout(() => {
-        allHeroElements.forEach((el) => {
-          el.style.opacity = '1';
-        });
-      }, 500);
-
-      // Count-up stats animation
-      const statNums = document.querySelectorAll('.ribbon-stat__num span[data-count]');
-      statNums.forEach((el) => {
-        const target = parseInt(el.getAttribute('data-count'), 10);
-        const obj = { val: 0 };
-        gsap.to(obj, {
-          val: target,
-          duration: 1.8,
-          ease: 'power2.out',
-          delay: 0.3,
-          onUpdate: () => {
-            if (obj.val > 0) {
-              el.textContent = Math.floor(obj.val).toLocaleString();
-            }
-          },
-          onComplete: () => {
-            el.textContent = target.toLocaleString();
-          },
-        });
       });
     } catch (err) {
       console.error('3D Scene initialization error:', err);
