@@ -7,7 +7,7 @@ const YARD_BAYS = [
     code: 'BAY 01 — PRE-ASSEMBLY TRIAL',
     title: 'Dry-Joint Fitment & 4K Verification Yard',
     location: 'Jaipur Atelier Yard North',
-    image: '/gallery/atelier-yard-preassembly.webp',
+    image: '/gallery/yard-dryfit-raw-calcite-mandir.webp',
     status: 'ACTIVE INSPECTION',
     inspector: 'Master Sthapati Ramswaroop Silawat',
     project: '18ft Monolithic Nagara Temple for London Estate',
@@ -18,7 +18,7 @@ const YARD_BAYS = [
     code: 'BAY 02 — MONOLITH CHISELING',
     title: '4th-Generation Silawat Sculptor Station',
     location: 'Jaipur Carving Pavilion East',
-    image: '/gallery/atelier-sculptor-chisel-block.webp',
+    image: '/gallery/mandir-studio-pure-makrana-front.webp',
     status: 'CHISELING IN PROGRESS',
     inspector: 'Senior Shilpkar Govind Silawat',
     project: 'Deep-Undercut Peacock Torana Archway',
@@ -26,25 +26,25 @@ const YARD_BAYS = [
   },
   {
     id: 'bay-3',
-    code: 'BAY 03 — BEDROCK ULTRASONIC TEST',
-    title: 'Virgin Makrana Calcite Seam Selection',
-    location: 'Makrana Quarry Deep Pit',
-    image: '/gallery/mandir-pure-makrana.webp',
-    status: 'PURITY CERTIFIED',
-    inspector: 'Quarry Metallurgist & Stone Geologist',
-    project: 'Single-Seam Monolith Extraction',
-    details: 'Ultrasonic pulse velocity testing conducted across the raw extraction boulder to detect internal hairline stress fractures or iron pyrite veins. Guaranteed zero-yellowing warranty.'
+    code: 'BAY 03 — CONSECRATED INSTALLATION PROOF',
+    title: 'Patron Villa Completed Commission',
+    location: 'Private Villa Sanctum Suite',
+    image: '/gallery/mandir-client-quad-installed-glow.webp',
+    status: 'CONSECRATED & INSTALLED',
+    inspector: 'Chief Sthapati Installation Guild',
+    project: 'Quad-Angle Luxury Villa Mandir Installation',
+    details: 'Final consecrated installation in patron estate featuring warm 3000K indirect halo lighting, soft-close storage drawers, and matching carved singhasan.'
   },
   {
     id: 'bay-4',
-    code: 'BAY 04 — ISPM-15 EXPORT CRATING',
-    title: 'White-Glove International Staging',
-    location: 'Jaipur Dispatch Terminal',
-    image: '/gallery/atelier-ispm15-crating-export.webp',
-    status: 'EXPORT READY',
-    inspector: 'Logistics Lead Manoj Rathore',
-    project: 'Global ISPM-15 Certified Sea/Air Crating',
-    details: 'Fumigated heat-treated marine plywood boxes engineered with 50mm high-density shock EVA foam cradles. Delivered safely to USA, UK, UAE, Canada, and pan-India with installation crew.'
+    code: 'BAY 04 — WATER PALACE FOUNTAIN COLONNADE',
+    title: 'Multi-Perspective Fountain Hydraulic Test',
+    location: 'Water Architecture Testing Grounds',
+    image: '/gallery/fountain-colonnade-quad-elevation.webp',
+    status: 'HYDRAULIC CERTIFIED',
+    inspector: 'Senior Hydraulic Craftsman',
+    project: 'Four-Tier Scalloped Marble Fountain Colonnade',
+    details: 'Laminar flow and zero-splash water sheeting verified across all 4 concentric tiers under variable pump pressure before international marine crating.'
   }
 ];
 
@@ -62,7 +62,7 @@ export default function YardLiveFeed({ onOpenInquiry }) {
   };
 
   return (
-    <section className="sec-yard-live-feed" style={{ padding: '90px 0', background: '#14110e', color: '#ffffff' }}>
+    <section className="sec-yard-live-feed" id="yard-feed" style={{ padding: 'clamp(90px, 9vw, 130px) 0 90px', scrollMarginTop: '110px', background: '#14110e', color: '#ffffff' }}>
       <div className="sec-container">
         {/* Header */}
         <div className="sec-header text-center" style={{ marginBottom: '44px' }}>
@@ -80,8 +80,8 @@ export default function YardLiveFeed({ onOpenInquiry }) {
               width: '8px',
               height: '8px',
               borderRadius: '50%',
-              background: '#2ecc71',
-              boxShadow: '0 0 10px #2ecc71',
+              background: '#c5a059',
+              boxShadow: '0 0 10px rgba(197, 160, 89, 0.6)',
               display: 'inline-block'
             }}></span>
             <span style={{ color: '#ecd39b', fontSize: '11px', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase' }}>
@@ -137,7 +137,7 @@ export default function YardLiveFeed({ onOpenInquiry }) {
                       width: '6px',
                       height: '6px',
                       borderRadius: '50%',
-                      background: isActive ? '#2ecc71' : '#685d50'
+                      background: isActive ? '#c5a059' : '#685d50'
                     }}></span>
                     <span style={{ fontSize: '10.5px', fontWeight: 700, letterSpacing: '0.1em', color: isActive ? '#ecd39b' : '#8c8071' }}>
                       {bay.code.split('—')[0].trim()}
@@ -184,10 +184,10 @@ export default function YardLiveFeed({ onOpenInquiry }) {
                 borderRadius: '6px',
                 fontSize: '11px',
                 fontWeight: 600,
-                color: '#2ecc71',
-                border: '1px solid rgba(46, 204, 113, 0.3)'
+                color: '#ffffff',
+                border: '1px solid rgba(231, 76, 60, 0.4)'
               }}>
-                <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#2ecc71', animation: 'pulse 1.5s infinite' }}></span>
+                <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#e74c3c', animation: 'pulse 1.5s infinite' }}></span>
                 <span>REC ● 4K ATELIER FEED</span>
               </div>
 
@@ -257,16 +257,16 @@ export default function YardLiveFeed({ onOpenInquiry }) {
                   </div>
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '12.5px', color: '#d8cdbe' }}>
                     <li style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                      <span style={{ color: '#2ecc71' }}>✓</span> 100% full dry-fitment assembled before final payment
+                      <span style={{ color: '#c5a059' }}>✦</span> 100% full dry-fitment assembled before final payment
                     </li>
                     <li style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                      <span style={{ color: '#2ecc71' }}>✓</span> 4K video walkthrough with centimeter ruler measurements
+                      <span style={{ color: '#c5a059' }}>✦</span> 4K video walkthrough with centimeter ruler measurements
                     </li>
                     <li style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                      <span style={{ color: '#2ecc71' }}>✓</span> Ultrasonic pulse report verifying virgin Makrana bedrock
+                      <span style={{ color: '#c5a059' }}>✦</span> Ultrasonic pulse report verifying virgin Makrana bedrock
                     </li>
                     <li style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                      <span style={{ color: '#2ecc71' }}>✓</span> Direct FaceTime or physical walkthrough in Jaipur welcomed
+                      <span style={{ color: '#c5a059' }}>✦</span> Direct FaceTime or physical walkthrough in Jaipur welcomed
                     </li>
                   </ul>
                 </div>
@@ -281,9 +281,10 @@ export default function YardLiveFeed({ onOpenInquiry }) {
                   style={{
                     flex: 1,
                     minWidth: '220px',
-                    background: 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)',
-                    borderColor: '#25D366',
-                    boxShadow: '0 6px 20px rgba(37, 211, 102, 0.28)'
+                    background: 'linear-gradient(135deg, #7c4d28 0%, #522f14 100%)',
+                    borderColor: '#b08a4f',
+                    color: '#ffffff',
+                    boxShadow: '0 8px 24px rgba(82, 47, 20, 0.4)'
                   }}
                 >
                   <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginRight: '8px' }}>
@@ -296,8 +297,32 @@ export default function YardLiveFeed({ onOpenInquiry }) {
                 <button
                   type="button"
                   onClick={() => onOpenInquiry && onOpenInquiry({ title: 'Jaipur Atelier Yard Visit Appointment' })}
-                  className="btn-outline-gold"
-                  style={{ flex: 1, minWidth: '180px', color: '#ffffff', borderColor: '#b08a4f', justifyContent: 'center' }}
+                  style={{
+                    flex: 1,
+                    minWidth: '180px',
+                    height: '48px',
+                    padding: '0 24px',
+                    borderRadius: '999px',
+                    background: 'transparent',
+                    color: '#f5e6c8',
+                    border: '1.5px solid #b08a4f',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontWeight: 600,
+                    fontSize: '13px',
+                    letterSpacing: '0.04em',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'rgba(176, 138, 79, 0.25)';
+                    e.currentTarget.style.color = '#ffffff';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'transparent';
+                    e.currentTarget.style.color = '#f5e6c8';
+                  }}
                 >
                   <span>Visit Jaipur Yard</span>
                 </button>

@@ -34,7 +34,7 @@ export default function HeritageChhatrisPage() {
           <h1>Royal Makrana Chhatris &amp; Garden Pavilions</h1>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
-            Monumental octagonal pavilions, fluted ribbed domes, and pierced jali balustrades handcrafted in pure Makrana marble and Bansi Paharpur stone. Hand-sculpted by Silawat master stone-masons for palace gardens, luxury estates, and memorial sanctums.
+            Monumental octagonal pavilions, fluted ribbed domes, and pierced jali balustrades handcrafted exclusively in pure Makrana white marble. Hand-sculpted by Silawat master stone-masons for palace gardens, luxury estates, and memorial sanctums.
           </p>
         </div>
       </section>
@@ -68,7 +68,7 @@ export default function HeritageChhatrisPage() {
               </div>
               <div className="card-body" style={{ padding: '24px', display: 'flex', flexDirection: 'column', flex: 1 }}>
                 <span style={{ fontSize: '11px', letterSpacing: '0.12em', color: '#b08a4f', textTransform: 'uppercase', fontWeight: 600 }}>
-                  Makrana &amp; Sandstone Plinth
+                  100% Makrana Pure White Marble
                 </span>
                 <h3 style={{ fontFamily: 'var(--serif)', fontSize: '20px', color: '#1c1813', margin: '6px 0 8px' }}>
                   The Amber Palace Garden Pavilion

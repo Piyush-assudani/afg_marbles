@@ -8,10 +8,16 @@ import PricingPhilosophy from '../../components/PricingPhilosophy';
 import { PRODUCTS } from '../../products.js';
 
 export default function PoojaSanctumsPage() {
-  const allMandirs = PRODUCTS.filter((p) => p.category === 'mandir');
+  const allMandirs = PRODUCTS.filter((p) => p.category === 'mandir' || p.category === 'sanctum');
   const [filter, setFilter] = useState('all');
 
-  const filtered = filter === 'all' ? allMandirs : allMandirs.filter((m) => m.primaryStone.toLowerCase().includes(filter));
+  const filtered = filter === 'all'
+    ? allMandirs
+    : filter === 'contemporary'
+    ? allMandirs.filter((m) => m.category === 'sanctum')
+    : filter === 'traditional'
+    ? allMandirs.filter((m) => m.category === 'mandir')
+    : allMandirs.filter((m) => (m.primaryStone || '').toLowerCase().includes(filter));
 
   const handleOpenProduct = (product) => {
     if (typeof window !== 'undefined' && window.afgOpenProduct) {
@@ -50,7 +56,21 @@ export default function PoojaSanctumsPage() {
               className={`filter-pill ${filter === 'all' ? 'is-active' : ''}`}
               onClick={() => setFilter('all')}
             >
-              All Sanctums ({allMandirs.length})
+              All Creations ({allMandirs.length})
+            </button>
+            <button
+              type="button"
+              className={`filter-pill ${filter === 'contemporary' ? 'is-active' : ''}`}
+              onClick={() => setFilter('contemporary')}
+            >
+              Contemporary Sanctums
+            </button>
+            <button
+              type="button"
+              className={`filter-pill ${filter === 'traditional' ? 'is-active' : ''}`}
+              onClick={() => setFilter('traditional')}
+            >
+              Traditional Shikhara Mandirs
             </button>
             <button
               type="button"
@@ -58,20 +78,6 @@ export default function PoojaSanctumsPage() {
               onClick={() => setFilter('albeta')}
             >
               Pure Makrana Albeta
-            </button>
-            <button
-              type="button"
-              className={`filter-pill ${filter === 'dungri' ? 'is-active' : ''}`}
-              onClick={() => setFilter('dungri')}
-            >
-              Makrana Dungri Natural Vein
-            </button>
-            <button
-              type="button"
-              className={`filter-pill ${filter === 'pink' ? 'is-active' : ''}`}
-              onClick={() => setFilter('pink')}
-            >
-              Bansi Paharpur Pink Stone
             </button>
           </div>
         </div>

@@ -27,9 +27,9 @@ export default function TempleAnatomy() {
       tag: 'Sacred Gateway',
     },
     {
-      name: 'Garbhagriha & Backlit Onyx Halo',
+      name: 'Garbhagriha & Backlit Translucent Halo',
       sanskrit: 'Brahmasthana',
-      desc: 'The innermost holy chamber. Features an elevated stepped marble singhasan for deities, framed by translucent green onyx or alabaster stone backlit with heat-free, 3000K warm gold LED illumination.',
+      desc: 'The innermost holy chamber. Features an elevated stepped marble singhasan for deities, framed by translucent alabaster or pure calcite stone backlit with heat-free, 3000K warm gold LED illumination.',
       spec: '100% milk-proof, oil-proof pure calcite platform (zero staining guarantee)',
       tag: 'Sanctum Sanctorum',
     },

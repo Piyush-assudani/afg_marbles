@@ -53,7 +53,7 @@ const PROJECTS = [
     location: 'Palm Jumeirah, Dubai, UAE',
     year: 'Commissioned 2023',
     category: 'Palatial Water Architecture',
-    stone: 'Crystalline Makrana Calcite & Natural Nero Marquina',
+    stone: '100% Rajnagar Hydraulic White Calcite',
     scale: '14ft Catch Pool · 8.5ft Monumental Height',
     heroImage: '/gallery/fountain-black-marquina-cascade.webp',
     gallery: [
@@ -73,7 +73,7 @@ const PROJECTS = [
     location: 'Chhatarpur, New Delhi',
     year: 'Commissioned 2023',
     category: 'Monumental Heritage Temples',
-    stone: 'Makrana Pure White Marble & Dholpur Pink Sandstone Plinth',
+    stone: '100% Solid Makrana Pure White Calcite Bedrock',
     scale: '22ft Length × 14ft Width × 19.5ft Monumental Spire',
     heroImage: '/gallery/mandir-monumental-temple.webp',
     gallery: [

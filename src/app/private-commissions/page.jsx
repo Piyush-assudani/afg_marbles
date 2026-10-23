@@ -36,7 +36,7 @@ export default function PrivateCommissionsPage() {
       title: 'The Alibaug Coastal Estate Cascade',
       location: 'Alibaug Coast, Maharashtra, India',
       type: '3-Tier Monolithic Cascading Fountain (7.8ft H · 12ft Catch Pool)',
-      stone: 'Nero Marquina & Weather-Treated Makrana Calcite',
+      stone: '100% Solid Rajnagar Hydraulic White Marble',
       img: '/gallery/fountain-classical-four-tier.webp',
       desc: 'Crafted for the central courtyard driveway of a private coastal retreat. Engineered with a closed-loop marine-grade 316 stainless steel manifold and precision-chiseled acanthus lips that produce a soothing harmonic water cadence without splashing.',
       patron: 'Estate Patronage Private Trust'

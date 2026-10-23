@@ -18,7 +18,7 @@ export default function PreAssemblyTrialPage() {
     {
       step: '03',
       title: 'Concealed LED & Cable Channel Verification',
-      desc: 'All electrical conduits for warm 3000K LED halos, backlight Onyx panels, and diya heat vents are tested continuously for 72 hours under variable voltage (110V–240V).'
+      desc: 'All electrical conduits for warm 3000K LED halos, backlight translucent stone panels, and diya heat vents are tested continuously for 72 hours under variable voltage (110V–240V).'
     },
     {
       step: '04',

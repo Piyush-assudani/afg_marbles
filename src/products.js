@@ -16,7 +16,7 @@ export const PRODUCTS = [
     scale: '8.5ft W × 4.8ft D × 11.2ft H',
     primaryStone: 'Pure Makrana Albeta Marble',
     fullDesc:
-      'The Royal Garbhagriha represents the pinnacle of Rajasthani temple architecture. Sculpted from monolithic blocks of quarry-selected Makrana Albeta marble—the historic calcite stone chosen for the Taj Mahal—this palatial sanctum features intricately chiseled peacock torana archways, dual-tier shikhara spires with gilded kalash finials, and a backlit translucent onyx sanctum backdrop that bathes the deities in sacred warmth.',
+      'The Royal Garbhagriha represents the pinnacle of Rajasthani temple architecture. Sculpted from monolithic blocks of quarry-selected Makrana Albeta marble—the historic calcite stone chosen for the Taj Mahal—this palatial sanctum features intricately chiseled peacock torana archways, dual-tier shikhara spires with gilded kalash finials, and a backlit translucent calcite sanctum backdrop that bathes the deities in sacred warmth.',
     angles: [
       {
         label: 'Front Elevation',
@@ -271,12 +271,12 @@ export const PRODUCTS = [
     id: 'makrana-fluted-chhatri',
     title: 'The Monumental Fluted Dome Chhatri Pavilion',
     category: 'chhatri',
-    categoryName: 'Chhatris & Sandstone',
+    categoryName: 'Heritage Chhatris & Pavilions',
     badge: 'Architectural Monument',
     tagline: 'Octagonal royal pavilion with 8 fluted monolith pillars and hand-ribbed dome',
     authenticity: 'Solid Monolith Makrana Calcite',
     scale: '14ft Diameter · 18ft Monumental Height',
-    primaryStone: 'Makrana White Marble & Sandstone Plinth',
+    primaryStone: 'Makrana Pure White Marble',
     fullDesc:
       'The Chhatri is Rajasthan’s most iconic architectural gift to world monument design. Crafted by AFG Silawats for palatial gardens, temple courtyards, and grand heritage memorials, this octagonal pavilion features eight solid monolith carved pillars, pierced jali balustrades, deeply chiseled bracket corbels, and a ribbed hemispherical marble dome crowned with an authentic gold kalash.',
     angles: [
@@ -361,6 +361,206 @@ export const PRODUCTS = [
     ]
   },
   {
+    id: 'ganesha-lakshmi-mandap-sanctum',
+    title: 'The Ganesha-Lakshmi Arch Mandap Sanctum',
+    category: 'sanctum',
+    categoryName: 'Pooja Sanctums',
+    badge: 'Artisanal Masterpiece',
+    tagline: 'Hand-sculpted white marble mandap with multi-foil arches, carved drawers & brass bells',
+    authenticity: '100% Pure Makrana Calcite',
+    scale: '6.5ft W × 3.5ft D × 8.5ft H',
+    primaryStone: 'Makrana Pure White Marble',
+    fullDesc:
+      'Inspired by classical temple pavilions, this hand-carved white marble mandap features scalloped multi-foil arches supported by carved pillar pilasters, an elevated deity throne plinth, concealed soft-close drawers for puja essentials, and warm illumination. Handcrafted by master Silawats using age-old chiseling techniques passed down generations.',
+    angles: [
+      {
+        label: 'Front Mandap Elevation',
+        tag: 'Full Mandap',
+        src: '/gallery/sanctum-ganesha-mandap.webp',
+        desc: 'Front elevation displaying deep multi-foil archwork, carved drawers, and elevated deity platform.'
+      },
+      {
+        label: 'Sacred Alcove Perspective',
+        tag: 'Inner Shrine',
+        src: '/gallery/sanctum-monolithic-pooja.webp',
+        desc: 'Spacious inner sanctum designed with concealed wiring for ambient warm LED glow.'
+      },
+      {
+        label: 'Decorative Arch & Pillar',
+        tag: 'Arch Carving',
+        src: '/gallery/sanctum-decorative-arch.webp',
+        desc: 'Monolithic carved pilasters with floral corbels and lotus blossom detailing.'
+      }
+    ],
+    specs: [
+      { label: 'Stone Variety', value: '100% Makrana Calcite Pure White (Non-Porous, Zero Yellowing)' },
+      { label: 'Vastu Shastra Alignment', value: 'Strict Ishan-Kona Compliant Height-to-Width Golden Ratio' },
+      { label: 'Drawers & Storage', value: 'Velvet-lined soft-close storage drawers with solid brass handles' },
+      { label: 'Dimensions', value: '6.5ft (W) × 3.5ft (D) × 8.5ft (H) — Custom Sized to Client Room Plans' },
+      { label: 'Weight', value: 'Approx. 1,650 kg (Modular dry-fit interlocking assembly)' },
+      { label: 'Global Delivery', value: 'White-Glove Doorstep Delivery & Sthapati Installation Worldwide' }
+    ]
+  },
+  {
+    id: 'backlit-om-mandala-sanctum',
+    title: 'The Backlit Om Translucent Calcite Sanctum',
+    category: 'sanctum',
+    categoryName: 'Pooja Sanctums',
+    badge: 'Contemporary Devotion',
+    tagline: 'Minimalist white marble sanctuary with radiant backlit Om halo and floating platform',
+    authenticity: '100% Makrana Translucent Calcite Bedrock',
+    scale: '7.5ft W × 4.0ft D × 9.5ft H',
+    primaryStone: 'Makrana Pure White Marble & Translucent Calcite',
+    fullDesc:
+      'Engineered for luxury modern residences, this contemporary sanctum pairs clean geometric marble paneling with a celestial backlit Om halo carved from translucent natural stone. Features floating cantilevered marble steps, concealed heat-free 3000K LED coves, and flush storage compartments that keep the sacred space tranquil and uncluttered.',
+    angles: [
+      {
+        label: 'Radiant Mandala Elevation',
+        tag: 'Backlit Halo',
+        src: '/gallery/sanctum-backlit-om.webp',
+        desc: 'Celestial sacred Om mandala bathed in golden ambient light behind the main deity dais.'
+      },
+      {
+        label: 'Translucent Halo Detail',
+        tag: 'Halo Glow',
+        src: '/gallery/sanctum-backlit-halo.webp',
+        desc: 'Warm indirect luminescence diffusing softly through high-translucency natural stone.'
+      },
+      {
+        label: 'Gold Filigree Borders',
+        tag: 'Gold Inlay',
+        src: '/gallery/sanctum-gold-bas-relief.webp',
+        desc: 'Recessed geometric stone border finished with subtle 24K pure gold leaf accents.'
+      }
+    ],
+    specs: [
+      { label: 'Primary Marble', value: 'High-Translucency Makrana Calcite White (No Resin Fillers)' },
+      { label: 'Illumination', value: 'Concealed 3000K Dimmable Warm Gold LED Matrix (110V–240V)' },
+      { label: 'Platform Architecture', value: 'Cantilevered Multi-Tier Floating Marble Dais with Hidden Glow' },
+      { label: 'Dimensions', value: '7.5ft (W) × 4.0ft (D) × 9.5ft (H) — Fully Bespoke to Room Dimensions' },
+      { label: 'Installation', value: 'Dry Interlocking Modular Panels — Zero Dust Assembly in 6 Hours' }
+    ]
+  },
+  {
+    id: 'kalpavriksha-jain-vedic-sanctum',
+    title: 'The Kalpavriksha Sacred Tree Sanctum',
+    category: 'sanctum',
+    categoryName: 'Pooja Sanctums',
+    badge: 'Sacred Heritage',
+    tagline: 'Intricately pierced Kalpavriksha tree backdrop with pure white marble shikhara spire',
+    authenticity: '100% Pure Makrana White Bedrock',
+    scale: '6.0ft W × 3.2ft D × 9.2ft H',
+    primaryStone: 'Makrana Calcite Pure White',
+    fullDesc:
+      'Celebrating the eternal wish-fulfilling tree of Vedic and Jain cosmology, this sacred sanctum features a monolithic pierced Kalpavriksha backdrop chiseled entirely by hand from a single block of Makrana marble. Crowned with traditional shikhara spires and kalash finials, it brings deep spiritual serenity and architectural grandeur into modern homes.',
+    angles: [
+      {
+        label: 'Kalpavriksha Elevation',
+        tag: 'Sacred Tree',
+        src: '/gallery/sanctum-kalpavriksha-jain.webp',
+        desc: 'Hand-pierced openwork Kalpavriksha tree halo framing the sanctum sanctorum.'
+      },
+      {
+        label: 'Multi-Tier Shikhara',
+        tag: 'Spire Apex',
+        src: '/gallery/sanctum-carved-spires.webp',
+        desc: 'Traditional carved Nagara-style spires crowned with polished amalaka and kalash.'
+      },
+      {
+        label: 'Pierced Jaali Lattice',
+        tag: 'Jaali Filigree',
+        src: '/gallery/sanctum-jaali-doors.webp',
+        desc: 'Intricate pierced marble lattice allowing sacred incense smoke to dissipate naturally.'
+      }
+    ],
+    specs: [
+      { label: 'Stone Variety', value: '100% Pure Makrana Calcite (Zero Iron or Rust Staining)' },
+      { label: 'Carving Craft', value: 'Master Pierced Lattice Openwork (Jaali) & High-Relief Chisel' },
+      { label: 'Deity Throne', value: 'Dual-step elevated marble singhasan with carved lotus petals' },
+      { label: 'Dimensions', value: '6.0ft (W) × 3.2ft (D) × 9.2ft (H) — Scalable to Any Villa Pooja Room' },
+      { label: 'Packaging', value: 'Custom Shock-Protected ISPM-15 Wooden Crates for Global Shipping' }
+    ]
+  },
+  {
+    id: 'pietra-dura-peacock-sanctum',
+    title: 'The Royal Pietra Dura Peacock Sanctum',
+    category: 'sanctum',
+    categoryName: 'Pooja Sanctums',
+    badge: 'Imperial Commission',
+    tagline: 'Parchin Kari gemstone inlay sanctum with semi-precious lapis, malachite and mother of pearl',
+    authenticity: 'Makrana Albeta & Authentic Gemstones',
+    scale: '7.0ft W × 3.8ft D × 9.0ft H',
+    primaryStone: 'Makrana Albeta & Semi-Precious Gemstones',
+    fullDesc:
+      'Reviving the timeless 17th-century Mughal and Rajput art of Parchin Kari (Pietra Dura), this palatial sanctum is inlaid with thousands of precision-cut semi-precious stones including Afghan Lapis Lazuli, African Malachite, Jasper, and iridescent Mother of Pearl. Each petal and peacock feather is ground on emery wheels and embedded seamlessly flush into pure Makrana white marble.',
+    angles: [
+      {
+        label: 'Front Gemstone Elevation',
+        tag: 'Pietra Dura Inlay',
+        src: '/gallery/sanctum-pietra-dura-peacock.webp',
+        desc: 'Grand sanctum with vibrant gemstone peacock inlay radiating around the sanctum arch.'
+      },
+      {
+        label: 'Floor Medallion Detail',
+        tag: 'Inlay Floor',
+        src: '/gallery/sanctum-inlay-floor.webp',
+        desc: 'Matching circular floral gemstone floor medallion hand-embedded in solid marble.'
+      },
+      {
+        label: 'Gilded Accents & Kalash',
+        tag: 'Precious Accents',
+        src: '/gallery/sanctum-silver-kalash-inlay.webp',
+        desc: 'Hand-finished silver and 24K gold foil embellishments on deity platform.'
+      }
+    ],
+    specs: [
+      { label: 'Inlaid Gemstones', value: 'Genuine Lapis Lazuli, Malachite, Carnelian, Mother-of-Pearl & Jasper' },
+      { label: 'Tolerance', value: 'Microscopic 0.05mm seamless fit with zero visible glue seams' },
+      { label: 'Base Marble', value: 'Quarry-Selected Makrana White Albeta' },
+      { label: 'Dimensions', value: '7.0ft (W) × 3.8ft (D) × 9.0ft (H)' },
+      { label: 'Worldwide Export', value: 'Air-crated and insured with on-site white-glove installation team' }
+    ]
+  },
+  {
+    id: 'makrana-royal-garden-chhatri',
+    title: 'The Royal Makrana Garden Pavilion Chhatri',
+    category: 'chhatri',
+    categoryName: 'Heritage Chhatris & Pavilions',
+    badge: 'Monumental Heritage',
+    tagline: 'Octagonal garden pavilion with fluted columns, pierced jali parapet and ribbed cupola',
+    scale: '16ft Diameter · 20ft Overall Height',
+    primaryStone: 'Makrana Pure White Marble',
+    fullDesc:
+      'Erected in sprawling palatial gardens, luxury farmhouse estates, and heritage memorial courtyards, this monumental garden chhatri combines solid Makrana white marble columns and ribbed dome with an authentic hand-chiseled Makrana calcite plinth. Built with seismic-safe dry-joint stone engineering to endure generations of outdoor exposure without degradation.',
+    angles: [
+      {
+        label: 'Landscape Garden Setting',
+        tag: 'Garden Pavilion',
+        src: '/gallery/chhatri-fluted-monumental-lawn.webp',
+        desc: 'Full outdoor elevation showing octagonal colonnade, pierced lattice balustrade, and ribbed marble dome.'
+      },
+      {
+        label: 'Ribbed Cupola Curvature',
+        tag: 'Dome Ribs',
+        src: '/gallery/chhatri-makrana-dome.webp',
+        desc: 'Detailed close-up of interlocking marble dome segments and sculpted kalash finial.'
+      },
+      {
+        label: 'Monumental Gateway Link',
+        tag: 'Estate View',
+        src: '/gallery/chhatri-torana-monumental-gate.webp',
+        desc: 'Contextual view showing connection to estate perimeter and courtyard entrance.'
+      }
+    ],
+    specs: [
+      { label: 'Colonnade Structure', value: '8 Solid Monolithic Fluted Columns chiseled from single blocks' },
+      { label: 'Dome Engineering', value: 'Interlocking dry-keystone dome segment system' },
+      { label: 'Plinth Material', value: '100% Solid Makrana Calcite Bedrock' },
+      { label: 'Diameter / Span', value: '16ft Outer Diameter · 20ft Overall Monumental Height' },
+      { label: 'Turnkey Execution', value: 'Complete on-site crane and master mason guild installation worldwide' }
+    ]
+  },
+  {
     id: 'black-marquina-cascade-fountain',
     title: 'The Rajnagar Royal Multi-Tier Basin Fountain',
     category: 'fountain',
@@ -399,7 +599,7 @@ export const PRODUCTS = [
       }
     ],
     specs: [
-      { label: 'Primary Marble', value: 'Deep Nero Marquina with Natural Calcite Lightning Veins' },
+      { label: 'Primary Marble', value: '100% Rajnagar High-Density White Calcite (Hydraulic Grade)' },
       { label: 'Finish', value: 'Ultra High-Gloss Wet-Look Diamond Polish' },
       { label: 'Dimensions', value: '6.0ft Overall Height · 9.0ft Catch Pool' },
       { label: 'Plumbing', value: 'Marine-Grade 316 Stainless Steel Water Delivery System' },
@@ -414,7 +614,7 @@ export const PRODUCTS = [
     badge: 'Imperial Commission',
     tagline: 'Hexagonal pavilion with fluted monolith pillars and hand-carved bracket eaves',
     scale: '12ft Diameter · 16ft Overall Height',
-    primaryStone: 'Makrana White Marble & Sandstone Plinth',
+    primaryStone: 'Makrana Pure White Marble',
     fullDesc:
       'Hexagonal royal carved pavilion sculpted from solid monolithic marble pillars, decorative bracket corbels, and deep-chiseled eaves designed for outdoor weather resilience. Engineered with interlocking seismic-safe dry joint stones.',
     angles: [
@@ -438,7 +638,7 @@ export const PRODUCTS = [
       }
     ],
     specs: [
-      { label: 'Stone Variety', value: 'Makrana Calcite White with Bansi Sandstone Base Plinth' },
+      { label: 'Stone Variety', value: '100% Solid Makrana Pure White Calcite Bedrock' },
       { label: 'Structural Columns', value: '6 Solid Monolithic Columns (Zero Hollow Seams)' },
       { label: 'Weather Tolerance', value: 'Frost, Heat & Monsoonal Rain Resilient Calcite' },
       { label: 'Modular Assembly', value: 'Dry-Joint Numbered Interlocking Stone System' },
@@ -607,6 +807,399 @@ export const PRODUCTS = [
       { label: 'Gemstones Used', value: 'Lapis Lazuli, Malachite, Jasper, Agate, Mother-of-Pearl' },
       { label: 'Fitting Tolerance', value: 'Zero Gap Tolerances (Under 0.05mm Seamless Embedment)' },
       { label: 'Surface Finish', value: 'High Gloss Diamond Polished Completely Flush to Stone' }
+    ]
+  },
+  {
+    id: 'sanctum-trimurti-tridevi',
+    title: 'The Tridevi Triple-Arch Palatial Devotional Sanctum',
+    category: 'sanctum',
+    categoryName: 'Pooja Sanctums',
+    badge: 'Triple Sanctum',
+    tagline: 'Imperial 3-alcove white marble sanctum with fluted pilasters, radiant halos, and fluted brass credenza',
+    authenticity: '100% Pure Makrana Calcite',
+    scale: '9.0ft W × 4.2ft D × 9.5ft H',
+    primaryStone: 'Makrana Pure White Marble',
+    fullDesc:
+      'Engineered for households worshipping multiple deities, this magnificent triple-alcove sanctum features three distinct consecrated shrine arches supported by monolithic Corinthian-fluted marble pillars. The center shrine features an illuminated sunburst mandala, while the lower base features an elegant fluted credenza with gold and bronze accents.',
+    angles: [
+      {
+        label: 'Triple-Arch Grand Facade',
+        tag: 'Triple Sanctum',
+        src: '/gallery/sanctum-trimurti-triple-alcove.webp',
+        desc: 'Symmetrical three-alcove facade with dedicated consecrated pedestals for central and flanking deities.'
+      },
+      {
+        label: 'Sunburst Mandala Halo',
+        tag: 'Radiant Mandala',
+        src: '/gallery/sanctum-shubh-labh-peacock-halo.webp',
+        desc: 'Deep relief pierced peacock feather mandala with warm indirect halo backlighting.'
+      },
+      {
+        label: 'Recessed Wall Alcove Architecture',
+        tag: 'Architectural View',
+        src: '/gallery/sanctum-recessed-wall-niche-mandir.webp',
+        desc: 'Flush built-in niche configuration showing fluted monolithic colonnade and lotus pedestals.'
+      }
+    ],
+    specs: [
+      { label: 'Stone Variety', value: 'Quarry-Selected Makrana Calcite White (Non-Porous, Zero Yellowing)' },
+      { label: 'Alcove Configuration', value: 'Triple Dedicated Garbhagriha Shrines with Individual Dais Steps' },
+      { label: 'Cabinetry Base', value: 'Curved Bowfront Soft-Close Storage with Pure Brass Hardware' },
+      { label: 'Dimensions', value: '9.0ft (W) × 4.2ft (D) × 9.5ft (H) — Scalable to Any Room Height' },
+      { label: 'Purity Warranty', value: 'Zero-Yellowing Lifetime Calcite Bedrock Guarantee' }
+    ]
+  },
+  {
+    id: 'mandir-gaja-thara-monolith',
+    title: 'The Imperial Gaja-Thara Monolith Shikhara Mandir',
+    category: 'mandir',
+    categoryName: 'Marble Mandirs & Temples',
+    badge: 'Flagship Masterpiece',
+    tagline: 'Monumental white marble temple with hand-carved elephant procession frieze & dual cupola spires',
+    authenticity: '100% Makrana Albeta Bedrock',
+    scale: '8.2ft W × 4.5ft D × 10.8ft H',
+    primaryStone: 'Makrana Albeta Marble',
+    fullDesc:
+      'An iconic temple design directly carrying the ancient Rajasthani temple heritage. The base plinth is hand-carved with a continuous high-relief Gaja-Thara (elephant procession symbolizing royal strength and divine grace). Rising above are twin fluted monolithic pillars, deep-chiseled bracket eaves, an ornate torana arch with carved peacocks, and soaring dome spires.',
+    angles: [
+      {
+        label: 'Grand Front Elevation',
+        tag: 'Temple Facade',
+        src: '/gallery/sanctum-gaja-thara-elephant-pedestal.webp',
+        desc: 'Full symmetrical front elevation displaying the Gaja-Thara elephant frieze and carved stone architrave.'
+      },
+      {
+        label: 'Ornate Canopy & Cupolas',
+        tag: 'Canopy Spire',
+        src: '/gallery/sanctum-ornate-canopy-peacock.webp',
+        desc: 'Multi-tiered shikhara canopy with chiseled bracket corbels and polished kalash finials.'
+      },
+      {
+        label: 'Pull-Out Aarti Drawers',
+        tag: 'Aarti Storage',
+        src: '/gallery/sanctum-drawers-open-perspective.webp',
+        desc: 'Under-base storage drawers chiseled with floral vines and integrated sliding aarti brass trays.'
+      }
+    ],
+    specs: [
+      { label: 'Stone Variety', value: '100% Makrana Albeta Marble (Taj Mahal Calcite Stratum)' },
+      { label: 'Base Relief', value: 'Continuous High-Relief Gaja-Thara (Elephant Procession) Chiseled Base' },
+      { label: 'Shikhara Architecture', value: 'Segmental Interlocking Dry-Joint Spire with Kalash Apex' },
+      { label: 'Dimensions', value: '8.2ft (W) × 4.5ft (D) × 10.8ft (H)' },
+      { label: 'Weight', value: 'Approx. 2,900 kg' }
+    ]
+  },
+  {
+    id: 'mandir-ram-darbar-garbhagriha',
+    title: 'The Ayodhya Ram Darbar Heritage Garbhagriha',
+    category: 'mandir',
+    categoryName: 'Marble Mandirs & Temples',
+    badge: 'Sacred Heritage',
+    tagline: 'Monumental sanctum sanctorum altar sculpted for grand temple halls & luxury estate mandirs',
+    authenticity: 'Solid Makrana White Marble',
+    scale: '11.0ft W × 6.5ft D × 12.0ft H',
+    primaryStone: 'Makrana Calcite White',
+    fullDesc:
+      'Inspired by the classical Nagara sanctum sanctorum traditions of Northern and Western India, this monumental Garbhagriha altar is designed as the sacred focal point of private temple halls and grand villa estates. Features concentric scalloped stone arches, radiating sunburst jaali backdrops, and an elevated stepped singhasan carved specifically for consecrated deity idols.',
+    angles: [
+      {
+        label: 'Monumental Altar Elevation',
+        tag: 'Garbhagriha View',
+        src: '/gallery/sanctum-ram-darbar-temple-garbhagriha.webp',
+        desc: 'Frontal perspective of the consecrated Ram Darbar altar surrounded by concentric hand-carved arches.'
+      },
+      {
+        label: 'Illuminated Villa Installation',
+        tag: 'Consecrated Glow',
+        src: '/gallery/mandir-client-quad-installed-glow.webp',
+        desc: 'Quad perspective of complete consecrated installation in patron villa with warm ambient lighting.'
+      },
+      {
+        label: 'Pillar Colonnade Detail',
+        tag: 'Fluted Colonnade',
+        src: '/gallery/sanctum-fluted-monolith-colonnade.webp',
+        desc: 'Solid monolithic pillars with bracket capitals supporting the heavy stone architrave.'
+      }
+    ],
+    specs: [
+      { label: 'Stone Variety', value: 'Pure Makrana White Calcite (99.2% CaCO3 Purity)' },
+      { label: 'Architectural Scale', value: '11.0ft (W) × 6.5ft (D) × 12.0ft (H) — Turnkey Customization Available' },
+      { label: 'Aarti & Abhishek Resistance', value: 'Zero Porosity Calcite (Resistant to Oil, Kumkum & Panchamrit)' },
+      { label: 'Modular Assembly', value: 'Engineered Seismic-Safe Interlocking Blocks Dispatched Globally' }
+    ]
+  },
+  {
+    id: 'fountain-botanical-octagonal',
+    title: 'The Royal Botanical Octagonal Curb Fountain',
+    category: 'fountain',
+    categoryName: 'Palatial Fountains',
+    badge: 'Estate Feature',
+    tagline: 'Monumental 3-tier white marble fountain with hand-carved octagonal curb pool for estate gardens',
+    authenticity: '100% Weather-Treated Calcite',
+    scale: '8.5ft Height · 14.0ft Basin Span',
+    primaryStone: 'Makrana Pure White Marble',
+    fullDesc:
+      'Engineered as the crown jewel of formal botanical landscapes and palace driveways. Features three concentric scalloped marble water basins supported by fluted pedestals, surrounded by a heavy octagonal marble coping curb adorned with relief-carved acanthus panels. Produces a cascading soundscape engineered for harmonic acoustic resonance across sprawling lawns.',
+    angles: [
+      {
+        label: 'Garden Estate Setting',
+        tag: 'Formal Garden',
+        src: '/gallery/fountain-botanical-garden-octagonal.webp',
+        desc: 'Central botanical garden placement showing octagonal carved pool and cascading water tiers.'
+      },
+      {
+        label: 'Colonnade Quad Perspective',
+        tag: 'Quad View',
+        src: '/gallery/fountain-colonnade-quad-elevation.webp',
+        desc: 'Multi-perspective view showing tiered water sheeting, front profile, and top-down basin symmetry.'
+      },
+      {
+        label: 'Circular Lawn Installation',
+        tag: 'Lawn Setting',
+        src: '/gallery/fountain-circular-lawn-estate-cascade.webp',
+        desc: 'Installation in manicured circular green lawn with continuous soothing water acoustics.'
+      }
+    ],
+    specs: [
+      { label: 'Stone Variety', value: 'Makrana Calcite White (Crystalline Non-Porous Outdoor Grade)' },
+      { label: 'Pool Architecture', value: 'Octagonal Modular Curbs with Interlocking Tongue-and-Groove Joints' },
+      { label: 'Water Manifold', value: 'Closed-Loop Multi-Jet Variable Pressure Brass Nozzle Assembly' },
+      { label: 'Dimensions', value: 'Height: 8.5ft · Outer Curb Diameter: 14.0ft' },
+      { label: 'Weight', value: 'Approx. 4,500 kg' }
+    ]
+  },
+  {
+    id: 'fountain-dolphin-estate-spout',
+    title: 'The Scalloped Dolphin Spout Estate Fountain',
+    category: 'fountain',
+    categoryName: 'Palatial Fountains',
+    badge: 'Artisanal Watercraft',
+    tagline: 'Classical marble fountain with hand-sculpted dolphin spouts and scalloped ripple pool',
+    authenticity: '100% Pure White Calcite',
+    scale: '6.8ft Height · 10.5ft Pool Diameter',
+    primaryStone: 'Makrana White Marble',
+    fullDesc:
+      'Handcrafted for swimming pool patios, private courtyards, and luxury estate gardens, this fountain incorporates classical maritime iconography. Four rearing dolphin fish figures are sculpted around the central column, spouting streams of water into scalloped tiers that overflow into a fluted circular marble pool.',
+    angles: [
+      {
+        label: 'Poolside Lawn Setting',
+        tag: 'Poolside Setting',
+        src: '/gallery/fountain-swimming-pool-dolphin-lawn.webp',
+        desc: 'Real poolside installation with dolphin spouts, scallop basins, and circular marble coping.'
+      },
+      {
+        label: 'Estate Lawn Perspective',
+        tag: 'Lawn Perspective',
+        src: '/gallery/fountain-palatial-estate-triple-tier-lawn.webp',
+        desc: 'Sprawling estate garden perspective demonstrating crystal white water sheeting.'
+      },
+      {
+        label: 'Scallop Tier Detail',
+        tag: 'Scallop Basins',
+        src: '/gallery/fountain-estate-triple-tier-scallop.webp',
+        desc: 'Detailed view of hand-carved scalloped basin lips designed for splash-free overflow.'
+      }
+    ],
+    specs: [
+      { label: 'Stone Variety', value: 'Quarry-Selected Pure White Calcite Marble' },
+      { label: 'Sculptural Motifs', value: '4 Monolithic Chiseled Dolphin Fish Spouts with Brass Internals' },
+      { label: 'Dimensions', value: 'Height: 6.8ft · Pool Diameter: 10.5ft' },
+      { label: 'Weight', value: 'Approx. 2,800 kg' }
+    ]
+  },
+  {
+    id: 'fountain-classical-scallop-four-tier',
+    title: 'The Imperial Four-Tier Fluted Shell Fountain',
+    category: 'fountain',
+    categoryName: 'Palatial Fountains',
+    badge: 'Imperial Commission',
+    tagline: 'Monumental 4-tier water cascade with shell-fluted bowls and acanthus urn finial',
+    authenticity: '100% Pure Calcite Bedrock',
+    scale: '9.2ft Height · 12.0ft Catch Pool',
+    primaryStone: 'Makrana Pure White Marble',
+    fullDesc:
+      'The four-tier fluted shell fountain represents the height of classical European and Mughal water palace engineering. Each tier is hand-turned on lathe machines and hand-chiseled with radiating shell flutes. As water rises to the crowning pineapple urn, it cascades symmetrically down four progressive tiers with zero turbulence or splashing.',
+    angles: [
+      {
+        label: 'Studio Isolated Elevation',
+        tag: 'Studio Profile',
+        src: '/gallery/fountain-classical-scallop-four-tier-studio.webp',
+        desc: 'Full studio elevation showing four proportional scalloped basins and acanthus carved pedestal.'
+      },
+      {
+        label: 'Isolated Basin Profile',
+        tag: 'Basin Structure',
+        src: '/gallery/fountain-studio-isolated-marble-basin.webp',
+        desc: 'Clean architectural profile of the coping ring and internal water riser pipe.'
+      },
+      {
+        label: 'Estate Garden Terrace',
+        tag: 'Garden Terrace',
+        src: '/gallery/fountain-estate-garden-scallop-terrace.webp',
+        desc: 'Installation on private villa garden terrace surrounded by boxwood parterres.'
+      }
+    ],
+    specs: [
+      { label: 'Stone Variety', value: 'High-Density Structural Makrana Calcite White' },
+      { label: 'Tiers', value: '4 Progressively Scaled Shell Fluted Bowls (52”, 38”, 26”, 16”)' },
+      { label: 'Dimensions', value: 'Overall Height: 9.2ft · Catch Pool: 12.0ft Diameter' },
+      { label: 'Weight', value: 'Approx. 3,600 kg' }
+    ]
+  },
+  {
+    id: 'sanctum-console-penthouse',
+    title: 'The Minimalist Penthouse Console Mandir',
+    category: 'sanctum',
+    categoryName: 'Pooja Sanctums',
+    badge: 'Modern Luxe',
+    tagline: 'Sleek freestanding marble console temple with turned legs, carved drawers & peacock halo',
+    authenticity: '100% Makrana Calcite',
+    scale: '4.8ft W × 2.2ft D × 6.8ft H',
+    primaryStone: 'Makrana Pure White Marble',
+    fullDesc:
+      'Designed specifically for modern apartments, penthouses, and villa foyers where space is premium yet spiritual grandeur is paramount. Featuring an airy console silhouette with slender turned marble legs, soft-close velvet-lined drawers for puja essentials, an open deity platform, and a radiant pierced peacock feather halo bathed in warm 3000K LED light.',
+    angles: [
+      {
+        label: 'Front Console Elevation',
+        tag: 'Console View',
+        src: '/gallery/sanctum-console-penthouse-mandir.webp',
+        desc: 'Sleek console silhouette with slender legs, carved drawers, and radiant halo backdrop.'
+      },
+      {
+        label: 'Contemporary Backlit Arch',
+        tag: 'Backlit Arch',
+        src: '/gallery/sanctum-backlit-arch-contemporary.webp',
+        desc: 'Illuminated scalloped archway with concealed warm LED glow behind the central deity.'
+      },
+      {
+        label: 'Curved Tambour Base',
+        tag: 'Tambour Flutes',
+        src: '/gallery/sanctum-tambour-curved-fluted.webp',
+        desc: 'Modern vertical fluted tambour marble base providing elegant concealed storage.'
+      }
+    ],
+    specs: [
+      { label: 'Stone Variety', value: '100% Pure Makrana White Calcite (Zero Resin Fillers)' },
+      { label: 'Form Factor', value: 'Airy Console Table Silhouette Ideal for Penthouses and Luxury Flats' },
+      { label: 'Dimensions', value: '4.8ft (W) × 2.2ft (D) × 6.8ft (H)' },
+      { label: 'Installation', value: 'Simple 2-Hour In-Room Dry Assembly' }
+    ]
+  },
+  {
+    id: 'sanctum-gilded-lotus-pavilion',
+    title: 'The Gilded Lotus Open Mandap Temple',
+    category: 'sanctum',
+    categoryName: 'Pooja Sanctums',
+    badge: 'Atelier Masterpiece',
+    tagline: 'Open four-pillar royal pavilion mandap with ribbed marble dome & etched brass lotus panels',
+    authenticity: '100% Makrana Calcite & Etched Brass',
+    scale: '7.8ft W × 4.2ft D × 9.0ft H',
+    primaryStone: 'Makrana Calcite White & Etched Brass Wall Panels',
+    fullDesc:
+      'A breathtaking fusion of solid Makrana white marble and warm artisanal metalcraft. Four monolithic carved pillars support an open ribbed dome canopy garlanded with carved stone tassels. Set against a backdrop of floor-to-ceiling brushed brass panels etched with blooming lotus flowers and warm cove lighting.',
+    angles: [
+      {
+        label: 'Royal Mandap Facade',
+        tag: 'Full Mandap',
+        src: '/gallery/sanctum-gilded-lotus-open-mandap.webp',
+        desc: 'Front view of the open marble pavilion with ribbed dome, carved garland arches, and brass lotus backdrop.'
+      },
+      {
+        label: 'Sunburst Radiant Alcove',
+        tag: 'Sunburst Alcove',
+        src: '/gallery/sanctum-sunburst-halo-alcove.webp',
+        desc: 'Radiating stone sunburst mandala casting soft shadows across the deity throne dais.'
+      },
+      {
+        label: 'Lotus Pedestal & Step Dais',
+        tag: 'Lotus Dais',
+        src: '/gallery/sanctum-lotus-mandap-pedestal.webp',
+        desc: 'Elevated multi-step lotus carved throne plinth designed for daily abhishek rituals.'
+      }
+    ],
+    specs: [
+      { label: 'Stone Variety', value: 'Quarry-Selected Makrana White Calcite & Antiqued Brass Panels' },
+      { label: 'Pillar Architecture', value: '4 Solid Monolithic Columns (Zero Seams) with Floral Corbel Capitals' },
+      { label: 'Dimensions', value: '7.8ft (W) × 4.2ft (D) × 9.0ft (H)' },
+      { label: 'Lighting', value: 'Heat-Free Concealed 3000K Architectural LED Coves' }
+    ]
+  },
+  {
+    id: 'sanctum-parchin-kari-vine',
+    title: "The Emperor's Parchin Kari Vine Floral Mandap",
+    category: 'sanctum',
+    categoryName: 'Pooja Sanctums',
+    badge: 'Imperial Commission',
+    tagline: 'Royal white marble sanctum with hand-cut Parchin Kari floral vine inlay & swan architrave',
+    authenticity: '100% Makrana Calcite & Pietra Dura Inlay',
+    scale: '7.2ft W × 3.6ft D × 8.8ft H',
+    primaryStone: 'Makrana Pure White Marble with Fine Inlay',
+    fullDesc:
+      'Continuing the regal craft commissioned by emperors in Agra and Jaipur, this sanctum backdrop is inlaid with thousands of precision hand-cut mineral stone floral vines and blossoms embedded flush into flawless Makrana white marble. Supported by twin fluted monolithic columns and crowned with sculpted swans and peacocks.',
+    angles: [
+      {
+        label: 'Front Parchin Kari Elevation',
+        tag: 'Parchin Kari Inlay',
+        src: '/gallery/sanctum-parchin-kari-vine-mandap.webp',
+        desc: 'Front facade showing black and white Pietra Dura floral vine backdrop and sculpted swan architrave.'
+      },
+      {
+        label: 'Inlaid Floret Macro Detail',
+        tag: 'Macro Inlay',
+        src: '/gallery/sanctum-parchin-kari-detail-florets.webp',
+        desc: 'Close-up showing microscopic 0.05mm fitment of individual hand-cut stone petals.'
+      },
+      {
+        label: 'Floor Medallion Complement',
+        tag: 'Floor Medallion',
+        src: '/gallery/inlay-pietra-dura-peacock-medallion.webp',
+        desc: 'Matching circular floral medallion for sanctum flooring.'
+      }
+    ],
+    specs: [
+      { label: 'Base Marble', value: '100% Pure Makrana Albeta White (Taj Mahal Grade)' },
+      { label: 'Inlaid Stone', value: 'Natural Mineral Stone & Iridescent Mother of Pearl' },
+      { label: 'Inlay Technique', value: 'Authentic Hand-Cut Parchin Kari (Zero Surface Resin)' },
+      { label: 'Dimensions', value: '7.2ft (W) × 3.6ft (D) × 8.8ft (H)' }
+    ]
+  },
+  {
+    id: 'yard-dryfit-silawat-inspection',
+    title: 'The Jaipur Yard Pre-Assembly Dry-Fit Mandir',
+    category: 'mandir',
+    categoryName: 'Marble Mandirs & Temples',
+    badge: '100% Yard Proven',
+    tagline: 'Real factory inspection proof: complete dry-joint modular trial before crating & international export',
+    authenticity: '100% Makrana Calcite Bedrock',
+    scale: '8.0ft W × 4.5ft D × 10.5ft H',
+    primaryStone: 'Makrana Calcite Pure White',
+    fullDesc:
+      'Every AFG masterpiece undergoes our mandatory 100% Pre-Assembly Trial in our Jaipur stone atelier yard before dispatch. Each numbered interlocking block is assembled dry on packing pallets to inspect joint tolerances (under 0.5mm), stone vein continuity, and carving precision. Patrons receive an exclusive multi-angle 4K video call walkthrough prior to crate fumigation.',
+    angles: [
+      {
+        label: 'Real Yard Dry-Fit Erection',
+        tag: 'Factory Inspection',
+        src: '/gallery/yard-dryfit-raw-calcite-mandir.webp',
+        desc: 'Authentic workshop photo of complete temple assembled on wooden pallets for tolerance inspection.'
+      },
+      {
+        label: 'Studio Frontal Verification',
+        tag: 'Studio QC View',
+        src: '/gallery/mandir-studio-pure-makrana-front.webp',
+        desc: 'Studio lighting QC inspection checking surface diamond polish and gold inlay lines.'
+      },
+      {
+        label: 'Finished Consecrated Installation',
+        tag: 'Consecrated Proof',
+        src: '/gallery/mandir-client-quad-installed-glow.webp',
+        desc: 'Final completed client installation matching the dry-fit trial with flawless precision.'
+      }
+    ],
+    specs: [
+      { label: 'Process', value: '100% Full Pre-Assembly Dry Fitment in Jaipur Yard before Dispatch' },
+      { label: 'Inspection Protocol', value: 'Live 4K Video Call Walkthrough with Sthapati for Patron Approval' },
+      { label: 'Tolerances', value: 'Modular Joint Tolerances Under 0.5mm with Interlocking Keystones' },
+      { label: 'Crating Standard', value: 'ISPM-15 Fumigated Pine Heavy Crates with Impact Shock Sensors' }
     ]
   }
 ];

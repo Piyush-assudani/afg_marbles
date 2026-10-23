@@ -28,9 +28,9 @@ export default function MarbleDeitiesPage() {
     {
       id: 'radha-krishna-yugal',
       title: 'The Vrindavan Radha Krishna Yugal Sarkar',
-      stone: 'Makrana Dungri Natural Calcite',
+      stone: 'Vietnam Pure White Snow Calcite',
       scale: '3.0ft to 5.5ft Height',
-      desc: 'The divine embodiment of eternal prema and bhakti. Sculpted with Tribhanga posture, delicate flute fingers, peacock feather crown, and gentle divine expressions that inspire lifelong devotion in home sanctums.',
+      desc: 'The divine embodiment of eternal prema and bhakti. Sculpted in immaculate Vietnam snow-white marble with Tribhanga posture, delicate flute fingers, peacock feather crown, and gentle divine expressions that inspire lifelong devotion in home sanctums.',
       img: '/gallery/mandir-radha-krishna.webp',
       badge: 'Client Devotional Choice',
       tag: 'Yugal Sarkar'
@@ -38,7 +38,7 @@ export default function MarbleDeitiesPage() {
     {
       id: 'shiva-parvati-darbar',
       title: 'The Kailash Shiva Parvati & Nandi Darbar',
-      stone: 'Pure Makrana White with Bidasar Green Plinth',
+      stone: '100% Makrana Pure White Calcite',
       scale: '3.0ft to 6.0ft Height',
       desc: 'Serene representation of Lord Shiva in Dhyana Mudra with Mata Parvati and Ganesha-Kartikeya, accompanied by an intricately sculpted Nandi bull at the lotus feet.',
       img: '/gallery/mandir-gold-om-mandala.webp',

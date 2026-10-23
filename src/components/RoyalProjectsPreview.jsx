@@ -36,7 +36,7 @@ const LANDMARKS = [
     title: 'The Palm Jumeirah Multi-Tier Cascading Fountain',
     city: 'Palm Jumeirah, Dubai, UAE',
     type: 'Estate Water Architecture',
-    stone: 'Crystalline Makrana White & Nero Marquina',
+    stone: '100% Rajnagar Hydraulic White Marble',
     scale: '14ft Outer Basin · 8.5ft Height',
     image: '/gallery/fountain-black-marquina-cascade.webp',
     stat1: '50°C UV Proof',
@@ -52,7 +52,7 @@ export default function RoyalProjectsPreview() {
   const current = LANDMARKS[activeIdx];
 
   return (
-    <section className="sec-royal-landmarks" style={{ padding: '80px 0', background: '#1c1813', color: '#fdfbf7' }}>
+    <section className="sec-royal-landmarks" id="royal-projects" style={{ padding: 'clamp(110px, 10vw, 150px) 0 90px', scrollMarginTop: '110px', background: '#1c1813', color: '#fdfbf7' }}>
       <div className="sec-container" style={{ maxWidth: '1240px', margin: '0 auto', padding: '0 24px' }}>
         <div className="sec-header text-center" style={{ marginBottom: '48px' }}>
           <span

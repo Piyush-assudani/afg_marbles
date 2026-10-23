@@ -35,7 +35,7 @@ export default function PalatialFountainsPage() {
           <h1>Palatial Cascading Fountains &amp; Water Architecture</h1>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
-            Monumental centerpieces handcrafted in solid Makrana marble, Nero Marquina, and Italian Calacatta. Engineered for silent hydraulic balance, laminar water flow, and lifelong frost resistance. Hover or tap the angle thumbnails below to preview multiple fountain views.
+            Monumental estate centerpieces sculpted exclusively from authentic Rajnagar White Marble—the revered hydraulic heavy calcite stone (2.72 g/cm³) engineered for continuous pressurized water cascades, zero algae adherence, and all-weather frost resilience. Hover or tap the angle thumbnails below to preview multiple fountain views.
           </p>
         </div>
       </section>

@@ -169,28 +169,64 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
               </div>
             </div>
 
-            {/* Bespoke Sizing Notice (Direct clarity: No fixed checkout prices, custom to client space) */}
+            {/* E-Commerce Live Stock & Atelier Availability Status */}
             <div
               style={{
-                padding: '10px 14px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '8px 14px',
+                background: '#f4fbf7',
+                border: '1px solid #ccebd9',
+                borderRadius: '6px',
+                marginBottom: '14px',
+                fontSize: '12px'
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#128c7e', display: 'inline-block' }}></span>
+                <span style={{ color: '#0b5c52', fontWeight: 600 }}>Quarry Bedrock In Stock — Handcrafted to Order</span>
+              </div>
+              <span style={{ color: '#0b5c52', fontSize: '11px', fontWeight: 500 }}>Lead Time: 45–60 Days</span>
+            </div>
+
+            {/* Bespoke Sizing Notice & Interactive Space Calculator */}
+            <div
+              style={{
+                padding: '12px 16px',
                 background: 'rgba(176, 138, 79, 0.08)',
                 borderRadius: '8px',
                 borderLeft: '3px solid #b08a4f',
                 marginBottom: '16px',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
               }}
             >
-              <div>
-                <strong style={{ fontSize: '12px', color: '#1c1813', display: 'block' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
+                <strong style={{ fontSize: '12.5px', color: '#1c1813' }}>
                   Commissioned to Your Exact Space Dimensions
                 </strong>
-                <span style={{ fontSize: '11px', color: '#6b5f52' }}>
-                  3D CAD elevations &amp; marble volume estimates provided within 24 hours
+                <span style={{ fontSize: '11px', fontWeight: 700, color: '#8c6a36', background: 'rgba(176,138,79,0.15)', padding: '2px 8px', borderRadius: '4px' }}>
+                  Bespoke Sthapatya
                 </span>
               </div>
-              <span style={{ fontSize: '11px', fontWeight: 700, color: '#8c6a36' }}>Bespoke</span>
+              <p style={{ fontSize: '12px', color: '#6b5f52', margin: '0 0 10px', lineHeight: 1.45 }}>
+                Share your villa or apartment room dimensions. Our sthapatis will generate full 3D CAD elevations, isometric cross-sections, and stone volume estimates within 24 hours.
+              </p>
+              
+              {/* E-Commerce Quick Trust Hallmarks */}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '8px', paddingTop: '8px', borderTop: '1px dashed rgba(176, 138, 79, 0.25)' }}>
+                <div style={{ fontSize: '11px', color: '#4a4239', display: 'flex', alignItems: 'center', gap: '5px' }}>
+                  <span style={{ color: '#b08a4f' }}>✓</span> 99.2% Calcite Bedrock
+                </div>
+                <div style={{ fontSize: '11px', color: '#4a4239', display: 'flex', alignItems: 'center', gap: '5px' }}>
+                  <span style={{ color: '#b08a4f' }}>✓</span> Free 3D CAD Blueprint
+                </div>
+                <div style={{ fontSize: '11px', color: '#4a4239', display: 'flex', alignItems: 'center', gap: '5px' }}>
+                  <span style={{ color: '#b08a4f' }}>✓</span> 100% Yard Dry-Fit Trial
+                </div>
+                <div style={{ fontSize: '11px', color: '#4a4239', display: 'flex', alignItems: 'center', gap: '5px' }}>
+                  <span style={{ color: '#b08a4f' }}>✓</span> Global White-Glove Setup
+                </div>
+              </div>
             </div>
 
             {/* Deep Specification Tabs */}

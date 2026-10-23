@@ -2,11 +2,9 @@
 import { useEffect, useRef, useState } from 'react';
 
 const STONES = [
-  { key: 'makrana', name: 'Makrana White', origin: 'Makrana, Rajasthan' },
-  { key: 'calacatta', name: 'Calacatta Oro', origin: 'Tuscany, Italy' },
-  { key: 'botticino', name: 'Botticino Classico', origin: 'Brescia, Italy' },
-  { key: 'rosa', name: 'Rosa Portogallo', origin: 'Alentejo, Portugal' },
-  { key: 'nero', name: 'Nero Marquina', origin: 'Basque, Spain' }
+  { key: 'makrana', name: 'Makrana Pure White Marble', origin: 'Makrana, Rajasthan (Temples)' },
+  { key: 'vietnam', name: 'Vietnam Pure White Marble', origin: 'Luc Yen, Vietnam (Temples & Deities)' },
+  { key: 'rajnagar', name: 'Rajnagar White Marble', origin: 'Rajnagar, Rajasthan (Fountains)' }
 ];
 
 export default function MandirHeroCanvas() {

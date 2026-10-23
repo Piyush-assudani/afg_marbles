@@ -159,10 +159,8 @@ export default function AyadiCalculator({ onOpenInquiry }) {
                   cursor: 'pointer',
                 }}
               >
-                <option value="Makrana Pure Albeta">Pure Makrana Albeta (99% CaCO3 - Taj Stratum)</option>
-                <option value="Makrana Dungri Natural Vein">Makrana Dungri (Classic Calcite Grey Grain)</option>
-                <option value="Nero Marquina & Makrana Dual">Nero Marquina &amp; White Crystalline Dual</option>
-                <option value="Translucent Green Onyx Halo">Translucent Honey-Green Backlit Onyx</option>
+                <option value="Makrana Pure White Marble">Makrana Pure White Marble (99.2% Calcite - Taj Mahal Stratum)</option>
+                <option value="Vietnam Pure White Marble">Vietnam Pure White Marble (99.6% Crystalline Snow Calcite)</option>
               </select>
             </div>
           </div>

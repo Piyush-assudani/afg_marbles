@@ -8,9 +8,9 @@ import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 const BASE = '/';
 
 export const STONES = [
-  { key: 'makrana', name: 'Makrana Pure White', origin: 'Makrana, Rajasthan', note: 'Temple Construction · Taj Mahal Bedrock', word: 'MAKRANA' },
-  { key: 'vietnam', name: 'Vietnam Pure White', origin: 'Luc Yen, Vietnam', note: 'Temple Construction · Crystalline White', word: 'VIETNAM' },
-  { key: 'rajnagar', name: 'Rajnagar White', origin: 'Rajnagar, Rajasthan', note: 'Fountain Specialist · Durable Calcite', word: 'RAJNAGAR' },
+  { key: 'makrana', name: 'Makrana Pure White Marble', origin: 'Makrana, Rajasthan', note: 'Temples & Mandirs · 99.2% Taj Calcite Bedrock', word: 'MAKRANA' },
+  { key: 'vietnam', name: 'Vietnam Pure White Marble', origin: 'Luc Yen / Yen Bai, Vietnam', note: 'Temples & Deities · Pure Crystalline Snow', word: 'VIETNAM' },
+  { key: 'rajnagar', name: 'Rajnagar White Marble', origin: 'Rajnagar, Rajasthan', note: 'Palatial Fountains · Heavy Hydraulic Dense Calcite', word: 'RAJNAGAR' },
 ].map((s) => ({ ...s, url: `${BASE}textures/${s.key}.jpg` }));
 
 /* ------------------------------------------------------------------
@@ -283,7 +283,7 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
   }
 
   // Preload initial essential textures so page displays fast without blocking:
-  ['makrana', 'calacatta'].forEach((key) => {
+  ['makrana', 'vietnam', 'rajnagar'].forEach((key) => {
     const s = STONES.find((item) => item.key === key);
     if (s) {
       textures[key] = applyTexSettings(loader.load(s.url));
@@ -298,7 +298,7 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
   });
 
   const templeMat = makeMarbleMaterial(textures.makrana, { scale: 0.18, minY: 0.25, maxY: 5.55 });
-  const podiumMat = makeMarbleMaterial(textures.calacatta, { scale: 0.17, roughness: 0.16 });
+  const podiumMat = makeMarbleMaterial(textures.makrana, { scale: 0.18, roughness: 0.16 });
   const gold = makeGoldMaterial();
 
   const sanctumDiscMat = new THREE.MeshPhysicalMaterial({
@@ -414,8 +414,8 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
       `${BASE}models/${modelFile}`,
       (gltf) => {
         const mandir = gltf.scene;
-        mandir.scale.setScalar(2.25);
-        mandir.position.set(0, 0.30, 0);
+        mandir.scale.setScalar(2.68);
+        mandir.position.set(0, 0.22, 0);
 
         mandir.traverse((child) => {
           if (child.isMesh) {
@@ -476,8 +476,8 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
           `${BASE}models/mandir_heavy_ivory.glb`,
           (fallbackGltf) => {
             const fallbackMandir = fallbackGltf.scene;
-            fallbackMandir.scale.setScalar(2.25);
-            fallbackMandir.position.set(0, 0.30, 0);
+            fallbackMandir.scale.setScalar(2.68);
+            fallbackMandir.position.set(0, 0.22, 0);
             mandirGroup.add(fallbackMandir);
             mandirGroup.visible = true;
             resolve(fallbackGltf);
@@ -538,13 +538,13 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
   podiumLayer.add(podium, podiumRing);
   turntable.add(podiumLayer);
 
-  // Illuminated golden halo ring under turntable (matches mockup under-podium floor glow)
-  const glowRingGeo = new THREE.RingGeometry(2.98, 3.24, 96);
+  // Natural subtle contact shadow and delicate gold floor rim under turntable
+  const glowRingGeo = new THREE.RingGeometry(2.98, 3.12, 96);
   const glowRingMat = new THREE.MeshBasicMaterial({
-    color: new THREE.Color('#ffc44d'),
+    color: new THREE.Color('#d4af37'),
     side: THREE.DoubleSide,
     transparent: true,
-    opacity: 0.88,
+    opacity: 0.22,
     blending: THREE.AdditiveBlending,
     depthWrite: false,
   });
@@ -553,23 +553,22 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
   glowRing.position.y = 0.008;
   stage.add(glowRing);
 
-  // Soft radiant floor diffusion
-  const glowSoftGeo = new THREE.RingGeometry(3.06, 4.2, 96);
+  // Soft natural ambient contact shadow
+  const glowSoftGeo = new THREE.RingGeometry(2.4, 3.8, 96);
   const glowSoftMat = new THREE.MeshBasicMaterial({
     map: radialTexture([
-      [0, 'rgba(255, 195, 75, 0.72)'],
-      [0.35, 'rgba(255, 175, 50, 0.28)'],
-      [1, 'rgba(255, 160, 40, 0)'],
+      [0, 'rgba(40, 32, 24, 0.28)'],
+      [0.6, 'rgba(50, 40, 30, 0.08)'],
+      [1, 'rgba(0, 0, 0, 0)'],
     ]),
     side: THREE.DoubleSide,
     transparent: true,
-    opacity: 0.82,
-    blending: THREE.AdditiveBlending,
+    opacity: 0.55,
     depthWrite: false,
   });
   const glowSoft = new THREE.Mesh(glowSoftGeo, glowSoftMat);
   glowSoft.rotation.x = -Math.PI / 2;
-  glowSoft.position.y = 0.004;
+  glowSoft.position.y = 0.003;
   stage.add(glowSoft);
 
   // Add the 3D mandir model to turntable
@@ -652,7 +651,7 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
       const isLaptop = W < 1520 || H < 860;
       camBase.set(0, isLaptop ? 3.3 : 3.4, isLaptop ? 15.5 : 15.0);
       lookBase.set(0, isLaptop ? 2.5 : 2.6, 0);
-      stage.position.y = isLaptop ? -0.46 : -0.42;
+      stage.position.y = isLaptop ? -0.22 : -0.18;
       stage.scale.setScalar(isLaptop ? 0.92 : 1.0);
       const vh = 2 * camBase.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
       const vw = vh * camera.aspect;
@@ -785,8 +784,27 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
       });
     }
 
-    const isNero = key === 'nero';
-    gsap.to(u.uScale, { value: isNero ? 0.14 : 0.18, duration: 1.5, ease: 'power2.out' });
+    const isVietnam = key === 'vietnam';
+    const isRajnagar = key === 'rajnagar';
+
+    gsap.to(u.uScale, {
+      value: isVietnam ? 0.20 : isRajnagar ? 0.17 : 0.18,
+      duration: 1.5,
+      ease: 'power2.out'
+    });
+
+    // Subtly tune marble physical response per mineral bedrock
+    if (isVietnam) {
+      gsap.to(templeMat.color, { r: 1.0, g: 1.0, b: 1.0, duration: 1.2 });
+      gsap.to(templeMat, { roughness: 0.12, clearcoatRoughness: 0.03, duration: 1.2 });
+    } else if (isRajnagar) {
+      gsap.to(templeMat.color, { r: 0.97, g: 0.98, b: 0.99, duration: 1.2 });
+      gsap.to(templeMat, { roughness: 0.22, clearcoatRoughness: 0.08, duration: 1.2 });
+    } else {
+      // Makrana Pure White
+      gsap.to(templeMat.color, { r: 1.0, g: 0.995, b: 0.985, duration: 1.2 });
+      gsap.to(templeMat, { roughness: 0.16, clearcoatRoughness: 0.05, duration: 1.2 });
+    }
 
     // Gently orient the mandir to face its front presentation angle so sanctum & ॐ stay in full view
     const frontAngle = 0.38;

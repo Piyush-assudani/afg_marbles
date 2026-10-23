@@ -41,7 +41,18 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
   return (
     <>
       <div className={`nav ${isScrolled ? 'nav--scrolled is-scrolled' : 'is-at-top'}`} id="nav">
-        <Link href="/" className="logo" id="logo" aria-label="A.F.G Marble & Arts Home">
+        <Link
+          href="/"
+          className="logo"
+          id="logo"
+          aria-label="A.F.G Marble & Arts Home"
+          onClick={(e) => {
+            if (pathname === '/') {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          }}
+        >
           <img
             src="/afg-logo.svg"
             alt="A.F.G Marble & Arts"
@@ -60,10 +71,6 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
         </Link>
 
         <nav className="nav__links" aria-label="Primary Navigation">
-          <Link href="/" className={pathname === '/' ? 'is-active' : ''}>
-            Home
-          </Link>
-
           {/* MASTER CREATIONS MEGA MENU */}
           <div
             className="nav__has-mega"
@@ -222,11 +229,11 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
                         </Link>
                       </li>
                       <li>
-                        <Link href="/pricing-guide" onClick={() => setMegaMenuOpen(false)}>
+                        <Link href="/about-afg" onClick={() => setMegaMenuOpen(false)}>
                           <span className="mega-num">13</span>
                           <div className="mega-item-info">
-                            <strong>Temple Pricing Guide</strong>
-                            <span>Transparent Investment Breakdown</span>
+                            <strong>About AFG Guild</strong>
+                            <span>Generational Silawat Artisans</span>
                           </div>
                         </Link>
                       </li>
@@ -320,14 +327,8 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
           <Link href="/royal-projects" className={pathname === '/royal-projects' ? 'is-active' : ''}>
             Royal Projects
           </Link>
-          <Link href="/ayadi-vastu-shastra" className={pathname === '/ayadi-vastu-shastra' ? 'is-active' : ''}>
-            Ayadi Vastu
-          </Link>
           <Link href="/atelier-workshop" className={pathname === '/atelier-workshop' ? 'is-active' : ''}>
-            Our Workshop
-          </Link>
-          <Link href="/pricing-guide" className={pathname === '/pricing-guide' ? 'is-active' : ''}>
-            Pricing Guide
+            Atelier Yard
           </Link>
           <Link href="/materials-guide" className={pathname === '/materials-guide' ? 'is-active' : ''}>
             Stone Library
@@ -448,8 +449,8 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
-          <Link href="/pricing-guide" className={`mob-link ${pathname === '/pricing-guide' ? 'is-active' : ''}`}>
-            <span>Temple Pricing Guide</span>
+          <Link href="/about-afg" className={`mob-link ${pathname === '/about-afg' ? 'is-active' : ''}`}>
+            <span>About AFG Guild</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>

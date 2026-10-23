@@ -149,12 +149,9 @@ _Direct Submission via A.F.G Marble & Arts Official Atelier Desk_`;
                   <div className="form-field">
                     <label>Preferred Noble Stone</label>
                     <select name="stone" value={formData.stone} onChange={handleChange}>
-                      <option value="Makrana Pure Albeta Calcite">Makrana Pure Albeta Calcite (Taj Mahal Stone)</option>
-                      <option value="Makrana Dungri Natural Vein">Makrana Dungri Natural Vein</option>
-                      <option value="Makrana Kumari Pure White">Makrana Kumari Pure White</option>
-                      <option value="Bansi Paharpur Pink Sandstone">Bansi Paharpur Pink Sandstone</option>
-                      <option value="Italian Calacatta Oro / Botticino">Italian Calacatta Oro / Botticino</option>
-                      <option value="Translucent Onyx Illuminated Inlay">Translucent Onyx Illuminated Inlay</option>
+                      <option value="Makrana Pure White Marble">Makrana Pure White Marble (Temples &amp; Mandirs)</option>
+                      <option value="Vietnam Pure White Marble">Vietnam Pure White Marble (Temples &amp; Deities)</option>
+                      <option value="Rajnagar White Marble">Rajnagar White Marble (Palatial Fountains)</option>
                     </select>
                   </div>
 

@@ -7,7 +7,6 @@ import MakranaVisualShowcase from '../components/MakranaVisualShowcase';
 import ProductCard from '../components/ProductCard';
 import DifferenceTable from '../components/DifferenceTable';
 import ConsultationCard from '../components/ConsultationCard';
-import PricingPhilosophy from '../components/PricingPhilosophy';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import FiveStepJourney from '../components/FiveStepJourney';
 import AyadiCalculator from '../components/AyadiCalculator';
@@ -23,9 +22,10 @@ import { PRODUCTS } from '../products.js';
 
 export default function HomePage() {
   const [activeCategory, setActiveCategory] = useState('all');
+  const [visibleCount, setVisibleCount] = useState(9);
 
-  const filteredProducts = activeCategory === 'all'
-    ? PRODUCTS.slice(0, 6)
+  const allFilteredList = activeCategory === 'all'
+    ? PRODUCTS
     : PRODUCTS.filter((p) => {
         if (activeCategory === 'craft') {
           return p.category === 'murti' || p.category === 'jaali' || p.category === 'inlay';
@@ -33,9 +33,11 @@ export default function HomePage() {
         return p.category === activeCategory;
       });
 
+  const filteredProducts = allFilteredList.slice(0, visibleCount);
+
   const fountains = PRODUCTS.filter((p) => p.category === 'fountain').slice(0, 3);
-  const chhatris = PRODUCTS.filter((p) => p.category === 'chhatri').slice(0, 2);
-  const sanctums = PRODUCTS.filter((p) => p.category === 'sanctum').slice(0, 2);
+  const chhatris = PRODUCTS.filter((p) => p.category === 'chhatri').slice(0, 3);
+  const sanctums = PRODUCTS.filter((p) => p.category === 'sanctum').slice(0, 3);
 
   const handleOpenProduct = (product) => {
     if (typeof window !== 'undefined' && window.afgOpenProduct) {
@@ -123,9 +125,6 @@ export default function HomePage() {
       {/* ============ 5-STEP JOURNEY (Matching Tilak Feature) ============ */}
       <FiveStepJourney onOpenInquiry={handleOpenInquiry} />
 
-      {/* ============ PRICING PHILOSOPHY & INVESTMENT TIERS (Tilak Reference) ============ */}
-      <PricingPhilosophy onOpenInquiry={handleOpenInquiry} />
-
       {/* ============ ALL WE NEED IS YOUR SPACE DIMENSIONS ============ */}
       {/* ============ INTERACTIVE BESPOKE SANCTUM CONFIGURATOR (UNIQUE ATELIER STUDIO) ============ */}
       <SanctumConfigurator onOpenInquiry={handleOpenInquiry} />
@@ -161,7 +160,10 @@ export default function HomePage() {
               <button
                 key={cat.id}
                 type="button"
-                onClick={() => setActiveCategory(cat.id)}
+                onClick={() => {
+                  setActiveCategory(cat.id);
+                  setVisibleCount(9);
+                }}
                 style={{
                   padding: '9px 18px',
                   borderRadius: '999px',
@@ -205,9 +207,31 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="sec-cta-wrap text-center" style={{ marginTop: '48px', display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap' }}>
+          {/* E-Commerce Load More Trigger */}
+          {visibleCount < allFilteredList.length && (
+            <div style={{ textAlign: 'center', marginTop: '36px' }}>
+              <button
+                type="button"
+                onClick={() => setVisibleCount((prev) => prev + 9)}
+                className="btn-outline-gold"
+                style={{
+                  padding: '13px 32px',
+                  fontSize: '13px',
+                  fontWeight: 600,
+                  letterSpacing: '0.08em',
+                  background: '#ffffff',
+                  boxShadow: '0 4px 16px rgba(176, 138, 79, 0.12)',
+                  cursor: 'pointer'
+                }}
+              >
+                <span>Load More Masterpieces ({allFilteredList.length - visibleCount} More in Catalog) ↓</span>
+              </button>
+            </div>
+          )}
+
+          <div className="sec-cta-wrap text-center" style={{ marginTop: '36px', display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap' }}>
             <Link href="/pooja-sanctums" className="btn-primary">
-              <span className="btn-primary__text">Explore All 15+ Pooja Sanctums</span>
+              <span className="btn-primary__text">Explore All Bespoke Pooja Sanctums</span>
               <span className="btn-primary__icon">→</span>
             </Link>
             <Link href="/palatial-fountains" className="btn-outline-gold">
@@ -232,7 +256,7 @@ export default function HomePage() {
             </h2>
             <div className="gold-rule center" style={{ margin: '14px auto 20px' }}></div>
             <p className="sub-lead" style={{ maxWidth: '720px', margin: '0 auto', fontSize: '15px', color: '#6b5f52', lineHeight: 1.6 }}>
-              Handcrafted in solid Makrana marble and Nero Marquina. Engineered with precision water drainage lip, freeze-proof calcite resilience, and marine-grade 316 stainless steel delivery.
+              Sculpted exclusively from authentic Rajnagar White Marble—the heavy hydraulic dense calcite stone engineered for continuous water immersion, freeze-proof resilience, and zero algae adherence.
             </p>
           </div>
 
@@ -266,15 +290,15 @@ export default function HomePage() {
       <section className="sec-workshop-teaser" style={{ padding: '80px 0' }}>
         <div className="sec-container">
           <div className="page-grid-2">
-            <div className="page-media-frame">
+            <div className="page-media-frame" style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 20px 50px rgba(28,24,19,0.18)' }}>
               <img
-                src="/gallery/mandir-pure-makrana.webp"
-                alt="Silawat Master Sculptor Chiseling Makrana Marble"
+                src="/gallery/sanctum-royal-mandir-room.webp"
+                alt="Silawat Master Sculptor Artisanal Sanctum Suite"
                 loading="lazy"
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }}
               />
-              <div className="media-caption-badge" style={{ position: 'absolute', bottom: '16px', left: '16px', background: 'rgba(20, 17, 14, 0.85)', color: '#ecd39b', padding: '6px 14px', borderRadius: '4px', fontSize: '11px', fontWeight: 600 }}>
-                Jaipur &amp; Makrana Master Guild
+              <div className="media-caption-badge" style={{ position: 'absolute', bottom: '16px', left: '16px', background: 'rgba(20, 17, 14, 0.88)', color: '#ecd39b', padding: '7px 16px', borderRadius: '6px', fontSize: '11px', fontWeight: 600, letterSpacing: '0.08em', border: '1px solid rgba(176,138,79,0.35)' }}>
+                ✦ Jaipur &amp; Makrana Master Atelier Lineage
               </div>
             </div>
             <div className="page-info-block">
@@ -391,6 +415,13 @@ export default function HomePage() {
               />
             ))}
           </div>
+
+          <div className="sec-cta-wrap text-center" style={{ marginTop: '48px' }}>
+            <Link href="/pooja-sanctums" className="btn-primary">
+              <span className="btn-primary__text">Explore All Bespoke Pooja Sanctums</span>
+              <span className="btn-primary__icon">→</span>
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -406,39 +437,56 @@ export default function HomePage() {
             </h2>
             <div className="gold-rule center" style={{ margin: '14px auto 20px' }}></div>
             <p className="sub-lead" style={{ maxWidth: '720px', margin: '0 auto', fontSize: '15px', color: '#6b5f52', lineHeight: 1.6 }}>
-              From the virgin calcite seams of Makrana to the dramatic veined depths of Nero Marquina — every stone is hand-selected at the quarry face.
+              Our atelier works strictly with three certified noble white marbles: Makrana Pure White &amp; Vietnam Pure White for temples, and Rajnagar White for fountains.
             </p>
           </div>
 
           <div className="stone-gallery-grid" style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-            gap: '20px'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '24px'
           }}>
             {[
-              { src: '/gallery/stone-makrana-calcite-slab.webp', name: 'Pure Makrana Albeta', desc: '99% CaCO₃ purity · Taj Mahal calcite stratum' },
-              { src: '/gallery/stone-nero-marquina-black.webp', name: 'Nero Marquina', desc: 'Deep black with white crystalline veining' },
-              { src: '/gallery/stone-calacatta-oro-gold.webp', name: 'Calacatta Oro Gold', desc: 'Warm gold veins through pristine white base' },
-              { src: '/gallery/stone-translucent-green-onyx.webp', name: 'Translucent Green Onyx', desc: 'Backlit translucent stone for sanctum glow' },
-              { src: '/gallery/stone-botticino-classico.webp', name: 'Botticino Classico', desc: 'Warm ivory with delicate honey veining' }
+              {
+                src: '/gallery/stone-makrana-calcite-slab.webp',
+                name: 'Makrana Pure White Marble',
+                category: 'TEMPLES & MANDIRS',
+                desc: '99.2% Pure Calcite (Taj Mahal Bedrock). Virtually zero porosity (0.01%) — completely immune to daily abhishek milk, puja ghee, and kumkum staining with a lifetime non-yellowing guarantee.'
+              },
+              {
+                src: '/gallery/stone-vietnam-white-marble.webp',
+                name: 'Vietnam Pure White Marble',
+                category: 'TEMPLES & DEITIES',
+                desc: '99.6% Ultra-Pure Snow Calcite. Immaculate crystalline sugar grain with zero distortion, luminous divine light reflection, and supreme sculptural fidelity for deity statues.'
+              },
+              {
+                src: '/gallery/stone-rajnagar-white-marble.webp',
+                name: 'Rajnagar White Marble',
+                category: 'PALATIAL FOUNTAINS',
+                desc: 'High-Density Hydraulic Calcite (2.72 g/cm³). Engineered for continuous pressurized water cascades, all-weather frost resilience, and zero algae adherence over decades.'
+              }
             ].map((stone, idx) => (
               <div key={idx} className="stone-card" style={{
-                borderRadius: '12px',
+                borderRadius: '14px',
                 overflow: 'hidden',
                 background: '#fff',
-                boxShadow: '0 4px 24px rgba(28,24,19,0.08)',
+                boxShadow: '0 6px 28px rgba(28,24,19,0.08)',
+                border: '1px solid rgba(176,138,79,0.22)',
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                 cursor: 'pointer'
               }}
-                onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 12px 40px rgba(28,24,19,0.14)'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 24px rgba(28,24,19,0.08)'; }}
+                onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.boxShadow = '0 16px 44px rgba(28,24,19,0.15)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 6px 28px rgba(28,24,19,0.08)'; }}
               >
-                <div style={{ height: '200px', overflow: 'hidden' }}>
+                <div style={{ height: '240px', overflow: 'hidden', position: 'relative' }}>
                   <img src={stone.src} alt={stone.name} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }} />
+                  <span style={{ position: 'absolute', top: '14px', left: '14px', background: 'rgba(28,24,19,0.85)', color: '#d4af37', padding: '5px 12px', borderRadius: '4px', fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', border: '1px solid rgba(212,175,55,0.35)' }}>
+                    {stone.category}
+                  </span>
                 </div>
-                <div style={{ padding: '16px 18px' }}>
-                  <h4 style={{ fontFamily: 'var(--serif)', fontSize: '16px', color: '#1c1813', marginBottom: '4px' }}>{stone.name}</h4>
-                  <p style={{ fontSize: '12px', color: '#8a8073', lineHeight: 1.4 }}>{stone.desc}</p>
+                <div style={{ padding: '20px 22px' }}>
+                  <h4 style={{ fontFamily: 'var(--serif)', fontSize: '19px', color: '#1c1813', marginBottom: '8px' }}>{stone.name}</h4>
+                  <p style={{ fontSize: '13px', color: '#6b5f52', lineHeight: 1.6 }}>{stone.desc}</p>
                 </div>
               </div>
             ))}

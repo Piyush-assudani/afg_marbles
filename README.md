@@ -37,14 +37,12 @@ This repository houses the flagship interactive 3D web application — an archit
 - **Interactive Hotspots:** Screen-projected 3D annotations anchored to temple architectural elements (Pillars, Kalash) displaying artisan chisel hours and guild details.
 
 ### 🪨 2. Real-Time Dynamic Marble Switching
-Inspect the temple across 5 world-class luxury marble stones with seamless live transition:
-| Marble Stone | Origin | Characteristic |
+Inspect the temple across 3 certified luxury marble stones with seamless live transition:
+| Marble Stone | Origin | Characteristic & Application |
 | :--- | :--- | :--- |
-| **Makrana White** | Makrana, Rajasthan | Iconic stone of the Taj Mahal — crystalline purity |
-| **Calacatta Oro** | Tuscany, Italy | White crystalline base with warm liquid-gold veining |
-| **Botticino Classico**| Brescia, Italy | Warm ivory tones with subtle, timeless golden plumes |
-| **Rosa Portogallo** | Alentejo, Portugal | Delicate blush rose with subtle crystalline striations |
-| **Nero Marquina** | Basque Country, Spain | Deep midnight black with stark white calcitic veins |
+| **Makrana Pure White** | Makrana, Rajasthan | Iconic stone of the Taj Mahal — 99.2% calcite purity, temples & mandirs |
+| **Vietnam Pure White** | Luc Yen / Yen Bai, Vietnam | Immaculate snow crystalline calcite — contemporary temples & deities |
+| **Rajnagar White Marble**| Rajnagar, Rajasthan | Heavy hydraulic dense calcite — palatial estate fountains & cascades |
 
 ### ⚡ 3. Custom GLSL Shader Pipeline
 - **Object-Space Triplanar Mapping:** Eliminates UV seam distortions on complex architectural curvatures, flutings, and moldings by projecting textures along local XYZ normal weightings.

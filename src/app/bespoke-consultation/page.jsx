@@ -202,10 +202,9 @@ export default function BespokeConsultationPage() {
                       onChange={(e) => setFormData({ ...formData, stone: e.target.value })}
                       style={{ width: '100%', padding: '10px 14px', borderRadius: '6px', border: '1px solid rgba(0,0,0,0.18)', fontSize: '13px', background: '#fff' }}
                     >
-                      <option>Makrana Pure White Albeta (Taj Mahal Stratum)</option>
-                      <option>Makrana Dungri Natural Vein</option>
-                      <option>Bansi Paharpur Pink Sandstone</option>
-                      <option>Translucent Onyx &amp; Makrana Composite</option>
+                      <option>Makrana Pure White Marble (Taj Mahal Stratum - Temples &amp; Mandirs)</option>
+                      <option>Vietnam Pure White Marble (Snow Calcite - Temples &amp; Deities)</option>
+                      <option>Rajnagar White Marble (Hydraulic Calcite - Palatial Fountains)</option>
                     </select>
                   </div>
 

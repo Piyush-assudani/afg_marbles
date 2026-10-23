@@ -13,53 +13,73 @@ import {
 } from 'lucide-react';
 import { createExperience, STONES } from '../scene.js';
 
-// Rich stone metadata for museum-grade presentation
-// Only selected authentic marble materials per brief:
-// 1. Makrana Pure White Marble (Temple Construction)
-// 2. Vietnam Pure White Marble (Temple Construction)
-// 3. Rajnagar White Marble (Fountain Construction)
+// The 3 Certified White Marbles Crafted by A.F.G Atelier:
+// 1. Makrana Pure White Marble (Temples & Mandirs)
+// 2. Vietnam Pure White Marble (Temples & Sacred Deities)
+// 3. Rajnagar White Marble (Palatial Estate Fountains)
 const STONES_METADATA = [
   {
     key: 'makrana',
     name: 'Makrana Pure White',
-    hindi: 'मकराना शुद्ध श्वेत',
-    quarry: 'Chosira Bedrock, Makrana, Rajasthan',
+    hindi: 'मकराना शुद्ध श्वेत मकराना मार्बल',
+    quarry: 'Chosira & Chak Dungri Bedrock, Makrana, Rajasthan',
     purity: '99.2% Pure Calcite (Taj Mahal Bedrock)',
-    origin: 'Makrana, Rajasthan',
-    note: 'Temple Construction · Zero Yellowing',
-    desc: 'The sacred stone of the Taj Mahal. 99% pure calcite structure that never turns yellow from puja ghee, abhishek milk, or weather.',
-    grade: 'A-Grade Calcite',
+    origin: 'Makrana, Rajasthan (Temples)',
+    note: 'Temples & Mandirs · Zero Yellowing Guarantee',
+    desc: 'The sovereign stone of sacred Hindu temples and the Taj Mahal. Formed over 1,500 million years ago, its 99.2% calcium carbonate calcite structure has virtually zero porosity (0.02%), making it 100% immune to stains from daily puja ghee, panchamrit, kumkum, and weather. Never turns yellow over centuries.',
+    grade: 'Taj Mahal Calcite (Grade AAA)',
     accentColor: '#d4af37',
-    tag: 'Temple Specialist',
+    tag: 'Temples & Mandirs',
     word: 'MAKRANA',
+    thumb: '/textures/makrana.jpg',
+    specs: {
+      purity: '99.2% CaCO₃',
+      absorption: '0.01% (Zero Stain)',
+      hardness: '3.5–4.0 Mohs',
+      application: 'Sacred Mandirs & Sanctums'
+    }
   },
   {
     key: 'vietnam',
     name: 'Vietnam Pure White',
-    hindi: 'वियतनाम शुद्ध श्वेत',
-    quarry: 'Luc Yen Seam, Vietnam',
-    purity: '99.5% Crystalline White Calcite',
-    origin: 'Luc Yen, Vietnam',
-    note: 'Temple Construction · Pure Snow Finish',
-    desc: 'Uniform snow-white crystalline marble with immaculate luminescence, ideal for contemporary sanctums and deity idols.',
-    grade: 'Snow White Grade-A',
-    accentColor: '#e0d8c3',
-    tag: 'Temple & Deities',
+    hindi: 'वियतनाम शुद्ध स्नो-व्हाइट मार्बल',
+    quarry: 'Luc Yen & Yen Bai Mountain Mines, Vietnam',
+    purity: '99.6% Ultra-Pure Snow Crystalline Calcite',
+    origin: 'Luc Yen, Vietnam (Temples & Deities)',
+    note: 'Temples & Deities · Pure Crystalline Snow',
+    desc: 'Revered worldwide for its immaculate snow-white uniformity and zero grain distortion. With a crystalline fine-sugar matrix and 99.6% calcite composition, it reflects divine light with extraordinary brilliance. The supreme global choice for contemporary luxury sanctums and intricate hand-sculpted deity murti statues.',
+    grade: 'Sculptural Snow Calcite (Grade AAA+)',
+    accentColor: '#c9a24d',
+    tag: 'Temples & Deities',
     word: 'VIETNAM',
+    thumb: '/textures/vietnam.jpg',
+    specs: {
+      purity: '99.6% CaCO₃',
+      absorption: '0.03% (Resin-Free)',
+      hardness: '3.0–3.5 Mohs',
+      application: 'Contemporary Temples & Deities'
+    }
   },
   {
     key: 'rajnagar',
-    name: 'Rajnagar White',
-    hindi: 'राजनगर श्वेत मार्बल',
-    quarry: 'Rajnagar Bedrock, Rajasthan',
-    purity: 'Durable Hydraulic Calcite',
-    origin: 'Rajnagar, Rajasthan',
-    note: 'Fountain Specialist · Outdoor Enduring',
-    desc: 'Durable, dense white marble specially selected for monumental fountains, garden cascades, and palatial water features.',
-    grade: 'Fountain Grade',
-    accentColor: '#b08a4f',
-    tag: 'Fountain Specialist',
+    name: 'Rajnagar White Marble',
+    hindi: 'राजनगर श्वेत संगमरमर',
+    quarry: 'Rajnagar Hydraulic Seam, Rajsamand, Rajasthan',
+    purity: 'High-Density Hydraulic Crystalline Calcite',
+    origin: 'Rajnagar, Rajasthan (Fountains)',
+    note: 'Palatial Fountains · High-Density Hydraulic Calcite',
+    desc: 'The undisputed master stone for monumental palatial fountains and hydraulic outdoor cascades. Naturally dense with interlocking calcite crystals, Rajnagar marble resists pressurized water erosion, continuous chlorine/calcium contact, outdoor sun UV, and prevents algae or moss adherence over decades.',
+    grade: 'Heavy Hydraulic Fountain Grade',
+    accentColor: '#8a7d70',
+    tag: 'Palatial Fountains',
     word: 'RAJNAGAR',
+    thumb: '/textures/rajnagar.jpg',
+    specs: {
+      purity: 'Hydraulic Calcite',
+      density: '2.72 g/cm³',
+      durability: 'Continuous Flow Resistant',
+      application: 'Monumental Estate Fountains'
+    }
   },
 ];
 
@@ -318,7 +338,7 @@ export default function HeroSection({ onOpenInquiry }) {
                 role="radio"
                 aria-checked={isActive}
                 aria-label={s.name}
-                style={{ '--img': `url(${STONES[idx]?.url || `/textures/${s.key}.jpg`})` }}
+                style={{ '--img': `url(${s.thumb || STONES[idx]?.url})` }}
                 onClick={() => selectStone(idx)}
               >
                 <span className="swatch__tip">
