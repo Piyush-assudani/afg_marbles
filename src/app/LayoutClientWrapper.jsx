@@ -166,10 +166,28 @@ export default function LayoutClientWrapper({ children }) {
     const cursor = document.getElementById('cursor');
     if (cursor) cursor.style.display = 'none';
 
+    // Self-healing for live deployment chunk updates (ChunkLoadError recovery)
+    const handleChunkError = (e) => {
+      const msg = (e?.message || e?.reason?.message || '').toLowerCase();
+      if (
+        msg.includes('chunkloaderror') ||
+        msg.includes('loading chunk') ||
+        msg.includes('failed to fetch dynamically imported module') ||
+        msg.includes('connection closed') ||
+        msg.includes('failed to find server action')
+      ) {
+        window.location.reload();
+      }
+    };
+    window.addEventListener('error', handleChunkError);
+    window.addEventListener('unhandledrejection', handleChunkError);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('hashchange', handlePopState);
       window.removeEventListener('popstate', handlePopState);
+      window.removeEventListener('error', handleChunkError);
+      window.removeEventListener('unhandledrejection', handleChunkError);
     };
   }, [openProduct, closeProduct, extractProductIdFromUrl, findProductById]);
 
