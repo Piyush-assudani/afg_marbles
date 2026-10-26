@@ -438,8 +438,8 @@ export default function ProductCard({ product, onOpenProduct, onOpenInquiry }) {
             <span>Inquire &amp; Get Price</span>
           </button>
 
-          {/* Secondary Dual Row: Direct WhatsApp & View Details */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+          {/* Secondary Triple Action Row: Direct WhatsApp, Share & View Dossier */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '6px' }}>
             <button
               type="button"
               className="btn-whatsapp-pill"

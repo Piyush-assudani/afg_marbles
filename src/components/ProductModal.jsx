@@ -101,7 +101,8 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
           <X size={18} />
         </button>
 
-        <div className="product-modal__grid">
+        {/* ============ TOP OVERVIEW: 2 COLUMNS (Gallery on left, Core Info & Inquiries on right) ============ */}
+        <div className="product-modal__top-grid">
           {/* Left: Multi-Angle Interactive Gallery */}
           <div className="product-modal__gallery">
             <div className="gallery-main-view" style={{ position: 'relative' }}>
@@ -150,8 +151,8 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
             </div>
           </div>
 
-          {/* Right: Architectural Dossier & Inquiries */}
-          <div className="product-modal__info">
+          {/* Right: Architectural Dossier & Primary Inquiries */}
+          <div className="product-modal__overview">
             <div className="pm-header">
               <span className="card-badge">{product.badge || 'Atelier Masterpiece'}</span>
               <h2>{product.title}</h2>
@@ -171,19 +172,7 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
             </div>
 
             {/* E-Commerce Live Stock & Atelier Availability Status */}
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                padding: '8px 14px',
-                background: '#f4fbf7',
-                border: '1px solid #ccebd9',
-                borderRadius: '6px',
-                marginBottom: '14px',
-                fontSize: '12px'
-              }}
-            >
+            <div className="pm-stock-banner">
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#128c7e', display: 'inline-block' }}></span>
                 <span style={{ color: '#0b5c52', fontWeight: 600 }}>Quarry Bedrock In Stock — Handcrafted to Order</span>
@@ -192,147 +181,150 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
             </div>
 
             {/* Bespoke Sizing Notice & Interactive Space Calculator */}
-            <div
-              style={{
-                padding: '12px 16px',
-                background: 'rgba(176, 138, 79, 0.08)',
-                borderRadius: '8px',
-                borderLeft: '3px solid #b08a4f',
-                marginBottom: '16px',
-              }}
-            >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
-                <strong style={{ fontSize: '12.5px', color: '#1c1813' }}>
+            <div className="pm-bespoke-box">
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
+                <strong style={{ fontSize: '13px', color: '#1c1813' }}>
                   Commissioned to Your Exact Space Dimensions
                 </strong>
                 <span style={{ fontSize: '11px', fontWeight: 700, color: '#8c6a36', background: 'rgba(176,138,79,0.15)', padding: '2px 8px', borderRadius: '4px' }}>
                   Bespoke Sthapatya
                 </span>
               </div>
-              <p style={{ fontSize: '12px', color: '#6b5f52', margin: '0 0 10px', lineHeight: 1.45 }}>
+              <p style={{ fontSize: '12px', color: '#6b5f52', margin: '0 0 10px', lineHeight: 1.5 }}>
                 Share your villa or apartment room dimensions. Our sthapatis will generate full 2D CAD elevations, cross-sections, and stone volume estimates within 24 hours. (3D CAD available upon special request).
               </p>
               
               {/* E-Commerce Quick Trust Hallmarks */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '8px', paddingTop: '8px', borderTop: '1px dashed rgba(176, 138, 79, 0.25)' }}>
-                <div style={{ fontSize: '11px', color: '#4a4239', display: 'flex', alignItems: 'center', gap: '5px' }}>
-                  <span style={{ color: '#b08a4f' }}>✓</span> 99.2% Calcite Bedrock
-                </div>
-                <div style={{ fontSize: '11px', color: '#4a4239', display: 'flex', alignItems: 'center', gap: '5px' }}>
-                  <span style={{ color: '#b08a4f' }}>✓</span> Free 2D CAD Blueprint
-                </div>
-                <div style={{ fontSize: '11px', color: '#4a4239', display: 'flex', alignItems: 'center', gap: '5px' }}>
-                  <span style={{ color: '#b08a4f' }}>✓</span> 100% Yard Dry-Fit Trial
-                </div>
-                <div style={{ fontSize: '11px', color: '#4a4239', display: 'flex', alignItems: 'center', gap: '5px' }}>
-                  <span style={{ color: '#b08a4f' }}>✓</span> Global White-Glove Setup
-                </div>
+              <div className="pm-trust-hallmarks">
+                <div><span style={{ color: '#b08a4f' }}>✓</span> 99.2% Calcite Bedrock</div>
+                <div><span style={{ color: '#b08a4f' }}>✓</span> Free 2D CAD Blueprint</div>
+                <div><span style={{ color: '#b08a4f' }}>✓</span> 100% Yard Dry-Fit Trial</div>
+                <div><span style={{ color: '#b08a4f' }}>✓</span> Global White-Glove Setup</div>
               </div>
             </div>
 
-            {/* Deep Specification Tabs */}
-            <div
-              style={{
-                display: 'flex',
-                borderBottom: '1px solid rgba(28, 24, 19, 0.14)',
-                marginBottom: '16px',
-                gap: '8px',
-              }}
-            >
-              {[
-                { id: 'specs', label: 'Architecture & Specs' },
-                { id: 'vastu', label: 'Vastu & Mineral Science' },
-                { id: 'shipping', label: 'Crating & Assembly' },
-              ].map((tab) => (
-                <button
-                  key={tab.id}
-                  type="button"
-                  onClick={() => setActiveTab(tab.id)}
-                  style={{
-                    padding: '8px 12px',
-                    fontSize: '12px',
-                    fontWeight: 600,
-                    cursor: 'pointer',
-                    background: 'transparent',
-                    border: 'none',
-                    borderBottom: activeTab === tab.id ? '2px solid #b08a4f' : '2px solid transparent',
-                    color: activeTab === tab.id ? '#1c1813' : '#8a8073',
-                    transition: 'all 0.2s ease',
-                  }}
-                >
-                  {tab.label}
-                </button>
-              ))}
+            {/* Top Primary Actions */}
+            <div className="pm-top-actions">
+              <button
+                type="button"
+                className="btn-primary"
+                onClick={() => {
+                  onClose();
+                  onInquire?.(product);
+                }}
+              >
+                <span className="btn-primary__text">Inquire on This Masterpiece</span>
+                <span className="btn-primary__icon">→</span>
+              </button>
+              <a
+                href={`https://wa.me/917597417274?text=${encodeURIComponent(
+                  `Namaste AFG Marble, I am inquiring about "${product.title}" (${product.scale}, ${product.primaryStone}). Please share 2D CAD drawings and bespoke volume-based estimate.\n\nProduct Link: ${getProductUrl()}`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline-gold"
+              >
+                <span>Instant WhatsApp 2D CAD &amp; Pricing</span>
+              </a>
             </div>
+          </div>
+        </div>
 
-            {/* Tab 1: Architecture & Specs */}
-            {activeTab === 'specs' && (
-              <>
-                <div className="pm-section">
-                  <h4>Architectural Narrative</h4>
-                  <p>{product.fullDesc}</p>
+        {/* ============ FULL-WIDTH DEEP DOSSIER SECTION (Spans across both sides as user scrolls down!) ============ */}
+        <div className="product-modal__full-dossier">
+          {/* Deep Specification Tabs */}
+          <div className="pm-full-tabs">
+            {[
+              { id: 'specs', label: 'Architecture & Specifications' },
+              { id: 'vastu', label: 'Sacred Vastu & Mineral Science' },
+              { id: 'shipping', label: 'Crating & Global Assembly' },
+            ].map((tab) => (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => setActiveTab(tab.id)}
+                className={`pm-full-tab-btn ${activeTab === tab.id ? 'is-active' : ''}`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Tab 1: Architecture & Specs (FULL WIDTH 2-COLUMN LUXURY GRID) */}
+          {activeTab === 'specs' && (
+            <div className="pm-dossier-tab-pane">
+              <div className="pm-narrative-box">
+                <h4 className="pm-dossier-heading">Architectural Narrative</h4>
+                <p className="pm-narrative-text">{product.fullDesc}</p>
+              </div>
+
+              {product.specs && (
+                <div className="pm-specs-container">
+                  <h4 className="pm-dossier-heading">Architectural &amp; Artisanal Specifications</h4>
+                  <div className="pm-specs-full-grid">
+                    {product.specs.map((s, idx) => (
+                      <div key={idx} className="pm-spec-card">
+                        <span className="pm-spec-card__label">{s.label}:</span>
+                        <span className="pm-spec-card__value">{s.value}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
+              )}
+            </div>
+          )}
 
-                {product.specs && (
-                  <div className="pm-section">
-                    <h4>Architectural Specifications</h4>
-                    <div className="pm-specs-grid">
-                      {product.specs.map((s, idx) => (
-                        <div key={idx} className="pm-spec-row">
-                          <span className="pm-spec-label">{s.label}:</span>
-                          <span className="pm-spec-value">{s.value}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </>
-            )}
-
-            {/* Tab 2: Vastu & Mineral Science */}
-            {activeTab === 'vastu' && (
-              <div className="pm-section">
-                <h4>Sacred Sthapatya Veda &amp; Calcite Purity</h4>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '13px', color: '#4a4239', lineHeight: 1.6 }}>
-                  <div style={{ background: '#fcfaf6', padding: '12px 14px', borderRadius: '6px', border: '1px solid rgba(176,138,79,0.15)' }}>
-                    <strong style={{ color: '#1c1813', display: 'block', marginBottom: '4px' }}>Ayadi Metric: Dhana &amp; Vriddhi Aya</strong>
-                    <span>Perimeter and height conform to sacred Golden Ratio harmonic frequencies to ensure maximum auspiciousness for home worship.</span>
-                  </div>
-                  <div style={{ background: '#fcfaf6', padding: '12px 14px', borderRadius: '6px', border: '1px solid rgba(176,138,79,0.15)' }}>
-                    <strong style={{ color: '#1c1813', display: 'block', marginBottom: '4px' }}>Zero-Yellowing Calcite Mineral Structure</strong>
-                    <span>Certified 99% pure CaCO3 calcite mined directly from Makrana. Completely non-porous (absorption &lt; 0.04%). Safe for daily milk, honey, ghee, and oil lamp rituals.</span>
-                  </div>
-                  <div style={{ background: '#fcfaf6', padding: '12px 14px', borderRadius: '6px', border: '1px solid rgba(176,138,79,0.15)' }}>
-                    <strong style={{ color: '#1c1813', display: 'block', marginBottom: '4px' }}>Smoke Dissipation Spire Engineering</strong>
-                    <span>Concealed draft flues at the shikhara apex allow camphor and agarbatti smoke to naturally vent without blackening the marble.</span>
-                  </div>
+          {/* Tab 2: Vastu & Mineral Science (FULL WIDTH 3-COLUMN CARDS) */}
+          {activeTab === 'vastu' && (
+            <div className="pm-dossier-tab-pane">
+              <h4 className="pm-dossier-heading">Sacred Sthapatya Veda &amp; Calcite Purity</h4>
+              <div className="pm-vastu-cards-grid">
+                <div className="pm-feature-card">
+                  <span className="pm-feature-card__badge">SACRED METRIC</span>
+                  <h5>Ayadi Metric: Dhana &amp; Vriddhi Aya</h5>
+                  <p>Perimeter, depth, and height strictly conform to sacred Golden Ratio harmonic frequencies calculated to ensure maximum auspiciousness, spiritual sanctity, and life energy for home worship.</p>
+                </div>
+                <div className="pm-feature-card">
+                  <span className="pm-feature-card__badge">ZERO POROSITY</span>
+                  <h5>Zero-Yellowing Calcite Mineral Structure</h5>
+                  <p>Certified 99% pure CaCO3 calcite mined directly from Makrana. Completely non-porous (absorption &lt; 0.04%). Safe for daily abhishekam with milk, honey, ghee, and oil lamps without discoloration.</p>
+                </div>
+                <div className="pm-feature-card">
+                  <span className="pm-feature-card__badge">DRAFT VENTILATION</span>
+                  <h5>Smoke Dissipation Spire Engineering</h5>
+                  <p>Concealed draft flues at the shikhara apex allow camphor, dhoop, and agarbatti smoke to naturally vent upwards without blackening or staining the pristine white marble ceiling.</p>
                 </div>
               </div>
-            )}
+            </div>
+          )}
 
-            {/* Tab 3: Crating & Assembly */}
-            {activeTab === 'shipping' && (
-              <div className="pm-section">
-                <h4>International Crating &amp; White-Glove Installation</h4>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '13px', color: '#4a4239', lineHeight: 1.6 }}>
-                  <div style={{ background: '#fcfaf6', padding: '12px 14px', borderRadius: '6px', border: '1px solid rgba(176,138,79,0.15)' }}>
-                    <strong style={{ color: '#1c1813', display: 'block', marginBottom: '4px' }}>ISPM-15 Certified Pine Crates</strong>
-                    <span>Custom fumigated marine plywood casing with 50mm high-density shock EVA foam lining and external Tip-N-Tell shock monitors.</span>
-                  </div>
-                  <div style={{ background: '#fcfaf6', padding: '12px 14px', borderRadius: '6px', border: '1px solid rgba(176,138,79,0.15)' }}>
-                    <strong style={{ color: '#1c1813', display: 'block', marginBottom: '4px' }}>4 to 6 Hour Dry-Joint Assembly</strong>
-                    <span>Interlocking modular stone blocks are discretely numbered. Requires zero wet mortar or cement, enabling clean indoor setup.</span>
-                  </div>
-                  <div style={{ background: '#fcfaf6', padding: '12px 14px', borderRadius: '6px', border: '1px solid rgba(176,138,79,0.15)' }}>
-                    <strong style={{ color: '#1c1813', display: 'block', marginBottom: '4px' }}>Worldwide Customs Clearance</strong>
-                    <span>Seamless doorstep transit across USA, UK, UAE, Australia, Canada, Singapore, and pan-India.</span>
-                  </div>
+          {/* Tab 3: Crating & Assembly (FULL WIDTH 3-COLUMN CARDS) */}
+          {activeTab === 'shipping' && (
+            <div className="pm-dossier-tab-pane">
+              <h4 className="pm-dossier-heading">International Crating &amp; White-Glove Installation</h4>
+              <div className="pm-vastu-cards-grid">
+                <div className="pm-feature-card">
+                  <span className="pm-feature-card__badge">ISPM-15 COMPLIANT</span>
+                  <h5>ISPM-15 Certified Pine Timber Crates</h5>
+                  <p>Custom fumigated marine plywood casing with 50mm high-density shock EVA foam lining and external Tip-N-Tell shock monitors for guaranteed transit safety across all sea and air freight.</p>
+                </div>
+                <div className="pm-feature-card">
+                  <span className="pm-feature-card__badge">MODULAR SETUP</span>
+                  <h5>4 to 6 Hour Dry-Joint Assembly</h5>
+                  <p>Interlocking monolithic stone blocks are discretely laser-numbered. Requires zero wet mortar, toxic glues, or cement, enabling clean indoor setup in luxury villas and modern apartments.</p>
+                </div>
+                <div className="pm-feature-card">
+                  <span className="pm-feature-card__badge">GLOBAL LOGISTICS</span>
+                  <h5>Worldwide Doorstep Transit Clearance</h5>
+                  <p>Seamless doorstep transit with customs clearance and professional setup assistance across USA, UK, UAE, Australia, Canada, Singapore, Europe, and pan-India.</p>
                 </div>
               </div>
-            )}
+            </div>
+          )}
 
-            {/* Share Dossier Row */}
-            <div className="pm-share-row" style={{ marginTop: '16px' }}>
+          {/* Bottom Bar: Direct Share Row & Secondary Actions */}
+          <div className="pm-bottom-bar">
+            <div className="pm-share-row">
               <span className="pm-share-label">Direct Share Creation:</span>
               <button
                 type="button"
@@ -376,30 +368,17 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
               )}
             </div>
 
-            {/* Actions */}
-            <div className="pm-actions">
-              <button
-                type="button"
-                className="btn-primary"
-                onClick={() => {
-                  onClose();
-                  onInquire?.(product);
-                }}
-              >
-                <span className="btn-primary__text">Inquire on This Masterpiece</span>
-                <span className="btn-primary__icon">→</span>
-              </button>
-              <a
-                href={`https://wa.me/917597417274?text=${encodeURIComponent(
-                  `Namaste AFG Marble, I am inquiring about "${product.title}" (${product.scale}, ${product.primaryStone}). Please share 2D CAD drawings and bespoke volume-based estimate.\n\nProduct Link: ${getProductUrl()}`
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-outline-gold"
-              >
-                <span>Instant WhatsApp 2D CAD &amp; Pricing</span>
-              </a>
-            </div>
+            <button
+              type="button"
+              className="btn-primary"
+              onClick={() => {
+                onClose();
+                onInquire?.(product);
+              }}
+            >
+              <span className="btn-primary__text">Inquire on This Masterpiece</span>
+              <span className="btn-primary__icon">→</span>
+            </button>
           </div>
         </div>
       </div>
