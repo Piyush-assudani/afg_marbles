@@ -1083,7 +1083,11 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     },
     resume: () => {
       isPaused = false;
-      clock.getDelta();
+      lastTime = performance.now();
+      if (!animating) {
+        animating = true;
+        rafId = requestAnimationFrame(tick);
+      }
     },
     destroy: () => {
       isDestroyed = true;
