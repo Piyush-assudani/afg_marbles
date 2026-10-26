@@ -392,6 +392,22 @@ button {
   top: 64px;
 }
 
+.site-header-container--subpage .mobile-menu {
+  top: 56px !important;
+}
+
+.site-header-container--subpage .top-announcement-bar {
+  display: none !important;
+}
+
+.site-header-container--subpage .nav {
+  background: rgba(253, 251, 247, 0.98) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(184, 134, 63, 0.18) !important;
+  box-shadow: 0 4px 16px rgba(28, 24, 19, 0.05) !important;
+}
+
 /* =========================================================
    COMPACT & CUTE LUXURY NAVBAR
    Merged with Hero at top -> Detaches into Floating Glass Pill on Scroll

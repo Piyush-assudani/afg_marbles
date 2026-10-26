@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect, useCallback, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import AnnouncementBar from '../components/AnnouncementBar';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -12,6 +13,9 @@ import ImageLightbox from '../components/ImageLightbox';
 import { PRODUCTS } from '../products.js';
 
 export default function LayoutClientWrapper({ children }) {
+  const pathname = usePathname();
+  const isHomePage = !pathname || pathname === '/';
+
   const [inquiryModalData, setInquiryModalData] = useState(null);
   const [productModalData, setProductModalData] = useState(null);
   const [lightboxData, setLightboxData] = useState(null);
@@ -196,8 +200,8 @@ export default function LayoutClientWrapper({ children }) {
 
   return (
     <>
-      <header className={`site-header-container ${isScrolled ? 'is-scrolled' : 'is-at-top'}`}>
-        <AnnouncementBar />
+      <header className={`site-header-container ${isScrolled ? 'is-scrolled' : 'is-at-top'} ${!isHomePage ? 'site-header-container--subpage' : ''}`}>
+        {isHomePage && <AnnouncementBar />}
         <Navbar isScrolled={isScrolled} onOpenInquiry={(p) => setInquiryModalData(p)} />
       </header>
 
