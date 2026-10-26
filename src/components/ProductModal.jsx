@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { X } from 'lucide-react';
+import { X, Maximize2 } from 'lucide-react';
 
 export default function ProductModal({ product, onClose, onInquire, onToast }) {
   const [activeAngleIdx, setActiveAngleIdx] = useState(0);
@@ -105,19 +105,73 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
         <div className="product-modal__top-grid">
           {/* Left: Multi-Angle Interactive Gallery */}
           <div className="product-modal__gallery">
-            <div className="gallery-main-view" style={{ position: 'relative' }}>
+            <div
+              className="gallery-main-view"
+              style={{ position: 'relative', cursor: 'zoom-in' }}
+              onClick={() => {
+                if (typeof window !== 'undefined' && window.afgOpenLightbox) {
+                  window.afgOpenLightbox({
+                    src: currentAngle.src,
+                    title: product.title,
+                    tag: `${product.primaryStone || 'Makrana Calcite'} · ${currentAngle.tag || currentAngle.label}`
+                  });
+                }
+              }}
+            >
               <img
                 src={currentAngle.src}
                 alt={`${product.title} - ${currentAngle.label}`}
                 className="gallery-main-img"
               />
               <span className="gallery-active-badge">{currentAngle.tag || currentAngle.label}</span>
+
+              {/* Floating Fullscreen Trigger Button */}
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (typeof window !== 'undefined' && window.afgOpenLightbox) {
+                    window.afgOpenLightbox({
+                      src: currentAngle.src,
+                      title: product.title,
+                      tag: `${product.primaryStone || 'Makrana Calcite'} · ${currentAngle.tag || currentAngle.label}`
+                    });
+                  }
+                }}
+                title="Fullscreen 4K Zoom"
+                aria-label="Fullscreen 4K Zoom"
+                style={{
+                  position: 'absolute',
+                  top: '12px',
+                  right: '12px',
+                  background: 'rgba(26, 21, 16, 0.88)',
+                  backdropFilter: 'blur(8px)',
+                  color: '#ecd39b',
+                  border: '1px solid rgba(212, 175, 55, 0.45)',
+                  borderRadius: '999px',
+                  padding: '6px 12px',
+                  fontSize: '11px',
+                  fontWeight: 600,
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  cursor: 'pointer',
+                  zIndex: 3
+                }}
+              >
+                <Maximize2 size={13} />
+                <span>Zoom 4K</span>
+              </button>
+
               {angles.length > 1 && (
                 <>
                   <button
                     type="button"
                     className="modal-gallery-arrow modal-gallery-arrow--prev"
-                    onClick={prevAngle}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      prevAngle();
+                    }}
                     aria-label="Previous angle"
                   >
                     ‹
@@ -125,7 +179,10 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
                   <button
                     type="button"
                     className="modal-gallery-arrow modal-gallery-arrow--next"
-                    onClick={nextAngle}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      nextAngle();
+                    }}
                     aria-label="Next angle"
                   >
                     ›

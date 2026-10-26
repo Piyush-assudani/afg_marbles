@@ -8,11 +8,13 @@ import InquiryModal from '../components/InquiryModal';
 import ProductModal from '../components/ProductModal';
 import AtelierSoundscape from '../components/AtelierSoundscape';
 import CookieConsent from '../components/CookieConsent';
+import ImageLightbox from '../components/ImageLightbox';
 import { PRODUCTS } from '../products.js';
 
 export default function LayoutClientWrapper({ children }) {
   const [inquiryModalData, setInquiryModalData] = useState(null);
   const [productModalData, setProductModalData] = useState(null);
+  const [lightboxData, setLightboxData] = useState(null);
   const [toastMessage, setToastMessage] = useState('');
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -126,6 +128,7 @@ export default function LayoutClientWrapper({ children }) {
     window.afgOpenInquiry = (product) => setInquiryModalData(product || { title: 'Bespoke Atelier Commission' });
     window.afgOpenProduct = (product) => openProduct(product, true);
     window.afgCloseProduct = () => closeProduct(true);
+    window.afgOpenLightbox = (img) => setLightboxData(img);
     window.afgToast = (msg) => showToast(msg);
 
     // Initial sync from URL on page load / refresh / direct link
@@ -234,6 +237,14 @@ export default function LayoutClientWrapper({ children }) {
 
       {/* Floating Patron Privacy & Cookie Charter Capsule */}
       <CookieConsent />
+
+      {/* Global High-Resolution Architectural Image Lightbox */}
+      {lightboxData && (
+        <ImageLightbox
+          image={lightboxData}
+          onClose={() => setLightboxData(null)}
+        />
+      )}
     </>
   );
 }

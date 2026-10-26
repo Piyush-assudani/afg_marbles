@@ -157,8 +157,26 @@ export default function YardLiveFeed({ onOpenInquiry }) {
             gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
             gap: '0'
           }}>
-            {/* Viewport Image Frame */}
-            <div style={{ position: 'relative', height: '440px', background: '#0a0908', overflow: 'hidden' }}>
+            {/* Viewport Image Frame with 4K Fullscreen Lightbox Trigger */}
+            <div
+              onClick={() => {
+                if (typeof window !== 'undefined' && window.afgOpenLightbox) {
+                  window.afgOpenLightbox({
+                    src: activeBay.image,
+                    title: activeBay.title,
+                    tag: activeBay.code,
+                  });
+                }
+              }}
+              title="Click to expand full screen"
+              style={{
+                position: 'relative',
+                height: '440px',
+                background: '#0a0908',
+                overflow: 'hidden',
+                cursor: 'pointer',
+              }}
+            >
               <img
                 src={activeBay.image}
                 alt={activeBay.title}
@@ -166,9 +184,51 @@ export default function YardLiveFeed({ onOpenInquiry }) {
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
-                  transition: 'transform 0.4s ease'
+                  transition: 'transform 0.4s ease',
                 }}
               />
+
+              {/* Floating Fullscreen Expand Pill */}
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (typeof window !== 'undefined' && window.afgOpenLightbox) {
+                    window.afgOpenLightbox({
+                      src: activeBay.image,
+                      title: activeBay.title,
+                      tag: activeBay.code,
+                    });
+                  }
+                }}
+                title="Expand to Fullscreen 4K View"
+                aria-label="Expand to Fullscreen"
+                style={{
+                  position: 'absolute',
+                  top: '58px',
+                  right: '16px',
+                  zIndex: 4,
+                  background: 'rgba(20, 16, 12, 0.88)',
+                  backdropFilter: 'blur(8px)',
+                  border: '1px solid rgba(212, 175, 55, 0.45)',
+                  color: '#ecd39b',
+                  padding: '6px 14px',
+                  borderRadius: '999px',
+                  fontSize: '11px',
+                  fontWeight: 600,
+                  letterSpacing: '0.04em',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  boxShadow: '0 4px 14px rgba(0,0,0,0.5)',
+                }}
+              >
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.2">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                </svg>
+                <span>Expand Fullscreen</span>
+              </button>
 
               {/* Live Overlay HUD Elements */}
               <div style={{

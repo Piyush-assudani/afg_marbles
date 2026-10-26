@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import { CheckCircle2, AlertCircle, MessageSquare, ArrowRight, RotateCcw } from 'lucide-react';
 import DifferenceTable from '../../components/DifferenceTable';
 
 export default function BespokeConsultationPage() {
@@ -12,17 +13,25 @@ export default function BespokeConsultationPage() {
     depth: '',
     height: '',
     stone: 'Makrana Pure White Albeta',
-    notes: ''
+    notes: '',
+    _hp_check: ''
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
   const [inquiryId, setInquiryId] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (loading) return;
-    if (!formData.name?.trim() || !formData.phone?.trim()) {
-      alert('Please provide your name and phone number.');
+    setErrorMsg('');
+
+    if (!formData.name?.trim()) {
+      setErrorMsg('Please enter your full name.');
+      return;
+    }
+    if (!formData.phone?.trim() || formData.phone.trim().length < 7) {
+      setErrorMsg('Please enter a valid WhatsApp or contact phone number with country code.');
       return;
     }
 
@@ -53,6 +62,22 @@ export default function BespokeConsultationPage() {
       const text = `Namaste A.F.G Marble & Arts, I requested a 2D CAD Space Consultation [${assignedId}].\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Location:* ${formData.city}\n*Space Dimensions:* ${formData.width} W × ${formData.depth} D × ${formData.height} H\n*Preferred Stone:* ${formData.stone}\n*Notes:* ${formData.notes || 'None'}`;
       window.open(`https://wa.me/917597417274?text=${encodeURIComponent(text)}`, '_blank');
     }
+  };
+
+  const handleReset = () => {
+    setSubmitted(false);
+    setErrorMsg('');
+    setFormData({
+      name: '',
+      phone: '',
+      city: '',
+      width: '',
+      depth: '',
+      height: '',
+      stone: 'Makrana Pure White Albeta',
+      notes: '',
+      _hp_check: ''
+    });
   };
 
   return (
@@ -149,12 +174,157 @@ export default function BespokeConsultationPage() {
                 Submit Your Space Details
               </h3>
 
+              {/* Error Notification Banner */}
+              {errorMsg && (
+                <div
+                  style={{
+                    padding: '12px 16px',
+                    borderRadius: '8px',
+                    background: '#fdf2f2',
+                    border: '1px solid #f87171',
+                    color: '#991b1b',
+                    fontSize: '13px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '10px',
+                    marginBottom: '16px',
+                  }}
+                >
+                  <AlertCircle size={18} color="#dc2626" style={{ flexShrink: 0 }} />
+                  <span>{errorMsg}</span>
+                </div>
+              )}
+
               {submitted ? (
-                <div style={{ padding: '24px', background: '#faf6ee', borderRadius: '8px', border: '1px solid #b8863f', textAlign: 'center' }}>
-                  <h4 style={{ color: '#1c1813', marginBottom: '8px' }}>Inquiry Sent Successfully!</h4>
-                  <p style={{ fontSize: '13px', color: '#5c5246', margin: 0 }}>
-                    Our Master Sthapati will review your space dimensions and respond within 24 hours with your 2D CAD elevation blueprint.
+                <div
+                  style={{
+                    padding: '32px 24px',
+                    background: 'linear-gradient(145deg, #fdfbf7 0%, #f7f2ea 100%)',
+                    borderRadius: '16px',
+                    border: '1.5px solid rgba(197, 160, 89, 0.45)',
+                    boxShadow: '0 12px 36px rgba(0, 0, 0, 0.06)',
+                    textAlign: 'center'
+                  }}
+                >
+                  <div
+                    style={{
+                      width: '64px',
+                      height: '64px',
+                      borderRadius: '50%',
+                      background: 'rgba(37, 211, 102, 0.12)',
+                      border: '2px solid #25D366',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      margin: '0 auto 16px',
+                      boxShadow: '0 8px 24px rgba(37, 211, 102, 0.25)'
+                    }}
+                  >
+                    <CheckCircle2 size={36} color="#25D366" />
+                  </div>
+                  <span
+                    style={{
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      letterSpacing: '0.18em',
+                      color: '#b08a4f',
+                      textTransform: 'uppercase',
+                      display: 'block',
+                      marginBottom: '6px'
+                    }}
+                  >
+                    CONSULTATION CONFIRMED
+                  </span>
+                  <h4 style={{ fontFamily: 'var(--serif)', fontSize: '24px', color: '#1c1813', margin: '0 0 10px', fontWeight: 600 }}>
+                    Thank You, {formData.name}!
+                  </h4>
+                  <p style={{ fontSize: '13.5px', color: '#5c5246', margin: '0 0 20px', lineHeight: 1.6 }}>
+                    Your bespoke consultation request has been registered under reference{' '}
+                    <strong style={{ color: '#1c1813', background: 'rgba(197, 160, 89, 0.15)', padding: '2px 8px', borderRadius: '4px' }}>
+                      #{inquiryId}
+                    </strong>
+                    . Our Senior Sthapati will review your space dimensions and prepare a 2D CAD blueprint within 24 hours.
                   </p>
+
+                  {/* Summary details */}
+                  <div
+                    style={{
+                      background: '#ffffff',
+                      border: '1px solid rgba(197, 160, 89, 0.25)',
+                      borderRadius: '10px',
+                      padding: '16px',
+                      textAlign: 'left',
+                      fontSize: '12.5px',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '8px',
+                      marginBottom: '22px'
+                    }}
+                  >
+                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <span style={{ color: '#7a7065' }}>Contact Number:</span>
+                      <strong style={{ color: '#1c1813' }}>{formData.phone}</strong>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <span style={{ color: '#7a7065' }}>Dimensions:</span>
+                      <strong style={{ color: '#1c1813' }}>{formData.width || 'Custom'} W × {formData.depth || 'Custom'} D × {formData.height || 'Custom'} H</strong>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <span style={{ color: '#7a7065' }}>Location:</span>
+                      <strong style={{ color: '#1c1813' }}>{formData.city || 'Private Patron'}</strong>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <span style={{ color: '#7a7065' }}>Selected Stone:</span>
+                      <strong style={{ color: '#b08a4f' }}>{formData.stone?.split('(')[0]?.trim()}</strong>
+                    </div>
+                  </div>
+
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                    <a
+                      href={`https://wa.me/917597417274?text=${encodeURIComponent(`Namaste A.F.G Marble & Arts, checking on my 2D CAD Consultation [${inquiryId}] for ${formData.name}.`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '10px',
+                        padding: '14px 22px',
+                        background: 'linear-gradient(135deg, #25D366 0%, #1ebe5d 100%)',
+                        color: '#ffffff',
+                        borderRadius: '999px',
+                        fontSize: '13.5px',
+                        fontWeight: 600,
+                        textDecoration: 'none',
+                        boxShadow: '0 8px 24px rgba(37, 211, 102, 0.4)',
+                      }}
+                    >
+                      <MessageSquare size={16} />
+                      <span>Chat Directly on WhatsApp</span>
+                    </a>
+
+                    <button
+                      type="button"
+                      onClick={handleReset}
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '6px',
+                        padding: '11px',
+                        background: 'transparent',
+                        border: '1px solid rgba(197, 160, 89, 0.4)',
+                        color: '#5c5246',
+                        borderRadius: '999px',
+                        fontSize: '12.5px',
+                        fontWeight: 600,
+                        cursor: 'pointer'
+                      }}
+                    >
+                      <RotateCcw size={13} />
+                      <span>Submit Another Space Consultation</span>
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>

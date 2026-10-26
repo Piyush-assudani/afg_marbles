@@ -173,6 +173,57 @@ export default function ProductCard({ product, onOpenProduct, onOpenInquiry }) {
           </svg>
         </button>
 
+        {/* Floating Fullscreen Lightbox Button on Image */}
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            if (typeof window !== 'undefined' && window.afgOpenLightbox) {
+              window.afgOpenLightbox({
+                src: currentAngle.src,
+                title: product.title,
+                tag: `${product.primaryStone || 'Makrana Calcite'} · ${currentAngle.label || 'Master View'}`
+              });
+            }
+          }}
+          title="Fullscreen 4K Zoom"
+          aria-label="Fullscreen 4K Zoom"
+          style={{
+            position: 'absolute',
+            top: '14px',
+            right: angles.length > 1 ? '148px' : '52px',
+            zIndex: 4,
+            background: 'rgba(20, 16, 12, 0.82)',
+            backdropFilter: 'blur(8px)',
+            WebkitBackdropFilter: 'blur(8px)',
+            color: '#ecd39b',
+            width: '32px',
+            height: '32px',
+            borderRadius: '50%',
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            border: '1px solid rgba(212, 175, 55, 0.45)',
+            cursor: 'pointer',
+            transition: 'transform 0.2s ease, background 0.2s ease',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'scale(1.1)';
+            e.currentTarget.style.background = 'rgba(28, 24, 19, 0.95)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'scale(1)';
+            e.currentTarget.style.background = 'rgba(20, 16, 12, 0.82)';
+          }}
+        >
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.2">
+            <polyline points="15 3 21 3 21 9" />
+            <polyline points="9 21 3 21 3 15" />
+            <line x1="21" y1="3" x2="14" y2="10" />
+            <line x1="3" y1="21" x2="10" y2="14" />
+          </svg>
+        </button>
+
         <span
           className="product-angles-count-badge"
           style={{

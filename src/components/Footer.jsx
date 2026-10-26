@@ -18,185 +18,199 @@ export default function Footer() {
   };
 
   return (
-    <footer
-      className="footer"
-      id="footer"
-      style={{
-        background: 'radial-gradient(ellipse at top center, #181410 0%, #0d0b09 70%, #090806 100%)',
-        color: '#f5efe6',
-        padding: 'clamp(70px, 8vw, 110px) 0 40px',
-        borderTop: '2px solid rgba(197, 160, 89, 0.35)',
-        position: 'relative',
-        zIndex: 10,
-        overflow: 'hidden'
-      }}
-    >
-      <div className="sec-container">
-        {/* ============ PRE-FOOTER: ROYAL ATELIER COMMISSION BANNER (DARK LUXURY IMPERIAL THEME) ============ */}
-        <div
-          className="footer-royal-banner"
-          style={{
-            background: 'linear-gradient(145deg, #1f1913 0%, #14110d 60%, #0e0c09 100%)',
-            border: '1.5px solid rgba(197, 160, 89, 0.38)',
-            borderRadius: '20px',
-            padding: 'clamp(32px, 4.5vw, 52px)',
-            marginBottom: '64px',
-            boxShadow: '0 30px 80px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.08)',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '28px',
-            position: 'relative'
-          }}
-        >
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '28px' }}>
-            <div style={{ maxWidth: '720px' }}>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginBottom: '14px' }}>
-                <span style={{ color: '#c5a059', display: 'grid', placeItems: 'center' }}>
-                  <Award size={14} />
-                </span>
-                <span style={{ color: '#c5a059', fontSize: '11px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase' }}>
-                  A.F.G MARBLE &amp; ARTS · SILAWAT GUILD SINCE 1987
-                </span>
-              </div>
-              <h3 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(26px, 3.4vw, 38px)', color: '#fffdf9', margin: '0 0 14px', fontWeight: 500, letterSpacing: '-0.01em', lineHeight: 1.25 }}>
-                Commission Your Sacred Devotional Sanctuary
-              </h3>
-              <p style={{ fontSize: '14.5px', color: '#c7b9a5', margin: 0, lineHeight: 1.7 }}>
-                Whether you are envisioning a private villa pooja sanctum, a monumental Nagara temple, an estate cascading fountain, or a royal garden chhatri — our generational Silawat master sthapatis guide your commission from virgin quarry bedrock selection to consecrated doorstep assembly.
-              </p>
-            </div>
-
-            <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', alignItems: 'center' }}>
-              <a
-                href="https://wa.me/917597417274?text=Namaste%20AFG%20Marble,%20I%20would%20like%20to%20consult%20with%20a%20master%20sthapati%20for%20a%20bespoke%20marble%20mandir%20or%20fountain%20commission."
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '10px',
-                  padding: '14px 28px',
-                  background: 'linear-gradient(135deg, #0e8a79 0%, #086b5e 100%)',
-                  color: '#ffffff',
-                  borderRadius: '999px',
-                  fontSize: '13px',
-                  fontWeight: 600,
-                  letterSpacing: '0.04em',
-                  textDecoration: 'none',
-                  boxShadow: '0 8px 24px rgba(14, 138, 121, 0.4)',
-                  transition: 'transform 0.25s ease, box-shadow 0.25s ease'
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.transform = 'translateY(-2px)')}
-                onMouseLeave={(e) => (e.currentTarget.style.transform = 'translateY(0)')}
-              >
-                <span>Direct Sthapati WhatsApp</span>
-                <ArrowRight size={14} />
-              </a>
-
-              <Link
-                href="/bespoke-consultation"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  padding: '14px 26px',
-                  background: 'rgba(255, 255, 255, 0.05)',
-                  color: '#edd7a8',
-                  border: '1.5px solid rgba(197, 160, 89, 0.55)',
-                  borderRadius: '999px',
-                  fontSize: '13px',
-                  fontWeight: 600,
-                  letterSpacing: '0.04em',
-                  textDecoration: 'none',
-                  backdropFilter: 'blur(10px)',
-                  transition: 'background 0.25s ease, border-color 0.25s ease'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(197, 160, 89, 0.15)';
-                  e.currentTarget.style.borderColor = '#d4af37';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
-                  e.currentTarget.style.borderColor = 'rgba(197, 160, 89, 0.55)';
-                }}
-              >
-                <span>Request Free 2D CAD Blueprint</span>
-                <ArrowRight size={13} />
-              </Link>
-            </div>
-          </div>
-
-          {/* Four Imperial Quality Hallmarks in Dark Theme */}
+    <>
+      {/* ============ PRE-FOOTER: ROYAL ATELIER COMMISSION BANNER (LIGHT BACKGROUND TRANSITION UP TO HERE) ============ */}
+      <section
+        className="sec-footer-banner-zone"
+        style={{
+          background: 'linear-gradient(180deg, #fdfbf7 0%, #f6f1e7 100%)',
+          padding: 'clamp(54px, 6vw, 84px) 0 clamp(44px, 5vw, 68px)',
+          borderTop: '1px solid rgba(197, 160, 89, 0.22)',
+          position: 'relative',
+          zIndex: 5,
+        }}
+      >
+        <div className="sec-container">
           <div
+            className="footer-royal-banner"
             style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-              gap: '22px',
-              paddingTop: '28px',
-              borderTop: '1px solid rgba(197, 160, 89, 0.22)'
+              background: 'linear-gradient(145deg, #1f1913 0%, #14110d 60%, #0e0c09 100%)',
+              border: '1.5px solid rgba(197, 160, 89, 0.38)',
+              borderRadius: '20px',
+              padding: 'clamp(32px, 4.5vw, 52px)',
+              boxShadow: '0 25px 60px rgba(28, 22, 16, 0.18), 0 8px 20px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.08)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '28px',
+              position: 'relative'
             }}
           >
-            <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-              <span style={{ color: '#c5a059', display: 'grid', placeItems: 'center', marginTop: '2px' }}>
-                <CheckCircle2 size={16} />
-              </span>
-              <div>
-                <strong style={{ fontSize: '13.5px', color: '#fffdf9', display: 'block', marginBottom: '3px' }}>
-                  100% Makrana Calcite
-                </strong>
-                <span style={{ fontSize: '12px', color: '#a69888', lineHeight: 1.5, display: 'block' }}>
-                  Taj Mahal stratum (99.2% CaCO₃). Non-porous, zero yellowing under abhishek.
-                </span>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '28px' }}>
+              <div style={{ maxWidth: '720px' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginBottom: '14px' }}>
+                  <span style={{ color: '#c5a059', display: 'grid', placeItems: 'center' }}>
+                    <Award size={14} />
+                  </span>
+                  <span style={{ color: '#c5a059', fontSize: '11px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase' }}>
+                    A.F.G MARBLE &amp; ARTS · SILAWAT GUILD SINCE 1987
+                  </span>
+                </div>
+                <h3 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(26px, 3.4vw, 38px)', color: '#fffdf9', margin: '0 0 14px', fontWeight: 500, letterSpacing: '-0.01em', lineHeight: 1.25 }}>
+                  Commission Your Sacred Devotional Sanctuary
+                </h3>
+                <p style={{ fontSize: '14.5px', color: '#c7b9a5', margin: 0, lineHeight: 1.7 }}>
+                  Whether you are envisioning a private villa pooja sanctum, a monumental Nagara temple, an estate cascading fountain, or a royal garden chhatri — our generational Silawat master sthapatis guide your commission from virgin quarry bedrock selection to consecrated doorstep assembly.
+                </p>
+              </div>
+
+              <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', alignItems: 'center' }}>
+                <a
+                  href="https://wa.me/917597417274?text=Namaste%20AFG%20Marble,%20I%20would%20like%20to%20consult%20with%20a%20master%20sthapati%20for%20a%20bespoke%20marble%20mandir%20or%20fountain%20commission."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '10px',
+                    padding: '14px 28px',
+                    background: 'linear-gradient(135deg, #25D366 0%, #1ebe5d 100%)',
+                    color: '#ffffff',
+                    borderRadius: '999px',
+                    fontSize: '13px',
+                    fontWeight: 600,
+                    letterSpacing: '0.04em',
+                    textDecoration: 'none',
+                    boxShadow: '0 8px 24px rgba(37, 211, 102, 0.42)',
+                    transition: 'transform 0.25s ease, box-shadow 0.25s ease'
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.transform = 'translateY(-2px)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.transform = 'translateY(0)')}
+                >
+                  <span>Direct Sthapati WhatsApp</span>
+                  <ArrowRight size={14} />
+                </a>
+
+                <Link
+                  href="/bespoke-consultation"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    padding: '14px 26px',
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    color: '#edd7a8',
+                    border: '1.5px solid rgba(197, 160, 89, 0.55)',
+                    borderRadius: '999px',
+                    fontSize: '13px',
+                    fontWeight: 600,
+                    letterSpacing: '0.04em',
+                    textDecoration: 'none',
+                    backdropFilter: 'blur(10px)',
+                    transition: 'background 0.25s ease, border-color 0.25s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'rgba(197, 160, 89, 0.15)';
+                    e.currentTarget.style.borderColor = '#d4af37';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
+                    e.currentTarget.style.borderColor = 'rgba(197, 160, 89, 0.55)';
+                  }}
+                >
+                  <span>Request Free 2D CAD Blueprint</span>
+                  <ArrowRight size={13} />
+                </Link>
               </div>
             </div>
 
-            <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-              <span style={{ color: '#c5a059', display: 'grid', placeItems: 'center', marginTop: '2px' }}>
-                <CheckCircle2 size={16} />
-              </span>
-              <div>
-                <strong style={{ fontSize: '13.5px', color: '#fffdf9', display: 'block', marginBottom: '3px' }}>
-                  100% Yard Pre-Assembly
-                </strong>
-                <span style={{ fontSize: '12px', color: '#a69888', lineHeight: 1.5, display: 'block' }}>
-                  Full dry-joint erection in Jaipur yard with live 4K video inspection before freight.
+            {/* Four Imperial Quality Hallmarks in Dark Theme */}
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+                gap: '22px',
+                paddingTop: '28px',
+                borderTop: '1px solid rgba(197, 160, 89, 0.22)'
+              }}
+            >
+              <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                <span style={{ color: '#c5a059', display: 'grid', placeItems: 'center', marginTop: '2px' }}>
+                  <CheckCircle2 size={16} />
                 </span>
+                <div>
+                  <strong style={{ fontSize: '13.5px', color: '#fffdf9', display: 'block', marginBottom: '3px' }}>
+                    100% Makrana Calcite
+                  </strong>
+                  <span style={{ fontSize: '12px', color: '#a69888', lineHeight: 1.5, display: 'block' }}>
+                    Taj Mahal stratum (99.2% CaCO₃). Non-porous, zero yellowing under abhishek.
+                  </span>
+                </div>
               </div>
-            </div>
 
-            <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-              <span style={{ color: '#c5a059', display: 'grid', placeItems: 'center', marginTop: '2px' }}>
-                <CheckCircle2 size={16} />
-              </span>
-              <div>
-                <strong style={{ fontSize: '13.5px', color: '#fffdf9', display: 'block', marginBottom: '3px' }}>
-                  ISPM-15 Timber Crating
-                </strong>
-                <span style={{ fontSize: '12px', color: '#a69888', lineHeight: 1.5, display: 'block' }}>
-                  Fumigated pine crates, 50mm shock foam cradles, and full marine transit insurance.
+              <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                <span style={{ color: '#c5a059', display: 'grid', placeItems: 'center', marginTop: '2px' }}>
+                  <CheckCircle2 size={16} />
                 </span>
+                <div>
+                  <strong style={{ fontSize: '13.5px', color: '#fffdf9', display: 'block', marginBottom: '3px' }}>
+                    100% Yard Pre-Assembly
+                  </strong>
+                  <span style={{ fontSize: '12px', color: '#a69888', lineHeight: 1.5, display: 'block' }}>
+                    Full dry-joint erection in Jaipur yard with live 4K video inspection before freight.
+                  </span>
+                </div>
               </div>
-            </div>
 
-            <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-              <span style={{ color: '#c5a059', display: 'grid', placeItems: 'center', marginTop: '2px' }}>
-                <CheckCircle2 size={16} />
-              </span>
-              <div>
-                <strong style={{ fontSize: '13.5px', color: '#fffdf9', display: 'block', marginBottom: '3px' }}>
-                  White-Glove Global Setup
-                </strong>
-                <span style={{ fontSize: '12px', color: '#a69888', lineHeight: 1.5, display: 'block' }}>
-                  Dedicated master artisan crew dispatched for turnkey installation across 28+ nations.
+              <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                <span style={{ color: '#c5a059', display: 'grid', placeItems: 'center', marginTop: '2px' }}>
+                  <CheckCircle2 size={16} />
                 </span>
+                <div>
+                  <strong style={{ fontSize: '13.5px', color: '#fffdf9', display: 'block', marginBottom: '3px' }}>
+                    ISPM-15 Timber Crating
+                  </strong>
+                  <span style={{ fontSize: '12px', color: '#a69888', lineHeight: 1.5, display: 'block' }}>
+                    Fumigated pine crates, 50mm shock foam cradles, and full marine transit insurance.
+                  </span>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                <span style={{ color: '#c5a059', display: 'grid', placeItems: 'center', marginTop: '2px' }}>
+                  <CheckCircle2 size={16} />
+                </span>
+                <div>
+                  <strong style={{ fontSize: '13.5px', color: '#fffdf9', display: 'block', marginBottom: '3px' }}>
+                    White-Glove Global Setup
+                  </strong>
+                  <span style={{ fontSize: '12px', color: '#a69888', lineHeight: 1.5, display: 'block' }}>
+                    Dedicated master artisan crew dispatched for turnkey installation across 28+ nations.
+                  </span>
+                </div>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* ============ MAIN MULTI-COLUMN ARCHITECTURAL DIRECTORY ============ */}
-        <div
-          className="footer-directory-grid"
+      {/* ============ MAIN ROYAL DARK FOOTER (DARK THEME STARTS HERE) ============ */}
+      <footer
+        className="footer"
+        id="footer"
+        style={{
+          background: 'radial-gradient(ellipse at top center, #181410 0%, #0d0b09 70%, #090806 100%)',
+          color: '#f5efe6',
+          padding: 'clamp(60px, 7vw, 95px) 0 40px',
+          borderTop: '2px solid rgba(197, 160, 89, 0.35)',
+          position: 'relative',
+          zIndex: 10,
+          overflow: 'hidden'
+        }}
+      >
+        <div className="sec-container">
+          {/* ============ MAIN MULTI-COLUMN ARCHITECTURAL DIRECTORY ============ */}
+          <div
+            className="footer-directory-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: '1.4fr 1fr 1fr 1.1fr 1.1fr',
@@ -393,8 +407,16 @@ export default function Footer() {
             gap: '16px'
           }}
         >
-          <p style={{ margin: 0, color: '#9e9080' }}>
-            &copy; {new Date().getFullYear()} A.F.G Marble &amp; Arts. All rights reserved. Handcrafted with sacred reverence by Generational Silawats in Makrana &amp; Jaipur, Rajasthan.
+          <p style={{ margin: 0, color: '#9e9080', fontSize: '12.5px', lineHeight: 1.6 }}>
+            &copy; 2026 MAA AAINATH GOU SEVA SAMITI BALOTRA. All rights reserved. Powered by{' '}
+            <a
+              href="https://morihix.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: '#ecd39b', textDecoration: 'underline', textUnderlineOffset: '3px', fontWeight: 600 }}
+            >
+              Morihix Private Limited
+            </a>
           </p>
 
           <div style={{ display: 'flex', gap: '18px', alignItems: 'center', flexWrap: 'wrap' }}>
@@ -457,5 +479,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+  </>
   );
 }

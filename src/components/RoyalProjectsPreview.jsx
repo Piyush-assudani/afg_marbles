@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import { MapPin } from 'lucide-react';
+import { MapPin, Maximize2 } from 'lucide-react';
 
 const LANDMARKS = [
   {
@@ -118,7 +118,18 @@ export default function RoyalProjectsPreview() {
           }}
         >
           {/* Image Side */}
-          <div style={{ position: 'relative', minHeight: '360px', backgroundColor: '#181511' }}>
+          <div
+            onClick={() => {
+              if (typeof window !== 'undefined' && window.afgOpenLightbox) {
+                window.afgOpenLightbox({
+                  src: current.image,
+                  title: `${current.title} (${current.city})`,
+                  tag: `${current.type} · ${current.stone}`
+                });
+              }
+            }}
+            style={{ position: 'relative', minHeight: '360px', backgroundColor: '#181511', cursor: 'zoom-in' }}
+          >
             <img
               src={current.image}
               alt={current.title}
@@ -141,6 +152,43 @@ export default function RoyalProjectsPreview() {
             >
               {current.type}
             </span>
+
+            {/* Floating Fullscreen Trigger Badge */}
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                if (typeof window !== 'undefined' && window.afgOpenLightbox) {
+                  window.afgOpenLightbox({
+                    src: current.image,
+                    title: `${current.title} (${current.city})`,
+                    tag: `${current.type} · ${current.stone}`
+                  });
+                }
+              }}
+              title="Fullscreen 4K Zoom"
+              aria-label="Fullscreen 4K Zoom"
+              style={{
+                position: 'absolute',
+                top: '16px',
+                right: '16px',
+                background: 'rgba(28, 24, 19, 0.85)',
+                backdropFilter: 'blur(8px)',
+                color: '#ecd39b',
+                padding: '6px 12px',
+                borderRadius: '999px',
+                fontSize: '11px',
+                fontWeight: 600,
+                border: '1px solid rgba(212, 175, 55, 0.4)',
+                cursor: 'pointer',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '5px'
+              }}
+            >
+              <Maximize2 size={12} />
+              <span>Zoom 4K</span>
+            </button>
           </div>
 
           {/* Details Side */}
@@ -203,9 +251,20 @@ export default function RoyalProjectsPreview() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-outline-gold"
-                style={{ borderColor: 'rgba(212, 175, 55, 0.4)', color: '#ecd39b' }}
+                style={{
+                  background: 'rgba(26, 21, 16, 0.88)',
+                  borderColor: '#d8bb84',
+                  color: '#ffffff',
+                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.35)',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                }}
               >
-                <span>WhatsApp Sthapati</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="#25D366">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.074-1.803-.412-1.493-.623-2.457-2.148-2.531-2.249-.074-.099-.607-.808-.607-1.543s.385-1.096.521-1.246c.137-.149.3-.187.4-.187.1 0 .2.001.288.006.096.005.226-.036.353.27.13.315.444 1.085.483 1.164.039.08.065.174.013.277-.052.104-.078.169-.156.259-.078.091-.164.202-.234.271-.078.078-.16.162-.069.319.091.156.404.667.868 1.08.597.532 1.099.697 1.255.775.156.078.247.065.338-.039.091-.104.39-.455.494-.611.104-.156.208-.13.351-.078.143.052.909.429 1.065.507.156.078.26.117.299.182.039.065.039.378-.105.783z" />
+                </svg>
+                <span style={{ fontWeight: 600, color: '#ffffff' }}>WhatsApp Sthapati</span>
               </a>
             </div>
           </div>

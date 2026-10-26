@@ -290,13 +290,69 @@ export default function HomePage() {
       <section className="sec-workshop-teaser" style={{ padding: '80px 0' }}>
         <div className="sec-container">
           <div className="page-grid-2">
-            <div className="page-media-frame" style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 20px 50px rgba(28,24,19,0.18)' }}>
+            <div
+              className="page-media-frame"
+              onClick={() => {
+                if (typeof window !== 'undefined' && window.afgOpenLightbox) {
+                  window.afgOpenLightbox({
+                    src: '/gallery/sanctum-royal-mandir-room.webp',
+                    title: 'Silawat Master Sculptor Artisanal Sanctum Suite',
+                    tag: 'Jaipur & Makrana Master Atelier Lineage'
+                  });
+                }
+              }}
+              style={{
+                borderRadius: '16px',
+                overflow: 'hidden',
+                boxShadow: '0 20px 50px rgba(28,24,19,0.18)',
+                cursor: 'zoom-in',
+                position: 'relative'
+              }}
+            >
               <img
                 src="/gallery/sanctum-royal-mandir-room.webp"
                 alt="Silawat Master Sculptor Artisanal Sanctum Suite"
                 loading="lazy"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }}
               />
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (typeof window !== 'undefined' && window.afgOpenLightbox) {
+                    window.afgOpenLightbox({
+                      src: '/gallery/sanctum-royal-mandir-room.webp',
+                      title: 'Silawat Master Sculptor Artisanal Sanctum Suite',
+                      tag: 'Jaipur & Makrana Master Atelier Lineage'
+                    });
+                  }
+                }}
+                style={{
+                  position: 'absolute',
+                  top: '16px',
+                  right: '16px',
+                  background: 'rgba(20, 17, 14, 0.88)',
+                  color: '#ecd39b',
+                  border: '1px solid rgba(176,138,79,0.4)',
+                  padding: '6px 14px',
+                  borderRadius: '999px',
+                  fontSize: '11px',
+                  fontWeight: 600,
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  backdropFilter: 'blur(8px)',
+                  cursor: 'pointer'
+                }}
+              >
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2.4">
+                  <polyline points="15 3 21 3 21 9" />
+                  <polyline points="9 21 3 21 3 15" />
+                  <line x1="21" y1="3" x2="14" y2="10" />
+                  <line x1="3" y1="21" x2="10" y2="14" />
+                </svg>
+                <span>Zoom 4K</span>
+              </button>
               <div className="media-caption-badge" style={{ position: 'absolute', bottom: '16px', left: '16px', background: 'rgba(20, 17, 14, 0.88)', color: '#ecd39b', padding: '7px 16px', borderRadius: '6px', fontSize: '11px', fontWeight: 600, letterSpacing: '0.08em', border: '1px solid rgba(176,138,79,0.35)' }}>
                 ✦ Jaipur &amp; Makrana Master Atelier Lineage
               </div>
