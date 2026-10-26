@@ -3,11 +3,208 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 // A.F.G Marble & Arts - Royal Bespoke Navbar (Validated 100% Clean JSX)
+const MEGA_STONEWORKS = [
+  {
+    num: '01',
+    title: 'Pooja Rooms & Sanctums',
+    subtitle: 'Sacred Mandirs & Home Shrines',
+    href: '/pooja-sanctums',
+    badge: 'FLAGSHIP SANCTUM',
+    previewImage: '/gallery/img_7237.webp',
+    previewTitle: 'Consecrated Pooja Sanctums',
+    previewDesc: 'Monolithic pure Makrana calcite bedrock mandirs with multi-tier shikharas, carved toranas, and consecrated garbhagrihas.',
+    ctaText: 'Explore Pooja Sanctums'
+  },
+  {
+    num: '02',
+    title: 'Palatial Estate Fountains',
+    subtitle: 'Cascading Tiered Water Architecture',
+    href: '/palatial-fountains',
+    badge: 'WATER ARCHITECTURE',
+    previewImage: '/gallery/fountain-palatial-estate-triple-tier-lawn.webp',
+    previewTitle: 'Palatial Cascading Fountains',
+    previewDesc: 'Carved from dense Rajnagar hydraulic white marble. Engineered for continuous water sheeting, zero algae, and freeze resilience.',
+    ctaText: 'Explore Estate Fountains'
+  },
+  {
+    num: '03',
+    title: 'Royal Chhatris & Pavilions',
+    subtitle: 'Carved Ribbed Domes & Gazebos',
+    href: '/heritage-chhatris',
+    badge: 'ROYAL HERITAGE',
+    previewImage: '/gallery/royal-chhatri-garden-pavilion.webp',
+    previewTitle: 'Imperial Rajput Chhatris',
+    previewDesc: 'Monumental garden pavilions with monolithic fluted columns, cusped torana arches, and ribbed interlocking domes.',
+    ctaText: 'Explore Royal Pavilions'
+  },
+  {
+    num: '04',
+    title: 'Consecrated Marble Deities',
+    subtitle: 'Single-Block Makrana Murti Carving',
+    href: '/marble-deities',
+    badge: 'SACRED PRATISHTHA',
+    previewImage: '/gallery/deity-radha-krishna-makrana-sculpture.webp',
+    previewTitle: 'Consecrated Murti Statues',
+    previewDesc: 'Hand-sculpted by hereditary Silawat murtikars adhering to sacred Vedic Shilpa Shastra facial and body iconometry.',
+    ctaText: 'Explore Sacred Deities'
+  },
+  {
+    num: '05',
+    title: 'Pietra Dura Gemstone Inlay',
+    subtitle: 'Taj Mahal Parchin Kari Art',
+    href: '/pietra-dura-inlay',
+    badge: 'PARCHIN KARI',
+    previewImage: '/gallery/inlay-pietra-dura-peacock-medallion.webp',
+    previewTitle: 'Imperial Gemstone Inlay',
+    previewDesc: 'Semi-precious lapis lazuli, malachite, jasper, and mother-of-pearl micro-inlaid into flawless Makrana white marble.',
+    ctaText: 'Explore Inlay Art'
+  },
+  {
+    num: '06',
+    title: 'Pierced Jaali Screens',
+    subtitle: 'Lattice Partitions & Facades',
+    href: '/jaali-screens',
+    badge: 'ARCHITECTURAL LATTICE',
+    previewImage: '/gallery/jaali-geometric-hexagonal-lattice.webp',
+    previewTitle: 'Carved Marble Jaalis',
+    previewDesc: 'Geometric, floral, and chevron pierced lattice screens for sacred room partitions, architectural ventilation, and light play.',
+    ctaText: 'Explore Jaali Screens'
+  }
+];
+
+const MEGA_ARCHITECTURE = [
+  {
+    num: '07',
+    title: 'Ayadi Vastu Architecture',
+    subtitle: 'Sacred Formulas & Proportions',
+    href: '/ayadi-vastu-shastra',
+    badge: 'STHAPATYA VEDA',
+    previewImage: '/gallery/sanctum-shikhara-amalaka-apex.webp',
+    previewTitle: 'Vedic Ayadi Calculations',
+    previewDesc: 'Exact 6-formula Ayadi mathematical harmonics ensuring your sanctum dimensions bring lifelong spiritual peace and prosperity.',
+    ctaText: 'Learn Ayadi Science'
+  },
+  {
+    num: '08',
+    title: 'Silawat Guild Workshop',
+    subtitle: '5-Stage Hand-Carving Lineage',
+    href: '/atelier-workshop',
+    badge: 'MASTER GUILD',
+    previewImage: '/gallery/atelier-yard-preassembly.webp',
+    previewTitle: 'Silawat Carving Pavilion',
+    previewDesc: 'Generational master stone-masons chiseling pure bedrock using sacred hand techniques passed down across four generations.',
+    ctaText: 'Tour Jaipur Atelier'
+  },
+  {
+    num: '09',
+    title: 'Makrana Calcite Stone Guide',
+    subtitle: '99% Pure CaCO3 Bedrock Science',
+    href: '/materials-guide',
+    badge: 'CALCITE PURITY',
+    previewImage: '/gallery/stone-makrana-calcite-slab.webp',
+    previewTitle: 'Taj Mahal Bedrock Purity',
+    previewDesc: '99.2% pure calcium carbonate calcite with 0.02% porosity. Impervious to puja ghee, daily milk abhishek, and yellowing.',
+    ctaText: 'Inspect Stone Science'
+  },
+  {
+    num: '10',
+    title: '100% Pre-Assembly Yard',
+    subtitle: 'Dry Fitment & Video Signoff',
+    href: '/pre-assembly-trial',
+    badge: 'VERIFIED DRY-FIT',
+    previewImage: '/gallery/yard-dryfit-raw-calcite-mandir.webp',
+    previewTitle: 'Jaipur Fitment Verification',
+    previewDesc: 'Every single component is 100% test-assembled in our Jaipur yard with 4K video inspection and centimeter ruler signoff.',
+    ctaText: 'Explore Yard Protocols'
+  },
+  {
+    num: '11',
+    title: 'Worldwide Crating & Export',
+    subtitle: 'ISPM-15 Crates & White-Glove Setup',
+    href: '/global-shipping',
+    badge: 'GLOBAL LOGISTICS',
+    previewImage: '/gallery/atelier-ispm15-crating-export.webp',
+    previewTitle: 'Turnkey International Setup',
+    previewDesc: 'Fumigated ISPM-15 pine crating with high-density EVA shock protection and door-to-door turnkey installation in 28+ nations.',
+    ctaText: 'View Crating Details'
+  },
+  {
+    num: '12',
+    title: 'Temple Care & Abhishek Guide',
+    subtitle: 'Daily Ritual Protocols & Upkeep',
+    href: '/temple-maintenance-guide',
+    badge: 'DEVOTIONAL CARE',
+    previewImage: '/gallery/sanctum-ambient-glow.webp',
+    previewTitle: 'Daily Sacred Ritual Guide',
+    previewDesc: 'Master artisan protocols for daily milk, honey, panchamrit, and camphor aarti upkeep without dulling natural marble luster.',
+    ctaText: 'Read Care Guide'
+  }
+];
+
+const MEGA_SERVICES = [
+  {
+    num: '13',
+    title: '2D CAD Space Consultation',
+    subtitle: 'Custom Dimensions to Blueprint',
+    href: '/bespoke-consultation',
+    badge: '2D BLUEPRINT DESK',
+    previewImage: '/gallery/mandir-temple-cad-plan.webp',
+    previewTitle: 'Bespoke 2D CAD Blueprint',
+    previewDesc: 'Share your room dimensions down to the centimeter. Receive a custom 2D architectural elevation blueprint within 24 hours.',
+    ctaText: 'Request Free 2D Layout'
+  },
+  {
+    num: '14',
+    title: 'Royal Heritage Portfolio',
+    subtitle: 'Completed Global Landmark Projects',
+    href: '/royal-projects',
+    badge: 'LANDMARK COMMISSIONS',
+    previewImage: '/gallery/fountain-courtyard-circular.webp',
+    previewTitle: 'Royal Private Commissions',
+    previewDesc: 'Completed landmark palace fountains, private estate sanctums, and heritage monuments across London, Dubai, and India.',
+    ctaText: 'Explore Portfolio'
+  },
+  {
+    num: '15',
+    title: 'Quarry Science & Purity',
+    subtitle: 'Four Makrana Veins & Lab Data',
+    href: '/makrana-calcite-mine',
+    badge: 'SUBTERRANEAN MINES',
+    previewImage: '/gallery/atelier-quarry-selection-block.webp',
+    previewTitle: 'Chak Dungri & Albeta Mines',
+    previewDesc: '350ft subterranean bedrock extraction in Makrana, Rajasthan with certified ultrasonic pulse velocity laboratory readings.',
+    ctaText: 'Inspect Quarry Veins'
+  },
+  {
+    num: '16',
+    title: 'About AFG Guild Heritage',
+    subtitle: 'Generational Silawat Master Artisans',
+    href: '/about-afg',
+    badge: 'FOUNDED 1987',
+    previewImage: '/gallery/mandir-artisan-install.webp',
+    previewTitle: 'Four Generations of Silawats',
+    previewDesc: 'Living lineage of traditional stone-carvers preserving sovereign Indian temple architecture and sacred marble carving craft.',
+    ctaText: 'Read Our Story'
+  },
+  {
+    num: '17',
+    title: 'Jaipur & Makrana Studios',
+    subtitle: 'Studio Walkthroughs & Visits',
+    href: '/contact',
+    badge: 'VISIT ATELIER',
+    previewImage: '/gallery/sanctum-royal-mandir-room.webp',
+    previewTitle: 'Visit Our Rajasthan Ateliers',
+    previewDesc: 'Schedule a private patron walkthrough in Jaipur or Makrana to inspect live pre-assembly dry-fits and raw bedrock blocks.',
+    ctaText: 'Book Private Visit'
+  }
+];
+
 export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
   const pathname = usePathname();
   const [internalScrolled, setInternalScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [megaMenuOpen, setMegaMenuOpen] = useState(false);
+  const [activePreview, setActivePreview] = useState(MEGA_STONEWORKS[0]);
   const megaMenuTimeout = useRef(null);
 
   useEffect(() => {
@@ -106,60 +303,17 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
                   <div className="mega-menu__col">
                     <span className="mega-menu__header">01 MASTER STONEWORKS</span>
                     <ul className="mega-links-list">
-                      <li>
-                        <Link href="/pooja-sanctums" onClick={() => setMegaMenuOpen(false)}>
-                          <span className="mega-num">01</span>
-                          <div className="mega-item-info">
-                            <strong>Pooja Rooms &amp; Sanctums</strong>
-                            <span>Sacred Mandirs &amp; Home Shrines</span>
-                          </div>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/palatial-fountains" onClick={() => setMegaMenuOpen(false)}>
-                          <span className="mega-num">02</span>
-                          <div className="mega-item-info">
-                            <strong>Palatial Estate Fountains</strong>
-                            <span>Cascading Tiered Water Architecture</span>
-                          </div>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/heritage-chhatris" onClick={() => setMegaMenuOpen(false)}>
-                          <span className="mega-num">03</span>
-                          <div className="mega-item-info">
-                            <strong>Royal Chhatris &amp; Pavilions</strong>
-                            <span>Carved Ribbed Domes &amp; Gazebos</span>
-                          </div>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/marble-deities" onClick={() => setMegaMenuOpen(false)}>
-                          <span className="mega-num">04</span>
-                          <div className="mega-item-info">
-                            <strong>Consecrated Marble Deities</strong>
-                            <span>Single-Block Makrana Murti Carving</span>
-                          </div>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/pietra-dura-inlay" onClick={() => setMegaMenuOpen(false)}>
-                          <span className="mega-num">05</span>
-                          <div className="mega-item-info">
-                            <strong>Pietra Dura Gemstone Inlay</strong>
-                            <span>Taj Mahal Parchin Kari Art</span>
-                          </div>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/jaali-screens" onClick={() => setMegaMenuOpen(false)}>
-                          <span className="mega-num">06</span>
-                          <div className="mega-item-info">
-                            <strong>Pierced Jaali Screens</strong>
-                            <span>Lattice Partitions &amp; Facades</span>
-                          </div>
-                        </Link>
-                      </li>
+                      {MEGA_STONEWORKS.map((item) => (
+                        <li key={item.num} onMouseEnter={() => setActivePreview(item)}>
+                          <Link href={item.href} onClick={() => setMegaMenuOpen(false)}>
+                            <span className="mega-num">{item.num}</span>
+                            <div className="mega-item-info">
+                              <strong>{item.title}</strong>
+                              <span>{item.subtitle}</span>
+                            </div>
+                          </Link>
+                        </li>
+                      ))}
                     </ul>
                   </div>
 
@@ -167,60 +321,17 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
                   <div className="mega-menu__col">
                     <span className="mega-menu__header">02 SACRED ARCHITECTURE</span>
                     <ul className="mega-links-list">
-                      <li>
-                        <Link href="/ayadi-vastu-shastra" onClick={() => setMegaMenuOpen(false)}>
-                          <span className="mega-num">07</span>
-                          <div className="mega-item-info">
-                            <strong>Ayadi Vastu Architecture</strong>
-                            <span>Sacred Formulas &amp; Proportions</span>
-                          </div>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/atelier-workshop" onClick={() => setMegaMenuOpen(false)}>
-                          <span className="mega-num">08</span>
-                          <div className="mega-item-info">
-                            <strong>Silawat Guild Workshop</strong>
-                            <span>5-Stage Hand-Carving Lineage</span>
-                          </div>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/materials-guide" onClick={() => setMegaMenuOpen(false)}>
-                          <span className="mega-num">09</span>
-                          <div className="mega-item-info">
-                            <strong>Makrana Calcite Stone Guide</strong>
-                            <span>99% Pure CaCO3 Bedrock Science</span>
-                          </div>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/pre-assembly-trial" onClick={() => setMegaMenuOpen(false)}>
-                          <span className="mega-num">10</span>
-                          <div className="mega-item-info">
-                            <strong>100% Pre-Assembly Yard</strong>
-                            <span>Dry Fitment &amp; Video Signoff</span>
-                          </div>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/global-shipping" onClick={() => setMegaMenuOpen(false)}>
-                          <span className="mega-num">11</span>
-                          <div className="mega-item-info">
-                            <strong>Worldwide Crating &amp; Export</strong>
-                            <span>ISPM-15 Crates &amp; White-Glove Setup</span>
-                          </div>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/temple-maintenance-guide" onClick={() => setMegaMenuOpen(false)}>
-                          <span className="mega-num">12</span>
-                          <div className="mega-item-info">
-                            <strong>Temple Care &amp; Abhishek Guide</strong>
-                            <span>Daily Ritual Protocols &amp; Upkeep</span>
-                          </div>
-                        </Link>
-                      </li>
+                      {MEGA_ARCHITECTURE.map((item) => (
+                        <li key={item.num} onMouseEnter={() => setActivePreview(item)}>
+                          <Link href={item.href} onClick={() => setMegaMenuOpen(false)}>
+                            <span className="mega-num">{item.num}</span>
+                            <div className="mega-item-info">
+                              <strong>{item.title}</strong>
+                              <span>{item.subtitle}</span>
+                            </div>
+                          </Link>
+                        </li>
+                      ))}
                     </ul>
                   </div>
 
@@ -228,71 +339,43 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
                   <div className="mega-menu__col">
                     <span className="mega-menu__header">03 PATRON SERVICES</span>
                     <ul className="mega-links-list">
-                      <li>
-                        <Link href="/bespoke-consultation" onClick={() => setMegaMenuOpen(false)}>
-                          <span className="mega-num">13</span>
-                          <div className="mega-item-info">
-                            <strong>2D CAD Space Consultation</strong>
-                            <span>Custom Dimensions to Blueprint</span>
-                          </div>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/royal-projects" onClick={() => setMegaMenuOpen(false)}>
-                          <span className="mega-num">14</span>
-                          <div className="mega-item-info">
-                            <strong>Royal Heritage Portfolio</strong>
-                            <span>Completed Global Landmark Projects</span>
-                          </div>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/makrana-calcite-mine" onClick={() => setMegaMenuOpen(false)}>
-                          <span className="mega-num">15</span>
-                          <div className="mega-item-info">
-                            <strong>Quarry Science &amp; Purity</strong>
-                            <span>Four Makrana Veins &amp; Lab Data</span>
-                          </div>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/about-afg" onClick={() => setMegaMenuOpen(false)}>
-                          <span className="mega-num">16</span>
-                          <div className="mega-item-info">
-                            <strong>About AFG Guild Heritage</strong>
-                            <span>Generational Silawat Master Artisans</span>
-                          </div>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/contact" onClick={() => setMegaMenuOpen(false)}>
-                          <span className="mega-num">17</span>
-                          <div className="mega-item-info">
-                            <strong>Jaipur &amp; Makrana Studios</strong>
-                            <span>Studio Walkthroughs &amp; Visits</span>
-                          </div>
-                        </Link>
-                      </li>
+                      {MEGA_SERVICES.map((item) => (
+                        <li key={item.num} onMouseEnter={() => setActivePreview(item)}>
+                          <Link href={item.href} onClick={() => setMegaMenuOpen(false)}>
+                            <span className="mega-num">{item.num}</span>
+                            <div className="mega-item-info">
+                              <strong>{item.title}</strong>
+                              <span>{item.subtitle}</span>
+                            </div>
+                          </Link>
+                        </li>
+                      ))}
                     </ul>
                   </div>
 
-                  {/* Column 4: Featured Showcase Card */}
+                  {/* Column 4: Dynamic Architectural Hover Preview Card */}
                   <div className="mega-menu__col-feature">
-                    <span className="mega-menu__header">2D ATELIER BLUEPRINT</span>
+                    <span className="mega-menu__header">ARCHITECTURAL PREVIEW</span>
                     <div className="mega-feature-card">
                       <div className="mega-feature-card__media">
-                        <img src="/gallery/sanctum-peacock-arch.webp" alt="Sanctum 2D CAD Blueprint" />
+                        <img
+                          key={activePreview.previewImage}
+                          src={activePreview.previewImage}
+                          alt={activePreview.previewTitle}
+                          className="mega-preview-fade-img"
+                        />
+                        <span className="mega-feature-card__badge">{activePreview.badge}</span>
                       </div>
                       <div className="mega-feature-card__body">
-                        <span className="mega-feature-card__badge">✦ 24-HOUR TURNAROUND</span>
-                        <h5>Bespoke 2D CAD Sanctum</h5>
-                        <p>Share your room dimensions down to the centimeter. Receive an architectural 2D CAD elevation blueprint.</p>
+                        <h5>{activePreview.previewTitle}</h5>
+                        <p>{activePreview.previewDesc}</p>
                         <Link
-                          href="/bespoke-consultation"
+                          href={activePreview.href}
                           className="mega-feature-card__cta"
                           onClick={() => setMegaMenuOpen(false)}
                         >
-                          Request Free 2D Layout →
+                          <span>{activePreview.ctaText || 'Explore Creation'}</span>
+                          <span>→</span>
                         </Link>
                       </div>
                     </div>

@@ -7279,27 +7279,27 @@ section, .sec-difference, .sec-pricing-philosophy, .sec-consultation-banner, .se
 
 .mega-menu {
   position: absolute;
-  top: calc(100% + 4px);
+  top: calc(100% + 6px);
   left: 50%;
   transform: translateX(-50%);
-  width: min(1180px, calc(100vw - 32px));
-  max-width: 1180px;
-  background: rgba(254, 252, 248, 0.98);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1.5px solid rgba(176, 138, 79, 0.32);
-  border-radius: 14px;
-  box-shadow: 0 24px 70px rgba(28, 24, 19, 0.16), 0 4px 18px rgba(176, 138, 79, 0.08);
+  width: min(1360px, calc(100vw - 32px));
+  max-width: 1360px;
+  background: rgba(255, 255, 255, 0.99);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1.5px solid rgba(176, 138, 79, 0.35);
+  border-radius: 18px;
+  box-shadow: 0 32px 85px rgba(22, 17, 12, 0.18), 0 6px 24px rgba(176, 138, 79, 0.1);
   z-index: 2500;
   overflow: hidden;
   box-sizing: border-box;
-  animation: megaDropdownSlide 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: megaDropdownSlide 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes megaDropdownSlide {
   from {
     opacity: 0;
-    transform: translate(-50%, -8px);
+    transform: translate(-50%, -10px);
   }
   to {
     opacity: 1;
@@ -7309,14 +7309,14 @@ section, .sec-difference, .sec-pricing-philosophy, .sec-consultation-banner, .se
 
 .mega-menu__inner {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) 245px;
-  padding: 16px 22px 18px;
-  gap: 16px;
-  align-items: start;
+  grid-template-columns: repeat(3, minmax(260px, 1fr)) 340px;
+  padding: 24px 28px 22px;
+  gap: 22px;
+  align-items: stretch;
   box-sizing: border-box;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1260px) {
   .mega-menu__inner {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -7339,24 +7339,21 @@ section, .sec-difference, .sec-pricing-philosophy, .sec-consultation-banner, .se
 
 .mega-menu__header {
   display: block;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #b08a4f;
-  margin-bottom: 10px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid rgba(176, 138, 79, 0.2);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  color: #9c7332;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(176, 138, 79, 0.22);
 }
 
 .mega-links-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
   margin: 0;
   padding: 0;
 }
@@ -7369,170 +7366,178 @@ section, .sec-difference, .sec-pricing-philosophy, .sec-consultation-banner, .se
 .mega-links-list li a {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 5px 8px;
-  border-radius: 6px;
+  gap: 12px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  border-left: 2px solid transparent;
   transition: all 0.2s ease;
   background: transparent;
   text-decoration: none;
-  white-space: normal !important;
   min-width: 0;
   box-sizing: border-box;
 }
 
 .mega-links-list li a:hover {
-  background: rgba(176, 138, 79, 0.09);
+  background: rgba(176, 138, 79, 0.08);
+  border-left-color: #b08a4f;
   transform: translateX(3px);
 }
 
 .mega-num {
   font-family: var(--display);
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 11.5px;
+  font-weight: 700;
   color: #b08a4f;
-  min-width: 18px;
-  opacity: 0.85;
+  min-width: 20px;
+  opacity: 0.9;
   flex-shrink: 0;
 }
 
 .mega-item-info {
   min-width: 0;
   flex: 1;
-  overflow: hidden;
 }
 
 .mega-item-info strong {
   display: block;
   font-family: var(--serif);
-  font-size: 12.5px;
+  font-size: 13.5px;
   color: #1c1813;
-  line-height: 1.25;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.3;
+  white-space: normal;
+  transition: color 0.2s ease;
+}
+
+.mega-links-list li a:hover .mega-item-info strong {
+  color: #8c6426;
 }
 
 .mega-item-info span {
   display: block;
-  font-size: 10px;
-  color: #6b5f52;
-  margin-top: 1px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: 11px;
+  color: #706252;
+  margin-top: 2px;
+  line-height: 1.35;
+  white-space: normal;
 }
 
 .mega-feature-card {
   display: flex;
   flex-direction: column;
-  background: #ffffff;
-  border-radius: 10px;
+  background: #fdfbf7;
+  border-radius: 14px;
   overflow: hidden;
-  border: 1px solid rgba(176, 138, 79, 0.28);
-  box-shadow: 0 4px 16px rgba(28, 24, 19, 0.08);
+  border: 1.5px solid rgba(176, 138, 79, 0.32);
+  box-shadow: 0 10px 30px rgba(28, 24, 19, 0.08);
   box-sizing: border-box;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  height: 100%;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .mega-feature-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(28, 24, 19, 0.12);
-  border-color: rgba(176, 138, 79, 0.45);
+  box-shadow: 0 14px 38px rgba(176, 138, 79, 0.18);
+  border-color: rgba(176, 138, 79, 0.55);
 }
 
 .mega-feature-card__media {
   position: relative;
   width: 100%;
-  height: 95px;
+  height: 175px;
   overflow: hidden;
-  background: #f4eee2;
+  background: #1a1612;
   flex-shrink: 0;
 }
 
-.mega-feature-card__media img {
+.mega-preview-fade-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  display: block;
+  animation: previewFadeIn 0.25s ease-out forwards;
 }
 
-.mega-feature-card:hover .mega-feature-card__media img {
-  transform: scale(1.05);
+@keyframes previewFadeIn {
+  from {
+    opacity: 0.6;
+    transform: scale(1.03);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .mega-feature-card__body {
-  padding: 10px 12px 12px;
+  padding: 14px 16px 16px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
   box-sizing: border-box;
+  flex: 1;
 }
 
 .mega-feature-card__badge {
-  display: inline-block;
-  align-self: flex-start;
+  position: absolute;
+  top: 10px;
+  left: 10px;
   font-family: var(--sans);
-  font-size: 8.5px;
+  font-size: 9px;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #8c6426;
-  background: rgba(176, 138, 79, 0.12);
-  padding: 2px 7px;
-  border-radius: 3px;
-  border: 1px solid rgba(176, 138, 79, 0.25);
-  margin-bottom: 2px;
+  color: #ecd39b;
+  background: rgba(20, 16, 12, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 4px 9px;
+  border-radius: 4px;
+  border: 1px solid rgba(212, 175, 55, 0.4);
 }
 
 .mega-feature-card__body h5 {
   font-family: var(--serif);
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   color: #1c1813;
   margin: 0;
-  line-height: 1.25;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.3;
 }
 
 .mega-feature-card__body p {
-  font-size: 10px;
-  color: #6b5f52;
-  line-height: 1.35;
-  margin: 0 0 6px 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  font-size: 11.5px;
+  color: #615344;
+  line-height: 1.5;
+  margin: 0 0 10px 0;
+  flex: 1;
 }
 
 .mega-feature-card__cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 8px;
   background: linear-gradient(135deg, #b88636 0%, #8c6220 100%);
   color: #ffffff !important;
   font-family: var(--sans);
-  font-size: 10.5px;
+  font-size: 11.5px;
   font-weight: 600;
-  letter-spacing: 0.03em;
-  padding: 8px 12px;
-  border-radius: 6px;
+  letter-spacing: 0.04em;
+  padding: 9px 16px;
+  border-radius: 999px;
   text-decoration: none;
   border: 1px solid rgba(176, 138, 79, 0.5);
-  box-shadow: 0 4px 12px rgba(184, 134, 63, 0.25);
+  box-shadow: 0 4px 14px rgba(184, 134, 63, 0.28);
   transition: all 0.2s ease;
-  white-space: nowrap;
   width: 100%;
   box-sizing: border-box;
   text-align: center;
+  margin-top: auto;
 }
 
 .mega-feature-card__cta:hover {
   background: linear-gradient(135deg, #1c1813 0%, #2e261e 100%);
   color: #ecd39b !important;
+  transform: translateY(-1px);
 }
 
 .mobile-nav-group-title {

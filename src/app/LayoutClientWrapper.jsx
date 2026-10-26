@@ -7,6 +7,7 @@ import QuickDock from '../components/QuickDock';
 import InquiryModal from '../components/InquiryModal';
 import ProductModal from '../components/ProductModal';
 import AtelierSoundscape from '../components/AtelierSoundscape';
+import CookieConsent from '../components/CookieConsent';
 
 export default function LayoutClientWrapper({ children }) {
   const [inquiryModalData, setInquiryModalData] = useState(null);
@@ -100,6 +101,9 @@ export default function LayoutClientWrapper({ children }) {
           <span>{toastMessage}</span>
         </div>
       )}
+
+      {/* Floating Patron Privacy & Cookie Charter Capsule */}
+      <CookieConsent />
     </>
   );
 }
