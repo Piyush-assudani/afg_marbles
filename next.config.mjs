@@ -38,6 +38,25 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      { source: '/fountains', destination: '/palatial-fountains', permanent: true },
+      { source: '/fountain', destination: '/palatial-fountains', permanent: true },
+      { source: '/palatial-fountain', destination: '/palatial-fountains', permanent: true },
+      { source: '/water-features', destination: '/palatial-fountains', permanent: true },
+      { source: '/water-architecture', destination: '/palatial-fountains', permanent: true },
+      { source: '/chhatris', destination: '/heritage-chhatris', permanent: true },
+      { source: '/chhatri', destination: '/heritage-chhatris', permanent: true },
+      { source: '/mandirs', destination: '/pooja-sanctums', permanent: true },
+      { source: '/mandir', destination: '/pooja-sanctums', permanent: true },
+      { source: '/temples', destination: '/pooja-sanctums', permanent: true },
+      { source: '/sanctums', destination: '/pooja-sanctums', permanent: true },
+      { source: '/sanctum', destination: '/pooja-sanctums', permanent: true },
+      { source: '/deities', destination: '/marble-deities', permanent: true },
+      { source: '/murtis', destination: '/marble-deities', permanent: true },
+      { source: '/murti', destination: '/marble-deities', permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;

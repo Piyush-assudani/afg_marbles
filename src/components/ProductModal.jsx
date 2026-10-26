@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { X } from 'lucide-react';
 
 export default function ProductModal({ product, onClose, onInquire, onToast }) {
   const [activeAngleIdx, setActiveAngleIdx] = useState(0);
@@ -97,7 +98,7 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
     <div className="product-modal-backdrop is-open" onClick={onClose}>
       <div className="product-modal is-open" onClick={(e) => e.stopPropagation()}>
         <button className="modal-close-btn" onClick={onClose} aria-label="Close product view">
-          ✕
+          <X size={18} />
         </button>
 
         <div className="product-modal__grid">

@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { Droplets, Flame, Building2, Crown, AlertTriangle, PackageCheck } from 'lucide-react';
 
 const TESTS = [
   {
@@ -12,7 +13,7 @@ const TESTS = [
     commercialValue: '0.85% Spongy Porosity',
     commercialResult: 'Absorbs abhishek milk into internal capillaries. Bacterial decomposition causes yellowish-brown sulfur stains and stale odor within 3 to 6 months.',
     commercialStatus: 'HIGH STAINING RISK',
-    icon: '🥛'
+    icon: Droplets
   },
   {
     id: 'aarti',
@@ -24,7 +25,7 @@ const TESTS = [
     commercialValue: 'Polyester Resin-Filled Micro-Voids',
     commercialResult: 'Commercial stones use epoxy resin fills in quarries. Aarti heat melts and discolors the resin, causing dark scorched halos and thermal fracture cracks.',
     commercialStatus: 'RESIN SCORCH RISK',
-    icon: '🔥'
+    icon: Flame
   },
   {
     id: 'longevity',
@@ -36,7 +37,7 @@ const TESTS = [
     commercialValue: 'Dolomitic Chalky Oxidation',
     commercialResult: 'Foreign and artificial marbles contain iron traces that oxidize into rusty yellow veins when exposed to air and light, permanently dulling reflection.',
     commercialStatus: 'OXIDATION & CHALKING',
-    icon: '🏛️'
+    icon: Building2
   }
 ];
 
@@ -107,7 +108,7 @@ export default function StonePurityLab({ onOpenInquiry }) {
                     boxShadow: isActive ? '0 6px 20px rgba(28, 24, 19, 0.18)' : 'none'
                   }}
                 >
-                  <span style={{ fontSize: '16px' }}>{test.icon}</span>
+                  <span style={{ display: 'grid', placeItems: 'center' }}><test.icon size={16} /></span>
                   <span>{test.title.split('&')[0]}</span>
                 </button>
               );
@@ -166,10 +167,9 @@ export default function StonePurityLab({ onOpenInquiry }) {
                   border: '2px solid #d4af37',
                   boxShadow: '0 3px 10px rgba(212, 175, 55, 0.3)',
                   display: 'grid',
-                  placeItems: 'center',
-                  fontSize: '18px'
+                  placeItems: 'center'
                 }}>
-                  👑
+                  <Crown size={20} color="#d4af37" />
                 </span>
                 <div>
                   <h4 style={{ fontFamily: 'var(--serif)', fontSize: '18px', color: '#1c1813', margin: 0 }}>
@@ -230,12 +230,12 @@ export default function StonePurityLab({ onOpenInquiry }) {
                   width: '42px',
                   height: '42px',
                   borderRadius: '50%',
-                  background: '#e0e0e0',
+                  background: '#fee2e2',
+                  border: '1px solid #ef4444',
                   display: 'grid',
-                  placeItems: 'center',
-                  fontSize: '18px'
+                  placeItems: 'center'
                 }}>
-                  ⚠️
+                  <AlertTriangle size={18} color="#dc2626" />
                 </span>
                 <div>
                   <h4 style={{ fontFamily: 'var(--serif)', fontSize: '18px', color: '#555555', margin: 0 }}>
@@ -281,7 +281,7 @@ export default function StonePurityLab({ onOpenInquiry }) {
             gap: '16px'
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-              <span style={{ fontSize: '28px' }}>📦</span>
+              <span style={{ display: 'grid', placeItems: 'center', color: '#b08a4f' }}><PackageCheck size={28} /></span>
               <div>
                 <strong style={{ fontSize: '14px', color: '#1c1813', display: 'block' }}>
                   Inspect the Crystalline Calcite Before You Commission

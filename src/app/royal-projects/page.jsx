@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { MapPin, Clock } from 'lucide-react';
 
 export const metadata = {
   title: 'Royal Heritage Projects & Private Estate Commissions | A.F.G Marble & Arts',
@@ -153,7 +154,8 @@ export default function RoyalProjectsPage() {
                     fontWeight: 600,
                   }}
                 >
-                  📍 {proj.location} · {proj.year}
+                  <MapPin size={12} style={{ display: 'inline', verticalAlign: '-1px', marginRight: '4px' }} />
+                  {proj.location} · {proj.year}
                 </span>
 
                 {/* Micro Preview Thumbnails */}
@@ -239,8 +241,8 @@ export default function RoyalProjectsPage() {
                     Artisan Execution &amp; Engineering
                   </h4>
                   <p style={{ fontSize: '14px', color: '#52473c', lineHeight: 1.6 }}>{proj.execution}</p>
-                  <p style={{ fontSize: '12px', color: '#7a6f62', marginTop: '6px', fontStyle: 'italic' }}>
-                    ⏱️ {proj.deliveryTime}
+                  <p style={{ fontSize: '12px', color: '#7a6f62', marginTop: '6px', fontStyle: 'italic', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <Clock size={12} /> {proj.deliveryTime}
                   </p>
                 </div>
 

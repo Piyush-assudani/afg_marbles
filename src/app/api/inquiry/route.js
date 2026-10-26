@@ -230,7 +230,7 @@ async function sendInquiryEmail(inquiry) {
   const emailRecord = {
     inquiryId: inquiry.id,
     to: recipient,
-    subject: `🔔 New Marble Inquiry: ${inquiry.name} (${inquiry.projectTitle || inquiry.stone})`,
+    subject: `New Marble Inquiry: ${inquiry.name} (${inquiry.projectTitle || inquiry.stone})`,
     html: htmlContent,
     timestamp: new Date().toISOString(),
     status: 'pending',

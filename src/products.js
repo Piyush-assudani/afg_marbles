@@ -742,8 +742,8 @@ export const PRODUCTS = [
       {
         label: 'Water Colonnade',
         tag: 'Colonnade',
-        src: '/gallery/fountain-colonnade-quad-elevation.webp',
-        desc: 'Multi-perspective view of carved marble basin and perimeter water jets.'
+        src: '/gallery/fountain-palatial-estate-triple-tier-lawn.webp',
+        desc: 'Monumental carved marble basin and perimeter water jets.'
       },
       {
         label: 'Cascade Spout',
@@ -859,7 +859,7 @@ export const PRODUCTS = [
       {
         label: 'Pavilion Elevation',
         tag: 'Garden View',
-        src: '/gallery/chhatri-makrana-pavilion-quad.webp',
+        src: '/gallery/royal-chhatri-garden-pavilion.webp',
         desc: 'Four-pillar garden pavilion with deeply cusped arches and raised marble platform.'
       },
       {

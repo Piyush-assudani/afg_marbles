@@ -38,7 +38,26 @@ export default function LayoutClientWrapper({ children }) {
     const cursor = document.getElementById('cursor');
     if (cursor) cursor.style.display = 'none';
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    // Deep-linking handler for #product/id
+    const handleHash = () => {
+      try {
+        const hash = window.location.hash;
+        if (hash && hash.startsWith('#product/')) {
+          const id = hash.replace('#product/', '').trim();
+          import('../products.js').then(({ PRODUCTS }) => {
+            const found = PRODUCTS.find((p) => p.id === id);
+            if (found) setProductModalData(found);
+          });
+        }
+      } catch (e) {}
+    };
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('hashchange', handleHash);
+    };
   }, []);
 
   return (

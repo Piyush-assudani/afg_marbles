@@ -29,10 +29,10 @@ const YARD_BAYS = [
     code: 'BAY 03 — CONSECRATED INSTALLATION PROOF',
     title: 'Patron Villa Completed Commission',
     location: 'Private Villa Sanctum Suite',
-    image: '/gallery/mandir-client-quad-installed-glow.webp',
+    image: '/gallery/mandir-artisan-install.webp',
     status: 'CONSECRATED & INSTALLED',
     inspector: 'Chief Sthapati Installation Guild',
-    project: 'Quad-Angle Luxury Villa Mandir Installation',
+    project: 'Luxury Villa Consecrated Sanctum Suite',
     details: 'Final consecrated installation in patron estate featuring warm 3000K indirect halo lighting, soft-close storage drawers, and matching carved singhasan.'
   },
   {
@@ -40,10 +40,10 @@ const YARD_BAYS = [
     code: 'BAY 04 — WATER PALACE FOUNTAIN COLONNADE',
     title: 'Multi-Perspective Fountain Hydraulic Test',
     location: 'Water Architecture Testing Grounds',
-    image: '/gallery/fountain-colonnade-quad-elevation.webp',
+    image: '/gallery/fountain-palatial-estate-triple-tier-lawn.webp',
     status: 'HYDRAULIC CERTIFIED',
     inspector: 'Senior Hydraulic Craftsman',
-    project: 'Four-Tier Scalloped Marble Fountain Colonnade',
+    project: 'Palatial Four-Tier Scalloped Marble Fountain',
     details: 'Laminar flow and zero-splash water sheeting verified across all 4 concentric tiers under variable pump pressure before international marine crating.'
   }
 ];

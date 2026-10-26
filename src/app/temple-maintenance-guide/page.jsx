@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { AlertTriangle } from 'lucide-react';
 
 export const metadata = {
   title: 'Sacred Marble Temple Care & Abhishek Maintenance Guide | A.F.G Marble & Arts',
@@ -126,8 +127,8 @@ export default function TempleMaintenanceGuidePage() {
                 <p style={{ fontSize: '14px', color: '#52473c', lineHeight: 1.7, marginBottom: '14px' }}>
                   {p.details}
                 </p>
-                <div style={{ fontSize: '12px', color: '#9e2a2b', fontWeight: 600 }}>
-                  ⚠️ Caution: {p.warning}
+                <div style={{ fontSize: '12px', color: '#9e2a2b', fontWeight: 600, display: 'flex', alignItems: 'center' }}>
+                  <AlertTriangle size={13} style={{ display: 'inline', verticalAlign: '-1px', marginRight: '6px', flexShrink: 0 }} /> Caution: {p.warning}
                 </div>
               </div>
             </div>

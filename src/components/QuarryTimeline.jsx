@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import { MapPin } from 'lucide-react';
 
 export default function QuarryTimeline() {
   const steps = [
@@ -78,7 +79,7 @@ export default function QuarryTimeline() {
                   </h3>
 
                   <div className="quarry-location">
-                    <span className="quarry-location__pin">📍</span>
+                    <span className="quarry-location__pin"><MapPin size={13} style={{ display: 'inline', verticalAlign: '-1px' }} /></span>
                     <span>{st.location}</span>
                   </div>
 

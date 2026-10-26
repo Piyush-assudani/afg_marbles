@@ -38,9 +38,9 @@ const ROW_ONE = [
     caption: 'Makrana Heritage Dome',
   },
   {
-    src: '/gallery/mandir-gold-leaf-mandap.webp',
-    alt: 'Intricate marble mandir mandap with real gold leaf gilding',
-    caption: 'Gold Leaf Mandap',
+    src: '/gallery/mandir-monumental-temple.webp',
+    alt: 'Monumental consecrated marble temple complex',
+    caption: 'Monumental Calcite Mandir',
   },
 ];
 

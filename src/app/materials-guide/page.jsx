@@ -86,7 +86,7 @@ export default function MaterialsGuidePage() {
           <div className="page-grid-2 reverse" style={{ marginTop: '64px' }}>
             <div className="page-media-frame">
               <img
-                src="/gallery/mandir-client-quad-installed-glow.webp"
+                src="/gallery/sanctum-ambient-glow.webp"
                 alt="Sacred Makrana Calcite Marble and Noble Stone Inlay"
                 loading="lazy"
               />

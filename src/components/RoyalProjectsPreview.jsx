@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import { MapPin } from 'lucide-react';
 
 const LANDMARKS = [
   {
@@ -97,7 +98,8 @@ export default function RoyalProjectsPreview() {
                 transition: 'all 0.25s ease',
               }}
             >
-              📍 {item.city}
+              <MapPin size={13} style={{ display: 'inline', verticalAlign: '-1px', marginRight: '4px' }} />
+              {item.city}
             </button>
           ))}
         </div>
@@ -143,8 +145,8 @@ export default function RoyalProjectsPreview() {
 
           {/* Details Side */}
           <div style={{ padding: '38px 40px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <span style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em', color: '#ecd39b', textTransform: 'uppercase', marginBottom: '8px' }}>
-              📍 {current.city}
+            <span style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em', color: '#ecd39b', textTransform: 'uppercase', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '5px' }}>
+              <MapPin size={13} /> {current.city}
             </span>
             <h3 style={{ fontFamily: 'var(--serif)', fontSize: '26px', color: '#fffdf8', lineHeight: 1.3, marginBottom: '14px' }}>
               {current.title}

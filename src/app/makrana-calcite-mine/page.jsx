@@ -120,7 +120,7 @@ export default function MakranaCalciteMinePage() {
                 {q.name}
               </h3>
               <p style={{ fontSize: '12px', color: '#8c6a36', fontWeight: 600, marginBottom: '14px' }}>
-                ⛏️ Extraction Depth: {q.depth}
+                Extraction Depth: {q.depth}
               </p>
               <div style={{ fontSize: '13px', color: '#52473c', lineHeight: 1.6, marginBottom: '14px' }}>
                 <strong>Appearance:</strong> {q.tone}

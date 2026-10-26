@@ -6,7 +6,7 @@ const STYLES = [
     id: 'nagara',
     name: 'Imperial Nagara Shikhara',
     subtitle: 'Towering Multi-Spire Temple with Amalaka & Swarna Kalash',
-    image: '/gallery/mandir-gold-leaf-mandap.webp',
+    image: '/gallery/img_7263.webp',
     baseWeight: 950,
     hours: 480,
     vastuScore: 99,
