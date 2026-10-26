@@ -258,7 +258,7 @@ export default function RoyalProjectsPage() {
                     <span>→</span>
                   </a>
                   <Link href="/bespoke-consultation" className="btn-outline-gold" style={{ padding: '10px 20px', fontSize: '13px' }}>
-                    <span>Book 3D CAD Session</span>
+                    <span>Book 2D CAD Session</span>
                   </Link>
                 </div>
               </div>
@@ -281,7 +281,7 @@ export default function RoyalProjectsPage() {
             Have a Private Estate or Sacred Sanctuary in Mind?
           </h2>
           <p style={{ fontSize: '15px', color: '#d8ccb8', lineHeight: 1.7, marginBottom: '28px' }}>
-            Our Master Sthapatis and stone engineers work directly with private patrons, luxury interior architects, and estate builders globally. Receive full 3D CAD renderings and stone volume estimates within 24 hours.
+            Our Master Sthapatis and stone engineers work directly with private patrons, luxury interior architects, and estate builders globally. Receive full 2D CAD elevations and stone volume estimates within 24 hours.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap' }}>
             <a

@@ -187,49 +187,10 @@ function initImageShields() {
   });
 }
 
-/**
- * 6. Mobile App Screen Capture Protection (FLAG_SECURE emulation)
- */
 function initScreenCaptureProtection() {
-  let veil = document.getElementById('screen-capture-veil');
-  if (!veil) {
-    veil = document.createElement('div');
-    veil.id = 'screen-capture-veil';
-    veil.setAttribute('aria-hidden', 'true');
-    veil.innerHTML = `
-      <div class="veil-brand">A.F.G MARBLE &amp; ARTS</div>
-      <div class="veil-tag">Confidential Patron Experience · Makrana &amp; Jaipur</div>
-    `;
-    document.body.appendChild(veil);
-  }
-
-  // When window or tab loses focus (e.g. snipping tool, screen recorder, app switcher)
-  const hideVeil = () => veil.classList.remove('is-active');
-  const showVeil = () => {
-    // Only activate on mobile/tablet or when explicitly hidden to prevent screen grabbing
-    if (document.hidden) {
-      veil.classList.add('is-active');
-    }
-  };
-
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-      veil.classList.add('is-active');
-    } else {
-      setTimeout(hideVeil, 120);
-    }
-  });
-
-  window.addEventListener('blur', () => {
-    // Subtle veil when window loses focus
-    if (window.innerWidth <= 1024) {
-      veil.classList.add('is-active');
-    }
-  });
-
-  window.addEventListener('focus', () => {
-    setTimeout(hideVeil, 100);
-  });
+  // Screen-capture veil disabled to prevent disruptive black veil on window blur / recording
+  const veil = document.getElementById('screen-capture-veil');
+  if (veil) veil.remove();
 }
 
 /**

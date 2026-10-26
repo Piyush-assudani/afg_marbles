@@ -29,9 +29,9 @@ export default function TermsPage() {
               A.F.G Marble &amp; Arts guarantees that all temple sanctums commissioned in Makrana White are carved exclusively from pure calcite crystalline marble quarried in the Makrana mineral belt (Nagaur, Rajasthan). Each commission is backed by our generational zero-yellowing assurance.
             </p>
 
-            <h3 style={{ marginTop: '32px' }}>2. Ayadi Vastu Blueprint Sign-Off</h3>
+            <h3 style={{ marginTop: '32px' }}>2. Architectural CAD Blueprint Sign-Off</h3>
             <p>
-              Prior to carving raw stone, clients receive a 3D CAD schematic with precise Ayadi mathematical measurements. Carving commences only upon client or designated sthapati verification.
+              Prior to carving raw stone, clients receive an architectural 2D CAD schematic with precise measurements and elevation plans. Carving commences only upon client verification. (Optional 3D CAD rendering available on demand).
             </p>
 
             <h3 style={{ marginTop: '32px' }}>3. Jaipur Yard Pre-Assembly Verification</h3>

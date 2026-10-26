@@ -98,7 +98,7 @@ export default function Footer() {
                   transition: 'all 0.3s ease'
                 }}
               >
-                <span>Request Free 3D CAD Blueprint</span>
+                <span>Request Free 2D CAD Blueprint</span>
               </Link>
             </div>
           </div>
@@ -179,21 +179,26 @@ export default function Footer() {
               href="/"
               onClick={handleScrollToTop}
               className="footer-logo"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '16px', textDecoration: 'none', cursor: 'pointer' }}
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '14px', marginBottom: '16px', textDecoration: 'none', cursor: 'pointer' }}
             >
               <img
                 src="/afg-logo.svg"
-                alt="A.F.G Marble & Arts"
-                width={54}
-                height={30}
+                alt="A.F.G Marble And Art"
+                width={56}
+                height={22}
                 onError={(e) => {
                   e.currentTarget.onerror = null;
                   e.currentTarget.src = '/afg-logo.png';
                 }}
               />
-              <span style={{ fontFamily: 'var(--display)', fontSize: '15px', fontWeight: 600, letterSpacing: '0.16em', color: '#1c1813' }}>
-                A.F.G MARBLE &amp; ARTS
-              </span>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                <span style={{ fontFamily: 'var(--display)', fontSize: '15px', fontWeight: 600, letterSpacing: '0.14em', color: '#1c1813', lineHeight: 1.1 }}>
+                  A.F.G MARBLE AND ART
+                </span>
+                <span style={{ fontFamily: 'var(--display)', fontStyle: 'italic', fontSize: '9.5px', color: '#8c6426', letterSpacing: '0.08em' }}>
+                  Crafting Divine Spaces In Marble
+                </span>
+              </div>
             </Link>
 
             <p style={{ fontSize: '13px', lineHeight: 1.7, color: '#55493c', marginBottom: '20px' }}>

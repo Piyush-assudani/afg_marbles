@@ -19,9 +19,9 @@ export default function AtelierWorkshopPage() {
     },
     {
       num: '02',
-      title: 'Ayadi Vastu Mathematical 3D CAD Modeling',
+      title: 'Architectural 2D CAD Space Elevation Drafting',
       lead: 'Sacred architectural proportions tailored to your space.',
-      desc: 'Before touching stone, our temple architects calculate the 6 Ayadi Shastra formulas (Aaya, Vyaya, Yoni, Nakshatra, Amsha, and Vara) based on your residence or courtyard orientation, producing millimetric 3D CAD blueprints.'
+      desc: 'Before touching stone, our temple architects draft precision millimetric 2D CAD elevations based on your residence or room orientation, ensuring every proportion is verified. (3D CAD rendering available on special client request).'
     },
     {
       num: '03',

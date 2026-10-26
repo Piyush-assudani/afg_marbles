@@ -639,11 +639,11 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
 
     if (isMobile) {
       const isShort = H < 740;
-      camBase.set(0, isShort ? 2.9 : 3.05, isShort ? 17.5 : 16.8);
-      lookBase.set(0, isShort ? 1.5 : 1.65, 0);
-      // Temple clearly elevated to top half on mobile so text is below
-      stage.position.y = isShort ? 0.25 : 0.38;
-      stage.scale.setScalar(isShort ? 0.74 : 0.80);
+      camBase.set(0, isShort ? 3.4 : 3.6, isShort ? 18.5 : 18.0);
+      lookBase.set(0, isShort ? 2.2 : 2.4, 0);
+      // Temple clearly elevated to upper 40% on mobile so text has full breathing space
+      stage.position.y = isShort ? 0.95 : 1.05;
+      stage.scale.setScalar(isShort ? 0.52 : 0.58);
       stage.position.x = 0;
     } else {
       const isLaptop = W < 1520 || H < 860;
@@ -939,7 +939,19 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     observer.observe(canvas);
   }
 
+  let isPaused = false;
+  let isDestroyed = false;
+  let rafId = null;
+
   function tick() {
+    if (isDestroyed) {
+      animating = false;
+      return;
+    }
+    if (isPaused) {
+      rafId = requestAnimationFrame(tick);
+      return;
+    }
     if (!isVisible) {
       animating = false;
       return;
@@ -996,7 +1008,7 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
 
     renderer.render(scene, camera);
     onFrame?.(frameState());
-    requestAnimationFrame(tick);
+    rafId = requestAnimationFrame(tick);
   }
 
   async function warmup() {
@@ -1066,6 +1078,19 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     setLightingMode,
     setWireframe,
     setAutoRotate,
+    pause: () => {
+      isPaused = true;
+    },
+    resume: () => {
+      isPaused = false;
+      clock.getDelta();
+    },
+    destroy: () => {
+      isDestroyed = true;
+      if (rafId) cancelAnimationFrame(rafId);
+      window.removeEventListener('resize', resize);
+      renderer.dispose();
+    },
     isTransitioning: () => transitioning,
     onSlabClick: (fn) => (clickHandler = fn),
     get isMobile() {

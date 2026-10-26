@@ -4,23 +4,23 @@ import '../security.css';
 import LayoutClientWrapper from './LayoutClientWrapper';
 
 export const metadata = {
-  title: 'A.F.G Marble & Arts — Handcrafted Makrana Marble Mandirs & Palatial Fountains',
+  title: 'A.F.G Marble And Art — Crafting Divine Spaces In Marble | Makrana Mandirs',
   description:
     'Purveyors of pure 99% Makrana calcite marble pooja sanctums, palatial fountains, and bespoke architectural temple carvings since 1987. Zero yellowing guarantee.',
   keywords:
-    'Makrana marble mandir, luxury temple for home, marble temple manufacturer, palatial fountain, marble carving Jaipur, Makrana white marble, AFG Marble',
-  authors: [{ name: 'A.F.G Marble & Arts' }],
+    'Makrana marble mandir, luxury temple for home, marble temple manufacturer, palatial fountain, marble carving Jaipur, Makrana white marble, AFG Marble And Art',
+  authors: [{ name: 'A.F.G Marble And Art' }],
   metadataBase: new URL('https://afgmarbel.com'),
   icons: {
-    icon: '/favicon.svg',
-    apple: '/afg-logo.jpeg'
+    icon: '/afg-logo.svg',
+    apple: '/afg-logo.png'
   },
   openGraph: {
-    title: 'A.F.G Marble & Arts — Handcrafted Makrana Marble Mandirs & Palatial Fountains',
+    title: 'A.F.G Marble And Art — Crafting Divine Spaces In Marble',
     description:
       'Purveyors of pure 99% Makrana calcite marble pooja sanctums, palatial fountains, and bespoke architectural temple carvings since 1987.',
     url: 'https://afgmarbel.com',
-    siteName: 'A.F.G Marble & Arts',
+    siteName: 'A.F.G Marble And Art',
     images: [
       {
         url: '/gallery/mandir-pure-makrana.webp',

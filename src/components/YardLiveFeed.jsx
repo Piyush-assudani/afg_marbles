@@ -10,8 +10,8 @@ const YARD_BAYS = [
     image: '/gallery/yard-dryfit-raw-calcite-mandir.webp',
     status: 'ACTIVE INSPECTION',
     inspector: 'Master Sthapati Ramswaroop Silawat',
-    project: '18ft Monolithic Nagara Temple for London Estate',
-    details: 'Every pillar, arch, and spire is pre-assembled in our open Jaipur yard to verify dry-joint tolerance down to 0.5mm before crating. Full 360-degree video recorded for patron signoff.'
+    project: '7.5ft Makrana Peacock Mandapam with Mother-of-Pearl Inlay',
+    details: 'Complete pre-assembly and dry-joint trial in our Jaipur yard to verify pillar alignment, elephant plinth fit, and mother-of-pearl peacock halo tolerance before crating.'
   },
   {
     id: 'bay-2',

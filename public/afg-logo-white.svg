@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 120" fill="none" width="100%" height="100%">
+  <defs>
+    <linearGradient id="afgRedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ED1C24" />
+      <stop offset="60%" stop-color="#D1131E" />
+      <stop offset="100%" stop-color="#960C14" />
+    </linearGradient>
+  </defs>
+  <!-- Red Triangular 'A' -->
+  <path d="M 66 18 L 91 76 C 72 80 48 87 24 96 L 66 18 Z" fill="url(#afgRedGrad)" />
+  <path d="M 14 105 C 38 87 75 79 110 78 L 124 105 L 14 105 Z" fill="url(#afgRedGrad)" />
+  <!-- . F . G -->
+  <g transform="translate(136, 105) scale(0.05457, -0.05457)"><path d="M147 0V281H428V0Z" fill="#FFFFFF" /></g>
+  <g transform="translate(158, 105) scale(0.05457, -0.05457)"><path d="M151 0V1466H1156V1218H447V871H1059V623H447V0Z" fill="#FFFFFF" /></g>
+  <g transform="translate(232, 105) scale(0.05457, -0.05457)"><path d="M147 0V281H428V0Z" fill="#FFFFFF" /></g>
+  <g transform="translate(254, 105) scale(0.05457, -0.05457)"><path d="M831 539V786H1469V202Q1376 112 1199.5 43.5Q1023 -25 842 -25Q612 -25 441.0 71.5Q270 168 184.0 347.5Q98 527 98 738Q98 967 194.0 1145.0Q290 1323 475 1418Q616 1491 826 1491Q1099 1491 1252.5 1376.5Q1406 1262 1450 1060L1156 1005Q1125 1113 1039.5 1175.5Q954 1238 826 1238Q632 1238 517.5 1115.0Q403 992 403 750Q403 489 519.0 358.5Q635 228 823 228Q916 228 1009.5 264.5Q1103 301 1170 353V539Z" fill="#FFFFFF" /></g>
+</svg>

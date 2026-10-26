@@ -209,7 +209,7 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
                 </span>
               </div>
               <p style={{ fontSize: '12px', color: '#6b5f52', margin: '0 0 10px', lineHeight: 1.45 }}>
-                Share your villa or apartment room dimensions. Our sthapatis will generate full 3D CAD elevations, isometric cross-sections, and stone volume estimates within 24 hours.
+                Share your villa or apartment room dimensions. Our sthapatis will generate full 2D CAD elevations, cross-sections, and stone volume estimates within 24 hours. (3D CAD available upon special request).
               </p>
               
               {/* E-Commerce Quick Trust Hallmarks */}
@@ -218,7 +218,7 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
                   <span style={{ color: '#b08a4f' }}>✓</span> 99.2% Calcite Bedrock
                 </div>
                 <div style={{ fontSize: '11px', color: '#4a4239', display: 'flex', alignItems: 'center', gap: '5px' }}>
-                  <span style={{ color: '#b08a4f' }}>✓</span> Free 3D CAD Blueprint
+                  <span style={{ color: '#b08a4f' }}>✓</span> Free 2D CAD Blueprint
                 </div>
                 <div style={{ fontSize: '11px', color: '#4a4239', display: 'flex', alignItems: 'center', gap: '5px' }}>
                   <span style={{ color: '#b08a4f' }}>✓</span> 100% Yard Dry-Fit Trial
@@ -390,13 +390,13 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
               </button>
               <a
                 href={`https://wa.me/917597417274?text=${encodeURIComponent(
-                  `Namaste AFG Marble, I am inquiring about "${product.title}" (${product.scale}, ${product.primaryStone}). Please share 3D CAD drawings and bespoke volume-based estimate.\n\nProduct Link: ${getProductUrl()}`
+                  `Namaste AFG Marble, I am inquiring about "${product.title}" (${product.scale}, ${product.primaryStone}). Please share 2D CAD drawings and bespoke volume-based estimate.\n\nProduct Link: ${getProductUrl()}`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-outline-gold"
               >
-                <span>Instant WhatsApp 3D CAD &amp; Pricing</span>
+                <span>Instant WhatsApp 2D CAD &amp; Pricing</span>
               </a>
             </div>
           </div>

@@ -18,7 +18,7 @@ export default function BespokeConsultationPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const text = `Namaste A.F.G Marble & Arts, I would like to request a 3D CAD Space Consultation.\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Location:* ${formData.city}\n*Space Dimensions:* ${formData.width} W × ${formData.depth} D × ${formData.height} H\n*Preferred Stone:* ${formData.stone}\n*Notes:* ${formData.notes || 'None'}`;
+    const text = `Namaste A.F.G Marble & Arts, I would like to request a 2D CAD Space Consultation.\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Location:* ${formData.city}\n*Space Dimensions:* ${formData.width} W × ${formData.depth} D × ${formData.height} H\n*Preferred Stone:* ${formData.stone}\n*Notes:* ${formData.notes || 'None'}`;
     window.open(`https://wa.me/917597417274?text=${encodeURIComponent(text)}`, '_blank');
     setSubmitted(true);
   };
@@ -34,7 +34,7 @@ export default function BespokeConsultationPage() {
             <span>/</span>
             <span>Space Dimensions &amp; CAD Consultation</span>
           </div>
-          <h1>Custom Space Dimensions &amp; 3D CAD Consultation</h1>
+          <h1>Custom Space Dimensions &amp; 2D CAD Consultation</h1>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
             Whether you have an empty pooja room alcove in Mumbai, a heritage estate courtyard in Udaipur, or a luxury penthouse in London, our Master Sthapatis translate your exact dimensions into a timeless consecrated sanctum within 24 hours.
@@ -84,9 +84,9 @@ export default function BespokeConsultationPage() {
                     3
                   </div>
                   <div>
-                    <strong style={{ fontSize: '16px', color: '#1c1813', display: 'block', marginBottom: '4px' }}>Receive 3D CAD Blueprint in 24 Hours</strong>
+                    <strong style={{ fontSize: '16px', color: '#1c1813', display: 'block', marginBottom: '4px' }}>Receive 2D CAD Blueprint in 24 Hours</strong>
                     <p style={{ fontSize: '13.5px', color: '#5c5246', lineHeight: 1.6, margin: 0 }}>
-                      Our Master Sthapati drafts an architectural scale CAD elevation with sacred Ayadi Vastu alignment and sends it directly to your WhatsApp desk.
+                      Our Master Sthapati drafts an architectural scale 2D CAD elevation tailored to your room dimensions and personal aesthetic preferences, delivered directly to your WhatsApp desk. (3D CAD visualization available upon request).
                     </p>
                   </div>
                 </div>
@@ -121,7 +121,7 @@ export default function BespokeConsultationPage() {
                 <div style={{ padding: '24px', background: '#faf6ee', borderRadius: '8px', border: '1px solid #b8863f', textAlign: 'center' }}>
                   <h4 style={{ color: '#1c1813', marginBottom: '8px' }}>Inquiry Sent Successfully!</h4>
                   <p style={{ fontSize: '13px', color: '#5c5246', margin: 0 }}>
-                    Our Master Sthapati will review your space dimensions and respond within 24 hours with your 3D CAD render.
+                    Our Master Sthapati will review your space dimensions and respond within 24 hours with your 2D CAD elevation blueprint.
                   </p>
                 </div>
               ) : (
@@ -224,7 +224,7 @@ export default function BespokeConsultationPage() {
                     className="btn-primary"
                     style={{ marginTop: '10px', width: '100%', justifyContent: 'center' }}
                   >
-                    <span className="btn-primary__text">Generate 3D CAD Proposal via WhatsApp</span>
+                    <span className="btn-primary__text">Generate 2D CAD Proposal via WhatsApp</span>
                     <span className="btn-primary__icon">→</span>
                   </button>
                 </form>

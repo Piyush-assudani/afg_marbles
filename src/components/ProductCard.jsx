@@ -338,7 +338,7 @@ export default function ProductCard({ product, onOpenProduct, onOpenInquiry }) {
             <span style={{ color: '#8c6a36', fontWeight: 600 }}>Material:</span> Pure Makrana
           </div>
           <div className="meta-spec-item" style={{ fontSize: '12px', color: '#4a4239' }}>
-            <span style={{ color: '#8c6a36', fontWeight: 600 }}>Scale:</span> {product.scale}
+            <span style={{ color: '#8c6a36', fontWeight: 600 }}>Scale:</span> {product.scale.replace(/^Size\s*=\s*/, '')}
           </div>
         </div>
 
@@ -361,7 +361,7 @@ export default function ProductCard({ product, onOpenProduct, onOpenInquiry }) {
             </span>
             <span style={{ fontSize: '12px', color: '#1c1813', fontWeight: 600 }}>Bespoke to Your Space</span>
           </div>
-          <span style={{ fontSize: '11px', color: '#7a6f62', fontWeight: 500 }}>3D CAD Available</span>
+          <span style={{ fontSize: '11px', color: '#7a6f62', fontWeight: 500 }}>2D CAD Blueprint</span>
         </div>
 
         {/* Multi-Angle Mini Thumbnails Strip */}

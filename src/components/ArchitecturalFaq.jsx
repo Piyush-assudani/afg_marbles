@@ -23,7 +23,7 @@ export default function ArchitecturalFaq({ onOpenInquiry }) {
     },
     {
       q: 'Can AFG design a custom sanctum for irregular apartment corners or restricted heights?',
-      a: 'Yes. 100% of our commissions are bespoke. Whether you have an awkward alcove, a low false-ceiling clearance of 7.5 feet, or a palatial double-height atrium of 20 feet, our 3D CAD team incorporates your exact room blueprints, integrating concealed LED lighting channels, smoke ventilation flues, and velvet storage drawers tailored down to the millimeter.',
+      a: 'Yes. 100% of our commissions are bespoke. Whether you have an awkward alcove, a low false-ceiling clearance of 7.5 feet, or a palatial double-height atrium of 20 feet, our architectural CAD team incorporates your exact room blueprints, integrating concealed LED lighting channels, smoke ventilation flues, and velvet storage drawers tailored down to the millimeter.',
     },
     {
       q: 'How does ISPM-15 international export packaging prevent breakage during transit?',

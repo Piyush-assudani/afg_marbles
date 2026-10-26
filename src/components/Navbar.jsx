@@ -45,7 +45,7 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
           href="/"
           className="logo"
           id="logo"
-          aria-label="A.F.G Marble & Arts Home"
+          aria-label="A.F.G Marble And Art Home"
           onClick={(e) => {
             if (pathname === '/') {
               e.preventDefault();
@@ -55,9 +55,9 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
         >
           <img
             src="/afg-logo.svg"
-            alt="A.F.G Marble & Arts"
+            alt="A.F.G Marble And Art"
             className="logo__img"
-            width={38}
+            width={48}
             height={22}
             onError={(e) => {
               e.currentTarget.onerror = null;
@@ -65,8 +65,8 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
             }}
           />
           <span className="logo__text">
-            <span className="logo__name">A.F.G MARBLE &amp; ARTS</span>
-            <span className="logo__sub">Makrana · Jaipur</span>
+            <span className="logo__name">A.F.G MARBLE AND ART</span>
+            <span className="logo__sub">Crafting Divine Spaces In Marble</span>
           </span>
         </Link>
 
@@ -232,7 +232,7 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
                         <Link href="/bespoke-consultation" onClick={() => setMegaMenuOpen(false)}>
                           <span className="mega-num">13</span>
                           <div className="mega-item-info">
-                            <strong>3D CAD Space Consultation</strong>
+                            <strong>2D CAD Space Consultation</strong>
                             <span>Custom Dimensions to Blueprint</span>
                           </div>
                         </Link>
@@ -278,21 +278,21 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
 
                   {/* Column 4: Featured Showcase Card */}
                   <div className="mega-menu__col-feature">
-                    <span className="mega-menu__header">3D ATELIER BLUEPRINT</span>
+                    <span className="mega-menu__header">2D ATELIER BLUEPRINT</span>
                     <div className="mega-feature-card">
                       <div className="mega-feature-card__media">
-                        <img src="/gallery/sanctum-peacock-arch.webp" alt="Sanctum 3D CAD Blueprint" />
+                        <img src="/gallery/sanctum-peacock-arch.webp" alt="Sanctum 2D CAD Blueprint" />
                       </div>
                       <div className="mega-feature-card__body">
                         <span className="mega-feature-card__badge">✦ 24-HOUR TURNAROUND</span>
-                        <h5>Bespoke 3D CAD Sanctum</h5>
-                        <p>Share your room dimensions down to the centimeter. Receive a consecrated 3D Ayadi Vastu layout.</p>
+                        <h5>Bespoke 2D CAD Sanctum</h5>
+                        <p>Share your room dimensions down to the centimeter. Receive an architectural 2D CAD elevation blueprint.</p>
                         <Link
                           href="/bespoke-consultation"
                           className="mega-feature-card__cta"
                           onClick={() => setMegaMenuOpen(false)}
                         >
-                          Request Free 3D Layout →
+                          Request Free 2D Layout →
                         </Link>
                       </div>
                     </div>
@@ -436,7 +436,7 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
 
           <div className="mobile-nav-group-title">Patron Services &amp; Heritage</div>
           <Link href="/bespoke-consultation" className={`mob-link ${pathname === '/bespoke-consultation' ? 'is-active' : ''}`}>
-            <span>3D CAD Space Consultation</span>
+            <span>2D CAD Space Consultation</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>

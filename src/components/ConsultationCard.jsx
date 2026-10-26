@@ -26,8 +26,8 @@ export default function ConsultationCard({ onOpenInquiry }) {
                 <div className="c-step">
                   <div className="c-step__num">2</div>
                   <div className="c-step__body">
-                    <strong>Sacred 3D Vastu CAD Render</strong>
-                    <p>Receive a custom 3D architectural plan with precise Ayadi mathematical harmony within 24 hours.</p>
+                    <strong>Bespoke 2D CAD Elevation Plan</strong>
+                    <p>Receive a custom 2D architectural blueprint tailored to your room dimensions and personal preferences within 24 hours.</p>
                   </div>
                 </div>
                 <div className="c-step">
@@ -51,7 +51,7 @@ export default function ConsultationCard({ onOpenInquiry }) {
                     }
                   }}
                 >
-                  <span className="btn-primary__text">Get Free 3D Space Consultation</span>
+                  <span className="btn-primary__text">Get Free 2D Space Consultation</span>
                   <span className="btn-primary__icon">→</span>
                 </button>
                 <a
@@ -72,11 +72,11 @@ export default function ConsultationCard({ onOpenInquiry }) {
               <div className="consultation-img-wrap">
                 <img
                   src="/gallery/mandir-carved-elevation.webp"
-                  alt="3D CAD Temple Elevation & Ayadi Vastu Layout"
+                  alt="2D CAD Temple Elevation & Architectural Layout"
                   loading="lazy"
                 />
                 <div className="consultation-img-tag">
-                  <span>Ayadi Vastu 3D Precision</span>
+                  <span>2D Architectural CAD Precision</span>
                 </div>
               </div>
             </div>

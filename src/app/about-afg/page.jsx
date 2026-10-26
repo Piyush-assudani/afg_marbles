@@ -17,8 +17,8 @@ export default function AboutAFGPage() {
     },
     {
       year: '2008',
-      title: 'Pioneering Ayadi Vastu Mathematical CAD',
-      desc: 'Integrated sacred Vedic Sthapatya Veda formulas with precision 3D CAD modeling, allowing patrons worldwide to verify proportions prior to chiseling.'
+      title: 'Architectural CAD Precision Standards',
+      desc: 'Integrated sacred Vedic architectural formulas with precision 2D CAD elevation drafting, allowing patrons worldwide to verify proportions prior to chiseling.'
     },
     {
       year: '2016',

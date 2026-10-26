@@ -294,8 +294,8 @@ export default function PricingPhilosophy({ onOpenInquiry }) {
               Why Our Pricing Never Changes Mid-Commission
             </h4>
             <p style={{ fontSize: '13.5px', color: '#c7bcae', lineHeight: 1.6, margin: 0 }}>
-              Unlike unorganized carvers who request supplemental charges for polishing, shipping crates, or Vastu
-              drafting, every A.F.G proposal includes end-to-end quarry blocks, hand-carving, 3D CAD blueprints, trial
+              Unlike unorganized carvers who request supplemental charges for polishing, shipping crates, or space
+              drafting, every A.F.G proposal includes end-to-end quarry blocks, hand-carving, 2D CAD blueprints, trial
               assembly in Jaipur, and ISPM-15 fumigated international export crating.
             </p>
           </div>

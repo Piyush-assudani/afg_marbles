@@ -175,8 +175,24 @@ export default function HeroSection({ onOpenInquiry }) {
         }
       });
 
-      // Instant visibility without staggered delay or pop-in lag
-      setIsLoaded(true);
+      // Pause WebGL rendering when hero is scrolled out of view (saves 90% GPU/CPU, stops lag)
+      let heroObserver = null;
+      if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
+        heroObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                exp.resume?.();
+              } else {
+                exp.pause?.();
+              }
+            });
+          },
+          { threshold: 0.05 }
+        );
+        const heroEl = document.getElementById('hero');
+        if (heroEl) heroObserver.observe(heroEl);
+      }
 
       // Fast unified entrance (all hero content appears together as a cohesive luxury unit)
       gsap.fromTo(
@@ -192,13 +208,15 @@ export default function HeroSection({ onOpenInquiry }) {
       allHeroElements.forEach((el) => {
         el.style.opacity = '1';
       });
+
+      return () => {
+        isDestroyed = true;
+        heroObserver?.disconnect();
+        exp.destroy?.();
+      };
     } catch (err) {
       console.error('3D Scene initialization error:', err);
     }
-
-    return () => {
-      isDestroyed = true;
-    };
   }, []);
 
   return (
@@ -218,6 +236,59 @@ export default function HeroSection({ onOpenInquiry }) {
 
       {/* Interactive 3D WebGL Canvas */}
       <canvas className="webgl" id="webgl" ref={canvasRef} aria-label="Interactive 3D marble temple"></canvas>
+
+      {/* 0ms Instant First-Render Mandir (Appears immediately so user NEVER sees empty 3-4s delay) */}
+      {!isLoaded && (
+        <div
+          className="hero__instant-poster"
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            pointerEvents: 'none',
+            zIndex: 1,
+            transition: 'opacity 0.5s ease',
+          }}
+        >
+          <div
+            style={{
+              position: 'relative',
+              width: 'clamp(260px, 36vw, 480px)',
+              height: 'clamp(340px, 52vh, 620px)',
+              transform: 'translateY(-10px)',
+              filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.15))',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
+          >
+            <img
+              src="/gallery/img_7237.webp"
+              alt="Sacred Makrana Calcite Mandir"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain',
+                opacity: 0.95
+              }}
+            />
+            <div
+              style={{
+                position: 'absolute',
+                width: '110%',
+                height: '110%',
+                background: 'radial-gradient(circle, rgba(236,211,155,0.35) 0%, rgba(212,175,55,0.1) 45%, transparent 70%)',
+                zIndex: -1,
+                borderRadius: '50%'
+              }}
+            />
+          </div>
+        </div>
+      )}
+
       <div className="grain" aria-hidden="true"></div>
 
       {/* ============ HERO CONTENT COLUMN (STRICTLY ON LEFT) ============ */}

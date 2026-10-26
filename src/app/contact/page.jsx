@@ -216,7 +216,7 @@ _Direct Submission via A.F.G Marble & Arts Official Atelier Desk_`;
                   <span>Timings:</span> Monday to Saturday · 10:00 AM – 7:30 PM
                 </div>
                 <div className="hub-detail">
-                  <span>Facilities:</span> Full-scale dry-fit trial yard, 3D CAD design lounge, finished master sanctums
+                  <span>Facilities:</span> Full-scale dry-fit trial yard, architectural CAD design lounge, finished master sanctums
                 </div>
               </div>
 

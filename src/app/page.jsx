@@ -523,10 +523,30 @@ export default function HomePage() {
             gap: '24px'
           }}>
             {[
-              { step: '01', title: 'Quarry Selection', img: '/gallery/atelier-sculptor-chisel-block.webp', desc: 'Ultrasonic pulse velocity testing at virgin Makrana calcite seams to ensure zero micro-fractures.' },
-              { step: '02', title: 'Master Sculpting', img: '/gallery/mandir-pure-makrana.webp', desc: '4th-generation Silawat guild artisans hand-chisel every motif using traditional hammer-and-flat-chisel technique.' },
-              { step: '03', title: 'Pre-Assembly Trial', img: '/gallery/atelier-yard-preassembly.webp', desc: 'Complete dry-fit assembly in our Jaipur yard with 4K walkthrough video sent for client verification.' },
-              { step: '04', title: 'ISPM-15 Export Crating', img: '/gallery/atelier-ispm15-crating-export.webp', desc: 'Fumigated marine plywood crates lined with 50mm high-density shock EVA foam for international dispatch.' }
+              {
+                step: '01',
+                title: 'Makrana Bedrock Quarry Selection',
+                img: '/gallery/atelier-quarry-selection-block.webp',
+                desc: 'Direct selection of solid 99% pure calcite marble blocks at the Makrana quarry face, tested for structural purity.'
+              },
+              {
+                step: '02',
+                title: 'Master Silawat Hand Sculpting',
+                img: '/gallery/atelier-yard-preassembly.webp',
+                desc: 'Generational Silawat master carvers hand-chisel pillars, shikharas, and intricate jali screens using ancestral steel tools.'
+              },
+              {
+                step: '03',
+                title: 'Jaipur Yard Dry-Fit Trial',
+                img: '/gallery/yard-dryfit-raw-calcite-mandir.webp',
+                desc: 'Every mandir is 100% pre-assembled and dry-fitted in our Jaipur yard to verify millimeter precision before dispatch.'
+              },
+              {
+                step: '04',
+                title: 'Finishing & On-Site Installation',
+                img: '/gallery/mandir-artisan-install.webp',
+                desc: 'Detailed 24K gold leaf embellishment, water mirror diamond polish, and white-glove setup inside client residence.'
+              }
             ].map((item, idx) => (
               <div key={idx} className="craft-step-card" style={{
                 borderRadius: '12px',

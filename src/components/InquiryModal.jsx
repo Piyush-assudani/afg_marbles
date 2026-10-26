@@ -18,7 +18,7 @@ export default function InquiryModal({ initialProduct, onClose, onToast }) {
   });
 
   const [imageSrc, setImageSrc] = useState(
-    initialProduct?.image || initialProduct?.src || '/gallery/mandir-pure-makrana.webp'
+    initialProduct?.image || initialProduct?.src || initialProduct?.angles?.[0]?.src || '/gallery/img_7237.webp'
   );
 
   const [loading, setLoading] = useState(false);
@@ -35,10 +35,11 @@ export default function InquiryModal({ initialProduct, onClose, onToast }) {
   useEffect(() => {
     if (initialProduct) {
       const title = initialProduct.title || initialProduct.caption || initialProduct.name || 'Bespoke Marble Project';
-      const img = initialProduct.image || initialProduct.src || '/gallery/mandir-pure-makrana.webp';
+      const img = initialProduct.image || initialProduct.src || initialProduct.angles?.[0]?.src || '/gallery/img_7237.webp';
       setFormData((prev) => ({
         ...prev,
         projectTitle: title,
+        stone: initialProduct.primaryStone || prev.stone,
       }));
       setImageSrc(img);
     }

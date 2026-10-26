@@ -7,8 +7,8 @@ const STYLES = [
     name: 'Imperial Nagara Shikhara',
     subtitle: 'Towering Multi-Spire Temple with Amalaka & Swarna Kalash',
     image: '/gallery/mandir-gold-leaf-mandap.webp',
-    baseWeight: 3200,
-    hours: 680,
+    baseWeight: 950,
+    hours: 480,
     vastuScore: 99,
     yoni: 'Dhwaja (North - Ultimate Sovereignty)',
     description: 'Classical North Indian sacred architecture with stepped curvilinear shikhara, carved toran archways, and consecrated central sanctum.'
@@ -16,35 +16,35 @@ const STYLES = [
   {
     id: 'haveli',
     name: 'Palatial Peacock Mandapam',
-    subtitle: 'Fluted Monolith Pillars with Jharokha Arches & Floral Friezes',
-    image: '/gallery/sanctum-peacock-arch.webp',
-    baseWeight: 2650,
-    hours: 540,
+    subtitle: 'Intricate Peacock Crest, Fluted Pillars & Floral Jali Panels',
+    image: '/gallery/sanctum-palatial-peacock.webp',
+    baseWeight: 700,
+    hours: 380,
     vastuScore: 98,
     yoni: 'Simha (East - Fearless Victory & Wealth)',
-    description: 'Inspired by Rajput royal palaces of Jaipur & Udaipur. Features deep undercut peacock brackets, tiered pedestals, and concealed brass runners.'
+    description: 'Inspired by royal palace shrines. Features hand-chiseled peacock archways, floral pillars, and pull-out storage drawers in pure Makrana marble.'
   },
   {
     id: 'contemporary',
     name: 'Modern Villa Sanctum',
     subtitle: 'Floating Marble Altar with Backlit Om Mandala & Concealed Aarti',
     image: '/gallery/sanctum-triple-shikhar-room.webp',
-    baseWeight: 1950,
-    hours: 420,
+    baseWeight: 550,
+    hours: 320,
     vastuScore: 97,
     yoni: 'Vrishabha (West - Everlasting Peace & Family Abundance)',
-    description: 'Clean-line contemporary luxury sanctum tailored for ultra-luxury penthouses and modern estates. Integrated ambient indirect warm illumination.'
+    description: 'Clean-line contemporary luxury sanctum tailored for modern apartments and villas with integrated ambient warm illumination.'
   },
   {
     id: 'chhatri',
     name: 'Monumental Royal Chhatri',
-    subtitle: 'Octagonal 8-Pillar Ribbed Dome with Pierced Balustrade',
-    image: '/gallery/chhatri-fluted-marble-dome.webp',
-    baseWeight: 4800,
-    hours: 890,
+    subtitle: 'Octagonal 8-Pillar Ribbed Dome Pavilion with Pierced Balustrade',
+    image: '/gallery/royal-chhatri-garden-pavilion.webp',
+    baseWeight: 1400,
+    hours: 620,
     vastuScore: 99,
     yoni: 'Gaja (North - Royal Dignity & Eternal Fortune)',
-    description: 'Majestic outdoor and estate pavilion hand-carved in solid Makrana calcite bedrock with weather-sealed structural interlocking dry-joints.'
+    description: 'Majestic open-air heritage pavilion carved from solid Makrana white marble with interlocking columns, ribbed dome, and ornate bracketed eaves.'
   }
 ];
 
@@ -65,7 +65,7 @@ const STONES = [
     origin: 'Luc Yen Seam, Vietnam',
     colorHex: '#fcfcfc',
     borderHex: '#c4baa6',
-    addedWeight: 50,
+    addedWeight: 15,
     porosity: '0.05% (Pure Snow White)',
     tag: 'CONTEMPORARY & DEITIES'
   },
@@ -75,17 +75,17 @@ const STONES = [
     origin: 'Rajnagar Bedrock, Rajasthan',
     colorHex: '#f3efe8',
     borderHex: '#b08a4f',
-    addedWeight: 80,
+    addedWeight: 25,
     porosity: '0.06% (Hydraulic Dense Calcite)',
     tag: 'FOUNTAIN SPECIALIST'
   }
 ];
 
 const EMBELLISHMENTS = [
-  { id: 'gold', name: '24K Pure Gold Leaf (Swarna Lepam) on Shikhara Finials', weight: 15, hours: 45 },
-  { id: 'pietra', name: 'Parchin Kari Pietra Dura Gem Inlay (Lapis Lazuli & Carnelian)', weight: 35, hours: 80 },
-  { id: 'jali', name: '7-Layer Pierced Marble Lattice Screen (Ayadi Geometric Jali)', weight: 60, hours: 65 },
-  { id: 'aarti', name: 'Concealed Warm Aarti Illumination Array & Solid Brass Bells', weight: 25, hours: 30 }
+  { id: 'gold', name: '24K Pure Gold Leaf (Swarna Lepam) on Shikhara Finials', weight: 3, hours: 35 },
+  { id: 'pietra', name: 'Parchin Kari Pietra Dura Gem Inlay (Lapis Lazuli & Carnelian)', weight: 8, hours: 60 },
+  { id: 'jali', name: '7-Layer Pierced Marble Lattice Screen (Ayadi Geometric Jali)', weight: 14, hours: 45 },
+  { id: 'aarti', name: 'Concealed Warm Aarti Illumination Array & Solid Brass Bells', weight: 5, hours: 25 }
 ];
 
 export default function SanctumConfigurator({ onOpenInquiry }) {
@@ -112,9 +112,9 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
     return acc + (item ? item.weight : 0);
   }, 0);
 
-  const dimensionMultiplier = (customWidth * customHeight) / (6.5 * 8.5);
+  const dimensionMultiplier = Math.sqrt((customWidth * customHeight) / (6.5 * 8.5));
   const totalWeightKg = Math.round((selectedStyle.baseWeight + selectedStone.addedWeight + embellishmentWeight) * dimensionMultiplier);
-  const totalArtisanHours = Math.round((selectedStyle.hours + embellishmentHours) * Math.sqrt(dimensionMultiplier));
+  const totalArtisanHours = Math.round((selectedStyle.hours + embellishmentHours) * dimensionMultiplier);
 
   const handleShareWhatsApp = () => {
     const embNames = activeEmbellishments
@@ -130,7 +130,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
       `• *Estimated Solid Weight:* ~${totalWeightKg} kg\n` +
       `• *Ayadi Vastu Yoni:* ${selectedStyle.yoni}\n` +
       `• *Artisanal Chiseling:* ~${totalArtisanHours} Master Silawat Hours\n\n` +
-      `Please provide the 3D CAD Blueprint and bespoke investment proposal for this configuration.`;
+      `Please provide the 2D CAD Blueprint and bespoke investment proposal for this configuration.`;
 
     const url = `https://wa.me/917597417274?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
@@ -190,6 +190,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
+                  objectPosition: selectedStyle.id === 'haveli' ? 'center 22%' : 'center',
                   transition: 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease'
                 }}
               />
@@ -267,23 +268,33 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '14px' }}>
-                <div style={{ padding: '10px 12px', background: '#ffffff', borderRadius: '10px', border: '1px solid rgba(0,0,0,0.06)' }}>
-                  <div style={{ fontSize: '10.5px', color: '#7a7065', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Extraction Weight</div>
-                  <div style={{ fontSize: '18px', fontWeight: 700, color: '#1c1813', marginTop: '2px' }}>
-                    {totalWeightKg.toLocaleString()} <span style={{ fontSize: '12px', fontWeight: 500 }}>KG</span>
+                <div style={{ padding: '12px 14px', background: '#ffffff', borderRadius: '10px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                  <div style={{ fontSize: '10.5px', color: '#7a7065', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>
+                    Estimated Mandir Weight
                   </div>
-                  <div style={{ fontSize: '10px', color: '#9c8b7a' }}>Monolithic Bedrock Blocks</div>
+                  <div style={{ fontSize: '19px', fontWeight: 700, color: '#1c1813', marginTop: '2px', display: 'flex', alignItems: 'baseline', gap: '4px', flexWrap: 'wrap' }}>
+                    <span>{totalWeightKg.toLocaleString()}</span>
+                    <span style={{ fontSize: '12px', fontWeight: 600, color: '#7a7065' }}>KG</span>
+                    <span style={{ fontSize: '11px', color: '#88542c', fontWeight: 600, marginLeft: '2px' }}>
+                      ({(totalWeightKg / 1000).toFixed(2)} Ton)
+                    </span>
+                  </div>
+                  <div style={{ fontSize: '10px', color: '#8c7b6a', marginTop: '2px' }}>
+                    Finished Carved Weight · Modular Sections
+                  </div>
                 </div>
 
-                <div style={{ padding: '10px 12px', background: '#ffffff', borderRadius: '10px', border: '1px solid rgba(0,0,0,0.06)' }}>
-                  <div style={{ fontSize: '10.5px', color: '#7a7065', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Silawat Hand Chisel</div>
-                  <div style={{ fontSize: '18px', fontWeight: 700, color: '#1c1813', marginTop: '2px' }}>
-                    {totalArtisanHours} <span style={{ fontSize: '12px', fontWeight: 500 }}>HOURS</span>
+                <div style={{ padding: '12px 14px', background: '#ffffff', borderRadius: '10px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                  <div style={{ fontSize: '10.5px', color: '#7a7065', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>
+                    Silawat Hand Chisel
                   </div>
-                  <div style={{ fontSize: '10px', color: '#9c8b7a' }}>Generational Master Artisans</div>
+                  <div style={{ fontSize: '19px', fontWeight: 700, color: '#1c1813', marginTop: '2px' }}>
+                    {totalArtisanHours} <span style={{ fontSize: '12px', fontWeight: 600, color: '#7a7065' }}>HOURS</span>
+                  </div>
+                  <div style={{ fontSize: '10px', color: '#8c7b6a', marginTop: '2px' }}>Generational Master Artisans</div>
                 </div>
 
-                <div style={{ padding: '10px 12px', background: '#ffffff', borderRadius: '10px', border: '1px solid rgba(0,0,0,0.06)', gridColumn: 'span 2' }}>
+                <div style={{ padding: '10px 14px', background: '#ffffff', borderRadius: '10px', border: '1px solid rgba(0,0,0,0.06)', gridColumn: 'span 2' }}>
                   <div style={{ fontSize: '10.5px', color: '#7a7065', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Sacred Directional Yoni</div>
                   <div style={{ fontSize: '13px', fontWeight: 600, color: '#88542c', marginTop: '2px' }}>
                     {selectedStyle.yoni}
@@ -318,7 +329,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
                 className="btn-outline-gold"
                 style={{ flex: 1, minWidth: '180px', textAlign: 'center', justifyContent: 'center' }}
               >
-                <span>Request 3D Blueprint</span>
+                <span>Request 2D CAD Blueprint</span>
               </button>
             </div>
           </div>

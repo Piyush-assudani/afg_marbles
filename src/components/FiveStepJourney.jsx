@@ -27,14 +27,14 @@ export default function FiveStepJourney({ onOpenInquiry }) {
     },
     {
       num: '02',
-      title: 'Bespoke 2D Plan & 3D CAD Blueprint',
-      tagline: 'Visualize your dream sanctuary with photorealistic CAD walkthrough',
-      milestone: '3D CAD Blueprint & Sthapatya Elevation',
-      desc: 'Our architectural team generates comprehensive 2D CAD elevations and 3D textured renders. Every shikhara curve, jali pattern, and hidden LED channel is visualized before chiseling begins.',
+      title: 'Bespoke 2D CAD Elevation Blueprint',
+      tagline: 'Precision architectural elevation drafted to your room dimensions',
+      milestone: '2D CAD Elevation & Stone Measurement Plan',
+      desc: 'Our architectural team drafts comprehensive 2D CAD elevations and stone cross-sections tailored to your space. (3D CAD rendering available upon special client request). Every shikhara curve, jali pattern, and hidden lighting channel is planned with precision.',
       bullets: [
-        'Strict Ayadi Vastu sacred ratio calculations (Aya, Vya, Nakshatra harmony)',
+        'Custom space orientation & architectural proportions tailored to your space and preferences',
         'Detailed modular interlocking joint schematics for easy indoor assembly',
-        'Select gold gilding, mother-of-pearl inlay, and ambient illumination points',
+        'Select gold leaf gilding, mother-of-pearl inlay, and ambient illumination points',
       ],
       icon: (
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
