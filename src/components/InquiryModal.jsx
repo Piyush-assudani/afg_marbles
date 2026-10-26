@@ -27,10 +27,19 @@ export default function InquiryModal({ initialProduct, onClose, onToast }) {
   useEffect(() => {
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        onClose?.();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+
     return () => {
       document.body.style.overflow = originalOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
     };
-  }, []);
+  }, [onClose]);
 
   useEffect(() => {
     if (initialProduct) {
@@ -63,7 +72,8 @@ _Sent via Website Inquiry Popup_`;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.name.trim() || !formData.phone.trim()) {
+    if (loading) return; // Prevent furious click spamming
+    if (!formData.name?.trim() || !formData.phone?.trim()) {
       alert('Please provide your name and phone/WhatsApp number.');
       return;
     }
@@ -147,6 +157,18 @@ _Sent via Website Inquiry Popup_`;
               </div>
 
               <form onSubmit={handleSubmit} className="tilak-popup__form">
+                {/* Honeypot field for bot mitigation */}
+                <input
+                  type="text"
+                  name="_hp_check"
+                  value={formData._hp_check || ''}
+                  onChange={handleChange}
+                  style={{ display: 'none' }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                />
+
                 <div className="tilak-form__field">
                   <label htmlFor="inquiry-name">Your Full Name *</label>
                   <input
@@ -154,7 +176,8 @@ _Sent via Website Inquiry Popup_`;
                     type="text"
                     name="name"
                     required
-                    placeholder="Enter your name"
+                    maxLength={100}
+                    placeholder="Enter your full name"
                     value={formData.name}
                     onChange={handleChange}
                     autoFocus
@@ -168,7 +191,8 @@ _Sent via Website Inquiry Popup_`;
                     type="tel"
                     name="phone"
                     required
-                    placeholder="e.g. +91 98765 43210"
+                    maxLength={25}
+                    placeholder="+91 / International with country code"
                     value={formData.phone}
                     onChange={handleChange}
                   />
@@ -196,6 +220,7 @@ _Sent via Website Inquiry Popup_`;
                     id="inquiry-message"
                     type="text"
                     name="message"
+                    maxLength={1200}
                     placeholder="e.g. 5ft x 3ft Mandir for home in Mumbai"
                     value={formData.message}
                     onChange={handleChange}

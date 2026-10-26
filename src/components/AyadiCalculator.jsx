@@ -9,15 +9,20 @@ export default function AyadiCalculator({ onOpenInquiry }) {
   const [stone, setStone] = useState('Makrana Pure Albeta');
   const [style, setStyle] = useState('Nagara Shikhara Multi-Tier');
 
+  // Defensive input handling: guarantee strictly valid positive numbers
+  const safeWidth = Number.isFinite(width) && width > 0 ? Math.min(Math.max(width, 2), 30) : 7;
+  const safeDepth = Number.isFinite(depth) && depth > 0 ? Math.min(Math.max(depth, 1), 20) : 4;
+  const safeHeight = Number.isFinite(height) && height > 0 ? Math.min(Math.max(height, 3), 30) : 9;
+
   // Calculate estimated volume, modular sections and sacred ratio
-  const areaSqFt = (width * depth).toFixed(1);
-  const volumeCuFt = (width * depth * height).toFixed(0);
-  const estimatedWeightKg = Math.round(volumeCuFt * 38); // Approximate carved density
-  const modularSections = width > 8 ? '8 to 12 Interlocking Sections' : width > 5 ? '5 to 7 Modular Sections' : '3 to 4 Modular Blocks';
-  const ayadiRatio = ((width * 12 * 8) % 12 === 0 ? 'Dhana Aya (Infinite Wealth)' : 'Vriddhi Aya (Continuous Spiritual Growth)');
+  const areaSqFt = (safeWidth * safeDepth).toFixed(1);
+  const volumeCuFt = (safeWidth * safeDepth * safeHeight).toFixed(0);
+  const estimatedWeightKg = Math.round(Number(volumeCuFt) * 38) || 1000;
+  const modularSections = safeWidth > 8 ? '8 to 12 Interlocking Sections' : safeWidth > 5 ? '5 to 7 Modular Sections' : '3 to 4 Modular Blocks';
+  const ayadiRatio = ((Math.round(safeWidth * 12) * 8) % 12 === 0 ? 'Dhana Aya (Infinite Wealth)' : 'Vriddhi Aya (Continuous Spiritual Growth)');
 
   const handleSendCADRequest = () => {
-    const text = `Namaste A.F.G Marble & Arts, I used your space estimator tool.\n\nMy Custom Space Requirements:\n- Type: ${spaceType.toUpperCase()}\n- Dimensions: ${width}ft (W) × ${depth}ft (D) × ${height}ft (H)\n- Preferred Stone: ${stone}\n- Architectural Style: ${style}\n- Estimated Area: ${areaSqFt} sq.ft (${volumeCuFt} cu.ft)\n- Sthapatya Metric: ${ayadiRatio}\n\nPlease share preliminary 2D CAD blueprint options and bespoke pricing feasibility.`;
+    const text = `Namaste A.F.G Marble & Arts, I used your space estimator tool.\n\nMy Custom Space Requirements:\n- Type: ${spaceType.toUpperCase()}\n- Dimensions: ${safeWidth}ft (W) × ${safeDepth}ft (D) × ${safeHeight}ft (H)\n- Preferred Stone: ${stone}\n- Architectural Style: ${style}\n- Estimated Area: ${areaSqFt} sq.ft (${volumeCuFt} cu.ft)\n- Sthapatya Metric: ${ayadiRatio}\n\nPlease share preliminary 2D CAD blueprint options and bespoke pricing feasibility.`;
     window.open(`https://wa.me/917597417274?text=${encodeURIComponent(text)}`, '_blank');
   };
 

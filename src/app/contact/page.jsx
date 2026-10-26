@@ -14,24 +14,59 @@ export default function ContactPage() {
     notes: ''
   });
 
+  const [loading, setLoading] = useState(false);
   const [submittedLead, setSubmittedLead] = useState(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.name.trim() || !formData.phone.trim()) {
+    if (loading) return;
+    if (!formData.name?.trim() || !formData.phone?.trim()) {
       alert('Please provide your name and phone number.');
       return;
     }
-    const saved = saveInquiry(formData);
-    setSubmittedLead(saved);
+
+    setLoading(true);
+    try {
+      const res = await fetch('/api/inquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          projectTitle: `${formData.productTitle} (${formData.dimensions || 'Custom Space'})`,
+          stone: formData.stone,
+          message: `Location: ${formData.location || 'Not specified'}. Notes: ${formData.notes || 'None'}`,
+          _hp_check: formData._hp_check || '',
+        }),
+      });
+      const data = await res.json();
+      const fallback = saveInquiry(formData);
+      setSubmittedLead({
+        id: data.inquiryId || fallback.id,
+        name: formData.name,
+        phone: formData.phone,
+        location: formData.location,
+        dimensions: formData.dimensions,
+        stone: formData.stone,
+        notes: formData.notes,
+        whatsappUrl: data.whatsappUrl,
+      });
+    } catch (err) {
+      console.warn('API submission fallback:', err);
+      const saved = saveInquiry(formData);
+      setSubmittedLead(saved);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const generateWhatsAppLink = () => {
     if (!submittedLead) return '#';
+    if (submittedLead.whatsappUrl) return submittedLead.whatsappUrl;
     const text = `*NEW ARCHITECTURAL INQUIRY [${submittedLead.id}]*
 • *Name:* ${submittedLead.name}
 • *Phone:* ${submittedLead.phone}
@@ -98,6 +133,18 @@ _Direct Submission via A.F.G Marble & Arts Official Atelier Desk_`;
 
               {!submittedLead ? (
                 <form onSubmit={handleSubmit} className="inquiry-form" style={{ marginTop: '24px' }}>
+                  {/* Anti-spam honeypot */}
+                  <input
+                    type="text"
+                    name="_hp_check"
+                    value={formData._hp_check || ''}
+                    onChange={handleChange}
+                    style={{ display: 'none' }}
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                  />
+
                   <div className="form-row-2">
                     <div className="form-field">
                       <label>Your Full Name *</label>
@@ -105,6 +152,7 @@ _Direct Submission via A.F.G Marble & Arts Official Atelier Desk_`;
                         type="text"
                         name="name"
                         required
+                        maxLength={100}
                         placeholder="e.g. Vikram Singhania"
                         value={formData.name}
                         onChange={handleChange}
@@ -116,7 +164,8 @@ _Direct Submission via A.F.G Marble & Arts Official Atelier Desk_`;
                         type="tel"
                         name="phone"
                         required
-                        placeholder="+91 98765 43210"
+                        maxLength={25}
+                        placeholder="+91 / International with country code"
                         value={formData.phone}
                         onChange={handleChange}
                       />
@@ -129,6 +178,7 @@ _Direct Submission via A.F.G Marble & Arts Official Atelier Desk_`;
                       <input
                         type="text"
                         name="location"
+                        maxLength={100}
                         placeholder="e.g. Mumbai, India / London, UK"
                         value={formData.location}
                         onChange={handleChange}
@@ -139,6 +189,7 @@ _Direct Submission via A.F.G Marble & Arts Official Atelier Desk_`;
                       <input
                         type="text"
                         name="dimensions"
+                        maxLength={100}
                         placeholder="e.g. 7.5ft W × 4ft D × 9ft H"
                         value={formData.dimensions}
                         onChange={handleChange}
@@ -160,14 +211,15 @@ _Direct Submission via A.F.G Marble & Arts Official Atelier Desk_`;
                     <textarea
                       name="notes"
                       rows="4"
+                      maxLength={1500}
                       placeholder="Mention preferred deities (e.g. Radha Krishna, Ram Darbar, Ganeshji, Shiva), brass inlay, bell dome, delivery timeline..."
                       value={formData.notes}
                       onChange={handleChange}
                     ></textarea>
                   </div>
 
-                  <button type="submit" className="btn-primary w-full" style={{ justifyContent: 'center' }}>
-                    <span className="btn-primary__text">Submit &amp; Generate Dossier</span>
+                  <button type="submit" className="btn-primary w-full" disabled={loading} style={{ justifyContent: 'center' }}>
+                    <span className="btn-primary__text">{loading ? 'Transmitting Dossier...' : 'Submit & Generate Dossier'}</span>
                     <span className="btn-primary__icon">→</span>
                   </button>
                 </form>

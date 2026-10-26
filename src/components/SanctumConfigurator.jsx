@@ -112,9 +112,12 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
     return acc + (item ? item.weight : 0);
   }, 0);
 
-  const dimensionMultiplier = Math.sqrt((customWidth * customHeight) / (6.5 * 8.5));
-  const totalWeightKg = Math.round((selectedStyle.baseWeight + selectedStone.addedWeight + embellishmentWeight) * dimensionMultiplier);
-  const totalArtisanHours = Math.round((selectedStyle.hours + embellishmentHours) * dimensionMultiplier);
+  const safeW = Number.isFinite(customWidth) && customWidth > 0 ? customWidth : 6.5;
+  const safeH = Number.isFinite(customHeight) && customHeight > 0 ? customHeight : 8.5;
+  const areaRatio = Math.max(0.1, (safeW * safeH) / (6.5 * 8.5));
+  const dimensionMultiplier = Math.sqrt(areaRatio);
+  const totalWeightKg = Math.round((selectedStyle.baseWeight + selectedStone.addedWeight + embellishmentWeight) * dimensionMultiplier) || selectedStyle.baseWeight;
+  const totalArtisanHours = Math.round((selectedStyle.hours + embellishmentHours) * dimensionMultiplier) || selectedStyle.hours;
 
   const handleShareWhatsApp = () => {
     const embNames = activeEmbellishments

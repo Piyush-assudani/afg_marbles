@@ -14,13 +14,45 @@ export default function BespokeConsultationPage() {
     stone: 'Makrana Pure White Albeta',
     notes: ''
   });
+  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [inquiryId, setInquiryId] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const text = `Namaste A.F.G Marble & Arts, I would like to request a 2D CAD Space Consultation.\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Location:* ${formData.city}\n*Space Dimensions:* ${formData.width} W × ${formData.depth} D × ${formData.height} H\n*Preferred Stone:* ${formData.stone}\n*Notes:* ${formData.notes || 'None'}`;
-    window.open(`https://wa.me/917597417274?text=${encodeURIComponent(text)}`, '_blank');
-    setSubmitted(true);
+    if (loading) return;
+    if (!formData.name?.trim() || !formData.phone?.trim()) {
+      alert('Please provide your name and phone number.');
+      return;
+    }
+
+    setLoading(true);
+    let assignedId = `AFG-${Date.now().toString().slice(-6)}`;
+    try {
+      const res = await fetch('/api/inquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          projectTitle: `CAD Space Consultation (${formData.width || 'Custom'} W × ${formData.depth || 'Custom'} D × ${formData.height || 'Custom'} H)`,
+          stone: formData.stone,
+          message: `Location: ${formData.city || 'Not specified'}. Requirements: ${formData.notes || 'None'}`,
+          _hp_check: formData._hp_check || '',
+        }),
+      });
+      const data = await res.json();
+      if (data.inquiryId) assignedId = data.inquiryId;
+    } catch (err) {
+      console.warn('API save fallback:', err);
+    } finally {
+      setLoading(false);
+      setInquiryId(assignedId);
+      setSubmitted(true);
+
+      const text = `Namaste A.F.G Marble & Arts, I requested a 2D CAD Space Consultation [${assignedId}].\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Location:* ${formData.city}\n*Space Dimensions:* ${formData.width} W × ${formData.depth} D × ${formData.height} H\n*Preferred Stone:* ${formData.stone}\n*Notes:* ${formData.notes || 'None'}`;
+      window.open(`https://wa.me/917597417274?text=${encodeURIComponent(text)}`, '_blank');
+    }
   };
 
   return (
@@ -126,12 +158,25 @@ export default function BespokeConsultationPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                  {/* Anti-spam honeypot */}
+                  <input
+                    type="text"
+                    name="_hp_check"
+                    value={formData._hp_check || ''}
+                    onChange={(e) => setFormData({ ...formData, _hp_check: e.target.value })}
+                    style={{ display: 'none' }}
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                  />
+
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                     <div>
                       <label style={{ fontSize: '12px', fontWeight: 600, color: '#4a4239', display: 'block', marginBottom: '4px' }}>Your Name *</label>
                       <input
                         type="text"
                         required
+                        maxLength={100}
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. Dr. Rajesh Sharma"
@@ -143,9 +188,10 @@ export default function BespokeConsultationPage() {
                       <input
                         type="tel"
                         required
+                        maxLength={25}
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+91 / +1 / +44"
+                        placeholder="+91 / International with country code"
                         style={{ width: '100%', padding: '10px 14px', borderRadius: '6px', border: '1px solid rgba(0,0,0,0.18)', fontSize: '13px' }}
                       />
                     </div>
@@ -155,6 +201,7 @@ export default function BespokeConsultationPage() {
                     <label style={{ fontSize: '12px', fontWeight: 600, color: '#4a4239', display: 'block', marginBottom: '4px' }}>City &amp; Country</label>
                     <input
                       type="text"
+                      maxLength={100}
                       value={formData.city}
                       onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                       placeholder="e.g. Mumbai, London, Dubai, New York"
@@ -167,6 +214,7 @@ export default function BespokeConsultationPage() {
                       <label style={{ fontSize: '11px', fontWeight: 600, color: '#4a4239', display: 'block', marginBottom: '4px' }}>Width (ft / in)</label>
                       <input
                         type="text"
+                        maxLength={50}
                         value={formData.width}
                         onChange={(e) => setFormData({ ...formData, width: e.target.value })}
                         placeholder="e.g. 6.5 ft"
@@ -177,6 +225,7 @@ export default function BespokeConsultationPage() {
                       <label style={{ fontSize: '11px', fontWeight: 600, color: '#4a4239', display: 'block', marginBottom: '4px' }}>Depth (ft / in)</label>
                       <input
                         type="text"
+                        maxLength={50}
                         value={formData.depth}
                         onChange={(e) => setFormData({ ...formData, depth: e.target.value })}
                         placeholder="e.g. 3.5 ft"
@@ -187,6 +236,7 @@ export default function BespokeConsultationPage() {
                       <label style={{ fontSize: '11px', fontWeight: 600, color: '#4a4239', display: 'block', marginBottom: '4px' }}>Height (ft / in)</label>
                       <input
                         type="text"
+                        maxLength={50}
                         value={formData.height}
                         onChange={(e) => setFormData({ ...formData, height: e.target.value })}
                         placeholder="e.g. 9.0 ft"
@@ -212,6 +262,7 @@ export default function BespokeConsultationPage() {
                     <label style={{ fontSize: '12px', fontWeight: 600, color: '#4a4239', display: 'block', marginBottom: '4px' }}>Special Wishes / Idol Sizes</label>
                     <textarea
                       rows={3}
+                      maxLength={1500}
                       value={formData.notes}
                       onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                       placeholder="e.g. Need backlit Om halo, jali folding doors, and pull-out diya drawer for Radha Krishna deities."
@@ -222,9 +273,10 @@ export default function BespokeConsultationPage() {
                   <button
                     type="submit"
                     className="btn-primary"
+                    disabled={loading}
                     style={{ marginTop: '10px', width: '100%', justifyContent: 'center' }}
                   >
-                    <span className="btn-primary__text">Generate 2D CAD Proposal via WhatsApp</span>
+                    <span className="btn-primary__text">{loading ? 'Transmitting Proposal...' : 'Generate 2D CAD Proposal via WhatsApp'}</span>
                     <span className="btn-primary__icon">→</span>
                   </button>
                 </form>

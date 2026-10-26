@@ -1010,16 +1010,19 @@ export function getProductById(id) {
 }
 
 export function saveInquiry(inquiryData) {
-  if (typeof window === 'undefined') return;
-  try {
-    const existing = JSON.parse(localStorage.getItem('afg_saved_inquiries') || '[]');
-    existing.unshift({
-      ...inquiryData,
-      id: Date.now().toString(),
-      timestamp: new Date().toISOString()
-    });
-    localStorage.setItem('afg_saved_inquiries', JSON.stringify(existing.slice(0, 20)));
-  } catch (e) {
-    console.error('Failed to save inquiry to localStorage', e);
+  const inquiry = {
+    ...inquiryData,
+    id: `AFG-${Date.now().toString().slice(-6)}`,
+    timestamp: new Date().toISOString()
+  };
+  if (typeof window !== 'undefined') {
+    try {
+      const existing = JSON.parse(localStorage.getItem('afg_saved_inquiries') || '[]');
+      existing.unshift(inquiry);
+      localStorage.setItem('afg_saved_inquiries', JSON.stringify(existing.slice(0, 20)));
+    } catch (e) {
+      console.warn('Failed to save inquiry to localStorage', e);
+    }
   }
+  return inquiry;
 }
