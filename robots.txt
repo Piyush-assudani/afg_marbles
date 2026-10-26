@@ -47,6 +47,7 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-# Sitemap Declarations
+# Sitemap & AI Ground Truth Declarations
 Sitemap: https://afgmarbel.com/sitemap.xml
+LLMs-Txt: https://afgmarbel.com/llms.txt
 Host: https://afgmarbel.com

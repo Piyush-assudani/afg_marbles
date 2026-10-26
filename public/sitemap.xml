@@ -2,98 +2,233 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- Homepage -->
+  <!-- 1. Homepage -->
   <url>
     <loc>https://afgmarbel.com/</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://afgmarbel.com/gallery/mandir-luxury-sanctum.webp</image:loc>
+      <image:loc>https://afgmarbel.com/gallery/img_7237.webp</image:loc>
       <image:title>Bespoke Makrana Pure White Marble Mandir</image:title>
       <image:caption>Handcrafted luxury marble home temple with intricate arches and gold inlays by A.F.G Marble &amp; Arts</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://afgmarbel.com/gallery/fountain-estate-triple.webp</image:loc>
-      <image:title>Palatial Triple Tier Estate Marble Fountain</image:title>
-      <image:caption>Monumental hand-carved white marble fountain with fluted basins for luxury residences</image:caption>
+      <image:loc>https://afgmarbel.com/gallery/img_7947.webp</image:loc>
+      <image:title>Grand Double-Bay Palatial Sanctum Mandir</image:title>
+      <image:caption>Monumental hand-carved white marble temple with twin sanctums for luxury estates</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://afgmarbel.com/gallery/mandir-pure-white-om.webp</image:loc>
-      <image:title>Pure White Om Calcite Mandir Consecrated Installation</image:title>
-      <image:caption>Makrana calcite marble home temple with mirror polish and warm illumination</image:caption>
+      <image:loc>https://afgmarbel.com/gallery/fountain-triple-tier-carved-detail.webp</image:loc>
+      <image:title>Palatial Cascading Marble Fountain</image:title>
+      <image:caption>Multi-tier estate marble watercraft sculpted from hydraulic Rajnagar white marble</image:caption>
     </image:image>
   </url>
 
-  <!-- Pooja Sanctums & Mandirs -->
+  <!-- 2. Pooja Sanctums & Mandirs -->
   <url>
-    <loc>https://afgmarbel.com/pooja-sanctums.html</loc>
-    <lastmod>2026-10-17</lastmod>
+    <loc>https://afgmarbel.com/pooja-sanctums</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://afgmarbel.com/gallery/mandir-gold-leaf-mandap.webp</image:loc>
-      <image:title>Gold Leaf Mandap Pooja Sanctum</image:title>
-      <image:caption>Grand garbhagriha marble temple with 24K gold leafing and fluted columns</image:caption>
+      <image:loc>https://afgmarbel.com/gallery/img_7263.webp</image:loc>
+      <image:title>Royal Nagara Shikhara Marble Mandir</image:title>
+      <image:caption>Consecrated Makrana marble mandir with multi-tiered kalash spire and fluted pillars</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://afgmarbel.com/gallery/mandir-radha-krishna.webp</image:loc>
-      <image:title>Radha Krishna Marble Sanctum</image:title>
-      <image:caption>Makrana marble home mandir with hand-carved deity alcoves and jaali backdrops</image:caption>
+      <image:loc>https://afgmarbel.com/gallery/img_7378.webp</image:loc>
+      <image:title>Pavilion Chhatri Home Mandir</image:title>
+      <image:caption>Royal Rajasthani domed sanctum with open parikrama colonnade</image:caption>
     </image:image>
   </url>
 
-  <!-- Palatial Fountains -->
+  <!-- 3. Palatial Fountains -->
   <url>
-    <loc>https://afgmarbel.com/palatial-fountains.html</loc>
-    <lastmod>2026-10-17</lastmod>
+    <loc>https://afgmarbel.com/palatial-fountains</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://afgmarbel.com/gallery/fountain-palatial-night.webp</image:loc>
-      <image:title>Illuminated Palatial Tiered Marble Fountain</image:title>
-      <image:caption>Multi-tier courtyard marble fountain engineered for estates and resorts</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://afgmarbel.com/gallery/fountain-lotus-topdown.webp</image:loc>
-      <image:title>Lotus Scalloped Basin Marble Fountain</image:title>
-      <image:caption>Classical scalloped lotus bowl fountain carved from a single block of calcite marble</image:caption>
+      <image:loc>https://afgmarbel.com/gallery/fountain-black-stone-close-detail.webp</image:loc>
+      <image:title>Black &amp; White Hydraulic Stone Fountain Detail</image:title>
+      <image:caption>High-relief scalloped lotus watercraft engineered for villas and palace courtyards</image:caption>
     </image:image>
   </url>
 
-  <!-- Noble Stone & Materials Guide -->
+  <!-- 4. Bespoke Space Consultation & CAD Blueprint Desk -->
   <url>
-    <loc>https://afgmarbel.com/materials-guide.html</loc>
-    <lastmod>2026-10-17</lastmod>
+    <loc>https://afgmarbel.com/bespoke-consultation</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 5. Royal Projects & Monumental Commissions -->
+  <url>
+    <loc>https://afgmarbel.com/royal-projects</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- 6. Atelier & Quarry Workshops -->
+  <url>
+    <loc>https://afgmarbel.com/atelier-workshop</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://afgmarbel.com/gallery/atelier-quarry-selection-block.webp</image:loc>
+      <image:title>Quarry Bedrock Selection in Makrana</image:title>
+      <image:caption>Raw Makrana pure white calcite marble bedrock block inspected by Master Shilawats</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 7. Heritage Chhatris & Garden Pavilions -->
+  <url>
+    <loc>https://afgmarbel.com/heritage-chhatris</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://afgmarbel.com/gallery/royal-chhatri-garden-pavilion.webp</image:loc>
+      <image:title>Royal Garden Chhatri Pavilion</image:title>
+      <image:caption>Monumental Rajasthani marble pavilion with scalloped arches and fluted dome</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 8. Marble Deities & Murti Sculptures -->
+  <url>
+    <loc>https://afgmarbel.com/marble-deities</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 9. Jaali Screens & Architectural Lattice -->
+  <url>
+    <loc>https://afgmarbel.com/jaali-screens</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 10. Pietra Dura Semi-Precious Lapidary Inlay -->
+  <url>
+    <loc>https://afgmarbel.com/pietra-dura-inlay</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 11. Materials & Calcite Stratum Guide -->
+  <url>
+    <loc>https://afgmarbel.com/materials-guide</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://afgmarbel.com/gallery/stone-makrana-calcite-slab.webp</image:loc>
-      <image:title>Certified Pure Makrana White Calcite Marble</image:title>
-      <image:caption>99% calcite Makrana white marble slab showcasing natural non-porous crystalline structure</image:caption>
+      <image:title>Makrana Pure White Calcite Marble Stratum</image:title>
+      <image:caption>99.2% pure calcium carbonate calcite block with zero porosity</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://afgmarbel.com/gallery/stone-vietnam-white-marble.webp</image:loc>
+      <image:title>Vietnam Pure Snow Calcite Marble</image:title>
+      <image:caption>99.6% ultra-fine crystalline white marble for sacred deity face sculpting</image:caption>
     </image:image>
   </url>
 
-  <!-- Atelier Experience Centres & Consultation -->
+  <!-- 12. Makrana Calcite Mine History & Authenticity -->
   <url>
-    <loc>https://afgmarbel.com/contact.html</loc>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://afgmarbel.com/makrana-calcite-mine</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
-  <!-- Terms & Conditions -->
+  <!-- 13. Ayadi Vastu Shastra Sacred Mathematics -->
   <url>
-    <loc>https://afgmarbel.com/terms-and-conditions.html</loc>
-    <lastmod>2026-10-17</lastmod>
+    <loc>https://afgmarbel.com/ayadi-vastu-shastra</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 14. Pre-Assembly & Dry-Fit Trial Yard -->
+  <url>
+    <loc>https://afgmarbel.com/pre-assembly-trial</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://afgmarbel.com/gallery/yard-dryfit-crown-detail.webp</image:loc>
+      <image:title>Pre-Assembly Dry Fit Trial Yard Inspection</image:title>
+      <image:caption>Dry-fit alignment trial of interlocking marble mandir crown sections before crating</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 15. Global Shipping & White Glove Export -->
+  <url>
+    <loc>https://afgmarbel.com/global-shipping</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- 16. Temple Maintenance & Preservation Guide -->
+  <url>
+    <loc>https://afgmarbel.com/temple-maintenance-guide</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- 17. Private Commissions Dossier -->
+  <url>
+    <loc>https://afgmarbel.com/private-commissions</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- 18. Transparent Pricing & Investment Philosophy -->
+  <url>
+    <loc>https://afgmarbel.com/pricing-guide</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- 19. About A.F.G Marble & Arts Heritage -->
+  <url>
+    <loc>https://afgmarbel.com/about-afg</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- 20. Official Contact & Atelier Desk -->
+  <url>
+    <loc>https://afgmarbel.com/contact</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- 21. Privacy Policy & Bilateral Non-Disclosure -->
+  <url>
+    <loc>https://afgmarbel.com/privacy-policy</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
 
-  <!-- Privacy Policy -->
+  <!-- 22. Terms & Architectural Warranty Conditions -->
   <url>
-    <loc>https://afgmarbel.com/privacy-policy.html</loc>
-    <lastmod>2026-10-17</lastmod>
+    <loc>https://afgmarbel.com/terms-and-conditions</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
