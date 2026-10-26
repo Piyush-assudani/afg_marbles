@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { Maximize2 } from 'lucide-react';
 
 const STYLES = [
   {
@@ -178,36 +179,88 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
         }}>
           {/* LEFT: Live Visual Preview & Dynamic Engineering Specs */}
           <div className="configurator-preview" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            <div className="configurator-stage-frame" style={{
-              position: 'relative',
-              height: '380px',
-              borderRadius: '16px',
-              overflow: 'hidden',
-              boxShadow: '0 12px 36px rgba(28, 24, 19, 0.15)',
-              background: '#181512'
-            }}>
+            <div
+              className="configurator-stage-frame"
+              onClick={() => {
+                if (typeof window !== 'undefined' && window.afgOpenLightbox) {
+                  window.afgOpenLightbox({
+                    src: selectedStyle.image,
+                    title: selectedStyle.name,
+                    tag: `${selectedStone.name} · Vastu Score ${selectedStyle.vastuScore}/100`
+                  });
+                }
+              }}
+              style={{
+                position: 'relative',
+                height: '430px',
+                borderRadius: '16px',
+                overflow: 'hidden',
+                boxShadow: '0 12px 36px rgba(28, 24, 19, 0.15)',
+                background: 'radial-gradient(ellipse at center, #2a231b 0%, #14110d 100%)',
+                cursor: 'zoom-in',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
               <img
                 src={selectedStyle.image}
                 alt={selectedStyle.name}
                 style={{
                   width: '100%',
                   height: '100%',
-                  objectFit: 'cover',
-                  objectPosition: selectedStyle.id === 'haveli' ? 'center 22%' : 'center',
+                  objectFit: 'contain',
+                  objectPosition: 'center',
                   transition: 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease'
                 }}
               />
+
+              {/* Floating Fullscreen Trigger Badge */}
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (typeof window !== 'undefined' && window.afgOpenLightbox) {
+                    window.afgOpenLightbox({
+                      src: selectedStyle.image,
+                      title: selectedStyle.name,
+                      tag: `${selectedStone.name} · Vastu Score ${selectedStyle.vastuScore}/100`
+                    });
+                  }
+                }}
+                style={{
+                  position: 'absolute',
+                  top: '16px',
+                  right: '16px',
+                  background: 'rgba(26, 21, 16, 0.88)',
+                  color: '#edd7a8',
+                  border: '1px solid rgba(212, 175, 55, 0.45)',
+                  borderRadius: '999px',
+                  padding: '6px 14px',
+                  fontSize: '11px',
+                  fontWeight: 600,
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  cursor: 'pointer',
+                  zIndex: 4,
+                  backdropFilter: 'blur(8px)',
+                }}
+              >
+                <Maximize2 size={12} />
+                <span>Zoom 4K</span>
+              </button>
 
               {/* Top Luxury Badges */}
               <div style={{
                 position: 'absolute',
                 top: '16px',
                 left: '16px',
-                right: '16px',
                 display: 'flex',
-                justifyContent: 'space-between',
+                gap: '10px',
                 alignItems: 'center',
-                pointerEvents: 'none'
+                pointerEvents: 'none',
+                zIndex: 2,
               }}>
                 <span style={{
                   background: 'rgba(20, 17, 14, 0.88)',
@@ -233,7 +286,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
                   letterSpacing: '0.06em',
                   boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
                 }}>
-                  VASTU SCORE: {selectedStyle.vastuScore}/100
+                  VASTU: {selectedStyle.vastuScore}/100
                 </span>
               </div>
 

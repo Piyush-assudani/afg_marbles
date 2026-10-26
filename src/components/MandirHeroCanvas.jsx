@@ -55,7 +55,51 @@ export default function MandirHeroCanvas() {
   };
 
   return (
-    <div className="hero-3d-wrapper">
+    <div className="hero-3d-wrapper" style={{ position: 'relative' }}>
+      {/* Instant Photorealistic 3D Model Poster while WebGL loads */}
+      {!isLoaded && (
+        <div
+          className="hero-3d-poster-skeleton"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            backgroundImage: 'url(/hero-mandir-poster.webp)',
+            backgroundSize: 'contain',
+            backgroundPosition: 'center 45%',
+            backgroundRepeat: 'no-repeat',
+            opacity: 0.95,
+            filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.3))',
+            pointerEvents: 'none',
+            zIndex: 1,
+            transition: 'opacity 0.6s ease',
+          }}
+        >
+          <div
+            style={{
+              position: 'absolute',
+              bottom: '90px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              background: 'rgba(26, 21, 16, 0.88)',
+              border: '1px solid rgba(212, 175, 55, 0.45)',
+              color: '#edd7a8',
+              borderRadius: '999px',
+              padding: '6px 16px',
+              fontSize: '11px',
+              fontWeight: 600,
+              letterSpacing: '0.1em',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              backdropFilter: 'blur(8px)',
+            }}
+          >
+            <span className="pulse-dot" style={{ width: '7px', height: '7px', background: '#d4af37', borderRadius: '50%' }}></span>
+            <span>INITIALIZING 3D ATELIER ENVIRONMENT...</span>
+          </div>
+        </div>
+      )}
+
       <canvas ref={canvasRef} id="canvas" className="webgl"></canvas>
 
       {/* Stone Switcher Palette */}
