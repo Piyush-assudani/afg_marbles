@@ -7,7 +7,7 @@ export default function PricingPhilosophy({ onOpenInquiry }) {
       scale: '3.0 ft to 4.2 ft Width',
       title: 'Compact Villa Sanctums',
       ideal: 'Ideal for luxury apartments, penthouses, and dedicated puja alcoves.',
-      investment: 'From ₹3,75,000 / $4,500 USD',
+      investment: 'Custom Quote on Request',
       stone: '100% Pure Makrana White Albeta',
       features: [
         'Monolithic hand-chiseled Makrana Albeta plinth',
@@ -24,7 +24,7 @@ export default function PricingPhilosophy({ onOpenInquiry }) {
       scale: '5.0 ft to 6.5 ft Width',
       title: 'Palatial Garbhagriha Mandaps',
       ideal: 'Designed for independent villas, ancestral homes, and duplex estates.',
-      investment: 'From ₹7,25,000 / $8,700 USD',
+      investment: 'Custom Quote on Request',
       stone: 'First-Selection Virgin Makrana Calcite',
       features: [
         'Full Garbhagriha mandap with fluted pillars & corbels',
@@ -176,13 +176,13 @@ export default function PricingPhilosophy({ onOpenInquiry }) {
                   marginBottom: '24px',
                 }}
               >
-                <span style={{ fontSize: '11px', color: '#7a6a57', display: 'block', marginBottom: '2px' }}>
-                  Estimated Turnkey Investment:
+                <span style={{ fontSize: '11px', color: '#7a6a57', display: 'block', marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                  Commission Valuation:
                 </span>
                 <div
                   style={{
                     fontFamily: 'var(--serif)',
-                    fontSize: '22px',
+                    fontSize: '20px',
                     fontWeight: 700,
                     color: '#8c6023',
                   }}

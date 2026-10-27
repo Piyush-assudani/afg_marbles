@@ -408,7 +408,7 @@ export default function Footer() {
           }}
         >
           <p style={{ margin: 0, color: '#9e9080', fontSize: '12.5px', lineHeight: 1.6 }}>
-            &copy; 2026 MAA AAINATH GOU SEVA SAMITI BALOTRA. All rights reserved. Powered by{' '}
+            &copy; 2026 A.F.G MARBLE AND ART. All rights reserved. Powered by{' '}
             <a
               href="https://morihix.com"
               target="_blank"

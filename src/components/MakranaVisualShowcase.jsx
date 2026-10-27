@@ -5,37 +5,51 @@ import { Sparkles, ArrowRight, MessageSquare, ShieldCheck } from 'lucide-react';
 const MAKRANA_GALLERY = [
   {
     title: 'Grand Makrana Garbhagriha Mandir',
-    subtitle: '99% Pure Calcite Monolith Carving',
-    image: '/gallery/mandir-luxury-sanctum.webp',
+    subtitle: '99.2% Pure Calcite Monolith Carving with Hand-Sculpted Shikhara Arches',
+    image: '/gallery/mandir-grand-makrana-8361.webp',
     tag: 'Flagship Temple',
     span: 'large',
   },
   {
     title: 'Peacock Torana & Filigree Archway',
-    subtitle: 'Hand-chiseled pierced jali in pure white Makrana',
-    image: '/gallery/sanctum-peacock-arch.webp',
+    subtitle: 'Hand-chiseled pierced jali & royal Mayura pillars in pure white Makrana',
+    image: '/gallery/mandir-peacock-torana-8341.webp',
     tag: 'Hand-Chiseled Detail',
     span: 'standard',
   },
   {
     title: 'Makrana Calcite Slab Texture',
-    subtitle: 'Natural crystalline grain · 0% porosity · Never yellowing',
+    subtitle: 'Spotless crystalline grain · 0% porosity · Zero yellowing guarantee',
     image: '/gallery/stone-makrana-calcite-slab.webp',
     tag: 'Real Stone Texture',
     span: 'standard',
   },
   {
-    title: 'Master Silawat Artisan Chiseling',
-    subtitle: 'Generational craftsmanship in our Makrana workshop',
-    image: '/gallery/atelier-sculptor-chisel-block.webp',
-    tag: 'Atelier Workshop',
+    title: 'Pure White Backlit Sanctum',
+    subtitle: 'Luminescent translucent marble with Tree of Life medallion & gold gilding',
+    image: '/gallery/mandir-backlit-tree-8342.webp',
+    tag: 'Sanctum Glow',
     span: 'standard',
   },
   {
-    title: 'Pure White Backlit Om Sanctum',
-    subtitle: 'Luminescent translucent marble with gold gilding',
-    image: '/gallery/mandir-pure-white-om.webp',
-    tag: 'Sanctum Glow',
+    title: 'Shree Ram Sanctum Mandir',
+    subtitle: "Sacred golden 'राम' medallion, Kamadhenu bas-relief & lotus crest",
+    image: '/gallery/mandir-shree-ram-7971.webp',
+    tag: 'Sacred Sanctum',
+    span: 'standard',
+  },
+  {
+    title: 'Royal Pietra Dura Garbhagriha',
+    subtitle: 'Handcrafted gemstone floral inlay with high-relief peacock & waterfall panels',
+    image: '/gallery/mandir-pietra-dura-7794.webp',
+    tag: 'Palatial Inlay Hall',
+    span: 'standard',
+  },
+  {
+    title: 'Parchin Kari Floral Archway Sanctum',
+    subtitle: 'Taj Mahal stratum marble with floral inlay & crystal chandelier',
+    image: '/gallery/mandir-parchin-kari-7975.webp',
+    tag: 'Floral Inlay Art',
     span: 'standard',
   },
 ];
@@ -82,7 +96,7 @@ export default function MakranaVisualShowcase({ onOpenInquiry }) {
               onClick={() =>
                 handleItemClick({
                   title: 'Makrana Pure White Temple Consultation',
-                  image: '/gallery/mandir-pure-makrana.webp',
+                  image: '/gallery/mandir-grand-makrana-8361.webp',
                 })
               }
             >

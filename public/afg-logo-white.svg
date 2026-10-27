@@ -1,17 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 120" fill="none" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 120" fill="none" width="100%" height="100%">
   <defs>
-    <linearGradient id="afgRedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ED1C24" />
-      <stop offset="60%" stop-color="#D1131E" />
-      <stop offset="100%" stop-color="#960C14" />
+    <linearGradient id="afgRed1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF262E" />
+      <stop offset="60%" stop-color="#E51720" />
+      <stop offset="100%" stop-color="#BF0F17" />
+    </linearGradient>
+    <linearGradient id="afgRed2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DA151D" />
+      <stop offset="100%" stop-color="#990B12" />
     </linearGradient>
   </defs>
-  <!-- Red Triangular 'A' -->
-  <path d="M 66 18 L 91 76 C 72 80 48 87 24 96 L 66 18 Z" fill="url(#afgRedGrad)" />
-  <path d="M 14 105 C 38 87 75 79 110 78 L 124 105 L 14 105 Z" fill="url(#afgRedGrad)" />
-  <!-- . F . G -->
-  <g transform="translate(136, 105) scale(0.05457, -0.05457)"><path d="M147 0V281H428V0Z" fill="#FFFFFF" /></g>
-  <g transform="translate(158, 105) scale(0.05457, -0.05457)"><path d="M151 0V1466H1156V1218H447V871H1059V623H447V0Z" fill="#FFFFFF" /></g>
-  <g transform="translate(232, 105) scale(0.05457, -0.05457)"><path d="M147 0V281H428V0Z" fill="#FFFFFF" /></g>
-  <g transform="translate(254, 105) scale(0.05457, -0.05457)"><path d="M831 539V786H1469V202Q1376 112 1199.5 43.5Q1023 -25 842 -25Q612 -25 441.0 71.5Q270 168 184.0 347.5Q98 527 98 738Q98 967 194.0 1145.0Q290 1323 475 1418Q616 1491 826 1491Q1099 1491 1252.5 1376.5Q1406 1262 1450 1060L1156 1005Q1125 1113 1039.5 1175.5Q954 1238 826 1238Q632 1238 517.5 1115.0Q403 992 403 750Q403 489 519.0 358.5Q635 228 823 228Q916 228 1009.5 264.5Q1103 301 1170 353V539Z" fill="#FFFFFF" /></g>
+
+  <!-- Red Triangular 'A' Mark -->
+  <path d="M 72 12 L 105 74 C 83 78 54 86 28 97 L 72 12 Z" fill="url(#afgRed1)" />
+  <path d="M 16 105 C 42 86 82 78 122 76 L 138 105 L 16 105 Z" fill="url(#afgRed2)" />
+
+  <!-- . F . G in Authentic Brand Typography -->
+  <g transform="translate(140, 104) scale(0.06, -0.06)"><path d="M177 112Q177 168 218.0 209.0Q259 250 316 250Q373 250 414.0 209.0Q455 168 455 111Q455 53 414 12Q374 -28 316 -28Q257 -28 217.0 12.0Q177 52 177 112Z" fill="#FFFFFF" /></g>
+  <g transform="translate(168, 104) scale(0.06, -0.06)"><path d="M956 1325H418V954H937V735H418V0H185V1544H956Z" fill="#FFFFFF" /></g>
+  <g transform="translate(232, 104) scale(0.06, -0.06)"><path d="M177 112Q177 168 218.0 209.0Q259 250 316 250Q373 250 414.0 209.0Q455 168 455 111Q455 53 414 12Q374 -28 316 -28Q257 -28 217.0 12.0Q177 52 177 112Z" fill="#FFFFFF" /></g>
+  <g transform="translate(260, 104) scale(0.06, -0.06)"><path d="M979 804H1617V753Q1617 579 1576 445Q1536 321 1441 213Q1226 -29 894 -29Q570 -29 339 205Q108 440 108 769Q108 1105 343 1339Q578 1574 915 1574Q1096 1574 1253 1500Q1403 1426 1548 1260L1382 1101Q1192 1354 919 1354Q674 1354 508 1185Q342 1019 342 769Q342 511 527 344Q700 189 902 189Q1074 189 1211 305Q1348 422 1364 585H979Z" fill="#FFFFFF" /></g>
 </svg>

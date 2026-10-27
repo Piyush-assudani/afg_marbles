@@ -10,7 +10,7 @@ export default function PrivateCommissionsPage() {
       location: 'Highgate, North London, United Kingdom',
       type: 'Royal Garbhagriha Peacock Mandir (8.5ft W × 11.2ft H)',
       stone: '100% Pure Makrana White Albeta with 24K Gold Gilding',
-      img: '/gallery/sanctum-peacock-arch.webp',
+      img: '/gallery/mandir-peacock-torana-8341.webp',
       desc: 'Commissioned for a bespoke prayer wing in a historic North London residence. The patron requested an authentic Rajasthani peacock torana arch with concealed 110V–240V LED lighting and soft-close velvet storage. Fully pre-assembled in our Jaipur yard, crated in ISPM-15 pine, and installed by our artisans in London within 48 hours of doorstep delivery.',
       patron: 'Dr. Vikram & Sunita Patel'
     },

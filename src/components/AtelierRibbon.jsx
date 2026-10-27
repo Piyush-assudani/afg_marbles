@@ -23,7 +23,7 @@ const ROW_ONE = [
     caption: 'Palatial Four-Tier Fountain',
   },
   {
-    src: '/gallery/mandir-luxury-sanctum.webp',
+    src: '/gallery/mandir-grand-makrana-8361.webp',
     alt: 'Grand Garbhagriha luxury marble mandir with ornate pillars',
     caption: 'Grand Garbhagriha Mandir',
   },
@@ -61,9 +61,9 @@ const ROW_TWO = [
     caption: 'Concentric Calcite Fountain',
   },
   {
-    src: '/gallery/mandir-pure-white-om.webp',
-    alt: 'Bespoke marble sanctum with backlit sacred Om jali screen',
-    caption: 'Royal Jharokha Mandir',
+    src: '/gallery/mandir-backlit-tree-8342.webp',
+    alt: 'Bespoke marble sanctum with backlit tree of life medallion',
+    caption: 'Backlit Tree of Life Sanctum',
   },
   {
     src: '/gallery/fountain-estate-triple.webp',

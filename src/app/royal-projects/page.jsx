@@ -36,7 +36,7 @@ const PROJECTS = [
     category: 'Contemporary Pooja Sanctums',
     stone: 'Makrana 99% Pure Calcite & 24K Pure Gold Leaf Inlay',
     scale: '8.5ft Width × 4.2ft Depth × 9.0ft Height',
-    heroImage: '/gallery/mandir-pure-white-om.webp',
+    heroImage: '/gallery/mandir-grand-makrana-8361.webp',
     gallery: [
       '/gallery/mandir-pure-white-om-before.webp',
       '/gallery/sanctum-tall-shikhara.webp',

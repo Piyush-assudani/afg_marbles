@@ -25,7 +25,7 @@ const LANDMARKS = [
     type: 'Contemporary Pooja Sanctum',
     stone: 'Makrana 99% Pure Calcite & 24K Pure Gold Leaf Inlay',
     scale: '8.5ft W × 4.2ft D × 9.0ft H',
-    image: '/gallery/mandir-pure-white-om.webp',
+    image: '/gallery/mandir-grand-makrana-8361.webp',
     stat1: '100% Calcite',
     stat1Label: 'Zero-Porosity Stone',
     stat2: '5 Hours',
