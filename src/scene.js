@@ -17,14 +17,23 @@ export const STONES = [
    Materials
 ------------------------------------------------------------------- */
 
+function getFallbackWhiteTexture() {
+  const data = new Uint8Array([255, 255, 255, 255]);
+  const tex = new THREE.DataTexture(data, 1, 1, THREE.RGBAFormat);
+  tex.needsUpdate = true;
+  return tex;
+}
+const defaultWhiteTex = getFallbackWhiteTexture();
+
 /**
  * Polished marble with seamless triplanar mapping (object space) and an
  * animated, gold-edged "wipe" used to transform the temple between stones.
  */
 function makeMarbleMaterial(map, { scale = 0.52, minY = 0.25, maxY = 5.55, roughness = 0.2 } = {}) {
+  const activeMap = map || defaultWhiteTex;
   const uniforms = {
-    uMapA: { value: map },
-    uMapB: { value: map },
+    uMapA: { value: activeMap },
+    uMapB: { value: activeMap },
     uMix: { value: 0 },
     uScale: { value: scale },
     uMinY: { value: minY },
@@ -97,7 +106,12 @@ function makeMarbleMaterial(map, { scale = 0.52, minY = 0.25, maxY = 5.55, rough
         float wEdge = mix(-0.16, 1.16, uMix);
         float wH = hN + wNoise * 0.16;
         float wMask = 1.0 - smoothstep(wEdge - 0.02, wEdge + 0.02, wH);
-        diffuseColor.rgb *= mix(stoneA, stoneB, wMask);
+        vec3 stoneColor = mix(stoneA, stoneB, wMask);
+        if (dot(stoneColor, stoneColor) < 0.25) {
+          stoneColor = vec3(0.99, 0.985, 0.97);
+        }
+        stoneColor = max(stoneColor, vec3(0.85, 0.83, 0.81));
+        diffuseColor.rgb *= stoneColor;
 
         float wActive = step(0.0005, uMix) * step(uMix, 0.9995);
         float dist = abs(wH - wEdge);
@@ -403,9 +417,7 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
   }
   gltfLoader.setMeshoptDecoder(MeshoptDecoder);
 
-  const urlParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
-  const isDarkModel = urlParams?.get('model') === 'dark' || urlParams?.get('theme') === 'dark';
-  const modelFile = isDarkModel ? 'mandir_heavy_dark.glb' : 'mandir_premium_v4.glb';
+  const modelFile = 'mandir_premium_v4.glb';
 
   const gltfPromise = new Promise((resolve, reject) => {
     gltfLoader.load(
@@ -449,16 +461,26 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
             } else if (matName.includes('Velvet')) {
               child.material = royalVelvetMaroon;
             } else if (
-              matName.includes('Marble_White') ||
-              matName.includes('Marble_Cream') ||
-              matName.includes('Ivory_Gloss') ||
-              (isDarkModel && matName.includes('Marble_Dark'))
+              matName.includes('Marble') ||
+              matName.includes('Stone') ||
+              matName.includes('Ivory') ||
+              matName.includes('Dark') ||
+              matName.includes('Black') ||
+              matName.includes('Plinth') ||
+              matName.includes('Pillar') ||
+              matName.includes('Wall') ||
+              matName.includes('Base') ||
+              matName.includes('White') ||
+              matName.includes('Cream')
             ) {
               child.material = templeMat;
             } else if (matName.includes('Gold') || lowerName.includes('wing_gold') || lowerName.includes('crest') || lowerName.includes('beak') || lowerName.includes('feet') || lowerName.includes('tail_fan')) {
               child.material = gold;
             } else if (child.material) {
               child.material.side = THREE.DoubleSide;
+              if (child.material.color && child.material.color.r < 0.25 && child.material.color.g < 0.25 && child.material.color.b < 0.25) {
+                child.material = templeMat;
+              }
             }
           }
         });
@@ -476,6 +498,11 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
             const fallbackMandir = fallbackGltf.scene;
             fallbackMandir.scale.setScalar(2.68);
             fallbackMandir.position.set(0, 0.22, 0);
+            fallbackMandir.traverse((child) => {
+              if (child.isMesh) {
+                child.material = templeMat;
+              }
+            });
             mandirGroup.add(fallbackMandir);
             mandirGroup.visible = true;
             resolve(fallbackGltf);

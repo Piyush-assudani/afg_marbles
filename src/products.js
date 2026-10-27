@@ -814,8 +814,8 @@ export const PRODUCTS = [
       {
         label: 'Full Elevation',
         tag: 'Full Elevation',
-        src: '/gallery/royal-chhatri-garden-pavilion.webp',
-        desc: 'Authentic Jaipur atelier chhatri showing the ribbed dome, 8-pillar colonnade, and plinth.'
+        src: '/gallery/chhatri-fluted-monumental-lawn.webp',
+        desc: 'Monumental octagonal garden chhatri in pure Makrana white marble with ribbed fluted dome and carved plinth.'
       },
       {
         label: 'Fluted Dome & Kalash',

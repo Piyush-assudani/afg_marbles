@@ -87,6 +87,7 @@ export default function HeroSection({ onOpenInquiry }) {
   const canvasRef = useRef(null);
   const expRef = useRef(null);
   const [activeStoneIdx, setActiveStoneIdx] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const activeStone = STONES_METADATA[activeStoneIdx] || STONES_METADATA[0];
 
@@ -231,6 +232,19 @@ export default function HeroSection({ onOpenInquiry }) {
         <span className="niche__word" id="niche-word">
           {activeStone.word}
         </span>
+      </div>
+
+      {/* Pure White Makrana Mandir Fallback Poster (ensures low-spec / dumb laptops and slow GPUs show an immediate pure white mandir) */}
+      <div 
+        className={`hero__poster-fallback ${isLoaded ? 'is-faded' : ''}`}
+        aria-hidden="true"
+      >
+        <img 
+          src="/hero-mandir-poster.webp" 
+          alt="A.F.G Certified Pure White Makrana Mandir"
+          loading="eager"
+          decoding="async"
+        />
       </div>
 
       {/* Interactive 3D WebGL Canvas */}

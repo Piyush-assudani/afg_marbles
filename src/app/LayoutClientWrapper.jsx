@@ -10,6 +10,7 @@ import ProductModal from '../components/ProductModal';
 import AtelierSoundscape from '../components/AtelierSoundscape';
 import CookieConsent from '../components/CookieConsent';
 import ImageLightbox from '../components/ImageLightbox';
+import LuxuryPreloader from '../components/LuxuryPreloader';
 import { PRODUCTS } from '../products.js';
 
 export default function LayoutClientWrapper({ children }) {
@@ -23,6 +24,33 @@ export default function LayoutClientWrapper({ children }) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const originalTitleRef = useRef('');
+
+  // Auto-reload on deployment version changes / ChunkLoadError (eliminates manual refresh popups)
+  useEffect(() => {
+    const handleChunkError = (e) => {
+      const msg = (e?.message || e?.reason?.message || '').toLowerCase();
+      if (
+        msg.includes('chunkloaderror') ||
+        msg.includes('loading chunk') ||
+        msg.includes('failed to fetch') ||
+        msg.includes('dynamically imported module')
+      ) {
+        const lastReload = sessionStorage.getItem('afg_auto_reload_time');
+        const now = Date.now();
+        if (!lastReload || now - parseInt(lastReload, 10) > 8000) {
+          sessionStorage.setItem('afg_auto_reload_time', now.toString());
+          window.location.reload();
+        }
+      }
+    };
+
+    window.addEventListener('error', handleChunkError);
+    window.addEventListener('unhandledrejection', handleChunkError);
+    return () => {
+      window.removeEventListener('error', handleChunkError);
+      window.removeEventListener('unhandledrejection', handleChunkError);
+    };
+  }, []);
 
   const showToast = (msg) => {
     setToastMessage(msg);
@@ -200,6 +228,7 @@ export default function LayoutClientWrapper({ children }) {
 
   return (
     <>
+      <LuxuryPreloader />
       <header className={`site-header-container ${isScrolled ? 'is-scrolled' : 'is-at-top'} ${!isHomePage ? 'site-header-container--subpage' : ''}`}>
         {isHomePage && <AnnouncementBar />}
         <Navbar isScrolled={isScrolled} onOpenInquiry={(p) => setInquiryModalData(p)} />
