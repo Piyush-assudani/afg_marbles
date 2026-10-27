@@ -275,13 +275,13 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
               </button>
               <a
                 href={`https://wa.me/917597417274?text=${encodeURIComponent(
-                  `Namaste AFG Marble, I am inquiring about "${product.title}" (${product.scale}, ${product.primaryStone}). Please share 2D CAD drawings and bespoke volume-based estimate.\n\nProduct Link: ${getProductUrl()}`
+                  `Hello AFG Marble, I am interested in "${product.title}" (${product.scale}, ${product.primaryStone}). Please share the exact price, dimensions, and drawings.\n\nProduct Link: ${getProductUrl()}`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-outline-gold"
               >
-                <span>Instant WhatsApp 2D CAD &amp; Pricing</span>
+                <span>Get Price &amp; Details on WhatsApp</span>
               </a>
             </div>
           </div>

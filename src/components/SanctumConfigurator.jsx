@@ -351,15 +351,15 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
                 style={{
                   flex: 1,
                   minWidth: '220px',
-                  background: 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)',
-                  borderColor: '#25D366',
-                  boxShadow: '0 6px 20px rgba(37, 211, 102, 0.28)'
+                  background: 'linear-gradient(135deg, #1b4d3e 0%, #11382c 50%, #0a261d 100%)',
+                  borderColor: 'rgba(212, 175, 55, 0.7)',
+                  boxShadow: '0 6px 20px rgba(11, 46, 36, 0.35)'
                 }}
               >
                 <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginRight: '8px' }}>
                   <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
                 </svg>
-                <span>WhatsApp Config to Atelier</span>
+                <span>Send Details on WhatsApp</span>
               </button>
 
               <button

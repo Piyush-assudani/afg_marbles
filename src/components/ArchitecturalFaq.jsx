@@ -128,16 +128,16 @@ export default function ArchitecturalFaq({ onOpenInquiry }) {
               className="btn-primary"
               onClick={() => onOpenInquiry?.({ title: 'Architectural Consultation Request' })}
             >
-              <span className="btn-primary__text">Ask Sthapati on Discovery Call</span>
+              <span className="btn-primary__text">Schedule a Free Call</span>
               <span className="btn-primary__icon">→</span>
             </button>
             <a
-              href="https://wa.me/917597417274?text=Namaste%20AFG%20Marble,%20I%20have%20a%20technical%20question%20regarding%20my%20temple%20dimensions"
+              href="https://wa.me/917597417274?text=Hello%20AFG%20Marble,%20I%20have%20a%20question%20about%20marble%20temples"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline-gold"
             >
-              <span>Instant WhatsApp Concierge</span>
+              <span>Chat on WhatsApp</span>
             </a>
           </div>
         </div>

@@ -19,10 +19,30 @@
   --serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
   --sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --display: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --numeral: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 
   --pad: clamp(20px, 3.6vw, 64px);
   --ease: cubic-bezier(0.19, 1, 0.22, 1);
   --gold-grad: linear-gradient(100deg, #8c6a36 0%, #d9b979 30%, #a47e44 55%, #ecd39b 75%, #8c6a36 100%);
+}
+
+/* =========================================================
+   UNIVERSAL NUMERAL REFINEMENT (CLEAN LINING TABULAR NUMBERS)
+   ========================================================= */
+.stat__num,
+.ribbon-stat__num,
+.hero-stone-card__mini-tag,
+.stone-card__mini-tag,
+[data-count],
+.price-val,
+.product-card__price,
+.stat-digit,
+.card-price,
+.metric-num {
+  font-family: var(--numeral) !important;
+  font-variant-numeric: tabular-nums lining-nums !important;
+  font-feature-settings: 'tnum' 1, 'lnum' 1 !important;
+  letter-spacing: -0.02em;
 }
 
 *,
@@ -767,7 +787,7 @@ body:has(#hero) .site-header-container.is-at-top .nav {
 }
 
 /* =========================================================
-   HERO COPY
+   HERO COPY & PERFECT ALIGNMENT
    ========================================================= */
 .hero__content {
   position: absolute;
@@ -775,10 +795,15 @@ body:has(#hero) .site-header-container.is-at-top .nav {
   left: clamp(28px, 4.5vw, 68px);
   top: 50%;
   transform: translateY(-50%);
-  width: min(490px, 44vw);
-  max-width: 45vw;
+  width: min(510px, 45vw);
+  max-width: 520px;
   pointer-events: none;
   padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  opacity: 1 !important;
 }
 
 .hero__content a,
@@ -787,14 +812,14 @@ body:has(#hero) .site-header-container.is-at-top .nav {
 }
 
 /* =========================================================
-   MAJESTIC HERO TITLE & GRADIENT TYPOGRAPHY (4 ELEGANT LINES)
+   MAJESTIC HERO TITLE & TYPOGRAPHY (SIMPLE CLEAR ENGLISH)
    ========================================================= */
 .hero__title {
   font-family: 'Playfair Display', Georgia, serif;
   font-weight: 500;
   font-size: clamp(34px, 3.4vw, 54px);
-  line-height: 1.05;
-  letter-spacing: -0.025em;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   color: #14110e !important;
   margin: 0;
   text-shadow: 0 2px 20px rgba(255, 255, 255, 0.5);
@@ -998,22 +1023,23 @@ body:has(#hero) .site-header-container.is-at-top .nav {
 }
 
 .stone-card__mini-tag {
-  font-family: var(--sans);
-  font-size: 8px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 8.5px;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   color: #8c5d23;
   text-transform: uppercase;
 }
 
 .stone-card__mini-badge {
-  font-family: var(--sans);
-  font-size: 7.5px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+  font-size: 8px;
   font-weight: 700;
-  letter-spacing: 0.1em;
-  padding: 1px 4px;
+  letter-spacing: 0.08em;
+  padding: 1.5px 5px;
   border-radius: 4px;
-  background: rgba(140, 93, 35, 0.1);
+  background: rgba(140, 93, 35, 0.12);
   color: #7a4e1a;
   text-transform: uppercase;
 }
@@ -1251,20 +1277,30 @@ body:has(.mega-menu) .stone-rail {
 }
 
 .ribbon-stat__num {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: 'tnum' 1, 'lnum' 1;
   font-size: 21px;
   font-weight: 700;
   line-height: 1.05;
   color: #14110e;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+}
+
+.ribbon-stat__num span,
+[data-count] {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: 'tnum' 1, 'lnum' 1;
+  font-weight: 700;
 }
 
 .ribbon-stat__label {
   font-family: var(--sans);
   font-size: 10px;
-  font-weight: 550;
+  font-weight: 600;
   color: #6b6053;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -3739,16 +3775,16 @@ body:has(.mega-menu) .stone-rail {
   justify-content: center;
   width: 50px;
   height: 50px;
-  background-color: #25d366;
+  background: linear-gradient(135deg, #1b4d3e 0%, #11382c 50%, #0a261d 100%);
   border-radius: 50%;
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
-  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), background-color 0.3s;
+  box-shadow: 0 8px 24px rgba(11, 46, 36, 0.45), 0 0 0 1.5px rgba(212, 175, 55, 0.7);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), background 0.3s;
 }
 
 .floating-wa-btn:hover {
   transform: scale(1.08) translateY(-2px);
-  background-color: #20ba5a;
-  box-shadow: 0 14px 32px rgba(37, 211, 102, 0.6);
+  background: linear-gradient(135deg, #225c4b 0%, #164738 50%, #0e3226 100%);
+  box-shadow: 0 14px 32px rgba(11, 46, 36, 0.6), 0 0 0 2px rgba(212, 175, 55, 0.95);
 }
 
 .floating-wa-btn svg {
@@ -6060,7 +6096,7 @@ p { text-wrap: pretty; }
 }
 
 /* =========================================================
-   EXCLUSIVE CIRCULAR WHATSAPP FLOATING CONCIERGE (GOL BUTTON)
+   EXCLUSIVE CIRCULAR WHATSAPP FLOATING CONCIERGE (ROYAL EMERALD)
    ========================================================= */
 .floating-whatsapp-container {
   position: fixed;
@@ -6077,21 +6113,21 @@ p { text-wrap: pretty; }
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: #25d366;
-  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  background: linear-gradient(135deg, #1b4d3e 0%, #11382c 50%, #0a261d 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45), 0 4px 12px rgba(0, 0, 0, 0.18);
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 10px 28px rgba(11, 46, 36, 0.45), 0 0 0 1.5px rgba(212, 175, 55, 0.7), 0 4px 12px rgba(0, 0, 0, 0.22);
+  border: 2px solid rgba(255, 255, 255, 0.35);
   cursor: pointer;
   text-decoration: none;
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .whatsapp-float-btn:hover {
   transform: scale(1.1) translateY(-2px);
-  box-shadow: 0 14px 32px rgba(37, 211, 102, 0.6), 0 6px 16px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(135deg, #225c4b 0%, #164738 50%, #0e3226 100%);
+  box-shadow: 0 14px 34px rgba(11, 46, 36, 0.6), 0 0 0 2px rgba(212, 175, 55, 0.95), 0 6px 18px rgba(0, 0, 0, 0.28);
 }
 
 .whatsapp-float-btn:active {
@@ -6101,14 +6137,14 @@ p { text-wrap: pretty; }
 .wa-icon {
   position: relative;
   z-index: 2;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 .wa-pulse-ring {
   position: absolute;
   inset: -6px;
   border-radius: 50%;
-  border: 2px solid rgba(37, 211, 102, 0.6);
+  border: 2px solid rgba(27, 77, 62, 0.6);
   animation: waPulse 2.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
   pointer-events: none;
 }
@@ -8162,9 +8198,9 @@ section, .sec-difference, .sec-pricing-philosophy, .sec-consultation-banner, .se
 }
 
 .btn-whatsapp-pill:hover {
-  background: #1eb855 !important;
+  background: linear-gradient(135deg, #1b4d3e 0%, #0d3826 100%) !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.42) !important;
+  box-shadow: 0 6px 20px rgba(11, 46, 36, 0.45) !important;
 }
 
 .btn-dossier-pill:hover {
@@ -8945,15 +8981,16 @@ section, .sec-difference, .sec-pricing-philosophy, .sec-consultation-banner, .se
 }
 
 .tilak-btn--whatsapp {
-  background: #25D366;
+  background: linear-gradient(135deg, #1b4d3e 0%, #11382c 50%, #0a261d 100%);
   color: #ffffff !important;
-  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  box-shadow: 0 4px 14px rgba(11, 46, 36, 0.35);
 }
 
 .tilak-btn--whatsapp:hover {
-  background: #20bd5a;
+  background: linear-gradient(135deg, #225c4b 0%, #164738 50%, #0e3226 100%);
   transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
+  box-shadow: 0 6px 18px rgba(11, 46, 36, 0.5), 0 0 0 1px rgba(212, 175, 55, 0.8);
 }
 
 .tilak-btn--large {

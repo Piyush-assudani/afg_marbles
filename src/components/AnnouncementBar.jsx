@@ -5,23 +5,21 @@ export default function AnnouncementBar() {
   return (
     <div className="top-announcement-bar">
       <div className="marquee-track">
-        <span>CHOSEN BY INDIA’S TOP 1%</span>
+        <span>100% PURE MAKRANA WHITE MARBLE</span>
         <span className="dot">•</span>
-        <span>ONLY LIMITED BESPOKE PROJECTS ANNUALLY</span>
+        <span>GUARANTEED NEVER TO TURN YELLOW</span>
         <span className="dot">•</span>
-        <span>PURE MAKRANA 99% CALCITE MARBLE</span>
+        <span>CUSTOM MADE FOR LUXURY HOMES</span>
         <span className="dot">•</span>
-        <span>ZERO YELLOWING GUARANTEE</span>
+        <span>SAFE WORLDWIDE DOORSTEP DELIVERY</span>
         <span className="dot">•</span>
-        <span>GLOBAL ISPM-15 CRATED SHIPPING</span>
+        <span>HANDMADE BY MASTER ARTISANS SINCE 1987</span>
         <span className="dot">•</span>
-        <span>HAND-CARVED BY GENERATIONAL SILAWAT SCULPTORS</span>
+        <span>100% PURE MAKRANA WHITE MARBLE</span>
         <span className="dot">•</span>
-        <span>CHOSEN BY INDIA’S TOP 1%</span>
+        <span>GUARANTEED NEVER TO TURN YELLOW</span>
         <span className="dot">•</span>
-        <span>ONLY LIMITED BESPOKE PROJECTS ANNUALLY</span>
-        <span className="dot">•</span>
-        <span>PURE MAKRANA 99% CALCITE MARBLE</span>
+        <span>CUSTOM MADE FOR LUXURY HOMES</span>
         <span className="dot">•</span>
       </div>
     </div>

@@ -13,72 +13,69 @@ import {
 } from 'lucide-react';
 import { createExperience, STONES } from '../scene.js';
 
-// The 3 Certified White Marbles Crafted by A.F.G Atelier:
-// 1. Makrana Pure White Marble (Temples & Mandirs)
-// 2. Vietnam Pure White Marble (Temples & Sacred Deities)
-// 3. Rajnagar White Marble (Palatial Estate Fountains)
+// The 3 Certified White Marbles Crafted by A.F.G:
+// 1. Makrana Pure White Marble (Home Temples)
+// 2. Vietnam Pure White Marble (Temples & Statues)
+// 3. Rajnagar White Marble (Garden & Estate Fountains)
 const STONES_METADATA = [
   {
     key: 'makrana',
     name: 'Makrana Pure White',
-    hindi: 'मकराना शुद्ध श्वेत मकराना मार्बल',
-    quarry: 'Chosira & Chak Dungri Bedrock, Makrana, Rajasthan',
-    purity: '99.2% Pure Calcite (Taj Mahal Bedrock)',
-    origin: 'Makrana, Rajasthan (Temples)',
-    note: 'Temples & Mandirs · Zero Yellowing Guarantee',
-    desc: 'The legendary white marble used in sacred temples and the Taj Mahal. Mined directly from Makrana, Rajasthan, it is completely stain-resistant, safe for daily puja with milk, water, and oil, and guaranteed never to turn yellow over generations.',
-    grade: 'Taj Mahal Calcite (Grade AAA)',
+    quarry: 'Chosira & Chak Dungri, Makrana, Rajasthan',
+    purity: '99.2% Pure White Marble (Taj Mahal Stone)',
+    origin: 'Makrana, Rajasthan (Home Temples)',
+    note: 'Home Temples · Never Turns Yellow',
+    desc: 'The famous white marble used in the Taj Mahal. 100% stain-resistant, easy to wash with water, milk or oil, and guaranteed never to turn yellow.',
+    grade: 'Taj Mahal Grade AAA',
     accentColor: '#d4af37',
-    tag: 'Temples & Mandirs',
+    tag: 'Home Temples',
     word: 'MAKRANA',
     thumb: '/textures/makrana.jpg',
     specs: {
-      purity: '99.2% CaCO₃',
+      purity: '99.2% Pure White',
       absorption: '0.01% (Zero Stain)',
       hardness: '3.5–4.0 Mohs',
-      application: 'Sacred Mandirs & Sanctums'
+      application: 'Custom Home Temples'
     }
   },
   {
     key: 'vietnam',
     name: 'Vietnam Pure White',
-    hindi: 'वियतनाम शुद्ध स्नो-व्हाइट मार्बल',
     quarry: 'Luc Yen & Yen Bai Mountain Mines, Vietnam',
-    purity: '99.6% Ultra-Pure Snow Crystalline Calcite',
-    origin: 'Luc Yen, Vietnam (Temples & Deities)',
-    note: 'Temples & Deities · Pure Crystalline Snow',
-    desc: 'Known worldwide for its flawless snow-white finish and smooth texture. With 99.6% pure crystal white stone, it reflects light with divine brilliance. The perfect choice for modern luxury home temples and beautifully detailed deity statues.',
-    grade: 'Sculptural Snow Calcite (Grade AAA+)',
+    purity: '99.6% Ultra-Pure Snow White Marble',
+    origin: 'Luc Yen, Vietnam (Temples & Statues)',
+    note: 'Temples & Statues · Pure Snow White',
+    desc: 'World famous for its pure snow-white look and smooth texture. Perfect for modern luxury home temples and finely detailed statues.',
+    grade: 'Pure Snow White Grade AAA+',
     accentColor: '#c9a24d',
-    tag: 'Temples & Deities',
+    tag: 'Temples & Statues',
     word: 'VIETNAM',
     thumb: '/textures/vietnam.jpg',
     specs: {
-      purity: '99.6% CaCO₃',
+      purity: '99.6% Snow White',
       absorption: '0.03% (Resin-Free)',
       hardness: '3.0–3.5 Mohs',
-      application: 'Contemporary Temples & Deities'
+      application: 'Modern Temples & Statues'
     }
   },
   {
     key: 'rajnagar',
     name: 'Rajnagar White Marble',
-    hindi: 'राजनगर श्वेत संगमरमर',
-    quarry: 'Rajnagar Hydraulic Seam, Rajsamand, Rajasthan',
-    purity: 'High-Density Hydraulic Crystalline Calcite',
-    origin: 'Rajnagar, Rajasthan (Fountains)',
-    note: 'Palatial Fountains · High-Density Hydraulic Calcite',
-    desc: 'The undisputed master stone for monumental palatial fountains and hydraulic outdoor cascades. Naturally dense with interlocking calcite crystals, Rajnagar marble resists pressurized water erosion, continuous chlorine/calcium contact, outdoor sun UV, and prevents algae or moss adherence over decades.',
-    grade: 'Heavy Hydraulic Fountain Grade',
+    quarry: 'Rajnagar Seam, Rajsamand, Rajasthan',
+    purity: 'High-Density Strong White Marble',
+    origin: 'Rajnagar, Rajasthan (Garden Fountains)',
+    note: 'Garden Fountains · Water Resistant',
+    desc: 'Super strong white marble from Rajasthan. Built specially for outdoor fountains. Handles continuous flowing water, sunlight, and weather for decades.',
+    grade: 'Heavy Outdoor Fountain Grade',
     accentColor: '#8a7d70',
-    tag: 'Palatial Fountains',
+    tag: 'Garden Fountains',
     word: 'RAJNAGAR',
     thumb: '/textures/rajnagar.jpg',
     specs: {
-      purity: 'Hydraulic Calcite',
+      purity: 'Heavy White Marble',
       density: '2.72 g/cm³',
       durability: 'Continuous Flow Resistant',
-      application: 'Monumental Estate Fountains'
+      application: 'Grand Estate Fountains'
     }
   },
 ];
@@ -194,19 +191,13 @@ export default function HeroSection({ onOpenInquiry }) {
         if (heroEl) heroObserver.observe(heroEl);
       }
 
-      // Fast unified entrance (all hero content appears together as a cohesive luxury unit)
-      gsap.fromTo(
-        ['.hero__content', '.hero-stone-card', '#stone-rail', '.hero__stats-ribbon'],
-        { opacity: 0, y: 10 },
-        { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out', clearProps: 'all' }
-      );
-
       // Instant visibility guarantee
       const allHeroElements = document.querySelectorAll(
         '.hero__content, .hero__title .line > span, .hero__lead, .hero__ctas, .hero__ctas > *, .hero-stone-card, #stone-rail, .hero__stats-ribbon'
       );
       allHeroElements.forEach((el) => {
         el.style.opacity = '1';
+        el.style.transform = 'none';
       });
 
       return () => {
@@ -224,7 +215,7 @@ export default function HeroSection({ onOpenInquiry }) {
       {/* Royal Palatial Terrace Backdrop Overlay */}
       <div className="hero__backdrop" aria-hidden="true"></div>
 
-      {/* Sacred Halo Spotlight Glow Behind 3D Temple */}
+      {/* Halo Spotlight Glow Behind 3D Temple */}
       <div className="hero__sanctum-glow" aria-hidden="true"></div>
 
       {/* Backdrop niche watermark */}
@@ -241,33 +232,33 @@ export default function HeroSection({ onOpenInquiry }) {
 
       {/* ============ HERO CONTENT COLUMN (STRICTLY ON LEFT) ============ */}
       <div className="hero__content">
-        {/* Stately Hero Title — 4 Elegant Lines */}
+        {/* Stately Hero Title — Simple & Clear English */}
         <h1 className="hero__title">
           <span className="line">
-            <span>Sacred</span>
+            <span>Pure White</span>
           </span>
           <span className="line">
-            <span>Devotion,</span>
+            <span>Marble Temples,</span>
           </span>
           <span className="line line--italic">
             <span>
-              <em>Sculpted in Pure</em>
+              <em>Handmade to Last</em>
             </span>
           </span>
           <span className="line">
-            <span>Eternal Marble.</span>
+            <span>For Generations.</span>
           </span>
         </h1>
 
-        {/* Evocative Lead Copy */}
+        {/* Clear, Easy-to-understand Lead Copy */}
         <p className="hero__lead">
-          Bespoke marble mandirs, monumental sanctums, and palatial fountains — sculpted from certified 99% pure virgin Makrana calcite marble by generational Silawat master artisans.
+          Custom white marble temples and grand fountains for your home. Made with 100% pure Makrana marble that never turns yellow and stays bright forever.
         </p>
 
         {/* Action CTA */}
         <div className="hero__ctas">
           <Link href="/pooja-sanctums" className="btn-hero-primary magnetic" id="cta-explore">
-            <span className="btn-hero-primary__text">Explore Masterpieces</span>
+            <span className="btn-hero-primary__text">Explore Temples & Fountains</span>
             <span className="btn-hero-primary__icon" aria-hidden="true">
               <ArrowRight size={14} />
             </span>
@@ -279,7 +270,7 @@ export default function HeroSection({ onOpenInquiry }) {
       <div className="hero-stone-card" id="hero-stone-card" aria-label="Certified Marble Specimen">
         <div className="stone-card__mini-head">
           <span className="stone-card__mini-tag">0{activeStoneIdx + 1} / 0{STONES_METADATA.length}</span>
-          <span className="stone-card__mini-badge">CALCITE</span>
+          <span className="stone-card__mini-badge">100% PURE</span>
         </div>
         <span className="hero-stone-card__name" id="stone-name">
           {activeStone.name.toUpperCase().split(' ')[0]}<br />{activeStone.name.toUpperCase().split(' ').slice(1).join(' ')}
@@ -290,8 +281,8 @@ export default function HeroSection({ onOpenInquiry }) {
         <div className="hero-stone-card__line" aria-hidden="true"></div>
       </div>
 
-      {/* ============ VERTICAL STONE ATELIER RAIL ============ */}
-      <aside className="stone-rail glass" id="stone-rail" aria-label="Stone Atelier Rail">
+      {/* ============ VERTICAL STONE RAIL ============ */}
+      <aside className="stone-rail glass" id="stone-rail" aria-label="Marble Selection Rail">
         <button
           className="stone-rail__arrow stone-rail__arrow--up"
           id="stone-arrow-prev"
@@ -305,9 +296,9 @@ export default function HeroSection({ onOpenInquiry }) {
         </button>
 
         <span className="stone-rail__label">
-          STONE
+          SELECT
           <br />
-          ATELIER
+          MARBLE
         </span>
 
         <div className="stone-rail__swatches" role="radiogroup" id="swatches">
@@ -346,11 +337,11 @@ export default function HeroSection({ onOpenInquiry }) {
         </button>
       </aside>
 
-      {/* ============ ARCHITECTURAL ROYAL HERITAGE PLINTH ============ */}
+      {/* ============ BOTTOM STATS RIBBON ============ */}
       <div className="hero__stats-ribbon glass" id="hero-stats-ribbon" aria-label="AFG Heritage Metrics">
         <div className="ribbon-guild-badge" aria-hidden="true">
           <span className="ribbon-guild-badge__star">✦</span>
-          <span className="ribbon-guild-badge__text">SILAWAT GUILD · EST. 1987</span>
+          <span className="ribbon-guild-badge__text">MASTER ARTISANS · EST. 1987</span>
         </div>
 
         <div className="ribbon-divider" aria-hidden="true"></div>
@@ -360,7 +351,7 @@ export default function HeroSection({ onOpenInquiry }) {
             <span className="ribbon-stat__num">
               <span data-count="5000">5,000</span>+
             </span>
-            <span className="ribbon-stat__label">Consecrated Sanctums</span>
+            <span className="ribbon-stat__label">Temples Built</span>
           </div>
         </div>
 
@@ -371,7 +362,7 @@ export default function HeroSection({ onOpenInquiry }) {
             <span className="ribbon-stat__num">
               <span data-count="99">99.2</span>%
             </span>
-            <span className="ribbon-stat__label">Virgin Calcite Purity</span>
+            <span className="ribbon-stat__label">Pure White Marble</span>
           </div>
         </div>
 
@@ -382,7 +373,7 @@ export default function HeroSection({ onOpenInquiry }) {
             <span className="ribbon-stat__num">
               <span data-count="28">28</span>+
             </span>
-            <span className="ribbon-stat__label">Countries Exported</span>
+            <span className="ribbon-stat__label">Countries Shipped</span>
           </div>
         </div>
       </div>

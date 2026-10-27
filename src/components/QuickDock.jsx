@@ -2,16 +2,16 @@
 
 export default function QuickDock() {
   const whatsappUrl =
-    'https://wa.me/917597417274?text=Namaste%20AFG%20Marble%2C%20I%20would%20like%20to%20consult%20with%20your%20Master%20Sthapati%20for%20a%20bespoke%20marble%20project.';
+    'https://wa.me/917597417274?text=Hello%20AFG%20Marble%2C%20I%20would%20like%20to%20inquire%20about%20a%20marble%20temple%20or%20fountain.';
 
   return (
-    <aside aria-label="Direct WhatsApp Atelier Access" className="floating-whatsapp-container">
+    <aside aria-label="Direct WhatsApp Access" className="floating-whatsapp-container">
       <a
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-float-btn"
-        aria-label="Chat directly on WhatsApp with Master Sthapati"
+        aria-label="Chat directly on WhatsApp"
         title="Chat on WhatsApp (+91 75974 17274)"
       >
         {/* Pulsing radar ripple rings */}

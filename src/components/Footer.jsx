@@ -65,7 +65,7 @@ export default function Footer() {
 
               <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', alignItems: 'center' }}>
                 <a
-                  href="https://wa.me/917597417274?text=Namaste%20AFG%20Marble,%20I%20would%20like%20to%20consult%20with%20a%20master%20sthapati%20for%20a%20bespoke%20marble%20mandir%20or%20fountain%20commission."
+                  href="https://wa.me/917597417274?text=Hello%20AFG%20Marble,%20I%20would%20like%20to%20inquire%20about%20a%20marble%20temple%20or%20fountain."
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
@@ -73,20 +73,21 @@ export default function Footer() {
                     alignItems: 'center',
                     gap: '10px',
                     padding: '14px 28px',
-                    background: 'linear-gradient(135deg, #25D366 0%, #1ebe5d 100%)',
+                    background: 'linear-gradient(135deg, #1b4d3e 0%, #11382c 50%, #0a261d 100%)',
                     color: '#ffffff',
+                    border: '1.5px solid rgba(212, 175, 55, 0.65)',
                     borderRadius: '999px',
                     fontSize: '13px',
                     fontWeight: 600,
                     letterSpacing: '0.04em',
                     textDecoration: 'none',
-                    boxShadow: '0 8px 24px rgba(37, 211, 102, 0.42)',
+                    boxShadow: '0 8px 24px rgba(11, 46, 36, 0.45)',
                     transition: 'transform 0.25s ease, box-shadow 0.25s ease'
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.transform = 'translateY(-2px)')}
                   onMouseLeave={(e) => (e.currentTarget.style.transform = 'translateY(0)')}
                 >
-                  <span>Direct Sthapati WhatsApp</span>
+                  <span>Chat on WhatsApp</span>
                   <ArrowRight size={14} />
                 </a>
 
