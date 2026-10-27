@@ -1,15 +1,42 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function LuxuryPreloader() {
+  const pathname = usePathname();
+  const isHomePage = !pathname || pathname === '/';
+
+  const [shouldShow, setShouldShow] = useState(false);
   const [percent, setPercent] = useState(0);
   const [isFading, setIsFading] = useState(false);
   const [isRemoved, setIsRemoved] = useState(false);
 
   useEffect(() => {
-    // Fast, smooth luxury counter from 0 to 100 in ~1.1s
+    // If not home page, or if 3D model is already cached, skip completely!
+    try {
+      if (!isHomePage) {
+        setIsRemoved(true);
+        return;
+      }
+
+      const isWindowCached = typeof window !== 'undefined' && window.__AFG_MODEL_LOADED;
+      const isSessionCached = sessionStorage.getItem('afg_model_cached');
+      const isLocalCached = localStorage.getItem('afg_model_cached');
+      const isRecent = isLocalCached && (Date.now() - parseInt(isLocalCached, 10) < 86400000 * 3);
+
+      if (isWindowCached || isSessionCached || isRecent) {
+        setIsRemoved(true);
+        return;
+      }
+    } catch (_e) {
+      // In case storage access is restricted
+    }
+
+    // First uncached visit: display the clean light-theme preloader
+    setShouldShow(true);
+
     const startTime = performance.now();
-    const duration = 1100; // ms
+    const duration = 950; // ms
 
     let animId;
     const updateCounter = (currentTime) => {
@@ -25,12 +52,18 @@ export default function LuxuryPreloader() {
         animId = requestAnimationFrame(updateCounter);
       } else {
         setPercent(100);
+        try {
+          sessionStorage.setItem('afg_model_cached', 'true');
+          localStorage.setItem('afg_model_cached', Date.now().toString());
+          if (typeof window !== 'undefined') window.__AFG_MODEL_LOADED = true;
+        } catch (_e) {}
+
         setTimeout(() => {
           setIsFading(true);
           setTimeout(() => {
             setIsRemoved(true);
-          }, 500);
-        }, 120);
+          }, 350);
+        }, 100);
       }
     };
 
@@ -39,9 +72,9 @@ export default function LuxuryPreloader() {
     return () => {
       if (animId) cancelAnimationFrame(animId);
     };
-  }, []);
+  }, [isHomePage]);
 
-  if (isRemoved) return null;
+  if (!shouldShow || isRemoved) return null;
 
   return (
     <div

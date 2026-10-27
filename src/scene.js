@@ -487,6 +487,13 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
 
         mandirGroup.add(mandir);
         mandirGroup.visible = true;
+        try {
+          if (typeof window !== 'undefined') {
+            window.__AFG_MODEL_LOADED = true;
+            sessionStorage.setItem('afg_model_cached', 'true');
+            localStorage.setItem('afg_model_cached', Date.now().toString());
+          }
+        } catch (_e) {}
         resolve(gltf);
         readyResolve();
       },
