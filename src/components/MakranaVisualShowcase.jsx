@@ -85,7 +85,7 @@ export default function MakranaVisualShowcase({ onOpenInquiry }) {
               Makrana Pure White Marble
             </h2>
             <p className="makrana-showcase__subtitle">
-              99% pure calcite stone that never turns yellow from daily puja ghee, abhishek milk, or weather. Mined directly from virgin seams in Makrana, Rajasthan.
+              100% pure white marble that never turns yellow from daily puja milk, diya oil, or water. Mined directly from our authentic quarries in Makrana, Rajasthan.
             </p>
           </div>
 

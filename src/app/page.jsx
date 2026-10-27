@@ -91,24 +91,24 @@ export default function HomePage() {
               <div className="hallmark-item">
                 <span className="hallmark-item__dot">✦</span>
                 <div className="hallmark-item__text">
-                  <strong>Zero-Yellowing Warranty</strong>
-                  <span>Puja Ghee &amp; Abhishek Proof</span>
+                  <strong>Never Turns Yellow</strong>
+                  <span>100% Stain-Free &amp; Washable</span>
                 </div>
               </div>
               <div className="hallmark-divider" aria-hidden="true"></div>
               <div className="hallmark-item">
                 <span className="hallmark-item__dot">✦</span>
                 <div className="hallmark-item__text">
-                  <strong>3rd-Gen Silawat Lineage</strong>
-                  <span>Hand Chiseled Sthapatya</span>
+                  <strong>Master Carvers</strong>
+                  <span>100% Hand-Chiseled Marble</span>
                 </div>
               </div>
               <div className="hallmark-divider" aria-hidden="true"></div>
               <div className="hallmark-item">
                 <span className="hallmark-item__dot">✦</span>
                 <div className="hallmark-item__text">
-                  <strong>100% Pre-Assembly Trial</strong>
-                  <span>Jaipur Yard 4K Inspection</span>
+                  <strong>Pre-Delivery Assembly</strong>
+                  <span>Workshop Video Inspection</span>
                 </div>
               </div>
             </div>
@@ -507,13 +507,13 @@ export default function HomePage() {
                 src: '/gallery/stone-makrana-calcite-slab.webp',
                 name: 'Makrana Pure White Marble',
                 category: 'TEMPLES & MANDIRS',
-                desc: '99.2% Pure Calcite (Taj Mahal Bedrock). Virtually zero porosity (0.01%) — completely immune to daily abhishek milk, puja ghee, and kumkum staining with a lifetime non-yellowing guarantee.'
+                desc: '100% Pure Makrana White Marble (Same stone as the Taj Mahal). Completely stain-free, safe for daily puja rituals, with a lifetime guarantee that it will never turn yellow.'
               },
               {
                 src: '/gallery/stone-vietnam-white-marble.webp',
                 name: 'Vietnam Pure White Marble',
                 category: 'TEMPLES & DEITIES',
-                desc: '99.6% Ultra-Pure Snow Calcite. Immaculate crystalline sugar grain with zero distortion, luminous divine light reflection, and supreme sculptural fidelity for deity statues.'
+                desc: '99.6% Pure Snow-White Marble. Smooth crystal finish with beautiful natural shine, ideal for modern luxury home temples and sacred deity statues.'
               },
               {
                 src: '/gallery/stone-rajnagar-white-marble.webp',

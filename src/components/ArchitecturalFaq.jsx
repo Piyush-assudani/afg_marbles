@@ -6,16 +6,16 @@ export default function ArchitecturalFaq({ onOpenInquiry }) {
 
   const faqs = [
     {
-      q: 'Will daily milk, ghee, honey, and burning oil lamps stain pure Makrana marble?',
-      a: 'Never. Unlike imported Italian or Vietnam marbles which are porous and treated with synthetic epoxy resins, authentic Makrana marble consists of 99% pure crystalline calcium carbonate (calcite). Its tightly locked interlocking crystal matrix has near-zero water absorption (less than 0.04%). Ghee, milk abhishek, and oil lamp soot cannot penetrate the stone and wipe off cleanly with warm water, retaining its Taj Mahal luminescence for centuries.',
+      q: 'Will daily milk, oil, and puja rituals stain pure Makrana marble?',
+      a: 'Never. Authentic Makrana marble has near-zero water absorption (less than 0.04%). Milk, water, honey, diya oil, and incense smoke cannot penetrate the stone and wipe off easily with clean water, keeping your temple bright white and spotless for generations.',
     },
     {
-      q: 'Why is Makrana Albeta marble preferred over Vietnam White or Italian Statuario for Mandirs?',
-      a: 'Vietnam white marble contains dolomite which turns dull, chalky, or yellowish when exposed to daily ritual liquids and incense smoke. Italian marbles like Statuario and Carrara are soft architectural stones meant for vertical cladding and bathroom vanities, containing invisible fissures often back-netted with fibreglass. Makrana Albeta is the only historical temple stone in India that actually grows whiter and more luminous with continuous water and milk abhishekam.',
+      q: 'Why is Makrana marble preferred over Italian marble for home temples?',
+      a: 'Italian marbles like Statuario and Carrara are soft stones meant for indoor floors and walls; they absorb liquids and turn yellowish within a few years. Makrana marble is the authentic temple stone of India and the Taj Mahal. It is dense, 100% stain-resistant, and actually becomes whiter and more luminous with every wash.',
     },
     {
-      q: 'How are large temples delivered and installed inside completed luxury residences without mess?',
-      a: 'Every AFG temple is engineered using a proprietary interlocking dry-joint modular system. The entire mandir is divided into numbered modular blocks (plinth base, fluted pillars, jali panels, and shikhara spire). All sections are pre-assembled and checked in our Jaipur yard before dispatch. On arrival at your home, our white-glove team fits the numbered interlocking stones seamlessly within 4 to 6 hours—completely dry, with zero wet mortar, dust, or construction noise.',
+      q: 'How is a large marble temple delivered and installed in my home without any mess?',
+      a: 'Every A.F.G temple is made using precision interlocking modular marble blocks (carved base, pillars, jali panels, and dome). We assemble and verify the entire mandir in our Jaipur workshop before dispatch. When it reaches your home, our skilled team fits the interlocking pieces smoothly within 4 to 6 hours—completely clean, with zero dust, cement, or construction noise.',
     },
     {
       q: 'What is Ayadi Vastu Shastra calculation and how does AFG apply it?',

@@ -38,9 +38,12 @@ export const metadata = {
     canonical: 'https://afgmarbel.com',
   },
   icons: {
-    icon: '/afg-logo.svg',
-    shortcut: '/afg-logo.svg',
-    apple: '/afg-logo.png',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/afg-logo.png', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/afg-logo-square.png',
   },
   openGraph: {
     title: 'A.F.G Marble & Arts — Consecrated Makrana Marble Temples & Palatial Fountains',

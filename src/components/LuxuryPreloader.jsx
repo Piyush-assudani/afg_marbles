@@ -129,9 +129,9 @@ export default function LuxuryPreloader() {
         {/* Brand Logo */}
         <div style={{ marginBottom: '20px', position: 'relative' }}>
           <img
-            src="/afg-logo.svg"
+            src="/afg-logo.png"
             alt="A.F.G Marble And Art"
-            style={{ width: '110px', height: 'auto', display: 'block' }}
+            style={{ width: '130px', height: 'auto', display: 'block', margin: '0 auto' }}
           />
         </div>
 

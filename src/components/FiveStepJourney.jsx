@@ -51,8 +51,8 @@ export default function FiveStepJourney({ onOpenInquiry }) {
       milestone: 'Artisan Chiseling Commences',
       desc: 'We inspect virgin calcite seams in Makrana using ultrasonic sound wave testing to guarantee flawless monolithic blocks with zero internal hairline fractures.',
       bullets: [
-        'Pure Makrana Albeta (99% CaCO3 purity — zero yellowing from ghee/oil)',
-        '4th-generation Silawat guild sculptors chisel intricate toranas by hand',
+        '100% pure Makrana white marble — guaranteed never to yellow or stain from puja liquids',
+        'Hand-chiseled by traditional master sculptors with generations of temple craft heritage',
         'Bi-weekly photo and video updates sent directly to your WhatsApp',
       ],
       icon: (

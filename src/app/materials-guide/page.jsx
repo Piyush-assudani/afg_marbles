@@ -312,7 +312,7 @@ export default function MaterialsGuidePage() {
               <span className="card-badge">TEMPLE INTEGRITY</span>
               <h3>Why Only Makrana &amp; Vietnam for Temples</h3>
               <p>
-                Mandirs encounter daily abhishek with milk, honey, ghee, and lit camphor lamps. Only Makrana and Vietnam pure calcite have the non-porous crystalline structure that prevents stains, warping, and yellowing for lifetimes.
+                Home mandirs encounter daily puja rituals with milk, water, and diya oil. Authentic Makrana white marble is completely non-porous, preventing stains, cracks, and yellowing for lifetimes.
               </p>
             </div>
             <div className="page-card-item">

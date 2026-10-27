@@ -52,10 +52,10 @@ export default function MakranaCalciteMinePage() {
       italian: '0.15% – 0.22% (Requires chemical sealants)',
     },
     {
-      prop: 'Reaction to Milk / Ghee / Honey',
-      makrana: '100% Non-Reactive & Non-Staining for 500+ Years',
-      vietnam: 'Stains yellow within 6–12 months of daily abhishek',
-      italian: 'Acid-sensitive; etches and dulls rapidly',
+      prop: 'Reaction to Puja Milk, Oil & Water',
+      makrana: '100% Stain-Resistant & Non-Reactive for Generations',
+      vietnam: 'Turns yellowish within 6 to 12 months of daily puja rituals',
+      italian: 'Stains easily; loses shine and etches rapidly',
     },
     {
       prop: 'Outdoor Weather Endurance',

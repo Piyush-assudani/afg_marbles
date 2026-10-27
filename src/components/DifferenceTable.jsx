@@ -4,39 +4,39 @@ import Link from 'next/link';
 export default function DifferenceTable({ onOpenInquiry }) {
   const ROWS = [
     {
-      feature: 'Stone Purity & Calcite Ratio',
-      afg: '98%–99% Pure Makrana Calcite (Taj Mahal stratum, crystal density 2.71 g/cm³)',
-      other: 'Dolomitic / Italian commercial marble with heavy iron content (<80% calcite)'
+      feature: 'Stone Purity & Marble Quality',
+      afg: '98%–99% Pure Makrana White Marble (The same pure stone used in the Taj Mahal)',
+      other: 'Commercial marble with iron impurities that turn yellow over time'
     },
     {
-      feature: 'Puja Oil, Milk & Kumkum Absorption',
-      afg: 'Zero Porosity (0.01%) — Liquids wipe away without leaving a single yellow stain',
-      other: 'High Porosity (0.8%–2.5%) — Absorbs diya oil, ghee & abhishek milk, staining yellow'
+      feature: 'Stain Resistance (Oil, Milk & Water)',
+      afg: '100% Non-Porous — Daily puja milk, diya oil, and water wipe off cleanly without any stains',
+      other: 'Porous stone that absorbs liquids and develops permanent dark yellow spots'
     },
     {
-      feature: 'Lifetime Yellowing Resistance',
-      afg: 'Zero Yellowing Guarantee — Calcite structure grows brighter with generations of washing',
-      other: 'Turns dull yellow/brown within 3–5 years due to internal iron oxide reactions'
+      feature: 'Lifetime Color & Shine Guarantee',
+      afg: 'Zero-Yellowing Guarantee — Stays brilliant white and looks newer with every wash',
+      other: 'Turns dull, yellowish, and lifeless within 2 to 3 years'
     },
     {
-      feature: 'Master Sculptor Heritage',
-      afg: 'Generational Silawat Artisans with lineage tracing back to historic imperial shrines',
-      other: 'Casual commercial stone-cutters utilizing rough angle-grinders and resin filler'
+      feature: 'Artisan Hand-Carving',
+      afg: 'Hand-chiseled by traditional master sculptors with generations of temple-building heritage',
+      other: 'Rough machine cutting and angle grinders with cheap synthetic fillers'
     },
     {
-      feature: 'Structural Joint Engineering',
-      afg: 'Sacred Ayadi Vastu proportions with interlocking dry-joint marble tenons',
-      other: 'Glued together with toxic polyester adhesives and synthetic filler pastes'
+      feature: 'Interlocking Joints & Assembly',
+      afg: 'Interlocking marble joints built to accurate Vastu guidelines (No harmful chemical glue)',
+      other: 'Glued together with toxic adhesives and putty that loosen over time'
     },
     {
-      feature: 'Pre-Delivery Assembly & Fitment',
-      afg: '100% complete trial assembly in our Jaipur yard with 4K video inspection before dispatch',
-      other: 'Dispatched in unverified loose slabs; site fitting errors and unexpected gaps'
+      feature: 'Pre-Delivery Inspection',
+      afg: 'Full trial assembly in our Jaipur workshop with HD video review sent to you before dispatch',
+      other: 'Dispatched as loose unverified pieces with fitting issues and uneven gaps on-site'
     },
     {
-      feature: 'Global & Domestic Export Packing',
-      afg: 'Treated ISPM-15 export wooden crates with multi-layer high-density EVA shock protection',
-      other: 'Loose straw loading in open commercial trucks with high breakage vulnerability'
+      feature: 'Packaging & Transit Safety',
+      afg: 'Heavy-duty wooden crates with multi-layer shock protection and full transit insurance',
+      other: 'Loose loading in open trucks with high risk of cracks and chipped edges'
     }
   ];
 
@@ -48,7 +48,7 @@ export default function DifferenceTable({ onOpenInquiry }) {
           <h2>The A.F.G Difference vs Local Vendors</h2>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
-            Why discerning royal families, temple trusts, and architectural connoisseurs across India, USA, UK, and UAE exclusively commission A.F.G Marble &amp; Arts.
+            Why temple trusts, architects, and families across India and worldwide trust A.F.G Marble &amp; Arts for their home temples.
           </p>
         </div>
 

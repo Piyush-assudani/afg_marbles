@@ -19,19 +19,19 @@ export default function TempleMaintenanceGuidePage() {
     },
     {
       num: '02',
-      title: 'Ghee & Mustard Oil Diya Protection',
-      rule: 'Use pure brass or marble diya coasters with heat-insulated feet.',
+      title: 'Diya Oil & Heat Protection',
+      rule: 'Place a small brass plate or marble coaster under burning diyas.',
       details:
-        'Direct hot brass diya bottoms conduct heat into the marble surface, which can cause micro-fissuring over decades. Place a brass plate or Makrana diya coaster beneath the flame. If warm ghee spills, immediately blot with dry microfiber cloth — do not rub forcefully.',
-      warning: 'Never use caustic degreasers or chlorine bleach.',
+        'Hot metal diya bottoms transfer heat directly into the stone. Placing a small brass tray or marble coaster underneath protects the stone. If warm oil spills, simply wipe it clean with a soft dry cloth and rinse with plain water.',
+      warning: 'Never use harsh chemical cleaning powders, acids, or bleach.',
     },
     {
       num: '03',
-      title: 'Camphor & Incense (Agarbatti) Smoke Mitigation',
-      rule: 'Position dhoop burners 6 inches below the integrated shikhara draft flues.',
+      title: 'Incense (Agarbatti) & Smoke Care',
+      rule: 'Allow incense smoke to vent naturally through the temple roof.',
       details:
-        'All AFG sanctums incorporate hidden convection flues at the shikhara spire apex. These natural convection currents draw hot camphor smoke upward and safely vent it outward, preventing black carbon deposits on intricate ceiling carvings.',
-      warning: 'Avoid burning chemical petroleum-based camphor tablets inside the sanctum.',
+        'All A.F.G temples feature concealed roof vents. This allows dhoop and agarbatti smoke to flow out naturally without leaving black soot on the carved marble ceiling.',
+      warning: 'Avoid burning low-quality chemical camphor tablets directly against the stone.',
     },
     {
       num: '04',

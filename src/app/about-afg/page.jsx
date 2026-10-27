@@ -73,9 +73,26 @@ export default function AboutAFGPage() {
               <p style={{ color: '#4a4239', lineHeight: 1.65, marginBottom: '18px' }}>
                 Our stone sculptors belong to the historic Silawat community—the direct architectural lineage commissioned by Mughal emperors and Rajput Maharajas to shape India’s most iconic stone monuments.
               </p>
-              <p style={{ color: '#4a4239', lineHeight: 1.65, marginBottom: '22px' }}>
+              <p style={{ color: '#4a4239', lineHeight: 1.65, marginBottom: '20px' }}>
                 While modern mass fabricators rely on high-speed CNC routers that burn marble edges and cause microscopic thermal fractures, our master craftsmen shape every peacock arch, kalash spire, and jali screen using hand diamond chisels and water honing.
               </p>
+              <blockquote
+                style={{
+                  borderLeft: '3px solid #b8863f',
+                  paddingLeft: '18px',
+                  margin: '0 0 24px',
+                  fontFamily: 'var(--serif)',
+                  fontSize: '15px',
+                  color: '#2a2218',
+                  fontStyle: 'italic',
+                  lineHeight: 1.6,
+                  background: 'rgba(184, 134, 63, 0.05)',
+                  padding: '14px 18px',
+                  borderRadius: '0 8px 8px 0',
+                }}
+              >
+                “There may be a little more expenditure in the creation being made for God, but the result should be such that there is no scope for any shortage.”
+              </blockquote>
               <div className="info-actions">
                 <Link href="/atelier-workshop" className="btn-primary">
                   <span className="btn-primary__text">Explore Our 5-Stage Craft</span>

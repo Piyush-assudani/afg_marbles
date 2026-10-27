@@ -3,52 +3,52 @@
 export default function PricingPhilosophy({ onOpenInquiry }) {
   const TIERS = [
     {
-      badge: 'Alcove & Apartment Living',
+      badge: 'Apartments & Puja Rooms',
       scale: '3.0 ft to 4.2 ft Width',
-      title: 'Compact Villa Sanctums',
-      ideal: 'Ideal for luxury apartments, penthouses, and dedicated puja alcoves.',
+      title: 'Apartment & Villa Home Temples',
+      ideal: 'Ideal for modern apartments, villas, and dedicated home puja rooms.',
       investment: 'Custom Quote on Request',
-      stone: '100% Pure Makrana White Albeta',
+      stone: '100% Pure Makrana White Marble',
       features: [
-        'Monolithic hand-chiseled Makrana Albeta plinth',
-        'Single or dual kalash shikhara spire',
-        'Concealed velvet-lined diya drawer & aarti tray',
-        'Heat-free warm 3000K LED sacred backlighting',
-        'ISPM-15 wooden export crating with all-risk insurance',
+        'Solid single-block Makrana white marble base',
+        'Hand-carved dome with traditional sacred kalash',
+        'Velvet-lined drawer for puja items & sliding aarti tray',
+        'Warm LED background lighting designed for temples',
+        'Safe wooden crate packing with transit insurance',
       ],
       turnaround: '4 to 6 weeks crafting time',
       popular: false,
     },
     {
-      badge: 'Most Commissioned Atelier Scale',
+      badge: 'Most Popular Choice',
       scale: '5.0 ft to 6.5 ft Width',
-      title: 'Palatial Garbhagriha Mandaps',
-      ideal: 'Designed for independent villas, ancestral homes, and duplex estates.',
+      title: 'Grand Villa & Bungalow Mandirs',
+      ideal: 'Designed for independent villas, ancestral homes, and spacious living areas.',
       investment: 'Custom Quote on Request',
-      stone: 'First-Selection Virgin Makrana Calcite',
+      stone: 'First-Selection Pure Makrana Calcite',
       features: [
-        'Full Garbhagriha mandap with fluted pillars & corbels',
-        'Pierced jaali lattice folding doors with traditional motifs',
-        'Handcrafted peacock torana arch & Om mandala halo',
-        '24K pure gold leaf gilding & semi-precious stone inlay',
-        '100% dry-fit pre-assembly in Jaipur yard with 4K video inspection',
+        'Full marble sanctum with carved pillars and arches',
+        'Intricate hand-carved jali folding doors',
+        'Handcrafted peacock arch and softly glowing Om backdrop',
+        '24K pure gold leaf detailing and semi-precious stone inlay',
+        'Full trial assembly in our Jaipur workshop with video review before delivery',
       ],
       turnaround: '6 to 8 weeks crafting time',
       popular: true,
     },
     {
-      badge: 'Monumental Heritage Commission',
+      badge: 'Large Scale Commission',
       scale: '7.5 ft to 12.0 ft+ Width',
-      title: 'Grand Monumental Temples',
-      ideal: 'For grand palatial courtyards, community shrines, and royal residences.',
+      title: 'Large Estate & Community Temples',
+      ideal: 'For grand palatial homes, courtyards, trusts, and community shrines.',
       investment: 'Bespoke Quote on Space Dimensions',
-      stone: 'Rare Monolithic Quarry Bedrock Calcite',
+      stone: 'Direct Quarry Selected Monolithic Marble',
       features: [
-        'Multi-tiered Nagara or Dravidian five-shikhara spires',
-        'Stepped elephant frieze plinth & ornate parikrama path',
-        'Custom Ayadi Vastu mathematical drafting by Master Sthapati',
-        'Complete white-glove on-site assembly team deployed worldwide',
-        'Lifetime Makrana zero-yellowing calcite certificate',
+        'Multi-tiered traditional temple domes (Shikharas)',
+        'Hand-carved elephant base and spacious layout',
+        'Custom Vastu architectural drawings and 2D blueprints',
+        'Complete installation by our master craftsmen anywhere in India and abroad',
+        'Lifetime guarantee certificate: 100% pure Makrana marble that never yellows',
       ],
       turnaround: '10 to 14 weeks crafting time',
       popular: false,
@@ -56,7 +56,7 @@ export default function PricingPhilosophy({ onOpenInquiry }) {
   ];
 
   const handleWhatsAppPricing = (tierTitle) => {
-    const text = `Namaste A.F.G Marble & Arts, I am inquiring about your Pricing & Investment Guide for "${tierTitle}". I have my space dimensions and would like an estimate and Ayadi Vastu CAD render.`;
+    const text = `Namaste A.F.G Marble & Arts, I would like to get a pricing estimate for "${tierTitle}". I have my room dimensions ready.`;
     window.open(`https://wa.me/917597417274?text=${encodeURIComponent(text)}`, '_blank');
   };
 
@@ -79,6 +79,57 @@ export default function PricingPhilosophy({ onOpenInquiry }) {
             our direct Makrana quarries, carved by our generational Silawat guild, and priced transparently based on raw
             calcite volume and artisan carving hours.
           </p>
+        </div>
+
+        {/* Sacred Vow Plaque */}
+        <div
+          className="sacred-vow-plaque"
+          style={{
+            maxWidth: '860px',
+            margin: '0 auto 48px',
+            background: 'linear-gradient(135deg, #ffffff 0%, #faf6ee 100%)',
+            border: '1px solid rgba(184, 134, 63, 0.35)',
+            borderLeft: '5px solid #b8863f',
+            borderRadius: '12px',
+            padding: '24px 32px',
+            boxShadow: '0 10px 30px rgba(184, 134, 63, 0.08)',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
+            <span style={{ fontSize: '38px', color: '#b8863f', lineHeight: 0.9, fontFamily: 'serif' }}>“</span>
+            <div>
+              <p
+                style={{
+                  fontFamily: 'var(--serif)',
+                  fontSize: 'clamp(16px, 1.9vw, 20px)',
+                  color: '#2a2218',
+                  fontStyle: 'italic',
+                  lineHeight: 1.55,
+                  margin: '0 0 10px',
+                  fontWeight: 500,
+                }}
+              >
+                There may be a little more expenditure in the creation being made for God, but the result should be such that there is no scope for any shortage.
+              </p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+                <span
+                  style={{
+                    fontSize: '11px',
+                    color: '#8c6023',
+                    fontWeight: 700,
+                    letterSpacing: '0.12em',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  The Atelier’s Sacred Pledge
+                </span>
+                <span style={{ color: 'rgba(184, 134, 63, 0.5)' }}>•</span>
+                <span style={{ fontSize: '13px', color: '#6b5f52', fontStyle: 'italic' }}>
+                  Uncompromised Virgin Calcite &amp; Generational Chiseling
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Pricing Cards Grid */}

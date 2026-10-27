@@ -337,19 +337,19 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
               <h4 className="pm-dossier-heading">Sacred Sthapatya Veda &amp; Calcite Purity</h4>
               <div className="pm-vastu-cards-grid">
                 <div className="pm-feature-card">
-                  <span className="pm-feature-card__badge">SACRED METRIC</span>
-                  <h5>Ayadi Metric: Dhana &amp; Vriddhi Aya</h5>
-                  <p>Perimeter, depth, and height strictly conform to sacred Golden Ratio harmonic frequencies calculated to ensure maximum auspiciousness, spiritual sanctity, and life energy for home worship.</p>
+                  <span className="pm-feature-card__badge">VASTU SHASTRA</span>
+                  <h5>Vastu-Aligned Proportions</h5>
+                  <p>Designed strictly according to sacred Vastu principles to bring peace, prosperity, and positive spiritual energy to your home.</p>
                 </div>
                 <div className="pm-feature-card">
-                  <span className="pm-feature-card__badge">ZERO POROSITY</span>
-                  <h5>Zero-Yellowing Calcite Mineral Structure</h5>
-                  <p>Certified 99% pure CaCO3 calcite mined directly from Makrana. Completely non-porous (absorption &lt; 0.04%). Safe for daily abhishekam with milk, honey, ghee, and oil lamps without discoloration.</p>
+                  <span className="pm-feature-card__badge">100% STAIN-FREE</span>
+                  <h5>Pure Makrana Marble — Never Turns Yellow</h5>
+                  <p>Certified 100% pure white marble mined directly from Makrana. Completely stain-resistant and safe for daily puja with milk, water, and diya oil.</p>
                 </div>
                 <div className="pm-feature-card">
-                  <span className="pm-feature-card__badge">DRAFT VENTILATION</span>
-                  <h5>Smoke Dissipation Spire Engineering</h5>
-                  <p>Concealed draft flues at the shikhara apex allow camphor, dhoop, and agarbatti smoke to naturally vent upwards without blackening or staining the pristine white marble ceiling.</p>
+                  <span className="pm-feature-card__badge">EASY CLEANING</span>
+                  <h5>Natural Smoke Ventilation</h5>
+                  <p>Concealed roof vents allow dhoop and agarbatti smoke to vent naturally, keeping your white marble mandir ceiling bright and soot-free.</p>
                 </div>
               </div>
             </div>

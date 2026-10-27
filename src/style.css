@@ -482,8 +482,8 @@ body:has(#hero) .site-header-container.is-at-top .nav {
 
 .logo__img {
   width: auto;
-  height: 22px;
-  max-width: 70px;
+  height: 38px;
+  max-width: 85px;
   object-fit: contain;
   filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.08));
   transition: transform 0.3s var(--ease);

@@ -102,8 +102,8 @@ const MEGA_ARCHITECTURE = [
     href: '/materials-guide',
     badge: 'CALCITE PURITY',
     previewImage: '/gallery/stone-makrana-calcite-slab.webp',
-    previewTitle: 'Taj Mahal Bedrock Purity',
-    previewDesc: '99.2% pure calcium carbonate calcite with 0.02% porosity. Impervious to puja ghee, daily milk abhishek, and yellowing.',
+    previewTitle: 'Taj Mahal Marble Purity',
+    previewDesc: '100% pure white Makrana marble. Completely stain-free, safe for daily milk and oil puja rituals, and never turns yellow.',
     ctaText: 'Inspect Stone Science'
   },
   {
@@ -251,15 +251,11 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
           }}
         >
           <img
-            src="/afg-logo.svg"
+            src="/afg-logo.png"
             alt="A.F.G Marble And Art"
             className="logo__img"
-            width={48}
-            height={22}
-            onError={(e) => {
-              e.currentTarget.onerror = null;
-              e.currentTarget.src = '/afg-logo.png';
-            }}
+            width={65}
+            height={36}
           />
           <span className="logo__text">
             <span className="logo__name">A.F.G MARBLE AND ART</span>

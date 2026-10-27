@@ -227,14 +227,11 @@ export default function Footer() {
               style={{ display: 'inline-flex', alignItems: 'center', gap: '14px', marginBottom: '18px', textDecoration: 'none', cursor: 'pointer' }}
             >
               <img
-                src="/afg-logo-white.svg"
+                src="/afg-logo.png"
                 alt="A.F.G Marble And Art"
-                width={56}
-                height={22}
-                onError={(e) => {
-                  e.currentTarget.onerror = null;
-                  e.currentTarget.src = '/afg-logo.svg';
-                }}
+                width={65}
+                height={38}
+                style={{ height: '38px', width: 'auto', objectFit: 'contain' }}
               />
               <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
                 <span style={{ fontFamily: 'var(--display)', fontSize: '15.5px', fontWeight: 600, letterSpacing: '0.14em', color: '#ffffff', lineHeight: 1.1 }}>
