@@ -234,19 +234,6 @@ export default function HeroSection({ onOpenInquiry }) {
         </span>
       </div>
 
-      {/* Pure White Makrana Mandir Fallback Poster (ensures low-spec / dumb laptops and slow GPUs show an immediate pure white mandir) */}
-      <div 
-        className={`hero__poster-fallback ${isLoaded ? 'is-faded' : ''}`}
-        aria-hidden="true"
-      >
-        <img 
-          src="/hero-mandir-poster.webp" 
-          alt="A.F.G Certified Pure White Makrana Mandir"
-          loading="eager"
-          decoding="async"
-        />
-      </div>
-
       {/* Interactive 3D WebGL Canvas */}
       <canvas className="webgl" id="webgl" ref={canvasRef} aria-label="Interactive 3D marble temple"></canvas>
 

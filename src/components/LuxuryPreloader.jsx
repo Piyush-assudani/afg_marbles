@@ -12,65 +12,86 @@ export default function LuxuryPreloader() {
   const [isRemoved, setIsRemoved] = useState(false);
 
   useEffect(() => {
-    // If not home page, or if 3D model is already cached, skip completely!
+    // If not home page or model is already loaded in memory/session, skip immediately
     try {
       if (!isHomePage) {
         setIsRemoved(true);
         return;
       }
 
-      const isWindowCached = typeof window !== 'undefined' && window.__AFG_MODEL_LOADED;
-      const isSessionCached = sessionStorage.getItem('afg_model_cached');
-      const isLocalCached = localStorage.getItem('afg_model_cached');
-      const isRecent = isLocalCached && (Date.now() - parseInt(isLocalCached, 10) < 86400000 * 3);
-
-      if (isWindowCached || isSessionCached || isRecent) {
+      if (typeof window !== 'undefined' && window.__AFG_MODEL_LOADED) {
         setIsRemoved(true);
         return;
       }
-    } catch (_e) {
-      // In case storage access is restricted
-    }
+
+      const isSessionCached = sessionStorage.getItem('afg_model_cached');
+      if (isSessionCached) {
+        setIsRemoved(true);
+        return;
+      }
+    } catch (_e) {}
 
     // First uncached visit: display the clean light-theme preloader
     setShouldShow(true);
 
-    const startTime = performance.now();
-    const duration = 950; // ms
-
+    let isDone = false;
     let animId;
-    const updateCounter = (currentTime) => {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      // Ease out cubic
-      const eased = 1 - Math.pow(1 - progress, 3);
-      const currentPercent = Math.round(eased * 100);
+    let currentP = 0;
 
-      setPercent(currentPercent);
+    const finishPreloader = () => {
+      if (isDone) return;
+      isDone = true;
+      setPercent(100);
+      try {
+        sessionStorage.setItem('afg_model_cached', 'true');
+        localStorage.setItem('afg_model_cached', Date.now().toString());
+        if (typeof window !== 'undefined') window.__AFG_MODEL_LOADED = true;
+      } catch (_e) {}
 
-      if (progress < 1) {
-        animId = requestAnimationFrame(updateCounter);
-      } else {
-        setPercent(100);
-        try {
-          sessionStorage.setItem('afg_model_cached', 'true');
-          localStorage.setItem('afg_model_cached', Date.now().toString());
-          if (typeof window !== 'undefined') window.__AFG_MODEL_LOADED = true;
-        } catch (_e) {}
-
+      setTimeout(() => {
+        setIsFading(true);
         setTimeout(() => {
-          setIsFading(true);
-          setTimeout(() => {
-            setIsRemoved(true);
-          }, 350);
-        }, 100);
+          setIsRemoved(true);
+        }, 350);
+      }, 100);
+    };
+
+    // Listen for model ready event from scene.js
+    if (typeof window !== 'undefined') {
+      if (window.__AFG_MODEL_LOADED) {
+        finishPreloader();
+        return;
       }
+      window.addEventListener('afg_model_ready', finishPreloader, { once: true });
+    }
+
+    // Safety timeout: never hang more than 2.8s
+    const safetyTimer = setTimeout(() => {
+      finishPreloader();
+    }, 2800);
+
+    // Smooth counter animation
+    const startTime = performance.now();
+    const updateCounter = (currentTime) => {
+      if (isDone) return;
+      const elapsed = currentTime - startTime;
+      // Climbs smoothly to 90% over ~1.4s
+      const targetPercent = Math.min(Math.round((elapsed / 1400) * 90), 92);
+      if (targetPercent > currentP) {
+        currentP = targetPercent;
+        setPercent(currentP);
+      }
+      animId = requestAnimationFrame(updateCounter);
     };
 
     animId = requestAnimationFrame(updateCounter);
 
     return () => {
       if (animId) cancelAnimationFrame(animId);
+      clearTimeout(safetyTimer);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('afg_model_ready', finishPreloader);
+      }
     };
   }, [isHomePage]);
 

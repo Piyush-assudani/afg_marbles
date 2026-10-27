@@ -271,41 +271,6 @@ button {
   100% { transform: translate(50%, -50%) scale(1.08); opacity: 1; }
 }
 
-.hero__poster-fallback {
-  position: absolute;
-  right: 18%;
-  top: 48%;
-  transform: translate(50%, -50%);
-  width: min(580px, 46vw);
-  height: auto;
-  z-index: 1;
-  pointer-events: none;
-  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1);
-  display: flex;
-  align-items: center;
-  justifyContent: center;
-}
-
-.hero__poster-fallback.is-faded {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.hero__poster-fallback img {
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: drop-shadow(0 24px 50px rgba(184, 134, 63, 0.2));
-}
-
-@media (max-width: 900px) {
-  .hero__poster-fallback {
-    right: 50%;
-    top: 60%;
-    transform: translate(50%, -50%);
-    width: min(440px, 78vw);
-  }
-}
 
 .webgl {
   position: absolute;

@@ -217,9 +217,9 @@ export default function RootLayout({ children }) {
         />
 
         {/* Preload critical hero 3D model, texture, and backdrop for instant first render */}
-        <link rel="preload" href="/models/mandir_premium_v4.glb" as="fetch" crossOrigin="anonymous" />
-        <link rel="preload" href="/textures/makrana.jpg" as="image" />
-        <link rel="preload" href="/hero-palace-backdrop.jpg" as="image" />
+        <link rel="preload" href="/models/mandir_premium_v4.glb" as="fetch" crossOrigin="anonymous" fetchPriority="high" />
+        <link rel="preload" href="/textures/makrana.jpg" as="image" fetchPriority="high" />
+        <link rel="preload" href="/hero-palace-backdrop.jpg" as="image" fetchPriority="high" />
 
         {/* JSON-LD Schemas for Search Engines & AI Crawlers */}
         <script

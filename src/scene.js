@@ -269,10 +269,10 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
     };
   });
 
-  // Safety fallback: never keep user waiting more than 800ms
+  // Safety fallback: only if network completely hangs after 5s
   setTimeout(() => {
     readyResolve();
-  }, 800);
+  }, 5000);
 
   const manager = new THREE.LoadingManager(
     () => readyResolve?.(),
@@ -487,9 +487,11 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
 
         mandirGroup.add(mandir);
         mandirGroup.visible = true;
+        if (podiumLayer) podiumLayer.visible = true;
         try {
           if (typeof window !== 'undefined') {
             window.__AFG_MODEL_LOADED = true;
+            window.dispatchEvent(new CustomEvent('afg_model_ready'));
             sessionStorage.setItem('afg_model_cached', 'true');
             localStorage.setItem('afg_model_cached', Date.now().toString());
           }
@@ -512,6 +514,15 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
             });
             mandirGroup.add(fallbackMandir);
             mandirGroup.visible = true;
+            if (podiumLayer) podiumLayer.visible = true;
+            try {
+              if (typeof window !== 'undefined') {
+                window.__AFG_MODEL_LOADED = true;
+                window.dispatchEvent(new CustomEvent('afg_model_ready'));
+                sessionStorage.setItem('afg_model_cached', 'true');
+                localStorage.setItem('afg_model_cached', Date.now().toString());
+              }
+            } catch (_e) {}
             resolve(fallbackGltf);
             readyResolve();
           },
@@ -555,6 +566,7 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
 
   // Podium (turntable)
   const podiumLayer = new THREE.Group();
+  podiumLayer.visible = false;
   const podium = new THREE.Mesh(
     lathe(
       [v2(0.0001, 0), v2(3.0, 0), v2(3.1, 0.05), v2(3.1, 0.24), v2(3.02, 0.3), v2(0.0001, 0.3)],
@@ -890,16 +902,18 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
 
   /* --- Intro --- */
   function prepareIntro() {
-    mandirGroup.visible = true;
-    podiumLayer.visible = true;
+    const hasModel = mandirGroup.children.some((c) => c !== sanctumGlow);
+    mandirGroup.visible = hasModel;
+    podiumLayer.visible = hasModel;
     halo.scale.setScalar(0.001);
     contact.material.opacity = 0;
   }
 
   function intro() {
     introDone = true;
-    mandirGroup.visible = true;
-    podiumLayer.visible = true;
+    const hasModel = mandirGroup.children.some((c) => c !== sanctumGlow);
+    mandirGroup.visible = hasModel;
+    podiumLayer.visible = hasModel;
     mandirGroup.position.set(0, 0, 0);
     podiumLayer.scale.set(1, 1, 1);
     contact.material.opacity = 1;
