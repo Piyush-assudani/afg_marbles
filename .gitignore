@@ -12,7 +12,10 @@ All Photos AFG Marbls
 /mandir_heavy_dark.glb
 /mandir_heavy_ivory.glb
 *.mp4
+!public/videos/*.mp4
+scratch_video/
 *.opus
 *.mp3
 *.wav
 data/
+

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import HeroSection from '../components/HeroSection';
 import AtelierRibbon from '../components/AtelierRibbon';
 import MakranaVisualShowcase from '../components/MakranaVisualShowcase';
+import CinematicFilmShowcase from '../components/CinematicFilmShowcase';
 import ProductCard from '../components/ProductCard';
 import DifferenceTable from '../components/DifferenceTable';
 import ConsultationCard from '../components/ConsultationCard';
@@ -70,6 +71,9 @@ export default function HomePage() {
 
       {/* ============ MAKRANA PURE WHITE MARBLE VISUAL SHOWCASE ============ */}
       <MakranaVisualShowcase onOpenInquiry={handleOpenInquiry} />
+
+      {/* ============ 4K CINEMATIC IMMERSION SHOWCASE ============ */}
+      <CinematicFilmShowcase onOpenInquiry={handleOpenInquiry} />
 
       {/* ============ ROYAL PATRON TRUST BAR ============ */}
       <section className="sec-royal-trust-bar" aria-label="Imperial Stone Assurances">
