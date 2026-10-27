@@ -685,11 +685,11 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
 
     if (isMobile) {
       const isShort = H < 740;
-      camBase.set(0, isShort ? 3.4 : 3.6, isShort ? 16.5 : 15.8);
-      lookBase.set(0, isShort ? 1.0 : 1.2, 0);
-      // Temple elevated into upper archway on mobile and enlarged so podium is well above heading
-      stage.position.y = isShort ? 2.30 : 2.50;
-      stage.scale.setScalar(isShort ? 0.58 : 0.64);
+      camBase.set(0, 3.5, isShort ? 17.2 : 16.8);
+      lookBase.set(0, 2.05, 0);
+      // Perfectly balanced framing: fits safely below navbar and stays clearly above heading
+      stage.position.y = isShort ? 1.15 : 1.25;
+      stage.scale.setScalar(isShort ? 0.50 : 0.53);
       stage.position.x = 0;
     } else {
       const isLaptop = W < 1520 || H < 860;
