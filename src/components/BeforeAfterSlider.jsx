@@ -56,7 +56,7 @@ export default function BeforeAfterSlider() {
           </h2>
           <div className="gold-rule center" style={{ margin: '14px auto 16px', background: 'linear-gradient(90deg, transparent, #ecd39b, transparent)' }}></div>
           <p className="sub-lead" style={{ maxWidth: '780px', margin: '0 auto', fontSize: '15px', color: '#c9bfae', lineHeight: 1.6 }}>
-            Bina gold work aur color ke pure Makrana marble carving aisi dikhti hai, aur 24K real gold foil work aur traditional temple color artistry hone ke baad mandir aisa divya dikhta hai. Neeche diye gaye slider se antar dekhein:
+            See how pure Makrana white marble carving looks in its natural hand-carved state, and how it transforms with 24K real gold leaf and traditional temple color artistry. Drag the slider below to compare:
           </p>
         </div>
 
@@ -81,7 +81,7 @@ export default function BeforeAfterSlider() {
             }}
           >
             <span style={{ width: '9px', height: '9px', borderRadius: '50%', background: '#ffffff', display: 'inline-block' }} />
-            <span>Pehle: Bina Gold &amp; Color (Pure White Marble)</span>
+            <span>Before: Pure White Marble (Without Color &amp; Gold)</span>
           </button>
 
           <button
@@ -103,7 +103,7 @@ export default function BeforeAfterSlider() {
             }}
           >
             <span style={{ width: '9px', height: '9px', borderRadius: '50%', background: '#ecd39b', display: 'inline-block' }} />
-            <span>Baad Me: 24K Gold Work &amp; Colors Ke Saath</span>
+            <span>After: With 24K Real Gold Leaf &amp; Colors</span>
           </button>
         </div>
 
@@ -133,7 +133,7 @@ export default function BeforeAfterSlider() {
           {/* Base: With 24K Gold & Color (Right / Underneath) */}
           <img
             src="/gallery/mandir-with-gold-color.webp"
-            alt="Baad Me: 24K Gold Foil Work aur Rangon ke Saath Mandir"
+            alt="After: Temple with 24K Real Gold Leaf and Traditional Colors"
             loading="lazy"
             style={{
               position: 'absolute',
@@ -158,7 +158,7 @@ export default function BeforeAfterSlider() {
           >
             <img
               src="/gallery/mandir-without-gold-color.webp"
-              alt="Pehle: Bina Gold Work aur Color ke Pure Makrana Marble Mandir"
+              alt="Before: Pure Hand-Carved Makrana White Marble Temple"
               loading="lazy"
               style={{
                 position: 'absolute',
@@ -233,7 +233,7 @@ export default function BeforeAfterSlider() {
               boxShadow: '0 4px 12px rgba(0,0,0,0.6)'
             }}
           >
-            ← BINA COLOR &amp; GOLD
+            ← NATURAL WHITE MARBLE
           </div>
 
           {/* Top-Right Badge: 24K Gold & Color Work */}
@@ -256,7 +256,7 @@ export default function BeforeAfterSlider() {
               boxShadow: '0 4px 12px rgba(0,0,0,0.6)'
             }}
           >
-            24K GOLD &amp; COLOR →
+            24K GOLD &amp; COLORS →
           </div>
 
           {/* Bottom Center Indicator Pill */}
@@ -281,7 +281,7 @@ export default function BeforeAfterSlider() {
               boxShadow: '0 4px 12px rgba(0,0,0,0.5)'
             }}
           >
-            ↔ Slider ko slide karke dekhein
+            ↔ Drag slider to compare
           </div>
         </div>
 
@@ -296,16 +296,16 @@ export default function BeforeAfterSlider() {
           }}
         >
           <div style={{ background: 'rgba(255,255,255,0.04)', padding: '20px 22px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.08)' }}>
-            <strong style={{ color: '#ffffff', display: 'block', fontSize: '14px', marginBottom: '6px' }}>1. Bina Color &amp; Gold Work (Pure Carving)</strong>
-            <p style={{ fontSize: '13px', color: '#b8ad9e', lineHeight: 1.5, margin: 0 }}>Origional Makrana pure white marble par haath se ki gayi carving bina kisi rang ya gold ke aisi shuddh aur sundar dikhti hai.</p>
+            <strong style={{ color: '#ffffff', display: 'block', fontSize: '14px', marginBottom: '6px' }}>1. Pure White Marble (Hand-Carved)</strong>
+            <p style={{ fontSize: '13px', color: '#b8ad9e', lineHeight: 1.5, margin: 0 }}>Authentic Makrana pure white marble chiseled by master sculptors. Clean, serene, and timeless in its natural stone elegance.</p>
           </div>
           <div style={{ background: 'rgba(255,255,255,0.04)', padding: '20px 22px', borderRadius: '10px', border: '1px solid rgba(212, 175, 55, 0.25)' }}>
-            <strong style={{ color: '#ecd39b', display: 'block', fontSize: '14px', marginBottom: '6px' }}>2. 24K Asli Sona Foil Work (Gold Leaf)</strong>
-            <p style={{ fontSize: '13px', color: '#b8ad9e', lineHeight: 1.5, margin: 0 }}>Shikhara, mor (peacock), aur pillars par 24-karat pure gold leaf ka bariki se kaam kiya jata hai jo kabhi kaala nahi padta.</p>
+            <strong style={{ color: '#ecd39b', display: 'block', fontSize: '14px', marginBottom: '6px' }}>2. 24K Pure Gold Leaf Work</strong>
+            <p style={{ fontSize: '13px', color: '#b8ad9e', lineHeight: 1.5, margin: 0 }}>Temple spires, peacock arches, and pillar capitals are highlighted with genuine 24-karat gold leaf that stays radiant forever.</p>
           </div>
           <div style={{ background: 'rgba(255,255,255,0.04)', padding: '20px 22px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.08)' }}>
             <strong style={{ color: '#ecd39b', display: 'block', fontSize: '14px', marginBottom: '6px' }}>3. Traditional Temple Color Work</strong>
-            <p style={{ fontSize: '13px', color: '#b8ad9e', lineHeight: 1.5, margin: 0 }}>Natural aur durable mineral rangon se mor aur phool-patti ki barikiyan ubhari jaati hain, jisse mandir ka roop divya ho jata hai.</p>
+            <p style={{ fontSize: '13px', color: '#b8ad9e', lineHeight: 1.5, margin: 0 }}>Hand-painted with long-lasting temple mineral colors to highlight intricate peacock feathers, lotus flowers, and sacred motifs.</p>
           </div>
         </div>
       </div>
