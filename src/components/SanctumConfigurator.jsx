@@ -10,7 +10,6 @@ const STYLES = [
     image: '/gallery/img_7263.webp',
     baseWeight: 950,
     hours: 480,
-    vastuScore: 99,
     yoni: 'Dhwaja (North - Ultimate Sovereignty)',
     description: 'Classical North Indian sacred architecture with stepped curvilinear shikhara, carved toran archways, and consecrated central sanctum.'
   },
@@ -21,7 +20,6 @@ const STYLES = [
     image: '/gallery/sanctum-palatial-peacock.webp',
     baseWeight: 700,
     hours: 380,
-    vastuScore: 98,
     yoni: 'Simha (East - Fearless Victory & Wealth)',
     description: 'Inspired by royal palace shrines. Features hand-chiseled peacock archways, floral pillars, and pull-out storage drawers in pure Makrana marble.'
   },
@@ -32,7 +30,6 @@ const STYLES = [
     image: '/gallery/sanctum-triple-shikhar-room.webp',
     baseWeight: 550,
     hours: 320,
-    vastuScore: 97,
     yoni: 'Vrishabha (West - Everlasting Peace & Family Abundance)',
     description: 'Clean-line contemporary luxury sanctum tailored for modern apartments and villas with integrated ambient warm illumination.'
   },
@@ -43,7 +40,6 @@ const STYLES = [
     image: '/gallery/royal-chhatri-garden-pavilion.webp',
     baseWeight: 1400,
     hours: 620,
-    vastuScore: 99,
     yoni: 'Gaja (North - Royal Dignity & Eternal Fortune)',
     description: 'Majestic open-air heritage pavilion carved from solid Makrana white marble with interlocking columns, ribbed dome, and ornate bracketed eaves.'
   }
@@ -186,7 +182,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
                   window.afgOpenLightbox({
                     src: selectedStyle.image,
                     title: selectedStyle.name,
-                    tag: `${selectedStone.name} · Vastu Score ${selectedStyle.vastuScore}/100`
+                    tag: `${selectedStone.name} · Bespoke Handcrafted Commission`
                   });
                 }
               }}
@@ -224,7 +220,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
                     window.afgOpenLightbox({
                       src: selectedStyle.image,
                       title: selectedStyle.name,
-                      tag: `${selectedStone.name} · Vastu Score ${selectedStyle.vastuScore}/100`
+                      tag: `${selectedStone.name} · Bespoke Handcrafted Commission`
                     });
                   }
                 }}
@@ -275,19 +271,6 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
                 }}>
                   {selectedStone.tag}
                 </span>
-
-                <span style={{
-                  background: 'rgba(255, 255, 255, 0.95)',
-                  color: '#1c1813',
-                  padding: '6px 14px',
-                  borderRadius: '999px',
-                  fontSize: '11px',
-                  fontWeight: 700,
-                  letterSpacing: '0.06em',
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
-                }}>
-                  VASTU: {selectedStyle.vastuScore}/100
-                </span>
               </div>
 
               {/* Bottom Stone Accent Bar */}
@@ -309,7 +292,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
               </div>
             </div>
 
-            {/* Realtime Engineering & Ayadi Vastu Metrics Card */}
+            {/* Realtime Engineering & Architectural Specifications Card */}
             <div className="config-metrics-card" style={{
               background: '#fbf9f4',
               borderRadius: '16px',
@@ -318,7 +301,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
             }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
                 <span style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#88542c' }}>
-                  AYADI VASTU HARMONY &amp; SPECIFICATIONS
+                  ARCHITECTURAL CRAFT &amp; SPECIFICATIONS
                 </span>
                 <span style={{ fontSize: '11px', color: '#27ae60', fontWeight: 600 }}>● Consecration Certified</span>
               </div>
