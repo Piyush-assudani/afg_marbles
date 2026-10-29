@@ -595,16 +595,16 @@ export const PRODUCTS = [
   // =========================================================================
   {
     id: 'yard-dryfit-silawat-inspection',
-    title: 'Jaipur Yard Pre-Assembly Peacock Mandapam',
+    title: 'Makrana Yard Pre-Assembly Peacock Mandapam',
     category: 'mandir',
     categoryName: 'Marble Mandirs & Temples',
     badge: 'Atelier Live Trial',
-    tagline: '7.5ft Makrana marble mandapam undergoing live pre-assembly dry-joint fitment in our Jaipur atelier yard',
+    tagline: '7.5ft Makrana marble mandapam undergoing live pre-assembly dry-joint fitment in our Makrana atelier yard',
     authenticity: '100% Makrana Calcite Bedrock',
     scale: 'Size = 7.5 Feet Height · 5.5 Feet Width · 2 Feet Depth',
     primaryStone: 'Pure Makrana White Marble',
     fullDesc:
-      'Inspected live in our Jaipur Atelier Yard North under the supervision of Master Sthapati Ramswaroop Silawat. Every pillar, arch, and spire of this 7.5ft mandapam is pre-assembled to verify 0.5mm dry-joint tolerance. Features an extraordinary mother-of-pearl peacock feather halo and sculpted elephant pillars.',
+      'Inspected live in our Makrana Atelier Yard North under the supervision of Master Sthapati Ramswaroop Silawat. Every pillar, arch, and spire of this 7.5ft mandapam is pre-assembled to verify 0.5mm dry-joint tolerance. Features an extraordinary mother-of-pearl peacock feather halo and sculpted elephant pillars.',
     angles: [
       {
         label: 'Yard Pre-Assembly Trial',
@@ -651,34 +651,34 @@ export const PRODUCTS = [
     badge: 'Water Architecture',
     tagline: 'Monumental three-tier fluted fountain with lion-head spouts and laminar cascade',
     authenticity: 'Carved from Single Bedrock Boulders',
-    scale: '12.0ft Diameter × 9.5ft Height',
+    scale: '10.0ft Diameter × 8.0ft Height',
     primaryStone: 'Makrana White Marble',
     fullDesc:
       'An imperial water monument designed for palatial courtyards and luxury estate driveways. Sculpted from massive single blocks of Makrana marble, each tier is shaped into classical scalloped basins with precision-engineered water sheeting edges.',
     angles: [
       {
         label: 'Palatial Lawn Elevation',
-        tag: 'Lawn Cascade',
+        tag: 'Full Elevation',
         src: '/gallery/fountain-palatial-estate-triple-tier-lawn.webp',
         desc: 'Monumental 3-tier marble fountain installed on estate grounds with multi-tier water sheeting.'
       },
       {
-        label: 'Scalloped Tier Basin',
-        tag: 'Tier Detail',
-        src: '/gallery/fountain-estate-triple-tier-scallop.webp',
-        desc: 'Hand-carved scalloped basin rim calibrated for zero-splash laminar water cascade.'
+        label: 'Cascading Triple Spire',
+        tag: 'Crown Apex',
+        src: '/gallery/fountain-palatial-triple-tier-crown.webp',
+        desc: 'Close-up of the upper scalloped tiers, fluted central baluster, and architectural cascade finial.'
       },
       {
-        label: 'Acanthus Relief Column',
-        tag: 'Carving Detail',
-        src: '/gallery/fountain-triple-tier-carved-detail.webp',
-        desc: 'Deeply chiseled acanthus leaf central support column and sculpted water spouts.'
+        label: 'Pool Basin & Pedestal Base',
+        tag: 'Plinth Detail',
+        src: '/gallery/fountain-palatial-triple-tier-base.webp',
+        desc: 'Architectural lower pool basin, water sheeting perimeter, and sculpted pedestal foundation.'
       }
     ],
     specs: [
       { label: 'Stone Variety', value: 'Dense Makrana Calcite White Marble' },
       { label: 'Tier Configuration', value: 'Triple Concentric Scalloped Basins with Spouting Finial' },
-      { label: 'Standard Dimensions', value: '12.0ft (Base Pool Diameter) × 9.5ft (Overall Height)' },
+      { label: 'Standard Dimensions', value: '10.0ft (Base Pool Diameter) × 8.0ft (Overall Height) — Size = 10ft Diameter × 8ft Height' },
       { label: 'Hydraulics', value: 'Pre-piped stainless steel internal conduits (zero external plumbing visible)' }
     ]
   },
@@ -690,7 +690,7 @@ export const PRODUCTS = [
     badge: 'Courtyard Masterpiece',
     tagline: 'Deep black stone fountain with fluted multi-tier basins and continuous water cascade',
     authenticity: 'Authentic Black Natural Stone',
-    scale: '8.0ft Diameter × 6.5ft Height',
+    scale: '10.0ft Diameter × 10.0ft Height',
     primaryStone: 'Natural Black Granite & Stone',
     fullDesc:
       'Handcrafted from dense natural black stone, this magnificent courtyard fountain features fluted concentric basins that create a soothing, continuous sheet of water. The mirror-buffed dark surface reflects courtyard lights and surrounding greenery with breathtaking clarity.',
@@ -702,21 +702,21 @@ export const PRODUCTS = [
         desc: 'Symmetrical circular black stone fountain set within an elegant courtyard garden.'
       },
       {
-        label: 'Tier Cascade Detail',
-        tag: 'Water Sheeting',
-        src: '/gallery/fountain-black-marquina-cascade.webp',
-        desc: 'Water sheeting smoothly across the polished fluted black tiers.'
+        label: 'Tier Cascade Water Sheeting',
+        tag: 'Water Cascade',
+        src: '/gallery/fountain-courtyard-circular-crown.webp',
+        desc: 'Water sheeting smoothly across the polished fluted black tiers and central spout.'
       },
       {
-        label: 'Fluted Black Basin',
+        label: 'Mirror-Buffed Basin Curb',
         tag: 'Basin Detail',
-        src: '/gallery/fountain-black-stone-close-detail.webp',
-        desc: 'Hand-turned scalloped basin rims carved from monolithic dense black stone.'
+        src: '/gallery/fountain-courtyard-circular-base.webp',
+        desc: 'Large monolithic black stone outer circular basin rim and polished stone curb.'
       }
     ],
     specs: [
       { label: 'Stone Variety', value: '100% Dense Natural Black Stone (High Polish)' },
-      { label: 'Standard Dimensions', value: '8.0ft (Diameter) × 6.5ft (Height)' },
+      { label: 'Standard Dimensions', value: '10.0ft (Diameter) × 10.0ft (Height) — Size = 10ft Diameter × 10ft Height' },
       { label: 'Pump Requirements', value: 'Submersible variable-flow stainless pump included' }
     ]
   },
@@ -728,33 +728,33 @@ export const PRODUCTS = [
     badge: 'Botanical Estate',
     tagline: 'Octagonal marble curb fountain with central multi-tier cascade and perimeter seating',
     authenticity: 'Makrana Marble & Rajnagar White',
-    scale: '14.0ft Diameter × 8.0ft Height',
+    scale: '8.0ft Diameter × 6.0ft Height',
     primaryStone: 'Rajnagar & Makrana White Marble',
     fullDesc:
       'Designed for expansive botanical gardens and hotel courtyards, this octagonal fountain features an architectural coping ledge for relaxed seating, with a central tiered cascade providing an enchanting acoustic presence.',
     angles: [
       {
         label: 'Octagonal Pool Elevation',
-        tag: 'Pool Coping',
+        tag: 'Full Elevation',
         src: '/gallery/fountain-botanical-garden-octagonal.webp',
         desc: 'Expansive octagonal marble curb pool with central cascading fountain tiers.'
       },
       {
-        label: 'Water Colonnade',
-        tag: 'Colonnade',
-        src: '/gallery/fountain-palatial-estate-triple-tier-lawn.webp',
-        desc: 'Monumental carved marble basin and perimeter water jets.'
+        label: 'Central Tier Cascade',
+        tag: 'Crown Apex',
+        src: '/gallery/fountain-botanical-octagonal-crown.webp',
+        desc: 'Upper tiered fluted bowls and water spouts engineered for symmetrical eight-directional flow.'
       },
       {
-        label: 'Cascade Spout',
-        tag: 'Spout Detail',
-        src: '/gallery/fountain-circular-lawn-estate-cascade.webp',
-        desc: 'Precision water exit spouts ensuring balanced water distribution on all 8 sides.'
+        label: 'Perimeter Octagonal Curb',
+        tag: 'Curb Detail',
+        src: '/gallery/fountain-botanical-octagonal-base.webp',
+        desc: 'Hand-carved architectural coping curb ledge providing integrated garden seating.'
       }
     ],
     specs: [
       { label: 'Stone Variety', value: 'Solid White Marble Bedrock' },
-      { label: 'Standard Dimensions', value: '14.0ft (Diameter) × 8.0ft (Height)' }
+      { label: 'Standard Dimensions', value: '8.0ft (Diameter) × 6.0ft (Height) — Size = 8ft Diameter × 6ft Height' }
     ]
   },
   {
@@ -765,33 +765,33 @@ export const PRODUCTS = [
     badge: 'Four-Tier Masterpiece',
     tagline: 'Grand four-tier scalloped shell fountain with fluted pedestal and pinecone finial',
     authenticity: 'Monolithic Carved Marble',
-    scale: '10.5ft Diameter × 11.0ft Height',
+    scale: '10.0ft Diameter × 10.0ft Height',
     primaryStone: 'Makrana Calcite Marble',
     fullDesc:
       'A true tour-de-force of water sculpture, this four-tier fountain utilizes fluted seashell basin geometry to create four concentric tiers of musical water curtains.',
     angles: [
       {
-        label: 'Studio Elevation',
+        label: 'Four-Tier Elevation',
         tag: 'Full Elevation',
         src: '/gallery/fountain-classical-scallop-four-tier-studio.webp',
-        desc: 'Four-tier studio elevation showcasing the fluted seashell basins and pedestal.'
+        desc: 'Four-tier monumental studio elevation showcasing the graduated fluted seashell basins and pedestal.'
       },
       {
-        label: 'Shell Basin Detail',
-        tag: 'Basin Detail',
-        src: '/gallery/fountain-studio-isolated-marble-basin.webp',
-        desc: 'Monolithic carved seashell basin rim with hand-chiseled fluting.'
+        label: 'Upper Tier Shell Cascade',
+        tag: 'Crown Apex',
+        src: '/gallery/fountain-classical-scallop-four-tier-crown.webp',
+        desc: 'High-detail close-up of the upper seashell tiers and sculpted pinecone finial.'
       },
       {
-        label: 'Terrace Setting',
-        tag: 'Estate Terrace',
-        src: '/gallery/fountain-estate-garden-scallop-terrace.webp',
-        desc: 'Finished installation in an estate garden terrace.'
+        label: 'Fluted Pedestal & Plinth',
+        tag: 'Plinth Detail',
+        src: '/gallery/fountain-classical-scallop-four-tier-base.webp',
+        desc: 'Master-chiseled monolithic pedestal base and heavy support plinth.'
       }
     ],
     specs: [
       { label: 'Stone Variety', value: 'Pure Makrana White Marble' },
-      { label: 'Standard Dimensions', value: '10.5ft (Diameter) × 11.0ft (Height)' }
+      { label: 'Standard Dimensions', value: '10.0ft (Diameter) × 10.0ft (Height) — Size = 10ft Diameter × 10ft Height' }
     ]
   },
 
@@ -814,25 +814,25 @@ export const PRODUCTS = [
       {
         label: 'Full Elevation',
         tag: 'Full Elevation',
-        src: '/gallery/chhatri-fluted-monumental-lawn.webp',
+        src: '/gallery/chhatri-fluted-monumental-lawn.webp?v=fluted8k',
         desc: 'Monumental octagonal garden chhatri in pure Makrana white marble with ribbed fluted dome and carved plinth.'
       },
       {
         label: 'Fluted Dome & Kalash',
         tag: 'Dome Apex',
-        src: '/gallery/royal-chhatri-dome-detail.webp',
+        src: '/gallery/royal-chhatri-dome-detail.webp?v=fluted8k',
         desc: 'Hand-carved fluted dome segments crowned with traditional brass kalash finial.'
       },
       {
         label: 'Monolith Colonnade',
         tag: 'Pillar Detail',
-        src: '/gallery/royal-chhatri-pillar-detail.webp',
+        src: '/gallery/royal-chhatri-pillar-detail.webp?v=fluted8k',
         desc: 'Turned monolithic marble pillars with cusped floral arch brackets.'
       },
       {
         label: 'Raised Plinth Platform',
         tag: 'Plinth Detail',
-        src: '/gallery/royal-chhatri-base-detail.webp',
+        src: '/gallery/royal-chhatri-base-detail.webp?v=fluted8k',
         desc: 'Molded octagonal marble plinth engineered for outdoor garden foundations.'
       }
     ],

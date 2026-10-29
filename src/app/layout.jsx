@@ -102,7 +102,7 @@ const organizationSchema = {
   description:
     'Purveyors of generational hand-carved Makrana pure calcite marble mandirs, palatial estate fountains, and royal garden chhatris compliant with sacred Ayadi Sthapatya Veda since 1987.',
   telephone: '+917597417274',
-  email: 'info@afgmarbel.com',
+  email: 'mh213702@gmail.com',
   priceRange: '$$$$',
   foundingDate: '1987',
   address: [
@@ -114,19 +114,11 @@ const organizationSchema = {
       postalCode: '341505',
       addressCountry: 'IN',
     },
-    {
-      '@type': 'PostalAddress',
-      streetAddress: 'Near MI Road, C-Scheme',
-      addressLocality: 'Jaipur',
-      addressRegion: 'Rajasthan',
-      postalCode: '302001',
-      addressCountry: 'IN',
-    },
   ],
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: 26.9124,
-    longitude: 75.7873,
+    latitude: 27.0434,
+    longitude: 74.7268,
   },
   openingHoursSpecification: [
     {
@@ -194,7 +186,7 @@ const faqSchema = {
       name: 'Where are the physical ateliers of A.F.G Marble & Arts located?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The Flagship Experience Centre is in Jaipur (near MI Road / C-Scheme, 302001) and Primary Quarry & Carving Workshops are in Makrana (Industrial Stone Artisan Zone, 341505), Rajasthan, India. Direct concierge phone and WhatsApp: +91 7597417274.',
+        text: 'The Master Atelier, Pre-Assembly Fitment Yard, and Primary Quarry Works are located in Makrana (Industrial Stone Artisan Zone, 341505), Rajasthan, India. Direct concierge phone and WhatsApp: +91 7597417274.',
       },
     },
     {
@@ -202,7 +194,7 @@ const faqSchema = {
       name: 'What marble varieties are used by A.F.G Marble & Arts?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The atelier crafts exclusively with three certified noble white marbles: 1) Makrana Pure White Marble (99.2% Calcite - Taj Mahal Stratum for Mandirs), 2) Vietnam Pure White Marble (99.6% Snow Calcite for Deities & Temples), and 3) Rajnagar White Marble (High-Density Hydraulic Calcite for Palatial Fountains).',
+        text: 'The atelier crafts exclusively with three certified noble white marbles: 1) Makrana Pure White Marble (100% spotless virgin calcite for mandirs), 2) Vietnam Pure White Marble (99.6% spotless crystalline snow-white for sacred deities and contemporary sanctums), and 3) Rajnagar White Marble (high-density hydraulic calcite for palatial fountains).',
       },
     },
   ],

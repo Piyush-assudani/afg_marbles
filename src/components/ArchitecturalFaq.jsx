@@ -15,7 +15,7 @@ export default function ArchitecturalFaq({ onOpenInquiry }) {
     },
     {
       q: 'How is a large marble temple delivered and installed in my home without any mess?',
-      a: 'Every A.F.G temple is made using precision interlocking modular marble blocks (carved base, pillars, jali panels, and dome). We assemble and verify the entire mandir in our Jaipur workshop before dispatch. When it reaches your home, our skilled team fits the interlocking pieces smoothly within 4 to 6 hours—completely clean, with zero dust, cement, or construction noise.',
+      a: 'Every A.F.G temple is made using precision interlocking modular marble blocks (carved base, pillars, jali panels, and dome). We assemble and verify the entire mandir in our Makrana workshop before dispatch. When it reaches your home, our skilled team fits the interlocking pieces smoothly within 4 to 6 hours—completely clean, with zero dust, cement, or construction noise.',
     },
     {
       q: 'What is Ayadi Vastu Shastra calculation and how does AFG apply it?',

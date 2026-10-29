@@ -296,7 +296,7 @@ export default function RoyalProjectsPage() {
               <span>Instant WhatsApp Sthapati Consultation</span>
             </a>
             <Link href="/contact" className="btn-outline-gold" style={{ borderColor: '#d8bb84', color: '#ecd39b' }}>
-              <span>Visit Our Jaipur &amp; Makrana Studios</span>
+              <span>Visit Our Makrana Master Studios</span>
             </Link>
           </div>
         </div>

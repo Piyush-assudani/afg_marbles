@@ -112,7 +112,7 @@ export default function PrivacyPage() {
                 Photographic Embargo &amp; Non-Publication Policy
               </h3>
               <p style={{ margin: 0 }}>
-                Every bespoke marble mandir, private courtyard fountain, and sacred garbhagriha is unique. Photographs captured during on-site trial assembly in our Jaipur yard or post-installation in private estates are strictly archived under patron pseudonymity. No media crew or social marketing agency is granted access to residential sanctums without sealed client consent.
+                Every bespoke marble mandir, private courtyard fountain, and sacred garbhagriha is unique. Photographs captured during on-site trial assembly in our Makrana yard or post-installation in private estates are strictly archived under patron pseudonymity. No media crew or social marketing agency is granted access to residential sanctums without sealed client consent.
               </p>
             </div>
 
@@ -205,7 +205,7 @@ export default function PrivacyPage() {
                     <strong>Direct Concierge:</strong> <a href="tel:+917597417274" style={{ color: '#8c6a36', fontWeight: 600 }}>+91 7597417274</a>
                   </p>
                   <p style={{ margin: '0 0 6px', fontSize: '13px', color: '#685c4f' }}>
-                    <strong>Electronic Mail:</strong> <a href="mailto:info@afgmarbel.com" style={{ color: '#8c6a36', fontWeight: 600 }}>info@afgmarbel.com</a>
+                    <strong>Electronic Mail:</strong> <a href="mailto:mh213702@gmail.com" style={{ color: '#8c6a36', fontWeight: 600 }}>mh213702@gmail.com</a>
                   </p>
                   <p style={{ margin: 0, fontSize: '13px', color: '#685c4f' }}>
                     <strong>Turnaround:</strong> Formal NDA countersigned within 24 hours.

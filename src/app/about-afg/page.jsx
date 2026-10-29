@@ -12,7 +12,7 @@ export default function AboutAFGPage() {
     },
     {
       year: '1998',
-      title: 'Jaipur Master Sculptor Yard',
+      title: 'Makrana Master Sculptor Yard',
       desc: 'Opened our central pre-assembly and stone sculpting atelier in Jaipur, bringing together senior 4th and 5th-generation Silawat guild carvers under one roof.'
     },
     {
@@ -99,7 +99,7 @@ export default function AboutAFGPage() {
                   <span className="btn-primary__icon">→</span>
                 </Link>
                 <Link href="/contact" className="btn-outline-gold">
-                  <span>Visit Our Jaipur Yard</span>
+                  <span>Visit Our Makrana Yard</span>
                 </Link>
               </div>
             </div>

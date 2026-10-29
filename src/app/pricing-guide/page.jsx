@@ -20,7 +20,7 @@ export default function PricingGuidePage() {
     },
     {
       title: '4. Pre-Assembly Fitment & ISPM-15 Crating',
-      desc: '100% pre-assembly in our Jaipur yard, 4K inspection video verification, and custom-built shock-absorbing marine export crating are included in every proposal with zero hidden add-ons.'
+      desc: '100% pre-assembly in our Makrana yard, 4K inspection video verification, and custom-built shock-absorbing marine export crating are included in every proposal with zero hidden add-ons.'
     }
   ];
 

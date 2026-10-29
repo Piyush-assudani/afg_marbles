@@ -3,87 +3,87 @@ import React from 'react';
 
 const ROW_ONE = [
   {
-    src: '/gallery/mandir-pure-makrana.webp',
-    alt: 'Handcrafted Makrana marble mandir collection',
-    caption: 'Pure Makrana Calcite Mandir',
-  },
-  {
-    src: '/gallery/fountain-palatial-night.webp',
-    alt: 'Palatial multi-tier fountain illuminated at night with waterfalls',
-    caption: 'Palatial Fountain at Night',
-  },
-  {
-    src: '/gallery/mandir-peacock-halo.webp',
-    alt: 'White marble sanctum with sculpted peacock jali arch',
-    caption: 'Peacock Jali Sanctum',
-  },
-  {
-    src: '/gallery/fountain-classical-four-tier.webp',
-    alt: 'Classical four-tier estate marble fountain in garden',
-    caption: 'Palatial Four-Tier Fountain',
-  },
-  {
-    src: '/gallery/mandir-grand-makrana-8361.webp',
-    alt: 'Grand Garbhagriha luxury marble mandir with ornate pillars',
+    src: '/gallery/mandir-grand-makrana-8361.webp?v=real',
+    alt: 'Grand Garbhagriha luxury pure Makrana marble mandir',
     caption: 'Grand Garbhagriha Mandir',
   },
   {
-    src: '/gallery/fountain-sculpted-horses.webp',
-    alt: 'Monumental marble fountain with sculpted rearing horses',
-    caption: 'Sculpted Horses Fountain',
+    src: '/gallery/fountain-palatial-triple-tier-base.webp?v=real',
+    alt: 'Palatial three-tier cascading estate marble fountain',
+    caption: 'Palatial Cascading Fountain',
   },
   {
-    src: '/gallery/chhatri-makrana-dome.webp',
-    alt: 'Heritage Makrana marble carved chhatri dome',
-    caption: 'Makrana Heritage Dome',
+    src: '/gallery/mandir-peacock-torana-8341.webp?v=real',
+    alt: 'White marble sanctum with sculpted peacock torana and elephant pillars',
+    caption: 'Peacock Torana Mandir',
   },
   {
-    src: '/gallery/mandir-monumental-temple.webp',
-    alt: 'Monumental consecrated marble temple complex',
-    caption: 'Monumental Calcite Mandir',
+    src: '/gallery/fountain-classical-scallop-four-tier-base.webp?v=real',
+    alt: 'Classical four-tier scallop bowl estate marble fountain',
+    caption: 'Classical Four-Tier Fountain',
+  },
+  {
+    src: '/gallery/mandir-shree-ram-7971.webp?v=real',
+    alt: 'Lord Rama sanctum with handcrafted jali screen and shikhara',
+    caption: 'Shree Ram Mandir Sanctum',
+  },
+  {
+    src: '/gallery/chhatri-fluted-monumental-lawn.webp?v=fluted8k',
+    alt: 'Monumental octagonal fluted dome garden pavilion in pure white marble',
+    caption: 'Monumental Fluted Chhatri',
+  },
+  {
+    src: '/gallery/yard-dryfit-raw-calcite-mandir.webp?v=realphoto',
+    alt: 'Pre-assembly trial dry-joint fitment in Makrana yard',
+    caption: 'Makrana Yard Pre-Assembly Mandir',
+  },
+  {
+    src: '/gallery/mandir-pietra-dura-7794.webp?v=real',
+    alt: 'Parchin Kari Pietra Dura gemstone inlay marble mandir',
+    caption: 'Pietra Dura Gemstone Mandir',
   },
 ];
 
 const ROW_TWO = [
   {
-    src: '/gallery/sanctum-wall-integrated-niche.webp',
-    alt: 'Architectural wall-integrated carved marble temple niche',
-    caption: 'Wall-Integrated Sanctum',
-  },
-  {
-    src: '/gallery/sanctum-grand-mandap.webp',
-    alt: 'Royal pooja sanctum with illuminated deities and brass lamps',
-    caption: 'Majestic Puja Mandap',
-  },
-  {
-    src: '/gallery/fountain-octagonal-topdown.webp',
-    alt: 'Aerial top-down concentric rings white marble courtyard fountain',
-    caption: 'Concentric Calcite Fountain',
-  },
-  {
-    src: '/gallery/mandir-backlit-tree-8342.webp',
+    src: '/gallery/mandir-backlit-tree-8342.webp?v=real',
     alt: 'Bespoke marble sanctum with backlit tree of life medallion',
     caption: 'Backlit Tree of Life Sanctum',
   },
   {
-    src: '/gallery/fountain-estate-triple.webp',
-    alt: 'Triple-tier palatial estate marble fountain',
-    caption: 'Triple Tier Estate Fountain',
+    src: '/gallery/fountain-botanical-octagonal-base.webp?v=real',
+    alt: 'Octagonal botanical carved white marble garden fountain',
+    caption: 'Octagonal Botanical Fountain',
   },
   {
-    src: '/gallery/mandir-radha-krishna.webp',
-    alt: 'Delicately carved Radha Krishna marble sanctum',
-    caption: 'Radha Krishna Sanctum',
+    src: '/gallery/mandir-parchin-kari-7975.webp?v=real',
+    alt: 'Intricate floral mother-of-pearl gemstone inlay temple panel',
+    caption: 'Mother-of-Pearl Inlay Mandir',
   },
   {
-    src: '/gallery/fountain-lotus-topdown.webp',
-    alt: 'Top-down view of hand-carved lotus petal marble fountain',
-    caption: 'Lotus Water Sanctum',
+    src: '/gallery/fountain-courtyard-circular-base.webp?v=real',
+    alt: 'Concentric circular basin white marble courtyard fountain',
+    caption: 'Courtyard Concentric Fountain',
   },
   {
-    src: '/gallery/sanctum-inlay-floor.webp',
-    alt: 'Intricate Pietra Dura semi-precious stone inlay marble flooring',
-    caption: 'Pietra Dura Inlay',
+    src: '/gallery/sanctum-royal-mandir-room.webp?v=purewhite',
+    alt: 'Living generational Silawat sculpted master mandir sanctum',
+    caption: 'Generational Silawat Sanctum',
+  },
+  {
+    src: '/gallery/mandir-finishing-onsite-installation.webp?v=realphoto',
+    alt: 'White-glove diamond polish and mother-of-pearl peacock halo assembly',
+    caption: 'Mother-of-Pearl Peacock Halo',
+  },
+  {
+    src: '/gallery/royal-chhatri-dome-detail.webp?v=fluted8k',
+    alt: 'Hand-carved ribbed marble dome apex and ceremonial kalash',
+    caption: 'Fluted Marble Dome & Finial',
+  },
+  {
+    src: '/gallery/mandir-grand-makrana-8361.webp?v=real',
+    alt: 'Solid virgin Makrana white marble temple',
+    caption: 'Pure Makrana Royal Mandir',
   },
 ];
 

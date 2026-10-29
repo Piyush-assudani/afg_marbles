@@ -5946,6 +5946,50 @@ p { text-wrap: pretty; }
   margin-top: 2px;
 }
 
+.diff-scroll-hint {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 16px;
+  background: #fbf7ee;
+  border-bottom: 1px solid rgba(184, 134, 63, 0.2);
+  color: #8c6220;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .diff-scroll-hint {
+    display: flex;
+  }
+  .diff-table-responsive {
+    box-shadow: inset -12px 0 12px -8px rgba(0, 0, 0, 0.08);
+  }
+  .diff-table {
+    min-width: 580px;
+  }
+  .diff-table th {
+    padding: 14px 14px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+  .diff-table td {
+    padding: 14px 14px;
+    font-size: 12.5px;
+    line-height: 1.45;
+  }
+  .diff-val {
+    gap: 8px;
+  }
+  .diff-val svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+
 /* =========================================================
    SECTION: SPACE CONSULTATION BANNER
    ========================================================= */

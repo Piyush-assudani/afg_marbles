@@ -60,13 +60,13 @@ export default function MakranaVisualShowcase({ onOpenInquiry }) {
       window.afgOpenInquiry({
         title: item.title,
         image: item.image,
-        stone: 'Makrana Pure White Marble (Temples & Mandirs)',
+        stone: 'Makrana Pure White Marble',
       });
     } else {
       onOpenInquiry?.({
         title: item.title,
         image: item.image,
-        stone: 'Makrana Pure White Marble (Temples & Mandirs)',
+        stone: 'Makrana Pure White Marble',
       });
     }
   };
@@ -106,6 +106,36 @@ export default function MakranaVisualShowcase({ onOpenInquiry }) {
           </div>
         </div>
 
+        {/* Sacred Atelier Devotion Pledge Banner */}
+        <div
+          style={{
+            margin: '0 0 32px',
+            padding: '16px 24px',
+            borderRadius: '12px',
+            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(250, 246, 238, 0.95))',
+            border: '1px solid rgba(184, 134, 63, 0.35)',
+            boxShadow: '0 6px 24px rgba(184, 134, 63, 0.08)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '14px',
+          }}
+        >
+          <span style={{ fontSize: '28px', color: '#b8863f', lineHeight: 1, fontFamily: 'serif' }}>“</span>
+          <p
+            style={{
+              margin: 0,
+              fontFamily: 'var(--serif)',
+              fontSize: 'clamp(14px, 1.4vw, 17px)',
+              color: '#2a2218',
+              fontStyle: 'italic',
+              fontWeight: 500,
+              lineHeight: 1.5,
+            }}
+          >
+            There may be a little more expenditure in the creation being made for God, but the result should be such that there is no scope for any shortage.
+          </p>
+        </div>
+
         {/* Big HD Visual Gallery Grid */}
         <div className="makrana-showcase__grid">
           {MAKRANA_GALLERY.map((item, idx) => (
@@ -141,19 +171,19 @@ export default function MakranaVisualShowcase({ onOpenInquiry }) {
           <div className="triad-card triad-card--active">
             <span className="triad-card__tag">TEMPLE CONSTRUCTION</span>
             <h4>Makrana Pure White Marble</h4>
-            <p>99.2% Calcite purity · Taj Mahal stone · Zero yellowing guarantee</p>
+            <p>100% spotless calcite · Zero lines, zero spots · Taj Mahal bedrock stone · Lifetime zero yellowing guarantee</p>
           </div>
 
           <div className="triad-card">
             <span className="triad-card__tag">TEMPLE &amp; DEITIES</span>
             <h4>Vietnam Pure White Marble</h4>
-            <p>Immaculate crystalline snow-white finish for contemporary sanctums</p>
+            <p>99.6% crystalline snow-white · Zero lines, zero spots · Diamond crystal sparkle for deities &amp; modern sanctums</p>
           </div>
 
           <div className="triad-card">
             <span className="triad-card__tag">FOUNTAIN SPECIALIST</span>
             <h4>Rajnagar White Marble</h4>
-            <p>High-density weather-resistant stone for monumental cascading fountains</p>
+            <p>High-density hydraulic white marble · Natural authentic veining &amp; mineral character · Engineered for palatial fountains</p>
           </div>
         </div>
       </div>

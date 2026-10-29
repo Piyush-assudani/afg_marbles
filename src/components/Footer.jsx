@@ -263,12 +263,12 @@ export default function Footer() {
                 Phone / WhatsApp: <strong>+91 7597417274</strong>
               </span>
               <span style={{ fontSize: '11.5px', color: '#a69888', display: 'block', marginTop: '2px' }}>
-                Email: info@afgmarbel.com
+                Email: mh213702@gmail.com
               </span>
             </div>
 
             <span style={{ fontSize: '11.5px', color: '#8c7d6e', display: 'block' }}>
-              Makrana Quarry Works · Jaipur Master Atelier Yard
+              A.F.G Marble & Arts · Makrana Master Atelier & Quarry Works
             </span>
           </div>
 
@@ -330,8 +330,8 @@ export default function Footer() {
               Atelier Workshops
             </h4>
             <div style={{ fontSize: '12.5px', color: '#b8aba0', lineHeight: 1.6, marginBottom: '14px' }}>
-              <strong style={{ color: '#fffdf9', display: 'block', marginBottom: '3px' }}>Jaipur Master Atelier &amp; Fitment Yard:</strong>
-              RIICO Industrial Area, Mansarovar / Sanganer, Jaipur, Rajasthan 302020
+              <strong style={{ color: '#fffdf9', display: 'block', marginBottom: '3px' }}>Makrana Master Atelier &amp; Fitment Yard:</strong>
+              Industrial Stone Artisan Zone, Makrana, Rajasthan 341505
             </div>
             <div style={{ fontSize: '12.5px', color: '#b8aba0', lineHeight: 1.6, marginBottom: '14px' }}>
               <strong style={{ color: '#fffdf9', display: 'block', marginBottom: '3px' }}>Makrana Calcite Quarry Works:</strong>

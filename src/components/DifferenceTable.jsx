@@ -30,7 +30,7 @@ export default function DifferenceTable({ onOpenInquiry }) {
     },
     {
       feature: 'Pre-Delivery Inspection',
-      afg: 'Full trial assembly in our Jaipur workshop with HD video review sent to you before dispatch',
+      afg: 'Full trial assembly in our Makrana workshop with HD video review sent to you before dispatch',
       other: 'Dispatched as loose unverified pieces with fitting issues and uneven gaps on-site'
     },
     {
@@ -53,11 +53,14 @@ export default function DifferenceTable({ onOpenInquiry }) {
         </div>
 
         <div className="difference-table-card">
+          <div className="diff-scroll-hint">
+            <span>⇄ Swipe horizontally to compare all features</span>
+          </div>
           <div className="diff-table-responsive">
             <table className="diff-table">
               <thead>
                 <tr>
-                  <th style={{ width: '28%' }}>FEATURE</th>
+                  <th>FEATURE</th>
                   <th className="th-afg" style={{ width: '38%' }}>
                     <span className="th-badge" style={{ display: 'inline-block', marginBottom: '6px' }}>
                       OFFICIAL ATELIER

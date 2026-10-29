@@ -27,7 +27,7 @@ export default function ExperienceCentre({ onOpenInquiry }) {
             margin: '0 auto 48px',
           }}
         >
-          {/* Card 1: Jaipur Heritage Flagship */}
+          {/* Card 1: Makrana Master Atelier & Yard */}
           <div
             className="experience-card"
             style={{
@@ -42,8 +42,8 @@ export default function ExperienceCentre({ onOpenInquiry }) {
           >
             <div style={{ height: '220px', overflow: 'hidden', position: 'relative' }}>
               <img
-                src="/gallery/atelier-yard-preassembly.webp"
-                alt="AFG Marble Flagship Artisanal Yard Jaipur"
+                src="/gallery/mandir-grand-makrana-8361.webp?v=real"
+                alt="AFG Marble Master Artisanal Yard Makrana"
                 loading="lazy"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
@@ -61,16 +61,16 @@ export default function ExperienceCentre({ onOpenInquiry }) {
                   letterSpacing: '0.06em',
                 }}
               >
-                FLAGSHIP ATELIER &amp; YARD
+                MASTER ATELIER &amp; YARD
               </span>
             </div>
 
             <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', flex: 1 }}>
               <h3 style={{ fontFamily: 'var(--serif)', fontSize: '20px', color: '#1c1813', marginBottom: '8px' }}>
-                A.F.G Marble &amp; Arts — Jaipur Atelier
+                A.F.G Marble &amp; Arts — Makrana Master Atelier
               </h3>
               <p style={{ fontSize: '13px', color: '#6b5f52', lineHeight: 1.5, marginBottom: '14px' }}>
-                Sculptors Yard, Sanganer Industrial Artisanal Zone, Jaipur, Rajasthan 302029
+                Industrial Stone Carving Sector, Makrana, Rajasthan 341505
               </p>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', color: '#8c6a36', marginBottom: '18px' }}>
@@ -78,14 +78,14 @@ export default function ExperienceCentre({ onOpenInquiry }) {
                   <circle cx="12" cy="12" r="10" />
                   <polyline points="12 6 12 12 16 14" />
                 </svg>
-                <span>Mon – Sun | 10:00 AM – 7:30 PM (Prior Appointment)</span>
+                <span>Mon – Sun | 9:30 AM – 7:00 PM (Prior Appointment)</span>
               </div>
 
               <div style={{ marginTop: 'auto', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 <button
                   type="button"
                   className="btn-primary"
-                  onClick={() => onOpenInquiry?.({ title: 'Schedule Visit: Jaipur Flagship Atelier' })}
+                  onClick={() => onOpenInquiry?.({ title: 'Schedule Visit: Makrana Master Atelier' })}
                   style={{ width: '100%', justifyContent: 'center' }}
                 >
                   <span className="btn-primary__text">Schedule Private Atelier Visit</span>
@@ -94,7 +94,7 @@ export default function ExperienceCentre({ onOpenInquiry }) {
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
                   <a
-                    href="https://maps.google.com/?q=Makrana+Marble+Jaipur"
+                    href="https://maps.google.com/?q=Makrana+Marble+Rajasthan"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-outline-gold"
@@ -129,7 +129,7 @@ export default function ExperienceCentre({ onOpenInquiry }) {
           >
             <div style={{ height: '220px', overflow: 'hidden', position: 'relative' }}>
               <img
-                src="/gallery/atelier-sculptor-chisel-block.webp"
+                src="/gallery/stone-makrana-calcite-slab.webp?v=spotless100"
                 alt="Makrana Quarry Calcite Selection Centre"
                 loading="lazy"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}

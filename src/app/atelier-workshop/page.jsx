@@ -31,7 +31,7 @@ export default function AtelierWorkshopPage() {
     },
     {
       num: '04',
-      title: 'Jaipur Pre-Assembly & Dry-Joint Trial',
+      title: 'Makrana Pre-Assembly & Dry-Joint Trial',
       lead: 'Zero surprises at your home: 100% dry fit before packing.',
       desc: 'In our Jaipur pre-assembly yard, the entire sanctum or fountain is fully erected with precision interlocking tenons. We record an extensive 4K walkthrough video with dimensional calipers for your sign-off before uncoupling.'
     },
@@ -73,7 +73,7 @@ export default function AtelierWorkshopPage() {
                 alt="Silawat Master Artisan Hand Chiseling Makrana Marble"
                 loading="lazy"
               />
-              <div className="media-caption-badge">Jaipur &amp; Makrana Master Guild</div>
+              <div className="media-caption-badge">Makrana Master Guild</div>
             </div>
             <div className="page-info-block">
               <span className="card-badge">THE ROYAL SILAWAT LINEAGE</span>
@@ -91,7 +91,7 @@ export default function AtelierWorkshopPage() {
                   className="btn-primary"
                   onClick={() => handleOpenInquiry('Book Workshop & Studio Visit')}
                 >
-                  <span className="btn-primary__text">Schedule Jaipur Studio Visit</span>
+                  <span className="btn-primary__text">Schedule Makrana Studio Visit</span>
                   <span className="btn-primary__icon">→</span>
                 </button>
               </div>
@@ -126,14 +126,14 @@ export default function AtelierWorkshopPage() {
           {/* Workshop Coordinates Card */}
           <div className="page-cta-banner" style={{ marginTop: '64px' }}>
             <span className="card-badge">EXPERIENCE HUBS</span>
-            <h2>Visit Our Makrana Quarries &amp; Jaipur Studio</h2>
+            <h2>Visit Our Makrana Quarries &amp; Master Atelier</h2>
             <p>
               We welcome patrons, architects, and interior designers to personally inspect raw calcite marble blocks, observe our generational artisans at work, and view ongoing sanctum dry-fit trials.
             </p>
             <div className="workshop-locations-grid">
               <div className="w-loc-card">
-                <h4>Jaipur Experience Studio &amp; Yard</h4>
-                <p>Mansarovar Ext. / Tonk Road, Jaipur, Rajasthan</p>
+                <h4>Makrana Master Experience Studio &amp; Yard</h4>
+                <p>Industrial Stone Artisan Zone, Makrana, Rajasthan 341505</p>
                 <span className="loc-note">Features live dry-assembly trials &amp; finished creations</span>
               </div>
               <div className="w-loc-card">

@@ -34,7 +34,7 @@ export default function ConsultationCard({ onOpenInquiry }) {
                   <div className="c-step__num">3</div>
                   <div className="c-step__body">
                     <strong>Quarry Chisel &amp; Pre-Fit</strong>
-                    <p>We hand-carve in pure Makrana white, pre-assemble in our Jaipur yard, and crate for delivery.</p>
+                    <p>We hand-carve in pure Makrana white, pre-assemble in our Makrana yard, and crate for delivery.</p>
                   </div>
                 </div>
               </div>

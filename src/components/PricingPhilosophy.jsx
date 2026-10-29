@@ -31,7 +31,7 @@ export default function PricingPhilosophy({ onOpenInquiry }) {
         'Intricate hand-carved jali folding doors',
         'Handcrafted peacock arch and softly glowing Om backdrop',
         '24K pure gold leaf detailing and semi-precious stone inlay',
-        'Full trial assembly in our Jaipur workshop with video review before delivery',
+        'Full trial assembly in our Makrana workshop with video review before delivery',
       ],
       turnaround: '6 to 8 weeks crafting time',
       popular: true,
@@ -347,7 +347,7 @@ export default function PricingPhilosophy({ onOpenInquiry }) {
             <p style={{ fontSize: '13.5px', color: '#c7bcae', lineHeight: 1.6, margin: 0 }}>
               Unlike unorganized carvers who request supplemental charges for polishing, shipping crates, or space
               drafting, every A.F.G proposal includes end-to-end quarry blocks, hand-carving, 2D CAD blueprints, trial
-              assembly in Jaipur, and ISPM-15 fumigated international export crating.
+              assembly in Makrana, and ISPM-15 fumigated international export crating.
             </p>
           </div>
 

@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react';
 import { MessageSquare, Send, CheckCircle2, Phone, X } from 'lucide-react';
 
 const CORE_MARBLES = [
-  'Makrana Pure White Marble (Temples & Mandirs)',
-  'Vietnam Pure White Marble (Temples & Deities)',
-  'Rajnagar White Marble (Fountains)',
+  'Makrana Pure White Marble',
+  'Vietnam Pure White Marble',
+  'Rajnagar White Marble',
 ];
 
 export default function InquiryModal({ initialProduct, onClose, onToast }) {
@@ -13,7 +13,7 @@ export default function InquiryModal({ initialProduct, onClose, onToast }) {
     name: '',
     phone: '',
     projectTitle: initialProduct?.title || initialProduct?.caption || initialProduct?.name || 'Makrana Pure White Mandir',
-    stone: initialProduct?.stone || 'Makrana Pure White Marble (Temples & Mandirs)',
+    stone: initialProduct?.stone || 'Makrana Pure White Marble',
     message: '',
   });
 

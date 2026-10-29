@@ -124,10 +124,10 @@ export default function TermsPage() {
                 <span style={{ fontSize: '12px', color: '#8c7b69', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Dry-Fit Verification</span>
               </div>
               <h3 style={{ fontFamily: 'var(--serif)', fontSize: '24px', color: '#1c1813', margin: '0 0 14px', fontWeight: 500 }}>
-                3. Jaipur Yard Pre-Assembly Verification &amp; 4K Walkthrough
+                3. Makrana Yard Pre-Assembly Verification &amp; 4K Walkthrough
               </h3>
               <p style={{ margin: 0 }}>
-                Before crating, every multi-tiered mandir, chhatri dome, or fountain is 100% dry-fit assembled in our Jaipur atelier yard. Patrons or their architectural representatives receive ultra-HD 4K walkthrough video and centimeter-ruler joint checks. Patrons are also welcomed for physical inspection in Jaipur with complimentary concierge transport.
+                Before crating, every multi-tiered mandir, chhatri dome, or fountain is 100% dry-fit assembled in our Makrana atelier yard. Patrons or their architectural representatives receive ultra-HD 4K walkthrough video and centimeter-ruler joint checks. Patrons are also welcomed for physical inspection in Makrana with complimentary concierge transport.
               </p>
             </div>
 
@@ -179,7 +179,7 @@ export default function TermsPage() {
                     Commission Governance
                   </p>
                   <p style={{ margin: 0, fontSize: '13px', color: '#1c1813', fontWeight: 600 }}>
-                    A.F.G Marble &amp; Arts · Jaipur &amp; Makrana Ateliers
+                    A.F.G Marble &amp; Arts · Makrana Master Atelier
                   </p>
                 </div>
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#27ae60', fontSize: '13px', fontWeight: 600 }}>

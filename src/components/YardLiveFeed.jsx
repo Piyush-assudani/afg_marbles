@@ -6,18 +6,18 @@ const YARD_BAYS = [
     id: 'bay-1',
     code: 'BAY 01 — PRE-ASSEMBLY TRIAL',
     title: 'Dry-Joint Fitment & 4K Verification Yard',
-    location: 'Jaipur Atelier Yard North',
-    image: '/gallery/yard-dryfit-raw-calcite-mandir.webp',
+    location: 'Makrana Atelier Yard North',
+    image: '/gallery/yard-dryfit-raw-calcite-mandir.webp?v=4k',
     status: 'ACTIVE INSPECTION',
     inspector: 'Master Sthapati Ramswaroop Silawat',
     project: '7.5ft Makrana Peacock Mandapam with Mother-of-Pearl Inlay',
-    details: 'Complete pre-assembly and dry-joint trial in our Jaipur yard to verify pillar alignment, elephant plinth fit, and mother-of-pearl peacock halo tolerance before crating.'
+    details: 'Complete pre-assembly and dry-joint trial in our Makrana yard to verify pillar alignment, elephant plinth fit, and mother-of-pearl peacock halo tolerance before crating.'
   },
   {
     id: 'bay-2',
     code: 'BAY 02 — MONOLITH CHISELING',
     title: '4th-Generation Silawat Sculptor Station',
-    location: 'Jaipur Carving Pavilion East',
+    location: 'Makrana Carving Pavilion East',
     image: '/gallery/mandir-studio-pure-makrana-front.webp',
     status: 'CHISELING IN PROGRESS',
     inspector: 'Senior Shilpkar Govind Silawat',
@@ -53,7 +53,7 @@ export default function YardLiveFeed({ onOpenInquiry }) {
 
   const handleRequestLiveTour = () => {
     const text = `*AFG MARBLE & ARTS — LIVE YARD VIDEO TOUR REQUEST*\n\n` +
-      `Hello, I would like to request a 15-minute live WhatsApp video walkthrough of the Jaipur Atelier Yard to inspect the ongoing mandir dry-fitment trials and raw Makrana calcite bedrock.\n\n` +
+      `Hello, I would like to request a 15-minute live WhatsApp video walkthrough of the Makrana Atelier Yard to inspect the ongoing mandir dry-fitment trials and raw Makrana calcite bedrock.\n\n` +
       `Inspecting Bay: ${activeBay.code} (${activeBay.title})\n` +
       `Please schedule my live video session with the Master Sthapati.`;
 
@@ -85,7 +85,7 @@ export default function YardLiveFeed({ onOpenInquiry }) {
               display: 'inline-block'
             }}></span>
             <span style={{ color: '#ecd39b', fontSize: '11px', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase' }}>
-              DIRECT JAIPUR ATELIER YARD INSPECTION
+              DIRECT MAKRANA ATELIER YARD INSPECTION
             </span>
           </div>
 
@@ -94,7 +94,7 @@ export default function YardLiveFeed({ onOpenInquiry }) {
           </h2>
           <div className="gold-rule center" style={{ margin: '14px auto 20px', background: '#b08a4f' }}></div>
           <p className="sub-lead" style={{ maxWidth: '760px', margin: '0 auto', fontSize: '15px', color: '#b8ab9a', lineHeight: 1.6 }}>
-            Unlike digital resellers using stock 3D renders, AFG Marble operates an expansive open stone assembly yard in Jaipur. Hover below to inspect live pre-assembly dry-joints, block selection, and generational Silawats chiseling live.
+            Unlike digital resellers using stock 3D renders, AFG Marble operates an expansive open stone assembly yard in Makrana. Hover below to inspect live pre-assembly dry-joints, block selection, and generational Silawats chiseling live.
           </p>
         </div>
 
@@ -326,7 +326,7 @@ export default function YardLiveFeed({ onOpenInquiry }) {
                       <span style={{ color: '#c5a059' }}>✦</span> Ultrasonic pulse report verifying virgin Makrana bedrock
                     </li>
                     <li style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                      <span style={{ color: '#c5a059' }}>✦</span> Direct FaceTime or physical walkthrough in Jaipur welcomed
+                      <span style={{ color: '#c5a059' }}>✦</span> Direct FaceTime or physical walkthrough in Makrana welcomed
                     </li>
                   </ul>
                 </div>
@@ -356,7 +356,7 @@ export default function YardLiveFeed({ onOpenInquiry }) {
 
                 <button
                   type="button"
-                  onClick={() => onOpenInquiry && onOpenInquiry({ title: 'Jaipur Atelier Yard Visit Appointment' })}
+                  onClick={() => onOpenInquiry && onOpenInquiry({ title: 'Makrana Atelier Yard Visit Appointment' })}
                   style={{
                     flex: 1,
                     minWidth: '180px',
@@ -384,7 +384,7 @@ export default function YardLiveFeed({ onOpenInquiry }) {
                     e.currentTarget.style.color = '#f5e6c8';
                   }}
                 >
-                  <span>Visit Jaipur Yard</span>
+                  <span>Visit Makrana Yard</span>
                 </button>
               </div>
             </div>

@@ -8,7 +8,7 @@ export default function PreAssemblyTrialPage() {
     {
       step: '01',
       title: 'Monolith Section Numbering & Dry-Fit',
-      desc: 'Every carved marble pillar, arch, jali screen, and shikhara spire is given laser-etched orientation codes. Sections are dry-assembled onto perfectly level granite trial beds in our Jaipur yard.'
+      desc: 'Every carved marble pillar, arch, jali screen, and shikhara spire is given laser-etched orientation codes. Sections are dry-assembled onto perfectly level granite trial beds in our Makrana yard.'
     },
     {
       step: '02',
@@ -41,7 +41,7 @@ export default function PreAssemblyTrialPage() {
           <h1>100% Pre-Assembly Trial &amp; Fitment Yard</h1>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
-            We never ship loose, unverified marble slabs. Every temple and palatial fountain is 100% fully assembled in our Jaipur yard, inspected with 4K video documentation, and certified before international crating.
+            We never ship loose, unverified marble slabs. Every temple and palatial fountain is 100% fully assembled in our Makrana yard, inspected with 4K video documentation, and certified before international crating.
           </p>
         </div>
       </section>
@@ -52,12 +52,12 @@ export default function PreAssemblyTrialPage() {
           <div className="page-grid-2" style={{ marginBottom: '60px' }}>
             <div className="page-media-frame">
               <img
-                src="/gallery/atelier-yard-preassembly.webp"
-                alt="Jaipur Atelier Trial Assembly Yard"
+                src="/gallery/atelier-yard-preassembly.webp?v=realphoto"
+                alt="Makrana Atelier Trial Assembly Yard"
                 loading="lazy"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
-              <div className="media-caption-badge">Jaipur Master Yard Assembly</div>
+              <div className="media-caption-badge">Makrana Master Yard Assembly</div>
             </div>
             <div className="page-info-block">
               <span className="card-badge">THE ZERO-SURPRISE PROMISE</span>
@@ -90,7 +90,7 @@ export default function PreAssemblyTrialPage() {
             <div className="sec-header text-center" style={{ marginBottom: '36px' }}>
               <span className="card-badge">INSPECTION PROTOCOL</span>
               <h2 style={{ fontFamily: 'var(--serif)', fontSize: '30px', color: '#1c1813' }}>
-                4-Point Jaipur Yard Pre-Dispatch Verification
+                4-Point Makrana Yard Pre-Dispatch Verification
               </h2>
               <div className="gold-rule center"></div>
             </div>

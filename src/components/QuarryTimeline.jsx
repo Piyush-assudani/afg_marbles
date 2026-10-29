@@ -14,7 +14,7 @@ export default function QuarryTimeline() {
     {
       num: '02',
       title: 'Ayadi Vastu Geometry & Rough Blocking',
-      location: 'Sthapatya Drafting Studio, Jaipur',
+      location: 'Sthapatya Drafting Studio, Makrana',
       desc: 'Master Sthapatis align raw blocks to the client’s spatial orientation and Ayadi 6-formula harmonics (Aya, Vya, Rasi, Nakshatra) to maximize cosmic resonance.',
       badge: 'Sthapatya Veda Ratios',
     },

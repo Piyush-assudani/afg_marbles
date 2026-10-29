@@ -104,19 +104,19 @@ export default function MaterialsGuidePage() {
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#b08a4f" strokeWidth="2.4">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span><strong>1. Makrana Pure White Marble (Temples &amp; Mandirs):</strong> Mined from Makrana, Rajasthan. 99.2% pure calcium carbonate calcite structure — the revered Taj Mahal stone with an absolute zero-yellowing lifetime guarantee and zero oil/milk absorption.</span>
+                  <span><strong>1. Makrana Pure White Marble:</strong> Mined from authentic quarries in Makrana, Rajasthan. 100% pure virgin calcite structure without spots or lines — the revered Taj Mahal stone with an absolute zero-yellowing lifetime guarantee and zero oil or milk absorption.</span>
                 </li>
                 <li>
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#b08a4f" strokeWidth="2.4">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span><strong>2. Vietnam Pure White Marble (Temples &amp; Deities):</strong> High-altitude Yen Bai quarries. 99.6% ultra-pure micro-crystalline snow calcite. World-renowned for spotless snow-white uniformity, translucent light scatter, and razor-sharp deity murti facial sculpting.</span>
+                  <span><strong>2. Vietnam Pure White Marble:</strong> High-altitude Yen Bai quarries. 99.6% ultra-pure micro-crystalline snow calcite with spotless white brilliance and zero spots or lines. World-renowned for translucent light scatter and immaculate deity sculpture.</span>
                 </li>
                 <li>
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#b08a4f" strokeWidth="2.4">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span><strong>3. Rajnagar White Marble (Palatial Fountains):</strong> Mined from Rajsamand, Rajasthan. Heavy hydraulic dense calcite (2.72 g/cm³) specially selected for monumental estate fountains, cascades, and outdoor courtyards. Resists continuous water erosion and prevents algae adherence.</span>
+                  <span><strong>3. Rajnagar White Marble:</strong> Mined from Rajsamand, Rajasthan. Heavy hydraulic dense calcite (2.72 g/cm³) with natural subtle mineral veining and authentic character. Engineered for monumental estate fountains, cascades, and outdoor courtyards.</span>
                 </li>
               </ul>
               <div className="info-actions" style={{ marginTop: '24px' }}>
@@ -139,7 +139,7 @@ export default function MaterialsGuidePage() {
               <h2>Scientific Properties of Our 3 Noble Stones</h2>
               <div className="gold-rule center"></div>
               <p className="sub-lead">
-                Every slab is tested for chemical purity, mineral density, and water impermeability before carving commences in our Jaipur yard.
+                Every slab is tested for chemical purity, mineral density, and water impermeability before carving commences in our Makrana yard.
               </p>
             </div>
 

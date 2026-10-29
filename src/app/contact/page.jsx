@@ -113,7 +113,7 @@ _Direct Submission via A.F.G Marble & Arts Official Atelier Desk_`;
           <h1>Bespoke Commission &amp; Space Measurement Desk</h1>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
-            Connect directly with our Master Sthapatis in Jaipur and Makrana. Share your space measurements, request physical stone samples, or schedule a personal workshop walkthrough.
+            Connect directly with our Master Sthapatis in Makrana. Share your space measurements, request physical stone samples, or schedule a personal workshop walkthrough.
           </p>
         </div>
       </section>
@@ -200,9 +200,9 @@ _Direct Submission via A.F.G Marble & Arts Official Atelier Desk_`;
                   <div className="form-field">
                     <label>Preferred Noble Stone</label>
                     <select name="stone" value={formData.stone} onChange={handleChange}>
-                      <option value="Makrana Pure White Marble">Makrana Pure White Marble (Temples &amp; Mandirs)</option>
-                      <option value="Vietnam Pure White Marble">Vietnam Pure White Marble (Temples &amp; Deities)</option>
-                      <option value="Rajnagar White Marble">Rajnagar White Marble (Palatial Fountains)</option>
+                      <option value="Makrana Pure White Marble">Makrana Pure White Marble</option>
+                      <option value="Vietnam Pure White Marble">Vietnam Pure White Marble</option>
+                      <option value="Rajnagar White Marble">Rajnagar White Marble</option>
                     </select>
                   </div>
 
@@ -262,21 +262,13 @@ _Direct Submission via A.F.G Marble & Arts Official Atelier Desk_`;
               <div className="gold-rule"></div>
 
               <div className="hub-card">
-                <h4>Jaipur Experience Studio &amp; Pre-Assembly Yard</h4>
-                <p>Mansarovar Extension / Tonk Road, Jaipur, Rajasthan 302020</p>
+                <h4>Makrana Master Atelier &amp; Pre-Assembly Fitment Yard</h4>
+                <p>Industrial Artisan Zone, Makrana, Nagaur District, Rajasthan 341505</p>
                 <div className="hub-detail">
-                  <span>Timings:</span> Monday to Saturday · 10:00 AM – 7:30 PM
+                  <span>Timings:</span> Monday to Saturday · 9:30 AM – 7:00 PM (Prior Appointment)
                 </div>
                 <div className="hub-detail">
-                  <span>Facilities:</span> Full-scale dry-fit trial yard, architectural CAD design lounge, finished master sanctums
-                </div>
-              </div>
-
-              <div className="hub-card">
-                <h4>Makrana Quarry Atelier &amp; Bedrock Selection</h4>
-                <p>Industrial Area, Makrana, Nagaur District, Rajasthan 341505</p>
-                <div className="hub-detail">
-                  <span>Facilities:</span> Raw calcite block quarrying, diamond gangsaw cutting, ultrasonic block testing
+                  <span>Facilities:</span> Full-scale pre-assembly dry-fit trial yard, 100% pure Makrana calcite block selection, generational Silawat hand-carving pavilion
                 </div>
               </div>
 
@@ -300,12 +292,12 @@ _Direct Submission via A.F.G Marble & Arts Official Atelier Desk_`;
                     </svg>
                     <span>WhatsApp Atelier Direct (+91 7597417274)</span>
                   </a>
-                  <a href="mailto:info@afgmarbel.com" className="hub-contact-link">
+                  <a href="mailto:mh213702@gmail.com" className="hub-contact-link">
                     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                       <polyline points="22,6 12,13 2,6" />
                     </svg>
-                    <span>info@afgmarbel.com</span>
+                    <span>mh213702@gmail.com</span>
                   </a>
                 </div>
               </div>

@@ -14,10 +14,18 @@ export default function AyadiCalculator({ onOpenInquiry }) {
   const safeDepth = Number.isFinite(depth) && depth > 0 ? Math.min(Math.max(depth, 1), 20) : 4;
   const safeHeight = Number.isFinite(height) && height > 0 ? Math.min(Math.max(height, 3), 30) : 9;
 
-  // Calculate estimated volume, modular sections and sacred ratio
+  // Architectural modular marble weight (engineered interlocking panels, hollow sanctum, dry-joint construction)
+  // Perfectly calibrated to match the upper catalog mandir weight specifications (approx 450 kg - 1,400 kg)
   const areaSqFt = (safeWidth * safeDepth).toFixed(1);
   const volumeCuFt = (safeWidth * safeDepth * safeHeight).toFixed(0);
-  const estimatedWeightKg = Math.round(Number(volumeCuFt) * 38) || 1000;
+  const baseTypeWeight = {
+    apartment: 480,
+    villa: 1100,
+    courtyard: 1250,
+    chhatri: 1400,
+  }[spaceType] || 1100;
+  const scaleRatio = Math.sqrt((safeWidth * safeHeight) / 54);
+  const estimatedWeightKg = Math.round(Math.min(Math.max(baseTypeWeight * scaleRatio, 420), 1800));
   const modularSections = safeWidth > 8 ? '8 to 12 Interlocking Sections' : safeWidth > 5 ? '5 to 7 Modular Sections' : '3 to 4 Modular Blocks';
   const ayadiRatio = ((Math.round(safeWidth * 12) * 8) % 12 === 0 ? 'Dhana Aya (Infinite Wealth)' : 'Vriddhi Aya (Continuous Spiritual Growth)');
 

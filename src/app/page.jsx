@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import HeroSection from '../components/HeroSection';
-import AtelierRibbon from '../components/AtelierRibbon';
 import MakranaVisualShowcase from '../components/MakranaVisualShowcase';
 import CinematicFilmShowcase from '../components/CinematicFilmShowcase';
 import ProductCard from '../components/ProductCard';
@@ -28,11 +27,11 @@ export default function HomePage() {
   const allFilteredList = activeCategory === 'all'
     ? PRODUCTS
     : PRODUCTS.filter((p) => {
-        if (activeCategory === 'craft') {
-          return p.category === 'murti' || p.category === 'jaali' || p.category === 'inlay';
-        }
-        return p.category === activeCategory;
-      });
+      if (activeCategory === 'craft') {
+        return p.category === 'murti' || p.category === 'jaali' || p.category === 'inlay';
+      }
+      return p.category === activeCategory;
+    });
 
   const filteredProducts = allFilteredList.slice(0, visibleCount);
 
@@ -65,9 +64,6 @@ export default function HomePage() {
     <>
       {/* ============ EXACT 3D HERO SECTION (WITH ROTATING TEMPLE & STONE RAIL) ============ */}
       <HeroSection onOpenInquiry={handleOpenInquiry} />
-
-      {/* ============ FOUR DECADES OF STONE PORTFOLIO RIBBON ============ */}
-      <AtelierRibbon />
 
       {/* ============ MAKRANA PURE WHITE MARBLE VISUAL SHOWCASE ============ */}
       <MakranaVisualShowcase onOpenInquiry={handleOpenInquiry} />
@@ -299,9 +295,9 @@ export default function HomePage() {
               onClick={() => {
                 if (typeof window !== 'undefined' && window.afgOpenLightbox) {
                   window.afgOpenLightbox({
-                    src: '/gallery/sanctum-royal-mandir-room.webp',
+                    src: '/gallery/sanctum-royal-mandir-room.webp?v=purewhite',
                     title: 'Silawat Master Sculptor Artisanal Sanctum Suite',
-                    tag: 'Jaipur & Makrana Master Atelier Lineage'
+                    tag: 'Generational Silawat Master Atelier Lineage'
                   });
                 }
               }}
@@ -314,7 +310,7 @@ export default function HomePage() {
               }}
             >
               <img
-                src="/gallery/sanctum-royal-mandir-room.webp"
+                src="/gallery/sanctum-royal-mandir-room.webp?v=purewhite"
                 alt="Silawat Master Sculptor Artisanal Sanctum Suite"
                 loading="lazy"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }}
@@ -325,9 +321,9 @@ export default function HomePage() {
                   e.stopPropagation();
                   if (typeof window !== 'undefined' && window.afgOpenLightbox) {
                     window.afgOpenLightbox({
-                      src: '/gallery/sanctum-royal-mandir-room.webp',
+                      src: '/gallery/sanctum-royal-mandir-room.webp?v=purewhite',
                       title: 'Silawat Master Sculptor Artisanal Sanctum Suite',
-                      tag: 'Jaipur & Makrana Master Atelier Lineage'
+                      tag: 'Generational Silawat Master Atelier Lineage'
                     });
                   }
                 }}
@@ -358,7 +354,7 @@ export default function HomePage() {
                 <span>Zoom 4K</span>
               </button>
               <div className="media-caption-badge" style={{ position: 'absolute', bottom: '16px', left: '16px', background: 'rgba(20, 17, 14, 0.88)', color: '#ecd39b', padding: '7px 16px', borderRadius: '6px', fontSize: '11px', fontWeight: 600, letterSpacing: '0.08em', border: '1px solid rgba(176,138,79,0.35)' }}>
-                ✦ Jaipur &amp; Makrana Master Atelier Lineage
+                ✦ Generational Silawat Master Atelier Lineage
               </div>
             </div>
             <div className="page-info-block">
@@ -383,7 +379,7 @@ export default function HomePage() {
                   <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#b08a4f" strokeWidth="2.4" style={{ flexShrink: 0, marginTop: '2px' }}>
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span style={{ fontSize: '14px', color: '#383026' }}><strong>100% Pre-Assembly Trial:</strong> We assemble your entire temple in our Jaipur yard, conduct dry-joint fitment checks, and send you 4K verification video before packing.</span>
+                  <span style={{ fontSize: '14px', color: '#383026' }}><strong>100% Pre-Assembly Trial:</strong> We assemble your entire temple in our Makrana yard, conduct dry-joint fitment checks, and send you 4K verification video before packing.</span>
                 </li>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                   <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#b08a4f" strokeWidth="2.4" style={{ flexShrink: 0, marginTop: '2px' }}>
@@ -508,22 +504,22 @@ export default function HomePage() {
           }}>
             {[
               {
-                src: '/gallery/stone-makrana-calcite-slab.webp',
+                src: '/gallery/stone-makrana-calcite-slab.webp?v=spotless100',
                 name: 'Makrana Pure White Marble',
-                category: 'TEMPLES & MANDIRS',
-                desc: '100% Pure Makrana White Marble (Same stone as the Taj Mahal). Completely stain-free, safe for daily puja rituals, with a lifetime guarantee that it will never turn yellow.'
+                category: 'TEMPLES & SANCTUMS',
+                desc: '100% Pure Virgin Makrana Calcite Marble (Taj Mahal bedrock stone). Completely spotless with zero spots or veins, 0% porosity, guaranteed never to turn yellow from daily rituals.'
               },
               {
                 src: '/gallery/stone-vietnam-white-marble.webp',
                 name: 'Vietnam Pure White Marble',
                 category: 'TEMPLES & DEITIES',
-                desc: '99.6% Pure Snow-White Marble. Smooth crystal finish with beautiful natural shine, ideal for modern luxury home temples and sacred deity statues.'
+                desc: '99.6% Pure Snow-White Crystal Marble. Spotless uniform brilliance with diamond-like crystal scatter, zero spots or veins, crafted for exquisite deities and contemporary sanctums.'
               },
               {
                 src: '/gallery/stone-rajnagar-white-marble.webp',
                 name: 'Rajnagar White Marble',
                 category: 'PALATIAL FOUNTAINS',
-                desc: 'High-Density Hydraulic Calcite (2.72 g/cm³). Engineered for continuous pressurized water cascades, all-weather frost resilience, and zero algae adherence over decades.'
+                desc: 'High-Density Hydraulic White Calcite (2.72 g/cm³) with natural character veining and authentic mineral accents. Specially engineered for palatial cascading fountains and outdoor architectural water features.'
               }
             ].map((stone, idx) => (
               <div key={idx} className="stone-card" style={{
@@ -586,25 +582,25 @@ export default function HomePage() {
               {
                 step: '01',
                 title: 'Makrana Bedrock Quarry Selection',
-                img: '/gallery/atelier-quarry-selection-block.webp',
-                desc: 'Direct selection of solid 99% pure calcite marble blocks at the Makrana quarry face, tested for structural purity.'
+                img: '/gallery/stone-makrana-calcite-slab.webp?v=spotless100',
+                desc: 'Direct selection of 100% pure virgin Makrana calcite marble blocks from certified bedrock faces, tested for structural purity.'
               },
               {
                 step: '02',
                 title: 'Master Silawat Hand Sculpting',
-                img: '/gallery/atelier-yard-preassembly.webp',
+                img: '/gallery/mandir-peacock-torana-8341.webp?v=real',
                 desc: 'Generational Silawat master carvers hand-chisel pillars, shikharas, and intricate jali screens using ancestral steel tools.'
               },
               {
                 step: '03',
-                title: 'Jaipur Yard Dry-Fit Trial',
-                img: '/gallery/yard-dryfit-raw-calcite-mandir.webp',
-                desc: 'Every mandir is 100% pre-assembled and dry-fitted in our Jaipur yard to verify millimeter precision before dispatch.'
+                title: 'Makrana Yard Dry-Fit Trial',
+                img: '/gallery/yard-dryfit-raw-calcite-mandir.webp?v=realphoto',
+                desc: 'Every mandir is 100% pre-assembled and dry-fitted in our Makrana yard to verify millimeter precision before dispatch.'
               },
               {
                 step: '04',
                 title: 'Finishing & On-Site Installation',
-                img: '/gallery/mandir-artisan-install.webp',
+                img: '/gallery/mandir-finishing-onsite-installation.webp?v=realphoto',
                 desc: 'Detailed 24K gold leaf embellishment, water mirror diamond polish, and white-glove setup inside client residence.'
               }
             ].map((item, idx) => (

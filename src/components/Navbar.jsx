@@ -93,7 +93,7 @@ const MEGA_ARCHITECTURE = [
     previewImage: '/gallery/atelier-yard-preassembly.webp',
     previewTitle: 'Silawat Carving Pavilion',
     previewDesc: 'Generational master stone-masons chiseling pure bedrock using sacred hand techniques passed down across four generations.',
-    ctaText: 'Tour Jaipur Atelier'
+    ctaText: 'Tour Makrana Atelier'
   },
   {
     num: '09',
@@ -113,8 +113,8 @@ const MEGA_ARCHITECTURE = [
     href: '/pre-assembly-trial',
     badge: 'VERIFIED DRY-FIT',
     previewImage: '/gallery/yard-dryfit-raw-calcite-mandir.webp',
-    previewTitle: 'Jaipur Fitment Verification',
-    previewDesc: 'Every single component is 100% test-assembled in our Jaipur yard with 4K video inspection and centimeter ruler signoff.',
+    previewTitle: 'Makrana Fitment Verification',
+    previewDesc: 'Every single component is 100% test-assembled in our Makrana yard with 4K video inspection and centimeter ruler signoff.',
     ctaText: 'Explore Yard Protocols'
   },
   {
@@ -188,13 +188,13 @@ const MEGA_SERVICES = [
   },
   {
     num: '17',
-    title: 'Jaipur & Makrana Studios',
+    title: 'Makrana Master Studios',
     subtitle: 'Studio Walkthroughs & Visits',
     href: '/contact',
     badge: 'VISIT ATELIER',
-    previewImage: '/gallery/sanctum-royal-mandir-room.webp',
+    previewImage: '/gallery/sanctum-royal-mandir-room.webp?v=purewhite',
     previewTitle: 'Visit Our Rajasthan Ateliers',
-    previewDesc: 'Schedule a private patron walkthrough in Jaipur or Makrana to inspect live pre-assembly dry-fits and raw bedrock blocks.',
+    previewDesc: 'Schedule a private patron walkthrough in Makrana or Makrana to inspect live pre-assembly dry-fits and raw bedrock blocks.',
     ctaText: 'Book Private Visit'
   }
 ];
@@ -417,7 +417,7 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
                 <div className="mega-menu__footer">
                   <div className="mega-footer-left">
                     <span className="pulse-dot"></span>
-                    <span>Direct Concierge: <strong>+91 7597417274</strong> · Ateliers in Jaipur &amp; Makrana</span>
+                    <span>Direct Concierge: <strong>+91 7597417274</strong> · Master Atelier in Makrana, Rajasthan</span>
                   </div>
                   <Link href="/pooja-sanctums" className="mega-footer-link" onClick={() => setMegaMenuOpen(false)}>
                     <span>Explore All 19 Architectural Portfolios</span>
@@ -598,7 +598,7 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
           <span>·</span>
           <Link href="/privacy-policy" onClick={() => setMobileOpen(false)}>Privacy</Link>
           <span>·</span>
-          <Link href="/contact" onClick={() => setMobileOpen(false)}>Jaipur &amp; Makrana</Link>
+          <Link href="/contact" onClick={() => setMobileOpen(false)}>Makrana Atelier</Link>
         </div>
       </div>
     </>

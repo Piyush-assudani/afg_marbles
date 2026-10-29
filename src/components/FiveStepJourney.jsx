@@ -66,7 +66,7 @@ export default function FiveStepJourney({ onOpenInquiry }) {
       title: '100% Pre-Assembly Trial & 4K Approval',
       tagline: 'Zero surprises — assembled completely in our yard before packaging',
       milestone: 'Client Milestone Verification',
-      desc: 'Before any piece is packed, we erect the entire temple inside our Jaipur artisanal yard. All dry joints, lighting circuits, and smooth drawer glides are inspected on live video.',
+      desc: 'Before any piece is packed, we erect the entire temple inside our Makrana artisanal yard. All dry joints, lighting circuits, and smooth drawer glides are inspected on live video.',
       bullets: [
         '4K multi-angle video walkthrough and high-res macro photos sent to you',
         'Detailed metric ruler verification of outer and inner dimensions',
