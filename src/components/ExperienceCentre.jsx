@@ -70,7 +70,7 @@ export default function ExperienceCentre({ onOpenInquiry }) {
                 A.F.G Marble &amp; Arts — Makrana Master Atelier
               </h3>
               <p style={{ fontSize: '13px', color: '#6b5f52', lineHeight: 1.5, marginBottom: '14px' }}>
-                Industrial Stone Carving Sector, Makrana, Rajasthan 341505
+                Makrana Bypass Rd, Borawar, Gunawati Jageer, Rajasthan 341502
               </p>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', color: '#8c6a36', marginBottom: '18px' }}>
@@ -94,7 +94,7 @@ export default function ExperienceCentre({ onOpenInquiry }) {
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
                   <a
-                    href="https://maps.google.com/?q=Makrana+Marble+Rajasthan"
+                    href="https://maps.google.com/?q=Makrana+Bypass+Rd+Borawar+Gunawati+Jageer+Rajasthan+341502"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-outline-gold"
@@ -157,7 +157,7 @@ export default function ExperienceCentre({ onOpenInquiry }) {
                 A.F.G Makrana Virgin Calcite Studio
               </h3>
               <p style={{ fontSize: '13px', color: '#6b5f52', lineHeight: 1.5, marginBottom: '14px' }}>
-                Chak Dungri &amp; Albeta Mining Sector, Makrana, Nagaur District, Rajasthan 341505
+                Makrana Bypass Rd, Borawar, Gunawati Jageer, Rajasthan 341502
               </p>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', color: '#8c6a36', marginBottom: '18px' }}>

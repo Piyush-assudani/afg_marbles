@@ -191,10 +191,7 @@ export default function PrivacyPage() {
                     A.F.G MARBLE &amp; ARTS
                   </p>
                   <p style={{ margin: '0 0 6px', fontSize: '13px', color: '#685c4f' }}>
-                    <strong>Jaipur Atelier:</strong> Near Marble Market, Vishwakarma Industrial Area, Jaipur, Rajasthan 302013
-                  </p>
-                  <p style={{ margin: '0 0 6px', fontSize: '13px', color: '#685c4f' }}>
-                    <strong>Makrana Works:</strong> Gunawati Road, Makrana Calcite Belt, Nagaur, Rajasthan 341505
+                    <strong>Master Atelier &amp; Works:</strong> Makrana Bypass Rd, Borawar, Gunawati Jageer, Rajasthan 341502
                   </p>
                 </div>
                 <div>

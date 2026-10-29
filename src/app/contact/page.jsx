@@ -263,7 +263,7 @@ _Direct Submission via A.F.G Marble & Arts Official Atelier Desk_`;
 
               <div className="hub-card">
                 <h4>Makrana Master Atelier &amp; Pre-Assembly Fitment Yard</h4>
-                <p>Industrial Artisan Zone, Makrana, Nagaur District, Rajasthan 341505</p>
+                <p>Makrana Bypass Rd, Borawar, Gunawati Jageer, Rajasthan 341502</p>
                 <div className="hub-detail">
                   <span>Timings:</span> Monday to Saturday · 9:30 AM – 7:00 PM (Prior Appointment)
                 </div>

@@ -331,11 +331,11 @@ export default function Footer() {
             </h4>
             <div style={{ fontSize: '12.5px', color: '#b8aba0', lineHeight: 1.6, marginBottom: '14px' }}>
               <strong style={{ color: '#fffdf9', display: 'block', marginBottom: '3px' }}>Makrana Master Atelier &amp; Fitment Yard:</strong>
-              Industrial Stone Artisan Zone, Makrana, Rajasthan 341505
+              Makrana Bypass Rd, Borawar, Gunawati Jageer, Rajasthan 341502
             </div>
             <div style={{ fontSize: '12.5px', color: '#b8aba0', lineHeight: 1.6, marginBottom: '14px' }}>
               <strong style={{ color: '#fffdf9', display: 'block', marginBottom: '3px' }}>Makrana Calcite Quarry Works:</strong>
-              Gunawati Range &amp; Station Road, Makrana, Rajasthan 341505
+              Makrana Bypass Rd, Borawar, Gunawati Jageer, Rajasthan 341502
             </div>
             <div style={{ fontSize: '12px', color: '#9e9080', lineHeight: 1.5 }}>
               <strong style={{ color: '#edd7a8' }}>Studio Hours:</strong><br />

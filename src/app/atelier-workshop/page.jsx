@@ -133,18 +133,18 @@ export default function AtelierWorkshopPage() {
             <div className="workshop-locations-grid">
               <div className="w-loc-card">
                 <h4>Makrana Master Experience Studio &amp; Yard</h4>
-                <p>Industrial Stone Artisan Zone, Makrana, Rajasthan 341505</p>
+                <p>Makrana Bypass Rd, Borawar, Gunawati Jageer, Rajasthan 341502</p>
                 <span className="loc-note">Features live dry-assembly trials &amp; finished creations</span>
               </div>
               <div className="w-loc-card">
                 <h4>Makrana Quarry Atelier</h4>
-                <p>Industrial Area, Makrana, Nagaur Dist., Rajasthan 341505</p>
+                <p>Makrana Bypass Rd, Borawar, Gunawati Jageer, Rajasthan 341502</p>
                 <span className="loc-note">Direct bedrock extraction &amp; raw block selection</span>
               </div>
             </div>
             <div style={{ marginTop: '28px' }}>
               <a
-                href="https://wa.me/917597417274?text=Hello%20AFG%20Marble%2C%20I%20would%20like%20to%20plan%20a%20visit%20to%20your%20Jaipur%20Studio%20and%20Makrana%20Quarry."
+                href="https://wa.me/917597417274?text=Hello%20AFG%20Marble%2C%20I%20would%20like%20to%20plan%20a%20visit%20to%20your%20Makrana%20Master%20Atelier."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
