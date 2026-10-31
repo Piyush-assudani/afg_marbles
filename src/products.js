@@ -734,22 +734,22 @@ export const PRODUCTS = [
       'Designed for expansive botanical gardens and hotel courtyards, this octagonal fountain features an architectural coping ledge for relaxed seating, with a central tiered cascade providing an enchanting acoustic presence.',
     angles: [
       {
-        label: 'Octagonal Pool Elevation',
+        label: 'Circular Pool Elevation',
         tag: 'Complete View',
-        src: '/gallery/fountain-botanical-garden-octagonal.webp',
-        desc: 'Expansive octagonal marble curb pool with central cascading fountain tiers.'
+        src: '/gallery/fountain-circular-lawn-estate-cascade.webp',
+        desc: '100% pure white Makrana marble tiered fountain with large pool basin on garden lawn.'
       },
       {
-        label: 'Central Tier Cascade',
-        tag: 'Top Dome / Spire',
-        src: '/gallery/fountain-botanical-octagonal-crown.webp',
-        desc: 'Upper tiered fluted bowls and water spouts engineered for symmetrical eight-directional flow.'
+        label: 'Lawn Cascade Setting',
+        tag: 'Water Cascade',
+        src: '/gallery/fountain-palatial-estate-triple-tier-lawn.webp',
+        desc: 'Wide view of cascading water tiers and carved scalloped pool rim on estate grounds.'
       },
       {
-        label: 'Perimeter Octagonal Curb',
-        tag: 'Curb Detail',
-        src: '/gallery/fountain-botanical-octagonal-base.webp',
-        desc: 'Hand-carved architectural coping curb ledge providing integrated garden seating.'
+        label: 'Courtyard Centerpiece Setting',
+        tag: 'Courtyard View',
+        src: '/gallery/fountain-courtyard-circular.webp',
+        desc: 'Full perspective showing the symmetrical basin and soothing water flow.'
       }
     ],
     specs: [
@@ -771,22 +771,22 @@ export const PRODUCTS = [
       'A true tour-de-force of water sculpture, this four-tier fountain utilizes fluted seashell basin geometry to create four concentric tiers of musical water curtains.',
     angles: [
       {
-        label: 'Four-Tier Elevation',
+        label: 'Tiered Garden Elevation',
         tag: 'Complete View',
-        src: '/gallery/fountain-classical-scallop-four-tier-studio.webp',
-        desc: 'Four-tier monumental studio elevation showcasing the graduated fluted seashell basins and pedestal.'
+        src: '/gallery/fountain-estate-cobblestone.webp',
+        desc: 'Grand multi-tier pure white marble fountain set upon paved courtyard with lush garden flora.'
       },
       {
-        label: 'Upper Tier Shell Cascade',
-        tag: 'Top Dome / Spire',
-        src: '/gallery/fountain-classical-scallop-four-tier-crown.webp',
-        desc: 'High-detail close-up of the upper seashell tiers and sculpted pinecone finial.'
+        label: 'Driveway Basin Setting',
+        tag: 'Driveway View',
+        src: '/gallery/fountain-driveway-palatial.webp',
+        desc: 'Wide circular marble catch basin with classical spouts installed on a private villa driveway.'
       },
       {
-        label: 'Fluted Pedestal & Plinth',
-        tag: 'Base & Drawers',
-        src: '/gallery/fountain-classical-scallop-four-tier-base.webp',
-        desc: 'Master-chiseled solid pedestal base and heavy support plinth.'
+        label: 'Terrace Garden Setting',
+        tag: 'Garden Terrace',
+        src: '/gallery/fountain-estate-garden-scallop-terrace.webp',
+        desc: 'Finished tiered fountain installation in a formal estate garden courtyard.'
       }
     ],
     specs: [

@@ -78,7 +78,7 @@ const PROJECTS = [
     scale: '22ft Length × 14ft Width × 19.5ft Monumental Spire',
     heroImage: '/gallery/mandir-monumental-temple.webp',
     gallery: [
-      '/gallery/chhatri-torana-monumental-gate.webp',
+      '/gallery/outdoor-marble-temple-pavilion.webp',
       '/gallery/sanctum-fluted-colonnade.webp',
       '/gallery/sanctum-triple-shikhar-room.webp',
     ],

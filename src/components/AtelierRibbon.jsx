@@ -18,9 +18,9 @@ const ROW_ONE = [
     caption: 'Peacock Arch Mandir',
   },
   {
-    src: '/gallery/fountain-classical-scallop-four-tier-base.webp?v=real',
-    alt: 'Classical four-tier scallop bowl estate marble fountain',
-    caption: 'Classical Four-Tier Fountain',
+    src: '/gallery/fountain-estate-cobblestone.webp?v=real',
+    alt: 'Classical tiered estate marble fountain on stone courtyard',
+    caption: 'Tiered Garden Marble Fountain',
   },
   {
     src: '/gallery/mandir-shree-ram-7971.webp?v=real',
@@ -51,9 +51,9 @@ const ROW_TWO = [
     caption: 'Glowing Tree of Life Temple',
   },
   {
-    src: '/gallery/fountain-botanical-octagonal-base.webp?v=real',
-    alt: 'Octagonal botanical carved white marble garden fountain',
-    caption: 'Octagonal Botanical Fountain',
+    src: '/gallery/fountain-circular-lawn-estate-cascade.webp?v=real',
+    alt: 'Pure white Makrana marble circular pool fountain on lawn',
+    caption: 'Circular Lawn Marble Fountain',
   },
   {
     src: '/gallery/mandir-parchin-kari-7975.webp?v=real',

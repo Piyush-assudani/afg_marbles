@@ -95,7 +95,7 @@ export default function CinematicFilmShowcase({ onOpenInquiry }) {
           muted
           playsInline
           preload="auto"
-          poster={isMobile ? '/videos/poster-mobile.jpg' : '/videos/poster-desktop.jpg'}
+          poster={isMobile ? '/videos/poster-mobile.jpg?v=nov1' : '/videos/poster-desktop.jpg?v=nov1'}
           style={{
             width: '100%',
             height: '100%',
@@ -105,7 +105,7 @@ export default function CinematicFilmShowcase({ onOpenInquiry }) {
           }}
         >
           <source
-            src={isMobile ? '/videos/afg-cinematic-mobile.mp4' : '/videos/afg-cinematic-desktop.mp4'}
+            src={isMobile ? '/videos/afg-cinematic-mobile.mp4?v=nov1' : '/videos/afg-cinematic-desktop.mp4?v=nov1'}
             type="video/mp4"
           />
         </video>
