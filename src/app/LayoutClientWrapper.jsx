@@ -157,7 +157,7 @@ export default function LayoutClientWrapper({ children }) {
 
   useEffect(() => {
     // Expose helpers on window for any child component
-    window.afgOpenInquiry = (product) => setInquiryModalData(product || { title: 'Bespoke Atelier Commission' });
+    window.afgOpenInquiry = (product) => setInquiryModalData(product || { title: 'Custom Temple Design & Price' });
     window.afgOpenProduct = (product) => openProduct(product, true);
     window.afgCloseProduct = () => closeProduct(true);
     window.afgOpenLightbox = (img) => setLightboxData(img);

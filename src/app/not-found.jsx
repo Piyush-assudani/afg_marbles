@@ -4,9 +4,9 @@ import Link from 'next/link';
 import { Compass, ArrowRight, MessageSquare } from 'lucide-react';
 
 const SUGGESTIONS = [
-  { title: 'Home Pooja Sanctums & Mandirs', href: '/pooja-sanctums', desc: 'Monolithic pure Makrana calcite sacred temples.' },
-  { title: 'Palatial Cascading Fountains', href: '/palatial-fountains', desc: 'Dense hydraulic Rajnagar marble estate watercraft.' },
-  { title: 'Royal Heritage Chhatris', href: '/heritage-chhatris', desc: 'Monumental Rajput garden pavilions & cupolas.' },
+  { title: 'Marble Pooja Room & Home Temple', href: '/pooja-sanctums', desc: 'Pure white Makrana marble home temples.' },
+  { title: 'Marble Water Fountains', href: '/palatial-fountains', desc: 'Hand-carved white marble water fountains.' },
+  { title: 'Royal Heritage Chhatris', href: '/heritage-chhatris', desc: 'Hand-carved marble garden pavilions and carved domes.' },
   { title: 'Marble Temple Gate & Entrance', href: '/heritage-chhatris', desc: 'Handcrafted temple entrance torana gates.' },
   { title: 'Hand-Carved Jali Screens', href: '/jaali-screens', desc: 'Marble jali cutwork for temple doors and partitions.' },
   { title: 'Marble Inlay Work', href: '/pietra-dura-inlay', desc: 'Taj Mahal style gemstone floral work.' },

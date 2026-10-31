@@ -41,12 +41,12 @@ export default function PoojaSanctumsPage() {
             <span>/</span>
             <span>Collections</span>
             <span>/</span>
-            <span>Marble Temples</span>
+            <span>Marble Pooja Room &amp; Home Temple</span>
           </div>
-          <h1>Handcrafted Pure White Marble Temples</h1>
+          <h1>Marble Pooja Room &amp; Home Temple</h1>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
-            Every temple is hand-carved from 100% pure Makrana white marble that never turns yellow and resists all puja stains. Click any design below to see all photos, check measurements, and get exact prices on WhatsApp.
+            Every temple is hand-carved from 100% pure Makrana white marble that never turns yellow and resists all puja stains. Custom made to fit your room measurements with free 2D design drawings within 24 hours.
           </p>
 
           {/* Filter Pills */}

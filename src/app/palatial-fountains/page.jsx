@@ -30,12 +30,12 @@ export default function PalatialFountainsPage() {
             <span>/</span>
             <span>Catalog</span>
             <span>/</span>
-            <span>Marble Fountains</span>
+            <span>Marble Water Fountains</span>
           </div>
-          <h1>Hand-Carved Marble Fountains &amp; Water Features</h1>
+          <h1>Marble Water Fountains</h1>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
-            Handmade outdoor and indoor marble fountains made from 100% natural, solid white marble. Built to handle flowing water in all weather conditions without staining or cracking. Click any design below to see photos, dimensions, and get direct workshop prices.
+            Hand-carved pure white marble water fountains for home gardens, lawns, and courtyards. 100% natural solid marble designed for smooth water flow, zero leakage, and all-weather outdoor beauty. Click any fountain below to see photos, dimensions, and get direct workshop prices.
           </p>
         </div>
       </section>

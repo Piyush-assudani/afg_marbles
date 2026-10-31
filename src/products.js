@@ -32,7 +32,7 @@ export const PRODUCTS = [
         label: 'Complete View',
         tag: 'Complete View',
         src: '/gallery/img_7237.webp',
-        desc: 'Monumental 10ft facade displaying the quadruple cluster pillars, deeply carved peacock arch, and hand-chiseled elephant plinth.'
+        desc: 'Grand 10ft facade displaying cluster pillars, deeply carved peacock arch, and hand-chiseled elephant plinth.'
       },
       {
         label: 'Shikhara & carved arch Canopy',
@@ -72,7 +72,7 @@ export const PRODUCTS = [
     title: 'Grand 10ft Double-Bay Marble Temple',
     category: 'mandir',
     categoryName: 'Marble Mandirs & Temples',
-    badge: 'Monumental Commission',
+    badge: 'Grand Temple',
     tagline: 'Spacious 10ft temple with two deity spaces, beautiful carved arches, and storage drawers',
     authenticity: '100% Natural Makrana Marble',
     scale: 'Size = 10 Feet Height · 8 Feet Width · 2 Feet Depth',
@@ -280,7 +280,7 @@ export const PRODUCTS = [
         label: 'Complete View',
         tag: 'Complete View',
         src: '/gallery/img_8278.webp',
-        desc: 'Monumental 8ft front view displaying the sculpted elephant pedestals, carved pillars, and ornate canopy.'
+        desc: 'Grand 8ft front view displaying the sculpted elephant pedestals, carved pillars, and ornate canopy.'
       },
       {
         label: 'Carved Shikhara & Kalash',
@@ -645,19 +645,19 @@ export const PRODUCTS = [
   // =========================================================================
   {
     id: 'palatial-triple-tier-fountain',
-    title: 'Large 3-Tier Cascading Marble Fountain',
+    title: '3-Tier White Marble Water Fountain',
     category: 'fountain',
-    categoryName: 'Palatial Fountains',
-    badge: 'Water Architecture',
-    tagline: 'Grand 3-tier white marble fountain with smooth water flow for lawns and courtyards',
-    authenticity: '100% Natural Carved Marble',
+    categoryName: 'Marble Water Fountains',
+    badge: 'Marble Water Fountain',
+    tagline: '3-tier pure white marble water fountain with smooth water flow for home gardens and lawns',
+    authenticity: '100% Natural White Marble',
     scale: '10.0ft Diameter × 8.0ft Height',
     primaryStone: 'Makrana White Marble',
     fullDesc:
-      'An imperial water monument designed for palatial courtyards and luxury estate driveways. Sculpted from massive single blocks of Makrana marble, each tier is shaped into classical scalloped basins with precision-engineered water sheeting edges.',
+      'Beautiful 3-tier pure white marble water fountain for home gardens, lawns, and courtyards. Hand-carved from solid marble blocks with smooth water flow and zero leakage.',
     angles: [
       {
-        label: 'Palatial Lawn View',
+        label: 'Garden Lawn View',
         tag: 'Complete View',
         src: '/gallery/fountain-palatial-estate-triple-tier-lawn.webp',
         desc: 'Monumental 3-tier marble fountain installed on estate grounds with multi-tier water sheeting.'
@@ -676,7 +676,7 @@ export const PRODUCTS = [
       }
     ],
     specs: [
-      { label: 'Stone Variety', value: 'Dense Makrana Calcite White Marble' },
+      { label: 'Stone Variety', value: '100% Pure Natural White Marble' },
       { label: 'Tier Configuration', value: 'Triple Concentric Scalloped Basins with Spouting Finial' },
       { label: 'Standard Dimensions', value: '10.0ft (Base Pool Diameter) × 8.0ft (Overall Height) — Size = 10ft Diameter × 8ft Height' },
       { label: 'Hydraulics', value: 'Pre-piped stainless steel internal conduits (zero external plumbing visible)' }
@@ -686,8 +686,8 @@ export const PRODUCTS = [
     id: 'courtyard-lotus-fountain',
     title: 'Royal Black Stone Multi-Tier Fountain',
     category: 'fountain',
-    categoryName: 'Palatial Fountains',
-    badge: 'Courtyard Masterpiece',
+    categoryName: 'Marble Water Fountains',
+    badge: 'Black Stone Fountain',
     tagline: 'Natural black stone garden fountain with smooth multi-tier water cascade',
     authenticity: '100% Natural Black Stone',
     scale: '10.0ft Diameter × 10.0ft Height',
@@ -724,8 +724,8 @@ export const PRODUCTS = [
     id: 'fountain-botanical-octagonal',
     title: '8ft Octagonal Garden Marble Fountain',
     category: 'fountain',
-    categoryName: 'Palatial Fountains',
-    badge: 'Botanical Estate',
+    categoryName: 'Marble Water Fountains',
+    badge: 'Garden Fountain',
     tagline: 'Round octagonal marble fountain with center water cascade and border seating',
     authenticity: '100% Natural White Marble',
     scale: '8.0ft Diameter × 6.0ft Height',
@@ -761,10 +761,10 @@ export const PRODUCTS = [
     id: 'fountain-classical-scallop-four-tier',
     title: 'Grand 4-Tier Shell Marble Fountain',
     category: 'fountain',
-    categoryName: 'Palatial Fountains',
-    badge: 'Four-Tier Masterpiece',
+    categoryName: 'Marble Water Fountains',
+    badge: '4-Tier Marble Fountain',
     tagline: 'Grand 4-tier shell-shaped white marble fountain for large gardens and estates',
-    authenticity: '100% Natural Carved Marble',
+    authenticity: '100% Natural White Marble',
     scale: '10.0ft Diameter × 10.0ft Height',
     primaryStone: 'Makrana Calcite Marble',
     fullDesc:
@@ -815,7 +815,7 @@ export const PRODUCTS = [
         label: 'Complete View',
         tag: 'Complete View',
         src: '/gallery/chhatri-fluted-monumental-lawn.webp?v=fluted8k',
-        desc: 'Monumental octagonal garden chhatri in pure Makrana white marble with ribbed carved dome and carved plinth.'
+        desc: 'Grand octagonal garden chhatri in pure Makrana white marble with ribbed carved dome and carved plinth.'
       },
       {
         label: 'carved dome & Kalash',
@@ -891,7 +891,7 @@ export const PRODUCTS = [
         label: 'Temple Entrance Gate',
         tag: 'Complete View',
         src: '/gallery/mandir-peacock-torana-8341.webp',
-        desc: 'Monumental ceremonial gateway with twin sculpted pillars, peacock torana brackets, and multi-tier carved beam.'
+        desc: 'Grand ceremonial gateway with twin sculpted pillars, peacock torana brackets, and multi-tier carved beam.'
       },
       {
         label: 'Perimeter View',

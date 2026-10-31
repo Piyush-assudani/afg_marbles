@@ -155,7 +155,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
             INTERACTIVE ATELIER STUDIO
           </span>
           <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.8vw, 46px)', color: '#1c1813', letterSpacing: '-0.01em' }}>
-            Design Your Consecrated Royal Sanctum
+            Design Your Custom Marble Home Temple
           </h2>
           <div className="gold-rule center" style={{ margin: '14px auto 20px' }}></div>
           <p className="sub-lead" style={{ maxWidth: '760px', margin: '0 auto', fontSize: '15px', color: '#6b5f52', lineHeight: 1.6 }}>
@@ -182,7 +182,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
                   window.afgOpenLightbox({
                     src: selectedStyle.image,
                     title: selectedStyle.name,
-                    tag: `${selectedStone.name} · Bespoke Handcrafted Commission`
+                    tag: `${selectedStone.name} · Custom Handcrafted Temple`
                   });
                 }
               }}
@@ -220,7 +220,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
                     window.afgOpenLightbox({
                       src: selectedStyle.image,
                       title: selectedStyle.name,
-                      tag: `${selectedStone.name} · Bespoke Handcrafted Commission`
+                      tag: `${selectedStone.name} · Custom Handcrafted Temple`
                     });
                   }
                 }}

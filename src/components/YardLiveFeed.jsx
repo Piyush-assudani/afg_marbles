@@ -43,7 +43,7 @@ const YARD_BAYS = [
     image: '/gallery/fountain-palatial-estate-triple-tier-lawn.webp',
     status: 'WATER FLOW TESTED',
     inspector: 'Senior Workshop Engineer',
-    project: 'Palatial Four-Tier Scalloped Marble Fountain',
+    project: 'Four-Tier Scalloped Marble Water Fountain',
     details: 'Water flow and smooth cascade tested across all tiers under running water before final packing.'
   }
 ];

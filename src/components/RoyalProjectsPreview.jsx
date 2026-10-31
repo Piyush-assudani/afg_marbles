@@ -8,7 +8,7 @@ const LANDMARKS = [
     id: 'lake-pichola',
     title: 'The Lake Pichola Private Estate Fountain & Pavilions',
     city: 'Udaipur, Rajasthan',
-    type: 'Palatial Water & Heritage Pavilion',
+    type: 'Marble Water Fountain & Garden Pavilion',
     stone: 'Solid Makrana White & Bidasar Green Marble',
     scale: '16ft Diameter Basin · 12ft Chhatri Pair',
     image: '/gallery/fountain-courtyard-circular.webp',

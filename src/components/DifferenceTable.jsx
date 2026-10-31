@@ -53,14 +53,12 @@ export default function DifferenceTable({ onOpenInquiry }) {
         </div>
 
         <div className="difference-table-card">
-          <div className="diff-scroll-hint">
-            <span>⇄ Swipe horizontally to compare all features</span>
-          </div>
-          <div className="diff-table-responsive">
+          {/* Desktop Table View */}
+          <div className="diff-table-desktop">
             <table className="diff-table">
               <thead>
                 <tr>
-                  <th>FEATURE</th>
+                  <th style={{ width: '28%' }}>FEATURE</th>
                   <th className="th-afg" style={{ width: '38%' }}>
                     <span className="th-badge" style={{ display: 'inline-block', marginBottom: '6px' }}>
                       DIRECT WORKSHOP
@@ -102,6 +100,34 @@ export default function DifferenceTable({ onOpenInquiry }) {
               </tbody>
             </table>
           </div>
+
+          {/* Mobile All-in-One Cards View (No Horizontal Scroll Needed) */}
+          <div className="diff-cards-mobile">
+            {ROWS.map((row, idx) => (
+              <div key={idx} className="diff-card-item">
+                <div className="diff-card-feature">{row.feature}</div>
+                <div className="diff-card-row diff-card-row--afg">
+                  <div className="diff-card-brand diff-card-brand--afg">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#1c4b27" strokeWidth="2.6">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    <span>A.F.G MARBLE &amp; ARTS</span>
+                  </div>
+                  <p className="diff-card-text">{row.afg}</p>
+                </div>
+                <div className="diff-card-row diff-card-row--other">
+                  <div className="diff-card-brand diff-card-brand--other">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#8c2525" strokeWidth="2.6">
+                      <line x1="18" y1="6" x2="6" y2="18" />
+                      <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                    <span>LOCAL MARKET SELLERS</span>
+                  </div>
+                  <p className="diff-card-text">{row.other}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="diff-footer-action text-center" style={{ marginTop: '32px' }}>
@@ -110,13 +136,13 @@ export default function DifferenceTable({ onOpenInquiry }) {
             className="btn-primary"
             onClick={() => {
               if (onOpenInquiry) {
-                onOpenInquiry({ title: 'Makrana Calcite Authenticity & Consultation' });
+                onOpenInquiry({ title: 'Pure Makrana Marble Certificate & Pricing' });
               } else {
                 window.location.href = '/contact';
               }
             }}
           >
-            <span className="btn-primary__text">Request Makrana Calcite Lab Authenticity Certificate</span>
+            <span className="btn-primary__text">Get 100% Pure Makrana Marble Certificate &amp; Price</span>
             <span className="btn-primary__icon">→</span>
           </button>
         </div>

@@ -9,8 +9,8 @@ const ROW_ONE = [
   },
   {
     src: '/gallery/fountain-palatial-triple-tier-base.webp?v=real',
-    alt: 'Palatial three-tier cascading estate marble fountain',
-    caption: 'Palatial Cascading Fountain',
+    alt: 'Three-tier cascading marble fountain',
+    caption: 'Marble Water Fountain',
   },
   {
     src: '/gallery/mandir-peacock-torana-8341.webp?v=real',

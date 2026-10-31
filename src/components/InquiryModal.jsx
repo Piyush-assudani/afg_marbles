@@ -43,7 +43,7 @@ export default function InquiryModal({ initialProduct, onClose, onToast }) {
 
   useEffect(() => {
     if (initialProduct) {
-      const title = initialProduct.title || initialProduct.caption || initialProduct.name || 'Bespoke Marble Project';
+      const title = initialProduct.title || initialProduct.caption || initialProduct.name || 'Custom Marble Temple Project';
       const img = initialProduct.image || initialProduct.src || initialProduct.angles?.[0]?.src || '/gallery/img_7237.webp';
       setFormData((prev) => ({
         ...prev,
