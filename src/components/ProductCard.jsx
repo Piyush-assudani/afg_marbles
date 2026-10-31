@@ -81,14 +81,14 @@ export default function ProductCard({ product, onOpenProduct, onOpenInquiry }) {
   const handleShareWhatsAppDirect = (e) => {
     e?.stopPropagation?.();
     const shareUrl = getProductUrl();
-    const shareText = `Look at this authentic creation from A.F.G Marble & Arts: "${product.title}" (${product.primaryStone}, Scale: ${product.scale}) — ${shareUrl}`;
+    const shareText = `Check out this beautiful mandir from A.F.G Marble & Arts: "${product.title}" (${product.primaryStone}, Size: ${product.scale}) — ${shareUrl}`;
     window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}`, '_blank');
   };
 
   const handleDirectWhatsApp = (e) => {
     e.stopPropagation();
     const shareUrl = getProductUrl();
-    const text = `Namaste A.F.G Marble & Arts, I am inquiring about "${product.title}" (${product.primaryStone}, Scale: ${product.scale}). Please share bespoke pricing, Ayadi Vastu CAD blueprint, and dispatch details.\n\nProduct Link: ${shareUrl}`;
+    const text = `Namaste A.F.G Marble & Arts, I want to know about "${product.title}" (${product.primaryStone}, Size: ${product.scale}). Please share price, design drawing, and delivery details.\n\nProduct Link: ${shareUrl}`;
     const url = `https://wa.me/917597417274?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
   };
@@ -329,7 +329,7 @@ export default function ProductCard({ product, onOpenProduct, onOpenInquiry }) {
               letterSpacing: '0.03em',
             }}
           >
-            ✓ Authentic Bedrock
+            ✓ 100% Natural Makrana Marble
           </span>
         </div>
 
@@ -389,7 +389,7 @@ export default function ProductCard({ product, onOpenProduct, onOpenInquiry }) {
             <span style={{ color: '#8c6a36', fontWeight: 600 }}>Material:</span> Pure Makrana
           </div>
           <div className="meta-spec-item" style={{ fontSize: '12px', color: '#4a4239' }}>
-            <span style={{ color: '#8c6a36', fontWeight: 600 }}>Scale:</span> {product.scale.replace(/^Size\s*=\s*/, '')}
+            <span style={{ color: '#8c6a36', fontWeight: 600 }}>Dimensions:</span> {product.scale.replace(/^Size\s*=\s*/, '')}
           </div>
         </div>
 
@@ -408,11 +408,11 @@ export default function ProductCard({ product, onOpenProduct, onOpenInquiry }) {
         >
           <div>
             <span style={{ fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#8c6a36', fontWeight: 700, display: 'block' }}>
-              Custom Commission
+              Custom Made Design
             </span>
-            <span style={{ fontSize: '12px', color: '#1c1813', fontWeight: 600 }}>Bespoke to Your Space</span>
+            <span style={{ fontSize: '12px', color: '#1c1813', fontWeight: 600 }}>Made to Fit Your Space</span>
           </div>
-          <span style={{ fontSize: '11px', color: '#7a6f62', fontWeight: 500 }}>2D CAD Blueprint</span>
+          <span style={{ fontSize: '11px', color: '#7a6f62', fontWeight: 500 }}>2D Design Drawing</span>
         </div>
 
         {/* Multi-Angle Mini Thumbnails Strip */}
@@ -486,10 +486,10 @@ export default function ProductCard({ product, onOpenProduct, onOpenInquiry }) {
             <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
             </svg>
-            <span>Inquire &amp; Get Price</span>
+            <span>Get Price &amp; Details</span>
           </button>
 
-          {/* Secondary Triple Action Row: Direct WhatsApp, Share & View Dossier */}
+          {/* Secondary Triple Action Row: Direct WhatsApp, Share & View Photos */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '6px' }}>
             <button
               type="button"
@@ -549,7 +549,7 @@ export default function ProductCard({ product, onOpenProduct, onOpenInquiry }) {
               <span>Share</span>
             </button>
 
-            {/* View Dossier Button */}
+            {/* View Photos Button */}
             <button
               type="button"
               className="btn-dossier-pill"
@@ -570,7 +570,7 @@ export default function ProductCard({ product, onOpenProduct, onOpenInquiry }) {
                 transition: 'all 0.2s ease',
               }}
             >
-              <span>Dossier ({angles.length})</span>
+              <span>Photos ({angles.length})</span>
               <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2.2">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>

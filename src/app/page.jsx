@@ -52,12 +52,12 @@ export default function HomePage() {
   };
 
   const categories = [
-    { id: 'all', label: 'All Masterpieces', count: PRODUCTS.length },
+    { id: 'all', label: 'All Designs', count: PRODUCTS.length },
     { id: 'mandir', label: 'Mandirs & Temples', count: PRODUCTS.filter((p) => p.category === 'mandir').length },
-    { id: 'fountain', label: 'Palatial Fountains', count: PRODUCTS.filter((p) => p.category === 'fountain').length },
-    { id: 'chhatri', label: 'Heritage Chhatris', count: PRODUCTS.filter((p) => p.category === 'chhatri').length },
-    { id: 'sanctum', label: 'Contemporary Sanctums', count: PRODUCTS.filter((p) => p.category === 'sanctum').length },
-    { id: 'craft', label: 'Deities & Jaali Art', count: PRODUCTS.filter((p) => p.category === 'murti' || p.category === 'jaali' || p.category === 'inlay').length },
+    { id: 'fountain', label: 'Garden Fountains', count: PRODUCTS.filter((p) => p.category === 'fountain').length },
+    { id: 'chhatri', label: 'Garden Pavilions (Chhatris)', count: PRODUCTS.filter((p) => p.category === 'chhatri').length },
+    { id: 'sanctum', label: 'Modern Home Temples', count: PRODUCTS.filter((p) => p.category === 'sanctum').length },
+    { id: 'craft', label: 'Statues & Jali Screens', count: PRODUCTS.filter((p) => p.category === 'murti' || p.category === 'jaali' || p.category === 'inlay').length },
   ];
 
   return (
@@ -77,14 +77,14 @@ export default function HomePage() {
           <div className="royal-trust-flex">
             <div className="royal-trust-badge">
               <span className="royal-trust-badge__star">✦</span>
-              <span className="royal-trust-badge__title">IMPERIAL GUARANTEE</span>
+              <span className="royal-trust-badge__title">OUR QUALITY PROMISE</span>
             </div>
             <div className="royal-trust-hallmarks">
               <div className="hallmark-item">
                 <span className="hallmark-item__dot">✦</span>
                 <div className="hallmark-item__text">
-                  <strong>Direct Makrana Bedrock</strong>
-                  <span>99.2% Pure Calcite</span>
+                  <strong>100% Pure Makrana Marble</strong>
+                  <span>Taj Mahal Grade Purity</span>
                 </div>
               </div>
               <div className="hallmark-divider" aria-hidden="true"></div>
@@ -134,14 +134,14 @@ export default function HomePage() {
         <div className="sec-container">
           <div className="sec-header text-center" style={{ marginBottom: '32px' }}>
             <span className="card-badge" style={{ position: 'static', display: 'inline-block', marginBottom: '12px' }}>
-              THE MASTERPIECE CATALOG
+              OUR MARBLE COLLECTION
             </span>
             <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.5vw, 44px)', color: '#1c1813' }}>
-              Architectural Portfolio &amp; Creations
+              Browse Our Marble Temples &amp; Designs
             </h2>
             <div className="gold-rule center" style={{ margin: '14px auto 20px' }}></div>
             <p className="sub-lead" style={{ maxWidth: '760px', margin: '0 auto', fontSize: '15px', color: '#6b5f52', lineHeight: 1.6 }}>
-              Inspect every angle, examine dry-joint stonework, or directly share any creation. Every piece is sculpted to order to your exact space dimensions.
+              See photos from every side, check dimensions, and get exact prices on WhatsApp. We custom-make each temple to fit your room perfectly.
             </p>
           </div>
 
@@ -224,18 +224,18 @@ export default function HomePage() {
                   cursor: 'pointer'
                 }}
               >
-                <span>Load More Masterpieces ({allFilteredList.length - visibleCount} More in Catalog) ↓</span>
+                <span>View More Designs ({allFilteredList.length - visibleCount} More) ↓</span>
               </button>
             </div>
           )}
 
           <div className="sec-cta-wrap text-center" style={{ marginTop: '36px', display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap' }}>
             <Link href="/pooja-sanctums" className="btn-primary">
-              <span className="btn-primary__text">Explore All Bespoke Pooja Sanctums</span>
+              <span className="btn-primary__text">Explore All Home Temples</span>
               <span className="btn-primary__icon">→</span>
             </Link>
             <Link href="/palatial-fountains" className="btn-outline-gold">
-              <span>View Water Architecture</span>
+              <span>View Marble Fountains</span>
             </Link>
           </div>
         </div>
@@ -249,14 +249,14 @@ export default function HomePage() {
         <div className="sec-container">
           <div className="sec-header text-center" style={{ marginBottom: '48px' }}>
             <span className="card-badge" style={{ position: 'static', display: 'inline-block', marginBottom: '12px' }}>
-              CENTRAL ESTATE WATER ARCHITECTURE
+              GARDEN &amp; ESTATE WATER FOUNTAINS
             </span>
             <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.5vw, 44px)', color: '#1c1813' }}>
-              Palatial Cascading Fountains
+              Carved Marble Water Fountains
             </h2>
             <div className="gold-rule center" style={{ margin: '14px auto 20px' }}></div>
             <p className="sub-lead" style={{ maxWidth: '720px', margin: '0 auto', fontSize: '15px', color: '#6b5f52', lineHeight: 1.6 }}>
-              Sculpted exclusively from authentic Rajnagar White Marble—the heavy hydraulic dense calcite stone engineered for continuous water immersion, freeze-proof resilience, and zero algae adherence.
+              Carved from heavy, durable white marble built specially for continuous flowing water, outdoor sun, and weather resistance.
             </p>
           </div>
 
@@ -273,7 +273,7 @@ export default function HomePage() {
 
           <div className="sec-cta-wrap text-center" style={{ marginTop: '48px' }}>
             <Link href="/palatial-fountains" className="btn-primary">
-              <span className="btn-primary__text">Explore Palatial Water Architecture</span>
+              <span className="btn-primary__text">Explore All Marble Fountains</span>
               <span className="btn-primary__icon">→</span>
             </Link>
           </div>
@@ -296,8 +296,8 @@ export default function HomePage() {
                 if (typeof window !== 'undefined' && window.afgOpenLightbox) {
                   window.afgOpenLightbox({
                     src: '/gallery/sanctum-royal-mandir-room.webp?v=purewhite',
-                    title: 'Silawat Master Sculptor Artisanal Sanctum Suite',
-                    tag: 'Generational Silawat Master Atelier Lineage'
+                    title: 'Generational Master Sculptors Workshop',
+                    tag: 'Traditional Master Stone Carvers'
                   });
                 }
               }}
@@ -311,7 +311,7 @@ export default function HomePage() {
             >
               <img
                 src="/gallery/sanctum-royal-mandir-room.webp?v=purewhite"
-                alt="Silawat Master Sculptor Artisanal Sanctum Suite"
+                alt="Generational Master Sculptors Workshop"
                 loading="lazy"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }}
               />
@@ -322,8 +322,8 @@ export default function HomePage() {
                   if (typeof window !== 'undefined' && window.afgOpenLightbox) {
                     window.afgOpenLightbox({
                       src: '/gallery/sanctum-royal-mandir-room.webp?v=purewhite',
-                      title: 'Silawat Master Sculptor Artisanal Sanctum Suite',
-                      tag: 'Generational Silawat Master Atelier Lineage'
+                      title: 'Generational Master Sculptors Workshop',
+                      tag: 'Traditional Master Stone Carvers'
                     });
                   }
                 }}
@@ -354,48 +354,48 @@ export default function HomePage() {
                 <span>Zoom 4K</span>
               </button>
               <div className="media-caption-badge" style={{ position: 'absolute', bottom: '16px', left: '16px', background: 'rgba(20, 17, 14, 0.88)', color: '#ecd39b', padding: '7px 16px', borderRadius: '6px', fontSize: '11px', fontWeight: 600, letterSpacing: '0.08em', border: '1px solid rgba(176,138,79,0.35)' }}>
-                ✦ Generational Silawat Master Atelier Lineage
+                ✦ Traditional Master Stone Carvers
               </div>
             </div>
             <div className="page-info-block">
               <span className="card-badge" style={{ position: 'static', display: 'inline-block', marginBottom: '12px' }}>
-                THE SILAWAT GUILD HERITAGE
+                MASTER CRAFTSMEN HERITAGE
               </span>
               <h2 style={{ fontFamily: 'var(--serif)', fontSize: '36px', color: '#1c1813', marginBottom: '12px' }}>
-                Generational Master Sculptors Since 1987
+                Generational Stone Carvers Since 1987
               </h2>
               <div className="gold-rule" style={{ marginBottom: '18px' }}></div>
               <p style={{ color: '#4a4239', lineHeight: 1.6, marginBottom: '18px' }}>
-                Our stone carvers belong to the historic Silawat guild of Rajasthan—the direct ancestral lineage responsible for shaping the Taj Mahal, the Victoria Memorial, and India’s most venerated temple shrines.
+                Our stone carvers belong to the traditional Rajasthani craft families who have hand-carved India’s most famous marble temples and monuments for generations.
               </p>
               <ul className="spec-list-luxury" style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '14px' }}>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                   <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#b08a4f" strokeWidth="2.4" style={{ flexShrink: 0, marginTop: '2px' }}>
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span style={{ fontSize: '14px', color: '#383026' }}><strong>Quarry Selection at Bedrock:</strong> Every single marble slab is inspected with ultrasonic pulse velocity to guarantee zero micro-fractures.</span>
+                  <span style={{ fontSize: '14px', color: '#383026' }}><strong>100% Pure Marble Blocks:</strong> Every single marble slab is inspected to guarantee zero internal cracks or iron impurities.</span>
                 </li>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                   <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#b08a4f" strokeWidth="2.4" style={{ flexShrink: 0, marginTop: '2px' }}>
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span style={{ fontSize: '14px', color: '#383026' }}><strong>100% Pre-Assembly Trial:</strong> We assemble your entire temple in our Makrana yard, conduct dry-joint fitment checks, and send you 4K verification video before packing.</span>
+                  <span style={{ fontSize: '14px', color: '#383026' }}><strong>100% Pre-Assembly Trial:</strong> We assemble your entire temple in our workshop, check every fitting, and send you video proof before packing.</span>
                 </li>
                 <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                   <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#b08a4f" strokeWidth="2.4" style={{ flexShrink: 0, marginTop: '2px' }}>
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span style={{ fontSize: '14px', color: '#383026' }}><strong>ISPM-15 Certified Crating:</strong> Fumigated marine plywood crates lined with 50mm high-density shock EVA foam for seamless international delivery.</span>
+                  <span style={{ fontSize: '14px', color: '#383026' }}><strong>Safe Wooden Box Packing:</strong> Packed inside strong wooden boxes with thick foam cushions for safe delivery to your doorstep.</span>
                 </li>
               </ul>
 
               <div className="info-actions" style={{ marginTop: '28px', display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                 <Link href="/atelier-workshop" className="btn-primary">
-                  <span className="btn-primary__text">Discover Silawat 5-Stage Craft</span>
+                  <span className="btn-primary__text">Learn How We Make Temples</span>
                   <span className="btn-primary__icon">→</span>
                 </Link>
                 <Link href="/materials-guide" className="btn-outline-gold">
-                  <span>Makrana Calcite Science Guide</span>
+                  <span>Makrana Marble Guide</span>
                 </Link>
               </div>
             </div>
@@ -411,14 +411,14 @@ export default function HomePage() {
         <div className="sec-container">
           <div className="sec-header text-center" style={{ marginBottom: '48px' }}>
             <span className="card-badge" style={{ position: 'static', display: 'inline-block', marginBottom: '12px' }}>
-              MONUMENTAL HERITAGE ARCHITECTURE
+              GARDEN PAVILIONS &amp; CHHATRIS
             </span>
             <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.5vw, 44px)', color: '#1c1813' }}>
-              Heritage Chhatris &amp; Royal Pavilions
+              Carved Marble Pavilions &amp; Chhatris
             </h2>
             <div className="gold-rule center" style={{ margin: '14px auto 20px' }}></div>
             <p className="sub-lead" style={{ maxWidth: '720px', margin: '0 auto', fontSize: '15px', color: '#6b5f52', lineHeight: 1.6 }}>
-              Octagonal marble pavilions with ribbed domes, fluted monolith pillars, and pierced jali balustrades — Rajasthan&apos;s iconic gift to monumental garden and estate architecture.
+              Traditional carved marble pavilions with decorative pillars and domes, perfect for gardens, lawns, and farmhouse estates.
             </p>
           </div>
 
@@ -435,7 +435,7 @@ export default function HomePage() {
 
           <div className="sec-cta-wrap text-center" style={{ marginTop: '48px' }}>
             <Link href="/heritage-chhatris" className="btn-primary">
-              <span className="btn-primary__text">Explore All Heritage Chhatris</span>
+              <span className="btn-primary__text">Explore All Pavilions</span>
               <span className="btn-primary__icon">→</span>
             </Link>
           </div>
@@ -450,14 +450,14 @@ export default function HomePage() {
         <div className="sec-container">
           <div className="sec-header text-center" style={{ marginBottom: '48px' }}>
             <span className="card-badge" style={{ position: 'static', display: 'inline-block', marginBottom: '12px' }}>
-              MODERN DEVOTIONAL SPACES
+              CONTEMPORARY HOME TEMPLES
             </span>
             <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.5vw, 44px)', color: '#1c1813' }}>
-              Contemporary Pooja Sanctums
+              Modern Apartment &amp; Villa Temples
             </h2>
             <div className="gold-rule center" style={{ margin: '14px auto 20px' }}></div>
             <p className="sub-lead" style={{ maxWidth: '720px', margin: '0 auto', fontSize: '15px', color: '#6b5f52', lineHeight: 1.6 }}>
-              Clean-line minimalist marble sanctums designed for modern villas and penthouses — backlit Om mandalas, floating marble platforms, and concealed brass inlay work.
+              Clean modern marble temples designed for apartments and villas with backlit warm lighting and storage drawers.
             </p>
           </div>
 
@@ -474,7 +474,7 @@ export default function HomePage() {
 
           <div className="sec-cta-wrap text-center" style={{ marginTop: '48px' }}>
             <Link href="/pooja-sanctums" className="btn-primary">
-              <span className="btn-primary__text">Explore All Bespoke Pooja Sanctums</span>
+              <span className="btn-primary__text">Explore All Home Temples</span>
               <span className="btn-primary__icon">→</span>
             </Link>
           </div>
@@ -486,14 +486,14 @@ export default function HomePage() {
         <div className="sec-container">
           <div className="sec-header text-center" style={{ marginBottom: '48px' }}>
             <span className="card-badge" style={{ position: 'static', display: 'inline-block', marginBottom: '12px' }}>
-              THE NOBLE STONE LIBRARY
+              OUR MARBLE VARIETIES
             </span>
             <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.5vw, 44px)', color: '#1c1813' }}>
-              Our Stone Collection
+              Our White Marble Collection
             </h2>
             <div className="gold-rule center" style={{ margin: '14px auto 20px' }}></div>
             <p className="sub-lead" style={{ maxWidth: '720px', margin: '0 auto', fontSize: '15px', color: '#6b5f52', lineHeight: 1.6 }}>
-              Our atelier works strictly with three certified noble white marbles: Makrana Pure White &amp; Vietnam Pure White for temples, and Rajnagar White for fountains.
+              We craft our temples and fountains strictly from 3 proven natural white marbles: Makrana Pure White, Vietnam White, and Rajnagar White.
             </p>
           </div>
 
@@ -507,19 +507,19 @@ export default function HomePage() {
                 src: '/gallery/stone-makrana-calcite-slab.webp?v=spotless100',
                 name: 'Makrana Pure White Marble',
                 category: 'TEMPLES & SANCTUMS',
-                desc: '100% Pure Virgin Makrana Calcite Marble (Taj Mahal bedrock stone). Completely spotless with zero spots or veins, 0% porosity, guaranteed never to turn yellow from daily rituals.'
+                desc: '100% Pure Natural Makrana White Marble (the same stone used in the Taj Mahal). Completely spotless white, zero water absorption, guaranteed never to turn yellow from daily pooja oil or milk.'
               },
               {
                 src: '/gallery/stone-vietnam-white-marble.webp',
                 name: 'Vietnam Pure White Marble',
                 category: 'TEMPLES & DEITIES',
-                desc: '99.6% Pure Snow-White Crystal Marble. Spotless uniform brilliance with diamond-like crystal scatter, zero spots or veins, crafted for exquisite deities and contemporary sanctums.'
+                desc: 'Crystal Snow-White Marble. Super smooth, bright white surface with no stains or spots, perfect for beautiful god statues and modern home temples.'
               },
               {
                 src: '/gallery/stone-rajnagar-white-marble.webp',
                 name: 'Rajnagar White Marble',
                 category: 'PALATIAL FOUNTAINS',
-                desc: 'High-Density Hydraulic White Calcite (2.72 g/cm³) with natural character veining and authentic mineral accents. Specially engineered for palatial cascading fountains and outdoor architectural water features.'
+                desc: 'Heavy-duty natural white marble with delicate grey veins. Highly durable and weatherproof, ideal for large garden water fountains.'
               }
             ].map((stone, idx) => (
               <div key={idx} className="stone-card" style={{
@@ -550,7 +550,7 @@ export default function HomePage() {
 
           <div className="sec-cta-wrap text-center" style={{ marginTop: '48px' }}>
             <Link href="/materials-guide" className="btn-primary">
-              <span className="btn-primary__text">Explore Makrana Calcite Science Guide</span>
+              <span className="btn-primary__text">Read Marble Guide</span>
               <span className="btn-primary__icon">→</span>
             </Link>
           </div>
@@ -565,10 +565,10 @@ export default function HomePage() {
         <div className="sec-container">
           <div className="sec-header text-center" style={{ marginBottom: '48px' }}>
             <span className="card-badge" style={{ position: 'static', display: 'inline-block', marginBottom: '12px' }}>
-              FROM BEDROCK TO SANCTUM
+              FROM RAW STONE TO TEMPLE
             </span>
             <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.5vw, 44px)', color: '#1c1813' }}>
-              The 5-Stage Silawat Process
+              How We Hand-Carve Each Temple
             </h2>
             <div className="gold-rule center" style={{ margin: '14px auto 20px' }}></div>
           </div>
@@ -581,27 +581,27 @@ export default function HomePage() {
             {[
               {
                 step: '01',
-                title: 'Makrana Bedrock Quarry Selection',
+                title: 'Selecting Pure White Marble Blocks',
                 img: '/gallery/stone-makrana-calcite-slab.webp?v=spotless100',
-                desc: 'Direct selection of 100% pure virgin Makrana calcite marble blocks from certified bedrock faces, tested for structural purity.'
+                desc: 'Careful selection of 100% pure virgin Makrana marble blocks, tested to ensure zero internal cracks or iron spots.'
               },
               {
                 step: '02',
-                title: 'Master Silawat Hand Sculpting',
+                title: 'Master Hand-Carving Work',
                 img: '/gallery/mandir-peacock-torana-8341.webp?v=real',
-                desc: 'Generational Silawat master carvers hand-chisel pillars, shikharas, and intricate jali screens using ancestral steel tools.'
+                desc: 'Generational master stone carvers hand-chisel pillars, arches, and intricate jali screens using traditional steel tools.'
               },
               {
                 step: '03',
-                title: 'Makrana Yard Dry-Fit Trial',
+                title: 'Full Workshop Assembly & Video Check',
                 img: '/gallery/yard-dryfit-raw-calcite-mandir.webp?v=realphoto',
-                desc: 'Every mandir is 100% pre-assembled and dry-fitted in our Makrana yard to verify millimeter precision before dispatch.'
+                desc: 'Every temple is 100% test-assembled in our workshop to verify every joint and measurement before packing.'
               },
               {
                 step: '04',
-                title: 'Finishing & On-Site Installation',
+                title: 'Polishing & Safe Home Setup',
                 img: '/gallery/mandir-finishing-onsite-installation.webp?v=realphoto',
-                desc: 'Detailed 24K gold leaf embellishment, water mirror diamond polish, and white-glove setup inside client residence.'
+                desc: 'Finished with fine diamond water polish, gold leaf accents, and clean white-glove setup inside your home.'
               }
             ].map((item, idx) => (
               <div key={idx} className="craft-step-card" style={{
@@ -621,7 +621,7 @@ export default function HomePage() {
                     background: 'rgba(20, 17, 14, 0.85)', color: '#ecd39b',
                     padding: '4px 12px', borderRadius: '999px', fontSize: '11px', fontWeight: 700,
                     letterSpacing: '0.08em'
-                  }}>STAGE {item.step}</span>
+                  }}>STEP {item.step}</span>
                 </div>
                 <div style={{ padding: '18px 20px' }}>
                   <h4 style={{ fontFamily: 'var(--serif)', fontSize: '18px', color: '#1c1813', marginBottom: '8px' }}>{item.title}</h4>
@@ -633,7 +633,7 @@ export default function HomePage() {
 
           <div className="sec-cta-wrap text-center" style={{ marginTop: '48px' }}>
             <Link href="/atelier-workshop" className="btn-primary">
-              <span className="btn-primary__text">Discover the Full Atelier Process</span>
+              <span className="btn-primary__text">See How Our Workshop Works</span>
               <span className="btn-primary__icon">→</span>
             </Link>
           </div>

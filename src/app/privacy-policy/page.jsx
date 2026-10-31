@@ -10,22 +10,22 @@ export default function PrivacyPage() {
           <div className="breadcrumbs" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '11px', color: '#8c6a36', marginBottom: '20px', letterSpacing: '0.14em', textTransform: 'uppercase', fontWeight: 600 }}>
             <Link href="/" style={{ color: '#8c6a36', textDecoration: 'none' }}>Home</Link>
             <span style={{ opacity: 0.5 }}>/</span>
-            <span style={{ opacity: 0.8 }}>Legal &amp; Sovereign Charter</span>
+            <span style={{ opacity: 0.8 }}>Legal &amp; Privacy Policy</span>
             <span style={{ opacity: 0.5 }}>/</span>
-            <span style={{ color: '#1c1813', fontWeight: 700 }}>Patron Privacy &amp; Non-Disclosure</span>
+            <span style={{ color: '#1c1813', fontWeight: 700 }}>Customer Privacy &amp; Data Protection</span>
           </div>
 
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(184, 134, 63, 0.12)', border: '1px solid rgba(184, 134, 63, 0.3)', borderRadius: '999px', padding: '5px 16px', fontSize: '11px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#7a5a22', marginBottom: '18px' }}>
             <Shield size={13} strokeWidth={2.4} />
-            <span>Sovereign Confidentiality Protocol · Est. 1987</span>
+            <span>Privacy &amp; Data Security Promise · Est. 1987</span>
           </div>
 
           <h1 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(32px, 4.4vw, 56px)', color: '#1c1813', margin: '0 0 16px', lineHeight: 1.15, fontWeight: 400 }}>
-            Patron Confidentiality &amp; Privacy Charter
+            Customer Privacy &amp; Data Protection Policy
           </h1>
           <div className="gold-rule center" style={{ margin: '14px auto 20px', width: '70px', height: '2px', background: 'linear-gradient(90deg, transparent, #b8863f, transparent)' }}></div>
           <p className="sub-lead" style={{ maxWidth: '780px', margin: '0 auto', fontSize: '16px', color: '#5e5245', lineHeight: 1.7 }}>
-            Official non-disclosure governance protecting the sacred temple blueprints, private residential sanctum dimensions, and bespoke royal commissions of A.F.G Marble &amp; Arts patrons globally.
+            How we protect your temple drawings, room dimensions, contact details, and custom orders with 100% privacy.
           </p>
         </div>
       </section>
@@ -65,10 +65,10 @@ export default function PrivacyPage() {
             </div>
             <div>
               <h4 style={{ margin: '0 0 6px', fontFamily: 'var(--serif)', fontSize: '18px', color: '#1c1813', letterSpacing: '-0.01em' }}>
-                Strict Sovereign Atelier Mandate
+                100% Client Privacy Guarantee
               </h4>
               <p style={{ margin: 0, fontSize: '14px', color: '#685c4f', lineHeight: 1.7 }}>
-                A.F.G Marble &amp; Arts strictly upholds sovereign non-disclosure for high-net-worth patrons, royal families, private estates, and temple trusts. Residential spatial measurements, custom pooja mandir photographs, and sacred blueprints are <strong>never commercialized, published, or shared</strong> without sealed client authorization.
+                A.F.G Marble &amp; Arts guarantees complete privacy for all customers. Your home measurements, mandir photos, and design drawings are <strong>never sold, published, or shared</strong> with anyone without your clear permission.
               </p>
             </div>
           </div>
@@ -94,10 +94,10 @@ export default function PrivacyPage() {
                 <span style={{ fontSize: '12px', color: '#8c7b69', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Spatial Data</span>
               </div>
               <h3 style={{ fontFamily: 'var(--serif)', fontSize: '24px', color: '#1c1813', margin: '0 0 14px', fontWeight: 500 }}>
-                Residence Layout &amp; Sacred Dimension Confidentiality
+                Residence Layout &amp; Room Size Privacy
               </h3>
               <p style={{ margin: 0 }}>
-                When you submit floor-to-ceiling heights, sanctum room dimensions, CAD drawings, or residence photographs to our Master Sthapati desk via WhatsApp or our digital consultation form, all materials are treated under absolute commercial non-disclosure. We do not distribute, sell, or permit third-party advertising access to residential property plans.
+                When you submit room dimensions, photos, or design drawings to our team via WhatsApp or our consultation forms, all information is kept strictly private. We never share, sell, or disclose your personal details or room plans to any third parties.
               </p>
             </div>
 
@@ -109,10 +109,10 @@ export default function PrivacyPage() {
                 <span style={{ fontSize: '12px', color: '#8c7b69', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Photography Protocol</span>
               </div>
               <h3 style={{ fontFamily: 'var(--serif)', fontSize: '24px', color: '#1c1813', margin: '0 0 14px', fontWeight: 500 }}>
-                Photographic Embargo &amp; Non-Publication Policy
+                Photographic Privacy Policy
               </h3>
               <p style={{ margin: 0 }}>
-                Every bespoke marble mandir, private courtyard fountain, and sacred garbhagriha is unique. Photographs captured during on-site trial assembly in our Makrana yard or post-installation in private estates are strictly archived under patron pseudonymity. No media crew or social marketing agency is granted access to residential sanctums without sealed client consent.
+                Every custom marble temple and fountain is unique. Photos of trial setups and finished temples are kept strictly private unless explicitly permitted by the client.
               </p>
             </div>
 
@@ -124,10 +124,10 @@ export default function PrivacyPage() {
                 <span style={{ fontSize: '12px', color: '#8c7b69', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Direct Messaging</span>
               </div>
               <h3 style={{ fontFamily: 'var(--serif)', fontSize: '24px', color: '#1c1813', margin: '0 0 14px', fontWeight: 500 }}>
-                WhatsApp Media &amp; Master Sthapati Governance
+                WhatsApp Privacy &amp; Consultation Security
               </h3>
               <p style={{ margin: 0 }}>
-                Direct architectural consultations via WhatsApp (<a href="tel:+917597417274" style={{ color: '#8c6a36', fontWeight: 600 }}>+91 7597417274</a>) are routed through our authenticated atelier management team in Jaipur and Makrana. Videos of quarry block selection, chiseling milestones, and trial fitments sent to clients are protected under bilateral privacy agreements.
+                Direct conversations and consultations via WhatsApp (<a href="tel:+917597417274" style={{ color: '#8c6a36', fontWeight: 600 }}>+91 7597417274</a>) are handled directly by our workshop team. All photos and videos of your temple creation and trial setup are kept completely private.
               </p>
             </div>
 
@@ -157,7 +157,7 @@ export default function PrivacyPage() {
                 Digital Inquiries &amp; Local Ledger Persistence
               </h3>
               <p style={{ margin: 0 }}>
-                To provide continuous architectural support across generations of marble care, inquiry registers and calcite certificate IDs are logged into our secure atelier database. Patrons may at any time request complete deletion of their space measurements or dossier history.
+                To provide continuous support for marble care, inquiries are logged into our secure database. Clients may at any time request complete deletion of their space measurements or inquiry history.
               </p>
             </div>
 
@@ -172,7 +172,7 @@ export default function PrivacyPage() {
                 Atelier Concierge &amp; Legal Desk
               </h3>
               <p style={{ marginBottom: '24px' }}>
-                For formal privacy inquiries, custom non-disclosure agreements (NDAs) for palatial estate projects, or architectural dossier management, please contact our legal desk:
+                For formal privacy inquiries, custom non-disclosure agreements (NDAs) for large estate projects, or design inquiry management, please contact our team:
               </p>
 
               <div
@@ -228,12 +228,12 @@ export default function PrivacyPage() {
                     Authenticated Document
                   </p>
                   <p style={{ margin: 0, fontSize: '13px', color: '#1c1813', fontWeight: 600 }}>
-                    Master Shilawat Sthapati Desk &amp; Legal Governance
+                    A.F.G Marble &amp; Arts Management &amp; Customer Care Desk
                   </p>
                 </div>
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#27ae60', fontSize: '13px', fontWeight: 600 }}>
                   <CheckCircle2 size={16} />
-                  <span>Verified Sovereign Standard (ISO / Ayadi Vastu)</span>
+                  <span>Verified Data Privacy Standard</span>
                 </div>
               </div>
 

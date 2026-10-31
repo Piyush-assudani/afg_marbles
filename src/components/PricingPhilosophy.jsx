@@ -41,12 +41,12 @@ export default function PricingPhilosophy({ onOpenInquiry }) {
       scale: '7.5 ft to 12.0 ft+ Width',
       title: 'Large Estate & Community Temples',
       ideal: 'For grand palatial homes, courtyards, trusts, and community shrines.',
-      investment: 'Bespoke Quote on Space Dimensions',
-      stone: 'Direct Quarry Selected Monolithic Marble',
+      investment: 'Custom Quote for Your Space',
+      stone: 'Direct Quarry Selected Solid Marble',
       features: [
-        'Multi-tiered traditional temple domes (Shikharas)',
+        'Multi-tiered traditional temple carved domes',
         'Hand-carved elephant base and spacious layout',
-        'Custom Vastu architectural drawings and 2D blueprints',
+        'Custom Vastu design drawings and 2D floor plans',
         'Complete installation by our master craftsmen anywhere in India and abroad',
         'Lifetime guarantee certificate: 100% pure Makrana marble that never yellows',
       ],
@@ -65,19 +65,17 @@ export default function PricingPhilosophy({ onOpenInquiry }) {
       <div className="sec-container">
         <div className="sec-header text-center" style={{ marginBottom: '52px' }}>
           <span className="card-badge" style={{ position: 'static', display: 'inline-block', marginBottom: '12px' }}>
-            TRANSPARENT QUARRY-TO-SANCTUM CRAFT
+            DIRECT FACTORY PRICING
           </span>
           <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.6vw, 46px)', color: '#1c1813', lineHeight: 1.2 }}>
-            Understanding The Pricing Of Our Sacred Temples
+            How We Price Our Marble Temples
           </h2>
           <div className="gold-rule center" style={{ margin: '16px auto 20px' }}></div>
           <p
             className="sub-lead"
             style={{ maxWidth: '760px', margin: '0 auto', fontSize: '15px', color: '#6b5f52', lineHeight: 1.65 }}
           >
-            Unlike commercial resellers who markup stone through multiple middlemen, every A.F.G creation is mined from
-            our direct Makrana quarries, carved by our generational Silawat guild, and priced transparently based on raw
-            calcite volume and artisan carving hours.
+            No middlemen and no hidden markups. We craft everything directly in our Makrana workshops. You pay fair, transparent prices based on marble size and hand-carving work.
           </p>
         </div>
 
@@ -121,11 +119,11 @@ export default function PricingPhilosophy({ onOpenInquiry }) {
                     textTransform: 'uppercase',
                   }}
                 >
-                  The Atelier’s Sacred Pledge
+                  Our Sacred Quality Promise
                 </span>
                 <span style={{ color: 'rgba(184, 134, 63, 0.5)' }}>•</span>
                 <span style={{ fontSize: '13px', color: '#6b5f52', fontStyle: 'italic' }}>
-                  Uncompromised Virgin Calcite &amp; Generational Chiseling
+                  100% Pure White Marble &amp; Master Hand Carving
                 </span>
               </div>
             </div>
@@ -178,7 +176,7 @@ export default function PricingPhilosophy({ onOpenInquiry }) {
                     boxShadow: '0 4px 12px rgba(184, 134, 63, 0.35)',
                   }}
                 >
-                  Most Commissioned Scale
+                  Most Popular Size
                 </div>
               )}
 
@@ -228,7 +226,7 @@ export default function PricingPhilosophy({ onOpenInquiry }) {
                 }}
               >
                 <span style={{ fontSize: '11px', color: '#7a6a57', display: 'block', marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                  Commission Valuation:
+                  Price Estimate:
                 </span>
                 <div
                   style={{
@@ -319,7 +317,7 @@ export default function PricingPhilosophy({ onOpenInquiry }) {
                     cursor: 'pointer',
                   }}
                 >
-                  Request Custom Sizing Blueprint
+                  Request Free Design Drawing
                 </button>
               </div>
             </div>
@@ -342,12 +340,10 @@ export default function PricingPhilosophy({ onOpenInquiry }) {
         >
           <div style={{ maxWidth: '680px' }}>
             <h4 style={{ fontFamily: 'var(--serif)', fontSize: '20px', margin: '0 0 8px', color: '#e8c992' }}>
-              Why Our Pricing Never Changes Mid-Commission
+              Why Our Quoted Price Never Increases Later
             </h4>
             <p style={{ fontSize: '13.5px', color: '#c7bcae', lineHeight: 1.6, margin: 0 }}>
-              Unlike unorganized carvers who request supplemental charges for polishing, shipping crates, or space
-              drafting, every A.F.G proposal includes end-to-end quarry blocks, hand-carving, 2D CAD blueprints, trial
-              assembly in Makrana, and ISPM-15 fumigated international export crating.
+              Unlike local workshops who add extra hidden charges later for polishing, wooden crates, or design changes, every price quote from A.F.G includes complete marble blocks, hand carving, 2D design drawings, trial setup in our workshop, and heavy-duty wooden box packing.
             </p>
           </div>
 

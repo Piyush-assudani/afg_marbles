@@ -48,9 +48,9 @@ export default function CinematicFilmShowcase({ onOpenInquiry }) {
 
   const handleInquiry = () => {
     const productData = {
-      title: 'Bespoke Imperial Temple Commission',
+      title: 'Custom White Marble Temple Design',
       image: isMobile ? '/videos/poster-mobile.jpg' : '/videos/poster-desktop.jpg',
-      stone: 'Makrana Pure White Calcite Bedrock',
+      stone: '100% Pure Makrana White Marble',
     };
     if (typeof window !== 'undefined' && window.afgOpenInquiry) {
       window.afgOpenInquiry(productData);
@@ -155,7 +155,7 @@ export default function CinematicFilmShowcase({ onOpenInquiry }) {
               }}
             >
               <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#25D366', display: 'inline-block' }} />
-              <span>ATELIER ARCHIVES · 4K CINEMATIC IMMERSION</span>
+              <span>WORKSHOP VIDEO · REAL MARBLE CRAFTSMANSHIP</span>
             </div>
 
             <h2
@@ -169,7 +169,7 @@ export default function CinematicFilmShowcase({ onOpenInquiry }) {
                 textShadow: '0 2px 18px rgba(0,0,0,0.85)'
               }}
             >
-              Sacred Devotion, Sculpted in Pure Eternal Marble
+              Handcrafted in Pure White Makrana Marble
             </h2>
 
             <p
@@ -182,7 +182,7 @@ export default function CinematicFilmShowcase({ onOpenInquiry }) {
                 display: isMobile ? 'none' : 'block'
               }}
             >
-              From virgin Makrana bedrock quarry blocks to monumental shikhar temples and palatial villa sanctums.
+              From natural Makrana marble blocks to hand-carved home temples and garden water fountains.
             </p>
           </div>
 
@@ -274,7 +274,7 @@ export default function CinematicFilmShowcase({ onOpenInquiry }) {
             onMouseEnter={(e) => (e.currentTarget.style.transform = 'translateY(-2px)')}
             onMouseLeave={(e) => (e.currentTarget.style.transform = 'translateY(0)')}
           >
-            <span>Commission A Sanctum Like This</span>
+            <span>Get Price &amp; Details for a Temple Like This</span>
             <ArrowRight size={14} />
           </button>
         </div>

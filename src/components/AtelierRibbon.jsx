@@ -14,8 +14,8 @@ const ROW_ONE = [
   },
   {
     src: '/gallery/mandir-peacock-torana-8341.webp?v=real',
-    alt: 'White marble sanctum with sculpted peacock torana and elephant pillars',
-    caption: 'Peacock Torana Mandir',
+    alt: 'White marble temple with carved peacock arch and elephant pillars',
+    caption: 'Peacock Arch Mandir',
   },
   {
     src: '/gallery/fountain-classical-scallop-four-tier-base.webp?v=real',
@@ -24,18 +24,18 @@ const ROW_ONE = [
   },
   {
     src: '/gallery/mandir-shree-ram-7971.webp?v=real',
-    alt: 'Lord Rama sanctum with handcrafted jali screen and shikhara',
-    caption: 'Shree Ram Mandir Sanctum',
+    alt: 'Lord Rama temple with carved jali screen and top spire',
+    caption: 'Shree Ram Home Temple',
   },
   {
     src: '/gallery/chhatri-fluted-monumental-lawn.webp?v=fluted8k',
-    alt: 'Monumental octagonal fluted dome garden pavilion in pure white marble',
-    caption: 'Monumental Fluted Chhatri',
+    alt: 'Large round garden pavilion in pure white marble',
+    caption: 'Carved Garden Pavilion',
   },
   {
     src: '/gallery/yard-dryfit-raw-calcite-mandir.webp?v=realphoto',
-    alt: 'Pre-assembly trial dry-joint fitment in Makrana yard',
-    caption: 'Makrana Yard Pre-Assembly Mandir',
+    alt: 'Full setup trial check in our workshop yard',
+    caption: 'Workshop Setup Trial Check',
   },
   {
     src: '/gallery/mandir-pietra-dura-7794.webp?v=real',
@@ -47,8 +47,8 @@ const ROW_ONE = [
 const ROW_TWO = [
   {
     src: '/gallery/mandir-backlit-tree-8342.webp?v=real',
-    alt: 'Bespoke marble sanctum with backlit tree of life medallion',
-    caption: 'Backlit Tree of Life Sanctum',
+    alt: 'Custom marble temple with glowing tree of life artwork',
+    caption: 'Glowing Tree of Life Temple',
   },
   {
     src: '/gallery/fountain-botanical-octagonal-base.webp?v=real',
@@ -77,12 +77,12 @@ const ROW_TWO = [
   },
   {
     src: '/gallery/royal-chhatri-dome-detail.webp?v=fluted8k',
-    alt: 'Hand-carved ribbed marble dome apex and ceremonial kalash',
-    caption: 'Fluted Marble Dome & Finial',
+    alt: 'Hand-carved marble dome with top crown',
+    caption: 'Carved Marble Dome',
   },
   {
     src: '/gallery/mandir-grand-makrana-8361.webp?v=real',
-    alt: 'Solid virgin Makrana white marble temple',
+    alt: 'Solid pure Makrana white marble temple',
     caption: 'Pure Makrana Royal Mandir',
   },
 ];

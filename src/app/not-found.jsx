@@ -7,11 +7,11 @@ const SUGGESTIONS = [
   { title: 'Home Pooja Sanctums & Mandirs', href: '/pooja-sanctums', desc: 'Monolithic pure Makrana calcite sacred temples.' },
   { title: 'Palatial Cascading Fountains', href: '/palatial-fountains', desc: 'Dense hydraulic Rajnagar marble estate watercraft.' },
   { title: 'Royal Heritage Chhatris', href: '/heritage-chhatris', desc: 'Monumental Rajput garden pavilions & cupolas.' },
-  { title: 'Consecrated Deities (Murtis)', href: '/marble-deities', desc: 'Vedic Shilpa Shastra single-block deity murtis.' },
-  { title: 'Pierced Jaali Lattice Screens', href: '/jaali-screens', desc: 'Hand-carved marble screens for mandirs & light play.' },
-  { title: 'Pietra Dura Gemstone Inlay', href: '/pietra-dura-inlay', desc: 'Taj Mahal semi-precious lapidary parchin kari.' },
-  { title: '2D CAD Space Consultation', href: '/bespoke-consultation', desc: 'Custom pooja space dimensions to CAD elevation.' },
-  { title: 'Landmark Heritage Portfolio', href: '/royal-projects', desc: 'Completed palatial commissions across 28+ nations.' },
+  { title: 'Handmade Marble God Idols', href: '/marble-deities', desc: 'Hand-carved single-block marble statues.' },
+  { title: 'Hand-Carved Jali Screens', href: '/jaali-screens', desc: 'Marble jali cutwork for temple doors and partitions.' },
+  { title: 'Handmade Stone Inlay Art', href: '/pietra-dura-inlay', desc: 'Taj Mahal style gemstone floral work.' },
+  { title: 'Free 2D Design Drawing', href: '/bespoke-consultation', desc: 'Custom pooja space design drawings and size planning.' },
+  { title: 'Completed Projects', href: '/royal-projects', desc: 'Photos of installed temples and fountains worldwide.' },
 ];
 
 export default function NotFound() {
@@ -102,7 +102,7 @@ export default function NotFound() {
             lineHeight: 1.2,
           }}
         >
-          {redirecting ? 'Guiding You to the Sanctuary...' : 'Commission Dossier Not Found'}
+          {redirecting ? 'Taking You to the Right Page...' : 'Page Not Found'}
         </h1>
 
         <p
@@ -115,8 +115,8 @@ export default function NotFound() {
           }}
         >
           {redirecting
-            ? 'We detected your desired architectural collection and are redirecting you now.'
-            : 'The specific URL or commission link requested is no longer at this address. Please explore our verified royal collections below or speak directly with our Senior Sthapati.'}
+            ? 'We are redirecting you to our collection now.'
+            : 'The page you requested is no longer available. Please explore our marble collections below or contact us directly on WhatsApp.'}
         </p>
 
         {/* Directory grid of active collections */}
@@ -202,7 +202,7 @@ export default function NotFound() {
             }}
           >
             <MessageSquare size={16} />
-            <span>Ask Sthapati on WhatsApp</span>
+            <span>Ask on WhatsApp</span>
           </a>
         </div>
       </div>

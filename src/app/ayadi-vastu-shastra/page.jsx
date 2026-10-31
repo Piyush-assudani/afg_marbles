@@ -8,27 +8,27 @@ export default function AyadiVastuPage() {
     {
       name: 'Yoni (Directional Energy)',
       calc: '(Length × 3) ÷ 8',
-      desc: 'Determines the energy direction of the temple. For domestic sanctums, Dhwaja Yoni (East) or Simha Yoni (South-East) is chosen to attract peace, vitality, and wealth.'
+      desc: 'Determines the best facing direction for your temple to bring peace, health, and positive energy into your home.'
     },
     {
       name: 'Aya (Positive Inflow)',
       calc: '(Width × 8) ÷ 12',
-      desc: 'Calculates the inflow of spiritual and material abundance. In sacred temple design, the Aya value must always strictly exceed the Vyaya (expenditure) value.'
+      desc: 'Calculates the inflow of prosperity and good fortune. In Vedic temple design, positive gain (Aya) is always kept higher than expenses.'
     },
     {
       name: 'Vyaya (Outflow / Loss)',
       calc: '(Length × 9) ÷ 10',
-      desc: 'Represents dissipation. Our Master Sthapatis calibrate width and length down to the millimeter so that Vyaya remains minimal.'
+      desc: 'Represents expenses and loss. Our temple designers calculate the exact dimensions so that loss factors remain minimal.'
     },
     {
       name: 'Nakshatra (Constellation Resonance)',
       calc: '(Length × 8) ÷ 27',
-      desc: 'Harmonizes the sanctum with the patron family’s birth nakshatras, ensuring personal spiritual resonance and divine tranquility.'
+      desc: 'Aligns the temple size with the family’s birth stars (Nakshatras) for harmony and family peace.'
     },
     {
       name: 'Ayu (Lifespan of Consecration)',
       calc: '(Length × 27) ÷ 100',
-      desc: 'Determines the permanence of spiritual consecration. An auspicious Ayu score ensures the sanctum bestows blessings across generations.'
+      desc: 'Represents long life and prosperity, ensuring the temple brings lifelong blessings to your family.'
     }
   ];
 
@@ -39,14 +39,14 @@ export default function AyadiVastuPage() {
           <div className="breadcrumbs">
             <Link href="/">Home</Link>
             <span>/</span>
-            <span>Architectural Science</span>
+            <span>Vastu Guide</span>
             <span>/</span>
-            <span>Ayadi Vastu Shastra</span>
+            <span>Vastu &amp; Size Rules</span>
           </div>
-          <h1>Sacred Ayadi Vastu Mathematical Architecture</h1>
+          <h1>Temple Vastu &amp; Auspicious Dimensions Guide</h1>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
-            In Vedic temple engineering, a mandir is not merely furniture—it is an energetic transducer (Yantra). Our Master Sthapatis design every AFG sanctum in strict adherence to classical Ayadi Shastra formulas from the Manasara and Mayamata treatises.
+            A home temple is a sacred space for your family. We calculate every dimension (length, width, and height) according to authentic Vedic Vastu rules to bring peace, happiness, and prosperity to your home.
           </p>
         </div>
       </section>
@@ -62,28 +62,28 @@ export default function AyadiVastuPage() {
                 loading="lazy"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
-              <div className="media-caption-badge">9-Grid Vastu Purusha Mandala</div>
+              <div className="media-caption-badge">Vastu Temple Layout</div>
             </div>
             <div className="page-info-block">
-              <span className="card-badge">THE 6 SACRED MATHEMATICAL RATIOS</span>
+              <span className="card-badge">AUTHENTIC VASTU RULES</span>
               <h2 style={{ fontFamily: 'var(--serif)', fontSize: '32px', color: '#1c1813', margin: '12px 0 16px' }}>
-                Why Commercial Temples Fail Spiritual Alignment
+                Why Temple Measurements Matter in Vastu
               </h2>
               <div className="gold-rule"></div>
               <p style={{ color: '#4a4239', lineHeight: 1.65, marginBottom: '18px' }}>
-                Commercial carpenters and casual stone carvers cut marble to arbitrary round numbers (like 5ft × 3ft) to minimize stone wastage. In Vastu Shastra, arbitrary dimensions frequently result in negative Yoni and high Vyaya, creating subtle energetic unrest in the household.
+                Ordinary market carpenters often cut marble to random sizes just to save stone. In traditional Vastu, every inch matters so that the home receives positive vibrations, good health, and peace.
               </p>
               <p style={{ color: '#4a4239', lineHeight: 1.65, marginBottom: '22px' }}>
-                At A.F.G Marble &amp; Arts, every single client commission begins with custom Ayadi calculations based on your home’s orientation, ceiling clearance, and family Gotra.
+                At A.F.G Marble &amp; Arts, we design your temple dimensions based on your available room space and authentic Vastu guidelines.
               </p>
               <div className="info-actions">
                 <a
-                  href="https://wa.me/917597417274?text=Hello%20AFG%20Marble%2C%20I%20would%20like%20an%20Ayadi%20Vastu%20consultation%20with%20your%20Master%20Sthapati%20for%20my%20home%20sanctum."
+                  href="https://wa.me/917597417274?text=Hello%20AFG%20Marble%2C%20I%20would%20like%20a%20free%20Vastu%20and%20size%20consultation%20for%20my%20home%20temple."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary"
                 >
-                  <span className="btn-primary__text">Consult Master Sthapati</span>
+                  <span className="btn-primary__text">Get Free Vastu Advice on WhatsApp</span>
                   <span className="btn-primary__icon">→</span>
                 </a>
               </div>
@@ -93,9 +93,9 @@ export default function AyadiVastuPage() {
           {/* Formulas Grid */}
           <div style={{ marginBottom: '60px' }}>
             <div className="sec-header text-center" style={{ marginBottom: '36px' }}>
-              <span className="card-badge">AYADI SHASTRA METRICS</span>
+              <span className="card-badge">VASTU PRINCIPLES</span>
               <h2 style={{ fontFamily: 'var(--serif)', fontSize: '30px', color: '#1c1813' }}>
-                The 5 Mathematical Pillars of Consecrated Sanctums
+                The 5 Key Vastu Rules for Home Temples
               </h2>
               <div className="gold-rule center"></div>
             </div>

@@ -14,7 +14,7 @@ const PROJECTS = [
     location: 'Udaipur, Rajasthan',
     year: 'Commissioned 2024',
     category: 'Palatial Water & Heritage Pavilions',
-    stone: 'Solid Makrana White & Bidasar Green Bedrock',
+    stone: 'Solid Makrana White & Bidasar Green Marble',
     scale: '16ft Diameter Basin · 12ft Chhatri Pavilion Pair',
     heroImage: '/gallery/fountain-courtyard-circular.webp',
     gallery: [
@@ -23,18 +23,18 @@ const PROJECTS = [
       '/gallery/fountain-palatial-night.webp',
     ],
     brief:
-      'Commissioned by a royal family estate overlooking Lake Pichola. Required a central courtyard lotus-profile cascading fountain synchronized with two flanking fluted octagonal marble chhatris.',
+      'Built for a private estate overlooking Lake Pichola. Features a central tiered lotus fountain with two matching carved marble pavilions on both sides.',
     execution:
-      'Chiseled from a monolithic 24-tonne Makrana marble bedrock block. Integrated with closed-loop variable-pressure pumps and fiber-optic underwater halo illumination.',
-    deliveryTime: '14 Weeks from CAD Blueprint to On-Site Consecration',
+      'Carved from a solid 24-tonne Makrana marble block. Integrated with water pumps and warm underwater lighting.',
+    deliveryTime: '14 Weeks from Design Drawing to Home Installation',
   },
   {
     id: 'london-mayfair-sanctum',
-    title: 'The Mayfair Penthouse Pure Calcite Mandir Sanctum',
+    title: 'The Mayfair London Penthouse Pure White Marble Temple',
     location: 'Mayfair, London, UK',
     year: 'Commissioned 2024',
     category: 'Contemporary Pooja Sanctums',
-    stone: 'Makrana 99% Pure Calcite & 24K Pure Gold Leaf Inlay',
+    stone: 'Makrana Pure White Marble & 24K Pure Gold Leaf Inlay',
     scale: '8.5ft Width × 4.2ft Depth × 9.0ft Height',
     heroImage: '/gallery/mandir-grand-makrana-8361.webp',
     gallery: [
@@ -43,10 +43,10 @@ const PROJECTS = [
       '/gallery/sanctum-ram-darbar-dome.webp',
     ],
     brief:
-      'Bespoke sanctum engineered for a prestigious Grade II listed apartment. Must conform strictly to Ayadi Vastu Golden Harmonics while obeying indoor weight limits and zero wet-cement assembly.',
+      'Custom home temple designed for a luxury apartment in Mayfair, London. Built to fit strict room measurements and light weight limits with easy no-cement interlocking assembly.',
     execution:
-      'Designed with AFG modular dry-joint interlocking blocks. Features concealed smoke drafting flues, push-to-open velvet-lined drawers, and 110V-240V heat-free halo backlighting.',
-    deliveryTime: 'Air-freighted in ISPM-15 pine crates, assembled in 5 hours by AFG master Silawats.',
+      'Built with interlocking modular blocks that slide together securely. Includes smoke vents, smooth sliding drawers, and soft warm lighting.',
+    deliveryTime: 'Shipped by air in strong wooden boxes, installed smoothly in just 5 hours.',
   },
   {
     id: 'dubai-palm-cascade',
@@ -63,18 +63,18 @@ const PROJECTS = [
       '/gallery/fountain-octagonal-topdown.webp',
     ],
     brief:
-      'Monumental courtyard water centerpiece for a beachfront villa. Required extreme UV, salt-air, and 50°C thermal resistance without stone cracking or yellowing.',
+      'Large courtyard fountain for a beachfront villa. Built to withstand strong sun, sea salt air, and 50°C summer heat without cracking or turning yellow.',
     execution:
-      'Fabricated from high-density calcite marble with zero porosity (<0.03%). Features 4 guardian lion spouts, 3 cascading scalloped bowls, and high-flow marine brass manifolds.',
-    deliveryTime: 'Sea-freighted to Jebel Ali port, installed with custom crane rigging in 3 days.',
+      'Carved from high-density pure marble that absorbs zero water. Features 4 carved lion spouts, 3 cascading water bowls, and heavy-duty brass piping.',
+    deliveryTime: 'Shipped by sea to Dubai port, installed smoothly in 3 days.',
   },
   {
     id: 'delhi-farmhouse-complex',
-    title: 'The Chhatarpur Farmhouse Heritage Shikhara Temple Complex',
+    title: 'The Chhatarpur Farmhouse Grand Marble Spire Temple',
     location: 'Chhatarpur, New Delhi',
     year: 'Commissioned 2023',
     category: 'Monumental Heritage Temples',
-    stone: '100% Solid Makrana Pure White Calcite Bedrock',
+    stone: '100% Solid Makrana Pure White Marble',
     scale: '22ft Length × 14ft Width × 19.5ft Monumental Spire',
     heroImage: '/gallery/mandir-monumental-temple.webp',
     gallery: [
@@ -83,9 +83,9 @@ const PROJECTS = [
       '/gallery/sanctum-triple-shikhar-room.webp',
     ],
     brief:
-      'A private spiritual sanctuary commissioned inside a 4-acre heritage estate. Mandated authentic Nagara architectural canons, elephant-sculpted plinth, and full parikrama walkway.',
+      'A grand private temple built inside a 4-acre farmhouse estate. Built with traditional temple spire, carved elephant base, and full prayer walkway around the shrine.',
     execution:
-      'Over 60 tonnes of hand-selected Makrana marble carved by 24 artisan Silawats over 9 months. Complete dry-fit trial conducted at our Makrana yard prior to convoy transit.',
+      'Over 60 tonnes of pure Makrana white marble hand-carved by 24 stone carvers over 9 months. 100% full trial setup tested at our workshop before shipping.',
     deliveryTime: 'Dedicated 8-artisan team on-site for 30-day consecration and final polishing.',
   },
 ];
@@ -99,14 +99,14 @@ export default function RoyalProjectsPage() {
           className="card-badge"
           style={{ position: 'static', display: 'inline-block', marginBottom: '14px', background: 'rgba(176, 138, 79, 0.15)', color: '#8c6a36' }}
         >
-          COMPLETED ARCHITECTURAL COMMISSIONS
+          COMPLETED PROJECTS
         </span>
         <h1 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(32px, 4vw, 52px)', color: '#1c1813', lineHeight: 1.2, marginBottom: '18px' }}>
-          Royal Estates &amp; Global Landmark Projects
+          Our Completed Temple &amp; Fountain Projects
         </h1>
         <div className="gold-rule center" style={{ margin: '14px auto 22px' }}></div>
         <p style={{ fontSize: '16px', color: '#6b5f52', lineHeight: 1.7, maxWidth: '760px', margin: '0 auto' }}>
-          From sprawling private estates in Udaipur and Dubai to heritage penthouses in London and farmhouses in New Delhi — discover how A.F.G Marble &amp; Arts translates monumental architectural visions into pure Makrana stone realities.
+          From private villas and estates in India to penthouses in London and Dubai — see real photos and details of marble temples, garden fountains, and pavilions crafted and installed by our master stone carvers.
         </p>
       </section>
 
@@ -283,7 +283,7 @@ export default function RoyalProjectsPage() {
             Have a Private Estate or Sacred Sanctuary in Mind?
           </h2>
           <p style={{ fontSize: '15px', color: '#d8ccb8', lineHeight: 1.7, marginBottom: '28px' }}>
-            Our Master Sthapatis and stone engineers work directly with private patrons, luxury interior architects, and estate builders globally. Receive full 2D CAD elevations and stone volume estimates within 24 hours.
+            Our marble temple experts work directly with homeowners, architects, and builders globally. Receive free 2D design drawings and price estimates within 24 hours.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap' }}>
             <a
@@ -293,10 +293,10 @@ export default function RoyalProjectsPage() {
               className="btn-primary"
               style={{ background: '#25d366', color: '#ffffff', borderColor: '#20ba59' }}
             >
-              <span>Instant WhatsApp Sthapati Consultation</span>
+              <span>Chat with Our Temple Expert on WhatsApp</span>
             </a>
             <Link href="/contact" className="btn-outline-gold" style={{ borderColor: '#d8bb84', color: '#ecd39b' }}>
-              <span>Visit Our Makrana Master Studios</span>
+              <span>Visit Our Makrana Workshops</span>
             </Link>
           </div>
         </div>

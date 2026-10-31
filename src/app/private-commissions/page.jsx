@@ -11,16 +11,16 @@ export default function PrivateCommissionsPage() {
       type: 'Royal Garbhagriha Peacock Mandir (8.5ft W × 11.2ft H)',
       stone: '100% Pure Makrana White Albeta with 24K Gold Gilding',
       img: '/gallery/mandir-peacock-torana-8341.webp',
-      desc: 'Commissioned for a bespoke prayer wing in a historic North London residence. The patron requested an authentic Rajasthani peacock torana arch with concealed 110V–240V LED lighting and soft-close velvet storage. Fully pre-assembled in our Makrana yard, crated in ISPM-15 pine, and installed by our artisans in London within 48 hours of doorstep delivery.',
+      desc: 'Custom made for a home prayer room in North London. The family wanted a traditional carved peacock arch with warm built-in LED lighting and soft-close drawers. Fully pre-assembled in our Makrana workshop, packed safely in wooden crates, and installed smoothly at their home in London.',
       patron: 'Dr. Vikram & Sunita Patel'
     },
     {
       title: 'The Emirates Hills Nagara Shrine',
       location: 'Emirates Hills, Dubai, United Arab Emirates',
       type: 'Monumental Shikhar Sanctum (10.2ft W × 13.5ft H)',
-      stone: 'Quarry-Select Makrana Calcite Bedrock',
+      stone: '100% Pure Makrana White Marble',
       img: '/gallery/sanctum-tall-shikhara.webp',
-      desc: 'Designed for a central courtyard sanctuary under desert conditions. Engineered with thermal expansion dry-joints and high-density calcite marble that reflects solar radiation without heating. Features five-tiered Nagara spires crowned with amalaka finials and hand-sculpted elephant plinths.',
+      desc: 'Designed for a courtyard setting under desert sun. Made with heat-reflecting solid Makrana marble that stays naturally cool. Features five carved spires, auspicious finials, and hand-sculpted elephant bases.',
       patron: 'Harshavardhan Singhania'
     },
     {
@@ -29,7 +29,7 @@ export default function PrivateCommissionsPage() {
       type: 'Freestanding Jharokha Mandir (6.5ft W × 8.8ft H)',
       stone: 'Makrana Dungri Marble with Crystalline Vein',
       img: '/gallery/mandir-freestanding-jharokha.webp',
-      desc: 'A luxury sea-facing duplex required a consecrated sanctum that complemented contemporary interior architecture while preserving strict Ayadi Vastu mathematics. Our sculptors hand-chiseled curved bowfront storage drawers and translucent marble jali panels that cast radiant spiritual warmth at sunset.',
+      desc: 'Built for a luxury sea-facing apartment to match modern home interiors with authentic Vastu dimensions. Features curved storage drawers and translucent marble jali panels that glow beautifully.',
       patron: 'Ananya & Sameer Mehta'
     },
     {
@@ -38,7 +38,7 @@ export default function PrivateCommissionsPage() {
       type: '3-Tier Monolithic Cascading Fountain (7.8ft H · 12ft Catch Pool)',
       stone: '100% Solid Rajnagar Hydraulic White Marble',
       img: '/gallery/fountain-classical-four-tier.webp',
-      desc: 'Crafted for the central courtyard driveway of a private coastal retreat. Engineered with a closed-loop marine-grade 316 stainless steel manifold and precision-chiseled acanthus lips that produce a soothing harmonic water cadence without splashing.',
+      desc: 'Handcrafted for an outdoor courtyard driveway. Built with stainless steel water plumbing and smooth carved tiers that create a relaxing water sound without splashing outside the pool.',
       patron: 'Estate Patronage Private Trust'
     }
   ];
@@ -50,14 +50,14 @@ export default function PrivateCommissionsPage() {
           <div className="breadcrumbs">
             <Link href="/">Home</Link>
             <span>/</span>
-            <span>Atelier Portfolio</span>
+            <span>Client Projects</span>
             <span>/</span>
-            <span>Private Commissions &amp; Global Patrons</span>
+            <span>Custom Temples &amp; Worldwide Clients</span>
           </div>
-          <h1>Private Commissions &amp; Global Patrons</h1>
+          <h1>Custom Temples &amp; Worldwide Projects</h1>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
-            Explore curated architectural case studies of bespoke Makrana marble sanctums, monumental temples, and estate water cascades commissioned across London, Dubai, Manhattan, Mumbai, and Zurich.
+            Real stories and photos of custom white marble temples and water fountains built for families across London, Dubai, the USA, Mumbai, and worldwide.
           </p>
         </div>
       </section>
@@ -84,25 +84,25 @@ export default function PrivateCommissionsPage() {
                       {comm.title}
                     </h2>
                     <div style={{ fontSize: '12px', color: '#b08a4f', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '14px' }}>
-                      Stone: {comm.stone}
+                      Marble: {comm.stone}
                     </div>
                     <p style={{ color: '#4a4239', lineHeight: 1.65, marginBottom: '20px', fontSize: '14px' }}>
                       {comm.desc}
                     </p>
                     <div style={{ padding: '14px 18px', background: '#faf6ee', borderRadius: '6px', borderLeft: '3px solid #b8863f', marginBottom: '24px' }}>
                       <span style={{ fontSize: '11px', color: '#8c6220', textTransform: 'uppercase', fontWeight: 700, display: 'block', marginBottom: '2px' }}>
-                        Patron Commission
+                        Client Name
                       </span>
                       <strong style={{ fontSize: '14px', color: '#1c1813' }}>{comm.patron}</strong>
                     </div>
                     <div className="info-actions">
                       <a
-                        href={`https://wa.me/917597417274?text=${encodeURIComponent(`Namaste AFG Marble, I am interested in a commission similar to "${comm.title}". Please share details and pricing.`)}`}
+                        href={`https://wa.me/917597417274?text=${encodeURIComponent(`Namaste AFG Marble, I am interested in a design similar to "${comm.title}". Please share details and pricing.`)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn-primary"
                       >
-                        <span className="btn-primary__text">Inquire Similar Commission</span>
+                        <span className="btn-primary__text">Get Price &amp; Details on WhatsApp</span>
                         <span className="btn-primary__icon">→</span>
                       </a>
                     </div>

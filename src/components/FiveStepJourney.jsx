@@ -7,14 +7,14 @@ export default function FiveStepJourney({ onOpenInquiry }) {
   const steps = [
     {
       num: '01',
-      title: "One-on-One Space Discovery",
-      tagline: 'We understand your space, your sacred faith & your aesthetic vision',
-      milestone: 'Discovery Session',
-      desc: 'Connect with our senior architectural stone consultant over video or in person. Share your floor dimensions, wall photographs, ceiling height, and family deity preferences.',
+      title: "1. Free Design Discussion",
+      tagline: 'Tell us your room size and the design you want',
+      milestone: 'Design Discussion',
+      desc: 'Talk with our marble temple expert on WhatsApp, phone, or video call. Simply share your room measurements and photos to get started.',
       bullets: [
-        'Share your site photographs & wall/floor measurements down to the centimeter',
-        'Define deity positions, aarti diya smoke venting & parikrama clearance',
-        'Receive immediate preliminary feasibility review and stone options',
+        'Share your room photos and width, depth, height measurements',
+        'Choose where your deities will sit, drawer storage, and lighting preferences',
+        'Receive immediate advice and marble recommendations',
       ],
       icon: (
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -27,14 +27,14 @@ export default function FiveStepJourney({ onOpenInquiry }) {
     },
     {
       num: '02',
-      title: 'Bespoke 2D CAD Elevation Blueprint',
-      tagline: 'Precision architectural elevation drafted to your room dimensions',
-      milestone: '2D CAD Elevation & Stone Measurement Plan',
-      desc: 'Our architectural team drafts comprehensive 2D CAD elevations and stone cross-sections tailored to your space. (3D CAD rendering available upon special client request). Every shikhara curve, jali pattern, and hidden lighting channel is planned with precision.',
+      title: '2. Free 2D Design Drawing',
+      tagline: 'See exact drawings of your temple before carving',
+      milestone: '2D Design Drawing Ready',
+      desc: 'We make clear 2D design drawings with exact measurements to fit your room perfectly. You can review the pillars, carvings, drawers, and lights before we start cutting stone.',
       bullets: [
-        'Custom space orientation & architectural proportions tailored to your space and preferences',
-        'Detailed modular interlocking joint schematics for easy indoor assembly',
-        'Select gold leaf gilding, mother-of-pearl inlay, and ambient illumination points',
+        'Custom design showing front, side, and inside views of the temple',
+        'Numbered interlocking parts designed for easy home assembly',
+        'Choose gold leaf work, flower inlay, and warm LED lighting points',
       ],
       icon: (
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -46,14 +46,14 @@ export default function FiveStepJourney({ onOpenInquiry }) {
     },
     {
       num: '03',
-      title: 'Virgin Bedrock Selection & Hand-Chiseling',
-      tagline: 'Direct quarry selection in Makrana with zero iron inclusions',
-      milestone: 'Artisan Chiseling Commences',
-      desc: 'We inspect virgin calcite seams in Makrana using ultrasonic sound wave testing to guarantee flawless monolithic blocks with zero internal hairline fractures.',
+      title: '3. Pure Marble Hand-Carving',
+      tagline: '100% natural Makrana marble carved by master craftsmen',
+      milestone: 'Hand-Carving in Progress',
+      desc: 'We select 100% pure white Makrana marble blocks without cracks or iron impurities. Master Rajasthani stone carvers hand-chisel every pillar and detail, sending you photo and video updates on WhatsApp.',
       bullets: [
-        '100% pure Makrana white marble — guaranteed never to yellow or stain from puja liquids',
-        'Hand-chiseled by traditional master sculptors with generations of temple craft heritage',
-        'Bi-weekly photo and video updates sent directly to your WhatsApp',
+        '100% pure Makrana white marble — guaranteed never to turn yellow or absorb stains',
+        'Hand-carved by traditional master stone sculptors with generations of experience',
+        'Regular photo and video progress updates sent directly to your WhatsApp',
       ],
       icon: (
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -63,14 +63,14 @@ export default function FiveStepJourney({ onOpenInquiry }) {
     },
     {
       num: '04',
-      title: '100% Pre-Assembly Trial & 4K Approval',
-      tagline: 'Zero surprises — assembled completely in our yard before packaging',
-      milestone: 'Client Milestone Verification',
-      desc: 'Before any piece is packed, we erect the entire temple inside our Makrana artisanal yard. All dry joints, lighting circuits, and smooth drawer glides are inspected on live video.',
+      title: '4. Full Trial Setup & Video Check',
+      tagline: 'We build your entire temple in our workshop to test every joint',
+      milestone: 'Customer Video Verification',
+      desc: 'Before packing, we assemble the whole temple in our workshop. We test all joints, drawers, and lights, and send you a clear HD video walkthrough so you see exactly what you get.',
       bullets: [
-        '4K multi-angle video walkthrough and high-res macro photos sent to you',
-        'Detailed metric ruler verification of outer and inner dimensions',
-        'Dry-fit interlocking numbers stamped discretely on joint faces',
+        'Full HD video walkthrough and close-up photos sent to you on WhatsApp',
+        'Complete measurement verification with tape measure shown on video',
+        'Each piece is numbered for simple matching when it reaches your home',
       ],
       icon: (
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -81,14 +81,14 @@ export default function FiveStepJourney({ onOpenInquiry }) {
     },
     {
       num: '05',
-      title: 'ISPM-15 Crating & White-Glove Installation',
-      tagline: 'Safe international transit & seamless indoor setup in 4–6 hours',
-      milestone: 'Doorstep Delivery & Sacred Consecration',
-      desc: 'Sealed inside custom heat-treated fumigated pine crates lined with 50mm shock EVA foam and tilt/shock monitors. Delivered directly to your residence worldwide with artisan assistance.',
+      title: '5. Safe Wooden Box Packing & Home Delivery',
+      tagline: 'Safe delivery to your home in India or abroad, and easy assembly',
+      milestone: 'Home Delivery & Setup',
+      desc: 'Your temple is packed in strong, cushioned wooden boxes with full safety insurance. Pieces are numbered for an easy 4-hour setup at your home with zero mess and no cement needed.',
       bullets: [
-        'ISPM-15 certified customs-cleared marine shipping across 28+ countries',
-        'Numbered interlocking blocks enable effortless 4–6 hour white-glove setup',
-        'Complete sacred care guide with natural calcite maintenance instructions',
+        'Heavy-duty wooden crates with thick foam cushions shipped safely across India and 28+ countries',
+        'Easy 4 to 6 hour clean setup inside your home with no dust, cement, or wet mortar',
+        'Easy care guide included: simply clean with water and cotton cloth',
       ],
       icon: (
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -109,11 +109,11 @@ export default function FiveStepJourney({ onOpenInquiry }) {
             HOW IT WORKS
           </span>
           <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.5vw, 44px)', color: '#1c1813' }}>
-            Design Your Sacred Sanctum in 5 Easy Steps
+            How We Make Your Marble Temple in 5 Simple Steps
           </h2>
           <div className="gold-rule center" style={{ margin: '14px auto 20px' }}></div>
           <p className="sub-lead" style={{ maxWidth: '720px', margin: '0 auto', fontSize: '15px', color: '#6b5f52', lineHeight: 1.6 }}>
-            From your first room sketch to the final consecrated aarti, our structured atelier process guarantees architectural perfection, zero hidden surprises, and lifetime durability.
+            From your room measurements to final home delivery, we guide you at every step so you get the exact temple you envisioned.
           </p>
         </div>
 
@@ -286,17 +286,17 @@ export default function FiveStepJourney({ onOpenInquiry }) {
                 {steps[activeStep].icon}
               </div>
               <div>
-                <strong style={{ display: 'block', fontSize: '15px', color: '#1c1813' }}>AFG Atelier Commitment</strong>
-                <span style={{ fontSize: '12px', color: '#8a8073' }}>Trusted by over 1,200 royal estates &amp; residences worldwide</span>
+                <strong style={{ display: 'block', fontSize: '15px', color: '#1c1813' }}>Our Quality Promise</strong>
+                <span style={{ fontSize: '12px', color: '#8a8073' }}>Trusted by over 1,200 families &amp; homes across India and worldwide</span>
               </div>
             </div>
 
             <div style={{ borderTop: '1px solid rgba(176, 138, 79, 0.15)', paddingTop: '16px' }}>
               <strong style={{ display: 'block', fontSize: '13px', color: '#1c1813', marginBottom: '6px' }}>
-                What happens at this milestone?
+                What happens at this step?
               </strong>
               <p style={{ fontSize: '12px', color: '#6b5f52', lineHeight: 1.6, margin: 0 }}>
-                You maintain direct one-on-one communication with our senior Sthapathi and project lead. No intermediaries, no robotic ticketing. You approve every visual checkpoint before we move forward.
+                You speak directly with our senior temple craft expert. No middlemen, no confusion. You approve every visual update before we move forward.
               </p>
             </div>
 
@@ -314,7 +314,7 @@ export default function FiveStepJourney({ onOpenInquiry }) {
               <div>
                 <span style={{ fontSize: '11px', color: '#8a8073', display: 'block' }}>Estimated Timeline</span>
                 <strong style={{ fontSize: '13px', color: '#1c1813' }}>
-                  {activeStep === 0 ? 'Within 24 Hours' : activeStep === 1 ? '3 to 5 Days' : activeStep === 2 ? '25 to 45 Days' : activeStep === 3 ? '48 Hours Live' : 'ISPM-15 Priority Air/Sea'}
+                  {activeStep === 0 ? 'Within 24 Hours' : activeStep === 1 ? '1 to 2 Days' : activeStep === 2 ? '25 to 40 Days' : activeStep === 3 ? 'Same Day Video' : 'Direct Home Delivery'}
                 </strong>
               </div>
               <span style={{ fontSize: '12px', fontWeight: 600, color: '#b08a4f' }}>Guaranteed</span>

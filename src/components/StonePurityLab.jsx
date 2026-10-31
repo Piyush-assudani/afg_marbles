@@ -5,38 +5,38 @@ import { Droplets, Flame, Building2, Crown, AlertTriangle, PackageCheck } from '
 const TESTS = [
   {
     id: 'abhishek',
-    title: 'Daily Milk, Honey & Gangajal Abhishek Test',
-    subtitle: 'Porosity & Staining Benchmark After 365 Days of Sacred Puja Rituals',
-    makranaValue: '0.04% Impervious Porosity',
-    makranaResult: 'Flawless pristine white. Crystalline calcite lattice repels liquids completely. Simply wipe with a damp cotton cloth. Zero odor, zero yellowing forever.',
-    makranaStatus: 'CERTIFIED ZERO-YELLOWING',
-    commercialValue: '0.85% Spongy Porosity',
-    commercialResult: 'Absorbs abhishek milk into internal capillaries. Bacterial decomposition causes yellowish-brown sulfur stains and stale odor within 3 to 6 months.',
+    title: 'Daily Milk, Water & Diya Oil Test',
+    subtitle: 'Tested Under 365 Days of Daily Puja Liquids',
+    makranaValue: 'Zero Absorption (100% Non-Porous)',
+    makranaResult: 'Pure white stone stays bright. Milk, water, honey, and diya oil wipe off completely with a wet cotton cloth. Guaranteed never to turn yellow or smell.',
+    makranaStatus: 'NEVER TURNS YELLOW',
+    commercialValue: 'Absorbs Liquids & Spills',
+    commercialResult: 'Absorbs milk and oil deep inside the stone pores. Creates permanent brownish-yellow spots and bad smell within a few months.',
     commercialStatus: 'HIGH STAINING RISK',
     icon: Droplets
   },
   {
     id: 'aarti',
-    title: 'Camphor & Diya Aarti Flame Thermal Shock',
-    subtitle: 'Heat Tolerance from Brass Diyas & Sacred Fire at 350°C',
-    makranaValue: 'Dense Interlocking Rhomboid Calcite',
-    makranaResult: 'High thermal conductivity dissipates localized heat evenly. No resin binders to burn, melt, or turn black. Retains natural cool touch.',
-    makranaStatus: 'FIRE & HEAT IMPERVIOUS',
-    commercialValue: 'Polyester Resin-Filled Micro-Voids',
-    commercialResult: 'Commercial stones use epoxy resin fills in quarries. Aarti heat melts and discolors the resin, causing dark scorched halos and thermal fracture cracks.',
-    commercialStatus: 'RESIN SCORCH RISK',
+    title: 'Camphor & Diya Flame Heat Test',
+    subtitle: 'Safe for Diya Flames and Aarti Fire',
+    makranaValue: '100% Solid Natural Stone',
+    makranaResult: 'Natural stone handles heat safely. No plastic or chemical glue to melt, burn, or turn black from diya flames.',
+    makranaStatus: 'FIRE & HEAT SAFE',
+    commercialValue: 'Filled With Chemical Resin/Glue',
+    commercialResult: 'Cheap commercial stones use glue and resin fillers. Diya heat melts the glue, creating black burn marks and cracks.',
+    commercialStatus: 'CAN BURN & CRACK',
     icon: Flame
   },
   {
     id: 'longevity',
-    title: '500-Year Sunlight & Ambient Crystallization',
-    subtitle: 'Microscopic Hardness & Natural Luster Over Generations',
-    makranaValue: 'Taj Mahal Proven Since 1632',
-    makranaResult: 'Pure calcite continues to crystallize and harden with age. The more it is touched and washed, the more lustrous its translucent glass sheen becomes.',
-    makranaStatus: 'MOHS 3.5 CRYSTALLINE HARDNESS',
-    commercialValue: 'Dolomitic Chalky Oxidation',
-    commercialResult: 'Foreign and artificial marbles contain iron traces that oxidize into rusty yellow veins when exposed to air and light, permanently dulling reflection.',
-    commercialStatus: 'OXIDATION & CHALKING',
+    title: 'Sunlight, Washing & Long Life Test',
+    subtitle: 'Proven to Last for Centuries',
+    makranaValue: 'Used in Taj Mahal Since 1632',
+    makranaResult: 'Pure Makrana marble gets shinier and whiter the more it is touched and washed with water. Built to last for generations.',
+    makranaStatus: 'STAYS SHINY FOREVER',
+    commercialValue: 'Turns Yellow From Air & Light',
+    commercialResult: 'Fake or low-grade marbles contain iron particles that react with air and turn yellowish within 2 to 3 years.',
+    commercialStatus: 'TURNS YELLOW & DULL',
     icon: Building2
   }
 ];
@@ -45,8 +45,8 @@ export default function StonePurityLab({ onOpenInquiry }) {
   const [activeTest, setActiveTest] = useState(TESTS[0]);
 
   const handleRequestSampleBox = () => {
-    const text = `*AFG MARBLE & ARTS — COMPLIMENTARY STONE PURITY BOX REQUEST*\n\n` +
-      `Hello, I would like to request a Complimentary Makrana Calcite Stone Sample Box delivered to my residence to inspect the 99% pure calcite crystallization firsthand before commissioning our mandir.\n\n` +
+    const text = `*AFG MARBLE & ARTS — MARBLE SAMPLE BOX REQUEST*\n\n` +
+      `Hello, I would like to request a Free Marble Sample Box delivered to my home to check the pure white Makrana marble before ordering our temple.\n\n` +
       `Please let me know where to provide my delivery address.`;
 
     const url = `https://wa.me/917597417274?text=${encodeURIComponent(text)}`;
@@ -59,14 +59,14 @@ export default function StonePurityLab({ onOpenInquiry }) {
         {/* Header */}
         <div className="sec-header text-center" style={{ marginBottom: '44px' }}>
           <span className="card-badge" style={{ position: 'static', display: 'inline-block', marginBottom: '12px' }}>
-            SCIENTIFIC BENCHMARK &amp; PURITY LAB
+            MARBLE PURITY TESTS
           </span>
           <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.8vw, 44px)', color: '#1c1813', letterSpacing: '-0.01em' }}>
-            Why Makrana Calcite Outlives All Other Marbles
+            Why Pure Makrana Marble Stays White Forever
           </h2>
           <div className="gold-rule center" style={{ margin: '14px auto 20px' }}></div>
           <p className="sub-lead" style={{ maxWidth: '760px', margin: '0 auto', fontSize: '15px', color: '#6b5f52', lineHeight: 1.6 }}>
-            The Taj Mahal has stood for 390+ years under sun, monsoons, and pollution because it is made of single-source Makrana 99% CaCO₃ calcite. Inspect the laboratory test comparisons below before deciding on your family temple.
+            The Taj Mahal has stayed bright white for nearly 400 years because it was built using 100% pure Makrana marble. See the test results below to understand why it never absorbs stains or turns yellow.
           </p>
         </div>
 
@@ -173,7 +173,7 @@ export default function StonePurityLab({ onOpenInquiry }) {
                 </span>
                 <div>
                   <h4 style={{ fontFamily: 'var(--serif)', fontSize: '18px', color: '#1c1813', margin: 0 }}>
-                    Pure Makrana 99% Calcite Bedrock
+                    Pure Makrana Natural White Marble
                   </h4>
                   <span style={{ fontSize: '11px', color: '#27ae60', fontWeight: 700 }}>
                     ● {activeTest.makranaStatus}

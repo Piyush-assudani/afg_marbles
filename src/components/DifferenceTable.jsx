@@ -4,39 +4,39 @@ import Link from 'next/link';
 export default function DifferenceTable({ onOpenInquiry }) {
   const ROWS = [
     {
-      feature: 'Stone Purity & Marble Quality',
-      afg: '98%–99% Pure Makrana White Marble (The same pure stone used in the Taj Mahal)',
-      other: 'Commercial marble with iron impurities that turn yellow over time'
+      feature: '1. Marble Purity',
+      afg: '100% Pure Natural Makrana White Marble (Same stone as the Taj Mahal)',
+      other: 'Cheap market marble mixed with chemicals that turn yellow'
     },
     {
-      feature: 'Stain Resistance (Oil, Milk & Water)',
-      afg: '100% Non-Porous — Daily puja milk, diya oil, and water wipe off cleanly without any stains',
-      other: 'Porous stone that absorbs liquids and develops permanent dark yellow spots'
+      feature: '2. Stain Resistance',
+      afg: '100% Stain-Free — Milk, water, and diya oil wipe off easily with a wet cloth',
+      other: 'Absorbs oily puja liquids and leaves permanent dark marks'
     },
     {
-      feature: 'Lifetime Color & Shine Guarantee',
-      afg: 'Zero-Yellowing Guarantee — Stays brilliant white and looks newer with every wash',
-      other: 'Turns dull, yellowish, and lifeless within 2 to 3 years'
+      feature: '3. Lifetime White Shine',
+      afg: 'Never Turns Yellow — Stays bright white and shines brighter with every wash',
+      other: 'Turns dull and yellowish within 2 to 3 years'
     },
     {
-      feature: 'Artisan Hand-Carving',
-      afg: 'Hand-chiseled by traditional master sculptors with generations of temple-building heritage',
-      other: 'Rough machine cutting and angle grinders with cheap synthetic fillers'
+      feature: '4. Hand Carving Quality',
+      afg: 'Deep 3D hand-carving by master artisans with generations of experience',
+      other: 'Rough machine cutting with flat edges and cheap plastic putty'
     },
     {
-      feature: 'Interlocking Joints & Assembly',
-      afg: 'Interlocking marble joints built to accurate Vastu guidelines (No harmful chemical glue)',
-      other: 'Glued together with toxic adhesives and putty that loosen over time'
+      feature: '5. How It Fits Together',
+      afg: 'Pieces slot together firmly and easily (No smelly chemical glue)',
+      other: 'Stuck together with cheap chemical glue that breaks over time'
     },
     {
-      feature: 'Pre-Delivery Inspection',
-      afg: 'Full trial assembly in our Makrana workshop with HD video review sent to you before dispatch',
-      other: 'Dispatched as loose unverified pieces with fitting issues and uneven gaps on-site'
+      feature: '6. Workshop Testing Before Delivery',
+      afg: 'We assemble your full temple in our workshop and send you clear videos before packing',
+      other: 'Sent as loose pieces with fitting problems when delivered to your home'
     },
     {
-      feature: 'Packaging & Transit Safety',
-      afg: 'Heavy-duty wooden crates with multi-layer shock protection and full transit insurance',
-      other: 'Loose loading in open trucks with high risk of cracks and chipped edges'
+      feature: '7. Packing & Delivery Safety',
+      afg: 'Packed in strong wooden boxes with thick foam cushions and 100% insurance',
+      other: 'Loaded loosely in trucks with high risk of cracks and broken corners'
     }
   ];
 
@@ -44,11 +44,11 @@ export default function DifferenceTable({ onOpenInquiry }) {
     <section className="sec-difference">
       <div className="sec-container">
         <div className="sec-header text-center">
-          <span className="card-badge">THE ARCHITECTURAL BENCHMARK</span>
-          <h2>The A.F.G Difference vs Local Vendors</h2>
+          <span className="card-badge">HONEST COMPARISON</span>
+          <h2>Why Choose A.F.G Marble Over Local Sellers</h2>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
-            Why temple trusts, architects, and families across India and worldwide trust A.F.G Marble &amp; Arts for their home temples.
+            See how our 100% pure Makrana marble and master hand carving compare to cheap local alternatives.
           </p>
         </div>
 
@@ -63,14 +63,14 @@ export default function DifferenceTable({ onOpenInquiry }) {
                   <th>FEATURE</th>
                   <th className="th-afg" style={{ width: '38%' }}>
                     <span className="th-badge" style={{ display: 'inline-block', marginBottom: '6px' }}>
-                      OFFICIAL ATELIER
+                      DIRECT WORKSHOP
                     </span>
                     <span style={{ display: 'block', fontSize: '15px', letterSpacing: '0.04em' }}>
                       A.F.G MARBLE &amp; ARTS
                     </span>
                   </th>
                   <th className="th-other" style={{ width: '34%' }}>
-                    LOCAL COMMERCIAL VENDORS
+                    LOCAL COMMERCIAL SELLERS
                   </th>
                 </tr>
               </thead>

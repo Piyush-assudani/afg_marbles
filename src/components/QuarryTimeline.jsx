@@ -6,31 +6,31 @@ export default function QuarryTimeline() {
   const steps = [
     {
       num: '01',
-      title: '350-Foot Subterranean Bedrock Extraction',
+      title: 'Selecting 100% Pure Makrana Marble',
       location: 'Chak Dungri & Albeta Mines, Makrana',
-      desc: 'Extracted exclusively from 300+ feet deep bedrock where pressure has formed pure 99% CaCO3 calcite crystals. Tested for zero micro-porosity (<0.04%) and high structural density.',
-      badge: 'Certified 99% Calcite',
+      desc: 'Directly sourced from deep natural Makrana marble quarries in Rajasthan. Tested for 100% pure stone density with zero stains and zero yellowing.',
+      badge: '100% Pure Marble',
     },
     {
       num: '02',
-      title: 'Ayadi Vastu Geometry & Rough Blocking',
-      location: 'Sthapatya Drafting Studio, Makrana',
-      desc: 'Master Sthapatis align raw blocks to the client’s spatial orientation and Ayadi 6-formula harmonics (Aya, Vya, Rasi, Nakshatra) to maximize cosmic resonance.',
-      badge: 'Sthapatya Veda Ratios',
+      title: 'Vastu Dimensions & Design Drawing',
+      location: 'Design Studio, Makrana',
+      desc: 'Our temple designers calculate auspicious Vastu measurements and prepare 2D design drawings tailored to fit your room dimensions.',
+      badge: 'Auspicious Vastu Sizes',
     },
     {
       num: '03',
-      title: '5-Stage Hand Carving by Silawat Lineage',
-      location: 'Heritage Guild Atelier, Makrana',
-      desc: 'Chiseled entirely by hand using hardened carbon-tipped chisels. Spire shikharas, lotus corbels, and pierced jaali lattices are sculpted with millimeter precision.',
-      badge: 'Zero Hollow Core',
+      title: 'Hand Carving by Master Artisans',
+      location: 'Artisan Workshop, Makrana',
+      desc: 'Chiseled entirely by skilled hands using traditional stonecraft techniques. Pillars, domes, and jali doors are carved with deep, beautiful 3D detail.',
+      badge: 'Solid Natural Marble',
     },
     {
       num: '04',
-      title: 'Pre-Assembly Dry-Fit & White-Glove Crate',
-      location: 'Inspection Yard & Global Doorstep',
-      desc: 'Every creation is 100% pre-assembled in our yard for client 4K video inspection. Numbered modular interlocking blocks pack into ISPM-15 fumigated pine crates for global dispatch.',
-      badge: '4–6 Hr Dry-Joint Setup',
+      title: 'Full Workshop Setup & Safe Packing',
+      location: 'Inspection Yard & Delivery Team',
+      desc: 'Every temple is fully assembled in our workshop for your video and photo approval. Numbered interlocking parts are packed inside strong wooden crates for 100% safe delivery.',
+      badge: 'Easy Interlocking Fit',
     },
   ];
 
@@ -42,14 +42,14 @@ export default function QuarryTimeline() {
             className="card-badge"
             style={{ position: 'static', display: 'inline-block', marginBottom: '12px', background: 'rgba(176, 138, 79, 0.15)', color: '#8c6a36' }}
           >
-            BEDROCK TO SANCTUM JOURNEY
+            OUR 4-STEP CRAFT JOURNEY
           </span>
           <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.5vw, 44px)', color: '#1c1813', marginBottom: '12px' }}>
-            From 350-Foot Makrana Bedrock to Consecration
+            From Pure Makrana Marble to Your Home Temple
           </h2>
           <div className="gold-rule center" style={{ margin: '14px auto 20px' }}></div>
           <p style={{ maxWidth: '720px', margin: '0 auto', fontSize: '15px', color: '#6b5f52', lineHeight: 1.6 }}>
-            The transparent 4-stage journey of each monumental creation. Trace the lineage of authentic Rajasthan marble from subterranean quarrying to white-glove setup.
+            The transparent 4-step journey of your temple. From pure Rajasthan marble selection to safe delivery and setup in your home.
           </p>
         </div>
 

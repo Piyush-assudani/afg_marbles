@@ -28,14 +28,14 @@ export default function PalatialFountainsPage() {
           <div className="breadcrumbs">
             <Link href="/">Home</Link>
             <span>/</span>
-            <span>Masterpiece Catalog</span>
+            <span>Catalog</span>
             <span>/</span>
-            <span>Palatial Estate Fountains</span>
+            <span>Marble Fountains</span>
           </div>
-          <h1>Palatial Cascading Fountains &amp; Water Architecture</h1>
+          <h1>Hand-Carved Marble Fountains &amp; Water Features</h1>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
-            Monumental estate centerpieces sculpted exclusively from authentic Rajnagar White Marble—the revered hydraulic heavy calcite stone (2.72 g/cm³) engineered for continuous pressurized water cascades, zero algae adherence, and all-weather frost resilience. Hover or tap the angle thumbnails below to preview multiple fountain views.
+            Handmade outdoor and indoor marble fountains made from 100% natural, solid white marble. Built to handle flowing water in all weather conditions without staining or cracking. Click any design below to see photos, dimensions, and get direct workshop prices.
           </p>
         </div>
       </section>

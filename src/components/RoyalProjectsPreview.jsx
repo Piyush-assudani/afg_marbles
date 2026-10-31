@@ -9,28 +9,28 @@ const LANDMARKS = [
     title: 'The Lake Pichola Private Estate Fountain & Pavilions',
     city: 'Udaipur, Rajasthan',
     type: 'Palatial Water & Heritage Pavilion',
-    stone: 'Solid Makrana Calcite & Bidasar Green Bedrock',
+    stone: 'Solid Makrana White & Bidasar Green Marble',
     scale: '16ft Diameter Basin · 12ft Chhatri Pair',
     image: '/gallery/fountain-courtyard-circular.webp',
     stat1: '24 Tonnes',
-    stat1Label: 'Bedrock Block',
+    stat1Label: 'Solid Marble Block',
     stat2: '14 Weeks',
     stat2Label: 'Artisan Chiseling',
     desc: 'Commissioned for a heritage lakefront estate. Features a monolithic 16-petal lotus overflow bowl flanked by twin octagonal carved chhatris with gold finials.',
   },
   {
     id: 'mayfair-london',
-    title: 'The Mayfair Penthouse Pure Calcite Mandir Sanctum',
+    title: 'The Mayfair Penthouse Pure White Marble Temple',
     city: 'Mayfair, London, UK',
-    type: 'Contemporary Pooja Sanctum',
-    stone: 'Makrana 99% Pure Calcite & 24K Pure Gold Leaf Inlay',
+    type: 'Modern Home Temple',
+    stone: 'Pure Makrana White Marble with 24K Gold Work',
     scale: '8.5ft W × 4.2ft D × 9.0ft H',
     image: '/gallery/mandir-grand-makrana-8361.webp',
-    stat1: '100% Calcite',
-    stat1Label: 'Zero-Porosity Stone',
-    stat2: '5 Hours',
-    stat2Label: 'Dry-Joint Setup',
-    desc: 'Bespoke sanctum engineered for a Grade II listed London penthouse. Features sound-dampened garbhagriha, concealed smoke draft flues, and modular dry-joint assembly.',
+    stat1: '100% Pure',
+    stat1Label: 'Pure Natural Stone',
+    stat2: 'Easy Fit',
+    stat2Label: 'Quick Setup',
+    desc: 'Custom made temple designed for an apartment in London. Features built-in smoke vent, soft LED lighting, and easy modular assembly.',
   },
   {
     id: 'palm-jumeirah',
@@ -60,14 +60,14 @@ export default function RoyalProjectsPreview() {
             className="card-badge"
             style={{ position: 'static', display: 'inline-block', marginBottom: '12px', background: 'rgba(212, 175, 55, 0.2)', color: '#ecd39b' }}
           >
-            GLOBAL PATRON LANDMARKS
+            OUR COMPLETED WORK
           </span>
           <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.5vw, 44px)', color: '#fff9ed', marginBottom: '12px' }}>
-            Royal Heritage &amp; Private Estate Portfolio
+            Completed Custom Temples &amp; Fountains
           </h2>
           <div className="gold-rule center" style={{ margin: '14px auto 20px', backgroundColor: '#b08a4f' }}></div>
           <p style={{ maxWidth: '720px', margin: '0 auto', fontSize: '15px', color: '#d8ccb8', lineHeight: 1.6 }}>
-            Completed architectural commissions across private residences, royal estates, and spiritual sanctuaries worldwide.
+            Real projects handcrafted and delivered to homes, estates, and temples across India and worldwide.
           </p>
         </div>
 

@@ -24,7 +24,7 @@ export const metadata = {
     'AFG Marble and Arts',
     'marble deity murtis',
     'Makrana marble manufacturer Rajasthan',
-    'Taj Mahal stratum marble',
+    'pure Taj Mahal marble',
   ],
   authors: [{ name: 'A.F.G Marble & Arts', url: 'https://afgmarbel.com' }],
   creator: 'A.F.G Marble & Arts',
@@ -170,7 +170,7 @@ const faqSchema = {
       name: 'Can an empty alcove or dedicated room be customized with Ayadi Vastu proportions?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Yes. A.F.G Marble & Arts' Master Sthapatis calculate Ayadi metrics (Dhana Aya, Vriddhi Aya, Yoni) based on your exact space measurements and family astrological nakshatra, delivering 2D architectural CAD blueprints within 24 hours.",
+        text: "Yes. A.F.G Marble & Arts' marble temple experts calculate auspicious Vastu measurements based on your room dimensions and family requirements, providing free 2D design drawings within 24 hours.",
       },
     },
     {

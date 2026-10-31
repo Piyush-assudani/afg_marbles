@@ -29,7 +29,7 @@ export default function PietraDuraInlayPage() {
       gemstones: 'Semi-Precious Agate, Turquoise & Malachite',
       desc: 'Classical Mughal-Rajasthani vine scroll inlaid around sanctum archways and door frames. Each flower petal is individually shaped on emery wheels by master inlayers.',
       img: '/gallery/sanctum-gold-bas-relief.webp',
-      badge: 'Bespoke Border',
+      badge: 'Custom Border',
       tag: 'Archway Inlay'
     },
     {
@@ -50,14 +50,14 @@ export default function PietraDuraInlayPage() {
           <div className="breadcrumbs">
             <Link href="/">Home</Link>
             <span>/</span>
-            <span>Masterpiece Catalog</span>
+            <span>Catalog</span>
             <span>/</span>
-            <span>Pietra Dura &amp; Parchin Kari Inlay</span>
+            <span>Stone Inlay Work</span>
           </div>
-          <h1>Pietra Dura &amp; Semi-Precious Stone Inlay</h1>
+          <h1>Handmade Stone Inlay &amp; Floral Art</h1>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
-            The imperial art of Taj Mahal stone inlay (Parchin Kari), preserved across five generations of our master lapidaries. Natural gemstones including Badakhshan Lapis Lazuli, Russian Malachite, and iridescent Mother of Pearl chiseled flush into pure Makrana calcite marble.
+            The famous Taj Mahal stone inlay art (Parchin Kari). Colorful natural semi-precious stones and mother-of-pearl are carefully hand-cut and inlaid flush into pure white Makrana marble.
           </p>
         </div>
       </section>
@@ -95,7 +95,7 @@ export default function PietraDuraInlayPage() {
                       type="button"
                       className="btn-whatsapp-pill"
                       onClick={() => {
-                        const text = `Namaste AFG Marble, I am inquiring about custom Pietra Dura Inlay work: "${item.title}". Please share stone options, CAD patterns, and pricing.`;
+                        const text = `Namaste AFG Marble, I am inquiring about custom stone inlay work: "${item.title}". Please share patterns and pricing.`;
                         window.open(`https://wa.me/917597417274?text=${encodeURIComponent(text)}`, '_blank');
                       }}
                       style={{
@@ -117,7 +117,7 @@ export default function PietraDuraInlayPage() {
                         boxShadow: '0 4px 16px rgba(28, 24, 19, 0.16)',
                       }}
                     >
-                      <span>Inquire on WhatsApp</span>
+                      <span>Get Price &amp; Details</span>
                     </button>
                   </div>
                 </div>

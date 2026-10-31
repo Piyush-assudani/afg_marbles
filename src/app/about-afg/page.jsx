@@ -7,28 +7,28 @@ export default function AboutAFGPage() {
   const TIMELINE = [
     {
       year: '1987',
-      title: 'Foundation at Makrana Bedrock',
-      desc: 'Established with direct quarry concessions in the historic Makrana calcite belt—the geological seam renowned for supplying stone to the Taj Mahal and Victoria Memorial.'
+      title: 'Foundation in Makrana',
+      desc: 'Started working directly with pure white marble from the historic quarries of Makrana, Rajasthan—the same natural stone used in the Taj Mahal.'
     },
     {
       year: '1998',
-      title: 'Makrana Master Sculptor Yard',
-      desc: 'Opened our central pre-assembly and stone sculpting atelier in Jaipur, bringing together senior 4th and 5th-generation Silawat guild carvers under one roof.'
+      title: 'Workshop & Artisan Studio',
+      desc: 'Set up our central hand-carving workshop, bringing together skilled traditional stone-carving artisans with generations of experience.'
     },
     {
       year: '2008',
-      title: 'Architectural CAD Precision Standards',
-      desc: 'Integrated sacred Vedic architectural formulas with precision 2D CAD elevation drafting, allowing patrons worldwide to verify proportions prior to chiseling.'
+      title: 'Custom 2D Design Drawings',
+      desc: 'Introduced custom 2D drawings matching room dimensions, letting families across India and overseas see their exact temple design before carving begins.'
     },
     {
       year: '2016',
-      title: 'ISPM-15 Global White-Glove Export',
-      desc: 'Expanded international logistics infrastructure with specialized shock-absorbing export crating, shipping turnkey sanctums to over 28 countries.'
+      title: 'Safe Worldwide Delivery',
+      desc: 'Expanded to safe export-grade wooden crate packing with foam cushioning, safely delivering temples to over 28 countries.'
     },
     {
       year: 'Today',
-      title: 'India’s Premier Marble Atelier',
-      desc: 'Over 5,000 sanctums, monumental temples, and palatial fountains consecrated across royal estates, temple trusts, and private luxury residences globally.'
+      title: 'Trusted by Over 5,000 Families',
+      desc: 'Over 5,000 handcrafted marble temples, fountains, and monuments built for homes, temples, and estates worldwide.'
     }
   ];
 
@@ -39,14 +39,14 @@ export default function AboutAFGPage() {
           <div className="breadcrumbs">
             <Link href="/">Home</Link>
             <span>/</span>
-            <span>The Atelier</span>
+            <span>About Us</span>
             <span>/</span>
             <span>About A.F.G Marble &amp; Arts</span>
           </div>
-          <h1>Crafting Sacred Eternity in Pure Makrana Marble</h1>
+          <h1>Handcrafting Pure White Marble Temples Since 1987</h1>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
-            Founded in 1987, A.F.G Marble &amp; Arts is Rajasthan’s premier family-owned stone atelier. We unite direct Makrana quarry bedrock mining with generational Silawat master sculpting to create consecrated sanctums that endure for centuries.
+            Founded in 1987, A.F.G Marble &amp; Arts is a family-owned marble workshop in Rajasthan. We work directly with pure Makrana marble and traditional master artisans to create long-lasting, beautifully hand-carved home temples.
           </p>
         </div>
       </section>
@@ -62,19 +62,19 @@ export default function AboutAFGPage() {
                 loading="lazy"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
-              <div className="media-caption-badge">Master Silawat Sculptor at Work</div>
+              <div className="media-caption-badge">Master Artisan Hand-Carving Marble</div>
             </div>
             <div className="page-info-block">
-              <span className="card-badge">THE SILAWAT GUILD LINEAGE</span>
+              <span className="card-badge">TRADITIONAL CRAFTSMANSHIP</span>
               <h2 style={{ fontFamily: 'var(--serif)', fontSize: '32px', color: '#1c1813', margin: '12px 0 16px' }}>
-                Custodians of Rajasthan’s Imperial Stonecraft
+                Generations of Hand-Carved Marble Mastery
               </h2>
               <div className="gold-rule"></div>
               <p style={{ color: '#4a4239', lineHeight: 1.65, marginBottom: '18px' }}>
-                Our stone sculptors belong to the historic Silawat community—the direct architectural lineage commissioned by Mughal emperors and Rajput Maharajas to shape India’s most iconic stone monuments.
+                Our stone artisans come from families that have carved Rajasthan&rsquo;s most iconic temples and palaces for generations.
               </p>
               <p style={{ color: '#4a4239', lineHeight: 1.65, marginBottom: '20px' }}>
-                While modern mass fabricators rely on high-speed CNC routers that burn marble edges and cause microscopic thermal fractures, our master craftsmen shape every peacock arch, kalash spire, and jali screen using hand diamond chisels and water honing.
+                While commercial factories use fast machine cutting that leaves rough edges and micro-cracks, our craftsmen hand-chisel every peacock arch, top dome, and jali screen with gentle care and water polishing.
               </p>
               <blockquote
                 style={{
@@ -95,11 +95,11 @@ export default function AboutAFGPage() {
               </blockquote>
               <div className="info-actions">
                 <Link href="/atelier-workshop" className="btn-primary">
-                  <span className="btn-primary__text">Explore Our 5-Stage Craft</span>
+                  <span className="btn-primary__text">See Our 5-Step Craft Process</span>
                   <span className="btn-primary__icon">→</span>
                 </Link>
                 <Link href="/contact" className="btn-outline-gold">
-                  <span>Visit Our Makrana Yard</span>
+                  <span>Visit Our Workshop</span>
                 </Link>
               </div>
             </div>
@@ -108,9 +108,9 @@ export default function AboutAFGPage() {
           {/* Heritage Timeline */}
           <div style={{ marginBottom: '60px' }}>
             <div className="sec-header text-center" style={{ marginBottom: '40px' }}>
-              <span className="card-badge">35+ YEARS OF MASTERY</span>
+              <span className="card-badge">SINCE 1987</span>
               <h2 style={{ fontFamily: 'var(--serif)', fontSize: '30px', color: '#1c1813' }}>
-                Our Historic Milestones Since 1987
+                Our Journey Over the Past 35+ Years
               </h2>
               <div className="gold-rule center"></div>
             </div>

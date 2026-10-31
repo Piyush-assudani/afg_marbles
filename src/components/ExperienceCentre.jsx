@@ -6,14 +6,14 @@ export default function ExperienceCentre({ onOpenInquiry }) {
       <div className="sec-container">
         <div className="sec-header text-center" style={{ marginBottom: '48px' }}>
           <span className="card-badge" style={{ position: 'static', display: 'inline-block', marginBottom: '12px' }}>
-            ATELIER &amp; EXPERIENCE CENTRES
+            WORKSHOPS &amp; SHOWROOMS
           </span>
           <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.5vw, 44px)', color: '#1c1813' }}>
-            Visit Our Flagship Artisanal Studios
+            Visit Our Workshops &amp; Experience Centers
           </h2>
           <div className="gold-rule center" style={{ margin: '14px auto 20px' }}></div>
           <p className="sub-lead" style={{ maxWidth: '720px', margin: '0 auto', fontSize: '15px', color: '#6b5f52', lineHeight: 1.6 }}>
-            Experience the luminescence of virgin Makrana Albeta marble in person. Walk through life-size sanctums, inspect hand-chiseled jalis, and consult directly with our master Sthapathis.
+            See our 100% pure white Makrana marble in person. Walk through life-size temples, check the hand carving details, and meet our master stone carvers.
           </p>
         </div>
 
@@ -61,13 +61,13 @@ export default function ExperienceCentre({ onOpenInquiry }) {
                   letterSpacing: '0.06em',
                 }}
               >
-                MASTER ATELIER &amp; YARD
+                MASTER WORKSHOP &amp; DISPLAY YARD
               </span>
             </div>
 
             <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', flex: 1 }}>
               <h3 style={{ fontFamily: 'var(--serif)', fontSize: '20px', color: '#1c1813', marginBottom: '8px' }}>
-                A.F.G Marble &amp; Arts — Makrana Master Atelier
+                A.F.G Marble &amp; Arts — Makrana Workshop
               </h3>
               <p style={{ fontSize: '13px', color: '#6b5f52', lineHeight: 1.5, marginBottom: '14px' }}>
                 Makrana Bypass Rd, Borawar, Gunawati Jageer, Rajasthan 341502
@@ -85,10 +85,10 @@ export default function ExperienceCentre({ onOpenInquiry }) {
                 <button
                   type="button"
                   className="btn-primary"
-                  onClick={() => onOpenInquiry?.({ title: 'Schedule Visit: Makrana Master Atelier' })}
+                  onClick={() => onOpenInquiry?.({ title: 'Schedule Visit: Makrana Workshop' })}
                   style={{ width: '100%', justifyContent: 'center' }}
                 >
-                  <span className="btn-primary__text">Schedule Private Atelier Visit</span>
+                  <span className="btn-primary__text">Schedule Workshop Visit</span>
                   <span className="btn-primary__icon">→</span>
                 </button>
 
@@ -107,7 +107,7 @@ export default function ExperienceCentre({ onOpenInquiry }) {
                     className="btn-outline-gold"
                     style={{ fontSize: '11px', padding: '9px 12px', textAlign: 'center', justifyContent: 'center' }}
                   >
-                    <span>Call Concierge</span>
+                    <span>Call Workshop Team</span>
                   </a>
                 </div>
               </div>
@@ -148,13 +148,13 @@ export default function ExperienceCentre({ onOpenInquiry }) {
                   letterSpacing: '0.06em',
                 }}
               >
-                QUARRY &amp; BEDROCK SELECTION
+                NATURAL MARBLE SELECTION
               </span>
             </div>
 
             <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', flex: 1 }}>
               <h3 style={{ fontFamily: 'var(--serif)', fontSize: '20px', color: '#1c1813', marginBottom: '8px' }}>
-                A.F.G Makrana Virgin Calcite Studio
+                A.F.G Pure Makrana Marble Selection Yard
               </h3>
               <p style={{ fontSize: '13px', color: '#6b5f52', lineHeight: 1.5, marginBottom: '14px' }}>
                 Makrana Bypass Rd, Borawar, Gunawati Jageer, Rajasthan 341502
@@ -165,13 +165,13 @@ export default function ExperienceCentre({ onOpenInquiry }) {
                   <circle cx="12" cy="12" r="10" />
                   <polyline points="12 6 12 12 16 14" />
                 </svg>
-                <span>Mon – Sat | 9:00 AM – 6:00 PM (Quarry Inspections)</span>
+                <span>Mon – Sat | 9:00 AM – 6:00 PM (Marble Inspections)</span>
               </div>
 
               <div style={{ marginTop: 'auto', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 <a
                   href={`https://wa.me/917597417274?text=${encodeURIComponent(
-                    'Namaste AFG Marble, I want to book a Makrana quarry bedrock inspection & live video slab selection session.'
+                    'Namaste AFG Marble, I want to book a Makrana marble inspection & live video slab selection session.'
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -197,7 +197,7 @@ export default function ExperienceCentre({ onOpenInquiry }) {
                     className="btn-outline-gold"
                     style={{ fontSize: '11px', padding: '9px 12px', textAlign: 'center', justifyContent: 'center' }}
                   >
-                    <span>Sourcing Lead</span>
+                    <span>Call Workshop Team</span>
                   </a>
                 </div>
               </div>
@@ -223,13 +223,13 @@ export default function ExperienceCentre({ onOpenInquiry }) {
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
             </svg>
             <h4 style={{ fontFamily: 'var(--serif)', fontSize: '16px', color: '#1c1813', margin: 0 }}>
-              Global Delivery &amp; White-Glove On-Site Assembly Presence
+              Safe Home Delivery &amp; Setup Network
             </h4>
           </div>
 
           <div style={{ marginBottom: '12px' }}>
             <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#8c6a36', display: 'block', marginBottom: '6px' }}>
-              Commissions Executed Across India:
+              Temples Delivered Across India:
             </span>
             <p style={{ fontSize: '13px', color: '#4a4239', lineHeight: 1.6, margin: 0 }}>
               Mumbai · New Delhi &amp; NCR · Bengaluru · Hyderabad · Ahmedabad · Surat · Kolkata · Chennai · Pune · Jaipur · Udaipur · Lucknow · Chandigarh · Indore
@@ -238,7 +238,7 @@ export default function ExperienceCentre({ onOpenInquiry }) {
 
           <div style={{ borderTop: '1px solid rgba(176, 138, 79, 0.15)', paddingTop: '12px' }}>
             <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#8c6a36', display: 'block', marginBottom: '6px' }}>
-              International ISPM-15 Certified Dispatches:
+              International Safe Deliveries:
             </span>
             <p style={{ fontSize: '13px', color: '#4a4239', lineHeight: 1.6, margin: 0 }}>
               United States (New York, California, Texas, New Jersey) · United Kingdom (London, Leicester) · United Arab Emirates (Dubai, Abu Dhabi) · Australia (Sydney, Melbourne) · Singapore · Canada · Tanzania · South Africa

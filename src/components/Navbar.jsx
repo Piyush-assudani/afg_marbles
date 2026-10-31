@@ -6,68 +6,68 @@ import { usePathname } from 'next/navigation';
 const MEGA_STONEWORKS = [
   {
     num: '01',
-    title: 'Pooja Rooms & Sanctums',
-    subtitle: 'Sacred Mandirs & Home Shrines',
+    title: 'Marble Mandirs & Temples',
+    subtitle: 'Custom Home Temples',
     href: '/pooja-sanctums',
-    badge: 'FLAGSHIP SANCTUM',
+    badge: 'HOME TEMPLES',
     previewImage: '/gallery/img_7237.webp',
-    previewTitle: 'Consecrated Pooja Sanctums',
-    previewDesc: 'Monolithic pure Makrana calcite bedrock mandirs with multi-tier shikharas, carved toranas, and consecrated garbhagrihas.',
-    ctaText: 'Explore Pooja Sanctums'
+    previewTitle: 'Pure White Marble Temples',
+    previewDesc: '100% pure Makrana white marble home temples with carved pillars, dome tops, and deity platforms.',
+    ctaText: 'Explore Home Temples'
   },
   {
     num: '02',
-    title: 'Palatial Estate Fountains',
-    subtitle: 'Cascading Tiered Water Architecture',
+    title: 'Palatial Cascading Fountains',
+    subtitle: 'Garden & Lawn Fountains',
     href: '/palatial-fountains',
-    badge: 'WATER ARCHITECTURE',
+    badge: 'WATER FOUNTAINS',
     previewImage: '/gallery/fountain-palatial-estate-triple-tier-lawn.webp',
-    previewTitle: 'Palatial Cascading Fountains',
-    previewDesc: 'Carved from dense Rajnagar hydraulic white marble. Engineered for continuous water sheeting, zero algae, and freeze resilience.',
-    ctaText: 'Explore Estate Fountains'
+    previewTitle: 'Carved Marble Fountains',
+    previewDesc: 'Carved from durable Rajnagar white marble. Specially built for continuous water flow in gardens and courtyards.',
+    ctaText: 'Explore Fountains'
   },
   {
     num: '03',
-    title: 'Royal Chhatris & Pavilions',
-    subtitle: 'Carved Ribbed Domes & Gazebos',
+    title: 'Royal Pavilions & Chhatris',
+    subtitle: 'Carved Domes & Garden Gazebos',
     href: '/heritage-chhatris',
-    badge: 'ROYAL HERITAGE',
+    badge: 'GARDEN PAVILIONS',
     previewImage: '/gallery/royal-chhatri-garden-pavilion.webp',
-    previewTitle: 'Imperial Rajput Chhatris',
-    previewDesc: 'Monumental garden pavilions with monolithic fluted columns, cusped torana arches, and ribbed interlocking domes.',
-    ctaText: 'Explore Royal Pavilions'
+    previewTitle: 'Marble Garden Pavilions',
+    previewDesc: 'Traditional Rajasthani carved marble pavilions with decorative pillars and domes for gardens and estates.',
+    ctaText: 'Explore Pavilions'
   },
   {
     num: '04',
-    title: 'Consecrated Marble Deities',
-    subtitle: 'Single-Block Makrana Murti Carving',
+    title: 'Hand-Carved Marble Deities',
+    subtitle: 'Pure White Makrana Murti Statues',
     href: '/marble-deities',
-    badge: 'SACRED PRATISHTHA',
+    badge: 'MARBLE IDOLS',
     previewImage: '/gallery/deity-radha-krishna-makrana-sculpture.webp',
-    previewTitle: 'Consecrated Murti Statues',
-    previewDesc: 'Hand-sculpted by hereditary Silawat murtikars adhering to sacred Vedic Shilpa Shastra facial and body iconometry.',
+    previewTitle: 'Marble Deities & Statues',
+    previewDesc: 'Hand-sculpted by hereditary master stone carvers with lifelike facial expressions and sacred traditional proportions.',
     ctaText: 'Explore Sacred Deities'
   },
   {
     num: '05',
-    title: 'Pietra Dura Gemstone Inlay',
-    subtitle: 'Taj Mahal Parchin Kari Art',
+    title: 'Stone Inlay Art (Pietra Dura)',
+    subtitle: 'Taj Mahal Floral Gem Inlay',
     href: '/pietra-dura-inlay',
-    badge: 'PARCHIN KARI',
+    badge: 'GEMSTONE INLAY',
     previewImage: '/gallery/inlay-pietra-dura-peacock-medallion.webp',
-    previewTitle: 'Imperial Gemstone Inlay',
-    previewDesc: 'Semi-precious lapis lazuli, malachite, jasper, and mother-of-pearl micro-inlaid into flawless Makrana white marble.',
+    previewTitle: 'Gemstone Flower Inlay Art',
+    previewDesc: 'Semi-precious natural colorful stones hand-inlaid into flawless Makrana pure white marble.',
     ctaText: 'Explore Inlay Art'
   },
   {
     num: '06',
-    title: 'Pierced Jaali Screens',
-    subtitle: 'Lattice Partitions & Facades',
+    title: 'Carved Marble Jaali Screens',
+    subtitle: 'Decorative Screen Partitions',
     href: '/jaali-screens',
-    badge: 'ARCHITECTURAL LATTICE',
+    badge: 'MARBLE JAALIS',
     previewImage: '/gallery/jaali-geometric-hexagonal-lattice.webp',
     previewTitle: 'Carved Marble Jaalis',
-    previewDesc: 'Geometric, floral, and chevron pierced lattice screens for sacred room partitions, architectural ventilation, and light play.',
+    previewDesc: 'Floral and geometric pierced lattice screens for pooja room doors, room partitions, and windows.',
     ctaText: 'Explore Jaali Screens'
   }
 ];
@@ -75,68 +75,68 @@ const MEGA_STONEWORKS = [
 const MEGA_ARCHITECTURE = [
   {
     num: '07',
-    title: 'Ayadi Vastu Architecture',
-    subtitle: 'Sacred Formulas & Proportions',
+    title: 'Temple Vastu Guide',
+    subtitle: 'Vastu Proportions & Directions',
     href: '/ayadi-vastu-shastra',
-    badge: 'STHAPATYA VEDA',
+    badge: 'VASTU SCIENCE',
     previewImage: '/gallery/sanctum-shikhara-amalaka-apex.webp',
-    previewTitle: 'Vedic Ayadi Calculations',
-    previewDesc: 'Exact 6-formula Ayadi mathematical harmonics ensuring your sanctum dimensions bring lifelong spiritual peace and prosperity.',
-    ctaText: 'Learn Ayadi Science'
+    previewTitle: 'Temple Vastu Guide',
+    previewDesc: 'Exact Vastu calculations to ensure your home temple brings lifelong spiritual peace, health, and prosperity.',
+    ctaText: 'Read Vastu Guide'
   },
   {
     num: '08',
-    title: 'Silawat Guild Workshop',
-    subtitle: '5-Stage Hand-Carving Lineage',
+    title: 'Our Workshop & Carvers',
+    subtitle: 'Master Stone Carvers Since 1987',
     href: '/atelier-workshop',
-    badge: 'MASTER GUILD',
+    badge: 'STONE WORKSHOP',
     previewImage: '/gallery/atelier-yard-preassembly.webp',
-    previewTitle: 'Silawat Carving Pavilion',
-    previewDesc: 'Generational master stone-masons chiseling pure bedrock using sacred hand techniques passed down across four generations.',
-    ctaText: 'Tour Makrana Atelier'
+    previewTitle: 'Our Stone Carving Workshop',
+    previewDesc: 'Meet our generational stone carvers shaping raw white marble blocks into timeless temples.',
+    ctaText: 'Visit Our Workshop'
   },
   {
     num: '09',
-    title: 'Makrana Calcite Stone Guide',
-    subtitle: '99% Pure CaCO3 Bedrock Science',
+    title: 'Makrana Marble Guide',
+    subtitle: 'Why It Never Turns Yellow',
     href: '/materials-guide',
-    badge: 'CALCITE PURITY',
+    badge: 'MARBLE QUALITY',
     previewImage: '/gallery/stone-makrana-calcite-slab.webp',
-    previewTitle: 'Taj Mahal Marble Purity',
-    previewDesc: '100% pure white Makrana marble. Completely stain-free, safe for daily milk and oil puja rituals, and never turns yellow.',
-    ctaText: 'Inspect Stone Science'
+    previewTitle: '100% Pure Makrana Marble',
+    previewDesc: '100% pure white marble that never absorbs oil or milk, never turns yellow, and stays bright forever.',
+    ctaText: 'Read Marble Guide'
   },
   {
     num: '10',
-    title: '100% Pre-Assembly Yard',
-    subtitle: 'Dry Fitment & Video Signoff',
+    title: 'Pre-Delivery Workshop Trial',
+    subtitle: 'Pre-Assembly & Video Inspection',
     href: '/pre-assembly-trial',
-    badge: 'VERIFIED DRY-FIT',
+    badge: 'VIDEO CHECK',
     previewImage: '/gallery/yard-dryfit-raw-calcite-mandir.webp',
-    previewTitle: 'Makrana Fitment Verification',
-    previewDesc: 'Every single component is 100% test-assembled in our Makrana yard with 4K video inspection and centimeter ruler signoff.',
-    ctaText: 'Explore Yard Protocols'
+    previewTitle: 'Workshop Video Verification',
+    previewDesc: 'Every temple is 100% test-assembled in our workshop with HD video review before packing.',
+    ctaText: 'Learn How We Test'
   },
   {
     num: '11',
-    title: 'Worldwide Crating & Export',
-    subtitle: 'ISPM-15 Crates & White-Glove Setup',
+    title: 'Worldwide Safe Shipping',
+    subtitle: 'Wooden Box Packing & Delivery',
     href: '/global-shipping',
-    badge: 'GLOBAL LOGISTICS',
+    badge: 'SAFE DELIVERY',
     previewImage: '/gallery/atelier-ispm15-crating-export.webp',
-    previewTitle: 'Turnkey International Setup',
-    previewDesc: 'Fumigated ISPM-15 pine crating with high-density EVA shock protection and door-to-door turnkey installation in 28+ nations.',
-    ctaText: 'View Crating Details'
+    previewTitle: 'Safe Doorstep Delivery Everywhere',
+    previewDesc: 'Heavy-duty wooden box packing with thick foam cushions and safe doorstep delivery across India and worldwide.',
+    ctaText: 'View Delivery Details'
   },
   {
     num: '12',
-    title: 'Temple Care & Abhishek Guide',
-    subtitle: 'Daily Ritual Protocols & Upkeep',
+    title: 'Temple Cleaning & Care',
+    subtitle: 'Easy Cleaning for Daily Puja',
     href: '/temple-maintenance-guide',
-    badge: 'DEVOTIONAL CARE',
+    badge: 'CARE GUIDE',
     previewImage: '/gallery/sanctum-ambient-glow.webp',
-    previewTitle: 'Daily Sacred Ritual Guide',
-    previewDesc: 'Master artisan protocols for daily milk, honey, panchamrit, and camphor aarti upkeep without dulling natural marble luster.',
+    previewTitle: 'Daily Temple Care Guide',
+    previewDesc: 'Easy instructions for daily milk, honey, diya oil, and incense smoke cleaning to keep your marble sparkling.',
     ctaText: 'Read Care Guide'
   }
 ];
@@ -144,58 +144,58 @@ const MEGA_ARCHITECTURE = [
 const MEGA_SERVICES = [
   {
     num: '13',
-    title: '2D CAD Space Consultation',
-    subtitle: 'Custom Dimensions to Blueprint',
+    title: 'Free 2D Design Drawing',
+    subtitle: 'Custom Drawings for Your Room',
     href: '/bespoke-consultation',
-    badge: '2D BLUEPRINT DESK',
+    badge: 'FREE 2D DRAWING',
     previewImage: '/gallery/mandir-temple-cad-plan.webp',
-    previewTitle: 'Bespoke 2D CAD Blueprint',
-    previewDesc: 'Share your room dimensions down to the centimeter. Receive a custom 2D architectural elevation blueprint within 24 hours.',
-    ctaText: 'Request Free 2D Layout'
+    previewTitle: 'Free 2D Design Drawing',
+    previewDesc: 'Share your room measurements. Receive a clear 2D design drawing showing front and side views within 24 hours.',
+    ctaText: 'Get Free Drawing'
   },
   {
     num: '14',
-    title: 'Royal Heritage Portfolio',
-    subtitle: 'Completed Global Landmark Projects',
+    title: 'Completed Temple Projects',
+    subtitle: 'Real Photos from Client Homes',
     href: '/royal-projects',
-    badge: 'LANDMARK COMMISSIONS',
+    badge: 'COMPLETED PROJECTS',
     previewImage: '/gallery/fountain-courtyard-circular.webp',
-    previewTitle: 'Royal Private Commissions',
-    previewDesc: 'Completed landmark palace fountains, private estate sanctums, and heritage monuments across London, Dubai, and India.',
-    ctaText: 'Explore Portfolio'
+    previewTitle: 'Our Completed Projects',
+    previewDesc: 'Browse real photos of temples and fountains delivered and installed in homes across India and abroad.',
+    ctaText: 'View Completed Projects'
   },
   {
     num: '15',
-    title: 'Quarry Science & Purity',
-    subtitle: 'Four Makrana Veins & Lab Data',
+    title: 'Makrana Marble Quarry',
+    subtitle: 'Natural Stone Purity & Mining',
     href: '/makrana-calcite-mine',
-    badge: 'SUBTERRANEAN MINES',
+    badge: 'MARBLE MINES',
     previewImage: '/gallery/atelier-quarry-selection-block.webp',
-    previewTitle: 'Chak Dungri & Albeta Mines',
-    previewDesc: '350ft subterranean bedrock extraction in Makrana, Rajasthan with certified ultrasonic pulse velocity laboratory readings.',
-    ctaText: 'Inspect Quarry Veins'
+    previewTitle: 'Makrana Marble Quarries',
+    previewDesc: 'Natural white marble extracted directly from certified Makrana mines in Rajasthan.',
+    ctaText: 'View Marble Mining'
   },
   {
     num: '16',
-    title: 'About AFG Guild Heritage',
-    subtitle: 'Generational Silawat Master Artisans',
+    title: 'About AFG Heritage',
+    subtitle: 'Generational Stone Carvers Since 1987',
     href: '/about-afg',
     badge: 'FOUNDED 1987',
     previewImage: '/gallery/mandir-artisan-install.webp',
-    previewTitle: 'Four Generations of Silawats',
-    previewDesc: 'Living lineage of traditional stone-carvers preserving sovereign Indian temple architecture and sacred marble carving craft.',
+    previewTitle: 'Generational Stone Carvers',
+    previewDesc: 'Four generations of traditional Rajasthani stone carvers making authentic marble temples.',
     ctaText: 'Read Our Story'
   },
   {
     num: '17',
-    title: 'Makrana Master Studios',
-    subtitle: 'Studio Walkthroughs & Visits',
+    title: 'Visit Our Workshops',
+    subtitle: 'Workshop Visits & Locations',
     href: '/contact',
-    badge: 'VISIT ATELIER',
+    badge: 'VISIT WORKSHOP',
     previewImage: '/gallery/sanctum-royal-mandir-room.webp?v=purewhite',
-    previewTitle: 'Visit Our Rajasthan Ateliers',
-    previewDesc: 'Schedule a private patron walkthrough in Makrana or Makrana to inspect live pre-assembly dry-fits and raw bedrock blocks.',
-    ctaText: 'Book Private Visit'
+    previewTitle: 'Visit Our Rajasthan Workshop',
+    previewDesc: 'Visit our Makrana and Jaipur workshops to see temples being carved live and inspect raw marble blocks.',
+    ctaText: 'Book Workshop Visit'
   }
 ];
 
@@ -431,16 +431,16 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
           </div>
 
           <Link href="/royal-projects" className={pathname === '/royal-projects' ? 'is-active' : ''}>
-            Royal Projects
+            Completed Projects
           </Link>
           <Link href="/atelier-workshop" className={pathname === '/atelier-workshop' ? 'is-active' : ''}>
-            Atelier Yard
+            Our Workshop
           </Link>
           <Link href="/materials-guide" className={pathname === '/materials-guide' ? 'is-active' : ''}>
-            Stone Library
+            Marble Guide
           </Link>
           <Link href="/contact" className={pathname === '/contact' ? 'is-active' : ''}>
-            Contact
+            Contact Us
           </Link>
         </nav>
 
@@ -449,7 +449,7 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
             href="/bespoke-consultation"
             className="nav__cta-btn"
           >
-            <span>Consult Atelier</span>
+            <span>Get Free Design</span>
             <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.2">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
@@ -478,103 +478,103 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
             </svg>
           </Link>
 
-          <div className="mobile-nav-group-title">Master Stoneworks</div>
+          <div className="mobile-nav-group-title">Our Marble Collections</div>
           <Link href="/pooja-sanctums" className={`mob-link ${pathname === '/pooja-sanctums' ? 'is-active' : ''}`}>
-            <span>Pooja Sanctums &amp; Mandirs</span>
+            <span>Marble Mandirs &amp; Temples</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
           <Link href="/palatial-fountains" className={`mob-link ${pathname === '/palatial-fountains' ? 'is-active' : ''}`}>
-            <span>Palatial Estate Fountains</span>
+            <span>Marble Water Fountains</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
           <Link href="/heritage-chhatris" className={`mob-link ${pathname === '/heritage-chhatris' ? 'is-active' : ''}`}>
-            <span>Royal Chhatris &amp; Pavilions</span>
+            <span>Marble Chhatris &amp; Pavilions</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
           <Link href="/marble-deities" className={`mob-link ${pathname === '/marble-deities' ? 'is-active' : ''}`}>
-            <span>Consecrated Marble Deities</span>
+            <span>Handmade Marble Murties</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
           <Link href="/pietra-dura-inlay" className={`mob-link ${pathname === '/pietra-dura-inlay' ? 'is-active' : ''}`}>
-            <span>Pietra Dura Gemstone Inlay</span>
+            <span>Stone Inlay Work</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
           <Link href="/jaali-screens" className={`mob-link ${pathname === '/jaali-screens' ? 'is-active' : ''}`}>
-            <span>Pierced Jaali Screens</span>
+            <span>Carved Marble Jali Screens</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
 
-          <div className="mobile-nav-group-title">Sacred Architecture &amp; Craft</div>
+          <div className="mobile-nav-group-title">Marble Guides &amp; Quality</div>
           <Link href="/ayadi-vastu-shastra" className={`mob-link ${pathname === '/ayadi-vastu-shastra' ? 'is-active' : ''}`}>
-            <span>Ayadi Vastu Architecture</span>
+            <span>Temple Vastu Guide</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
           <Link href="/atelier-workshop" className={`mob-link ${pathname === '/atelier-workshop' ? 'is-active' : ''}`}>
-            <span>Silawat Guild Workshop</span>
+            <span>Our Workshop &amp; Artisans</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
           <Link href="/materials-guide" className={`mob-link ${pathname === '/materials-guide' ? 'is-active' : ''}`}>
-            <span>Makrana Calcite Stone Guide</span>
+            <span>Pure Marble Guide</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
           <Link href="/pre-assembly-trial" className={`mob-link ${pathname === '/pre-assembly-trial' ? 'is-active' : ''}`}>
-            <span>100% Pre-Assembly Yard</span>
+            <span>Full Setup Trial Check</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
           <Link href="/global-shipping" className={`mob-link ${pathname === '/global-shipping' ? 'is-active' : ''}`}>
-            <span>Worldwide Crating &amp; Export</span>
+            <span>Safe Worldwide Delivery</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
 
-          <div className="mobile-nav-group-title">Patron Services &amp; Heritage</div>
+          <div className="mobile-nav-group-title">Custom Design &amp; About Us</div>
           <Link href="/bespoke-consultation" className={`mob-link ${pathname === '/bespoke-consultation' ? 'is-active' : ''}`}>
-            <span>2D CAD Space Consultation</span>
+            <span>Free 2D Design Drawing</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
           <Link href="/about-afg" className={`mob-link ${pathname === '/about-afg' ? 'is-active' : ''}`}>
-            <span>About AFG Guild</span>
+            <span>About Our Workshop</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
           <Link href="/private-commissions" className={`mob-link ${pathname === '/private-commissions' ? 'is-active' : ''}`}>
-            <span>Private Commissions</span>
+            <span>Completed Projects</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
           <Link href="/about-afg" className={`mob-link ${pathname === '/about-afg' ? 'is-active' : ''}`}>
-            <span>About AFG Lineage Since 1987</span>
+            <span>Our Story Since 1987</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
           <Link href="/contact" className={`mob-link ${pathname === '/contact' ? 'is-active' : ''}`}>
-            <span>Contact &amp; Studio Walkthrough</span>
+            <span>Contact Us &amp; Workshop Visit</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
@@ -588,7 +588,7 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
             style={{ width: '100%', justifyContent: 'center', textDecoration: 'none' }}
             onClick={() => setMobileOpen(false)}
           >
-            <span className="btn-primary__text">Get Free Space Consultation</span>
+            <span className="btn-primary__text">Get Free 2D Design Drawing</span>
             <span className="btn-primary__icon">→</span>
           </Link>
         </div>
@@ -598,7 +598,7 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
           <span>·</span>
           <Link href="/privacy-policy" onClick={() => setMobileOpen(false)}>Privacy</Link>
           <span>·</span>
-          <Link href="/contact" onClick={() => setMobileOpen(false)}>Makrana Atelier</Link>
+          <Link href="/contact" onClick={() => setMobileOpen(false)}>Makrana Workshop</Link>
         </div>
       </div>
     </>

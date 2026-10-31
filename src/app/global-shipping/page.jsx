@@ -6,20 +6,20 @@ import ConsultationCard from '../../components/ConsultationCard';
 export default function GlobalShippingPage() {
   const PROTOCOLS = [
     {
-      title: 'ISPM-15 Heat-Treated Crating',
-      desc: 'All packaging uses certified HT-stamped fumigated heavy marine pine timber compliant with US Customs, UK DEFRA, and Australian Biosecurity import standards.'
+      title: 'Solid Wooden Box Packing',
+      desc: 'All packaging uses certified export-grade treated wooden crates approved for customs in the USA, UK, UAE, Canada, Australia, and worldwide.'
     },
     {
-      title: '50mm High-Density EVA Shock Foam',
-      desc: 'Every carved marble element is individually suspended in CNC-milled closed-cell EVA foam, isolating fragile kalash finials and jali screens from transit vibrations.'
+      title: 'Thick Shockproof Foam Padding',
+      desc: 'Every single carved piece is wrapped in thick shock-absorbing foam to prevent any damage, scratches, or cracks during transport.'
     },
     {
-      title: 'Real-Time Tilt & Shock Indicators',
-      desc: 'External crates are equipped with calibrated ShockWatch™ and TiltWatch™ sensors that trigger if crates experience sudden drop impacts during ocean or air freight.'
+      title: 'Safe Handling Sensors',
+      desc: 'Wooden boxes carry tilt and shock indicators to ensure gentle handling throughout road, sea, or air shipping.'
     },
     {
-      title: 'Worldwide Master Artisan Crew',
-      desc: 'For monumental temples and large sanctums, AFG dispatches our senior Rajasthani artisan team directly to your global doorstep for flawless on-site installation.'
+      title: 'Expert Installation Team Support',
+      desc: 'For large temples, our skilled artisan team can travel directly to your home anywhere in India or abroad to assemble and install the temple perfectly.'
     }
   ];
 
@@ -39,14 +39,14 @@ export default function GlobalShippingPage() {
           <div className="breadcrumbs">
             <Link href="/">Home</Link>
             <span>/</span>
-            <span>Logistics &amp; Installation</span>
+            <span>Delivery &amp; Installation</span>
             <span>/</span>
-            <span>Global White-Glove Export</span>
+            <span>Safe Worldwide Delivery</span>
           </div>
-          <h1>Global Export &amp; White-Glove Installation</h1>
+          <h1>Safe Home Delivery Across India &amp; Worldwide</h1>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
-            Delivering consecrated marble sanctums across 28+ countries with zero breakage since 1987. Full ISPM-15 certified export crating, international customs clearance, all-risk marine insurance, and dedicated on-site artisan installation teams.
+            Delivering pure marble home temples across 28+ countries with 100% safe arrival guarantee since 1987. Strong wooden box packing, full insurance, customs clearance, and home installation options.
           </p>
         </div>
       </section>
@@ -62,19 +62,19 @@ export default function GlobalShippingPage() {
                 loading="lazy"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
-              <div className="media-caption-badge">ISPM-15 Heavy Export Crating</div>
+              <div className="media-caption-badge">Strong Export Wooden Box Packing</div>
             </div>
             <div className="page-info-block">
-              <span className="card-badge">SEAMLESS WORLDWIDE ARRIVAL</span>
+              <span className="card-badge">100% SAFE ARRIVAL</span>
               <h2 style={{ fontFamily: 'var(--serif)', fontSize: '32px', color: '#1c1813', margin: '12px 0 16px' }}>
-                Delivering Sacred Devotion Without a Single Scratch
+                Delivering Your Temple Without a Single Scratch
               </h2>
               <div className="gold-rule"></div>
               <p style={{ color: '#4a4239', lineHeight: 1.65, marginBottom: '18px' }}>
-                International stone shipping is an engineering discipline. Makrana marble is dense (2.71 g/cm³), meaning large temple assemblies can weigh between 1,500 kg and 8,000 kg.
+                Solid marble is heavy and precious. Large temples can weigh anywhere from 500 kg to over 3,000 kg.
               </p>
               <p style={{ color: '#4a4239', lineHeight: 1.65, marginBottom: '22px' }}>
-                We engineer our sanctums into modular interlocking components. Each section fits through standard residential elevators and 36-inch penthouse doorways, eliminating expensive crane hoisting.
+                We design all our temples in easy interlocking sections. Each piece fits easily into normal home lifts, staircases, and apartment doorways for hassle-free installation.
               </p>
               <div className="info-actions">
                 <a
@@ -83,7 +83,7 @@ export default function GlobalShippingPage() {
                   rel="noopener noreferrer"
                   className="btn-primary"
                 >
-                  <span className="btn-primary__text">Inquire International Freight</span>
+                  <span className="btn-primary__text">Ask for Delivery Charges on WhatsApp</span>
                   <span className="btn-primary__icon">→</span>
                 </a>
               </div>
@@ -93,9 +93,9 @@ export default function GlobalShippingPage() {
           {/* Protocols Grid */}
           <div style={{ marginBottom: '60px' }}>
             <div className="sec-header text-center" style={{ marginBottom: '36px' }}>
-              <span className="card-badge">THE 4-TIER PACKAGING SHIELD</span>
+              <span className="card-badge">4-LAYER SAFE PACKING</span>
               <h2 style={{ fontFamily: 'var(--serif)', fontSize: '30px', color: '#1c1813' }}>
-                Engineered for International Ocean &amp; Air Freight
+                Built for 100% Safe Delivery to Your Doorstep
               </h2>
               <div className="gold-rule center"></div>
             </div>
@@ -116,7 +116,7 @@ export default function GlobalShippingPage() {
             {/* Global Reach Bar */}
             <div className="creation-card" style={{ padding: '36px', background: '#faf6ee', border: '1px solid rgba(184, 134, 63, 0.25)' }}>
               <h3 style={{ fontFamily: 'var(--serif)', fontSize: '22px', color: '#1c1813', marginBottom: '14px' }}>
-                Primary International Delivery Corridors
+                Countries Where We Deliver Regularly
               </h3>
               <ul style={{ listStyle: 'none', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '12px' }}>
                 {COUNTRIES.map((c, i) => (

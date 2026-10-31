@@ -44,7 +44,7 @@ export default function BespokeConsultationPage() {
         body: JSON.stringify({
           name: formData.name,
           phone: formData.phone,
-          projectTitle: `CAD Space Consultation (${formData.width || 'Custom'} W × ${formData.depth || 'Custom'} D × ${formData.height || 'Custom'} H)`,
+          projectTitle: `Space Consultation (${formData.width || 'Custom'} W × ${formData.depth || 'Custom'} D × ${formData.height || 'Custom'} H)`,
           stone: formData.stone,
           message: `Location: ${formData.city || 'Not specified'}. Requirements: ${formData.notes || 'None'}`,
           _hp_check: formData._hp_check || '',
@@ -59,7 +59,7 @@ export default function BespokeConsultationPage() {
       setInquiryId(assignedId);
       setSubmitted(true);
 
-      const text = `Namaste A.F.G Marble & Arts, I requested a 2D CAD Space Consultation [${assignedId}].\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Location:* ${formData.city}\n*Space Dimensions:* ${formData.width} W × ${formData.depth} D × ${formData.height} H\n*Preferred Stone:* ${formData.stone}\n*Notes:* ${formData.notes || 'None'}`;
+      const text = `Namaste A.F.G Marble & Arts, I requested a Free 2D Design & Price Estimate [${assignedId}].\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Location:* ${formData.city}\n*Room Size:* ${formData.width} W × ${formData.depth} D × ${formData.height} H\n*Preferred Marble:* ${formData.stone}\n*Requirements:* ${formData.notes || 'None'}`;
       window.open(`https://wa.me/917597417274?text=${encodeURIComponent(text)}`, '_blank');
     }
   };
@@ -74,7 +74,7 @@ export default function BespokeConsultationPage() {
       width: '',
       depth: '',
       height: '',
-      stone: 'Makrana Pure White Albeta',
+      stone: 'Makrana Pure White Marble',
       notes: '',
       _hp_check: ''
     });
@@ -87,14 +87,14 @@ export default function BespokeConsultationPage() {
           <div className="breadcrumbs">
             <Link href="/">Home</Link>
             <span>/</span>
-            <span>Atelier Desk</span>
+            <span>Custom Design</span>
             <span>/</span>
-            <span>Space Dimensions &amp; CAD Consultation</span>
+            <span>Free Design &amp; Size Consultation</span>
           </div>
-          <h1>Custom Space Dimensions &amp; 2D CAD Consultation</h1>
+          <h1>Free 2D Design Drawing &amp; Price Estimate</h1>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
-            Whether you have an empty pooja room alcove in Mumbai, a heritage estate courtyard in Udaipur, or a luxury penthouse in London, our Master Sthapatis translate your exact dimensions into a timeless consecrated sanctum within 24 hours.
+            Whether you have a small room corner in an apartment or a large dedicated prayer room, our marble temple experts will create a custom 2D design drawing to fit your exact room size within 24 hours.
           </p>
         </div>
       </section>
@@ -105,9 +105,9 @@ export default function BespokeConsultationPage() {
           <div className="page-grid-2" style={{ marginBottom: '60px' }}>
             {/* Left: How to Measure Guide */}
             <div className="page-info-block">
-              <span className="card-badge">EFFORTLESS 3-STEP PROCESS</span>
+              <span className="card-badge">SIMPLE 3-STEP PROCESS</span>
               <h2 style={{ fontFamily: 'var(--serif)', fontSize: '32px', color: '#1c1813', margin: '12px 0 16px' }}>
-                How to Share Your Space Measurements
+                How to Share Your Room Measurements
               </h2>
               <div className="gold-rule"></div>
 
@@ -117,9 +117,9 @@ export default function BespokeConsultationPage() {
                     1
                   </div>
                   <div>
-                    <strong style={{ fontSize: '16px', color: '#1c1813', display: 'block', marginBottom: '4px' }}>Measure 3 Core Dimensions</strong>
+                    <strong style={{ fontSize: '16px', color: '#1c1813', display: 'block', marginBottom: '4px' }}>Measure 3 Simple Sizes</strong>
                     <p style={{ fontSize: '13.5px', color: '#5c5246', lineHeight: 1.6, margin: 0 }}>
-                      Take a standard tape measure and record your available wall width, depth from back wall to front edge, and ceiling height (clearance to false ceiling or chandelier).
+                      Use a measuring tape to note your wall width, depth (front to back), and ceiling height.
                     </p>
                   </div>
                 </div>
@@ -129,9 +129,9 @@ export default function BespokeConsultationPage() {
                     2
                   </div>
                   <div>
-                    <strong style={{ fontSize: '16px', color: '#1c1813', display: 'block', marginBottom: '4px' }}>Snap 2 to 3 Photos of the Room</strong>
+                    <strong style={{ fontSize: '16px', color: '#1c1813', display: 'block', marginBottom: '4px' }}>Take 2 or 3 Photos of Your Room</strong>
                     <p style={{ fontSize: '13.5px', color: '#5c5246', lineHeight: 1.6, margin: 0 }}>
-                      Take a wide-angle photo of the room, showing the floor, side walls, and electrical switchboard locations.
+                      Click quick photos of your space showing the floor and walls where you want to place the temple.
                     </p>
                   </div>
                 </div>
@@ -141,9 +141,9 @@ export default function BespokeConsultationPage() {
                     3
                   </div>
                   <div>
-                    <strong style={{ fontSize: '16px', color: '#1c1813', display: 'block', marginBottom: '4px' }}>Receive 2D CAD Blueprint in 24 Hours</strong>
+                    <strong style={{ fontSize: '16px', color: '#1c1813', display: 'block', marginBottom: '4px' }}>Receive Free 2D Design Drawing in 24 Hours</strong>
                     <p style={{ fontSize: '13.5px', color: '#5c5246', lineHeight: 1.6, margin: 0 }}>
-                      Our Master Sthapati drafts an architectural scale 2D CAD elevation tailored to your room dimensions and personal aesthetic preferences, delivered directly to your WhatsApp desk. (3D CAD visualization available upon request).
+                      Our marble temple expert prepares a detailed 2D design drawing showing the front and side views, made to fit your room size, and sends it directly to your WhatsApp. (3D design also available on request).
                     </p>
                   </div>
                 </div>
@@ -151,7 +151,7 @@ export default function BespokeConsultationPage() {
 
               <div style={{ marginTop: '32px' }}>
                 <a
-                  href="https://wa.me/917597417274?text=Hello%20AFG%20Marble%2C%20I%20have%20my%20pooja%20room%20measurements%20and%20photos%20ready%20for%20a%20free%20CAD%20render."
+                  href="https://wa.me/917597417274?text=Hello%20AFG%20Marble%2C%20I%20have%20my%20pooja%20room%20measurements%20and%20photos%20ready%20for%20a%20free%20design%20drawing."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-outline-gold"
@@ -168,10 +168,10 @@ export default function BespokeConsultationPage() {
             {/* Right: Direct Consultation Form */}
             <div className="creation-card" style={{ padding: '36px', background: '#ffffff', border: '1px solid rgba(184, 134, 63, 0.28)' }}>
               <span className="card-badge" style={{ position: 'static', display: 'inline-block', marginBottom: '12px' }}>
-                DIRECT ATELIER DESK
+                DIRECT WORKSHOP TEAM
               </span>
               <h3 style={{ fontFamily: 'var(--serif)', fontSize: '24px', color: '#1c1813', margin: '0 0 18px' }}>
-                Submit Your Space Details
+                Share Your Room Size &amp; Requirements
               </h3>
 
               {/* Error Notification Banner */}
@@ -233,17 +233,17 @@ export default function BespokeConsultationPage() {
                       marginBottom: '6px'
                     }}
                   >
-                    CONSULTATION CONFIRMED
+                    REQUEST RECEIVED
                   </span>
                   <h4 style={{ fontFamily: 'var(--serif)', fontSize: '24px', color: '#1c1813', margin: '0 0 10px', fontWeight: 600 }}>
                     Thank You, {formData.name}!
                   </h4>
                   <p style={{ fontSize: '13.5px', color: '#5c5246', margin: '0 0 20px', lineHeight: 1.6 }}>
-                    Your bespoke consultation request has been registered under reference{' '}
+                    Your design request has been received under reference{' '}
                     <strong style={{ color: '#1c1813', background: 'rgba(197, 160, 89, 0.15)', padding: '2px 8px', borderRadius: '4px' }}>
                       #{inquiryId}
                     </strong>
-                    . Our Senior Sthapati will review your space dimensions and prepare a 2D CAD blueprint within 24 hours.
+                    . Our marble temple expert will review your room sizes and prepare a free 2D design drawing within 24 hours.
                   </p>
 
                   {/* Summary details */}
@@ -266,22 +266,22 @@ export default function BespokeConsultationPage() {
                       <strong style={{ color: '#1c1813' }}>{formData.phone}</strong>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <span style={{ color: '#7a7065' }}>Dimensions:</span>
+                      <span style={{ color: '#7a7065' }}>Room Size:</span>
                       <strong style={{ color: '#1c1813' }}>{formData.width || 'Custom'} W × {formData.depth || 'Custom'} D × {formData.height || 'Custom'} H</strong>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                       <span style={{ color: '#7a7065' }}>Location:</span>
-                      <strong style={{ color: '#1c1813' }}>{formData.city || 'Private Patron'}</strong>
+                      <strong style={{ color: '#1c1813' }}>{formData.city || 'Direct Customer'}</strong>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <span style={{ color: '#7a7065' }}>Selected Stone:</span>
+                      <span style={{ color: '#7a7065' }}>Selected Marble:</span>
                       <strong style={{ color: '#b08a4f' }}>{formData.stone?.split('(')[0]?.trim()}</strong>
                     </div>
                   </div>
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     <a
-                      href={`https://wa.me/917597417274?text=${encodeURIComponent(`Namaste A.F.G Marble & Arts, checking on my 2D CAD Consultation [${inquiryId}] for ${formData.name}.`)}`}
+                      href={`https://wa.me/917597417274?text=${encodeURIComponent(`Namaste A.F.G Marble & Arts, checking on my Free 2D Design Drawing [${inquiryId}] for ${formData.name}.`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{
@@ -322,7 +322,7 @@ export default function BespokeConsultationPage() {
                       }}
                     >
                       <RotateCcw size={13} />
-                      <span>Submit Another Space Consultation</span>
+                      <span>Submit Another Design Request</span>
                     </button>
                   </div>
                 </div>
@@ -349,7 +349,7 @@ export default function BespokeConsultationPage() {
                         maxLength={100}
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder="e.g. Dr. Rajesh Sharma"
+                        placeholder="e.g. Rajesh Sharma"
                         style={{ width: '100%', padding: '10px 14px', borderRadius: '6px', border: '1px solid rgba(0,0,0,0.18)', fontSize: '13px' }}
                       />
                     </div>
@@ -435,7 +435,7 @@ export default function BespokeConsultationPage() {
                       maxLength={1500}
                       value={formData.notes}
                       onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                      placeholder="e.g. Need backlit Om halo, jali folding doors, and pull-out diya drawer for Radha Krishna deities."
+                      placeholder="e.g. Need backlit Om panel, jali folding doors, and pull-out diya drawer for Radha Krishna idols."
                       style={{ width: '100%', padding: '10px 14px', borderRadius: '6px', border: '1px solid rgba(0,0,0,0.18)', fontSize: '13px' }}
                     />
                   </div>
@@ -446,7 +446,7 @@ export default function BespokeConsultationPage() {
                     disabled={loading}
                     style={{ marginTop: '10px', width: '100%', justifyContent: 'center' }}
                   >
-                    <span className="btn-primary__text">{loading ? 'Transmitting Proposal...' : 'Generate 2D CAD Proposal via WhatsApp'}</span>
+                    <span className="btn-primary__text">{loading ? 'Sending Details...' : 'Get Free 2D Design & Price on WhatsApp'}</span>
                     <span className="btn-primary__icon">→</span>
                   </button>
                 </form>

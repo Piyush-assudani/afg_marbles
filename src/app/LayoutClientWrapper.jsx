@@ -239,7 +239,7 @@ export default function LayoutClientWrapper({ children }) {
       <Footer />
       <QuickDock onOpenInquiry={(p) => setInquiryModalData(p)} />
 
-      {/* Dynamic Product Dossier Modal with URL Sync */}
+      {/* Product Modal with URL Sync */}
       {productModalData && (
         <ProductModal
           product={productModalData}
@@ -249,7 +249,7 @@ export default function LayoutClientWrapper({ children }) {
         />
       )}
 
-      {/* Bespoke Inquiry & Lead Persistence Modal */}
+      {/* Inquiry & Contact Modal */}
       {inquiryModalData && (
         <InquiryModal
           initialProduct={inquiryModalData}

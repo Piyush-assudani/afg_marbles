@@ -39,14 +39,14 @@ export default function PoojaSanctumsPage() {
           <div className="breadcrumbs">
             <Link href="/">Home</Link>
             <span>/</span>
-            <span>Masterpiece Catalog</span>
+            <span>Collections</span>
             <span>/</span>
-            <span>Pooja Sanctums &amp; Mandirs</span>
+            <span>Marble Temples</span>
           </div>
-          <h1>Handcrafted Marble Mandirs &amp; Pooja Sanctums</h1>
+          <h1>Handcrafted Pure White Marble Temples</h1>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
-            Every sanctum is sculpted from flawless monolithic blocks of authentic Makrana Calcite marble. Designed in strict mathematical accordance with Ayadi Vastu Shastra for lifelong divine energy. Hover or tap the thumbnail angles below to inspect front, 3/4 perspective, jali doors, and architectural elevation.
+            Every temple is hand-carved from 100% pure Makrana white marble that never turns yellow and resists all puja stains. Click any design below to see all photos, check measurements, and get exact prices on WhatsApp.
           </p>
 
           {/* Filter Pills */}
@@ -56,28 +56,28 @@ export default function PoojaSanctumsPage() {
               className={`filter-pill ${filter === 'all' ? 'is-active' : ''}`}
               onClick={() => setFilter('all')}
             >
-              All Creations ({allMandirs.length})
+              All Temples ({allMandirs.length})
             </button>
             <button
               type="button"
               className={`filter-pill ${filter === 'contemporary' ? 'is-active' : ''}`}
               onClick={() => setFilter('contemporary')}
             >
-              Contemporary Sanctums
+              Modern Home Temples
             </button>
             <button
               type="button"
               className={`filter-pill ${filter === 'traditional' ? 'is-active' : ''}`}
               onClick={() => setFilter('traditional')}
             >
-              Traditional Shikhara Mandirs
+              Traditional Spire Temples
             </button>
             <button
               type="button"
               className={`filter-pill ${filter === 'albeta' ? 'is-active' : ''}`}
               onClick={() => setFilter('albeta')}
             >
-              Pure Makrana Albeta
+              Pure Makrana Marble
             </button>
           </div>
         </div>

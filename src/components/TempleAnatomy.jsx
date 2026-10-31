@@ -6,39 +6,39 @@ export default function TempleAnatomy() {
 
   const parts = [
     {
-      name: 'Kalash & Amalaka Finial',
-      sanskrit: 'Shikhar Kalash',
-      desc: 'The apex of the sanctum, sculpted from dense Makrana marble and gilded in 24K pure gold leaf. In temple architecture, the Kalash acts as the cosmic focal point channeling spiritual energy directly down into the Garbhagriha.',
-      spec: 'Solid hand-turned calcite with concealed lightning dissipation grounding',
-      tag: 'Spiritual Apex',
+      name: 'Kalash & Top Dome (Spiritual Crown)',
+      sanskrit: 'Top Crown',
+      desc: 'The top of the temple, carved from pure Makrana white marble and finished with 24K pure gold leaf. In Indian temple architecture, the Kalash acts as the spiritual pinnacle channeling divine energy into your home.',
+      spec: 'Solid hand-carved pure marble with gold leaf detailing',
+      tag: 'Temple Top',
     },
     {
-      name: 'Multi-Tier Nagara Shikhara',
-      sanskrit: 'Urushringa Spire',
-      desc: 'Rising in stepped harmonic tiers, each interlocking stone ring is dry-joint fitted without visible mortar seams. The spire incorporates hidden thermal draft flues allowing smoke from dhoop and camphor aarti to naturally dissipate.',
-      spec: 'Modular seismic-lock rings with internal draft ventilation',
-      tag: 'Vertical Axis',
+      name: 'Carved Spire (With Smoke Vents)',
+      sanskrit: 'Carved Spire',
+      desc: 'Hand-carved in stepped tiers. Each interlocking marble section fits together seamlessly without glue. Concealed roof vents allow dhoop and agarbatti smoke to vent naturally, keeping your ceiling bright.',
+      spec: 'Interlocking marble tiers with built-in smoke vents',
+      tag: 'Carved Spire',
     },
     {
-      name: 'Peacock Torana & Pierced Jalis',
-      sanskrit: 'Kirtimukha & Gavaksha',
-      desc: 'The ornate entrance archway is hand-chiseled with dancing peacocks, floral creepers, and openwork pierced lattice (jali) folding doors that filter morning sunlight into a soft devotional glow.',
-      spec: '40mm single-slab pierced lattice with heavy brass internal pivot hinges',
-      tag: 'Sacred Gateway',
+      name: 'Peacock Arch & Jali Doors (Front Entrance)',
+      sanskrit: 'Arch & Doors',
+      desc: 'The front entrance features hand-carved peacocks and floral creepers, with openwork pierced jali screen doors that let in soft light while keeping your pooja space sacred and beautiful.',
+      spec: 'Hand-carved pierced marble lattice with smooth brass hinges',
+      tag: 'Front Arch & Doors',
     },
     {
-      name: 'Garbhagriha & Backlit Translucent Halo',
-      sanskrit: 'Brahmasthana',
-      desc: 'The innermost holy chamber. Features an elevated stepped marble singhasan for deities, framed by translucent alabaster or pure calcite stone backlit with heat-free, 3000K warm gold LED illumination.',
-      spec: '100% milk-proof, oil-proof pure calcite platform (zero staining guarantee)',
-      tag: 'Sanctum Sanctorum',
+      name: 'Deity Platform / Altar (100% Stain-Free)',
+      sanskrit: 'Deity Platform',
+      desc: 'The main chamber where idols are placed. Features an elevated marble platform with warm, heat-free LED backlighting. 100% stain-resistant: daily milk, water, and diya oil wipe off cleanly without marks.',
+      spec: '100% milk-proof, oil-proof pure white marble (zero yellowing guarantee)',
+      tag: 'Deity Platform',
     },
     {
-      name: 'Adhishthana Base & Velvet Drawers',
-      sanskrit: 'Upapitha Plinth',
-      desc: 'The structural foundation chiseled from monolithic blocks with elephant and lotus bas-relief friezes. Conceals handleless push-to-open velvet-lined drawers and pull-out marble prasadam trays.',
-      spec: 'Concealed German soft-close runners rated for 45 kg load capacity',
-      tag: 'Foundation & Utility',
+      name: 'Base Platform & Drawers (Smooth Pull-Out)',
+      sanskrit: 'Base & Drawers',
+      desc: 'Heavy solid marble base carved with traditional elephant and lotus patterns. Houses smooth pull-out drawers lined with soft fabric for keeping puja books, cotton wicks, and aarti items neat and clean.',
+      spec: 'Smooth soft-close sliding drawers and pull-out marble aarti tray',
+      tag: 'Base & Storage',
     },
   ];
 
@@ -47,14 +47,14 @@ export default function TempleAnatomy() {
       <div className="sec-container">
         <div className="sec-header text-center" style={{ marginBottom: '48px' }}>
           <span className="card-badge" style={{ position: 'static', display: 'inline-block', marginBottom: '12px', background: 'rgba(212, 175, 55, 0.2)', color: '#ecd39b', border: '1px solid rgba(212, 175, 55, 0.4)' }}>
-            ARCHITECTURAL DISSECTION
+            TEMPLE PARTS EXPLAINED
           </span>
           <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.5vw, 44px)', color: '#fff' }}>
-            Sacred Anatomy of a Makrana Sanctum
+            Parts of a Pure White Marble Temple
           </h2>
           <div className="gold-rule center" style={{ margin: '14px auto 20px', background: 'linear-gradient(90deg, transparent, #ecd39b, transparent)' }}></div>
           <p className="sub-lead" style={{ maxWidth: '720px', margin: '0 auto', fontSize: '15px', color: '#c9bfae', lineHeight: 1.6 }}>
-            Every structural component of our temples serves both an ancient Sthapatya Veda spiritual purpose and modern engineered utility. Click through the architectural anatomy below.
+            Understand how our marble temples are built, from the top golden crown to the carved pillars and storage drawers. Click each part below to learn more.
           </p>
         </div>
 
@@ -165,14 +165,14 @@ export default function TempleAnatomy() {
             <div style={{ display: 'flex', gap: '12px' }}>
               <a
                 href={`https://wa.me/917597417274?text=${encodeURIComponent(
-                  `Namaste AFG Marble, I am interested in custom specifications for "${parts[activePart].name}" on my bespoke mandir.`
+                  `Namaste AFG Marble, I want to ask about "${parts[activePart].name}" for my marble temple.`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
                 style={{ width: '100%', justifyContent: 'center' }}
               >
-                <span className="btn-primary__text">Inquire on This Component</span>
+                <span className="btn-primary__text">Ask About This Part on WhatsApp</span>
                 <span className="btn-primary__icon">→</span>
               </a>
             </div>

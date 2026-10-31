@@ -56,10 +56,10 @@ export default function Footer() {
                   </span>
                 </div>
                 <h3 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(26px, 3.4vw, 38px)', color: '#fffdf9', margin: '0 0 14px', fontWeight: 500, letterSpacing: '-0.01em', lineHeight: 1.25 }}>
-                  Commission Your Sacred Devotional Sanctuary
+                  Order Your Custom Marble Temple or Fountain
                 </h3>
                 <p style={{ fontSize: '14.5px', color: '#c7b9a5', margin: 0, lineHeight: 1.7 }}>
-                  Whether you are envisioning a private villa pooja sanctum, a monumental Nagara temple, an estate cascading fountain, or a royal garden chhatri — our generational Silawat master sthapatis guide your commission from virgin quarry bedrock selection to consecrated doorstep assembly.
+                  Whether you want a home temple for your apartment, a grand mandir for your villa, or a garden fountain — we guide you at every step, from selecting 100% pure Makrana marble to safe home delivery.
                 </p>
               </div>
 
@@ -118,7 +118,7 @@ export default function Footer() {
                     e.currentTarget.style.borderColor = 'rgba(197, 160, 89, 0.55)';
                   }}
                 >
-                  <span>Request Free 2D CAD Blueprint</span>
+                  <span>Request Free 2D Design Drawing</span>
                   <ArrowRight size={13} />
                 </Link>
               </div>
@@ -140,10 +140,10 @@ export default function Footer() {
                 </span>
                 <div>
                   <strong style={{ fontSize: '13.5px', color: '#fffdf9', display: 'block', marginBottom: '3px' }}>
-                    100% Makrana Calcite
+                    100% Pure Makrana Marble
                   </strong>
                   <span style={{ fontSize: '12px', color: '#a69888', lineHeight: 1.5, display: 'block' }}>
-                    Taj Mahal stratum (99.2% CaCO₃). Non-porous, zero yellowing under abhishek.
+                    Same pure stone as Taj Mahal. Never turns yellow from milk, oil, or water.
                   </span>
                 </div>
               </div>
@@ -154,10 +154,10 @@ export default function Footer() {
                 </span>
                 <div>
                   <strong style={{ fontSize: '13.5px', color: '#fffdf9', display: 'block', marginBottom: '3px' }}>
-                    100% Yard Pre-Assembly
+                    Workshop Assembly Check
                   </strong>
                   <span style={{ fontSize: '12px', color: '#a69888', lineHeight: 1.5, display: 'block' }}>
-                    Full dry-joint erection in Jaipur yard with live 4K video inspection before freight.
+                    We assemble the whole temple in our workshop and send you HD video before shipping.
                   </span>
                 </div>
               </div>
@@ -168,10 +168,10 @@ export default function Footer() {
                 </span>
                 <div>
                   <strong style={{ fontSize: '13.5px', color: '#fffdf9', display: 'block', marginBottom: '3px' }}>
-                    ISPM-15 Timber Crating
+                    Safe Wooden Box Packing
                   </strong>
                   <span style={{ fontSize: '12px', color: '#a69888', lineHeight: 1.5, display: 'block' }}>
-                    Fumigated pine crates, 50mm shock foam cradles, and full marine transit insurance.
+                    Packed in strong wooden boxes with thick foam cushion and transit insurance.
                   </span>
                 </div>
               </div>
@@ -182,10 +182,10 @@ export default function Footer() {
                 </span>
                 <div>
                   <strong style={{ fontSize: '13.5px', color: '#fffdf9', display: 'block', marginBottom: '3px' }}>
-                    White-Glove Global Setup
+                    Safe Home Delivery &amp; Setup
                   </strong>
                   <span style={{ fontSize: '12px', color: '#a69888', lineHeight: 1.5, display: 'block' }}>
-                    Dedicated master artisan crew dispatched for turnkey installation across 28+ nations.
+                    Doorstep delivery and easy assembly assistance across India and 28+ countries.
                   </span>
                 </div>
               </div>
@@ -245,7 +245,7 @@ export default function Footer() {
             </Link>
 
             <p style={{ fontSize: '13px', lineHeight: 1.7, color: '#b5a695', marginBottom: '22px' }}>
-              Imperial Silawat master sculptors since 1987. Descendants of the royal stone guilds of Rajasthan, sculpting consecrated marble mandirs, palatial fountains, and monumental architecture in authentic 99.2% Makrana calcite bedrock.
+              Generational stone carvers since 1987. We hand-carve pure white Makrana marble temples, fountains, and statues for homes across India and worldwide.
             </p>
 
             <div style={{
@@ -364,28 +364,28 @@ export default function Footer() {
         >
           <div>
             <strong style={{ color: '#c5a059', display: 'block', marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-              1. Natural Calcite Bedrock Authenticity Notice
+              1. 100% Pure Natural Marble Guarantee
             </strong>
             <p style={{ margin: 0 }}>
-              Every sanctum and fountain is sculpted exclusively from 100% natural, virgin Makrana calcite bedrock. Natural translucent crystal veins and subtle geological striations formed over 1,500 million years ago are certified hallmarks of authentic earth stone, not defects.
+              Every temple and fountain is carved from 100% natural, solid white marble from Makrana, Rajasthan. Subtle natural crystal veins are proof of genuine natural stone, not defects.
             </p>
           </div>
 
           <div>
             <strong style={{ color: '#c5a059', display: 'block', marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-              2. Ayadi Vastu Mathematical Integrity
+              2. Auspicious Vastu Measurements
             </strong>
             <p style={{ margin: 0 }}>
-              Sanctum dimensions are engineered in strict mathematical alignment with Sthapatya Veda Ayadi formulas (Aya, Vya, Yoni, Rasi). Patrons are requested to confirm cardinal orientation during 2D blueprint finalization for divine energetic equilibrium.
+              Temple sizes can be customized to match traditional Vastu guidelines. Our team will help verify dimensions and facing direction during 2D design drafting.
             </p>
           </div>
 
           <div>
             <strong style={{ color: '#c5a059', display: 'block', marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-              3. IPPC ISPM-15 Export &amp; Marine Insurance
+              3. Safe Wooden Box Packing &amp; Insurance
             </strong>
             <p style={{ margin: 0 }}>
-              International timber packaging complies with ISPM-15 phytosanitary heat-treatment regulations. All export shipments carry comprehensive marine transit insurance covering door-to-door transit to port and residence worldwide.
+              All home deliveries are packed in solid wooden boxes with thick shock foam. Full transit insurance covers door-to-door delivery across India and worldwide.
             </p>
           </div>
         </div>

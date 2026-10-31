@@ -104,7 +104,7 @@ export default function MandirHeroCanvas() {
 
       {/* Stone Switcher Palette */}
       <div className="stone-switcher-dock" aria-label="Marble Material Selection">
-        <span className="stone-switcher-label">Select Calcite Stratum:</span>
+        <span className="stone-switcher-label">Select Pure Marble:</span>
         <div className="stone-chips-row">
           {STONES.map((stone) => (
             <button

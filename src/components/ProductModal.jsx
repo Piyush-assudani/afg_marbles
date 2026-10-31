@@ -62,7 +62,7 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
 
   const handleShareWhatsApp = () => {
     const shareUrl = getProductUrl();
-    const text = `Look at this architectural masterpiece from A.F.G Marble & Arts: "${product.title}" (${product.scale}, ${product.primaryStone}): ${shareUrl}`;
+    const text = `Look at this beautiful marble design from A.F.G Marble & Arts: "${product.title}" (${product.scale}, ${product.primaryStone}): ${shareUrl}`;
     window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
   };
 
@@ -70,7 +70,7 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
     const shareUrl = getProductUrl();
     if (navigator.clipboard) {
       navigator.clipboard.writeText(shareUrl).then(() => {
-        onToast?.('Dossier link copied to clipboard!');
+        onToast?.('Link copied to clipboard!');
       });
     } else {
       prompt('Copy product link:', shareUrl);
@@ -208,23 +208,23 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
             </div>
           </div>
 
-          {/* Right: Architectural Dossier & Primary Inquiries */}
+          {/* Right: Product Details & Primary Inquiries */}
           <div className="product-modal__overview">
             <div className="pm-header">
-              <span className="card-badge">{product.badge || 'Atelier Masterpiece'}</span>
+              <span className="card-badge">{product.badge || 'Handmade Temple'}</span>
               <h2>{product.title}</h2>
               <p className="pm-tagline">{product.tagline}</p>
             </div>
 
             <div className="pm-meta-pills">
               <div className="pm-pill">
-                <strong>Dimensions:</strong> {product.scale}
+                <strong>Dimensions:</strong> {product.scale.replace(/^Size\s*=\s*/, '')}
               </div>
               <div className="pm-pill">
-                <strong>Primary Stone:</strong> {product.primaryStone}
+                <strong>Marble Type:</strong> {product.primaryStone}
               </div>
               <div className="pm-pill">
-                <strong>Certification:</strong> Certified 99% Calcite Bedrock
+                <strong>Quality:</strong> 100% Pure Natural Marble
               </div>
             </div>
 
@@ -232,31 +232,31 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
             <div className="pm-stock-banner">
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#128c7e', display: 'inline-block' }}></span>
-                <span style={{ color: '#0b5c52', fontWeight: 600 }}>Quarry Bedrock In Stock — Handcrafted to Order</span>
+                <span style={{ color: '#0b5c52', fontWeight: 600 }}>In Stock — Custom Made to Your Size</span>
               </div>
-              <span style={{ color: '#0b5c52', fontSize: '11px', fontWeight: 500 }}>Lead Time: 45–60 Days</span>
+              <span style={{ color: '#0b5c52', fontSize: '11px', fontWeight: 500 }}>Crafting Time: 30–45 Days</span>
             </div>
 
             {/* Bespoke Sizing Notice & Interactive Space Calculator */}
             <div className="pm-bespoke-box">
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
                 <strong style={{ fontSize: '13px', color: '#1c1813' }}>
-                  Commissioned to Your Exact Space Dimensions
+                  Made to Fit Your Exact Room Size
                 </strong>
                 <span style={{ fontSize: '11px', fontWeight: 700, color: '#8c6a36', background: 'rgba(176,138,79,0.15)', padding: '2px 8px', borderRadius: '4px' }}>
-                  Bespoke Sthapatya
+                  Custom Size
                 </span>
               </div>
               <p style={{ fontSize: '12px', color: '#6b5f52', margin: '0 0 10px', lineHeight: 1.5 }}>
-                Share your villa or apartment room dimensions. Our sthapatis will generate full 2D CAD elevations, cross-sections, and stone volume estimates within 24 hours. (3D CAD available upon special request).
+                Share your room measurements with us. We will create a clear 2D design drawing showing front and side views within 24 hours.
               </p>
               
               {/* E-Commerce Quick Trust Hallmarks */}
               <div className="pm-trust-hallmarks">
-                <div><span style={{ color: '#b08a4f' }}>✓</span> 99.2% Calcite Bedrock</div>
-                <div><span style={{ color: '#b08a4f' }}>✓</span> Free 2D CAD Blueprint</div>
-                <div><span style={{ color: '#b08a4f' }}>✓</span> 100% Yard Dry-Fit Trial</div>
-                <div><span style={{ color: '#b08a4f' }}>✓</span> Global White-Glove Setup</div>
+                <div><span style={{ color: '#b08a4f' }}>✓</span> 100% Pure Natural Marble</div>
+                <div><span style={{ color: '#b08a4f' }}>✓</span> Free 2D Design Drawing</div>
+                <div><span style={{ color: '#b08a4f' }}>✓</span> Pre-Delivery Video Check</div>
+                <div><span style={{ color: '#b08a4f' }}>✓</span> Safe Home Delivery &amp; Setup</div>
               </div>
             </div>
 
@@ -270,7 +270,7 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
                   onInquire?.(product);
                 }}
               >
-                <span className="btn-primary__text">Inquire on This Masterpiece</span>
+                <span className="btn-primary__text">Get Price &amp; Details</span>
                 <span className="btn-primary__icon">→</span>
               </button>
               <a
@@ -287,14 +287,14 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
           </div>
         </div>
 
-        {/* ============ FULL-WIDTH DEEP DOSSIER SECTION (Spans across both sides as user scrolls down!) ============ */}
+        {/* ============ FULL-WIDTH DEEP DETAILS SECTION ============ */}
         <div className="product-modal__full-dossier">
           {/* Deep Specification Tabs */}
           <div className="pm-full-tabs">
             {[
-              { id: 'specs', label: 'Architecture & Specifications' },
-              { id: 'vastu', label: 'Sacred Vastu & Mineral Science' },
-              { id: 'shipping', label: 'Crating & Global Assembly' },
+              { id: 'specs', label: 'About & Size' },
+              { id: 'vastu', label: 'Vastu & Marble Quality' },
+              { id: 'shipping', label: 'Packing & Safe Delivery' },
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -307,17 +307,17 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
             ))}
           </div>
 
-          {/* Tab 1: Architecture & Specs (FULL WIDTH 2-COLUMN LUXURY GRID) */}
+          {/* Tab 1: Architecture & Specs */}
           {activeTab === 'specs' && (
             <div className="pm-dossier-tab-pane">
               <div className="pm-narrative-box">
-                <h4 className="pm-dossier-heading">Architectural Narrative</h4>
+                <h4 className="pm-dossier-heading">About This Design</h4>
                 <p className="pm-narrative-text">{product.fullDesc}</p>
               </div>
 
               {product.specs && (
                 <div className="pm-specs-container">
-                  <h4 className="pm-dossier-heading">Architectural &amp; Artisanal Specifications</h4>
+                  <h4 className="pm-dossier-heading">Product Specifications</h4>
                   <div className="pm-specs-full-grid">
                     {product.specs.map((s, idx) => (
                       <div key={idx} className="pm-spec-card">
@@ -331,14 +331,14 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
             </div>
           )}
 
-          {/* Tab 2: Vastu & Mineral Science (FULL WIDTH 3-COLUMN CARDS) */}
+          {/* Tab 2: Vastu & Mineral Science */}
           {activeTab === 'vastu' && (
             <div className="pm-dossier-tab-pane">
-              <h4 className="pm-dossier-heading">Sacred Sthapatya Veda &amp; Calcite Purity</h4>
+              <h4 className="pm-dossier-heading">Vastu Alignment &amp; Marble Quality</h4>
               <div className="pm-vastu-cards-grid">
                 <div className="pm-feature-card">
                   <span className="pm-feature-card__badge">VASTU SHASTRA</span>
-                  <h5>Vastu-Aligned Proportions</h5>
+                  <h5>Built According to Vastu</h5>
                   <p>Designed strictly according to sacred Vastu principles to bring peace, prosperity, and positive spiritual energy to your home.</p>
                 </div>
                 <div className="pm-feature-card">
@@ -355,25 +355,25 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
             </div>
           )}
 
-          {/* Tab 3: Crating & Assembly (FULL WIDTH 3-COLUMN CARDS) */}
+          {/* Tab 3: Crating & Assembly */}
           {activeTab === 'shipping' && (
             <div className="pm-dossier-tab-pane">
-              <h4 className="pm-dossier-heading">International Crating &amp; White-Glove Installation</h4>
+              <h4 className="pm-dossier-heading">Safe Packing &amp; Easy Home Delivery</h4>
               <div className="pm-vastu-cards-grid">
                 <div className="pm-feature-card">
-                  <span className="pm-feature-card__badge">ISPM-15 COMPLIANT</span>
-                  <h5>ISPM-15 Certified Pine Timber Crates</h5>
-                  <p>Custom fumigated marine plywood casing with 50mm high-density shock EVA foam lining and external Tip-N-Tell shock monitors for guaranteed transit safety across all sea and air freight.</p>
+                  <span className="pm-feature-card__badge">SAFE PACKING</span>
+                  <h5>Strong Wooden Box Packing</h5>
+                  <p>Strong wooden boxes packed with thick protective foam to keep every marble piece 100% safe during shipping across India and worldwide.</p>
                 </div>
                 <div className="pm-feature-card">
-                  <span className="pm-feature-card__badge">MODULAR SETUP</span>
-                  <h5>4 to 6 Hour Dry-Joint Assembly</h5>
-                  <p>Interlocking monolithic stone blocks are discretely laser-numbered. Requires zero wet mortar, toxic glues, or cement, enabling clean indoor setup in luxury villas and modern apartments.</p>
+                  <span className="pm-feature-card__badge">EASY ASSEMBLY</span>
+                  <h5>Easy 4-Hour Assembly (No Mess)</h5>
+                  <p>Numbered interlocking marble pieces fit together easily in just 4 to 6 hours. Completely clean setup with zero dust, cement, or chemical glue inside your home.</p>
                 </div>
                 <div className="pm-feature-card">
-                  <span className="pm-feature-card__badge">GLOBAL LOGISTICS</span>
-                  <h5>Worldwide Doorstep Transit Clearance</h5>
-                  <p>Seamless doorstep transit with customs clearance and professional setup assistance across USA, UK, UAE, Australia, Canada, Singapore, Europe, and pan-India.</p>
+                  <span className="pm-feature-card__badge">WORLDWIDE DELIVERY</span>
+                  <h5>Safe Doorstep Delivery Everywhere</h5>
+                  <p>Safe doorstep delivery with professional setup assistance across India and abroad (USA, UK, UAE, Canada, Australia, and worldwide).</p>
                 </div>
               </div>
             </div>
@@ -382,7 +382,7 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
           {/* Bottom Bar: Direct Share Row & Secondary Actions */}
           <div className="pm-bottom-bar">
             <div className="pm-share-row">
-              <span className="pm-share-label">Direct Share Creation:</span>
+              <span className="pm-share-label">Share This Design:</span>
               <button
                 type="button"
                 className="btn-share-icon"
@@ -433,7 +433,7 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
                 onInquire?.(product);
               }}
             >
-              <span className="btn-primary__text">Inquire on This Masterpiece</span>
+              <span className="btn-primary__text">Get Price &amp; Details</span>
               <span className="btn-primary__icon">→</span>
             </button>
           </div>

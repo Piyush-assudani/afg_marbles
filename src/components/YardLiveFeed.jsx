@@ -4,47 +4,47 @@ import { useState } from 'react';
 const YARD_BAYS = [
   {
     id: 'bay-1',
-    code: 'BAY 01 — PRE-ASSEMBLY TRIAL',
-    title: 'Dry-Joint Fitment & 4K Verification Yard',
-    location: 'Makrana Atelier Yard North',
+    code: 'BAY 01 — FULL SETUP TRIAL',
+    title: 'Workshop Setup & Quality Verification',
+    location: 'Makrana Main Workshop Yard',
     image: '/gallery/yard-dryfit-raw-calcite-mandir.webp?v=4k',
     status: 'ACTIVE INSPECTION',
-    inspector: 'Master Sthapati Ramswaroop Silawat',
-    project: '7.5ft Makrana Peacock Mandapam with Mother-of-Pearl Inlay',
-    details: 'Complete pre-assembly and dry-joint trial in our Makrana yard to verify pillar alignment, elephant plinth fit, and mother-of-pearl peacock halo tolerance before crating.'
+    inspector: 'Head Craftsman Ramswaroop Silawat',
+    project: '7.5ft Makrana Peacock Temple with Mother-of-Pearl Inlay',
+    details: 'Complete setup in our Makrana workshop to check pillar alignment, base stability, and peacock halo carvings before packing.'
   },
   {
     id: 'bay-2',
-    code: 'BAY 02 — MONOLITH CHISELING',
-    title: '4th-Generation Silawat Sculptor Station',
-    location: 'Makrana Carving Pavilion East',
+    code: 'BAY 02 — HAND CARVING',
+    title: 'Traditional Hand-Carving Station',
+    location: 'Makrana Carving Workshop',
     image: '/gallery/mandir-studio-pure-makrana-front.webp',
-    status: 'CHISELING IN PROGRESS',
-    inspector: 'Senior Shilpkar Govind Silawat',
-    project: 'Deep-Undercut Peacock Torana Archway',
-    details: 'Traditional hammer-and-flat-chisel execution directly on a 4.5-ton virgin Makrana block. No high-speed rotary grinders used for sanctum icons to preserve sacred stone frequency.'
+    status: 'CARVING IN PROGRESS',
+    inspector: 'Master Carver Govind Silawat',
+    project: 'Deep-Undercut Peacock Archway',
+    details: 'Traditional hand carving directly on a solid Makrana marble block. Hand-chiseled with care to ensure fine, durable detail.'
   },
   {
     id: 'bay-3',
-    code: 'BAY 03 — CONSECRATED INSTALLATION PROOF',
-    title: 'Patron Villa Completed Commission',
-    location: 'Private Villa Sanctum Suite',
+    code: 'BAY 03 — HOME INSTALLATION',
+    title: 'Completed Temple Installed in Client Home',
+    location: 'Client Residence',
     image: '/gallery/mandir-artisan-install.webp',
-    status: 'CONSECRATED & INSTALLED',
-    inspector: 'Chief Sthapati Installation Guild',
-    project: 'Luxury Villa Consecrated Sanctum Suite',
-    details: 'Final consecrated installation in patron estate featuring warm 3000K indirect halo lighting, soft-close storage drawers, and matching carved singhasan.'
+    status: 'COMPLETED & INSTALLED',
+    inspector: 'AFG Expert Installation Team',
+    project: 'Home Temple Setup in Family Villa',
+    details: 'Final installation in client home featuring warm indirect lighting, smooth drawers, and matching deity platform.'
   },
   {
     id: 'bay-4',
-    code: 'BAY 04 — WATER PALACE FOUNTAIN COLONNADE',
-    title: 'Multi-Perspective Fountain Hydraulic Test',
-    location: 'Water Architecture Testing Grounds',
+    code: 'BAY 04 — FOUNTAIN TESTING',
+    title: 'Fountain Water Flow & Leak Test',
+    location: 'Workshop Water Testing Area',
     image: '/gallery/fountain-palatial-estate-triple-tier-lawn.webp',
-    status: 'HYDRAULIC CERTIFIED',
-    inspector: 'Senior Hydraulic Craftsman',
+    status: 'WATER FLOW TESTED',
+    inspector: 'Senior Workshop Engineer',
     project: 'Palatial Four-Tier Scalloped Marble Fountain',
-    details: 'Laminar flow and zero-splash water sheeting verified across all 4 concentric tiers under variable pump pressure before international marine crating.'
+    details: 'Water flow and smooth cascade tested across all tiers under running water before final packing.'
   }
 ];
 
@@ -52,10 +52,10 @@ export default function YardLiveFeed({ onOpenInquiry }) {
   const [activeBay, setActiveBay] = useState(YARD_BAYS[0]);
 
   const handleRequestLiveTour = () => {
-    const text = `*AFG MARBLE & ARTS — LIVE YARD VIDEO TOUR REQUEST*\n\n` +
-      `Hello, I would like to request a 15-minute live WhatsApp video walkthrough of the Makrana Atelier Yard to inspect the ongoing mandir dry-fitment trials and raw Makrana calcite bedrock.\n\n` +
+    const text = `*AFG MARBLE & ARTS — LIVE WORKSHOP VIDEO TOUR REQUEST*\n\n` +
+      `Hello, I would like to request a 15-minute live WhatsApp video walkthrough of your Makrana workshop to see current temple work and pure Makrana white marble.\n\n` +
       `Inspecting Bay: ${activeBay.code} (${activeBay.title})\n` +
-      `Please schedule my live video session with the Master Sthapati.`;
+      `Please schedule a live video session with your workshop expert.`;
 
     const url = `https://wa.me/917597417274?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
@@ -85,16 +85,16 @@ export default function YardLiveFeed({ onOpenInquiry }) {
               display: 'inline-block'
             }}></span>
             <span style={{ color: '#ecd39b', fontSize: '11px', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase' }}>
-              DIRECT MAKRANA ATELIER YARD INSPECTION
+              LIVE WORKSHOP INSPECTION
             </span>
           </div>
 
           <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.8vw, 44px)', color: '#ffffff', letterSpacing: '-0.01em' }}>
-            Real Stone. Real Yard. Zero Facades.
+            Real Marble. Real Workshop. 100% Genuine Work.
           </h2>
           <div className="gold-rule center" style={{ margin: '14px auto 20px', background: '#b08a4f' }}></div>
           <p className="sub-lead" style={{ maxWidth: '760px', margin: '0 auto', fontSize: '15px', color: '#b8ab9a', lineHeight: 1.6 }}>
-            Unlike digital resellers using stock 3D renders, AFG Marble operates an expansive open stone assembly yard in Makrana. Hover below to inspect live pre-assembly dry-joints, block selection, and generational Silawats chiseling live.
+            We do not use fake 3D computer renders. Everything you see is made by our craftsmen in our Makrana workshop. Check out real photos from our workshop below, or request a live video tour on WhatsApp.
           </p>
         </div>
 
@@ -323,7 +323,7 @@ export default function YardLiveFeed({ onOpenInquiry }) {
                       <span style={{ color: '#c5a059' }}>✦</span> 4K video walkthrough with centimeter ruler measurements
                     </li>
                     <li style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                      <span style={{ color: '#c5a059' }}>✦</span> Ultrasonic pulse report verifying virgin Makrana bedrock
+                      <span style={{ color: '#c5a059' }}>✦</span> Lab report verifying 100% pure Makrana natural marble
                     </li>
                     <li style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
                       <span style={{ color: '#c5a059' }}>✦</span> Direct FaceTime or physical walkthrough in Makrana welcomed

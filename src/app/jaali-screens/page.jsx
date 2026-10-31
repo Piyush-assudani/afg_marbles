@@ -25,11 +25,11 @@ export default function JaaliScreensPage() {
     },
     {
       id: 'peacock-arch-filigree',
-      title: 'The Royal Scalloped Torana Jaali Arch',
-      pattern: 'Peacock Feather & Scalloped Arch Filigree',
-      desc: 'Ornamental archway screen designed for wall-integrated pooja niches. Each micro-hole is chiseled entirely by hand without laser heat damage, ensuring lifelong crystal integrity.',
+      title: 'The Hand-Carved Peacock Arch Jali',
+      pattern: 'Peacock Feather & Arch Cutwork',
+      desc: 'Decorative arched screen designed for pooja room niches and doorways. Every cutwork hole is carved entirely by hand with hammer and chisel, ensuring it stays strong and bright forever.',
       img: '/gallery/sanctum-decorative-arch.webp',
-      badge: 'Imperial Torana',
+      badge: 'Carved Arch',
       tag: 'Niche Arch'
     },
     {
@@ -50,14 +50,14 @@ export default function JaaliScreensPage() {
           <div className="breadcrumbs">
             <Link href="/">Home</Link>
             <span>/</span>
-            <span>Masterpiece Catalog</span>
+            <span>Catalog</span>
             <span>/</span>
-            <span>Marble Jaali Screens</span>
+            <span>Marble Jali Screens</span>
           </div>
-          <h1>Hand-Pierced Marble Jaali Screens &amp; Partitions</h1>
+          <h1>Hand-Carved Marble Jali Screens &amp; Doors</h1>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
-            Openwork pierced stone screens (Jaalis) carved from single monolithic slabs of authentic Makrana Calcite marble. Hand-pierced by Silawat artisans with diamond chisels to filter sacred light, facilitate natural aarti ventilation, and bestow architectural grandeur.
+            Handmade marble jali screens and temple folding doors carved from solid natural Makrana marble slabs. Pierced by hand using traditional tools to allow gentle light, air flow, and incense smoke to vent naturally.
           </p>
         </div>
       </section>
@@ -95,7 +95,7 @@ export default function JaaliScreensPage() {
                       type="button"
                       className="btn-whatsapp-pill"
                       onClick={() => {
-                        const text = `Namaste AFG Marble, I am inquiring about custom Marble Jaali Screens: "${jaali.title}". Please share pattern catalogs, dimensions, and pricing.`;
+                        const text = `Namaste AFG Marble, I am inquiring about custom marble jali screens: "${jaali.title}". Please share designs, sizes, and pricing.`;
                         window.open(`https://wa.me/917597417274?text=${encodeURIComponent(text)}`, '_blank');
                       }}
                       style={{
@@ -117,7 +117,7 @@ export default function JaaliScreensPage() {
                         boxShadow: '0 4px 16px rgba(28, 24, 19, 0.16)',
                       }}
                     >
-                      <span>Inquire on WhatsApp</span>
+                      <span>Get Price &amp; Details</span>
                     </button>
                   </div>
                 </div>

@@ -18,14 +18,14 @@ export default function MaterialsGuidePage() {
           <div className="breadcrumbs">
             <Link href="/">Home</Link>
             <span>/</span>
-            <span>Atelier Knowledge</span>
+            <span>Marble Guide</span>
             <span>/</span>
-            <span>Makrana Calcite Science</span>
+            <span>Pure Marble Guide</span>
           </div>
-          <h1>The Makrana Calcite &amp; Noble Stone Guide</h1>
+          <h1>The Complete Pure White Marble Guide</h1>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
-            Understanding pure Makrana calcite: why the Taj Mahal and historic royal sanctums built from this geological wonder remain pure white for centuries without degradation.
+            Why pure Makrana marble stays bright white for hundreds of years: zero yellowing, zero stains from puja liquids, and 100% natural solid stone.
           </p>
         </div>
       </section>
@@ -40,33 +40,33 @@ export default function MaterialsGuidePage() {
                 alt="Authentic Pure Makrana Calcite Marble"
                 loading="lazy"
               />
-              <div className="media-caption-badge">99% Pure Calcite Bedrock</div>
+              <div className="media-caption-badge">100% Natural Makrana Marble</div>
             </div>
             <div className="page-info-block">
-              <span className="card-badge">GEOLOGICAL EXCELLENCE</span>
-              <h2>99% Pure Calcite Structure</h2>
+              <span className="card-badge">100% PURE MARBLE</span>
+              <h2>Why Makrana Marble Is World Famous</h2>
               <div className="gold-rule"></div>
               <p>
-                Unlike commercial imported marbles or dolomitic stones containing high levels of iron, magnesium, and clay, authentic Makrana marble quarried from Nagaur district, Rajasthan is composed of 98% to 99% pure calcium carbonate calcite crystals.
+                Unlike ordinary market marbles that turn yellow or absorb oily stains, genuine Makrana marble from Rajasthan is 100% pure natural stone. It contains zero iron or artificial chemicals, so it never changes color.
               </p>
               <ul className="spec-list-luxury">
                 <li>
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#b08a4f" strokeWidth="2.4">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span><strong>Zero Porosity Absorption:</strong> 0.01% porosity means it will not absorb milk, honey, sandalwood paste, or diya oil during sacred daily puja rituals.</span>
+                  <span><strong>Never Absorbs Stains:</strong> Daily puja items like milk, water, honey, chandan (sandalwood), and diya oil wipe clean without leaving any dark spots.</span>
                 </li>
                 <li>
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#b08a4f" strokeWidth="2.4">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span><strong>Self-Polishing Luster:</strong> The more Makrana marble is touched, washed, and worshipped, the more brilliant its diamond-crystalline glow becomes over generations.</span>
+                  <span><strong>Gets Brighter Over Time:</strong> The more you touch, clean, and worship at the temple, the smoother and brighter it shines over the years.</span>
                 </li>
                 <li>
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#b08a4f" strokeWidth="2.4">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span><strong>Zero Chemical Resins:</strong> Cut directly from monolithic bedrock without epoxy mesh backing, polyester adhesives, or synthetic resin hardening.</span>
+                  <span><strong>Zero Artificial Resins or Chemicals:</strong> Cut directly from solid natural marble blocks without cheap glue backing, plastic coating, or synthetic fillers.</span>
                 </li>
               </ul>
               <div className="info-actions" style={{ marginTop: '24px' }}>
@@ -76,7 +76,7 @@ export default function MaterialsGuidePage() {
                   rel="noopener noreferrer"
                   className="btn-primary"
                 >
-                  <span className="btn-primary__text">Inquire on Raw Quarry Blocks</span>
+                  <span className="btn-primary__text">Ask About Our Marble Quality</span>
                   <span className="btn-primary__icon">→</span>
                 </a>
               </div>
@@ -90,33 +90,33 @@ export default function MaterialsGuidePage() {
                 alt="Sacred Makrana Calcite Marble and Noble Stone Inlay"
                 loading="lazy"
               />
-              <div className="media-caption-badge">Pristine Calcite &amp; Inlay</div>
+              <div className="media-caption-badge">Pure White Marble</div>
             </div>
             <div className="page-info-block">
-              <span className="card-badge">AUTHENTIC MATERIAL PALETTE</span>
-              <h2>Our Strict 3-Stone Discipline</h2>
+              <span className="card-badge">OUR 3 CERTIFIED MARBLES</span>
+              <h2>The 3 Marbles We Use</h2>
               <div className="gold-rule"></div>
               <p>
-                In strict adherence to Vedic architectural tradition, stone purity, and hydraulic engineering, our atelier crafts exclusively with three certified noble white marbles — and no other stone:
+                To ensure lifelong durability and authentic purity, our workshop uses only three certified natural white marbles:
               </p>
               <ul className="spec-list-luxury">
                 <li>
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#b08a4f" strokeWidth="2.4">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span><strong>1. Makrana Pure White Marble:</strong> Mined from authentic quarries in Makrana, Rajasthan. 100% pure virgin calcite structure without spots or lines — the revered Taj Mahal stone with an absolute zero-yellowing lifetime guarantee and zero oil or milk absorption.</span>
+                  <span><strong>1. Makrana Pure White Marble:</strong> The famous Taj Mahal stone from Makrana, Rajasthan. 100% natural pure white marble with lifetime zero-yellowing guarantee and zero oil or milk absorption.</span>
                 </li>
                 <li>
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#b08a4f" strokeWidth="2.4">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span><strong>2. Vietnam Pure White Marble:</strong> High-altitude Yen Bai quarries. 99.6% ultra-pure micro-crystalline snow calcite with spotless white brilliance and zero spots or lines. World-renowned for translucent light scatter and immaculate deity sculpture.</span>
+                  <span><strong>2. Vietnam Pure White Marble:</strong> Crystal-clear snow white marble with spotless finish. Ideal for modern home temples and deity statues with glowing light reflection.</span>
                 </li>
                 <li>
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#b08a4f" strokeWidth="2.4">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span><strong>3. Rajnagar White Marble:</strong> Mined from Rajsamand, Rajasthan. Heavy hydraulic dense calcite (2.72 g/cm³) with natural subtle mineral veining and authentic character. Engineered for monumental estate fountains, cascades, and outdoor courtyards.</span>
+                  <span><strong>3. Rajnagar White Marble:</strong> Dense and durable white marble from Rajasthan with natural subtle grey veins. Specially selected for outdoor water fountains and garden chhatris to withstand flowing water and weather.</span>
                 </li>
               </ul>
               <div className="info-actions" style={{ marginTop: '24px' }}>
@@ -125,7 +125,7 @@ export default function MaterialsGuidePage() {
                   className="btn-primary"
                   onClick={() => handleOpenInquiry('Request Certified Marble Physical Samples')}
                 >
-                  <span className="btn-primary__text">Request Material Samples</span>
+                  <span className="btn-primary__text">Get Free Marble Advice on WhatsApp</span>
                   <span className="btn-primary__icon">→</span>
                 </button>
               </div>
@@ -135,11 +135,11 @@ export default function MaterialsGuidePage() {
           {/* Detailed Stone Qualities & Technical Breakdown */}
           <div style={{ marginTop: '80px' }}>
             <div className="sec-header text-center" style={{ marginBottom: '40px' }}>
-              <span className="card-badge">LABORATORY &amp; ARCHITECTURAL BENCHMARKS</span>
-              <h2>Scientific Properties of Our 3 Noble Stones</h2>
+              <span className="card-badge">KEY MARBLE FACTS</span>
+              <h2>Comparison of Our 3 Natural Marbles</h2>
               <div className="gold-rule center"></div>
               <p className="sub-lead">
-                Every slab is tested for chemical purity, mineral density, and water impermeability before carving commences in our Makrana yard.
+                Every marble block is hand-inspected in our Makrana workshop before carving begins.
               </p>
             </div>
 
@@ -309,26 +309,26 @@ export default function MaterialsGuidePage() {
           {/* Why We Reject All Other Stones */}
           <div className="page-cards-grid-3" style={{ marginTop: '64px' }}>
             <div className="page-card-item">
-              <span className="card-badge">TEMPLE INTEGRITY</span>
-              <h3>Why Only Makrana &amp; Vietnam for Temples</h3>
+              <span className="card-badge">TEMPLE QUALITY</span>
+              <h3>Why Makrana &amp; Vietnam for Home Temples</h3>
               <p>
-                Home mandirs encounter daily puja rituals with milk, water, and diya oil. Authentic Makrana white marble is completely non-porous, preventing stains, cracks, and yellowing for lifetimes.
+                Home temples face daily puja rituals with milk, water, and diya oil. Authentic white marble prevents stains and yellowing, staying pure and clean forever.
               </p>
             </div>
             <div className="page-card-item">
-              <span className="card-badge">HYDRAULIC INTEGRITY</span>
-              <h3>Why Only Rajnagar for Fountains</h3>
+              <span className="card-badge">FOUNTAIN QUALITY</span>
+              <h3>Why Rajnagar Marble for Water Fountains</h3>
               <p>
-                Water fountains endure 24/7 pressurized water flow, dissolved minerals, and seasonal freeze-thaw cycles. Rajnagar high-density calcite withstands water erosion without pitting or algae adhesion.
+                Water fountains face running water every day. Dense Rajnagar marble resists water wear, outdoor sun, and rain without pitting or fading.
               </p>
             </div>
             <div className="page-card-item">
               <span className="card-badge" style={{ background: 'rgba(239, 68, 68, 0.1)', color: '#ef4444' }}>
                 ZERO COMPROMISE
               </span>
-              <h3>No Porous Stone or Artificial Resin</h3>
+              <h3>No Fake Marble, No Chemical Mixes</h3>
               <p>
-                A.F.G strictly refuses commercial dolomitic stones, sandstones, or epoxy resin-glued agglomerates. Every creation is sculpted exclusively from monolithic certified natural bedrock.
+                A.F.G never uses composite plastic powders, glued tiles, or cheap commercial stones. Every single temple and fountain is carved from 100% solid natural marble.
               </p>
             </div>
           </div>

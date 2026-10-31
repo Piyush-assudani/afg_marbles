@@ -7,27 +7,27 @@ export default function ArchitecturalFaq({ onOpenInquiry }) {
   const faqs = [
     {
       q: 'Will daily milk, oil, and puja rituals stain pure Makrana marble?',
-      a: 'Never. Authentic Makrana marble has near-zero water absorption (less than 0.04%). Milk, water, honey, diya oil, and incense smoke cannot penetrate the stone and wipe off easily with clean water, keeping your temple bright white and spotless for generations.',
+      a: 'Never. 100% pure Makrana marble does not absorb liquids. Milk, water, honey, diya oil, and incense smoke cannot go inside the stone. Simply wipe with a wet cotton cloth, and your temple will stay clean and bright white for generations.',
     },
     {
-      q: 'Why is Makrana marble preferred over Italian marble for home temples?',
-      a: 'Italian marbles like Statuario and Carrara are soft stones meant for indoor floors and walls; they absorb liquids and turn yellowish within a few years. Makrana marble is the authentic temple stone of India and the Taj Mahal. It is dense, 100% stain-resistant, and actually becomes whiter and more luminous with every wash.',
+      q: 'Why is Makrana marble better than Italian marble for home temples?',
+      a: 'Italian marbles like Statuario are soft stones meant for indoor floors; they absorb liquids and turn yellowish within 2 to 3 years. Makrana marble is the famous stone used in the Taj Mahal. It is super dense, 100% stain-resistant, and actually looks newer and whiter with every wash.',
     },
     {
-      q: 'How is a large marble temple delivered and installed in my home without any mess?',
-      a: 'Every A.F.G temple is made using precision interlocking modular marble blocks (carved base, pillars, jali panels, and dome). We assemble and verify the entire mandir in our Makrana workshop before dispatch. When it reaches your home, our skilled team fits the interlocking pieces smoothly within 4 to 6 hours—completely clean, with zero dust, cement, or construction noise.',
+      q: 'How is the marble temple delivered and installed in my home without mess?',
+      a: 'Every temple is made of interlocking marble pieces (base, pillars, panels, and dome). We assemble the whole temple in our workshop first and send you a video check. When it arrives at your home, our team fits the pieces together in 4 to 6 hours—completely clean, with zero dust, cement, or noise.',
     },
     {
-      q: 'What is Ayadi Vastu Shastra calculation and how does AFG apply it?',
-      a: 'Ayadi Shastra is the sacred mathematical science of Sthapatya Veda. It calculates the perimeter, height, and sanctum depth using specific formulas that ensure the temple vibration radiates positive spiritual energy (Dhana Aya for prosperity, Ayushya for longevity, and Nakshatra harmony matching the family head). Our in-house Sthapathi calculates these dimensions before carving begins so your temple is an authentic spiritual sanctuary.',
+      q: 'What is Vastu calculation and how do you design temples according to it?',
+      a: 'Vastu is the ancient Indian science of positive home energy. It calculates the exact temple height, width, and depth to bring peace, good health, and prosperity to your family. Our temple experts calculate these measurements before carving begins.',
     },
     {
-      q: 'Can AFG design a custom sanctum for irregular apartment corners or restricted heights?',
-      a: 'Yes. 100% of our commissions are bespoke. Whether you have an awkward alcove, a low false-ceiling clearance of 7.5 feet, or a palatial double-height atrium of 20 feet, our architectural CAD team incorporates your exact room blueprints, integrating concealed LED lighting channels, smoke ventilation flues, and velvet storage drawers tailored down to the millimeter.',
+      q: 'Can you make a custom temple for my apartment size or low ceiling?',
+      a: 'Yes! 100% of our temples are custom-made to fit your space. Whether you have a small apartment corner, a 7.5-foot false ceiling, or a large living room, we make an exact 2D drawing of your room first. We also include warm LED lighting, smoke vents, and smooth storage drawers.',
     },
     {
-      q: 'How does ISPM-15 international export packaging prevent breakage during transit?',
-      a: 'Every stone component is wrapped in moisture-resistant vapor barrier film, nestled inside 50mm high-density shock-absorbing EVA foam, and locked inside fumigated ISPM-15 certified marine-grade pinewood crates. Each crate is equipped with external Tip-N-Tell tilt sensors and shock indicators. We have successfully dispatched and installed over 450 international commissions across the USA, UK, UAE, Australia, and Singapore with a 100% zero-breakage record.',
+      q: 'How do you pack the marble temple so it doesn’t break during shipping?',
+      a: 'Every marble piece is wrapped in protective foam and packed inside heavy-duty, certified wooden boxes with transit insurance. We have delivered over 450 marble temples safely across India and worldwide to the USA, UK, UAE, Canada, and Australia with zero breakage.',
     },
   ];
 
@@ -40,14 +40,14 @@ export default function ArchitecturalFaq({ onOpenInquiry }) {
       <div className="sec-container">
         <div className="sec-header text-center" style={{ marginBottom: '48px' }}>
           <span className="card-badge" style={{ position: 'static', display: 'inline-block', marginBottom: '12px' }}>
-            ATELIER KNOWLEDGE &amp; CLARITY
+            CLEAR ANSWERS
           </span>
           <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.5vw, 44px)', color: '#1c1813' }}>
             Frequently Asked Questions
           </h2>
           <div className="gold-rule center" style={{ margin: '14px auto 20px' }}></div>
           <p className="sub-lead" style={{ maxWidth: '720px', margin: '0 auto', fontSize: '15px', color: '#6b5f52', lineHeight: 1.6 }}>
-            Everything you need to know about Makrana stone science, sacred Ayadi Vastu dimensions, modular indoor installation, and global delivery.
+            Everything you need to know about marble quality, custom temple sizes, home delivery, and easy assembly.
           </p>
         </div>
 

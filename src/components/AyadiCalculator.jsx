@@ -7,7 +7,7 @@ export default function AyadiCalculator({ onOpenInquiry }) {
   const [depth, setDepth] = useState(4);
   const [height, setHeight] = useState(9);
   const [stone, setStone] = useState('Makrana Pure Albeta');
-  const [style, setStyle] = useState('Nagara Shikhara Multi-Tier');
+  const [style, setStyle] = useState('Traditional Carved Spire Mandir');
 
   // Defensive input handling: guarantee strictly valid positive numbers
   const safeWidth = Number.isFinite(width) && width > 0 ? Math.min(Math.max(width, 2), 30) : 7;
@@ -30,7 +30,7 @@ export default function AyadiCalculator({ onOpenInquiry }) {
   const ayadiRatio = ((Math.round(safeWidth * 12) * 8) % 12 === 0 ? 'Dhana Aya (Infinite Wealth)' : 'Vriddhi Aya (Continuous Spiritual Growth)');
 
   const handleSendCADRequest = () => {
-    const text = `Namaste A.F.G Marble & Arts, I used your space estimator tool.\n\nMy Custom Space Requirements:\n- Type: ${spaceType.toUpperCase()}\n- Dimensions: ${safeWidth}ft (W) × ${safeDepth}ft (D) × ${safeHeight}ft (H)\n- Preferred Stone: ${stone}\n- Architectural Style: ${style}\n- Estimated Area: ${areaSqFt} sq.ft (${volumeCuFt} cu.ft)\n- Sthapatya Metric: ${ayadiRatio}\n\nPlease share preliminary 2D CAD blueprint options and bespoke pricing feasibility.`;
+    const text = `Namaste A.F.G Marble & Arts, I used your space estimator tool.\n\nMy Custom Space Requirements:\n- Type: ${spaceType.toUpperCase()}\n- Dimensions: ${safeWidth}ft (W) × ${safeDepth}ft (D) × ${safeHeight}ft (H)\n- Preferred Stone: ${stone}\n- Architectural Style: ${style}\n- Estimated Area: ${areaSqFt} sq.ft (${volumeCuFt} cu.ft)\n- Sthapatya Metric: ${ayadiRatio}\n\nPlease share free 2D design drawing options and price details.`;
     window.open(`https://wa.me/917597417274?text=${encodeURIComponent(text)}`, '_blank');
   };
 
@@ -39,14 +39,14 @@ export default function AyadiCalculator({ onOpenInquiry }) {
       <div className="sec-container">
         <div className="sec-header text-center" style={{ marginBottom: '44px' }}>
           <span className="card-badge" style={{ position: 'static', display: 'inline-block', marginBottom: '12px' }}>
-            INTERACTIVE AYADI VASTU CALCULATOR
+            VASTU &amp; SIZE CALCULATOR
           </span>
           <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 3.5vw, 44px)', color: '#1c1813' }}>
-            Calculate Your Space Dimensions &amp; Sacred Proportions
+            Check Temple Size &amp; Vastu for Your Home
           </h2>
           <div className="gold-rule center" style={{ margin: '14px auto 20px' }}></div>
           <p className="sub-lead" style={{ maxWidth: '740px', margin: '0 auto', fontSize: '15px', color: '#6b5f52', lineHeight: 1.6 }}>
-            Every sanctum chiseled by AFG adheres strictly to the sacred Sthapatya Veda mathematical formulas. Adjust the parameters below to preview your sanctum&apos;s architectural specifications.
+            Find the perfect temple size for your room based on sacred Vastu guidelines. Choose your room measurements below to see the estimated weight, parts, and get a free 2D drawing.
           </p>
         </div>
 
@@ -66,13 +66,13 @@ export default function AyadiCalculator({ onOpenInquiry }) {
           {/* Left Form Controls */}
           <div style={{ padding: 'clamp(24px, 4vw, 40px)', display: 'flex', flexDirection: 'column', gap: '22px' }}>
             <h3 style={{ fontFamily: 'var(--serif)', fontSize: '22px', color: '#1c1813', margin: 0 }}>
-              1. Define Your Space Parameters
+              1. Enter Your Room Details
             </h3>
 
             {/* Space Type Selector */}
             <div>
               <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#8c6a36', marginBottom: '8px' }}>
-                Sanctuary Type
+                Where Will You Place the Temple?
               </label>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
                 {[
@@ -155,7 +155,7 @@ export default function AyadiCalculator({ onOpenInquiry }) {
             {/* Stone Dropdown */}
             <div>
               <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#8c6a36', marginBottom: '6px' }}>
-                Primary Calcite Marble Stratum
+                Marble Type
               </label>
               <select
                 value={stone}
@@ -172,8 +172,8 @@ export default function AyadiCalculator({ onOpenInquiry }) {
                   cursor: 'pointer',
                 }}
               >
-                <option value="Makrana Pure White Marble">Makrana Pure White Marble (99.2% Calcite - Taj Mahal Stratum)</option>
-                <option value="Vietnam Pure White Marble">Vietnam Pure White Marble (99.6% Crystalline Snow Calcite)</option>
+                <option value="Makrana Pure White Marble">Makrana Pure White Marble (Same marble as Taj Mahal - Never stains)</option>
+                <option value="Vietnam Pure White Marble">Vietnam Pure White Marble (Crystal White - Super smooth)</option>
               </select>
             </div>
           </div>
@@ -261,7 +261,7 @@ export default function AyadiCalculator({ onOpenInquiry }) {
                   transition: 'all 0.25s ease',
                 }}
               >
-                <span>Request 2D CAD Blueprint on WhatsApp</span>
+                <span>Request Free 2D Design on WhatsApp</span>
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
                   <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.074-1.803-.412-1.493-.623-2.457-2.148-2.531-2.249-.074-.099-.607-.808-.607-1.543s.385-1.096.521-1.246c.137-.149.3-.187.4-.187.1 0 .2.001.288.006.096.005.226-.036.353.27.13.315.444 1.085.483 1.164.039.08.065.174.013.277-.052.104-.078.169-.156.259-.078.091-.164.202-.234.271-.078.078-.16.162-.069.319.091.156.404.667.868 1.08.597.532 1.099.697 1.255.775.156.078.247.065.338-.039.091-.104.39-.455.494-.611.104-.156.208-.13.351-.078.143.052.909.429 1.065.507.156.078.26.117.299.182.039.065.039.378-.105.783z" />
                 </svg>
@@ -269,7 +269,7 @@ export default function AyadiCalculator({ onOpenInquiry }) {
 
               <button
                 type="button"
-                onClick={() => onOpenInquiry?.({ title: `Bespoke ${width}x${depth}x${height}ft Sanctum Blueprint` })}
+                onClick={() => onOpenInquiry?.({ title: `Custom ${width}x${depth}x${height}ft Temple Design` })}
                 style={{
                   width: '100%',
                   padding: '10px 18px',
@@ -282,7 +282,7 @@ export default function AyadiCalculator({ onOpenInquiry }) {
                   cursor: 'pointer',
                 }}
               >
-                Schedule Virtual Discovery Session
+                Book Free Video Consultation
               </button>
             </div>
           </div>

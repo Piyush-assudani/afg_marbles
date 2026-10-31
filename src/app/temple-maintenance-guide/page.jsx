@@ -2,9 +2,9 @@ import Link from 'next/link';
 import { AlertTriangle } from 'lucide-react';
 
 export const metadata = {
-  title: 'Sacred Marble Temple Care & Abhishek Maintenance Guide | A.F.G Marble & Arts',
+  title: 'Marble Temple Care & Daily Cleaning Guide | A.F.G Marble & Arts',
   description:
-    'Master artisan guidelines for maintaining consecrated Makrana marble home temples. Safe daily abhishek rituals, milk and ghee cleaning, smoke venting, and zero-acid preservation.',
+    'Simple guidelines for cleaning and maintaining your white marble home temple. Safe tips for daily milk abhishek, diya oil, incense smoke, and zero-acid cleaning.',
 };
 
 export default function TempleMaintenanceGuidePage() {
@@ -14,8 +14,8 @@ export default function TempleMaintenanceGuidePage() {
       title: 'Daily Abhishek Care (Milk, Curd, Honey & Panchamrit)',
       rule: 'Rinse with clean lukewarm water within 30 minutes of ritual conclusion.',
       details:
-        'Because authentic Makrana marble has a closed crystalline matrix (<0.04% porosity), milk and panchamrit will not penetrate the stone. However, drying milk proteins create an organic surface haze. Simply wipe the garbhagriha pedestal with a soft cotton muslin cloth soaked in clean warm water.',
-      warning: 'Never use synthetic kitchen detergents or dish soaps on consecrated marble.',
+        'Authentic Makrana marble never absorbs liquids. But dried milk can leave a light film on the surface. Simply wipe the deity platform with a soft cotton cloth dipped in clean lukewarm water after puja.',
+      warning: 'Never use harsh kitchen detergents or dish soaps on pure marble.',
     },
     {
       num: '02',
@@ -38,7 +38,7 @@ export default function TempleMaintenanceGuidePage() {
       title: 'Zero Acid Prohibition & Stone Polishing',
       rule: 'Strictly zero hydrochloric acid, harpic, vinegar, or lemon juice.',
       details:
-        'Any acid, no matter how dilute, attacks calcium carbonate (CaCO3), permanently dissolving the crystalline glaze and leaving a dull chalky texture. To restore high mirror gloss, use our traditional Silawat water-honing compound or natural beeswax polish.',
+        'Never use acid, toilet cleaners, vinegar, or lemon juice. Acid ruins natural marble shine instantly. For regular cleaning, plain warm water and a soft cloth are all you need.',
       warning: 'Acid damage requires professional diamond grit re-grinding to repair.',
     },
     {
@@ -46,8 +46,8 @@ export default function TempleMaintenanceGuidePage() {
       title: 'Outdoor Fountain Seasonal Winterization',
       rule: 'Drain collection bowls if temperatures drop below freezing (-5°C).',
       details:
-        'While Makrana calcite withstands thermal frost effortlessly, trapped expanding ice inside the brass manifolds or narrow fountain nozzles can fracture plumbing lines. Clear water from pumps and drape the finial with a breathable canvas cover during deep winter freezes.',
-      warning: 'Never add ethylene glycol automotive anti-freeze to sacred water pools.',
+        'In freezing winter climates, drain water from fountain pipes and pumps so expanding ice does not crack the plumbing lines.',
+      warning: 'Never add ethylene glycol automotive anti-freeze to fountain pools.',
     },
   ];
 
@@ -59,14 +59,14 @@ export default function TempleMaintenanceGuidePage() {
           className="card-badge"
           style={{ position: 'static', display: 'inline-block', marginBottom: '14px', background: 'rgba(176, 138, 79, 0.15)', color: '#8c6a36' }}
         >
-          SACRED STONECARE DISCIPLINE
+          EASY CARE GUIDE
         </span>
         <h1 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(32px, 4vw, 52px)', color: '#1c1813', lineHeight: 1.2, marginBottom: '18px' }}>
-          Temple Maintenance &amp; Ritual Care Guide
+          Easy Temple Cleaning &amp; Care Guide
         </h1>
         <div className="gold-rule center" style={{ margin: '14px auto 22px' }}></div>
         <p style={{ fontSize: '16px', color: '#6b5f52', lineHeight: 1.7, maxWidth: '780px', margin: '0 auto' }}>
-          A consecrated Makrana marble temple is an architectural sanctuary designed to endure for centuries. Preserving its luminous white sanctity requires adhering to ancient Silawat care disciplines and gentle natural cleaning protocols.
+          A genuine Makrana marble temple is made to last for generations. Follow these simple tips to keep your temple bright white, clean, and shining forever.
         </p>
       </section>
 
@@ -143,7 +143,7 @@ export default function TempleMaintenanceGuidePage() {
             Have a Specific Temple or Fountain Care Question?
           </h2>
           <p style={{ fontSize: '15px', color: '#d8ccb8', lineHeight: 1.7, marginBottom: '28px' }}>
-            Our master stone conservators are available 7 days a week on WhatsApp to assist patrons with sacred temple upkeep, gold gilding touch-ups, or seasonal fountain service.
+            Our marble experts are available 7 days a week on WhatsApp to help you with any temple care or cleaning questions.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap' }}>
             <a

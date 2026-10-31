@@ -193,14 +193,14 @@ export default function MakranaCalciteMinePage() {
       <section style={{ background: '#1c1813', color: '#fdfbf7', padding: '64px 24px', textAlign: 'center' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'var(--serif)', fontSize: '30px', color: '#ecd39b', marginBottom: '14px' }}>
-            Request Bedrock Calcite Samples &amp; Lab Certificates
+            Request Pure Marble Samples &amp; Certificates
           </h2>
           <p style={{ fontSize: '15px', color: '#d8ccb8', lineHeight: 1.7, marginBottom: '28px' }}>
-            We dispatch physical Makrana bedrock sample tiles and chemical assay certificates worldwide to prospective patrons and architects. Experience the translucent glow under light.
+            We send genuine Makrana marble sample pieces and quality certificates to customers and architects across India and worldwide. Feel the smooth finish and natural shine yourself.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap' }}>
             <a
-              href="https://wa.me/917597417274?text=Namaste%20AFG%20Marble%2C%20I%20would%20like%20to%20request%20Makrana%20marble%20bedrock%20samples%20and%20mineral%20purity%20certificates."
+              href="https://wa.me/917597417274?text=Namaste%20AFG%20Marble%2C%20I%20would%20like%20to%20request%20Makrana%20marble%20samples%20and%20purity%20certificates."
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"

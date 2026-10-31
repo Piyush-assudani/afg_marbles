@@ -7,23 +7,23 @@ export default function PreAssemblyTrialPage() {
   const STAGES = [
     {
       step: '01',
-      title: 'Monolith Section Numbering & Dry-Fit',
-      desc: 'Every carved marble pillar, arch, jali screen, and shikhara spire is given laser-etched orientation codes. Sections are dry-assembled onto perfectly level granite trial beds in our Makrana yard.'
+      title: 'Numbering Every Marble Part',
+      desc: 'Every pillar, arch, jali door, and top dome is numbered clearly. All parts are set up together on flat level ground in our workshop to test the exact fit.'
     },
     {
       step: '02',
-      title: 'Precision Tenon Joint Tolerances',
-      desc: 'Our Master Sthapatis inspect joint lines using 0.5mm feeler gauges. All dry-joint marble tenons must lock together seamlessly without rocking, tension, or the need for synthetic epoxy adhesives.'
+      title: 'Perfect Interlocking Joints',
+      desc: 'Our senior craftsmen test each joint. All marble pieces slot together firmly without shaking, uneven gaps, or messy glue.'
     },
     {
       step: '03',
-      title: 'Concealed LED & Cable Channel Verification',
-      desc: 'All electrical conduits for warm 3000K LED halos, backlight translucent stone panels, and diya heat vents are tested continuously for 72 hours under variable voltage (110V–240V).'
+      title: 'Testing Lights & Wiring',
+      desc: 'All built-in LED warm lights, backlighting, and wire passages are tested continuously to ensure safe, flawless lighting.'
     },
     {
       step: '04',
-      title: '4K Ultra-HD Video Inspection for Client',
-      desc: 'Before a single crate is packed, we record an exhaustive 4K video walkthrough with micro-detail zoom of every peacock arch, drawer alignment, and carving, sent directly to you on WhatsApp.'
+      title: 'Video & Photo Check for You',
+      desc: 'Before packing, we take detailed videos and close-up photos of your temple from every angle and send them to you on WhatsApp for complete approval.'
     }
   ];
 
@@ -34,14 +34,14 @@ export default function PreAssemblyTrialPage() {
           <div className="breadcrumbs">
             <Link href="/">Home</Link>
             <span>/</span>
-            <span>Atelier Protocol</span>
+            <span>Quality Check</span>
             <span>/</span>
-            <span>Pre-Assembly Trial Yard</span>
+            <span>Full Setup Trial in Workshop</span>
           </div>
-          <h1>100% Pre-Assembly Trial &amp; Fitment Yard</h1>
+          <h1>100% Full Setup Trial Before Delivery</h1>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
-            We never ship loose, unverified marble slabs. Every temple and palatial fountain is 100% fully assembled in our Makrana yard, inspected with 4K video documentation, and certified before international crating.
+            We never send loose pieces. Every temple and fountain is completely assembled and tested in our workshop first. You inspect it via video and photos before we pack it safely in wooden crates.
           </p>
         </div>
       </section>
@@ -57,28 +57,28 @@ export default function PreAssemblyTrialPage() {
                 loading="lazy"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
-              <div className="media-caption-badge">Makrana Master Yard Assembly</div>
+              <div className="media-caption-badge">Full Workshop Trial Setup</div>
             </div>
             <div className="page-info-block">
-              <span className="card-badge">THE ZERO-SURPRISE PROMISE</span>
+              <span className="card-badge">ZERO RISK FOR YOU</span>
               <h2 style={{ fontFamily: 'var(--serif)', fontSize: '32px', color: '#1c1813', margin: '12px 0 16px' }}>
-                Why Trial Assembly is the Mark of a True Atelier
+                Why We Build the Full Temple Before Shipping
               </h2>
               <div className="gold-rule"></div>
               <p style={{ color: '#4a4239', lineHeight: 1.65, marginBottom: '18px' }}>
-                Local commercial stone dealers dispatch loose marble slabs in open trucks. When workers arrive at your residence, they discover uneven gaps, misaligned pillars, and cracked tenons, forcing them to use toxic chemical fillers.
+                Ordinary market sellers often deliver loose pieces that do not fit properly when assembled at your home, leading to uneven gaps and ugly glue work.
               </p>
               <p style={{ color: '#4a4239', lineHeight: 1.65, marginBottom: '22px' }}>
-                At A.F.G Marble &amp; Arts, trial assembly is sacred. By the time our crates arrive at your villa in Mumbai, London, or Dubai, every single piece has already been tested, verified, and certified down to the millimeter.
+                At A.F.G Marble &amp; Arts, we fully assemble your complete temple at our workshop first. Every single piece is checked to fit smoothly and easily at your home.
               </p>
               <div className="info-actions">
                 <a
-                  href="https://wa.me/917597417274?text=Hello%20AFG%20Marble%2C%20I%20would%20like%20to%20see%20a%20sample%204K%20Pre-Assembly%20Trial%20video%20for%20a%20marble%20mandir."
+                  href="https://wa.me/917597417274?text=Hello%20AFG%20Marble%2C%20I%20would%20like%20to%20see%20a%20sample%20trial%20video%20for%20a%20marble%20mandir."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary"
                 >
-                  <span className="btn-primary__text">Request Sample Trial Video</span>
+                  <span className="btn-primary__text">See Sample Trial Video on WhatsApp</span>
                   <span className="btn-primary__icon">→</span>
                 </a>
               </div>
@@ -88,9 +88,9 @@ export default function PreAssemblyTrialPage() {
           {/* 4 Steps Grid */}
           <div style={{ marginBottom: '60px' }}>
             <div className="sec-header text-center" style={{ marginBottom: '36px' }}>
-              <span className="card-badge">INSPECTION PROTOCOL</span>
+              <span className="card-badge">OUR 4-STEP CHECK</span>
               <h2 style={{ fontFamily: 'var(--serif)', fontSize: '30px', color: '#1c1813' }}>
-                4-Point Makrana Yard Pre-Dispatch Verification
+                Our 4-Step Quality Check in the Workshop
               </h2>
               <div className="gold-rule center"></div>
             </div>

@@ -8,41 +8,41 @@ export default function MarbleDeitiesPage() {
     {
       id: 'ram-darbar-murti',
       title: 'The Sacred Ayodhya Ram Darbar',
-      stone: '100% Monolithic Makrana Pure Calcite',
+      stone: '100% Pure Makrana White Marble',
       scale: '3.5ft to 6.0ft Height (Custom Scale)',
       desc: 'Hand-sculpted in flawless single-block Makrana white marble. Features Bhagwan Shri Ram, Mata Sita, Lakshman ji, and Bhakt Hanuman in classical Raghuvanshi posture with authentic gemstone pigment eye painting and 24K pure gold leaf mukut gilding.',
       img: '/gallery/sanctum-ram-darbar-dome.webp',
-      badge: 'Temple Trust Benchmark',
+      badge: 'Popular Temple Choice',
       tag: 'Ram Darbar'
     },
     {
       id: 'ganesha-lakshmi-saraswati',
       title: 'Shri Ganesha, Lakshmi & Saraswati Sanctum Murti',
-      stone: 'Quarry-Select Translucent Makrana Albeta',
+      stone: 'Pure Makrana White Marble',
       scale: '2.5ft to 5.0ft Height',
       desc: 'Auspicious trio sculpted with micro-chiseled lotus pedestals, ornate prabhavali haloes, and intricate modak, veena, and kamal details. Every fold of sacred marble drapery is chiseled by 4th-generation Silawat sculptors.',
       img: '/gallery/sanctum-ganesha-lakshmi-shrine.webp',
-      badge: 'Diwali Mahaparva',
+      badge: 'Diwali Puja Choice',
       tag: 'Tridevi Trio'
     },
     {
       id: 'radha-krishna-yugal',
       title: 'The Vrindavan Radha Krishna Yugal Sarkar',
-      stone: 'Vietnam Pure White Snow Calcite',
+      stone: 'Vietnam Pure Snow White Marble',
       scale: '3.0ft to 5.5ft Height',
       desc: 'The divine embodiment of eternal prema and bhakti. Sculpted in immaculate Vietnam snow-white marble with Tribhanga posture, delicate flute fingers, peacock feather crown, and gentle divine expressions that inspire lifelong devotion in home sanctums.',
       img: '/gallery/mandir-radha-krishna.webp',
-      badge: 'Client Devotional Choice',
+      badge: 'Family Devotion Choice',
       tag: 'Yugal Sarkar'
     },
     {
       id: 'shiva-parvati-darbar',
       title: 'The Kailash Shiva Parvati & Nandi Darbar',
-      stone: '100% Makrana Pure White Calcite',
+      stone: '100% Pure Makrana White Marble',
       scale: '3.0ft to 6.0ft Height',
       desc: 'Serene representation of Lord Shiva in Dhyana Mudra with Mata Parvati and Ganesha-Kartikeya, accompanied by an intricately sculpted Nandi bull at the lotus feet.',
       img: '/gallery/mandir-gold-om-mandala.webp',
-      badge: 'Mahadev Sanctum',
+      badge: 'Mahadev Family',
       tag: 'Shiva Family'
     }
   ];
@@ -54,14 +54,14 @@ export default function MarbleDeitiesPage() {
           <div className="breadcrumbs">
             <Link href="/">Home</Link>
             <span>/</span>
-            <span>Masterpiece Catalog</span>
+            <span>Catalog</span>
             <span>/</span>
-            <span>Consecrated Marble Deities</span>
+            <span>Handmade Marble Murties</span>
           </div>
-          <h1>Consecrated Makrana Marble Idols &amp; Murti Carving</h1>
+          <h1>Hand-Carved Marble God Idols &amp; Murties</h1>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
-            Every deity is hand-sculpted from single monolithic blocks of certified 99% pure Makrana calcite marble. Crafted under strict Ayadi Vastu and Shilpa Shastra proportions so that Pran Pratishtha rituals invoke genuine divine peace, spiritual warmth, and positive energy for generations.
+            Every idol is hand-carved from a single piece of 100% pure natural white marble. Made according to traditional Vastu and temple guidelines with beautiful facial expressions, ready for Pran Pratishtha and daily home worship.
           </p>
         </div>
       </section>
@@ -106,7 +106,7 @@ export default function MarbleDeitiesPage() {
                       type="button"
                       className="btn-whatsapp-pill"
                       onClick={() => {
-                        const text = `Namaste AFG Marble, I am inquiring about the consecrated marble idol: "${deity.title}". Please share Ayadi dimensions, pricing, and Pran Pratishtha delivery details.`;
+                        const text = `Namaste AFG Marble, I am inquiring about the marble idol: "${deity.title}". Please share sizes, photos, and price details.`;
                         window.open(`https://wa.me/917597417274?text=${encodeURIComponent(text)}`, '_blank');
                       }}
                       style={{
@@ -131,7 +131,7 @@ export default function MarbleDeitiesPage() {
                       <svg viewBox="0 0 24 24" width="16" height="16" fill="#25d366">
                         <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z" />
                       </svg>
-                      <span>Inquire for Deity Commission</span>
+                      <span>Get Price &amp; Details</span>
                     </button>
                   </div>
                 </div>

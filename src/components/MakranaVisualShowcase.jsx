@@ -4,50 +4,50 @@ import { Sparkles, ArrowRight, MessageSquare, ShieldCheck } from 'lucide-react';
 
 const MAKRANA_GALLERY = [
   {
-    title: 'Grand Makrana Garbhagriha Mandir',
-    subtitle: '99.2% Pure Calcite Monolith Carving with Hand-Sculpted Shikhara Arches',
+    title: 'Grand White Marble Home Temple',
+    subtitle: 'Pure White Marble Temple with Hand-Carved Domes & Pillars',
     image: '/gallery/mandir-grand-makrana-8361.webp',
-    tag: 'Flagship Temple',
+    tag: 'Home Temple',
     span: 'large',
   },
   {
-    title: 'Peacock Torana & Filigree Archway',
-    subtitle: 'Hand-chiseled pierced jali & royal Mayura pillars in pure white Makrana',
+    title: 'Hand-Carved Peacock Arch Temple',
+    subtitle: 'Carved peacock pillars and floral jali doors in pure white marble',
     image: '/gallery/mandir-peacock-torana-8341.webp',
-    tag: 'Hand-Chiseled Detail',
+    tag: 'Hand-Carved Detail',
     span: 'standard',
   },
   {
-    title: 'Makrana Calcite Slab Texture',
-    subtitle: 'Spotless crystalline grain · 0% porosity · Zero yellowing guarantee',
+    title: '100% Natural White Marble Texture',
+    subtitle: 'Spotless natural white marble · Never stains · Guaranteed never to turn yellow',
     image: '/gallery/stone-makrana-calcite-slab.webp',
-    tag: 'Real Stone Texture',
+    tag: 'Real Marble Quality',
     span: 'standard',
   },
   {
-    title: 'Pure White Backlit Sanctum',
-    subtitle: 'Luminescent translucent marble with Tree of Life medallion & gold gilding',
+    title: 'Pure White Backlit Home Temple',
+    subtitle: 'Warm glowing marble backdrop with Tree of Life and pure gold work',
     image: '/gallery/mandir-backlit-tree-8342.webp',
-    tag: 'Sanctum Glow',
+    tag: 'Backlit Glow',
     span: 'standard',
   },
   {
-    title: 'Shree Ram Sanctum Mandir',
-    subtitle: "Sacred golden 'राम' medallion, Kamadhenu bas-relief & lotus crest",
+    title: 'Shree Ram Home Temple',
+    subtitle: "Golden 'राम' design with carved holy cow and lotus base",
     image: '/gallery/mandir-shree-ram-7971.webp',
-    tag: 'Sacred Sanctum',
+    tag: 'Home Temple',
     span: 'standard',
   },
   {
-    title: 'Royal Pietra Dura Garbhagriha',
-    subtitle: 'Handcrafted gemstone floral inlay with high-relief peacock & waterfall panels',
+    title: 'Royal Gemstone Flower Inlay Temple',
+    subtitle: 'Colorful stone flower inlay with carved peacock designs',
     image: '/gallery/mandir-pietra-dura-7794.webp',
-    tag: 'Palatial Inlay Hall',
+    tag: 'Stone Inlay Temple',
     span: 'standard',
   },
   {
-    title: 'Parchin Kari Floral Archway Sanctum',
-    subtitle: 'Taj Mahal stratum marble with floral inlay & crystal chandelier',
+    title: 'Floral Inlay White Marble Temple',
+    subtitle: 'Taj Mahal quality white marble with colorful flower inlay work',
     image: '/gallery/mandir-parchin-kari-7975.webp',
     tag: 'Floral Inlay Art',
     span: 'standard',
@@ -79,13 +79,13 @@ export default function MakranaVisualShowcase({ onOpenInquiry }) {
           <div className="makrana-showcase__title-col">
             <span className="makrana-showcase__badge">
               <ShieldCheck size={14} />
-              <span>THE TAJ MAHAL BEDROCK</span>
+              <span>100% PURE WHITE MARBLE</span>
             </span>
             <h2 className="makrana-showcase__title">
               Makrana Pure White Marble
             </h2>
             <p className="makrana-showcase__subtitle">
-              100% pure white marble that never turns yellow from daily puja milk, diya oil, or water. Mined directly from our authentic quarries in Makrana, Rajasthan.
+              100% pure white marble that never turns yellow from milk, oil, or water. Sourced directly from our quarries in Makrana, Rajasthan.
             </p>
           </div>
 
@@ -158,7 +158,7 @@ export default function MakranaVisualShowcase({ onOpenInquiry }) {
                 <h3 className="makrana-card__title">{item.title}</h3>
                 <p className="makrana-card__desc">{item.subtitle}</p>
                 <div className="makrana-card__action">
-                  <span>Click to Inquire</span>
+                  <span>Click for Price &amp; Details</span>
                   <ArrowRight size={13} />
                 </div>
               </div>
@@ -169,21 +169,21 @@ export default function MakranaVisualShowcase({ onOpenInquiry }) {
         {/* 3 Material Quick Distinction Strip */}
         <div className="materials-triad-strip">
           <div className="triad-card triad-card--active">
-            <span className="triad-card__tag">TEMPLE CONSTRUCTION</span>
+            <span className="triad-card__tag">BEST FOR HOME TEMPLES</span>
             <h4>Makrana Pure White Marble</h4>
-            <p>100% spotless calcite · Zero lines, zero spots · Taj Mahal bedrock stone · Lifetime zero yellowing guarantee</p>
+            <p>100% natural white marble · Zero yellowing · Never absorbs puja oil, milk, or water</p>
           </div>
 
           <div className="triad-card">
-            <span className="triad-card__tag">TEMPLE &amp; DEITIES</span>
+            <span className="triad-card__tag">FOR TEMPLES &amp; STATUES</span>
             <h4>Vietnam Pure White Marble</h4>
-            <p>99.6% crystalline snow-white · Zero lines, zero spots · Diamond crystal sparkle for deities &amp; modern sanctums</p>
+            <p>Pure snow-white marble · Smooth crystal finish · Ideal for god statues and modern home temples</p>
           </div>
 
           <div className="triad-card">
-            <span className="triad-card__tag">FOUNTAIN SPECIALIST</span>
+            <span className="triad-card__tag">FOR WATER FOUNTAINS</span>
             <h4>Rajnagar White Marble</h4>
-            <p>High-density hydraulic white marble · Natural authentic veining &amp; mineral character · Engineered for palatial fountains</p>
+            <p>Strong natural white marble · Built for running water · Perfect for garden and courtyard fountains</p>
           </div>
         </div>
       </div>

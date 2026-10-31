@@ -266,7 +266,7 @@ _Sent via Website Inquiry Popup_`;
             <span className="tilak-popup__subhead">Inquiry Registered</span>
             <h3 className="tilak-popup__title">Thank You, {submittedLead.name}!</h3>
             <p className="tilak-popup__desc">
-              Your inquiry reference is <strong>#{submittedLead.id}</strong>. An official notification has been sent to our desk. Our master artisan will call you shortly.
+              Your inquiry reference is <strong>#{submittedLead.id}</strong>. An official notification has been sent to our desk. Our marble expert will connect with you shortly.
             </p>
 
             <div className="tilak-success__details">

@@ -13,33 +13,33 @@ export default function AtelierWorkshopPage() {
   const STAGES = [
     {
       num: '01',
-      title: 'Quarry Selection & Ultrasonic Testing',
-      lead: 'Direct extraction from Makrana’s oldest virgin calcite seams.',
-      desc: 'Our master sthapatis inspect blocks at the quarry face in Makrana. Every raw block undergoes ultrasonic pulse velocity testing to verify complete internal molecular homogeneity and zero micro-fractures before carving begins.'
+      title: 'Handpicking Solid Marble Blocks',
+      lead: 'Direct selection from Makrana white marble mines.',
+      desc: 'Our senior craftsmen inspect every marble block in Makrana. We check the stone thoroughly to make sure there are zero internal cracks or flaws before carving starts.'
     },
     {
       num: '02',
-      title: 'Architectural 2D CAD Space Elevation Drafting',
-      lead: 'Sacred architectural proportions tailored to your space.',
-      desc: 'Before touching stone, our temple architects draft precision millimetric 2D CAD elevations based on your residence or room orientation, ensuring every proportion is verified. (3D CAD rendering available on special client request).'
+      title: 'Free 2D Design Drawing',
+      lead: 'Custom drawings made to fit your room dimensions.',
+      desc: 'Before touching stone, our temple designers create accurate 2D drawings matching your room size and prayer needs so you can see the front and side views clearly.'
     },
     {
       num: '03',
-      title: 'Hand Chiseling by Generational Silawats',
-      lead: 'The ancestral lineage that carved India’s eternal royal shrines.',
-      desc: 'Employing traditional hand-forged diamond tipped steel chisels, our master carvers create pierced marble jali screens, multi-tiered shikhara domes, fluted monolithic pillars, and floral toranas with astonishing three-dimensional depth.'
+      title: 'Hand-Carving by Master Craftsmen',
+      lead: 'Generations of traditional stone carving skill.',
+      desc: 'Using hand tools and traditional chisels, our skilled artisans carve every delicate pillar, floral arch, and jali screen with deep 3D details.'
     },
     {
       num: '04',
-      title: 'Makrana Pre-Assembly & Dry-Joint Trial',
-      lead: 'Zero surprises at your home: 100% dry fit before packing.',
-      desc: 'In our Jaipur pre-assembly yard, the entire sanctum or fountain is fully erected with precision interlocking tenons. We record an extensive 4K walkthrough video with dimensional calipers for your sign-off before uncoupling.'
+      title: 'Full Workshop Setup & Video Approval',
+      lead: 'Full trial setup before packing: zero surprises at home.',
+      desc: 'We fully assemble the entire temple in our workshop first. We record clear videos and photos from all angles and share them with you on WhatsApp for your approval.'
     },
     {
       num: '05',
-      title: 'ISPM-15 Export Sea & Air Crating',
-      lead: 'Certified shock-proof packaging for domestic and international transit.',
-      desc: 'Each component is wrapped in non-abrasive acid-free fleece, nestled inside custom 50mm high-density EVA shock foam, and encased in heat-treated fumigated wooden export crates with stainless steel bands and tilt indicators.'
+      title: 'Safe Wooden Box Packing & Home Delivery',
+      lead: 'Tough wooden crates with thick foam protection.',
+      desc: 'Every piece is wrapped in soft foam and packed inside heavy treated wooden crates to ensure 100% safe delivery right to your home.'
     }
   ];
 
@@ -51,14 +51,14 @@ export default function AtelierWorkshopPage() {
           <div className="breadcrumbs">
             <Link href="/">Home</Link>
             <span>/</span>
-            <span>Atelier Heritage</span>
+            <span>Our Craft</span>
             <span>/</span>
-            <span>Silawat Guild Workshop</span>
+            <span>Our Workshops</span>
           </div>
-          <h1>The Silawat Master Sculptor Guild &amp; Workshop</h1>
+          <h1>Our Marble Workshop &amp; Master Craftsmen</h1>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
-            Preserving Rajasthan’s sacred stonecraft since 1987. From Makrana bedrock extraction to our Jaipur pre-assembly yard, discover how our generational artisans transform noble calcite into living architectural marvels.
+            Handcrafted in Rajasthan since 1987. From selecting pure Makrana marble to final carving and full trial setup, see how our master artisans handcraft every temple.
           </p>
         </div>
       </section>
@@ -73,17 +73,17 @@ export default function AtelierWorkshopPage() {
                 alt="Silawat Master Artisan Hand Chiseling Makrana Marble"
                 loading="lazy"
               />
-              <div className="media-caption-badge">Makrana Master Guild</div>
+              <div className="media-caption-badge">Makrana Workshop Craftsmen</div>
             </div>
             <div className="page-info-block">
-              <span className="card-badge">THE ROYAL SILAWAT LINEAGE</span>
-              <h2>Generational Master Sculptors Since 1987</h2>
+              <span className="card-badge">TRADITIONAL ARTISANS</span>
+              <h2>Traditional Master Craftsmen Since 1987</h2>
               <div className="gold-rule"></div>
               <p>
-                The Silawats of Rajasthan represent one of the world&rsquo;s most revered artisanal stone-carving dynasties. For centuries, our families have held the sacred knowledge of temple architecture, transforming raw Makrana marble into divine abodes with mathematical precision and spiritual devotion.
+                Our traditional artisan families in Rajasthan have practiced the art of marble temple carving for generations. We transform genuine Makrana marble into beautiful home temples with careful handcrafting and deep respect.
               </p>
               <p>
-                Unlike commercial factories using computerized CNC water-jets that leave sterile, lifeless grooves, every arch, floral petal, and deity halo at A.F.G Marble &amp; Arts is brought to life by the nuanced touch of human hands.
+                Unlike commercial factories that use fast machine cutting with flat, sharp edges, every arch, flower petal, and carved pillar at A.F.G Marble &amp; Arts is lovingly finished by skilled human hands.
               </p>
               <div className="info-actions" style={{ marginTop: '24px' }}>
                 <button
@@ -91,7 +91,7 @@ export default function AtelierWorkshopPage() {
                   className="btn-primary"
                   onClick={() => handleOpenInquiry('Book Workshop & Studio Visit')}
                 >
-                  <span className="btn-primary__text">Schedule Makrana Studio Visit</span>
+                  <span className="btn-primary__text">Visit Our Workshop in Makrana</span>
                   <span className="btn-primary__icon">→</span>
                 </button>
               </div>
@@ -101,11 +101,11 @@ export default function AtelierWorkshopPage() {
           {/* 5-Stage Craft Process */}
           <div className="workshop-stages-section" style={{ marginTop: '64px' }}>
             <div className="sec-header text-center">
-              <span className="card-badge">RIGOROUS 5-STAGE METHODOLOGY</span>
-              <h2>From Raw Bedrock to Divine Consecration</h2>
+              <span className="card-badge">OUR 5-STEP WORKFLOW</span>
+              <h2>From Pure Marble Block to Your Home Temple</h2>
               <div className="gold-rule center"></div>
               <p className="sub-lead">
-                Every bespoke sanctum follows a strict five-phase architectural lifecycle ensuring heirloom durability.
+                Every custom temple follows a clear 5-step process to ensure lifetime quality and beauty.
               </p>
             </div>
 
@@ -125,26 +125,26 @@ export default function AtelierWorkshopPage() {
 
           {/* Workshop Coordinates Card */}
           <div className="page-cta-banner" style={{ marginTop: '64px' }}>
-            <span className="card-badge">EXPERIENCE HUBS</span>
-            <h2>Visit Our Makrana Quarries &amp; Master Atelier</h2>
+            <span className="card-badge">VISIT US</span>
+            <h2>Visit Our Workshops in Makrana, Rajasthan</h2>
             <p>
-              We welcome patrons, architects, and interior designers to personally inspect raw calcite marble blocks, observe our generational artisans at work, and view ongoing sanctum dry-fit trials.
+              You are always welcome to visit our workshop, see pure Makrana marble blocks in person, meet our artisans, and view ongoing temple setups.
             </p>
             <div className="workshop-locations-grid">
               <div className="w-loc-card">
-                <h4>Makrana Master Experience Studio &amp; Yard</h4>
+                <h4>Makrana Main Workshop &amp; Display Center</h4>
                 <p>Makrana Bypass Rd, Borawar, Gunawati Jageer, Rajasthan 341502</p>
-                <span className="loc-note">Features live dry-assembly trials &amp; finished creations</span>
+                <span className="loc-note">See live temple setups and finished temples</span>
               </div>
               <div className="w-loc-card">
-                <h4>Makrana Quarry Atelier</h4>
+                <h4>Makrana Marble Yard</h4>
                 <p>Makrana Bypass Rd, Borawar, Gunawati Jageer, Rajasthan 341502</p>
-                <span className="loc-note">Direct bedrock extraction &amp; raw block selection</span>
+                <span className="loc-note">Direct pure marble block selection</span>
               </div>
             </div>
             <div style={{ marginTop: '28px' }}>
               <a
-                href="https://wa.me/917597417274?text=Hello%20AFG%20Marble%2C%20I%20would%20like%20to%20plan%20a%20visit%20to%20your%20Makrana%20Master%20Atelier."
+                href="https://wa.me/917597417274?text=Hello%20AFG%20Marble%2C%20I%20would%20like%20to%20plan%20a%20visit%20to%20your%20Makrana%20workshop."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"

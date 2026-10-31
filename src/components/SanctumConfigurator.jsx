@@ -5,43 +5,43 @@ import { Maximize2 } from 'lucide-react';
 const STYLES = [
   {
     id: 'nagara',
-    name: 'Imperial Nagara Shikhara',
-    subtitle: 'Towering Multi-Spire Temple with Amalaka & Swarna Kalash',
+    name: 'Traditional High Spire Temple',
+    subtitle: 'Grand temple with tall carved domes, arches, and golden top kalash',
     image: '/gallery/img_7263.webp',
     baseWeight: 950,
     hours: 480,
-    yoni: 'Dhwaja (North - Ultimate Sovereignty)',
-    description: 'Classical North Indian sacred architecture with stepped curvilinear shikhara, carved toran archways, and consecrated central sanctum.'
+    yoni: 'North Facing (Brings Peace & Prosperity)',
+    description: 'Traditional Indian temple style with tall carved spires, beautiful decorative archways, and deity platform.'
   },
   {
     id: 'haveli',
-    name: 'Palatial Peacock Mandapam',
-    subtitle: 'Intricate Peacock Crest, Fluted Pillars & Floral Jali Panels',
+    name: 'Royal Peacock Arch Temple',
+    subtitle: 'Carved peacock arch, round carved pillars, and flower jali doors',
     image: '/gallery/sanctum-palatial-peacock.webp',
     baseWeight: 700,
     hours: 380,
-    yoni: 'Simha (East - Fearless Victory & Wealth)',
-    description: 'Inspired by royal palace shrines. Features hand-chiseled peacock archways, floral pillars, and pull-out storage drawers in pure Makrana marble.'
+    yoni: 'East Facing (Brings Energy & Wealth)',
+    description: 'Beautiful traditional temple with hand-carved peacocks, round pillars, and smooth drawers in pure white marble.'
   },
   {
     id: 'contemporary',
-    name: 'Modern Villa Sanctum',
-    subtitle: 'Floating Marble Altar with Backlit Om Mandala & Concealed Aarti',
+    name: 'Modern Home & Apartment Temple',
+    subtitle: 'Clean modern design with warm glowing Om backdrop and diya tray',
     image: '/gallery/sanctum-triple-shikhar-room.webp',
     baseWeight: 550,
     hours: 320,
-    yoni: 'Vrishabha (West - Everlasting Peace & Family Abundance)',
-    description: 'Clean-line contemporary luxury sanctum tailored for modern apartments and villas with integrated ambient warm illumination.'
+    yoni: 'West Facing (Brings Family Harmony & Peace)',
+    description: 'Clean modern look designed for apartments and villas with built-in warm LED lights and smooth storage.'
   },
   {
     id: 'chhatri',
-    name: 'Monumental Royal Chhatri',
-    subtitle: 'Octagonal 8-Pillar Ribbed Dome Pavilion with Pierced Balustrade',
+    name: 'Carved Garden Pavilion (Chhatri)',
+    subtitle: '8-pillar round marble pavilion with carved dome for gardens',
     image: '/gallery/royal-chhatri-garden-pavilion.webp',
     baseWeight: 1400,
     hours: 620,
-    yoni: 'Gaja (North - Royal Dignity & Eternal Fortune)',
-    description: 'Majestic open-air heritage pavilion carved from solid Makrana white marble with interlocking columns, ribbed dome, and ornate bracketed eaves.'
+    yoni: 'All Sides Open (Garden & Estate)',
+    description: 'Grand outdoor marble pavilion carved from solid white marble, built for gardens, farmhouses, and estates.'
   }
 ];
 
@@ -49,7 +49,7 @@ const STONES = [
   {
     id: 'makrana-pure',
     name: 'Makrana Pure White Marble',
-    origin: 'Makrana Bedrock, Rajasthan · Taj Mahal Vein',
+    origin: '100% Pure Makrana, Rajasthan · Taj Mahal Stone',
     colorHex: '#ffffff',
     borderHex: '#d4af37',
     addedWeight: 0,
@@ -69,7 +69,7 @@ const STONES = [
   {
     id: 'rajnagar-white',
     name: 'Rajnagar White Marble',
-    origin: 'Rajnagar Bedrock, Rajasthan',
+    origin: 'Rajnagar, Rajasthan',
     colorHex: '#f3efe8',
     borderHex: '#b08a4f',
     addedWeight: 25,
@@ -79,10 +79,10 @@ const STONES = [
 ];
 
 const EMBELLISHMENTS = [
-  { id: 'gold', name: '24K Pure Gold Leaf (Swarna Lepam) on Shikhara Finials', weight: 3, hours: 35 },
-  { id: 'pietra', name: 'Parchin Kari Pietra Dura Gem Inlay (Lapis Lazuli & Carnelian)', weight: 8, hours: 60 },
-  { id: 'jali', name: '7-Layer Pierced Marble Lattice Screen (Ayadi Geometric Jali)', weight: 14, hours: 45 },
-  { id: 'aarti', name: 'Concealed Warm Aarti Illumination Array & Solid Brass Bells', weight: 5, hours: 25 }
+  { id: 'gold', name: '24K Pure Gold Leaf Work on Temple Crown & Spires', weight: 3, hours: 35 },
+  { id: 'pietra', name: 'Colorful Gemstone Flower Inlay Work (Parchin Kari)', weight: 8, hours: 60 },
+  { id: 'jali', name: 'Hand-Carved Marble Lattice Screen (Jali Backpanel)', weight: 14, hours: 45 },
+  { id: 'aarti', name: 'Built-in Warm LED Temple Lighting & Solid Brass Bells', weight: 5, hours: 25 }
 ];
 
 export default function SanctumConfigurator({ onOpenInquiry }) {
@@ -122,15 +122,15 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
       .filter(Boolean)
       .join(', ');
 
-    const text = `*AFG MARBLE & ARTS — BESPOKE SANCTUM CONFIGURATION*\n\n` +
-      `• *Architectural Form:* ${selectedStyle.name}\n` +
-      `• *Selected Stone:* ${selectedStone.name} (${selectedStone.origin})\n` +
+    const text = `*AFG MARBLE & ARTS — CUSTOM TEMPLE CONFIGURATION*\n\n` +
+      `• *Temple Style:* ${selectedStyle.name}\n` +
+      `• *Selected Marble:* ${selectedStone.name} (${selectedStone.origin})\n` +
       `• *Dimensions:* ${customWidth} ft Width × ${customHeight} ft Height\n` +
-      `• *Sacred Embellishments:* ${embNames || 'None'}\n` +
-      `• *Estimated Solid Weight:* ~${totalWeightKg} kg\n` +
-      `• *Ayadi Vastu Yoni:* ${selectedStyle.yoni}\n` +
-      `• *Artisanal Chiseling:* ~${totalArtisanHours} Master Silawat Hours\n\n` +
-      `Please provide the 2D CAD Blueprint and bespoke investment proposal for this configuration.`;
+      `• *Selected Features:* ${embNames || 'None'}\n` +
+      `• *Estimated Weight:* ~${totalWeightKg} kg\n` +
+      `• *Ayadi Vastu Direction:* ${selectedStyle.yoni}\n` +
+      `• *Hand-Carving Time:* ~${totalArtisanHours} Hours\n\n` +
+      `Please provide the 2D design drawing and price estimate for this temple.`;
 
     const url = `https://wa.me/917597417274?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
@@ -301,9 +301,9 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
             }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
                 <span style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#88542c' }}>
-                  ARCHITECTURAL CRAFT &amp; SPECIFICATIONS
+                  TEMPLE SPECIFICATIONS
                 </span>
-                <span style={{ fontSize: '11px', color: '#27ae60', fontWeight: 600 }}>● Consecration Certified</span>
+                <span style={{ fontSize: '11px', color: '#27ae60', fontWeight: 600 }}>● Vastu Compliant</span>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '14px' }}>
@@ -368,7 +368,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
                 className="btn-outline-gold"
                 style={{ flex: 1, minWidth: '180px', textAlign: 'center', justifyContent: 'center' }}
               >
-                <span>Request 2D CAD Blueprint</span>
+                <span>Request Free 2D Design Drawing</span>
               </button>
             </div>
           </div>
@@ -378,7 +378,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
             {/* Control 1: Select Architectural Form */}
             <div>
               <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#1c1813', marginBottom: '10px' }}>
-                1. Select Architectural Form &amp; Shikhara Style
+                1. Choose Temple Style
               </label>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '10px' }}>
                 {STYLES.map((style) => (
@@ -409,7 +409,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
             {/* Control 2: Select Authentic Stone Bedrock */}
             <div>
               <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#1c1813', marginBottom: '10px' }}>
-                2. Select Authentic Bedrock Marble
+                2. Choose Marble Quality
               </label>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 {STONES.map((stone) => (
@@ -455,7 +455,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                 <label style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#1c1813' }}>
-                  3. Sanctum Spatial Scale
+                  3. Choose Temple Size (Feet)
                 </label>
                 <span style={{ fontSize: '12px', fontWeight: 600, color: '#88542c' }}>
                   {customWidth} ft (W) × {customHeight} ft (H)
@@ -500,7 +500,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
             {/* Control 4: Sacred Embellishments */}
             <div>
               <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#1c1813', marginBottom: '10px' }}>
-                4. Select Sacred Embellishments
+                4. Choose Temple Carving &amp; Lighting Options
               </label>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 {EMBELLISHMENTS.map((emb) => {
@@ -532,7 +532,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
                           {emb.name}
                         </span>
                       </div>
-                      <span style={{ fontSize: '10px', color: '#b08a4f', fontWeight: 600 }}>+{emb.hours}h Chisel</span>
+                      <span style={{ fontSize: '10px', color: '#b08a4f', fontWeight: 600 }}>+{emb.hours}h Hand Work</span>
                     </div>
                   );
                 })}

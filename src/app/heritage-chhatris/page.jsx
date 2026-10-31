@@ -27,14 +27,14 @@ export default function HeritageChhatrisPage() {
           <div className="breadcrumbs">
             <Link href="/">Home</Link>
             <span>/</span>
-            <span>Masterpiece Catalog</span>
+            <span>Catalog</span>
             <span>/</span>
-            <span>Royal Chhatris &amp; Pavilions</span>
+            <span>Marble Chhatris &amp; Pavilions</span>
           </div>
-          <h1>Royal Makrana Chhatris &amp; Garden Pavilions</h1>
+          <h1>Handcrafted Marble Chhatris &amp; Garden Pavilions</h1>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
-            Monumental octagonal pavilions, fluted ribbed domes, and pierced jali balustrades handcrafted exclusively in pure Makrana white marble. Hand-sculpted by Silawat master stone-masons for palace gardens, luxury estates, and memorial sanctums.
+            Handcrafted solid white marble pavilions and garden chhatris with carved pillars, domes, and jali railings. Built from 100% natural Makrana marble by traditional artisans for private gardens, estates, and memorials.
           </p>
         </div>
       </section>
@@ -61,9 +61,9 @@ export default function HeritageChhatrisPage() {
                   loading="lazy"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
-                <span className="card-badge product-badge" style={{ zIndex: 3 }}>Imperial Commission</span>
+                <span className="card-badge product-badge" style={{ zIndex: 3 }}>Custom Design</span>
                 <div className="angle-tag-pill" style={{ position: 'absolute', bottom: '12px', left: '14px', zIndex: 3, background: 'rgba(255, 255, 255, 0.92)', color: '#1c1813', fontSize: '11px', fontWeight: 600, padding: '3px 10px', borderRadius: '4px' }}>
-                  Estate Pavilion
+                  Garden Pavilion
                 </div>
               </div>
               <div className="card-body" style={{ padding: '24px', display: 'flex', flexDirection: 'column', flex: 1 }}>
@@ -74,14 +74,14 @@ export default function HeritageChhatrisPage() {
                   The Amber Palace Garden Pavilion
                 </h3>
                 <p style={{ fontSize: '13px', color: '#6b5f52', lineHeight: 1.55, marginBottom: '14px' }}>
-                  Hexagonal carved pavilion with solid monolithic pillars, decorative brackets, and deep-chiseled eaves designed for outdoor weather resilience.
+                  Hexagonal carved marble pavilion with solid carved pillars and weather-proof marble dome, made for gardens and outdoor spaces.
                 </p>
                 <div style={{ marginTop: 'auto' }}>
                   <button
                     type="button"
                     className="btn-whatsapp-pill"
                     onClick={() => {
-                      const text = 'Namaste AFG Marble, I am inquiring about The Amber Palace Garden Pavilion chhatri. Please share scale drawings and estimates.';
+                      const text = 'Namaste AFG Marble, I am inquiring about The Amber Palace Garden Pavilion chhatri. Please share design drawings and price details.';
                       window.open(`https://wa.me/917597417274?text=${encodeURIComponent(text)}`, '_blank');
                     }}
                     style={{
@@ -102,7 +102,7 @@ export default function HeritageChhatrisPage() {
                       cursor: 'pointer',
                     }}
                   >
-                    <span>Inquire on WhatsApp</span>
+                    <span>Get Price &amp; Details</span>
                   </button>
                 </div>
               </div>
@@ -116,9 +116,9 @@ export default function HeritageChhatrisPage() {
                   loading="lazy"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
-                <span className="card-badge product-badge" style={{ zIndex: 3 }}>Architectural Gateway</span>
+                <span className="card-badge product-badge" style={{ zIndex: 3 }}>Grand Entrance Gateway</span>
                 <div className="angle-tag-pill" style={{ position: 'absolute', bottom: '12px', left: '14px', zIndex: 3, background: 'rgba(255, 255, 255, 0.92)', color: '#1c1813', fontSize: '11px', fontWeight: 600, padding: '3px 10px', borderRadius: '4px' }}>
-                  Torana Arch
+                  Carved Stone Gate
                 </div>
               </div>
               <div className="card-body" style={{ padding: '24px', display: 'flex', flexDirection: 'column', flex: 1 }}>
@@ -129,14 +129,14 @@ export default function HeritageChhatrisPage() {
                   The Royal Torana Ceremonial Arch
                 </h3>
                 <p style={{ fontSize: '13px', color: '#6b5f52', lineHeight: 1.55, marginBottom: '14px' }}>
-                  Ornate ceremonial gateway sculpted with sacred makara toranas, celestial musicians, and interlocking dry-joint stone lintels.
+                  Handmade carved marble ceremonial gateway with traditional Indian stone arches and interlocking marble pillars.
                 </p>
                 <div style={{ marginTop: 'auto' }}>
                   <button
                     type="button"
                     className="btn-whatsapp-pill"
                     onClick={() => {
-                      const text = 'Namaste AFG Marble, I am inquiring about The Royal Torana Ceremonial Arch. Please share CAD plans and estimates.';
+                      const text = 'Namaste AFG Marble, I am inquiring about The Royal Torana Ceremonial Arch. Please share design drawings and price details.';
                       window.open(`https://wa.me/917597417274?text=${encodeURIComponent(text)}`, '_blank');
                     }}
                     style={{
@@ -157,7 +157,7 @@ export default function HeritageChhatrisPage() {
                       cursor: 'pointer',
                     }}
                   >
-                    <span>Inquire on WhatsApp</span>
+                    <span>Get Price &amp; Details</span>
                   </button>
                 </div>
               </div>

@@ -7,39 +7,39 @@ import ConsultationCard from '../../components/ConsultationCard';
 export default function PricingGuidePage() {
   const FACTORS = [
     {
-      title: '1. Raw Makrana Calcite Bedrock Volume',
-      desc: 'We use exclusively 98%–99% pure CaCO3 Makrana calcite. Unlike commercial soft Italian or dolomitic stones, authentic Makrana blocks are diamond-sawn from deep bedrock seams with zero iron impurities that turn yellow over time.'
+      title: '1. Marble Volume & Quality',
+      desc: 'We use 100% natural pure Makrana white marble. Unlike ordinary stones that turn yellow or stain easily, genuine Makrana marble stays bright white forever and contains zero iron impurities.'
     },
     {
-      title: '2. Sculptor Hand-Chiseling Hours',
-      desc: 'A master sanctum requires 350 to 900 hours of continuous hand-carving by generational Silawat sculptors. Deep undercut relief, pierced jaali lattices, and sculpted elephant plinths demand supreme artisanal discipline.'
+      title: '2. Hand-Carving Details & Time',
+      desc: 'Each custom temple takes hundreds of hours of delicate hand-carving by master artisans. Deeply carved pillars, jali doors, and peacock arches require meticulous skill.'
     },
     {
-      title: '3. Ayadi Vastu Mathematical Drafting',
-      desc: 'Our Master Sthapati custom-calculates every dimension to sacred Shastra ratios. Every bracket, kalash finial, and sanctum aperture is engineered in mathematical harmony.'
+      title: '3. Custom Sizes & Vastu Calculations',
+      desc: 'Our temple designers calculate auspicious Vastu proportions to match your exact room size, so the temple fits your space with spiritual harmony.'
     },
     {
-      title: '4. Pre-Assembly Fitment & ISPM-15 Crating',
-      desc: '100% pre-assembly in our Makrana yard, 4K inspection video verification, and custom-built shock-absorbing marine export crating are included in every proposal with zero hidden add-ons.'
+      title: '4. Full Trial Setup & Safe Packing',
+      desc: '100% full setup in our workshop before packing, video and photo inspection for your approval, and strong foam-padded wooden box packing are included.'
     }
   ];
 
   const FAQS = [
     {
       q: 'Do you charge extra for custom dimensions?',
-      a: 'Never. Every single sanctum at AFG Marble is custom-engineered to your exact room width, depth, and ceiling height. You only pay for the raw stone volume and artisan carving hours required.'
+      a: 'Never. Every single temple at AFG Marble is custom-made to your exact room width, depth, and ceiling height. You only pay for the marble volume and artisan carving work required.'
     },
     {
       q: 'Does Makrana marble turn yellow from diya oil and abhishek milk?',
-      a: 'Zero yellowing guarantee. Authentic Makrana marble has near-zero porosity (0.01%) and contains no iron oxides. Liquids wipe off cleanly without leaving stains. Over generations of regular cleaning, Makrana marble actually grows whiter and more luminous.'
+      a: 'Zero yellowing guarantee. Authentic Makrana marble has near-zero porosity and contains no iron. Liquids wipe off cleanly without leaving stains. Over years of regular cleaning, Makrana marble actually grows brighter.'
     },
     {
       q: 'How does international shipping and customs clearance work?',
-      a: 'We manage complete turnkey logistics under ISPM-15 compliance across 28+ countries including USA, UK, UAE, Canada, and Australia. Your crate is delivered directly to your doorstep with all-risk transit insurance.'
+      a: 'We manage complete worldwide shipping across 28+ countries including USA, UK, UAE, Canada, and Australia. Your crate is delivered safely to your doorstep with full insurance.'
     },
     {
       q: 'Can our temple fit through a standard apartment elevator or door?',
-      a: 'Yes. Our temples are engineered in modular dry-joint interlocking components. Even monumental 12-foot sanctums are calibrated to pass through standard 36-inch residential doors and passenger elevators.'
+      a: 'Yes. Our temples are built in interlocking modular sections. Even large 10-foot or 12-foot temples are designed to pass easily through standard 3-foot doors and apartment lifts.'
     }
   ];
 
@@ -50,14 +50,14 @@ export default function PricingGuidePage() {
           <div className="breadcrumbs">
             <Link href="/">Home</Link>
             <span>/</span>
-            <span>Atelier Investment</span>
+            <span>Price Guide</span>
             <span>/</span>
-            <span>Pricing &amp; Investment Guide</span>
+            <span>Pricing &amp; Cost Guide</span>
           </div>
-          <h1>Transparent Temple Pricing &amp; Investment Guide</h1>
+          <h1>Transparent Temple Pricing &amp; Cost Guide</h1>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
-            Direct quarry-to-sanctum pricing with no showroom markups, broker commissions, or hidden surprises. Discover the 4 factors that govern authentic Makrana marble craftsmanship and explore our turnkey investment tiers.
+            Direct factory pricing with no middleman markups, showroom commissions, or hidden fees. See how temple pricing works and get a free quote for your exact size.
           </p>
         </div>
       </section>
@@ -69,9 +69,9 @@ export default function PricingGuidePage() {
       <section className="subpage-body" style={{ padding: '60px 0', background: '#faf6ee' }}>
         <div className="sec-container">
           <div className="sec-header text-center" style={{ marginBottom: '40px' }}>
-            <span className="card-badge">THE VALUE OF ETERNAL STONE</span>
+            <span className="card-badge">DIRECT FACTORY VALUE</span>
             <h2 style={{ fontFamily: 'var(--serif)', fontSize: '32px', color: '#1c1813' }}>
-              The 4 Pillars That Determine Your Temple Investment
+              The 4 Things That Determine Temple Price
             </h2>
             <div className="gold-rule center"></div>
           </div>
@@ -91,9 +91,9 @@ export default function PricingGuidePage() {
 
           {/* Pricing FAQ Accordion */}
           <div className="sec-header text-center" style={{ marginBottom: '36px' }}>
-            <span className="card-badge">FREQUENT INQUIRIES</span>
+            <span className="card-badge">COMMON QUESTIONS</span>
             <h2 style={{ fontFamily: 'var(--serif)', fontSize: '30px', color: '#1c1813' }}>
-              Common Questions on Temple Investment
+              Frequently Asked Questions About Pricing
             </h2>
             <div className="gold-rule center"></div>
           </div>
