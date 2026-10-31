@@ -6,40 +6,49 @@ import ConsultationCard from '../../components/ConsultationCard';
 export default function PietraDuraInlayPage() {
   const INLAYS = [
     {
-      id: 'sanctum-floor-mandala',
-      title: 'The Taj Mahal Royal Floor Mandala',
-      gemstones: 'Lapis Lazuli, Malachite, Jasper & Carnelian',
-      desc: 'Circular temple floor medallion chiseled flush with diamond precision. Featuring radiating lotus geometry, authentic lapis lazuli borders, and zero resin gaps.',
-      img: '/gallery/sanctum-inlay-floor.webp',
-      badge: 'Taj Mahal Technique',
-      tag: 'Floor Medallion'
+      id: 'inlay-round-medallion-table',
+      title: 'Handcrafted Marble Inlay Table & Floor Medallion',
+      gemstones: 'Lapis Lazuli, Jasper, Malachite & Agate',
+      desc: 'Circular pure white marble inlay top with intricate floral motifs and radiating gemstone patterns. Hand-chiseled flush with zero resin gaps.',
+      img: '/gallery/inlay-work-round-table-medallion.webp',
+      badge: 'Marble Inlay Work',
+      tag: 'Round Medallion'
     },
     {
-      id: 'mother-of-pearl-tree',
-      title: 'The Kalpavriksha Mother-of-Pearl Halo',
-      gemstones: 'Natural Ocean Mother-of-Pearl & 24K Gold Leaf',
-      desc: 'The wish-fulfilling sacred Kalpavriksha tree chiseled into Makrana marble. The iridescent mother-of-pearl leaves shimmer with sacred warmth when sanctum lights are turned on.',
-      img: '/gallery/sanctum-mother-pearl-tree.webp',
-      badge: 'Iridescent Gem Inlay',
-      tag: 'Sanctum Backdrop'
+      id: 'inlay-floral-panel-art',
+      title: 'Royal Marble Inlay Wall Panel',
+      gemstones: 'Semi-Precious Gemstones & Mother-of-Pearl',
+      desc: 'Elegant vertical marble wall art panel featuring traditional floral vines and blooming flower buds inlaid into pure Makrana white marble.',
+      img: '/gallery/inlay-work-floral-panel.webp',
+      badge: 'Wall Panel Art',
+      tag: 'Temple Backdrop'
     },
     {
-      id: 'gold-bas-relief-creeper',
-      title: 'The Imperial Floral Parchin Kari Border',
-      gemstones: 'Semi-Precious Agate, Turquoise & Malachite',
-      desc: 'Classical Mughal-Rajasthani vine scroll inlaid around sanctum archways and door frames. Each flower petal is individually shaped on emery wheels by master inlayers.',
-      img: '/gallery/sanctum-gold-bas-relief.webp',
-      badge: 'Custom Border',
-      tag: 'Archway Inlay'
+      id: 'inlay-grand-mandala-floor',
+      title: 'Grand Marble Inlay Floor Mandala',
+      gemstones: 'Cornelian, Malachite, Lapis & Onyx',
+      desc: 'Detailed geometric and floral floor mandala design for luxury living halls, temple sanctums, and villa entrance foyers.',
+      img: '/gallery/inlay-work-grand-mandala.webp',
+      badge: 'Floor Mandala',
+      tag: 'Foyer & Hall'
     },
     {
-      id: 'silver-kalash-damask',
-      title: 'The Auspicious Ashta-Mangala Plinth Inlay',
-      gemstones: 'Silver Foil, Coral & Lapis Lazuli',
-      desc: 'Eight sacred Vedic auspicious symbols (Kalash, Swastika, Shankha, Chakra, Padma) inlaid into the temple plinth steps to welcome prosperity and auspiciousness.',
-      img: '/gallery/sanctum-silver-kalash-inlay.webp',
-      badge: 'Sacred Symbols',
-      tag: 'Plinth Steps'
+      id: 'inlay-border-runner-design',
+      title: 'Marble Inlay Border & Door Frame Runner',
+      gemstones: 'Multi-Color Natural Stone Inlay',
+      desc: 'Classical floral border runners and frame inlay work for temple entrance doorways, floor borders, and wall panels.',
+      img: '/gallery/inlay-work-border-runner.webp',
+      badge: 'Border Runner',
+      tag: 'Doorway & Border'
+    },
+    {
+      id: 'inlay-peacock-art-medallion',
+      title: 'Decorative Marble Inlay Art Piece',
+      gemstones: 'Natural Stones & Precision Cut Gems',
+      desc: 'Fine artisan handcrafted marble inlay showcase piece displaying delicate stone-cutting and traditional Rajasthani floral artistry.',
+      img: '/gallery/inlay-work-peacock-art.webp',
+      badge: 'Artisan Showcase',
+      tag: 'Custom Inlay'
     }
   ];
 
@@ -52,12 +61,12 @@ export default function PietraDuraInlayPage() {
             <span>/</span>
             <span>Catalog</span>
             <span>/</span>
-            <span>Stone Inlay Work</span>
+            <span>Marble Inlay Work</span>
           </div>
-          <h1>Handmade Stone Inlay &amp; Floral Art</h1>
+          <h1>Marble Inlay Work</h1>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
-            The famous Taj Mahal stone inlay art (Parchin Kari). Colorful natural semi-precious stones and mother-of-pearl are carefully hand-cut and inlaid flush into pure white Makrana marble.
+            Traditional pure marble inlay work (Parchin Kari). Colorful natural semi-precious stones, lapis lazuli, malachite, and mother-of-pearl are carefully hand-cut and inlaid flush into pure white Makrana marble.
           </p>
         </div>
       </section>
@@ -95,7 +104,7 @@ export default function PietraDuraInlayPage() {
                       type="button"
                       className="btn-whatsapp-pill"
                       onClick={() => {
-                        const text = `Namaste AFG Marble, I am inquiring about custom stone inlay work: "${item.title}". Please share patterns and pricing.`;
+                        const text = `Namaste AFG Marble, I am inquiring about custom Marble Inlay Work: "${item.title}". Please share patterns and pricing.`;
                         window.open(`https://wa.me/917597417274?text=${encodeURIComponent(text)}`, '_blank');
                       }}
                       style={{

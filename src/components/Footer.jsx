@@ -278,14 +278,13 @@ export default function Footer() {
               Master Collections
             </h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '11px' }}>
-              <li><Link href="/pooja-sanctums" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Bespoke Pooja Sanctums</Link></li>
-              <li><Link href="/pooja-sanctums" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Luxury Villa Mandirs</Link></li>
-              <li><Link href="/palatial-fountains" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Palatial Estate Fountains</Link></li>
-              <li><Link href="/heritage-chhatris" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Heritage Chhatris &amp; Pavilions</Link></li>
-              <li><Link href="/marble-deities" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Consecrated Marble Deities</Link></li>
-              <li><Link href="/pietra-dura-inlay" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Pietra Dura Gemstone Inlay</Link></li>
-              <li><Link href="/jaali-screens" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Pierced Jaali Lattice Screens</Link></li>
-              <li><Link href="/royal-projects" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Monumental Shikhar Temples</Link></li>
+              <li><Link href="/pooja-sanctums" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Marble Pooja Room &amp; Home Temple</Link></li>
+              <li><Link href="/palatial-fountains" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Marble Water Fountains</Link></li>
+              <li><Link href="/heritage-chhatris" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Marble Chhatri &amp; Garden Pavilions</Link></li>
+              <li><Link href="/heritage-chhatris" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Marble Temple Gate &amp; Entrance</Link></li>
+              <li><Link href="/pietra-dura-inlay" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Marble Inlay Work</Link></li>
+              <li><Link href="/pooja-sanctums" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Jain Temple</Link></li>
+              <li><Link href="/atelier-workshop" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Marble All Work</Link></li>
             </ul>
           </div>
 

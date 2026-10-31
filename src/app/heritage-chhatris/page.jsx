@@ -111,32 +111,32 @@ export default function HeritageChhatrisPage() {
             <div className="creation-card product-card" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
               <div className="card-media product-card__media">
                 <img
-                  src="/gallery/outdoor-marble-temple-pavilion.webp"
-                  alt="Handcrafted Outdoor White Marble Temple Pavilion"
+                  src="/gallery/mandir-peacock-torana-8341.webp"
+                  alt="Makrana White Marble Entrance Gate"
                   loading="lazy"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
-                <span className="card-badge product-badge" style={{ zIndex: 3 }}>Outdoor Temple Pavilion</span>
+                <span className="card-badge product-badge" style={{ zIndex: 3 }}>Temple Entrance Gate</span>
                 <div className="angle-tag-pill" style={{ position: 'absolute', bottom: '12px', left: '14px', zIndex: 3, background: 'rgba(255, 255, 255, 0.92)', color: '#1c1813', fontSize: '11px', fontWeight: 600, padding: '3px 10px', borderRadius: '4px' }}>
-                  Carved Marble Mandap
+                  Temple Entrance Gate
                 </div>
               </div>
               <div className="card-body" style={{ padding: '24px', display: 'flex', flexDirection: 'column', flex: 1 }}>
                 <span style={{ fontSize: '11px', letterSpacing: '0.12em', color: '#b08a4f', textTransform: 'uppercase', fontWeight: 600 }}>
-                  Pure Makrana White Marble
+                  100% Natural Makrana Marble
                 </span>
                 <h3 style={{ fontFamily: 'var(--serif)', fontSize: '20px', color: '#1c1813', margin: '6px 0 8px' }}>
-                  The Grand White Marble Garden Temple Pavilion
+                  Makrana White Marble Entrance Gate
                 </h3>
                 <p style={{ fontSize: '13px', color: '#6b5f52', lineHeight: 1.55, marginBottom: '14px' }}>
-                  Hand-carved pure white Makrana marble outdoor pavilion featuring detailed jali lattice screens, decorative carved pillars, and traditional stepped roof spire.
+                  Grand hand-carved pure white Makrana marble temple entrance gate with carved pillars, decorative peacock torana arches, and traditional stone lintels.
                 </p>
                 <div style={{ marginTop: 'auto' }}>
                   <button
                     type="button"
                     className="btn-whatsapp-pill"
                     onClick={() => {
-                      const text = 'Namaste AFG Marble, I am inquiring about The Grand White Marble Garden Temple Pavilion. Please share design drawings and price details.';
+                      const text = 'Namaste AFG Marble, I am inquiring about the Makrana White Marble Entrance Gate. Please share design drawings and price details.';
                       window.open(`https://wa.me/917597417274?text=${encodeURIComponent(text)}`, '_blank');
                     }}
                     style={{

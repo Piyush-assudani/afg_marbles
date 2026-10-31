@@ -43,18 +43,20 @@ const ROUTE_ALIASES = {
   '/pavilions': '/heritage-chhatris',
 
   // Deities & Murtis
-  '/deity': '/marble-deities',
-  '/deities': '/marble-deities',
-  '/murti': '/marble-deities',
-  '/murtis': '/marble-deities',
-  '/idol': '/marble-deities',
-  '/idols': '/marble-deities',
+  '/marble-deities': '/pooja-sanctums',
+  '/deity': '/pooja-sanctums',
+  '/deities': '/pooja-sanctums',
+  '/murti': '/pooja-sanctums',
+  '/murtis': '/pooja-sanctums',
+  '/idol': '/pooja-sanctums',
+  '/idols': '/pooja-sanctums',
 
   // Jaali & Inlay
   '/jaali': '/jaali-screens',
   '/jali': '/jaali-screens',
   '/jalis': '/jaali-screens',
   '/inlay': '/pietra-dura-inlay',
+  '/marble-inlay': '/pietra-dura-inlay',
   '/pietra-dura': '/pietra-dura-inlay',
   '/parchin-kari': '/pietra-dura-inlay',
 

@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 const MEGA_STONEWORKS = [
   {
     num: '01',
-    title: 'Marble Mandirs & Temples',
+    title: 'Marble Pooja Room & Home Temple',
     subtitle: 'Custom Home Temples',
     href: '/pooja-sanctums',
     badge: 'HOME TEMPLES',
@@ -17,58 +17,69 @@ const MEGA_STONEWORKS = [
   },
   {
     num: '02',
-    title: 'Palatial Cascading Fountains',
+    title: 'Marble Water Fountains',
     subtitle: 'Garden & Lawn Fountains',
     href: '/palatial-fountains',
     badge: 'WATER FOUNTAINS',
     previewImage: '/gallery/fountain-palatial-estate-triple-tier-lawn.webp',
     previewTitle: 'Carved Marble Fountains',
-    previewDesc: 'Carved from durable Rajnagar white marble. Specially built for continuous water flow in gardens and courtyards.',
+    previewDesc: 'Carved from durable white marble. Specially built for continuous water flow in gardens and courtyards.',
     ctaText: 'Explore Fountains'
   },
   {
     num: '03',
-    title: 'Royal Pavilions & Chhatris',
+    title: 'Marble Chhatri & Garden Pavilions',
     subtitle: 'Carved Domes & Garden Gazebos',
     href: '/heritage-chhatris',
     badge: 'GARDEN PAVILIONS',
-    previewImage: '/gallery/royal-chhatri-garden-pavilion.webp',
+    previewImage: '/gallery/royal-heritage-garden-pavilion.webp',
     previewTitle: 'Marble Garden Pavilions',
     previewDesc: 'Traditional Rajasthani carved marble pavilions with decorative pillars and domes for gardens and estates.',
     ctaText: 'Explore Pavilions'
   },
   {
     num: '04',
-    title: 'Hand-Carved Marble Deities',
-    subtitle: 'Pure White Makrana Murti Statues',
-    href: '/marble-deities',
-    badge: 'MARBLE IDOLS',
-    previewImage: '/gallery/deity-radha-krishna-makrana-sculpture.webp',
-    previewTitle: 'Marble Deities & Statues',
-    previewDesc: 'Hand-sculpted by hereditary master stone carvers with lifelike facial expressions and sacred traditional proportions.',
-    ctaText: 'Explore Sacred Deities'
+    title: 'Marble Temple Gate & Entrance',
+    subtitle: 'Torana & Entrance Archways',
+    href: '/heritage-chhatris',
+    badge: 'ENTRANCE GATES',
+    previewImage: '/gallery/mandir-peacock-torana-8341.webp',
+    previewTitle: 'Marble Temple Entrance Gates',
+    previewDesc: 'Grand ceremonial temple entrance gates with carved pillars, decorative peacock torana arches, and stone lintels.',
+    ctaText: 'Explore Entrance Gates'
   },
   {
     num: '05',
-    title: 'Stone Inlay Art (Pietra Dura)',
-    subtitle: 'Taj Mahal Floral Gem Inlay',
+    title: 'Marble Inlay Work',
+    subtitle: 'Fine Gemstone & Floral Inlay',
     href: '/pietra-dura-inlay',
-    badge: 'GEMSTONE INLAY',
-    previewImage: '/gallery/inlay-pietra-dura-peacock-medallion.webp',
-    previewTitle: 'Gemstone Flower Inlay Art',
+    badge: 'MARBLE INLAY',
+    previewImage: '/gallery/inlay-work-grand-mandala.webp',
+    previewTitle: 'Handcrafted Marble Inlay Work',
     previewDesc: 'Semi-precious natural colorful stones hand-inlaid into flawless Makrana pure white marble.',
-    ctaText: 'Explore Inlay Art'
+    ctaText: 'Explore Inlay Work'
   },
   {
     num: '06',
-    title: 'Carved Marble Jaali Screens',
-    subtitle: 'Decorative Screen Partitions',
-    href: '/jaali-screens',
-    badge: 'MARBLE JAALIS',
-    previewImage: '/gallery/jaali-geometric-hexagonal-lattice.webp',
-    previewTitle: 'Carved Marble Jaalis',
-    previewDesc: 'Floral and geometric pierced lattice screens for pooja room doors, room partitions, and windows.',
-    ctaText: 'Explore Jaali Screens'
+    title: 'Jain Temple',
+    subtitle: 'Sacred Derasar & Temple Craft',
+    href: '/pooja-sanctums',
+    badge: 'JAIN TEMPLES',
+    previewImage: '/gallery/img_7386.webp',
+    previewTitle: 'White Marble Jain Temples',
+    previewDesc: 'Authentic Jain Derasar architecture in pure pristine Makrana white marble according to Jain Agamas.',
+    ctaText: 'Explore Jain Temples'
+  },
+  {
+    num: '07',
+    title: 'Marble All Work',
+    subtitle: 'Custom Carving & Atelier Services',
+    href: '/atelier-workshop',
+    badge: 'CUSTOM WORK',
+    previewImage: '/gallery/atelier-yard-preassembly.webp',
+    previewTitle: 'Complete Marble Works & Carving',
+    previewDesc: 'Generational stone carving atelier in Makrana handling custom architectural marble commissions worldwide.',
+    ctaText: 'Explore All Work'
   }
 ];
 
@@ -276,7 +287,6 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
                 pathname.startsWith('/pooja') ||
                 pathname.startsWith('/palatial') ||
                 pathname.startsWith('/heritage') ||
-                pathname.startsWith('/marble-deities') ||
                 pathname.startsWith('/pietra') ||
                 pathname.startsWith('/jaali')
                   ? 'is-active'
@@ -480,7 +490,7 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
 
           <div className="mobile-nav-group-title">Our Marble Collections</div>
           <Link href="/pooja-sanctums" className={`mob-link ${pathname === '/pooja-sanctums' ? 'is-active' : ''}`}>
-            <span>Marble Mandirs &amp; Temples</span>
+            <span>Marble Pooja Room &amp; Home Temple</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
@@ -492,25 +502,31 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
             </svg>
           </Link>
           <Link href="/heritage-chhatris" className={`mob-link ${pathname === '/heritage-chhatris' ? 'is-active' : ''}`}>
-            <span>Marble Chhatris &amp; Pavilions</span>
+            <span>Marble Chhatri &amp; Garden Pavilions</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
-          <Link href="/marble-deities" className={`mob-link ${pathname === '/marble-deities' ? 'is-active' : ''}`}>
-            <span>Handmade Marble Murties</span>
+          <Link href="/heritage-chhatris" className={`mob-link ${pathname === '/heritage-chhatris' ? 'is-active' : ''}`}>
+            <span>Marble Temple Gate &amp; Entrance</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
           <Link href="/pietra-dura-inlay" className={`mob-link ${pathname === '/pietra-dura-inlay' ? 'is-active' : ''}`}>
-            <span>Stone Inlay Work</span>
+            <span>Marble Inlay Work</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
-          <Link href="/jaali-screens" className={`mob-link ${pathname === '/jaali-screens' ? 'is-active' : ''}`}>
-            <span>Carved Marble Jali Screens</span>
+          <Link href="/pooja-sanctums" className={`mob-link ${pathname === '/pooja-sanctums' ? 'is-active' : ''}`}>
+            <span>Jain Temple</span>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </Link>
+          <Link href="/atelier-workshop" className={`mob-link ${pathname === '/atelier-workshop' ? 'is-active' : ''}`}>
+            <span>Marble All Work</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>

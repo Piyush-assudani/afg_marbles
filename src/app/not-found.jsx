@@ -7,9 +7,9 @@ const SUGGESTIONS = [
   { title: 'Home Pooja Sanctums & Mandirs', href: '/pooja-sanctums', desc: 'Monolithic pure Makrana calcite sacred temples.' },
   { title: 'Palatial Cascading Fountains', href: '/palatial-fountains', desc: 'Dense hydraulic Rajnagar marble estate watercraft.' },
   { title: 'Royal Heritage Chhatris', href: '/heritage-chhatris', desc: 'Monumental Rajput garden pavilions & cupolas.' },
-  { title: 'Handmade Marble God Idols', href: '/marble-deities', desc: 'Hand-carved single-block marble statues.' },
+  { title: 'Marble Temple Gate & Entrance', href: '/heritage-chhatris', desc: 'Handcrafted temple entrance torana gates.' },
   { title: 'Hand-Carved Jali Screens', href: '/jaali-screens', desc: 'Marble jali cutwork for temple doors and partitions.' },
-  { title: 'Handmade Stone Inlay Art', href: '/pietra-dura-inlay', desc: 'Taj Mahal style gemstone floral work.' },
+  { title: 'Marble Inlay Work', href: '/pietra-dura-inlay', desc: 'Taj Mahal style gemstone floral work.' },
   { title: 'Free 2D Design Drawing', href: '/bespoke-consultation', desc: 'Custom pooja space design drawings and size planning.' },
   { title: 'Completed Projects', href: '/royal-projects', desc: 'Photos of installed temples and fountains worldwide.' },
 ];
@@ -27,10 +27,10 @@ export default function NotFound() {
       target = '/pooja-sanctums';
     } else if (path.includes('fountain') || path.includes('water')) {
       target = '/palatial-fountains';
-    } else if (path.includes('chhatri') || path.includes('pavilion')) {
+    } else if (path.includes('chhatri') || path.includes('pavilion') || path.includes('gate') || path.includes('toran')) {
       target = '/heritage-chhatris';
     } else if (path.includes('murti') || path.includes('deity') || path.includes('idol')) {
-      target = '/marble-deities';
+      target = '/pooja-sanctums';
     } else if (path.includes('cad') || path.includes('consult') || path.includes('bespoke')) {
       target = '/bespoke-consultation';
     } else if (path.includes('project') || path.includes('work') || path.includes('portfolio') || path.includes('gallery')) {

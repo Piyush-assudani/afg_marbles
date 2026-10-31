@@ -47,7 +47,7 @@ export default function ProductCard({ product, onOpenProduct, onOpenInquiry }) {
     let path = '/pooja-sanctums';
     if (cat === 'fountain') path = '/palatial-fountains';
     else if (cat === 'chhatri') path = '/heritage-chhatris';
-    else if (cat === 'murti') path = '/marble-deities';
+    else if (cat === 'murti') path = '/pooja-sanctums';
     else if (cat === 'jaali') path = '/jaali-screens';
     else if (cat === 'inlay') path = '/pietra-dura-inlay';
     return `${origin}${path}#product/${product.id}`;

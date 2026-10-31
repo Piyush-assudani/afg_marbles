@@ -876,22 +876,22 @@ export const PRODUCTS = [
   },
   {
     id: 'royal-torana-gateway',
-    title: 'Royal Marble Entrance Gate (carved arch)',
+    title: 'Makrana White Marble Entrance Gate',
     category: 'chhatri',
     categoryName: 'Heritage Chhatris & Pavilions',
-    badge: 'Monumental Entrance',
-    tagline: 'Grand marble entrance gate with twin elephant pillars and carved top arch',
+    badge: 'Temple Entrance Gate',
+    tagline: 'Grand hand-carved pure white Makrana marble temple entrance gate with carved pillars and torana arches',
     authenticity: '100% Pure White Marble',
     scale: '16.0ft W × 3.5ft D × 15.0ft H',
     primaryStone: 'Makrana Calcite Marble',
     fullDesc:
-      'Inspired by the monumental gateways of Sanchi and Rajasthan palaces, this ceremonial arch serves as a regal entrance portal for luxury estates, temple complexes, and wedding resorts.',
+      'Inspired by classical Rajasthani temple torana gateways, this grand entrance arch serves as an auspicious entrance portal for luxury estates, home temples, and community complexes.',
     angles: [
       {
-        label: 'carved arch Gateway',
+        label: 'Temple Entrance Gate',
         tag: 'Complete View',
-        src: '/gallery/chhatri-carved arch-monumental-gate.webp',
-        desc: 'Monumental ceremonial gateway with twin sculpted pillars and three-tier carved beam.'
+        src: '/gallery/mandir-peacock-torana-8341.webp',
+        desc: 'Monumental ceremonial gateway with twin sculpted pillars, peacock torana brackets, and multi-tier carved beam.'
       },
       {
         label: 'Perimeter View',
@@ -901,7 +901,7 @@ export const PRODUCTS = [
       }
     ],
     specs: [
-      { label: 'Stone Variety', value: 'Solid White Calcite Marble' },
+      { label: 'Stone Variety', value: '100% Pure Makrana White Marble' },
       { label: 'Standard Dimensions', value: '16.0ft (Width) × 3.5ft (Depth) × 15.0ft (Height)' }
     ]
   },
@@ -973,32 +973,32 @@ export const PRODUCTS = [
   },
   {
     id: 'pietra-dura-gemstone-inlay',
-    title: 'Natural Gemstone Inlay Marble Medallion',
+    title: 'Marble Inlay Work',
     category: 'inlay',
-    categoryName: 'Deities & Jaali Art',
-    badge: 'Imperial Parchin Kari',
-    tagline: 'White marble medallion hand-inlaid with natural colorful semi-precious stones',
+    categoryName: 'Marble Inlay Work',
+    badge: 'Marble Inlay Work',
+    tagline: 'Handcrafted white marble inlay with natural colorful semi-precious stones and floral medallions',
     authenticity: 'Natural Semi-Precious Gemstones',
     scale: '6.0ft Diameter × 1.5in Thickness',
     primaryStone: 'Makrana Marble & Semi-Precious Gemstones',
     fullDesc:
-      'Centuries-old Parchin Kari technique practiced by the direct descendants of royal Mughal court artisans. Each petal and leaf is cut from genuine semi-precious stone and fitted seamlessly into carved marble grooves.',
+      'Centuries-old Taj Mahal marble inlay work (Parchin Kari). Each flower petal and vine is cut from genuine semi-precious stones like lapis lazuli, malachite, and jasper, and fitted seamlessly into carved white marble.',
     angles: [
       {
-        label: 'Pietra Dura Floor Medallion',
-        tag: 'Top-Down View',
-        src: '/gallery/sanctum-inlay-floor.webp',
-        desc: 'Circular floral medallion inlaid with lapis lazuli, cornelian, and malachite.'
+        label: 'Marble Inlay Medallion Table',
+        tag: 'Complete View',
+        src: '/gallery/inlay-work-round-table-medallion.webp',
+        desc: 'Circular floral inlay medallion with lapis lazuli, cornelian, and malachite.'
       },
       {
-        label: 'Gemstone Kalash Motifs',
-        tag: 'Inlay Detail',
-        src: '/gallery/sanctum-silver-kalash-inlay.webp',
-        desc: 'Close-up showing the zero-gap precision joint between gemstone and white marble.'
+        label: 'Grand Floor Mandala',
+        tag: 'Floor Mandala',
+        src: '/gallery/inlay-work-grand-mandala.webp',
+        desc: 'Grand marble inlay floor mandala for luxury pooja rooms and living spaces.'
       }
     ],
     specs: [
-      { label: 'Stone Variety', value: 'Makrana Pure White Marble' },
+      { label: 'Stone Variety', value: '100% Pure Makrana White Marble' },
       { label: 'Inlaid Stones', value: 'Lapis Lazuli, Malachite, Jasper, Cornelian, Mother-of-Pearl' },
       { label: 'Standard Dimensions', value: '6.0ft (Diameter) × 1.5in (Thickness)' }
     ]
