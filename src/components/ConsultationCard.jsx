@@ -71,12 +71,12 @@ export default function ConsultationCard({ onOpenInquiry }) {
             <div className="consultation-visual">
               <div className="consultation-img-wrap">
                 <img
-                  src="/gallery/mandir-carved-elevation.webp"
-                  alt="2D Temple Design Drawing & Layout"
+                  src="/gallery/mandir-2d-cad-drawing.webp?v=nov1"
+                  alt="2D Architectural CAD Drawing & Layout"
                   loading="lazy"
                 />
                 <div className="consultation-img-tag">
-                  <span>Free 2D Design Drawing</span>
+                  <span>2D Architectural CAD Drawing</span>
                 </div>
               </div>
             </div>

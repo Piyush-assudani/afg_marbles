@@ -228,7 +228,7 @@ export default function Footer() {
               style={{ display: 'inline-flex', alignItems: 'center', gap: '14px', marginBottom: '18px', textDecoration: 'none', cursor: 'pointer' }}
             >
               <img
-                src="/afg-logo.png"
+                src="/afg-logo-white.png?v=nov1"
                 alt="A.F.G Marble And Art"
                 width={65}
                 height={38}
@@ -331,11 +331,11 @@ export default function Footer() {
             </h4>
             <div style={{ fontSize: '12.5px', color: '#b8aba0', lineHeight: 1.6, marginBottom: '14px' }}>
               <strong style={{ color: '#fffdf9', display: 'block', marginBottom: '3px' }}>Makrana Master Atelier &amp; Fitment Yard:</strong>
-              Makrana Bypass Rd, Borawar, Gunawati Jageer, Rajasthan 341502
+              Makrana Bypass Rd, Borawar, Makrana, Rajasthan 341505
             </div>
             <div style={{ fontSize: '12.5px', color: '#b8aba0', lineHeight: 1.6, marginBottom: '14px' }}>
               <strong style={{ color: '#fffdf9', display: 'block', marginBottom: '3px' }}>Makrana Calcite Quarry Works:</strong>
-              Makrana Bypass Rd, Borawar, Gunawati Jageer, Rajasthan 341502
+              Makrana Bypass Rd, Borawar, Makrana, Rajasthan 341505
             </div>
             <div style={{ fontSize: '12px', color: '#9e9080', lineHeight: 1.5 }}>
               <strong style={{ color: '#edd7a8' }}>Studio Hours:</strong><br />

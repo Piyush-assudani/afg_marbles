@@ -20,5 +20,6 @@ scratch_video/
 data/
 /IMG_*
 /image copy.png
+*.pdf
 
 

@@ -8,7 +8,7 @@ export default function ProductCard({ product, onOpenProduct, onOpenInquiry }) {
   const angles = product.angles || [
     {
       label: 'Main View',
-      tag: 'Front Elevation',
+      tag: 'Complete View',
       src: product.image || '/gallery/mandir-pure-makrana.webp',
       desc: product.title,
     },

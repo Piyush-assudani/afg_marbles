@@ -133,12 +133,12 @@ export default function AtelierWorkshopPage() {
             <div className="workshop-locations-grid">
               <div className="w-loc-card">
                 <h4>Makrana Main Workshop &amp; Display Center</h4>
-                <p>Makrana Bypass Rd, Borawar, Gunawati Jageer, Rajasthan 341502</p>
+                <p>Makrana Bypass Rd, Borawar, Makrana, Rajasthan 341505</p>
                 <span className="loc-note">See live temple setups and finished temples</span>
               </div>
               <div className="w-loc-card">
                 <h4>Makrana Marble Yard</h4>
-                <p>Makrana Bypass Rd, Borawar, Gunawati Jageer, Rajasthan 341502</p>
+                <p>Makrana Bypass Rd, Borawar, Makrana, Rajasthan 341505</p>
                 <span className="loc-note">Direct pure marble block selection</span>
               </div>
             </div>

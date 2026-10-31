@@ -657,7 +657,7 @@ export const PRODUCTS = [
       'An imperial water monument designed for palatial courtyards and luxury estate driveways. Sculpted from massive single blocks of Makrana marble, each tier is shaped into classical scalloped basins with precision-engineered water sheeting edges.',
     angles: [
       {
-        label: 'Palatial Lawn Elevation',
+        label: 'Palatial Lawn View',
         tag: 'Complete View',
         src: '/gallery/fountain-palatial-estate-triple-tier-lawn.webp',
         desc: 'Monumental 3-tier marble fountain installed on estate grounds with multi-tier water sheeting.'
@@ -734,7 +734,7 @@ export const PRODUCTS = [
       'Designed for expansive botanical gardens and hotel courtyards, this octagonal fountain features an architectural coping ledge for relaxed seating, with a central tiered cascade providing an enchanting acoustic presence.',
     angles: [
       {
-        label: 'Circular Pool Elevation',
+        label: 'Circular Pool View',
         tag: 'Complete View',
         src: '/gallery/fountain-circular-lawn-estate-cascade.webp',
         desc: '100% pure white Makrana marble tiered fountain with large pool basin on garden lawn.'
@@ -771,7 +771,7 @@ export const PRODUCTS = [
       'A true tour-de-force of water sculpture, this four-tier fountain utilizes fluted seashell basin geometry to create four concentric tiers of musical water curtains.',
     angles: [
       {
-        label: 'Tiered Garden Elevation',
+        label: 'Tiered Garden View',
         tag: 'Complete View',
         src: '/gallery/fountain-estate-cobblestone.webp',
         desc: 'Grand multi-tier pure white marble fountain set upon paved courtyard with lush garden flora.'
@@ -857,7 +857,7 @@ export const PRODUCTS = [
       'A versatile garden pavilion designed for serene contemplation in estate lawns, terraces, and courtyards. Features four solid columns supporting deeply carved cusped carved arches and an authentic Rajput dome.',
     angles: [
       {
-        label: 'Pavilion Elevation',
+        label: 'Pavilion View',
         tag: 'Garden View',
         src: '/gallery/royal-chhatri-garden-pavilion.webp',
         desc: 'Four-pillar garden pavilion with deeply cusped arches and raised marble platform.'
@@ -894,7 +894,7 @@ export const PRODUCTS = [
         desc: 'Monumental ceremonial gateway with twin sculpted pillars and three-tier carved beam.'
       },
       {
-        label: 'Perimeter Elevation',
+        label: 'Perimeter View',
         tag: 'Side Angle',
         src: '/gallery/chhatri-temple-aerial-gateway.webp',
         desc: 'Three-quarter view highlighting beam depth and dry-joint bracket engineering.'

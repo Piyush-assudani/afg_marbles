@@ -42,8 +42,8 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
 
   const currentAngle = product.angles?.[activeAngleIdx] || product.angles?.[0] || {
     src: product.image || '/gallery/mandir-pure-makrana.webp',
-    label: 'Primary Elevation',
-    tag: 'Elevation',
+    label: 'Complete View',
+    tag: 'Complete View',
     desc: product.title
   };
 

@@ -191,7 +191,7 @@ export default function PrivacyPage() {
                     A.F.G MARBLE &amp; ARTS
                   </p>
                   <p style={{ margin: '0 0 6px', fontSize: '13px', color: '#685c4f' }}>
-                    <strong>Master Atelier &amp; Works:</strong> Makrana Bypass Rd, Borawar, Gunawati Jageer, Rajasthan 341502
+                    <strong>Master Atelier &amp; Works:</strong> Makrana Bypass Rd, Borawar, Makrana, Rajasthan 341505
                   </p>
                 </div>
                 <div>

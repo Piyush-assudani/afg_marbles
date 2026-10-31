@@ -108,10 +108,10 @@ const organizationSchema = {
   address: [
     {
       '@type': 'PostalAddress',
-      streetAddress: 'Makrana Bypass Rd, Borawar, Gunawati Jageer',
+      streetAddress: 'Makrana Bypass Rd, Borawar, Makrana',
       addressLocality: 'Makrana',
       addressRegion: 'Rajasthan',
-      postalCode: '341502',
+      postalCode: '341505',
       addressCountry: 'IN',
     },
   ],
@@ -186,7 +186,7 @@ const faqSchema = {
       name: 'Where are the physical ateliers of A.F.G Marble & Arts located?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The Master Atelier, Pre-Assembly Fitment Yard, and Primary Works are located at Makrana Bypass Rd, Borawar, Gunawati Jageer, Rajasthan 341502, India. Direct concierge phone and WhatsApp: +91 7597417274.',
+        text: 'The Master Atelier, Pre-Assembly Fitment Yard, and Primary Works are located at Makrana Bypass Rd, Borawar, Makrana, Rajasthan 341505, India. Direct concierge phone and WhatsApp: +91 7597417274.',
       },
     },
     {
