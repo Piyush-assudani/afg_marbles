@@ -30,7 +30,7 @@ const STONES_METADATA = [
     accentColor: '#d4af37',
     tag: 'Home Temples',
     word: 'MAKRANA',
-    thumb: '/textures/makrana.jpg',
+    thumb: '/textures/makrana.webp',
     specs: {
       purity: '99.2% Pure White',
       absorption: '0.01% (Zero Stain)',
@@ -50,7 +50,7 @@ const STONES_METADATA = [
     accentColor: '#c9a24d',
     tag: 'Temples & Statues',
     word: 'VIETNAM',
-    thumb: '/textures/vietnam.jpg',
+    thumb: '/textures/vietnam.webp',
     specs: {
       purity: '99.6% Snow White',
       absorption: '0.03% (Resin-Free)',
@@ -70,7 +70,7 @@ const STONES_METADATA = [
     accentColor: '#8a7d70',
     tag: 'Garden Fountains',
     word: 'RAJNAGAR',
-    thumb: '/textures/rajnagar.jpg',
+    thumb: '/textures/rajnagar.webp',
     specs: {
       purity: 'Heavy White Marble',
       density: '2.72 g/cm³',

@@ -3,7 +3,6 @@ import { useState, useRef, useEffect } from 'react';
 
 export default function ProductCard({ product, priority = false, onOpenProduct, onOpenInquiry }) {
   const [activeAngleIdx, setActiveAngleIdx] = useState(0);
-  const [imgLoaded, setImgLoaded] = useState(false);
   const touchStartX = useRef(null);
 
   const angles = product.angles || [
@@ -28,11 +27,6 @@ export default function ProductCard({ product, priority = false, onOpenProduct, 
       });
     }
   }, [angles]);
-
-  // When angle changes, reset loaded state only if not cached
-  useEffect(() => {
-    setImgLoaded(false);
-  }, [currentAngle.src]);
 
   const nextAngle = (e) => {
     e?.stopPropagation?.();
@@ -123,42 +117,27 @@ export default function ProductCard({ product, priority = false, onOpenProduct, 
           cursor: 'pointer',
           position: 'relative',
           width: '100%',
-          height: '280px',
+          aspectRatio: '4 / 3',
+          minHeight: '260px',
+          maxHeight: '290px',
           overflow: 'hidden',
           backgroundColor: '#ede7de',
         }}
       >
-        {/* Shimmer Skeleton Placeholder while image is loading */}
-        {!imgLoaded && (
-          <div
-            className="card-img-skeleton"
-            style={{
-              position: 'absolute',
-              inset: 0,
-              background: 'linear-gradient(90deg, #ede7de 0%, #f7f3ec 50%, #ede7de 100%)',
-              backgroundSize: '200% 100%',
-              animation: 'afgCardShimmer 1.4s ease-in-out infinite',
-              zIndex: 1,
-            }}
-          />
-        )}
-
         <img
           src={currentAngle.src}
           alt={`${product.title} - ${currentAngle.label}`}
           loading={priority ? 'eager' : 'lazy'}
           fetchPriority={priority ? 'high' : 'auto'}
           decoding="async"
-          onLoad={() => setImgLoaded(true)}
           className="product-card__main-img"
           style={{
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            objectPosition: 'center 30%',
+            objectPosition: 'center 20%',
             display: 'block',
-            opacity: imgLoaded ? 1 : 0,
-            transition: 'opacity 0.35s ease, transform 0.6s ease',
+            transition: 'transform 0.6s ease',
             position: 'relative',
             zIndex: 2,
           }}

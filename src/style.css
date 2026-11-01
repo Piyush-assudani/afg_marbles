@@ -257,7 +257,7 @@ button {
   min-height: 720px;
   overflow: hidden;
   isolation: isolate;
-  background: #fbf9f4 url('/hero-palace-backdrop.jpg') center bottom / cover no-repeat;
+  background: #fbf9f4 url('/hero-palace-backdrop.webp') center bottom / cover no-repeat;
 }
 
 .hero__backdrop {
@@ -5551,13 +5551,16 @@ body:has(.mega-menu) .stone-rail {
   box-shadow: 0 20px 50px -20px rgba(28, 24, 19, 0.2);
   border: 1px solid rgba(176, 138, 79, 0.25);
   background: #ede6dc;
-  aspect-ratio: 4 / 3;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-height: 480px;
 }
 
 .page-media-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%;
   display: block;
   transition: transform 0.8s var(--ease);
 }

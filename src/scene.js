@@ -11,7 +11,7 @@ export const STONES = [
   { key: 'makrana', name: 'Makrana Pure White Marble', origin: 'Makrana, Rajasthan', note: 'Temples & Mandirs · 100% Pure Taj White Marble', word: 'MAKRANA' },
   { key: 'vietnam', name: 'Vietnam Pure White Marble', origin: 'Luc Yen / Yen Bai, Vietnam', note: 'Temples & Deities · Pure Snow White Marble', word: 'VIETNAM' },
   { key: 'rajnagar', name: 'Rajnagar White Marble', origin: 'Rajnagar, Rajasthan', note: 'Water Fountains · Heavy Durable Natural Marble', word: 'RAJNAGAR' },
-].map((s) => ({ ...s, url: `${BASE}textures/${s.key}.jpg` }));
+].map((s) => ({ ...s, url: `${BASE}textures/${s.key}.webp` }));
 
 /* ------------------------------------------------------------------
    Materials

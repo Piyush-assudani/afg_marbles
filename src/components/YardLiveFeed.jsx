@@ -171,10 +171,15 @@ export default function YardLiveFeed({ onOpenInquiry }) {
               title="Click to expand full screen"
               style={{
                 position: 'relative',
-                height: '440px',
-                background: '#0a0908',
+                width: '100%',
+                aspectRatio: '4 / 3',
+                maxHeight: '440px',
+                background: '#14110e',
                 overflow: 'hidden',
                 cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
               }}
             >
               <img
@@ -184,6 +189,8 @@ export default function YardLiveFeed({ onOpenInquiry }) {
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
+                  objectPosition: 'center 20%',
+                  display: 'block',
                   transition: 'transform 0.4s ease',
                 }}
               />

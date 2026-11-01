@@ -308,14 +308,17 @@ export default function HomePage() {
                 overflow: 'hidden',
                 boxShadow: '0 20px 50px rgba(28,24,19,0.18)',
                 cursor: 'zoom-in',
-                position: 'relative'
+                position: 'relative',
+                width: '100%',
+                aspectRatio: '1 / 1',
+                maxHeight: '480px',
               }}
             >
               <img
                 src="/gallery/sanctum-royal-mandir-room.webp?v=purewhite"
                 alt="Generational Master Sculptors Workshop"
                 loading="lazy"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%', display: 'block', transition: 'transform 0.5s ease' }}
               />
               <button
                 type="button"

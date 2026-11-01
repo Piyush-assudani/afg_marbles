@@ -188,11 +188,14 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
               }}
               style={{
                 position: 'relative',
-                height: '430px',
+                width: '100%',
+                aspectRatio: '4 / 3',
+                minHeight: '360px',
+                maxHeight: '440px',
                 borderRadius: '16px',
                 overflow: 'hidden',
                 boxShadow: '0 12px 36px rgba(28, 24, 19, 0.15)',
-                background: 'radial-gradient(ellipse at center, #2a231b 0%, #14110d 100%)',
+                background: '#ede7de',
                 cursor: 'zoom-in',
                 display: 'flex',
                 alignItems: 'center',
@@ -205,9 +208,10 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
                 style={{
                   width: '100%',
                   height: '100%',
-                  objectFit: 'contain',
-                  objectPosition: 'center',
-                  transition: 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease'
+                  objectFit: 'cover',
+                  objectPosition: 'center 20%',
+                  display: 'block',
+                  transition: 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)'
                 }}
               />
 

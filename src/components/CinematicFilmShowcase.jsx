@@ -49,7 +49,7 @@ export default function CinematicFilmShowcase({ onOpenInquiry }) {
   const handleInquiry = () => {
     const productData = {
       title: 'Custom White Marble Temple Design',
-      image: isMobile ? '/videos/poster-mobile.jpg' : '/videos/poster-desktop.jpg',
+      image: isMobile ? '/videos/poster-mobile.webp' : '/videos/poster-desktop.webp',
       stone: '100% Pure Makrana White Marble',
     };
     if (typeof window !== 'undefined' && window.afgOpenInquiry) {
@@ -95,7 +95,7 @@ export default function CinematicFilmShowcase({ onOpenInquiry }) {
           muted
           playsInline
           preload="auto"
-          poster={isMobile ? '/videos/poster-mobile.jpg?v=nov1' : '/videos/poster-desktop.jpg?v=nov1'}
+          poster={isMobile ? '/videos/poster-mobile.webp?v=nov1' : '/videos/poster-desktop.webp?v=nov1'}
           style={{
             width: '100%',
             height: '100%',

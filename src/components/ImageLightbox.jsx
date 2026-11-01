@@ -199,7 +199,6 @@ export default function ImageLightbox({ image, onClose }) {
 
       {/* Main Fullscreen Stage */}
       <div
-        onClick={(e) => e.stopPropagation()}
         style={{
           width: '100%',
           height: '100%',
