@@ -52,7 +52,7 @@ export default function PreAssemblyTrialPage() {
           <div className="page-grid-2" style={{ marginBottom: '60px' }}>
             <div className="page-media-frame">
               <img
-                src="/gallery/atelier-yard-preassembly.webp?v=realphoto"
+                src="/gallery/atelier-yard-trial-actual.webp"
                 alt="Makrana Atelier Trial Assembly Yard"
                 loading="lazy"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}

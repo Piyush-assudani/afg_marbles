@@ -7,7 +7,7 @@ const YARD_BAYS = [
     code: 'BAY 01 — FULL SETUP TRIAL',
     title: 'Workshop Setup & Quality Verification',
     location: 'Makrana Main Workshop Yard',
-    image: '/gallery/yard-dryfit-raw-calcite-mandir.webp?v=4k',
+    image: '/gallery/atelier-yard-trial-actual.webp',
     status: 'ACTIVE INSPECTION',
     inspector: 'Head Craftsman Ramswaroop Silawat',
     project: '7.5ft Makrana Peacock Temple with Mother-of-Pearl Inlay',

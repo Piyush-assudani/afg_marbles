@@ -734,22 +734,22 @@ export const PRODUCTS = [
       'Designed for expansive botanical gardens and hotel courtyards, this octagonal fountain features an architectural coping ledge for relaxed seating, with a central tiered cascade providing an enchanting acoustic presence.',
     angles: [
       {
-        label: 'Circular Pool View',
+        label: 'Octagonal Garden View',
         tag: 'Complete View',
-        src: '/gallery/fountain-circular-lawn-estate-cascade.webp',
-        desc: '100% pure white Makrana marble tiered fountain with large pool basin on garden lawn.'
+        src: '/gallery/fountain-botanical-garden-octagonal.webp',
+        desc: '100% pure white marble octagonal tiered fountain set on garden lawn.'
       },
       {
-        label: 'Lawn Cascade Setting',
-        tag: 'Water Cascade',
-        src: '/gallery/fountain-palatial-estate-triple-tier-lawn.webp',
-        desc: 'Wide view of cascading water tiers and carved scalloped pool rim on estate grounds.'
+        label: 'Octagonal Fountain Crown',
+        tag: 'Center Spout',
+        src: '/gallery/fountain-botanical-octagonal-crown.webp',
+        desc: 'Detail of carved finial and upper cascading water tiers.'
       },
       {
-        label: 'Courtyard Centerpiece Setting',
-        tag: 'Courtyard View',
-        src: '/gallery/fountain-courtyard-circular.webp',
-        desc: 'Full perspective showing the symmetrical basin and soothing water flow.'
+        label: 'Carved Basin Rim',
+        tag: 'Basin Detail',
+        src: '/gallery/fountain-botanical-octagonal-base.webp',
+        desc: 'Octagonal white marble perimeter basin rim with smooth seating ledge.'
       }
     ],
     specs: [

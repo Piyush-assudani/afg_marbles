@@ -33,7 +33,7 @@ const ROW_ONE = [
     caption: 'Carved Garden Pavilion',
   },
   {
-    src: '/gallery/yard-dryfit-raw-calcite-mandir.webp?v=realphoto',
+    src: '/gallery/atelier-yard-trial-actual.webp',
     alt: 'Full setup trial check in our workshop yard',
     caption: 'Workshop Setup Trial Check',
   },

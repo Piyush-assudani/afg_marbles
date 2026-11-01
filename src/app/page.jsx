@@ -601,13 +601,13 @@ export default function HomePage() {
               {
                 step: '03',
                 title: 'Full Workshop Assembly & Video Check',
-                img: '/gallery/yard-dryfit-raw-calcite-mandir.webp?v=realphoto',
+                img: '/gallery/atelier-yard-trial-actual.webp',
                 desc: 'Every temple is 100% test-assembled in our workshop to verify every joint and measurement before packing.'
               },
               {
                 step: '04',
                 title: 'Polishing & Safe Home Setup',
-                img: '/gallery/mandir-finishing-onsite-installation.webp?v=realphoto',
+                img: '/gallery/mandir-finishing-onsite-installation.webp?v=nov1',
                 desc: 'Finished with fine diamond water polish, gold leaf accents, and clean white-glove setup inside your home.'
               }
             ].map((item, idx) => (
