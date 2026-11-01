@@ -17,7 +17,7 @@ export default function PrivateCommissionsPage() {
     {
       title: 'The Emirates Hills Nagara Shrine',
       location: 'Emirates Hills, Dubai, United Arab Emirates',
-      type: 'Monumental Shikhar Sanctum (10.2ft W × 13.5ft H)',
+      type: 'Grand Shikhar Temple (10.2ft W × 13.5ft H)',
       stone: '100% Pure Makrana White Marble',
       img: '/gallery/sanctum-tall-shikhara.webp',
       desc: 'Designed for a courtyard setting under desert sun. Made with heat-reflecting solid Makrana marble that stays naturally cool. Features five carved spires, auspicious finials, and hand-sculpted elephant bases.',

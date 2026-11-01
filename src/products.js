@@ -890,14 +890,14 @@ export const PRODUCTS = [
       {
         label: 'Temple Entrance Gate',
         tag: 'Complete View',
-        src: '/gallery/mandir-peacock-torana-8341.webp',
-        desc: 'Grand ceremonial gateway with twin sculpted pillars, peacock torana brackets, and multi-tier carved beam.'
+        src: '/gallery/makrana-temple-entrance-gate.webp',
+        desc: 'Grand hand-carved pure white Makrana marble temple entrance gate with carved pillars, decorative arches, and traditional stone lintels.'
       },
       {
-        label: 'Perimeter View',
-        tag: 'Side Angle',
-        src: '/gallery/chhatri-temple-aerial-gateway.webp',
-        desc: 'Three-quarter view highlighting beam depth and dry-joint bracket engineering.'
+        label: 'Carving Detail',
+        tag: 'Pillar Detail',
+        src: '/gallery/chhatri-torana-monumental-gate.webp',
+        desc: 'Three-quarter view highlighting beam depth, carved pillars, and interlocking dry-joint engineering.'
       }
     ],
     specs: [

@@ -106,13 +106,13 @@ export default function TermsPage() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
                 <span style={{ fontSize: '11px', fontWeight: 800, color: '#b8863f', letterSpacing: '0.14em', textTransform: 'uppercase' }}>Section II</span>
                 <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#b8863f' }}></span>
-                <span style={{ fontSize: '12px', color: '#8c7b69', textTransform: 'uppercase', letterSpacing: '0.08em' }}>CAD Blueprinting</span>
+                <span style={{ fontSize: '12px', color: '#8c7b69', textTransform: 'uppercase', letterSpacing: '0.08em' }}>2D Design Drawing</span>
               </div>
               <h3 style={{ fontFamily: 'var(--serif)', fontSize: '24px', color: '#1c1813', margin: '0 0 14px', fontWeight: 500 }}>
-                2. Architectural CAD Blueprint Sign-Off
+                2. 2D Design Drawing Sign-Off
               </h3>
               <p style={{ margin: 0 }}>
-                Prior to chisel extraction on raw stone, patrons receive an architectural 2D CAD blueprint detailing exact elevation formulas, Ayadi Vastu directional alignments, pillar spacings, and ceiling load metrics. Block extraction and artisan chiseling begin solely after patron written sign-off.
+                Before stone carving begins, you receive a detailed 2D design drawing showing exact measurements, Vastu directions, pillar spacings, and carved arches. Stone chiseling begins only after your written confirmation.
               </p>
             </div>
 

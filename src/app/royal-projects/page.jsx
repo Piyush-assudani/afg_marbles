@@ -55,7 +55,7 @@ const PROJECTS = [
     year: 'Commissioned 2023',
     category: 'Marble Water Fountains',
     stone: '100% White Marble',
-    scale: '14ft Catch Pool · 8.5ft Monumental Height',
+    scale: '14ft Catch Pool · 8.5ft Grand Height',
     heroImage: '/gallery/fountain-black-marquina-cascade.webp',
     gallery: [
       '/gallery/fountain-french-courtyard.webp',
@@ -73,9 +73,9 @@ const PROJECTS = [
     title: 'The Chhatarpur Farmhouse Grand Marble Spire Temple',
     location: 'Chhatarpur, New Delhi',
     year: 'Commissioned 2023',
-    category: 'Monumental Heritage Temples',
+    category: 'Grand Heritage Temples',
     stone: '100% Solid Makrana Pure White Marble',
-    scale: '22ft Length × 14ft Width × 19.5ft Monumental Spire',
+    scale: '22ft Length × 14ft Width × 19.5ft High Spire',
     heroImage: '/gallery/mandir-monumental-temple.webp',
     gallery: [
       '/gallery/outdoor-marble-temple-pavilion.webp',
@@ -249,7 +249,7 @@ export default function RoyalProjectsPage() {
                 <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
                   <a
                     href={`https://wa.me/917597417274?text=${encodeURIComponent(
-                      `Namaste AFG Marble, I am interested in commissioning an estate project similar to "${proj.title}" (${proj.location}). Please share technical CAD portfolios and consultation details.`
+                      `Namaste AFG Marble, I am interested in commissioning an estate project similar to "${proj.title}" (${proj.location}). Please share 2D design drawings and project details.`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -260,7 +260,7 @@ export default function RoyalProjectsPage() {
                     <span>→</span>
                   </a>
                   <Link href="/bespoke-consultation" className="btn-outline-gold" style={{ padding: '10px 20px', fontSize: '13px' }}>
-                    <span>Book 2D CAD Session</span>
+                    <span>Get Free 2D Design Drawing</span>
                   </Link>
                 </div>
               </div>

@@ -44,7 +44,7 @@ const LANDMARKS = [
     stat1Label: 'Thermal Resistance',
     stat2: '4 Guardians',
     stat2Label: 'Lion Spouts',
-    desc: 'Monumental courtyard centerpiece for a beachfront estate. Engineered with high-flow marine brass manifolds and non-staining calcite resilience.',
+    desc: 'Grand courtyard centerpiece for a beachfront estate. Engineered with high-flow marine brass manifolds and non-staining marble resilience.',
   },
 ];
 
@@ -246,7 +246,7 @@ export default function RoyalProjectsPreview() {
               </Link>
               <a
                 href={`https://wa.me/917597417274?text=${encodeURIComponent(
-                  `Namaste AFG Marble, I am interested in commissioning an estate feature similar to "${current.title}" (${current.city}). Please share CAD elevations.`
+                  `Namaste AFG Marble, I am interested in commissioning an estate feature similar to "${current.title}" (${current.city}). Please share 2D design drawings and details.`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"

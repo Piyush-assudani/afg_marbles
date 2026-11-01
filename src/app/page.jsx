@@ -601,7 +601,7 @@ export default function HomePage() {
               {
                 step: '03',
                 title: 'Full Workshop Assembly & Video Check',
-                img: '/gallery/atelier-yard-trial-actual.webp',
+                img: '/gallery/workshop-preassembly-trial-mandir.webp',
                 desc: 'Every temple is 100% test-assembled in our workshop to verify every joint and measurement before packing.'
               },
               {
