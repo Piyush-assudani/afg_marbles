@@ -123,7 +123,7 @@ const MEGA_ARCHITECTURE = [
     subtitle: 'Pre-Assembly & Video Inspection',
     href: '/pre-assembly-trial',
     badge: 'VIDEO CHECK',
-    previewImage: '/gallery/atelier-yard-trial-actual.webp',
+    previewImage: '/gallery/workshop-mandir-trial-dryfit.webp',
     previewTitle: 'Workshop Video Verification',
     previewDesc: 'Every temple is 100% test-assembled in our workshop with HD video review before packing.',
     ctaText: 'Learn How We Test'

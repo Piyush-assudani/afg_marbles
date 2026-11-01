@@ -33,7 +33,7 @@ const ROW_ONE = [
     caption: 'Carved Garden Pavilion',
   },
   {
-    src: '/gallery/atelier-yard-trial-actual.webp',
+    src: '/gallery/workshop-mandir-trial-dryfit.webp',
     alt: 'Full setup trial check in our workshop yard',
     caption: 'Workshop Setup Trial Check',
   },

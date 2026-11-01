@@ -595,7 +595,7 @@ export default function HomePage() {
               {
                 step: '02',
                 title: 'Master Hand-Carving Work',
-                img: '/gallery/mandir-peacock-torana-8341.webp?v=real',
+                img: '/gallery/workshop-mandir-trial-dryfit.webp',
                 desc: 'Generational master stone carvers hand-chisel pillars, arches, and intricate jali screens using traditional steel tools.'
               },
               {
