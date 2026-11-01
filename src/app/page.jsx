@@ -197,10 +197,11 @@ export default function HomePage() {
 
           {/* Products Grid */}
           <div className="creations-grid">
-            {filteredProducts.map((product) => (
+            {filteredProducts.map((product, idx) => (
               <ProductCard
                 key={product.id}
                 product={product}
+                priority={idx < 6}
                 onOpenProduct={handleOpenProduct}
                 onOpenInquiry={handleOpenInquiry}
               />
@@ -261,10 +262,11 @@ export default function HomePage() {
           </div>
 
           <div className="creations-grid">
-            {fountains.map((product) => (
+            {fountains.map((product, idx) => (
               <ProductCard
                 key={product.id}
                 product={product}
+                priority={idx < 3}
                 onOpenProduct={handleOpenProduct}
                 onOpenInquiry={handleOpenInquiry}
               />
@@ -423,10 +425,11 @@ export default function HomePage() {
           </div>
 
           <div className="creations-grid">
-            {chhatris.map((product) => (
+            {chhatris.map((product, idx) => (
               <ProductCard
                 key={product.id}
                 product={product}
+                priority={idx < 3}
                 onOpenProduct={handleOpenProduct}
                 onOpenInquiry={handleOpenInquiry}
               />
@@ -462,10 +465,11 @@ export default function HomePage() {
           </div>
 
           <div className="creations-grid">
-            {sanctums.map((product) => (
+            {sanctums.map((product, idx) => (
               <ProductCard
                 key={product.id}
                 product={product}
+                priority={idx < 3}
                 onOpenProduct={handleOpenProduct}
                 onOpenInquiry={handleOpenInquiry}
               />

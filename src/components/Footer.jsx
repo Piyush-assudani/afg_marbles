@@ -73,15 +73,15 @@ export default function Footer() {
                     alignItems: 'center',
                     gap: '10px',
                     padding: '14px 28px',
-                    background: 'linear-gradient(135deg, #1b4d3e 0%, #11382c 50%, #0a261d 100%)',
+                    background: '#25D366',
                     color: '#ffffff',
-                    border: '1.5px solid rgba(212, 175, 55, 0.65)',
+                    border: 'none',
                     borderRadius: '999px',
                     fontSize: '13px',
                     fontWeight: 600,
                     letterSpacing: '0.04em',
                     textDecoration: 'none',
-                    boxShadow: '0 8px 24px rgba(11, 46, 36, 0.45)',
+                    boxShadow: '0 8px 24px rgba(37, 211, 102, 0.45)',
                     transition: 'transform 0.25s ease, box-shadow 0.25s ease'
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.transform = 'translateY(-2px)')}

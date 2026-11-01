@@ -43,10 +43,11 @@ export default function HeritageChhatrisPage() {
       <section className="subpage-body">
         <div className="sec-container">
           <div className="creations-grid">
-            {chhatris.map((product) => (
+            {chhatris.map((product, idx) => (
               <ProductCard
                 key={product.id}
                 product={product}
+                priority={idx < 6}
                 onOpenProduct={handleOpenProduct}
                 onOpenInquiry={handleOpenInquiry}
               />

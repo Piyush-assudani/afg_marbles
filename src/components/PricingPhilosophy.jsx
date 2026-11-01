@@ -286,16 +286,16 @@ export default function PricingPhilosophy({ onOpenInquiry }) {
                     justifyContent: 'center',
                     gap: '10px',
                     padding: '12px 20px',
-                    background: 'linear-gradient(135deg, #1b4d3e 0%, #11382c 50%, #0a261d 100%)',
+                    background: '#25D366',
                     color: '#ffffff',
                     borderRadius: '999px',
                     fontSize: '12px',
                     fontWeight: 700,
                     letterSpacing: '0.06em',
                     textTransform: 'uppercase',
-                    border: '1px solid rgba(212, 175, 55, 0.6)',
+                    border: 'none',
                     cursor: 'pointer',
-                    boxShadow: '0 4px 14px rgba(11, 46, 36, 0.35)',
+                    boxShadow: '0 4px 14px rgba(37, 211, 102, 0.4)',
                   }}
                 >
                   <span>Get Price on WhatsApp</span>

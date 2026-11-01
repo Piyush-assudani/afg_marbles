@@ -351,9 +351,10 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
                 style={{
                   flex: 1,
                   minWidth: '220px',
-                  background: 'linear-gradient(135deg, #1b4d3e 0%, #11382c 50%, #0a261d 100%)',
-                  borderColor: 'rgba(212, 175, 55, 0.7)',
-                  boxShadow: '0 6px 20px rgba(11, 46, 36, 0.35)'
+                  background: '#25D366',
+                  borderColor: '#25D366',
+                  color: '#ffffff',
+                  boxShadow: '0 6px 20px rgba(37, 211, 102, 0.4)'
                 }}
               >
                 <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginRight: '8px' }}>

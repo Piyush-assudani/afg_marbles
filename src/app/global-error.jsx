@@ -17,7 +17,7 @@ export default function GlobalError({ error, reset }) {
   return (
     <html lang="en">
       <head>
-        <title>A.F.G Marble &amp; Arts · Updating Atelier</title>
+        <title>A.F.G Marble &amp; Art</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body
@@ -29,101 +29,95 @@ export default function GlobalError({ error, reset }) {
           fontFamily: "'Playfair Display', Georgia, serif",
           minHeight: '100vh',
           display: 'flex',
+          flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
+          textAlign: 'center',
         }}
       >
+        <img
+          src="/afg-logo.svg"
+          alt="A.F.G Marble & Art"
+          style={{ width: '92px', height: 'auto', marginBottom: '22px' }}
+        />
+
+        {/* Minimalist Dual-Ring Luxury Loader */}
         <div
           style={{
-            maxWidth: '460px',
-            width: '90%',
-            background: '#ffffff',
-            padding: '44px 32px',
-            borderRadius: '24px',
-            border: '1px solid rgba(184, 134, 63, 0.25)',
-            boxShadow: '0 20px 50px -10px rgba(28, 24, 19, 0.08)',
-            textAlign: 'center',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            position: 'relative',
+            width: '40px',
+            height: '40px',
+            marginBottom: '20px',
           }}
         >
-          <img
-            src="/afg-logo.svg"
-            alt="A.F.G Marble & Arts"
-            style={{ width: '90px', height: 'auto', marginBottom: '20px' }}
-          />
-
-          <span
-            style={{
-              fontSize: '11px',
-              fontWeight: 700,
-              letterSpacing: '0.18em',
-              textTransform: 'uppercase',
-              color: '#8c6023',
-              fontFamily: 'system-ui, sans-serif',
-              marginBottom: '8px',
-            }}
-          >
-            A.F.G MARBLE &amp; ARTS
-          </span>
-
-          <h2
-            style={{
-              fontSize: '22px',
-              color: '#1c1813',
-              margin: '0 0 10px',
-              fontWeight: 600,
-            }}
-          >
-            Updating Atelier Experience
-          </h2>
-
-          <p
-            style={{
-              fontSize: '13px',
-              color: '#7a6a58',
-              lineHeight: 1.5,
-              margin: '0 0 24px',
-              fontFamily: 'system-ui, sans-serif',
-            }}
-          >
-            Refining sacred architecture and synchronizing catalog...
-          </p>
-
           <div
             style={{
-              width: '36px',
-              height: '36px',
+              position: 'absolute',
+              inset: 0,
               borderRadius: '50%',
-              border: '3px solid rgba(184, 134, 63, 0.18)',
-              borderTopColor: '#b08a4f',
-              animation: 'afgSpin 0.9s linear infinite',
-              marginBottom: '20px',
+              border: '1.5px solid rgba(184, 134, 63, 0.2)',
             }}
           />
-
-          <style>{`
-            @keyframes afgSpin {
-              to { transform: rotate(360deg); }
-            }
-          `}</style>
-
-          <a
-            href="/"
+          <div
             style={{
-              color: '#8c6023',
-              fontSize: '12px',
-              textDecoration: 'underline',
-              fontFamily: 'system-ui, sans-serif',
-              opacity: 0.85,
+              position: 'absolute',
+              inset: 0,
+              borderRadius: '50%',
+              border: '2px solid transparent',
+              borderTopColor: '#c59d5f',
+              borderRightColor: '#b8863f',
+              animation: 'afgGlobalSpin 0.9s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite',
             }}
-          >
-            Return to Sanctuary Home
-          </a>
+          />
         </div>
+
+        <span
+          style={{
+            fontFamily: 'system-ui, -apple-system, sans-serif',
+            fontSize: '11px',
+            fontWeight: 700,
+            letterSpacing: '0.22em',
+            textTransform: 'uppercase',
+            color: '#8c6023',
+            marginBottom: '6px',
+          }}
+        >
+          A.F.G MARBLE &amp; ART
+        </span>
+
+        <span
+          style={{
+            fontFamily: "'Playfair Display', Georgia, serif",
+            fontStyle: 'italic',
+            fontSize: '13px',
+            color: '#7a6a58',
+            letterSpacing: '0.04em',
+            marginBottom: '24px',
+          }}
+        >
+          Crafting Divine Spaces In Marble
+        </span>
+
+        <a
+          href="/"
+          style={{
+            color: '#8c6023',
+            fontSize: '12px',
+            textDecoration: 'underline',
+            fontFamily: 'system-ui, sans-serif',
+            opacity: 0.85,
+          }}
+        >
+          Go to Home Page
+        </a>
+
+        <style>{`
+          @keyframes afgGlobalSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+        `}</style>
       </body>
     </html>
   );
 }
-

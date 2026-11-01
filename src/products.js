@@ -660,7 +660,7 @@ export const PRODUCTS = [
         label: 'Garden Lawn View',
         tag: 'Complete View',
         src: '/gallery/fountain-palatial-estate-triple-tier-lawn.webp',
-        desc: 'Monumental 3-tier marble fountain installed on estate grounds with multi-tier water sheeting.'
+        desc: 'Grand 3-tier marble fountain installed on garden estate with smooth water flow.'
       },
       {
         label: 'Cascading Triple Spire',

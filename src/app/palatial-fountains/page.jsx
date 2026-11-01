@@ -44,10 +44,11 @@ export default function PalatialFountainsPage() {
       <section className="subpage-body">
         <div className="sec-container">
           <div className="creations-grid">
-            {fountains.map((product) => (
+            {fountains.map((product, idx) => (
               <ProductCard
                 key={product.id}
                 product={product}
+                priority={idx < 6}
                 onOpenProduct={handleOpenProduct}
                 onOpenInquiry={handleOpenInquiry}
               />

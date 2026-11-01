@@ -1,8 +1,9 @@
 'use client';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
-export default function ProductCard({ product, onOpenProduct, onOpenInquiry }) {
+export default function ProductCard({ product, priority = false, onOpenProduct, onOpenInquiry }) {
   const [activeAngleIdx, setActiveAngleIdx] = useState(0);
+  const [imgLoaded, setImgLoaded] = useState(false);
   const touchStartX = useRef(null);
 
   const angles = product.angles || [
@@ -15,6 +16,23 @@ export default function ProductCard({ product, onOpenProduct, onOpenInquiry }) {
   ];
 
   const currentAngle = angles[activeAngleIdx] || angles[0];
+
+  // Quietly preload all angles of this product in background for 0ms angle switching
+  useEffect(() => {
+    if (angles && angles.length > 1) {
+      angles.forEach((a) => {
+        if (a?.src) {
+          const img = new Image();
+          img.src = a.src;
+        }
+      });
+    }
+  }, [angles]);
+
+  // When angle changes, reset loaded state only if not cached
+  useEffect(() => {
+    setImgLoaded(false);
+  }, [currentAngle.src]);
 
   const nextAngle = (e) => {
     e?.stopPropagation?.();
@@ -107,13 +125,31 @@ export default function ProductCard({ product, onOpenProduct, onOpenInquiry }) {
           width: '100%',
           height: '280px',
           overflow: 'hidden',
-          backgroundColor: '#efe9df',
+          backgroundColor: '#ede7de',
         }}
       >
+        {/* Shimmer Skeleton Placeholder while image is loading */}
+        {!imgLoaded && (
+          <div
+            className="card-img-skeleton"
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'linear-gradient(90deg, #ede7de 0%, #f7f3ec 50%, #ede7de 100%)',
+              backgroundSize: '200% 100%',
+              animation: 'afgCardShimmer 1.4s ease-in-out infinite',
+              zIndex: 1,
+            }}
+          />
+        )}
+
         <img
           src={currentAngle.src}
           alt={`${product.title} - ${currentAngle.label}`}
-          loading="lazy"
+          loading={priority ? 'eager' : 'lazy'}
+          fetchPriority={priority ? 'high' : 'auto'}
+          decoding="async"
+          onLoad={() => setImgLoaded(true)}
           className="product-card__main-img"
           style={{
             width: '100%',
@@ -121,7 +157,10 @@ export default function ProductCard({ product, onOpenProduct, onOpenInquiry }) {
             objectFit: 'cover',
             objectPosition: 'center 30%',
             display: 'block',
-            transition: 'opacity 0.3s ease, transform 0.6s ease',
+            opacity: imgLoaded ? 1 : 0,
+            transition: 'opacity 0.35s ease, transform 0.6s ease',
+            position: 'relative',
+            zIndex: 2,
           }}
         />
 
@@ -501,13 +540,13 @@ export default function ProductCard({ product, onOpenProduct, onOpenInquiry }) {
                 justifyContent: 'center',
                 gap: '6px',
                 padding: '9px 14px',
-                background: 'linear-gradient(135deg, #1b4d3e 0%, #11382c 50%, #0a261d 100%)',
+                background: '#25D366',
                 color: '#ffffff',
-                border: '1px solid rgba(212, 175, 55, 0.6)',
+                border: 'none',
                 borderRadius: '999px',
                 fontSize: '11px',
                 fontWeight: 600,
-                boxShadow: '0 4px 12px rgba(11, 46, 36, 0.35)',
+                boxShadow: '0 4px 12px rgba(37, 211, 102, 0.35)',
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
               }}
