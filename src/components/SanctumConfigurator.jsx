@@ -164,15 +164,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
         </div>
 
         {/* Configurator 2-Column Luxury Layout */}
-        <div className="configurator-board" style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-          gap: '32px',
-          background: '#ffffff',
-          borderRadius: '24px',
-          padding: 'clamp(20px, 3.5vw, 40px)',
-          boxShadow: '0 24px 60px -15px rgba(28, 24, 19, 0.12), 0 0 0 1px rgba(184, 134, 63, 0.2) inset'
-        }}>
+        <div className="configurator-board">
           {/* LEFT: Live Visual Preview & Dynamic Engineering Specs */}
           <div className="configurator-preview" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             <div
@@ -347,14 +339,14 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
             </div>
 
             {/* Action Buttons */}
-            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
               <button
                 type="button"
                 onClick={handleShareWhatsApp}
                 className="btn-primary"
                 style={{
-                  flex: 1,
-                  minWidth: '220px',
+                  flex: '1 1 200px',
+                  width: '100%',
                   background: '#25D366',
                   borderColor: '#25D366',
                   color: '#ffffff',
@@ -371,7 +363,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
                 type="button"
                 onClick={handleOpenConsultation}
                 className="btn-outline-gold"
-                style={{ flex: 1, minWidth: '180px', textAlign: 'center', justifyContent: 'center' }}
+                style={{ flex: '1 1 180px', width: '100%', textAlign: 'center', justifyContent: 'center' }}
               >
                 <span>Request Free 2D Design Drawing</span>
               </button>
@@ -379,30 +371,32 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
           </div>
 
           {/* RIGHT: Interactive Configurator Controls */}
-          <div className="configurator-controls" style={{ display: 'flex', flexDirection: 'column', gap: '26px' }}>
+          <div className="configurator-controls" style={{ display: 'flex', flexDirection: 'column', gap: '24px', minWidth: 0, width: '100%', boxSizing: 'border-box' }}>
             {/* Control 1: Select Architectural Form */}
             <div>
-              <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#1c1813', marginBottom: '10px' }}>
+              <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#1c1813', marginBottom: '10px' }}>
                 1. Choose Temple Style
               </label>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '10px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '10px' }}>
                 {STYLES.map((style) => (
                   <button
                     key={style.id}
                     type="button"
                     onClick={() => setSelectedStyle(style)}
                     style={{
-                      padding: '12px 14px',
+                      padding: '12px 10px',
                       borderRadius: '12px',
                       textAlign: 'left',
                       cursor: 'pointer',
                       transition: 'all 0.25s ease',
+                      minWidth: 0,
+                      overflow: 'hidden',
                       border: selectedStyle.id === style.id ? '2px solid #b08a4f' : '1px solid rgba(28, 24, 19, 0.12)',
                       background: selectedStyle.id === style.id ? '#fcf8f0' : '#ffffff',
                       boxShadow: selectedStyle.id === style.id ? '0 6px 18px rgba(176, 138, 79, 0.15)' : 'none'
                     }}
                   >
-                    <div style={{ fontSize: '13px', fontWeight: 700, color: '#1c1813' }}>{style.name}</div>
+                    <div style={{ fontSize: '12.5px', fontWeight: 700, color: '#1c1813', wordBreak: 'break-word' }}>{style.name}</div>
                     <div style={{ fontSize: '10.5px', color: '#7a7065', marginTop: '3px', lineHeight: 1.3 }}>
                       {style.subtitle.split('with')[0]}
                     </div>
@@ -413,7 +407,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
 
             {/* Control 2: Select Authentic Stone Bedrock */}
             <div>
-              <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#1c1813', marginBottom: '10px' }}>
+              <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#1c1813', marginBottom: '10px' }}>
                 2. Choose Marble Quality
               </label>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -425,31 +419,34 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
                     style={{
                       display: 'flex',
                       alignItems: 'center',
-                      gap: '14px',
-                      padding: '10px 14px',
+                      gap: '12px',
+                      padding: '10px 12px',
                       borderRadius: '12px',
                       textAlign: 'left',
                       cursor: 'pointer',
                       transition: 'all 0.25s ease',
+                      minWidth: 0,
+                      width: '100%',
+                      boxSizing: 'border-box',
                       border: selectedStone.id === stone.id ? '2px solid #b08a4f' : '1px solid rgba(28, 24, 19, 0.12)',
                       background: selectedStone.id === stone.id ? '#fcf8f0' : '#ffffff'
                     }}
                   >
                     <span style={{
-                      width: '28px',
-                      height: '28px',
+                      width: '26px',
+                      height: '26px',
                       borderRadius: '50%',
                       background: stone.colorHex,
                       border: `2px solid ${stone.borderHex}`,
                       boxShadow: '0 2px 6px rgba(0,0,0,0.15)',
                       flexShrink: 0
                     }}></span>
-                    <div style={{ flex: 1 }}>
-                      <div style={{ fontSize: '12.5px', fontWeight: 700, color: '#1c1813' }}>{stone.name}</div>
-                      <div style={{ fontSize: '10.5px', color: '#7a7065' }}>{stone.origin}</div>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ fontSize: '12.5px', fontWeight: 700, color: '#1c1813', wordBreak: 'break-word' }}>{stone.name}</div>
+                      <div style={{ fontSize: '10.5px', color: '#7a7065', wordBreak: 'break-word' }}>{stone.origin}</div>
                     </div>
                     {selectedStone.id === stone.id && (
-                      <span style={{ fontSize: '11px', color: '#b08a4f', fontWeight: 700 }}>✓ Selected</span>
+                      <span style={{ fontSize: '11px', color: '#b08a4f', fontWeight: 700, flexShrink: 0, whiteSpace: 'nowrap' }}>✓ Selected</span>
                     )}
                   </button>
                 ))}
@@ -458,8 +455,8 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
 
             {/* Control 3: Custom Dimension Sliders */}
             <div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                <label style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#1c1813' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px', flexWrap: 'wrap', gap: '4px' }}>
+                <label style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#1c1813' }}>
                   3. Choose Temple Size (Feet)
                 </label>
                 <span style={{ fontSize: '12px', fontWeight: 600, color: '#88542c' }}>
@@ -469,7 +466,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', color: '#7a7065', marginBottom: '4px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', color: '#7a7065', marginBottom: '4px', flexWrap: 'wrap', gap: '4px' }}>
                     <span>Width: {customWidth} Feet</span>
                     <span>Range: 3.5 - 18.0 ft</span>
                   </div>
@@ -485,7 +482,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
                 </div>
 
                 <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', color: '#7a7065', marginBottom: '4px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', color: '#7a7065', marginBottom: '4px', flexWrap: 'wrap', gap: '4px' }}>
                     <span>Height: {customHeight} Feet</span>
                     <span>Range: 4.5 - 24.0 ft</span>
                   </div>
@@ -504,7 +501,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
 
             {/* Control 4: Sacred Embellishments */}
             <div>
-              <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#1c1813', marginBottom: '10px' }}>
+              <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#1c1813', marginBottom: '10px', wordBreak: 'break-word' }}>
                 4. Choose Temple Carving &amp; Lighting Options
               </label>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -518,26 +515,31 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'space-between',
-                        padding: '10px 14px',
+                        padding: '10px 12px',
                         borderRadius: '10px',
                         cursor: 'pointer',
                         transition: 'all 0.2s ease',
                         border: isChecked ? '1px solid #b08a4f' : '1px solid rgba(28, 24, 19, 0.1)',
-                        background: isChecked ? '#fcf9f2' : '#ffffff'
+                        background: isChecked ? '#fcf9f2' : '#ffffff',
+                        gap: '8px',
+                        width: '100%',
+                        boxSizing: 'border-box'
                       }}
                     >
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flex: 1, minWidth: 0 }}>
                         <input
                           type="checkbox"
                           checked={isChecked}
                           onChange={() => {}}
-                          style={{ accentColor: '#88542c', cursor: 'pointer' }}
+                          style={{ accentColor: '#88542c', cursor: 'pointer', flexShrink: 0 }}
                         />
-                        <span style={{ fontSize: '12px', fontWeight: isChecked ? 600 : 500, color: '#1c1813' }}>
+                        <span style={{ fontSize: '11.5px', fontWeight: isChecked ? 600 : 500, color: '#1c1813', lineHeight: 1.35, wordBreak: 'break-word' }}>
                           {emb.name}
                         </span>
                       </div>
-                      <span style={{ fontSize: '10px', color: '#b08a4f', fontWeight: 600 }}>+{emb.hours}h Hand Work</span>
+                      <span style={{ fontSize: '10px', color: '#b08a4f', fontWeight: 600, flexShrink: 0, whiteSpace: 'nowrap' }}>
+                        +{emb.hours}h Hand Work
+                      </span>
                     </div>
                   );
                 })}

@@ -53,15 +53,15 @@ export default function DifferenceTable({ onOpenInquiry }) {
         </div>
 
         <div className="difference-table-card">
+          <div className="diff-scroll-hint">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2">
+              <line x1="4" y1="12" x2="20" y2="12" />
+              <polyline points="8 8 4 12 8 16" />
+              <polyline points="16 8 20 12 16 16" />
+            </svg>
+            <span>Swipe left &amp; right to compare features</span>
+          </div>
           <div className="diff-table-responsive">
-            <div className="diff-scroll-hint">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2">
-                <line x1="4" y1="12" x2="20" y2="12" />
-                <polyline points="8 8 4 12 8 16" />
-                <polyline points="16 8 20 12 16 16" />
-              </svg>
-              <span>Swipe left &amp; right to compare features</span>
-            </div>
             <table className="diff-table">
               <thead>
                 <tr>

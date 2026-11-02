@@ -5860,6 +5860,8 @@ p { text-wrap: pretty; }
   border: 1px solid rgba(184, 134, 63, 0.25);
   box-shadow: 0 20px 50px -15px rgba(44, 34, 24, 0.08);
   overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .diff-table-desktop {
@@ -5968,7 +5970,7 @@ p { text-wrap: pretty; }
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 9px 16px;
+  padding: 10px 16px;
   background: #fbf7ee;
   border-bottom: 1px solid rgba(184, 134, 63, 0.2);
   color: #8c6220;
@@ -5976,6 +5978,8 @@ p { text-wrap: pretty; }
   font-weight: 600;
   letter-spacing: 0.04em;
   text-align: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
@@ -5990,12 +5994,24 @@ p { text-wrap: pretty; }
     -webkit-overflow-scrolling: touch !important;
   }
   .diff-table {
-    min-width: 620px !important;
+    min-width: 580px !important;
+    width: 100% !important;
   }
   .diff-table th,
   .diff-table td {
-    padding: 14px 16px !important;
-    font-size: 13px !important;
+    padding: 12px 14px !important;
+    font-size: 12.5px !important;
+  }
+  .diff-table th.th-afg {
+    min-width: 210px !important;
+  }
+  .diff-table th.th-other {
+    min-width: 180px !important;
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+  }
+  .diff-table td.td-feature {
+    min-width: 130px !important;
   }
   .diff-cards-mobile {
     display: none !important;
@@ -6003,6 +6019,52 @@ p { text-wrap: pretty; }
   .diff-val svg {
     width: 15px;
     height: 15px;
+  }
+}
+
+/* =========================================================
+   SANCTUM CONFIGURATOR ATELIER STUDIO
+   ========================================================= */
+.sec-sanctum-configurator {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.configurator-board {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: clamp(20px, 3.5vw, 40px);
+  box-shadow: 0 24px 60px -15px rgba(28, 24, 19, 0.12), 0 0 0 1px rgba(184, 134, 63, 0.2) inset;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.configurator-preview,
+.configurator-controls {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 960px) {
+  .configurator-board {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    padding: 20px 16px !important;
+    border-radius: 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .configurator-board {
+    padding: 16px 12px !important;
+    border-radius: 16px !important;
   }
 }
 
@@ -10319,14 +10381,30 @@ img, video, canvas, svg {
   }
 
   /* Sanctum Configurator Mobile Adaptations */
+  .sec-sanctum-configurator {
+    overflow-x: hidden !important;
+    padding: 50px 0 !important;
+  }
   .configurator-board {
     grid-template-columns: 1fr !important;
-    padding: 16px 14px !important;
+    padding: 16px 12px !important;
     gap: 20px !important;
-    border-radius: 18px !important;
+    border-radius: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+  .configurator-preview,
+  .configurator-controls {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
   }
   .configurator-stage-frame {
-    height: 280px !important;
+    height: 260px !important;
+    min-height: 240px !important;
     border-radius: 12px !important;
   }
 
