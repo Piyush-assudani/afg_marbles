@@ -308,33 +308,6 @@ button {
   cursor: grabbing;
 }
 
-/* Hero Instant Mandir 0ms Poster */
-.hero-instant-mandir {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-}
-.hero-instant-mandir-frame {
-  position: absolute;
-  width: min(420px, 80vw);
-  height: min(560px, 65vh);
-  top: 46%;
-  left: 52%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-@media (max-width: 900px) {
-  .hero-instant-mandir-frame {
-    top: 36% !important;
-    left: 50% !important;
-    width: min(300px, 78vw) !important;
-    height: min(400px, 48vh) !important;
-  }
-}
-
 @media (hover: hover) and (pointer: fine) {
   .webgl {
     cursor: grab;

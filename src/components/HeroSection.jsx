@@ -225,62 +225,8 @@ export default function HeroSection({ onOpenInquiry }) {
         </span>
       </div>
 
-      {/* Instant Photorealistic Mandir Poster (0ms Immediate First Render Guarantee) */}
-      <div
-        className="hero-instant-mandir"
-        aria-hidden="true"
-        style={{
-          position: 'absolute',
-          inset: 0,
-          zIndex: 2,
-          pointerEvents: 'none',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          opacity: isLoaded ? 0 : 1,
-          transition: 'opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1)',
-        }}
-      >
-        <div
-          className="hero-instant-mandir-frame"
-          style={{
-            position: 'absolute',
-            width: 'min(420px, 80vw)',
-            height: 'min(560px, 65vh)',
-            top: '46%',
-            left: '52%',
-            transform: 'translate(-50%, -50%)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <img
-            src="/hero-mandir-poster-opt.webp"
-            alt="Handmade Pure Makrana White Marble Temple"
-            fetchPriority="high"
-            decoding="async"
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'contain',
-              filter: 'drop-shadow(0 20px 45px rgba(28, 22, 16, 0.28))',
-            }}
-          />
-        </div>
-      </div>
-
       {/* Interactive 3D WebGL Canvas */}
-      <canvas
-        className="webgl"
-        id="webgl"
-        ref={canvasRef}
-        aria-label="Interactive 3D marble temple"
-        style={{
-          opacity: isLoaded ? 1 : 0,
-          transition: 'opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1)',
-        }}
-      ></canvas>
+      <canvas className="webgl" id="webgl" ref={canvasRef} aria-label="Interactive 3D marble temple"></canvas>
 
       <div className="grain" aria-hidden="true"></div>
 

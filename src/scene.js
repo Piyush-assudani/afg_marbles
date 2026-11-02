@@ -502,7 +502,7 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
       undefined,
       (_err) => {
         gltfLoader.load(
-          `${BASE}models/mandir_heavy_ivory.glb`,
+          `${BASE}models/mandir_premium_v4.glb`,
           (fallbackGltf) => {
             const fallbackMandir = fallbackGltf.scene;
             fallbackMandir.scale.setScalar(2.68);
