@@ -147,15 +147,18 @@ export default function CinematicFilmShowcase({ onOpenInquiry }) {
                 border: '1px solid rgba(197, 160, 89, 0.45)',
                 borderRadius: '999px',
                 color: '#edd7a8',
-                fontSize: '11px',
+                fontSize: 'clamp(9.5px, 2.7vw, 11px)',
                 fontWeight: 700,
-                letterSpacing: '0.16em',
+                letterSpacing: '0.1em',
                 textTransform: 'uppercase',
-                marginBottom: '10px'
+                marginBottom: '10px',
+                whiteSpace: 'nowrap',
+                maxWidth: '100%',
+                flexShrink: 0
               }}
             >
-              <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#25D366', display: 'inline-block' }} />
-              <span>WORKSHOP VIDEO · REAL MARBLE CRAFTSMANSHIP</span>
+              <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#25D366', display: 'inline-block', flexShrink: 0 }} />
+              <span style={{ whiteSpace: 'nowrap' }}>WORKSHOP VIDEO · REAL CRAFTSMANSHIP</span>
             </div>
 
             <h2

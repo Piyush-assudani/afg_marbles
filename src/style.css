@@ -10129,7 +10129,7 @@ img {
     height: 275px !important;
   }
   .makrana-card__overlay {
-    background: linear-gradient(180deg, rgba(14, 11, 8, 0.05) 0%, rgba(14, 11, 8, 0.72) 42%, rgba(14, 11, 8, 0.96) 100%) !important;
+    background: linear-gradient(to top, rgba(14, 11, 8, 0.94) 0%, rgba(14, 11, 8, 0.45) 30%, transparent 60%) !important;
     padding: 14px 12px !important;
     justify-content: flex-end !important;
   }
@@ -10443,6 +10443,20 @@ img, video, canvas, svg {
     bottom: 10px !important;
     max-width: calc(100vw - 20px) !important;
     padding: 16px 14px !important;
+  }
+
+  /* FiveStepJourney mobile adaptation */
+  .steps-nav-strip {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px !important;
+    gap: 10px !important;
+  }
+  .steps-nav-strip > button {
+    flex: 0 0 200px !important;
+    scroll-snap-align: start;
   }
 }
 

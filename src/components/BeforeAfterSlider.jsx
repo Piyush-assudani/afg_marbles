@@ -51,12 +51,12 @@ export default function BeforeAfterSlider() {
           <span className="card-badge" style={{ position: 'static', display: 'inline-block', marginBottom: '12px', background: 'rgba(212, 175, 55, 0.2)', color: '#ecd39b', border: '1px solid rgba(212, 175, 55, 0.4)' }}>
             TRANSFORMATION SHOWCASE · BEFORE &amp; AFTER
           </span>
-          <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(24px, 3.5vw, 40px)', color: '#fff8eb', lineHeight: 1.25 }}>
-            Without Gold Work vs. With 24K Gold &amp; Color Finishing
+          <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(24px, 3.5vw, 40px)', color: '#fff8eb', lineHeight: 1.25, fontVariantNumeric: 'lining-nums tabular-nums' }}>
+            Without Gold Work vs. With <span style={{ fontFamily: 'var(--sans)', fontWeight: 700 }}>24K</span> Gold &amp; Color Finishing
           </h2>
           <div className="gold-rule center" style={{ margin: '14px auto 16px', background: 'linear-gradient(90deg, transparent, #ecd39b, transparent)' }}></div>
           <p className="sub-lead" style={{ maxWidth: '780px', margin: '0 auto', fontSize: '15px', color: '#c9bfae', lineHeight: 1.6 }}>
-            See how pure Makrana white marble carving looks in its natural hand-carved state, and how it transforms with 24K real gold leaf and traditional temple color artistry. Drag the slider below to compare:
+            See how pure Makrana white marble carving looks in its natural hand-carved state, and how it transforms with <span style={{ fontFamily: 'var(--sans)', fontWeight: 700 }}>24K</span> real gold leaf and traditional temple color artistry. Drag the slider below to compare:
           </p>
         </div>
 
@@ -217,46 +217,50 @@ export default function BeforeAfterSlider() {
           <div
             style={{
               position: 'absolute',
-              top: '12px',
-              left: '12px',
+              top: '10px',
+              left: '10px',
               zIndex: 11,
               background: 'rgba(16, 13, 10, 0.92)',
               backdropFilter: 'blur(8px)',
-              padding: '6px 12px',
+              padding: '5px 10px',
               borderRadius: '8px',
               border: '1px solid rgba(255, 255, 255, 0.35)',
-              fontSize: '11px',
+              fontSize: 'clamp(10px, 2.5vw, 11px)',
               fontWeight: 700,
               color: '#ffffff',
               letterSpacing: '0.04em',
               pointerEvents: 'none',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.6)'
+              boxShadow: '0 4px 12px rgba(0,0,0,0.6)',
+              whiteSpace: 'nowrap',
+              maxWidth: '46%',
             }}
           >
-            ← NATURAL WHITE MARBLE
+            ← PURE MARBLE
           </div>
 
           {/* Top-Right Badge: 24K Gold & Color Work */}
           <div
             style={{
               position: 'absolute',
-              top: '12px',
-              right: '12px',
+              top: '10px',
+              right: '10px',
               zIndex: 11,
               background: 'rgba(16, 13, 10, 0.92)',
               backdropFilter: 'blur(8px)',
-              padding: '6px 12px',
+              padding: '5px 10px',
               borderRadius: '8px',
               border: '1px solid rgba(212, 175, 55, 0.6)',
-              fontSize: '11px',
+              fontSize: 'clamp(10px, 2.5vw, 11px)',
               fontWeight: 700,
               color: '#ecd39b',
               letterSpacing: '0.04em',
               pointerEvents: 'none',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.6)'
+              boxShadow: '0 4px 12px rgba(0,0,0,0.6)',
+              whiteSpace: 'nowrap',
+              maxWidth: '46%',
             }}
           >
-            24K GOLD &amp; COLORS →
+            <span style={{ fontFamily: 'var(--sans)' }}>24K</span> GOLD WORK →
           </div>
 
           {/* Bottom Center Indicator Pill */}

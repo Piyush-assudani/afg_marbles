@@ -187,16 +187,19 @@ export default function FiveStepJourney({ onOpenInquiry }) {
         >
           {/* Left: Content */}
           <div>
-            <div style={{ display: 'flex', gap: '10px', alignItems: 'center', marginBottom: '12px' }}>
+            <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '14px', flexWrap: 'wrap' }}>
               <span
                 style={{
                   background: '#1c1813',
                   color: '#ecd39b',
-                  fontSize: '12px',
+                  fontSize: 'clamp(10px, 2.7vw, 11.5px)',
                   fontWeight: 700,
-                  padding: '4px 12px',
+                  padding: '4px 10px',
                   borderRadius: '999px',
-                  letterSpacing: '0.08em',
+                  letterSpacing: '0.06em',
+                  whiteSpace: 'nowrap',
+                  flexShrink: 0,
+                  display: 'inline-block',
                 }}
               >
                 STAGE {steps[activeStep].num} OF 05
@@ -205,10 +208,13 @@ export default function FiveStepJourney({ onOpenInquiry }) {
                 style={{
                   background: 'rgba(176, 138, 79, 0.12)',
                   color: '#8c6a36',
-                  fontSize: '12px',
+                  fontSize: 'clamp(10px, 2.7vw, 11.5px)',
                   fontWeight: 600,
-                  padding: '4px 12px',
+                  padding: '4px 10px',
                   borderRadius: '999px',
+                  whiteSpace: 'nowrap',
+                  flexShrink: 0,
+                  display: 'inline-block',
                 }}
               >
                 {steps[activeStep].milestone}
@@ -236,13 +242,14 @@ export default function FiveStepJourney({ onOpenInquiry }) {
               ))}
             </ul>
 
-            <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
               <button
                 type="button"
                 className="btn-primary"
                 onClick={() => onOpenInquiry?.({ title: `Inquiry on Step ${steps[activeStep].num}: ${steps[activeStep].title}` })}
+                style={{ whiteSpace: 'nowrap' }}
               >
-                <span className="btn-primary__text">Start Step 1: Book Discovery Call</span>
+                <span className="btn-primary__text">Start Step {steps[activeStep].num}: Book Free Call</span>
                 <span className="btn-primary__icon">→</span>
               </button>
               <a
@@ -252,8 +259,12 @@ export default function FiveStepJourney({ onOpenInquiry }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-outline-gold"
+                style={{ whiteSpace: 'nowrap', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
               >
-                <span>WhatsApp Architectural Desk</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z" />
+                </svg>
+                <span>Chat on WhatsApp</span>
               </a>
             </div>
           </div>
@@ -270,11 +281,15 @@ export default function FiveStepJourney({ onOpenInquiry }) {
               gap: '18px',
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
               <div
                 style={{
-                  width: '54px',
-                  height: '54px',
+                  width: '46px',
+                  height: '46px',
+                  minWidth: '46px',
+                  minHeight: '46px',
+                  flexShrink: 0,
+                  alignSelf: 'flex-start',
                   borderRadius: '12px',
                   background: 'linear-gradient(135deg, #1c1813 0%, #383026 100%)',
                   color: '#ecd39b',
@@ -285,9 +300,9 @@ export default function FiveStepJourney({ onOpenInquiry }) {
               >
                 {steps[activeStep].icon}
               </div>
-              <div>
-                <strong style={{ display: 'block', fontSize: '15px', color: '#1c1813' }}>Our Quality Promise</strong>
-                <span style={{ fontSize: '12px', color: '#8a8073' }}>Trusted by over 1,200 families &amp; homes across India and worldwide</span>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <strong style={{ display: 'block', fontSize: '15px', color: '#1c1813', lineHeight: 1.3, marginBottom: '2px' }}>Our Quality Promise</strong>
+                <span style={{ fontSize: '12px', color: '#8a8073', lineHeight: 1.4, display: 'block' }}>Trusted by over 1,200 families &amp; homes across India and worldwide</span>
               </div>
             </div>
 
