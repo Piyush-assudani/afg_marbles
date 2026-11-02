@@ -10492,10 +10492,40 @@ img, video, canvas, svg {
 
   /* Subpage Hero mobile padding */
   .subpage-hero {
-    padding: 40px 0 28px !important;
+    padding: 86px 0 32px !important;
   }
   .subpage-hero h1 {
     font-size: 26px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 10px !important;
+  }
+  .breadcrumbs {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    letter-spacing: 0.08em !important;
+    font-size: 10px !important;
+    gap: 4px 6px !important;
+    margin-bottom: 14px !important;
+  }
+
+  /* Product Card Mobile Layout Polish */
+  .product-card__content {
+    padding: 16px 14px !important;
+  }
+  .product-card__top-meta {
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+  }
+  .product-card__title {
+    font-size: 17px !important;
+    min-height: auto !important;
+    margin-bottom: 6px !important;
+  }
+  .product-card__desc {
+    font-size: 12.5px !important;
+    min-height: auto !important;
+    margin-bottom: 12px !important;
   }
 
   /* QuickDock floating capsule mobile adaptation */

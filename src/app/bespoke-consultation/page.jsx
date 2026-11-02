@@ -91,7 +91,7 @@ export default function BespokeConsultationPage() {
             <span>/</span>
             <span>Free Design &amp; Size Consultation</span>
           </div>
-          <h1>Free 2D Design Drawing &amp; Price Estimate</h1>
+          <h1>Free <span style={{ fontFamily: 'var(--sans)', fontWeight: 700 }}>2D</span> Design Drawing &amp; Price Estimate</h1>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
             Whether you have a small room corner in an apartment or a large dedicated prayer room, our marble temple experts will create a custom 2D design drawing to fit your exact room size within 24 hours.
@@ -155,12 +155,21 @@ export default function BespokeConsultationPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-outline-gold"
-                  style={{ display: 'inline-flex', alignItems: 'center', gap: '10px' }}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '8px',
+                    whiteSpace: 'nowrap',
+                    maxWidth: '100%',
+                    fontSize: 'clamp(11px, 2.8vw, 13px)',
+                    padding: '11px 16px',
+                  }}
                 >
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style={{ flexShrink: 0 }}>
                     <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z" />
                   </svg>
-                  <span>WhatsApp Measurements Directly (+91 7597417274)</span>
+                  <span style={{ whiteSpace: 'nowrap' }}>WhatsApp: +91 7597417274</span>
                 </a>
               </div>
             </div>

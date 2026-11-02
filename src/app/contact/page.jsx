@@ -110,7 +110,7 @@ _Direct Submission via A.F.G Marble & Arts Official Atelier Desk_`;
             <span>/</span>
             <span>Consultation &amp; Hubs</span>
           </div>
-          <h1>Get Free 2D Design Drawing &amp; Price Estimate</h1>
+          <h1>Get Free <span style={{ fontFamily: 'var(--sans)', fontWeight: 700 }}>2D</span> Design Drawing &amp; Price Estimate</h1>
           <div className="gold-rule center"></div>
           <p className="sub-lead">
             Talk directly with our marble temple experts. Share your room measurements, ask for stone samples, or book a video call to discuss your temple design.
@@ -287,10 +287,10 @@ _Direct Submission via A.F.G Marble & Arts Official Atelier Desk_`;
                     rel="noopener noreferrer"
                     className="hub-contact-link"
                   >
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style={{ flexShrink: 0 }}>
                       <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z" />
                     </svg>
-                    <span>WhatsApp Workshop Direct (+91 7597417274)</span>
+                    <span style={{ whiteSpace: 'nowrap' }}>WhatsApp Direct: +91 7597417274</span>
                   </a>
                   <a href="mailto:mh213702@gmail.com" className="hub-contact-link">
                     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">

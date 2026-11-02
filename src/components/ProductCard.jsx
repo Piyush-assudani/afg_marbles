@@ -144,52 +144,20 @@ export default function ProductCard({ product, priority = false, onOpenProduct, 
         />
 
         {/* Top Badges */}
-        <span className="card-badge product-badge" style={{ zIndex: 3 }}>
-          {product.badge || 'Atelier Masterpiece'}
-        </span>
-
-        {/* Floating 1-Click Share Button on Image */}
-        <button
-          type="button"
-          onClick={handleShare}
-          title="Direct Share Product"
-          aria-label="Direct Share Product"
+        <span
+          className="card-badge product-badge"
           style={{
-            position: 'absolute',
-            top: '14px',
-            right: angles.length > 1 ? '108px' : '14px',
-            zIndex: 4,
-            background: 'rgba(20, 16, 12, 0.82)',
-            backdropFilter: 'blur(8px)',
-            WebkitBackdropFilter: 'blur(8px)',
-            color: '#ecd39b',
-            width: '32px',
-            height: '32px',
-            borderRadius: '50%',
-            display: 'inline-flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            border: '1px solid rgba(212, 175, 55, 0.45)',
-            cursor: 'pointer',
-            transition: 'transform 0.2s ease, background 0.2s ease',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'scale(1.1)';
-            e.currentTarget.style.background = 'rgba(28, 24, 19, 0.95)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'scale(1)';
-            e.currentTarget.style.background = 'rgba(20, 16, 12, 0.82)';
+            zIndex: 3,
+            maxWidth: 'calc(100% - 90px)',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            whiteSpace: 'nowrap',
+            fontSize: '10px',
+            letterSpacing: '0.06em',
           }}
         >
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.2">
-            <circle cx="18" cy="5" r="3" />
-            <circle cx="6" cy="12" r="3" />
-            <circle cx="18" cy="19" r="3" />
-            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
-            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
-          </svg>
-        </button>
+          {product.badge || 'Atelier Masterpiece'}
+        </span>
 
         {/* Floating Fullscreen Lightbox Button on Image */}
         <button
@@ -209,7 +177,7 @@ export default function ProductCard({ product, priority = false, onOpenProduct, 
           style={{
             position: 'absolute',
             top: '14px',
-            right: angles.length > 1 ? '148px' : '52px',
+            right: angles.length > 1 ? '70px' : '14px',
             zIndex: 4,
             background: 'rgba(20, 16, 12, 0.82)',
             backdropFilter: 'blur(8px)',
@@ -400,13 +368,15 @@ export default function ProductCard({ product, priority = false, onOpenProduct, 
             marginBottom: '14px',
             display: 'flex',
             justifyContent: 'space-between',
-            gap: '12px',
+            alignItems: 'center',
+            gap: '8px 14px',
+            flexWrap: 'wrap',
           }}
         >
-          <div className="meta-spec-item" style={{ fontSize: '12px', color: '#4a4239' }}>
+          <div className="meta-spec-item" style={{ fontSize: '12px', color: '#4a4239', whiteSpace: 'nowrap' }}>
             <span style={{ color: '#8c6a36', fontWeight: 600 }}>Material:</span> Pure Makrana
           </div>
-          <div className="meta-spec-item" style={{ fontSize: '12px', color: '#4a4239' }}>
+          <div className="meta-spec-item" style={{ fontSize: '12px', color: '#4a4239', flex: '1 1 auto', minWidth: 0 }}>
             <span style={{ color: '#8c6a36', fontWeight: 600 }}>Dimensions:</span> {product.scale.replace(/^Size\s*=\s*/, '')}
           </div>
         </div>
@@ -517,8 +487,8 @@ export default function ProductCard({ product, priority = false, onOpenProduct, 
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                gap: '6px',
-                padding: '9px 14px',
+                gap: '5px',
+                padding: '9px 8px',
                 background: '#25D366',
                 color: '#ffffff',
                 border: 'none',
@@ -528,9 +498,10 @@ export default function ProductCard({ product, priority = false, onOpenProduct, 
                 boxShadow: '0 4px 12px rgba(37, 211, 102, 0.35)',
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
+                whiteSpace: 'nowrap',
               }}
             >
-              <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" style={{ flexShrink: 0 }}>
                 <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.074-1.803-.412-1.493-.623-2.457-2.148-2.531-2.249-.074-.099-.607-.808-.607-1.543s.385-1.096.521-1.246c.137-.149.3-.187.4-.187.1 0 .2.001.288.006.096.005.226-.036.353.27.13.315.444 1.085.483 1.164.039.08.065.174.013.277-.052.104-.078.169-.156.259-.078.091-.164.202-.234.271-.078.078-.16.162-.069.319.091.156.404.667.868 1.08.597.532 1.099.697 1.255.775.156.078.247.065.338-.039.091-.104.39-.455.494-.611.104-.156.208-.13.351-.078.143.052.909.429 1.065.507.156.078.26.117.299.182.039.065.039.378-.105.783z" />
               </svg>
               <span>WhatsApp</span>
@@ -545,8 +516,8 @@ export default function ProductCard({ product, priority = false, onOpenProduct, 
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                gap: '6px',
-                padding: '10px 12px',
+                gap: '5px',
+                padding: '9px 8px',
                 background: '#fcfaf6',
                 color: '#1c1813',
                 borderRadius: '999px',
@@ -555,9 +526,10 @@ export default function ProductCard({ product, priority = false, onOpenProduct, 
                 border: '1px solid rgba(176, 138, 79, 0.35)',
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
+                whiteSpace: 'nowrap',
               }}
             >
-              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#b08a4f" strokeWidth="2.2">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#b08a4f" strokeWidth="2.2" style={{ flexShrink: 0 }}>
                 <circle cx="18" cy="5" r="3" />
                 <circle cx="6" cy="12" r="3" />
                 <circle cx="18" cy="19" r="3" />
@@ -576,8 +548,8 @@ export default function ProductCard({ product, priority = false, onOpenProduct, 
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                gap: '6px',
-                padding: '10px 12px',
+                gap: '5px',
+                padding: '9px 8px',
                 background: 'transparent',
                 color: '#1c1813',
                 borderRadius: '999px',
@@ -586,12 +558,10 @@ export default function ProductCard({ product, priority = false, onOpenProduct, 
                 border: '1px solid rgba(28, 24, 19, 0.22)',
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
+                whiteSpace: 'nowrap',
               }}
             >
-              <span>Photos ({angles.length})</span>
-              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2.2">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
+              <span>Photos</span>
             </button>
           </div>
         </div>
