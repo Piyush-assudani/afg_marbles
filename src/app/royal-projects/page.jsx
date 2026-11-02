@@ -92,49 +92,34 @@ const PROJECTS = [
 
 export default function RoyalProjectsPage() {
   return (
-    <div className="subpage-container" style={{ paddingTop: '110px', background: '#fdfbf7', minHeight: '100vh' }}>
+    <div className="subpage-container" style={{ paddingTop: '86px', background: '#fdfbf7', minHeight: '100vh' }}>
       {/* Hero Header */}
-      <section style={{ padding: '60px 24px 40px', textAlign: 'center', maxWidth: '960px', margin: '0 auto' }}>
+      <section style={{ padding: 'clamp(40px, 6vw, 64px) 16px 36px', textAlign: 'center', maxWidth: '960px', margin: '0 auto' }}>
         <span
           className="card-badge"
           style={{ position: 'static', display: 'inline-block', marginBottom: '14px', background: 'rgba(176, 138, 79, 0.15)', color: '#8c6a36' }}
         >
           COMPLETED PROJECTS
         </span>
-        <h1 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(32px, 4vw, 52px)', color: '#1c1813', lineHeight: 1.2, marginBottom: '18px' }}>
+        <h1 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(28px, 4vw, 52px)', color: '#1c1813', lineHeight: 1.2, marginBottom: '18px' }}>
           Our Completed Temple &amp; Fountain Projects
         </h1>
         <div className="gold-rule center" style={{ margin: '14px auto 22px' }}></div>
-        <p style={{ fontSize: '16px', color: '#6b5f52', lineHeight: 1.7, maxWidth: '760px', margin: '0 auto' }}>
+        <p style={{ fontSize: '15px', color: '#6b5f52', lineHeight: 1.65, maxWidth: '760px', margin: '0 auto' }}>
           From private villas and estates in India to penthouses in London and Dubai — see real photos and details of marble temples, garden fountains, and pavilions crafted and installed by our master stone carvers.
         </p>
       </section>
 
       {/* Projects Showcase */}
-      <section style={{ maxWidth: '1240px', margin: '0 auto', padding: '0 24px 80px' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '64px' }}>
+      <section style={{ maxWidth: '1240px', margin: '0 auto', padding: '0 16px 80px' }}>
+        <div className="royal-projects-list" style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
           {PROJECTS.map((proj, idx) => (
             <article
               key={proj.id}
-              style={{
-                background: '#ffffff',
-                borderRadius: '20px',
-                border: '1px solid rgba(176, 138, 79, 0.22)',
-                boxShadow: '0 18px 48px rgba(28, 24, 19, 0.08)',
-                overflow: 'hidden',
-                display: 'grid',
-                gridTemplateColumns: idx % 2 === 0 ? '1.15fr 1fr' : '1fr 1.15fr',
-              }}
+              className={`royal-project-card ${idx % 2 === 0 ? 'royal-project-card--even' : 'royal-project-card--odd'}`}
             >
               {/* Media Column */}
-              <div
-                style={{
-                  order: idx % 2 === 0 ? 1 : 2,
-                  position: 'relative',
-                  minHeight: '380px',
-                  backgroundColor: '#efe9df',
-                }}
-              >
+              <div className="royal-project-card__media">
                 <img
                   src={proj.heroImage}
                   alt={proj.title}
@@ -143,15 +128,19 @@ export default function RoyalProjectsPage() {
                 <span
                   style={{
                     position: 'absolute',
-                    top: '18px',
-                    left: '18px',
-                    background: 'rgba(28, 24, 19, 0.85)',
+                    top: '16px',
+                    left: '16px',
+                    background: 'rgba(28, 24, 19, 0.88)',
                     backdropFilter: 'blur(8px)',
                     color: '#fdfbf7',
                     padding: '6px 14px',
                     borderRadius: '999px',
-                    fontSize: '12px',
+                    fontSize: '11.5px',
                     fontWeight: 600,
+                    maxWidth: 'calc(100% - 32px)',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
                   }}
                 >
                   <MapPin size={12} style={{ display: 'inline', verticalAlign: '-1px', marginRight: '4px' }} />
@@ -160,27 +149,30 @@ export default function RoyalProjectsPage() {
 
                 {/* Micro Preview Thumbnails */}
                 <div
+                  className="royal-project-micro-thumbs"
                   style={{
                     position: 'absolute',
-                    bottom: '16px',
-                    right: '16px',
+                    bottom: '14px',
+                    right: '14px',
                     display: 'flex',
-                    gap: '8px',
-                    background: 'rgba(20, 16, 12, 0.75)',
+                    gap: '6px',
+                    background: 'rgba(20, 16, 12, 0.78)',
                     backdropFilter: 'blur(8px)',
-                    padding: '6px',
+                    padding: '5px',
                     borderRadius: '10px',
+                    maxWidth: 'calc(100% - 28px)',
                   }}
                 >
                   {proj.gallery.map((gImg, gIdx) => (
                     <div
                       key={gIdx}
                       style={{
-                        width: '48px',
-                        height: '48px',
+                        width: '42px',
+                        height: '42px',
                         borderRadius: '6px',
                         overflow: 'hidden',
                         border: '1px solid rgba(255,255,255,0.4)',
+                        flexShrink: 0,
                       }}
                     >
                       <img src={gImg} alt="Detail" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -190,63 +182,43 @@ export default function RoyalProjectsPage() {
               </div>
 
               {/* Information Column */}
-              <div
-                style={{
-                  order: idx % 2 === 0 ? 2 : 1,
-                  padding: '36px 40px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'center',
-                }}
-              >
-                <span style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em', color: '#b08a4f', textTransform: 'uppercase', marginBottom: '8px' }}>
+              <div className="royal-project-card__info">
+                <span style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.12em', color: '#b08a4f', textTransform: 'uppercase', marginBottom: '8px', display: 'block' }}>
                   {proj.category}
                 </span>
-                <h2 style={{ fontFamily: 'var(--serif)', fontSize: '26px', color: '#1c1813', lineHeight: 1.3, marginBottom: '14px' }}>
+                <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(20px, 3vw, 26px)', color: '#1c1813', lineHeight: 1.3, marginBottom: '14px' }}>
                   {proj.title}
                 </h2>
 
-                <div
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: '1fr 1fr',
-                    gap: '12px',
-                    background: '#fcfaf6',
-                    padding: '14px 18px',
-                    borderRadius: '10px',
-                    border: '1px solid rgba(176, 138, 79, 0.18)',
-                    marginBottom: '20px',
-                    fontSize: '13px',
-                  }}
-                >
+                <div className="proj-meta-grid">
                   <div>
-                    <span style={{ color: '#8c6a36', fontWeight: 600, display: 'block' }}>Primary Stone:</span>
-                    <strong style={{ color: '#1c1813' }}>{proj.stone}</strong>
+                    <span style={{ color: '#8c6a36', fontWeight: 600, display: 'block', fontSize: '12px' }}>Primary Stone:</span>
+                    <strong style={{ color: '#1c1813', fontSize: '13px' }}>{proj.stone}</strong>
                   </div>
                   <div>
-                    <span style={{ color: '#8c6a36', fontWeight: 600, display: 'block' }}>Scale &amp; Dimensions:</span>
-                    <strong style={{ color: '#1c1813' }}>{proj.scale}</strong>
+                    <span style={{ color: '#8c6a36', fontWeight: 600, display: 'block', fontSize: '12px' }}>Scale &amp; Dimensions:</span>
+                    <strong style={{ color: '#1c1813', fontSize: '13px' }}>{proj.scale}</strong>
                   </div>
                 </div>
 
-                <div style={{ marginBottom: '16px' }}>
-                  <h4 style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#8c6a36', marginBottom: '6px' }}>
+                <div style={{ marginBottom: '14px' }}>
+                  <h4 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#8c6a36', marginBottom: '4px' }}>
                     Architectural Mandate
                   </h4>
-                  <p style={{ fontSize: '14px', color: '#52473c', lineHeight: 1.6 }}>{proj.brief}</p>
+                  <p style={{ fontSize: '13.5px', color: '#52473c', lineHeight: 1.6 }}>{proj.brief}</p>
                 </div>
 
-                <div style={{ marginBottom: '24px' }}>
-                  <h4 style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#8c6a36', marginBottom: '6px' }}>
+                <div style={{ marginBottom: '20px' }}>
+                  <h4 style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#8c6a36', marginBottom: '4px' }}>
                     Artisan Execution &amp; Engineering
                   </h4>
-                  <p style={{ fontSize: '14px', color: '#52473c', lineHeight: 1.6 }}>{proj.execution}</p>
+                  <p style={{ fontSize: '13.5px', color: '#52473c', lineHeight: 1.6 }}>{proj.execution}</p>
                   <p style={{ fontSize: '12px', color: '#7a6f62', marginTop: '6px', fontStyle: 'italic', display: 'flex', alignItems: 'center', gap: '4px' }}>
                     <Clock size={12} /> {proj.deliveryTime}
                   </p>
                 </div>
 
-                <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
+                <div className="proj-actions-row">
                   <a
                     href={`https://wa.me/917597417274?text=${encodeURIComponent(
                       `Namaste AFG Marble, I am interested in commissioning an estate project similar to "${proj.title}" (${proj.location}). Please share 2D design drawings and project details.`
@@ -254,13 +226,13 @@ export default function RoyalProjectsPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary"
-                    style={{ padding: '10px 22px', fontSize: '13px' }}
+                    style={{ padding: '10px 20px', fontSize: '13px', whiteSpace: 'nowrap', textAlign: 'center', justifyContent: 'center' }}
                   >
-                    <span>Inquire on Similar Commission</span>
+                    <span>Inquire on WhatsApp</span>
                     <span>→</span>
                   </a>
-                  <Link href="/bespoke-consultation" className="btn-outline-gold" style={{ padding: '10px 20px', fontSize: '13px' }}>
-                    <span>Get Free 2D Design Drawing</span>
+                  <Link href="/bespoke-consultation" className="btn-outline-gold" style={{ padding: '10px 18px', fontSize: '13px', whiteSpace: 'nowrap', textAlign: 'center', justifyContent: 'center' }}>
+                    <span>Get Free 2D Design</span>
                   </Link>
                 </div>
               </div>

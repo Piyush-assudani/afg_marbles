@@ -63,7 +63,7 @@ export default function TempleAnatomy() {
             maxWidth: '1040px',
             margin: '0 auto',
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
             gap: '32px',
             alignItems: 'center',
           }}

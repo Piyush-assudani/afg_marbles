@@ -76,7 +76,7 @@ export default function PricingGuidePage() {
             <div className="gold-rule center"></div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginBottom: '60px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '24px', marginBottom: '60px' }}>
             {FACTORS.map((f, i) => (
               <div key={i} className="creation-card" style={{ padding: '30px', background: '#ffffff' }}>
                 <h3 style={{ fontFamily: 'var(--serif)', fontSize: '19px', color: '#1c1813', marginBottom: '8px' }}>

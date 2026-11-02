@@ -302,7 +302,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
                 <span style={{ fontSize: '11px', color: '#27ae60', fontWeight: 600 }}>● Vastu Compliant</span>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '12px' }}>
+              <div className="config-metrics-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '12px' }}>
                 <div style={{ padding: '12px 14px', background: '#ffffff', borderRadius: '10px', border: '1px solid rgba(0,0,0,0.06)', minWidth: 0 }}>
                   <div style={{ fontSize: '10.5px', color: '#7a7065', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>
                     Estimated Mandir Weight

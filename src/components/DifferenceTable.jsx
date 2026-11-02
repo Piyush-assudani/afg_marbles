@@ -53,15 +53,8 @@ export default function DifferenceTable({ onOpenInquiry }) {
         </div>
 
         <div className="difference-table-card">
-          <div className="diff-scroll-hint">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2">
-              <line x1="4" y1="12" x2="20" y2="12" />
-              <polyline points="8 8 4 12 8 16" />
-              <polyline points="16 8 20 12 16 16" />
-            </svg>
-            <span>Swipe left &amp; right to compare features</span>
-          </div>
-          <div className="diff-table-responsive">
+          {/* Desktop Table View */}
+          <div className="diff-table-desktop">
             <table className="diff-table">
               <thead>
                 <tr>
@@ -87,7 +80,7 @@ export default function DifferenceTable({ onOpenInquiry }) {
                     </td>
                     <td className="td-afg">
                       <div className="diff-val">
-                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#22c55e" strokeWidth="2.4">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#25D366" strokeWidth="2.5">
                           <polyline points="20 6 9 17 4 12" />
                         </svg>
                         <span>{row.afg}</span>
@@ -95,7 +88,7 @@ export default function DifferenceTable({ onOpenInquiry }) {
                     </td>
                     <td className="td-other">
                       <div className="diff-val">
-                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#ef4444" strokeWidth="2.4">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#ef4444" strokeWidth="2.5">
                           <line x1="18" y1="6" x2="6" y2="18" />
                           <line x1="6" y1="6" x2="18" y2="18" />
                         </svg>
@@ -106,6 +99,34 @@ export default function DifferenceTable({ onOpenInquiry }) {
                 ))}
               </tbody>
             </table>
+          </div>
+
+          {/* Mobile All-in-One Cards View (100% Page Responsive, Zero Horizontal Scroll) */}
+          <div className="diff-cards-mobile">
+            {ROWS.map((row, idx) => (
+              <div key={idx} className="diff-card-item">
+                <div className="diff-card-feature">{row.feature}</div>
+                <div className="diff-card-row diff-card-row--afg">
+                  <div className="diff-card-brand diff-card-brand--afg">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#25D366" strokeWidth="2.8" style={{ flexShrink: 0 }}>
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    <span>A.F.G MARBLE &amp; ARTS</span>
+                  </div>
+                  <p className="diff-card-text">{row.afg}</p>
+                </div>
+                <div className="diff-card-row diff-card-row--other">
+                  <div className="diff-card-brand diff-card-brand--other">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#ef4444" strokeWidth="2.8" style={{ flexShrink: 0 }}>
+                      <line x1="18" y1="6" x2="6" y2="18" />
+                      <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                    <span>LOCAL MARKET SELLERS</span>
+                  </div>
+                  <p className="diff-card-text">{row.other}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 

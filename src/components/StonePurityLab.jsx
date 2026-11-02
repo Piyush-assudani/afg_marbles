@@ -128,7 +128,7 @@ export default function StonePurityLab({ onOpenInquiry }) {
           {/* Side-by-Side Dual Comparison Cards */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
             gap: '24px',
             marginBottom: '36px'
           }}>

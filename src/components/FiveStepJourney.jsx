@@ -117,14 +117,18 @@ export default function FiveStepJourney({ onOpenInquiry }) {
           </p>
         </div>
 
-        {/* Horizontal Steps Nav Strip */}
+        {/* Horizontal Steps Nav Strip (Single Line on All Devices) */}
         <div
           className="steps-nav-strip"
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(5, 1fr)',
-            gap: '12px',
-            marginBottom: '32px',
+            display: 'flex',
+            overflowX: 'auto',
+            flexWrap: 'nowrap',
+            gap: '10px',
+            marginBottom: '28px',
+            paddingBottom: '8px',
+            WebkitOverflowScrolling: 'touch',
+            scrollbarWidth: 'none',
           }}
         >
           {steps.map((s, idx) => {
@@ -133,37 +137,38 @@ export default function FiveStepJourney({ onOpenInquiry }) {
               <button
                 key={idx}
                 type="button"
+                className={`step-nav-btn ${isActive ? 'is-active' : ''}`}
                 onClick={() => setActiveStep(idx)}
                 style={{
-                  padding: '16px 14px',
-                  borderRadius: '12px',
-                  border: isActive ? '1px solid #b08a4f' : '1px solid rgba(28, 24, 19, 0.12)',
-                  background: isActive ? '#1c1813' : '#fff',
+                  padding: '12px 18px',
+                  borderRadius: '999px',
+                  border: isActive ? '1px solid #b08a4f' : '1px solid rgba(28, 24, 19, 0.14)',
+                  background: isActive ? '#1c1813' : '#ffffff',
                   color: isActive ? '#ecd39b' : '#383026',
                   cursor: 'pointer',
-                  textAlign: 'left',
                   transition: 'all 0.25s ease',
-                  boxShadow: isActive ? '0 8px 24px rgba(28, 24, 19, 0.14)' : '0 2px 8px rgba(0,0,0,0.03)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '6px',
+                  boxShadow: isActive ? '0 6px 20px rgba(28, 24, 19, 0.16)' : '0 2px 6px rgba(0,0,0,0.02)',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  whiteSpace: 'nowrap',
+                  flexShrink: 0,
                 }}
               >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span
-                    style={{
-                      fontSize: '11px',
-                      fontWeight: 700,
-                      letterSpacing: '0.08em',
-                      color: isActive ? '#ecd39b' : '#b08a4f',
-                    }}
-                  >
-                    STEP {s.num}
-                  </span>
-                  <span style={{ opacity: isActive ? 1 : 0.4 }}>{s.icon}</span>
-                </div>
-                <strong style={{ fontSize: '13px', lineHeight: 1.3, color: isActive ? '#fff' : '#1c1813' }}>
-                  {s.title}
+                <span
+                  style={{
+                    fontSize: '11px',
+                    fontWeight: 700,
+                    letterSpacing: '0.08em',
+                    color: isActive ? '#ecd39b' : '#b08a4f',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  STEP {s.num}
+                </span>
+                <span style={{ opacity: 0.35 }}>·</span>
+                <strong style={{ fontSize: '13px', fontWeight: 600, color: isActive ? '#ffffff' : '#1c1813' }}>
+                  {s.title.replace(/^\d+\.\s*/, '')}
                 </strong>
               </button>
             );
@@ -176,12 +181,12 @@ export default function FiveStepJourney({ onOpenInquiry }) {
           style={{
             background: '#fff',
             borderRadius: '16px',
-            padding: 'clamp(24px, 4vw, 40px)',
+            padding: 'clamp(20px, 3.5vw, 38px)',
             border: '1px solid rgba(176, 138, 79, 0.22)',
             boxShadow: '0 12px 40px rgba(28, 24, 19, 0.08)',
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '36px',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+            gap: '28px',
             alignItems: 'center',
           }}
         >

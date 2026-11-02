@@ -354,7 +354,7 @@ export default function Footer() {
             padding: '24px 28px',
             marginBottom: '42px',
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
             gap: '20px',
             fontSize: '11.5px',
             lineHeight: 1.6,

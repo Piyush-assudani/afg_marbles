@@ -154,7 +154,7 @@ export default function YardLiveFeed({ onOpenInquiry }) {
           {/* Main Inspection View Area */}
           <div className="yard-main-view" style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
             gap: '0'
           }}>
             {/* Viewport Image Frame with 4K Fullscreen Lightbox Trigger */}

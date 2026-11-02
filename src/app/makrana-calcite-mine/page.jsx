@@ -99,7 +99,7 @@ export default function MakranaCalciteMinePage() {
           <p style={{ fontSize: '14px', color: '#7a6f62' }}>Each subterranean seam yields a distinct character and harmonic frequency</p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '24px' }}>
           {quarries.map((q, idx) => (
             <div
               key={idx}

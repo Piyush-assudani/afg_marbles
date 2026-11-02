@@ -100,7 +100,7 @@ export default function AyadiVastuPage() {
               <div className="gold-rule center"></div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '22px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '22px' }}>
               {FORMULAS.map((f, i) => (
                 <div key={i} className="creation-card" style={{ padding: '28px' }}>
                   <span style={{ fontSize: '11px', color: '#b08a4f', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}>

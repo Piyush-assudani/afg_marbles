@@ -60,7 +60,7 @@ export default function AyadiCalculator({ onOpenInquiry }) {
             border: '1px solid rgba(176, 138, 79, 0.25)',
             overflow: 'hidden',
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
           }}
         >
           {/* Left Form Controls */}

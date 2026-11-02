@@ -117,9 +117,9 @@ export default function ProductCard({ product, priority = false, onOpenProduct, 
           cursor: 'pointer',
           position: 'relative',
           width: '100%',
-          aspectRatio: '4 / 3',
-          minHeight: '260px',
-          maxHeight: '290px',
+          aspectRatio: '1 / 1',
+          minHeight: '280px',
+          maxHeight: '380px',
           overflow: 'hidden',
           backgroundColor: '#ede7de',
         }}
@@ -135,7 +135,7 @@ export default function ProductCard({ product, priority = false, onOpenProduct, 
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            objectPosition: 'center 20%',
+            objectPosition: 'center',
             display: 'block',
             transition: 'transform 0.6s ease',
             position: 'relative',
@@ -295,7 +295,7 @@ export default function ProductCard({ product, priority = false, onOpenProduct, 
       <div className="product-card__content" style={{ padding: '22px 24px', display: 'flex', flexDirection: 'column', flex: 1 }}>
         <div
           className="product-card__top-meta"
-          style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}
+          style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px', gap: '8px', flexWrap: 'wrap' }}
         >
           <span
             className="product-card__category"
