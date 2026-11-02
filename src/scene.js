@@ -417,7 +417,7 @@ export function createExperience({ canvas, onProgress, onHover, onFrame }) {
   }
   gltfLoader.setMeshoptDecoder(MeshoptDecoder);
 
-  const modelFile = 'mandir_premium_v4.glb';
+  const modelFile = 'mandir_compressed.glb';
 
   const gltfPromise = new Promise((resolve, reject) => {
     gltfLoader.load(

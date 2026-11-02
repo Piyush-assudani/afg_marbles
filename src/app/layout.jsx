@@ -209,8 +209,9 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
 
-        {/* Preload critical hero 3D model, texture, and backdrop for instant first render */}
-        <link rel="preload" href="/models/mandir_premium_v4.glb" as="fetch" crossOrigin="anonymous" fetchPriority="high" />
+        {/* Preload critical hero mandir poster, compressed 3D model, and textures for 0ms instant first render */}
+        <link rel="preload" href="/hero-mandir-poster-opt.webp" as="image" type="image/webp" fetchPriority="high" />
+        <link rel="preload" href="/models/mandir_compressed.glb" as="fetch" crossOrigin="anonymous" fetchPriority="high" />
         <link rel="preload" href="/textures/makrana.webp" as="image" fetchPriority="high" />
         <link rel="preload" href="/hero-palace-backdrop.webp" as="image" fetchPriority="high" />
 

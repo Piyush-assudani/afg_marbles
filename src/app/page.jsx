@@ -1,24 +1,55 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import HeroSection from '../components/HeroSection';
-import MakranaVisualShowcase from '../components/MakranaVisualShowcase';
-import CinematicFilmShowcase from '../components/CinematicFilmShowcase';
+import LazySection from '../components/LazySection';
 import ProductCard from '../components/ProductCard';
-import DifferenceTable from '../components/DifferenceTable';
-import ConsultationCard from '../components/ConsultationCard';
-import BeforeAfterSlider from '../components/BeforeAfterSlider';
-import FiveStepJourney from '../components/FiveStepJourney';
-import AyadiCalculator from '../components/AyadiCalculator';
-import TempleAnatomy from '../components/TempleAnatomy';
-import ExperienceCentre from '../components/ExperienceCentre';
-import ArchitecturalFaq from '../components/ArchitecturalFaq';
-import RoyalProjectsPreview from '../components/RoyalProjectsPreview';
-import QuarryTimeline from '../components/QuarryTimeline';
-import SanctumConfigurator from '../components/SanctumConfigurator';
-import YardLiveFeed from '../components/YardLiveFeed';
-import StonePurityLab from '../components/StonePurityLab';
 import { PRODUCTS } from '../products.js';
+
+// Dynamically code-split below-the-fold sections for instant initial page speed
+const MakranaVisualShowcase = dynamic(() => import('../components/MakranaVisualShowcase'), {
+  loading: () => <div style={{ minHeight: '580px' }} />
+});
+const CinematicFilmShowcase = dynamic(() => import('../components/CinematicFilmShowcase'), {
+  loading: () => <div style={{ minHeight: '420px' }} />
+});
+const DifferenceTable = dynamic(() => import('../components/DifferenceTable'), {
+  loading: () => <div style={{ minHeight: '520px' }} />
+});
+const BeforeAfterSlider = dynamic(() => import('../components/BeforeAfterSlider'), {
+  loading: () => <div style={{ minHeight: '620px' }} />
+});
+const FiveStepJourney = dynamic(() => import('../components/FiveStepJourney'), {
+  loading: () => <div style={{ minHeight: '580px' }} />
+});
+const SanctumConfigurator = dynamic(() => import('../components/SanctumConfigurator'), {
+  loading: () => <div style={{ minHeight: '650px' }} />
+});
+const AyadiCalculator = dynamic(() => import('../components/AyadiCalculator'), {
+  loading: () => <div style={{ minHeight: '560px' }} />
+});
+const RoyalProjectsPreview = dynamic(() => import('../components/RoyalProjectsPreview'), {
+  loading: () => <div style={{ minHeight: '500px' }} />
+});
+const YardLiveFeed = dynamic(() => import('../components/YardLiveFeed'), {
+  loading: () => <div style={{ minHeight: '550px' }} />
+});
+const QuarryTimeline = dynamic(() => import('../components/QuarryTimeline'), {
+  loading: () => <div style={{ minHeight: '480px' }} />
+});
+const TempleAnatomy = dynamic(() => import('../components/TempleAnatomy'), {
+  loading: () => <div style={{ minHeight: '500px' }} />
+});
+const StonePurityLab = dynamic(() => import('../components/StonePurityLab'), {
+  loading: () => <div style={{ minHeight: '520px' }} />
+});
+const ExperienceCentre = dynamic(() => import('../components/ExperienceCentre'), {
+  loading: () => <div style={{ minHeight: '480px' }} />
+});
+const ArchitecturalFaq = dynamic(() => import('../components/ArchitecturalFaq'), {
+  loading: () => <div style={{ minHeight: '460px' }} />
+});
 
 export default function HomePage() {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -66,10 +97,14 @@ export default function HomePage() {
       <HeroSection onOpenInquiry={handleOpenInquiry} />
 
       {/* ============ MAKRANA PURE WHITE MARBLE VISUAL SHOWCASE ============ */}
-      <MakranaVisualShowcase onOpenInquiry={handleOpenInquiry} />
+      <LazySection minHeight="580px" rootMargin="350px 0px" id="makrana-showcase">
+        <MakranaVisualShowcase onOpenInquiry={handleOpenInquiry} />
+      </LazySection>
 
       {/* ============ 4K CINEMATIC IMMERSION SHOWCASE ============ */}
-      <CinematicFilmShowcase onOpenInquiry={handleOpenInquiry} />
+      <LazySection minHeight="420px" rootMargin="350px 0px">
+        <CinematicFilmShowcase onOpenInquiry={handleOpenInquiry} />
+      </LazySection>
 
       {/* ============ ROYAL PATRON TRUST BAR ============ */}
       <section className="sec-royal-trust-bar" aria-label="Imperial Stone Assurances">
@@ -117,20 +152,29 @@ export default function HomePage() {
       </section>
 
       {/* ============ THE AFG DIFFERENCE ============ */}
-      <DifferenceTable onOpenInquiry={handleOpenInquiry} />
+      <LazySection minHeight="520px" rootMargin="350px 0px">
+        <DifferenceTable onOpenInquiry={handleOpenInquiry} />
+      </LazySection>
 
       {/* ============ INTERACTIVE BEFORE & AFTER SLIDER (Yard Dry-Fit to Consecrated Sanctum) ============ */}
-      <BeforeAfterSlider />
+      <LazySection minHeight="620px" rootMargin="350px 0px">
+        <BeforeAfterSlider />
+      </LazySection>
 
       {/* ============ 5-STEP JOURNEY (Matching Tilak Feature) ============ */}
-      <FiveStepJourney onOpenInquiry={handleOpenInquiry} />
+      <LazySection minHeight="580px" rootMargin="350px 0px">
+        <FiveStepJourney onOpenInquiry={handleOpenInquiry} />
+      </LazySection>
 
       {/* ============ ALL WE NEED IS YOUR SPACE DIMENSIONS ============ */}
       {/* ============ INTERACTIVE BESPOKE SANCTUM CONFIGURATOR (UNIQUE ATELIER STUDIO) ============ */}
-      <SanctumConfigurator onOpenInquiry={handleOpenInquiry} />
+      <LazySection minHeight="650px" rootMargin="350px 0px" id="sanctum-configurator">
+        <SanctumConfigurator onOpenInquiry={handleOpenInquiry} />
+      </LazySection>
 
       {/* ============ INTERACTIVE E-COMMERCE ARCHITECTURAL PORTFOLIO ============ */}
-      <section className="sec-collections" id="collections" style={{ padding: '80px 0' }}>
+      <LazySection minHeight="720px" rootMargin="350px 0px" id="collections">
+        <section className="sec-collections" style={{ padding: '80px 0' }}>
         <div className="sec-container">
           <div className="sec-header text-center" style={{ marginBottom: '32px' }}>
             <span className="card-badge" style={{ position: 'static', display: 'inline-block', marginBottom: '12px' }}>
@@ -235,12 +279,16 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      </LazySection>
 
       {/* ============ INTERACTIVE AYADI VASTU CALCULATOR & CAD REQUEST ============ */}
-      <AyadiCalculator onOpenInquiry={handleOpenInquiry} />
+      <LazySection minHeight="560px" rootMargin="350px 0px">
+        <AyadiCalculator onOpenInquiry={handleOpenInquiry} />
+      </LazySection>
 
       {/* ============ PALATIAL FOUNTAINS PREVIEW ============ */}
-      <section className="sec-fountains-preview" style={{ padding: '80px 0', background: '#f5eee1' }}>
+      <LazySection minHeight="540px" rootMargin="350px 0px">
+        <section className="sec-fountains-preview" style={{ padding: '80px 0', background: '#f5eee1' }}>
         <div className="sec-container">
           <div className="sec-header text-center" style={{ marginBottom: '48px' }}>
             <span className="card-badge" style={{ position: 'static', display: 'inline-block', marginBottom: '12px' }}>
@@ -275,15 +323,21 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      </LazySection>
 
       {/* ============ ROYAL HERITAGE LANDMARKS (COMPLETED COMMISSIONS) ============ */}
-      <RoyalProjectsPreview />
+      <LazySection minHeight="500px" rootMargin="350px 0px">
+        <RoyalProjectsPreview />
+      </LazySection>
 
       {/* ============ DIRECT JAIPUR YARD LIVE INSPECTION FEED & PROOF ============ */}
-      <YardLiveFeed onOpenInquiry={handleOpenInquiry} />
+      <LazySection minHeight="550px" rootMargin="350px 0px">
+        <YardLiveFeed onOpenInquiry={handleOpenInquiry} />
+      </LazySection>
 
       {/* ============ SILAWAT CRAFT & WORKSHOP TEASER ============ */}
-      <section className="sec-workshop-teaser" style={{ padding: '80px 0' }}>
+      <LazySection minHeight="480px" rootMargin="350px 0px">
+        <section className="sec-workshop-teaser" style={{ padding: '80px 0' }}>
         <div className="sec-container">
           <div className="page-grid-2">
             <div
@@ -401,12 +455,16 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      </LazySection>
 
       {/* ============ MAKRANA PROVENANCE & CALCITE JOURNEY ============ */}
-      <QuarryTimeline />
+      <LazySection minHeight="480px" rootMargin="350px 0px">
+        <QuarryTimeline />
+      </LazySection>
 
       {/* ============ HERITAGE CHHATRI & PAVILION SHOWCASE ============ */}
-      <section className="sec-chhatris-preview" style={{ padding: '80px 0', background: '#fcfaf6' }}>
+      <LazySection minHeight="520px" rootMargin="350px 0px">
+        <section className="sec-chhatris-preview" style={{ padding: '80px 0', background: '#fcfaf6' }}>
         <div className="sec-container">
           <div className="sec-header text-center" style={{ marginBottom: '48px' }}>
             <span className="card-badge" style={{ position: 'static', display: 'inline-block', marginBottom: '12px' }}>
@@ -441,12 +499,16 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      </LazySection>
 
       {/* ============ SACRED ANATOMY OF A MAKRANA SANCTUM ============ */}
-      <TempleAnatomy />
+      <LazySection minHeight="500px" rootMargin="350px 0px">
+        <TempleAnatomy />
+      </LazySection>
 
       {/* ============ CONTEMPORARY SANCTUMS & POOJA ROOMS ============ */}
-      <section className="sec-sanctums-preview" style={{ padding: '80px 0' }}>
+      <LazySection minHeight="520px" rootMargin="350px 0px">
+        <section className="sec-sanctums-preview" style={{ padding: '80px 0' }}>
         <div className="sec-container">
           <div className="sec-header text-center" style={{ marginBottom: '48px' }}>
             <span className="card-badge" style={{ position: 'static', display: 'inline-block', marginBottom: '12px' }}>
@@ -481,9 +543,11 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      </LazySection>
 
       {/* ============ NOBLE STONE LIBRARY VISUAL GALLERY ============ */}
-      <section className="sec-stone-library" style={{ padding: '80px 0', background: '#f5eee1' }}>
+      <LazySection minHeight="480px" rootMargin="350px 0px">
+        <section className="sec-stone-library" style={{ padding: '80px 0', background: '#f5eee1' }}>
         <div className="sec-container">
           <div className="sec-header text-center" style={{ marginBottom: '48px' }}>
             <span className="card-badge" style={{ position: 'static', display: 'inline-block', marginBottom: '12px' }}>
@@ -557,12 +621,16 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      </LazySection>
 
       {/* ============ 100-YEAR CALCITE SCIENCE & PURITY LAB ============ */}
-      <StonePurityLab onOpenInquiry={handleOpenInquiry} />
+      <LazySection minHeight="520px" rootMargin="350px 0px">
+        <StonePurityLab onOpenInquiry={handleOpenInquiry} />
+      </LazySection>
 
       {/* ============ ATELIER CRAFT PROCESS GALLERY ============ */}
-      <section className="sec-craft-process" style={{ padding: '80px 0' }}>
+      <LazySection minHeight="480px" rootMargin="350px 0px">
+        <section className="sec-craft-process" style={{ padding: '80px 0' }}>
         <div className="sec-container">
           <div className="sec-header text-center" style={{ marginBottom: '48px' }}>
             <span className="card-badge" style={{ position: 'static', display: 'inline-block', marginBottom: '12px' }}>
@@ -640,12 +708,17 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      </LazySection>
 
       {/* ============ EXPERIENCE CENTRES & GLOBAL REACH ============ */}
-      <ExperienceCentre onOpenInquiry={handleOpenInquiry} />
+      <LazySection minHeight="480px" rootMargin="350px 0px">
+        <ExperienceCentre onOpenInquiry={handleOpenInquiry} />
+      </LazySection>
 
       {/* ============ ARCHITECTURAL FREQUENTLY ASKED QUESTIONS ============ */}
-      <ArchitecturalFaq onOpenInquiry={handleOpenInquiry} />
+      <LazySection minHeight="460px" rootMargin="350px 0px">
+        <ArchitecturalFaq onOpenInquiry={handleOpenInquiry} />
+      </LazySection>
     </>
   );
 }
