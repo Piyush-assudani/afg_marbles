@@ -302,8 +302,8 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
                 <span style={{ fontSize: '11px', color: '#27ae60', fontWeight: 600 }}>● Vastu Compliant</span>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '14px' }}>
-                <div style={{ padding: '12px 14px', background: '#ffffff', borderRadius: '10px', border: '1px solid rgba(0,0,0,0.06)' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '12px' }}>
+                <div style={{ padding: '12px 14px', background: '#ffffff', borderRadius: '10px', border: '1px solid rgba(0,0,0,0.06)', minWidth: 0 }}>
                   <div style={{ fontSize: '10.5px', color: '#7a7065', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>
                     Estimated Mandir Weight
                   </div>
@@ -319,7 +319,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
                   </div>
                 </div>
 
-                <div style={{ padding: '12px 14px', background: '#ffffff', borderRadius: '10px', border: '1px solid rgba(0,0,0,0.06)' }}>
+                <div style={{ padding: '12px 14px', background: '#ffffff', borderRadius: '10px', border: '1px solid rgba(0,0,0,0.06)', minWidth: 0 }}>
                   <div style={{ fontSize: '10.5px', color: '#7a7065', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>
                     Silawat Hand Chisel
                   </div>
@@ -329,7 +329,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
                   <div style={{ fontSize: '10px', color: '#8c7b6a', marginTop: '2px' }}>Generational Master Artisans</div>
                 </div>
 
-                <div style={{ padding: '10px 14px', background: '#ffffff', borderRadius: '10px', border: '1px solid rgba(0,0,0,0.06)', gridColumn: 'span 2' }}>
+                <div style={{ padding: '10px 14px', background: '#ffffff', borderRadius: '10px', border: '1px solid rgba(0,0,0,0.06)', gridColumn: 'span 2', minWidth: 0 }}>
                   <div style={{ fontSize: '10.5px', color: '#7a7065', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Sacred Directional Yoni</div>
                   <div style={{ fontSize: '13px', fontWeight: 600, color: '#88542c', marginTop: '2px' }}>
                     {selectedStyle.yoni}
@@ -339,21 +339,21 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
             </div>
 
             {/* Action Buttons */}
-            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+            <div className="configurator-action-buttons">
               <button
                 type="button"
                 onClick={handleShareWhatsApp}
                 className="btn-primary"
                 style={{
-                  flex: '1 1 200px',
-                  width: '100%',
                   background: '#25D366',
                   borderColor: '#25D366',
                   color: '#ffffff',
-                  boxShadow: '0 6px 20px rgba(37, 211, 102, 0.4)'
+                  boxShadow: '0 6px 20px rgba(37, 211, 102, 0.4)',
+                  justifyContent: 'center',
+                  whiteSpace: 'nowrap',
                 }}
               >
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginRight: '8px' }}>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginRight: '8px', flexShrink: 0 }}>
                   <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
                 </svg>
                 <span>Send Details on WhatsApp</span>
@@ -363,7 +363,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
                 type="button"
                 onClick={handleOpenConsultation}
                 className="btn-outline-gold"
-                style={{ flex: '1 1 180px', width: '100%', textAlign: 'center', justifyContent: 'center' }}
+                style={{ textAlign: 'center', justifyContent: 'center', whiteSpace: 'nowrap' }}
               >
                 <span>Request Free 2D Design Drawing</span>
               </button>
@@ -371,7 +371,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
           </div>
 
           {/* RIGHT: Interactive Configurator Controls */}
-          <div className="configurator-controls" style={{ display: 'flex', flexDirection: 'column', gap: '24px', minWidth: 0, width: '100%', boxSizing: 'border-box' }}>
+          <div className="configurator-controls" style={{ display: 'flex', flexDirection: 'column', gap: '24px', minWidth: 0, width: '100%', maxWidth: '100%', boxSizing: 'border-box', overflow: 'hidden' }}>
             {/* Control 1: Select Architectural Form */}
             <div>
               <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#1c1813', marginBottom: '10px' }}>
@@ -537,8 +537,8 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
                           {emb.name}
                         </span>
                       </div>
-                      <span style={{ fontSize: '10px', color: '#b08a4f', fontWeight: 600, flexShrink: 0, whiteSpace: 'nowrap' }}>
-                        +{emb.hours}h Hand Work
+                      <span style={{ fontSize: 'clamp(9px, 2.5vw, 10.5px)', color: '#b08a4f', fontWeight: 600, flexShrink: 0, whiteSpace: 'nowrap', paddingLeft: '4px' }}>
+                        +{emb.hours}h Work
                       </span>
                     </div>
                   );

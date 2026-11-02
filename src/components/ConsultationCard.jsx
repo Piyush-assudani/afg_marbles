@@ -50,8 +50,9 @@ export default function ConsultationCard({ onOpenInquiry }) {
                       window.location.href = '/contact';
                     }
                   }}
+                  style={{ whiteSpace: 'nowrap' }}
                 >
-                  <span className="btn-primary__text">Get Free Design Drawing &amp; Price</span>
+                  <span className="btn-primary__text">Get Free 2D Design &amp; Price</span>
                   <span className="btn-primary__icon">→</span>
                 </button>
                 <a
@@ -59,8 +60,9 @@ export default function ConsultationCard({ onOpenInquiry }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-outline-gold"
+                  style={{ whiteSpace: 'nowrap', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
                 >
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style={{ flexShrink: 0 }}>
                     <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z" />
                   </svg>
                   <span>Send Measurements on WhatsApp</span>

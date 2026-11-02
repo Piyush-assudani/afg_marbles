@@ -146,20 +146,12 @@ export default function HomePage() {
           </div>
 
           {/* Interactive Category Filter Pills Bar */}
-          <div
-            className="portfolio-filter-tabs"
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              flexWrap: 'wrap',
-              gap: '10px',
-              marginBottom: '40px',
-            }}
-          >
+          <div className="portfolio-filter-tabs">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 type="button"
+                className="portfolio-filter-tab-btn"
                 onClick={() => {
                   setActiveCategory(cat.id);
                   setVisibleCount(9);
@@ -176,6 +168,8 @@ export default function HomePage() {
                   background: activeCategory === cat.id ? '#1c1813' : '#fcfaf6',
                   color: activeCategory === cat.id ? '#ecd39b' : '#383026',
                   boxShadow: activeCategory === cat.id ? '0 4px 16px rgba(28, 24, 19, 0.15)' : 'none',
+                  whiteSpace: 'nowrap',
+                  flexShrink: 0,
                 }}
               >
                 <span>{cat.label}</span>

@@ -6052,6 +6052,16 @@ p { text-wrap: pretty; }
   box-sizing: border-box;
 }
 
+.configurator-action-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.configurator-action-buttons button {
+  flex: 1 1 200px;
+}
+
 @media (max-width: 960px) {
   .configurator-board {
     grid-template-columns: 1fr !important;
@@ -10380,6 +10390,29 @@ img, video, canvas, svg {
     font-size: 11.5px !important;
   }
 
+  /* Portfolio Filter Tabs Mobile Horizontal Scroll Strip */
+  .portfolio-filter-tabs {
+    justify-content: flex-start !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scroll-snap-type: x mandatory !important;
+    scrollbar-width: none !important;
+    padding: 6px 12px 14px !important;
+    margin: 0 -12px 24px !important;
+    gap: 8px !important;
+  }
+  .portfolio-filter-tabs::-webkit-scrollbar {
+    display: none !important;
+  }
+  .portfolio-filter-tab-btn {
+    scroll-snap-align: start !important;
+    padding: 8px 14px !important;
+    font-size: 11.5px !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
   /* Sanctum Configurator Mobile Adaptations */
   .sec-sanctum-configurator {
     overflow-x: hidden !important;
@@ -10406,6 +10439,42 @@ img, video, canvas, svg {
     height: 260px !important;
     min-height: 240px !important;
     border-radius: 12px !important;
+  }
+  .configurator-action-buttons {
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+  .configurator-action-buttons button {
+    width: 100% !important;
+    flex: 1 1 auto !important;
+    padding: 12px 14px !important;
+    font-size: 13px !important;
+    justify-content: center !important;
+  }
+
+  /* Consultation Banner Mobile Layout */
+  .sec-consultation-banner {
+    padding: 40px 0 60px !important;
+  }
+  .consultation-card {
+    padding: 24px 14px !important;
+    border-radius: 16px !important;
+  }
+  .consultation-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+  .consultation-actions .btn-primary,
+  .consultation-actions .btn-outline-gold {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 13px 16px !important;
+    font-size: 13px !important;
+    white-space: nowrap !important;
   }
 
   /* Footer Imperial Monumental Watermark Containment */
