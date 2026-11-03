@@ -106,19 +106,19 @@ export default function RoyalProjectsPreview() {
 
         {/* Featured Showcase Card */}
         <div
+          className="royal-preview-card"
           style={{
             background: '#241f18',
             borderRadius: '20px',
             border: '1px solid rgba(212, 175, 55, 0.3)',
             boxShadow: '0 24px 60px rgba(0, 0, 0, 0.5)',
             overflow: 'hidden',
-            display: 'grid',
-            gridTemplateColumns: '1.15fr 1fr',
             minHeight: '440px',
           }}
         >
           {/* Image Side */}
           <div
+            className="royal-preview-media"
             onClick={() => {
               if (typeof window !== 'undefined' && window.afgOpenLightbox) {
                 window.afgOpenLightbox({
@@ -128,7 +128,6 @@ export default function RoyalProjectsPreview() {
                 });
               }
             }}
-            style={{ position: 'relative', minHeight: '360px', backgroundColor: '#181511', cursor: 'zoom-in' }}
           >
             <img
               src={current.image}
@@ -160,7 +159,7 @@ export default function RoyalProjectsPreview() {
           </div>
 
           {/* Details Side */}
-          <div style={{ padding: '38px 40px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <div className="royal-preview-info">
             <span style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em', color: '#ecd39b', textTransform: 'uppercase', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '5px' }}>
               <MapPin size={13} /> {current.city}
             </span>
@@ -203,11 +202,11 @@ export default function RoyalProjectsPreview() {
               </div>
             </div>
 
-            <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
+            <div className="royal-preview-actions">
               <Link
                 href="/royal-projects"
                 className="btn-primary"
-                style={{ background: 'linear-gradient(135deg, #b08a4f 0%, #8c6a36 100%)', color: '#ffffff', borderColor: '#d8bb84' }}
+                style={{ background: 'linear-gradient(135deg, #b08a4f 0%, #8c6a36 100%)', color: '#ffffff', borderColor: '#d8bb84', textAlign: 'center', justifyContent: 'center' }}
               >
                 <span>View Full Landmark Portfolio</span>
                 <span>→</span>
@@ -226,6 +225,7 @@ export default function RoyalProjectsPreview() {
                   boxShadow: '0 4px 16px rgba(0, 0, 0, 0.35)',
                   display: 'inline-flex',
                   alignItems: 'center',
+                  justifyContent: 'center',
                   gap: '8px',
                 }}
               >

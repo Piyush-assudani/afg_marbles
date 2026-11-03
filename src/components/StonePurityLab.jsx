@@ -162,16 +162,19 @@ export default function StonePurityLab({ onOpenInquiry }) {
                 <span style={{
                   width: '42px',
                   height: '42px',
+                  minWidth: '42px',
+                  flexShrink: 0,
                   borderRadius: '50%',
                   background: '#ffffff',
                   border: '2px solid #d4af37',
                   boxShadow: '0 3px 10px rgba(212, 175, 55, 0.3)',
-                  display: 'grid',
-                  placeItems: 'center'
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
                 }}>
                   <Crown size={20} color="#d4af37" />
                 </span>
-                <div>
+                <div style={{ minWidth: 0 }}>
                   <h4 style={{ fontFamily: 'var(--serif)', fontSize: '18px', color: '#1c1813', margin: 0 }}>
                     Pure Makrana Natural White Marble
                   </h4>
@@ -202,13 +205,16 @@ export default function StonePurityLab({ onOpenInquiry }) {
             </div>
 
             {/* CARD 2: COMMERCIAL / IMPORTED MARBLE (WARNING) */}
-            <div style={{
-              background: '#f9f9f9',
-              border: '1px solid rgba(0, 0, 0, 0.12)',
-              borderRadius: '18px',
-              padding: '28px',
-              position: 'relative'
-            }}>
+            <div
+              className="purity-card purity-card--commercial"
+              style={{
+                background: '#f9f9f9',
+                border: '1px solid rgba(0, 0, 0, 0.12)',
+                borderRadius: '18px',
+                padding: '28px',
+                position: 'relative'
+              }}
+            >
               <div style={{
                 position: 'absolute',
                 top: '0',
@@ -229,17 +235,20 @@ export default function StonePurityLab({ onOpenInquiry }) {
                 <span style={{
                   width: '42px',
                   height: '42px',
+                  minWidth: '42px',
+                  flexShrink: 0,
                   borderRadius: '50%',
                   background: '#fee2e2',
                   border: '1px solid #ef4444',
-                  display: 'grid',
-                  placeItems: 'center'
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
                 }}>
                   <AlertTriangle size={18} color="#dc2626" />
                 </span>
-                <div>
+                <div style={{ minWidth: 0 }}>
                   <h4 style={{ fontFamily: 'var(--serif)', fontSize: '18px', color: '#555555', margin: 0 }}>
-                    Commercial / Foreign Dolomitic Marble
+                    Commercial Market Marble
                   </h4>
                   <span style={{ fontSize: '11px', color: '#c0392b', fontWeight: 700 }}>
                     ● {activeTest.commercialStatus}

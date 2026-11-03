@@ -92,22 +92,22 @@ export default function ExperienceCentre({ onOpenInquiry }) {
                   <span className="btn-primary__icon">→</span>
                 </button>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '8px' }}>
                   <a
                     href="https://maps.google.com/?q=Makrana+Bypass+Rd+Borawar+Makrana+Rajasthan+341505"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-outline-gold"
-                    style={{ fontSize: '11px', padding: '9px 12px', textAlign: 'center', justifyContent: 'center' }}
+                    style={{ fontSize: '11px', padding: '9px 6px', textAlign: 'center', justifyContent: 'center', whiteSpace: 'nowrap' }}
                   >
                     <span>Get Directions</span>
                   </a>
                   <a
                     href="tel:+917597417274"
                     className="btn-outline-gold"
-                    style={{ fontSize: '11px', padding: '9px 12px', textAlign: 'center', justifyContent: 'center' }}
+                    style={{ fontSize: '11px', padding: '9px 6px', textAlign: 'center', justifyContent: 'center', whiteSpace: 'nowrap' }}
                   >
-                    <span>Call Workshop Team</span>
+                    <span>Call Workshop</span>
                   </a>
                 </div>
               </div>
@@ -182,22 +182,22 @@ export default function ExperienceCentre({ onOpenInquiry }) {
                   <span className="btn-primary__icon">→</span>
                 </a>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '8px' }}>
                   <a
                     href="https://wa.me/917597417274?text=Hello%20AFG%20Marble,%20please%20share%20Makrana%20location"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-outline-gold"
-                    style={{ fontSize: '11px', padding: '9px 12px', textAlign: 'center', justifyContent: 'center' }}
+                    style={{ fontSize: '11px', padding: '9px 6px', textAlign: 'center', justifyContent: 'center', whiteSpace: 'nowrap' }}
                   >
-                    <span>WhatsApp Location</span>
+                    <span>Location Map</span>
                   </a>
                   <a
                     href="tel:+917597417274"
                     className="btn-outline-gold"
-                    style={{ fontSize: '11px', padding: '9px 12px', textAlign: 'center', justifyContent: 'center' }}
+                    style={{ fontSize: '11px', padding: '9px 6px', textAlign: 'center', justifyContent: 'center', whiteSpace: 'nowrap' }}
                   >
-                    <span>Call Workshop Team</span>
+                    <span>Call Workshop</span>
                   </a>
                 </div>
               </div>
