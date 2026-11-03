@@ -125,44 +125,6 @@ export default function ProductModal({ product, onClose, onInquire, onToast }) {
               />
               <span className="gallery-active-badge">{currentAngle.tag || currentAngle.label}</span>
 
-              {/* Floating Fullscreen Trigger Button */}
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  if (typeof window !== 'undefined' && window.afgOpenLightbox) {
-                    window.afgOpenLightbox({
-                      src: currentAngle.src,
-                      title: product.title,
-                      tag: `${product.primaryStone || 'Makrana Calcite'} · ${currentAngle.tag || currentAngle.label}`
-                    });
-                  }
-                }}
-                title="Fullscreen 4K Zoom"
-                aria-label="Fullscreen 4K Zoom"
-                style={{
-                  position: 'absolute',
-                  top: '12px',
-                  right: '12px',
-                  background: 'rgba(26, 21, 16, 0.88)',
-                  backdropFilter: 'blur(8px)',
-                  color: '#ecd39b',
-                  border: '1px solid rgba(212, 175, 55, 0.45)',
-                  borderRadius: '999px',
-                  padding: '6px 12px',
-                  fontSize: '11px',
-                  fontWeight: 600,
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  cursor: 'pointer',
-                  zIndex: 3
-                }}
-              >
-                <Maximize2 size={13} />
-                <span>Zoom 4K</span>
-              </button>
-
               {angles.length > 1 && (
                 <>
                   <button

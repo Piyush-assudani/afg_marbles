@@ -195,82 +195,54 @@ export default function YardLiveFeed({ onOpenInquiry }) {
                 }}
               />
 
-              {/* Floating Fullscreen Expand Pill */}
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  if (typeof window !== 'undefined' && window.afgOpenLightbox) {
-                    window.afgOpenLightbox({
-                      src: activeBay.image,
-                      title: activeBay.title,
-                      tag: activeBay.code,
-                    });
-                  }
-                }}
-                title="Expand to Fullscreen 4K View"
-                aria-label="Expand to Fullscreen"
+              {/* Live Overlay HUD Elements */}
+              <div
                 style={{
                   position: 'absolute',
-                  top: '58px',
-                  right: '16px',
-                  zIndex: 4,
-                  background: 'rgba(20, 16, 12, 0.88)',
-                  backdropFilter: 'blur(8px)',
-                  border: '1px solid rgba(212, 175, 55, 0.45)',
-                  color: '#ecd39b',
-                  padding: '6px 14px',
-                  borderRadius: '999px',
-                  fontSize: '11px',
-                  fontWeight: 600,
-                  letterSpacing: '0.04em',
-                  cursor: 'pointer',
+                  top: '12px',
+                  left: '12px',
+                  right: '12px',
                   display: 'flex',
+                  justifyContent: 'space-between',
                   alignItems: 'center',
-                  gap: '6px',
-                  boxShadow: '0 4px 14px rgba(0,0,0,0.5)',
+                  gap: '8px',
+                  flexWrap: 'wrap',
+                  pointerEvents: 'none',
+                  zIndex: 3
                 }}
               >
-                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.2">
-                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
-                </svg>
-                <span>Expand Fullscreen</span>
-              </button>
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    background: 'rgba(0, 0, 0, 0.75)',
+                    backdropFilter: 'blur(6px)',
+                    padding: '5px 10px',
+                    borderRadius: '6px',
+                    fontSize: '10px',
+                    fontWeight: 600,
+                    color: '#ffffff',
+                    border: '1px solid rgba(231, 76, 60, 0.4)'
+                  }}
+                >
+                  <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#e74c3c', animation: 'pulse 1.5s infinite', flexShrink: 0 }}></span>
+                  <span>REC ● 4K FEED</span>
+                </div>
 
-              {/* Live Overlay HUD Elements */}
-              <div style={{
-                position: 'absolute',
-                top: '16px',
-                left: '16px',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-                background: 'rgba(0, 0, 0, 0.75)',
-                backdropFilter: 'blur(6px)',
-                padding: '6px 12px',
-                borderRadius: '6px',
-                fontSize: '11px',
-                fontWeight: 600,
-                color: '#ffffff',
-                border: '1px solid rgba(231, 76, 60, 0.4)'
-              }}>
-                <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#e74c3c', animation: 'pulse 1.5s infinite' }}></span>
-                <span>REC ● 4K ATELIER FEED</span>
-              </div>
-
-              <div style={{
-                position: 'absolute',
-                top: '16px',
-                right: '16px',
-                background: 'rgba(0, 0, 0, 0.75)',
-                backdropFilter: 'blur(6px)',
-                padding: '6px 12px',
-                borderRadius: '6px',
-                fontSize: '11px',
-                color: '#ecd39b',
-                fontFamily: 'monospace'
-              }}>
-                LOCATION: {activeBay.location.toUpperCase()}
+                <div
+                  style={{
+                    background: 'rgba(0, 0, 0, 0.75)',
+                    backdropFilter: 'blur(6px)',
+                    padding: '5px 10px',
+                    borderRadius: '6px',
+                    fontSize: '10px',
+                    color: '#ecd39b',
+                    fontFamily: 'monospace'
+                  }}
+                >
+                  {activeBay.location.toUpperCase()}
+                </div>
               </div>
 
               <div style={{

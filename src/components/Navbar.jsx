@@ -383,29 +383,6 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
                           className="mega-preview-fade-img"
                         />
                         <span className="mega-feature-card__badge">{activePreview.badge}</span>
-
-                        <span
-                          style={{
-                            position: 'absolute',
-                            top: '10px',
-                            right: '10px',
-                            background: 'rgba(26, 21, 16, 0.85)',
-                            backdropFilter: 'blur(8px)',
-                            color: '#edd7a8',
-                            border: '1px solid rgba(212, 175, 55, 0.4)',
-                            borderRadius: '999px',
-                            padding: '3px 9px',
-                            fontSize: '10px',
-                            fontWeight: 600,
-                            letterSpacing: '0.04em',
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '4px',
-                            zIndex: 3,
-                          }}
-                        >
-                          ✦ Zoom 4K
-                        </span>
                       </div>
                       <div className="mega-feature-card__body">
                         <h5>{activePreview.previewTitle}</h5>

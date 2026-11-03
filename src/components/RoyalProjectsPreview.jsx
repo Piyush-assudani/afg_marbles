@@ -148,47 +148,15 @@ export default function RoyalProjectsPreview() {
                 fontSize: '12px',
                 fontWeight: 600,
                 border: '1px solid rgba(212, 175, 55, 0.3)',
+                maxWidth: 'calc(100% - 32px)',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                whiteSpace: 'nowrap',
+                pointerEvents: 'none',
               }}
             >
               {current.type}
             </span>
-
-            {/* Floating Fullscreen Trigger Badge */}
-            <button
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation();
-                if (typeof window !== 'undefined' && window.afgOpenLightbox) {
-                  window.afgOpenLightbox({
-                    src: current.image,
-                    title: `${current.title} (${current.city})`,
-                    tag: `${current.type} · ${current.stone}`
-                  });
-                }
-              }}
-              title="Fullscreen 4K Zoom"
-              aria-label="Fullscreen 4K Zoom"
-              style={{
-                position: 'absolute',
-                top: '16px',
-                right: '16px',
-                background: 'rgba(28, 24, 19, 0.85)',
-                backdropFilter: 'blur(8px)',
-                color: '#ecd39b',
-                padding: '6px 12px',
-                borderRadius: '999px',
-                fontSize: '11px',
-                fontWeight: 600,
-                border: '1px solid rgba(212, 175, 55, 0.4)',
-                cursor: 'pointer',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '5px'
-              }}
-            >
-              <Maximize2 size={12} />
-              <span>Zoom 4K</span>
-            </button>
           </div>
 
           {/* Details Side */}

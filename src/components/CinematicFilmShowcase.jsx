@@ -218,14 +218,14 @@ export default function CinematicFilmShowcase({ onOpenInquiry }) {
         <div
           style={{
             position: 'absolute',
-            bottom: 'clamp(20px, 3.5vw, 36px)',
-            left: 'clamp(16px, 3.5vw, 40px)',
-            right: 'clamp(16px, 3.5vw, 40px)',
+            bottom: isMobile ? '14px' : 'clamp(20px, 3.5vw, 36px)',
+            left: 'clamp(12px, 3.5vw, 40px)',
+            right: 'clamp(12px, 3.5vw, 40px)',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
             flexWrap: 'wrap',
-            gap: '14px',
+            gap: '10px',
             zIndex: 4
           }}
         >
@@ -237,20 +237,20 @@ export default function CinematicFilmShowcase({ onOpenInquiry }) {
             style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '8px',
-              padding: '9px 18px',
+              gap: '6px',
+              padding: isMobile ? '7px 14px' : '9px 18px',
               borderRadius: '999px',
               background: 'rgba(14, 11, 8, 0.85)',
               backdropFilter: 'blur(12px)',
               border: '1px solid rgba(197, 160, 89, 0.45)',
               color: '#ffffff',
-              fontSize: '12px',
+              fontSize: isMobile ? '11px' : '12px',
               fontWeight: 600,
               cursor: 'pointer',
               boxShadow: '0 4px 16px rgba(0,0,0,0.5)'
             }}
           >
-            {isPlaying ? <Pause size={14} color="#edd7a8" /> : <Play size={14} color="#edd7a8" />}
+            {isPlaying ? <Pause size={13} color="#edd7a8" /> : <Play size={13} color="#edd7a8" />}
             <span>{isPlaying ? 'Pause' : 'Play'}</span>
           </button>
 
@@ -261,13 +261,13 @@ export default function CinematicFilmShowcase({ onOpenInquiry }) {
             style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '8px',
-              padding: '11px 24px',
+              gap: '6px',
+              padding: isMobile ? '8px 16px' : '11px 24px',
               background: 'linear-gradient(135deg, #c5a059 0%, #9e7935 100%)',
               color: '#120f0a',
               border: 'none',
               borderRadius: '999px',
-              fontSize: '12.5px',
+              fontSize: isMobile ? '11.5px' : '12.5px',
               fontWeight: 700,
               letterSpacing: '0.04em',
               cursor: 'pointer',
@@ -277,8 +277,8 @@ export default function CinematicFilmShowcase({ onOpenInquiry }) {
             onMouseEnter={(e) => (e.currentTarget.style.transform = 'translateY(-2px)')}
             onMouseLeave={(e) => (e.currentTarget.style.transform = 'translateY(0)')}
           >
-            <span>Get Price &amp; Details for a Temple Like This</span>
-            <ArrowRight size={14} />
+            <span>{isMobile ? 'Get Temple Price & Details' : 'Get Price & Details for a Temple Like This'}</span>
+            <ArrowRight size={13} />
           </button>
         </div>
       </div>

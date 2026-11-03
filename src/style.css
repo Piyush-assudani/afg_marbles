@@ -1219,15 +1219,15 @@ body:has(.mega-menu) .stone-rail {
   z-index: 12;
   left: 0;
   bottom: 0;
-  width: max-content;
-  max-width: calc(100vw - 32px);
-  height: 70px;
+  width: auto;
+  max-width: calc(100vw - 24px);
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: clamp(10px, 1.2vw, 18px);
-  padding: 0 clamp(16px, 2vw, 28px);
-  border-radius: 0 16px 0 0;
+  gap: clamp(8px, 1vw, 14px);
+  padding: 0 clamp(12px, 1.5vw, 22px);
+  border-radius: 0 14px 0 0;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(28px);
   -webkit-backdrop-filter: blur(28px);
@@ -1235,6 +1235,12 @@ body:has(.mega-menu) .stone-rail {
   border-right: 1px solid rgba(212, 175, 55, 0.3);
   box-shadow: 0 -4px 24px rgba(40, 28, 14, 0.05);
   pointer-events: auto;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.hero__stats-ribbon::-webkit-scrollbar {
+  display: none;
 }
 
 .ribbon-guild-badge {
@@ -1814,12 +1820,13 @@ body:has(.mega-menu) .stone-rail {
   .hero__stats-ribbon {
     left: 0;
     bottom: 0;
-    width: max-content;
-    max-width: calc(100vw - 40px);
-    padding: 0 clamp(18px, 2.5vw, 32px);
+    width: auto;
+    max-width: calc(100vw - 20px);
+    padding: 0 16px;
+    gap: 10px;
   }
   .ribbon-stat__num {
-    font-size: 22px;
+    font-size: 19px;
   }
   .ribbon-stat__num--text {
     font-size: 20px;
