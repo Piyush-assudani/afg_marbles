@@ -363,7 +363,7 @@ export default function SanctumConfigurator({ onOpenInquiry }) {
                 type="button"
                 onClick={handleOpenConsultation}
                 className="btn-outline-gold"
-                style={{ textAlign: 'center', justifyContent: 'center', whiteSpace: 'nowrap' }}
+                style={{ textAlign: 'center', justifyContent: 'center' }}
               >
                 <span>Request Free 2D Design Drawing</span>
               </button>

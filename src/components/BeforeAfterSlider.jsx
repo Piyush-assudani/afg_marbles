@@ -61,14 +61,14 @@ export default function BeforeAfterSlider() {
         </div>
 
         {/* Responsive Quick Toggle Chips (Ensures 100% clarity on Mobile & Desktop) */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginBottom: '22px', flexWrap: 'wrap' }}>
+        <div className="ba-toggle-chips" style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginBottom: '22px', flexWrap: 'wrap' }}>
           <button
             type="button"
             onClick={() => setSliderPos(90)}
             style={{
-              padding: '8px 16px',
+              padding: '8px 14px',
               borderRadius: '999px',
-              fontSize: '12.5px',
+              fontSize: '12px',
               fontWeight: 600,
               cursor: 'pointer',
               background: sliderPos > 50 ? 'rgba(255, 255, 255, 0.2)' : 'rgba(255, 255, 255, 0.06)',
@@ -76,21 +76,21 @@ export default function BeforeAfterSlider() {
               border: sliderPos > 50 ? '1px solid #ffffff' : '1px solid rgba(255, 255, 255, 0.2)',
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '8px',
+              gap: '6px',
               transition: 'all 0.25s ease'
             }}
           >
-            <span style={{ width: '9px', height: '9px', borderRadius: '50%', background: '#ffffff', display: 'inline-block' }} />
-            <span>Before: Pure White Marble (Without Color &amp; Gold)</span>
+            <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#ffffff', display: 'inline-block', flexShrink: 0 }} />
+            <span>Before: Pure White Marble</span>
           </button>
 
           <button
             type="button"
             onClick={() => setSliderPos(10)}
             style={{
-              padding: '8px 16px',
+              padding: '8px 14px',
               borderRadius: '999px',
-              fontSize: '12.5px',
+              fontSize: '12px',
               fontWeight: 600,
               cursor: 'pointer',
               background: sliderPos <= 50 ? 'rgba(212, 175, 55, 0.28)' : 'rgba(212, 175, 55, 0.08)',
@@ -98,12 +98,12 @@ export default function BeforeAfterSlider() {
               border: sliderPos <= 50 ? '1px solid #ecd39b' : '1px solid rgba(212, 175, 55, 0.3)',
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '8px',
+              gap: '6px',
               transition: 'all 0.25s ease'
             }}
           >
-            <span style={{ width: '9px', height: '9px', borderRadius: '50%', background: '#ecd39b', display: 'inline-block' }} />
-            <span>After: With 24K Real Gold Leaf &amp; Colors</span>
+            <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#ecd39b', display: 'inline-block', flexShrink: 0 }} />
+            <span>After: 24K Gold &amp; Colors</span>
           </button>
         </div>
 

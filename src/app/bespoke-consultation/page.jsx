@@ -175,7 +175,7 @@ export default function BespokeConsultationPage() {
             </div>
 
             {/* Right: Direct Consultation Form */}
-            <div className="creation-card" style={{ padding: '36px', background: '#ffffff', border: '1px solid rgba(184, 134, 63, 0.28)' }}>
+            <div className="creation-card bespoke-card-panel" style={{ padding: '36px', background: '#ffffff', border: '1px solid rgba(184, 134, 63, 0.28)' }}>
               <span className="card-badge" style={{ position: 'static', display: 'inline-block', marginBottom: '12px' }}>
                 DIRECT WORKSHOP TEAM
               </span>
@@ -349,7 +349,7 @@ export default function BespokeConsultationPage() {
                     aria-hidden="true"
                   />
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                  <div className="bespoke-form-row-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '12px' }}>
                     <div>
                       <label style={{ fontSize: '12px', fontWeight: 600, color: '#4a4239', display: 'block', marginBottom: '4px' }}>Your Name *</label>
                       <input
@@ -359,7 +359,7 @@ export default function BespokeConsultationPage() {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. Rajesh Sharma"
-                        style={{ width: '100%', padding: '10px 14px', borderRadius: '6px', border: '1px solid rgba(0,0,0,0.18)', fontSize: '13px' }}
+                        style={{ width: '100%', padding: '10px 14px', borderRadius: '6px', border: '1px solid rgba(0,0,0,0.18)', fontSize: '13px', boxSizing: 'border-box' }}
                       />
                     </div>
                     <div>
@@ -370,8 +370,8 @@ export default function BespokeConsultationPage() {
                         maxLength={25}
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+91 / International with country code"
-                        style={{ width: '100%', padding: '10px 14px', borderRadius: '6px', border: '1px solid rgba(0,0,0,0.18)', fontSize: '13px' }}
+                        placeholder="+91 / WhatsApp Number"
+                        style={{ width: '100%', padding: '10px 14px', borderRadius: '6px', border: '1px solid rgba(0,0,0,0.18)', fontSize: '13px', boxSizing: 'border-box' }}
                       />
                     </div>
                   </div>
@@ -383,43 +383,43 @@ export default function BespokeConsultationPage() {
                       maxLength={100}
                       value={formData.city}
                       onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                      placeholder="e.g. Mumbai, London, Dubai, New York"
-                      style={{ width: '100%', padding: '10px 14px', borderRadius: '6px', border: '1px solid rgba(0,0,0,0.18)', fontSize: '13px' }}
+                      placeholder="e.g. Mumbai, London, Dubai"
+                      style={{ width: '100%', padding: '10px 14px', borderRadius: '6px', border: '1px solid rgba(0,0,0,0.18)', fontSize: '13px', boxSizing: 'border-box' }}
                     />
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '10px' }}>
+                  <div className="bespoke-form-row-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 90px), 1fr))', gap: '10px' }}>
                     <div>
-                      <label style={{ fontSize: '11px', fontWeight: 600, color: '#4a4239', display: 'block', marginBottom: '4px' }}>Width (ft / in)</label>
+                      <label style={{ fontSize: '11px', fontWeight: 600, color: '#4a4239', display: 'block', marginBottom: '4px' }}>Width</label>
                       <input
                         type="text"
                         maxLength={50}
                         value={formData.width}
                         onChange={(e) => setFormData({ ...formData, width: e.target.value })}
                         placeholder="e.g. 6.5 ft"
-                        style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid rgba(0,0,0,0.18)', fontSize: '13px' }}
+                        style={{ width: '100%', padding: '10px 8px', borderRadius: '6px', border: '1px solid rgba(0,0,0,0.18)', fontSize: '13px', boxSizing: 'border-box' }}
                       />
                     </div>
                     <div>
-                      <label style={{ fontSize: '11px', fontWeight: 600, color: '#4a4239', display: 'block', marginBottom: '4px' }}>Depth (ft / in)</label>
+                      <label style={{ fontSize: '11px', fontWeight: 600, color: '#4a4239', display: 'block', marginBottom: '4px' }}>Depth</label>
                       <input
                         type="text"
                         maxLength={50}
                         value={formData.depth}
                         onChange={(e) => setFormData({ ...formData, depth: e.target.value })}
                         placeholder="e.g. 3.5 ft"
-                        style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid rgba(0,0,0,0.18)', fontSize: '13px' }}
+                        style={{ width: '100%', padding: '10px 8px', borderRadius: '6px', border: '1px solid rgba(0,0,0,0.18)', fontSize: '13px', boxSizing: 'border-box' }}
                       />
                     </div>
                     <div>
-                      <label style={{ fontSize: '11px', fontWeight: 600, color: '#4a4239', display: 'block', marginBottom: '4px' }}>Height (ft / in)</label>
+                      <label style={{ fontSize: '11px', fontWeight: 600, color: '#4a4239', display: 'block', marginBottom: '4px' }}>Height</label>
                       <input
                         type="text"
                         maxLength={50}
                         value={formData.height}
                         onChange={(e) => setFormData({ ...formData, height: e.target.value })}
                         placeholder="e.g. 9.0 ft"
-                        style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid rgba(0,0,0,0.18)', fontSize: '13px' }}
+                        style={{ width: '100%', padding: '10px 8px', borderRadius: '6px', border: '1px solid rgba(0,0,0,0.18)', fontSize: '13px', boxSizing: 'border-box' }}
                       />
                     </div>
                   </div>
