@@ -857,16 +857,16 @@ export const PRODUCTS = [
         desc: 'Four-pillar garden pavilion with deeply cusped arches and raised marble platform.'
       },
       {
-        label: 'Dome Finial',
+        label: 'Tiered Dome & Arches',
         tag: 'Dome Detail',
-        src: '/gallery/chhatri-makrana-dome.webp',
-        desc: 'Hand-chiseled dome with brass kalash finial and acanthus leaf brackets.'
+        src: '/gallery/chhatri-4pillar-dome-detail.webp',
+        desc: 'Hand-chiseled tiered Rajput pyramid dome with kalash finial and cusped ornamental arches.'
       },
       {
-        label: 'Carved Columns',
+        label: 'Carved Columns & Plinth',
         tag: 'Pillar Detail',
-        src: '/gallery/royal-chhatri-pillar-detail.webp',
-        desc: 'Ornate fluted marble columns hand-chiseled with floral capitals and arched spandrels.'
+        src: '/gallery/chhatri-4pillar-plinth-detail.webp',
+        desc: 'Four solid fluted marble columns, carved capital brackets, and stepped pavilion plinth.'
       }
     ],
     specs: [
@@ -900,10 +900,10 @@ export const PRODUCTS = [
         desc: 'Carved torana arch crown with sacred Swastika crest, ornate scalloping, and suspended brass temple bell.'
       },
       {
-        label: 'Carving Detail',
+        label: 'Carved Pillar & Plinth',
         tag: 'Pillar Detail',
-        src: '/gallery/chhatri-torana-monumental-gate.webp',
-        desc: 'Three-quarter view highlighting beam depth, carved pillars, and interlocking dry-joint engineering.'
+        src: '/gallery/makrana-gate-pillar-detail.webp',
+        desc: 'Master-chiseled monolithic column showing deep relief floral rosettes, capital brackets, and carved elephant base plinth.'
       }
     ],
     specs: [

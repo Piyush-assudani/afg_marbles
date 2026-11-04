@@ -625,13 +625,13 @@ export default function HomePage() {
               {
                 step: '03',
                 title: 'Full Workshop Assembly & Video Check',
-                img: '/gallery/craft-step3-preassembly.webp',
+                img: '/gallery/craft-step3-preassembly.webp?v=cleanorig',
                 desc: 'Every temple is 100% test-assembled in our workshop to verify every joint and measurement before packing.'
               },
               {
                 step: '04',
                 title: 'Polishing & Safe Home Setup',
-                img: '/gallery/craft-step4-installation.webp',
+                img: '/gallery/craft-step4-installation.webp?v=cleanfull',
                 desc: 'Finished with fine diamond water polish, gold leaf accents, and clean white-glove setup inside your home.'
               }
             ].map((item, idx) => (
