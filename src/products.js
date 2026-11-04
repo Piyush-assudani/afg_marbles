@@ -853,19 +853,19 @@ export const PRODUCTS = [
       {
         label: 'Pavilion View',
         tag: 'Garden View',
-        src: '/gallery/royal-chhatri-garden-pavilion.webp?v=4k',
+        src: '/gallery/royal-chhatri-garden-pavilion.webp?v=super4k',
         desc: 'Four-pillar garden pavilion with deeply cusped arches and raised marble platform.'
       },
       {
         label: 'Tiered Dome & Arches',
         tag: 'Dome Detail',
-        src: '/gallery/chhatri-4pillar-dome-detail.webp',
+        src: '/gallery/chhatri-4pillar-dome-detail.webp?v=super4k',
         desc: 'Hand-chiseled tiered Rajput pyramid dome with kalash finial and cusped ornamental arches.'
       },
       {
         label: 'Carved Columns & Plinth',
         tag: 'Pillar Detail',
-        src: '/gallery/chhatri-4pillar-plinth-detail.webp',
+        src: '/gallery/chhatri-4pillar-plinth-detail.webp?v=super4k',
         desc: 'Four solid fluted marble columns, carved capital brackets, and stepped pavilion plinth.'
       }
     ],
