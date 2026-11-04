@@ -311,7 +311,7 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
                     <ul className="mega-links-list">
                       {MEGA_STONEWORKS.map((item) => (
                         <li key={item.num} onMouseEnter={() => setActivePreview(item)}>
-                          <Link href={item.href} onClick={() => setMegaMenuOpen(false)}>
+                          <Link href={item.href} prefetch={false} onClick={() => setMegaMenuOpen(false)}>
                             <span className="mega-num">{item.num}</span>
                             <div className="mega-item-info">
                               <strong>{item.title}</strong>
@@ -329,7 +329,7 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
                     <ul className="mega-links-list">
                       {MEGA_ARCHITECTURE.map((item) => (
                         <li key={item.num} onMouseEnter={() => setActivePreview(item)}>
-                          <Link href={item.href} onClick={() => setMegaMenuOpen(false)}>
+                          <Link href={item.href} prefetch={false} onClick={() => setMegaMenuOpen(false)}>
                             <span className="mega-num">{item.num}</span>
                             <div className="mega-item-info">
                               <strong>{item.title}</strong>
@@ -347,7 +347,7 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
                     <ul className="mega-links-list">
                       {MEGA_SERVICES.map((item) => (
                         <li key={item.num} onMouseEnter={() => setActivePreview(item)}>
-                          <Link href={item.href} onClick={() => setMegaMenuOpen(false)}>
+                          <Link href={item.href} prefetch={false} onClick={() => setMegaMenuOpen(false)}>
                             <span className="mega-num">{item.num}</span>
                             <div className="mega-item-info">
                               <strong>{item.title}</strong>
@@ -458,7 +458,7 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
       {/* Luxury Mobile Dropdown Menu with Complete Directory */}
       <div className={`mobile-menu ${mobileOpen ? 'is-open' : ''}`} id="mobile-menu" aria-hidden={!mobileOpen}>
         <div className="mobile-menu__links">
-          <Link href="/" className={`mob-link ${pathname === '/' ? 'is-active' : ''}`}>
+          <Link href="/" prefetch={false} className={`mob-link ${pathname === '/' ? 'is-active' : ''}`}>
             <span>Home Experience</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
@@ -466,43 +466,43 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
           </Link>
 
           <div className="mobile-nav-group-title">Our Marble Collections</div>
-          <Link href="/pooja-sanctums" className={`mob-link ${pathname === '/pooja-sanctums' ? 'is-active' : ''}`}>
+          <Link href="/pooja-sanctums" prefetch={false} className={`mob-link ${pathname === '/pooja-sanctums' ? 'is-active' : ''}`}>
             <span>Marble Pooja Room &amp; Home Temple</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
-          <Link href="/palatial-fountains" className={`mob-link ${pathname === '/palatial-fountains' ? 'is-active' : ''}`}>
+          <Link href="/palatial-fountains" prefetch={false} className={`mob-link ${pathname === '/palatial-fountains' ? 'is-active' : ''}`}>
             <span>Marble Water Fountains</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
-          <Link href="/heritage-chhatris" className={`mob-link ${pathname === '/heritage-chhatris' ? 'is-active' : ''}`}>
+          <Link href="/heritage-chhatris" prefetch={false} className={`mob-link ${pathname === '/heritage-chhatris' ? 'is-active' : ''}`}>
             <span>Marble Chhatri &amp; Garden Pavilions</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
-          <Link href="/heritage-chhatris" className={`mob-link ${pathname === '/heritage-chhatris' ? 'is-active' : ''}`}>
+          <Link href="/heritage-chhatris" prefetch={false} className={`mob-link ${pathname === '/heritage-chhatris' ? 'is-active' : ''}`}>
             <span>Marble Temple Gate &amp; Entrance</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
-          <Link href="/pietra-dura-inlay" className={`mob-link ${pathname === '/pietra-dura-inlay' ? 'is-active' : ''}`}>
+          <Link href="/pietra-dura-inlay" prefetch={false} className={`mob-link ${pathname === '/pietra-dura-inlay' ? 'is-active' : ''}`}>
             <span>Marble Inlay Work</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
-          <Link href="/pooja-sanctums" className={`mob-link ${pathname === '/pooja-sanctums' ? 'is-active' : ''}`}>
+          <Link href="/pooja-sanctums" prefetch={false} className={`mob-link ${pathname === '/pooja-sanctums' ? 'is-active' : ''}`}>
             <span>Jain Temple</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
-          <Link href="/atelier-workshop" className={`mob-link ${pathname === '/atelier-workshop' ? 'is-active' : ''}`}>
+          <Link href="/atelier-workshop" prefetch={false} className={`mob-link ${pathname === '/atelier-workshop' ? 'is-active' : ''}`}>
             <span>Marble All Work</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
@@ -510,31 +510,31 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
           </Link>
 
           <div className="mobile-nav-group-title">Marble Guides &amp; Quality</div>
-          <Link href="/ayadi-vastu-shastra" className={`mob-link ${pathname === '/ayadi-vastu-shastra' ? 'is-active' : ''}`}>
+          <Link href="/ayadi-vastu-shastra" prefetch={false} className={`mob-link ${pathname === '/ayadi-vastu-shastra' ? 'is-active' : ''}`}>
             <span>Temple Vastu Guide</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
-          <Link href="/atelier-workshop" className={`mob-link ${pathname === '/atelier-workshop' ? 'is-active' : ''}`}>
+          <Link href="/atelier-workshop" prefetch={false} className={`mob-link ${pathname === '/atelier-workshop' ? 'is-active' : ''}`}>
             <span>Our Workshop &amp; Artisans</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
-          <Link href="/materials-guide" className={`mob-link ${pathname === '/materials-guide' ? 'is-active' : ''}`}>
+          <Link href="/materials-guide" prefetch={false} className={`mob-link ${pathname === '/materials-guide' ? 'is-active' : ''}`}>
             <span>Pure Marble Guide</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
-          <Link href="/pre-assembly-trial" className={`mob-link ${pathname === '/pre-assembly-trial' ? 'is-active' : ''}`}>
+          <Link href="/pre-assembly-trial" prefetch={false} className={`mob-link ${pathname === '/pre-assembly-trial' ? 'is-active' : ''}`}>
             <span>Full Setup Trial Check</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
-          <Link href="/global-shipping" className={`mob-link ${pathname === '/global-shipping' ? 'is-active' : ''}`}>
+          <Link href="/global-shipping" prefetch={false} className={`mob-link ${pathname === '/global-shipping' ? 'is-active' : ''}`}>
             <span>Safe Worldwide Delivery</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
@@ -542,31 +542,31 @@ export default function Navbar({ isScrolled: propIsScrolled, onOpenInquiry }) {
           </Link>
 
           <div className="mobile-nav-group-title">Custom Design &amp; About Us</div>
-          <Link href="/bespoke-consultation" className={`mob-link ${pathname === '/bespoke-consultation' ? 'is-active' : ''}`}>
+          <Link href="/bespoke-consultation" prefetch={false} className={`mob-link ${pathname === '/bespoke-consultation' ? 'is-active' : ''}`}>
             <span>Free 2D Design Drawing</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
-          <Link href="/about-afg" className={`mob-link ${pathname === '/about-afg' ? 'is-active' : ''}`}>
+          <Link href="/about-afg" prefetch={false} className={`mob-link ${pathname === '/about-afg' ? 'is-active' : ''}`}>
             <span>About Our Workshop</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
-          <Link href="/private-commissions" className={`mob-link ${pathname === '/private-commissions' ? 'is-active' : ''}`}>
+          <Link href="/private-commissions" prefetch={false} className={`mob-link ${pathname === '/private-commissions' ? 'is-active' : ''}`}>
             <span>Completed Projects</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
-          <Link href="/about-afg" className={`mob-link ${pathname === '/about-afg' ? 'is-active' : ''}`}>
+          <Link href="/about-afg" prefetch={false} className={`mob-link ${pathname === '/about-afg' ? 'is-active' : ''}`}>
             <span>Our Story Since 1987</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
-          <Link href="/contact" className={`mob-link ${pathname === '/contact' ? 'is-active' : ''}`}>
+          <Link href="/contact" prefetch={false} className={`mob-link ${pathname === '/contact' ? 'is-active' : ''}`}>
             <span>Contact Us &amp; Workshop Visit</span>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M9 18l6-6-6-6" />

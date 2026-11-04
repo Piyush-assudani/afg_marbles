@@ -278,13 +278,13 @@ export default function Footer() {
               Master Collections
             </h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '11px' }}>
-              <li><Link href="/pooja-sanctums" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Marble Pooja Room &amp; Home Temple</Link></li>
-              <li><Link href="/palatial-fountains" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Marble Water Fountains</Link></li>
-              <li><Link href="/heritage-chhatris" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Marble Chhatri &amp; Garden Pavilions</Link></li>
-              <li><Link href="/heritage-chhatris" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Marble Temple Gate &amp; Entrance</Link></li>
-              <li><Link href="/pietra-dura-inlay" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Marble Inlay Work</Link></li>
-              <li><Link href="/pooja-sanctums" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Jain Temple</Link></li>
-              <li><Link href="/atelier-workshop" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Marble All Work</Link></li>
+              <li><Link href="/pooja-sanctums" prefetch={false} style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Marble Pooja Room &amp; Home Temple</Link></li>
+              <li><Link href="/palatial-fountains" prefetch={false} style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Marble Water Fountains</Link></li>
+              <li><Link href="/heritage-chhatris" prefetch={false} style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Marble Chhatri &amp; Garden Pavilions</Link></li>
+              <li><Link href="/heritage-chhatris" prefetch={false} style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Marble Temple Gate &amp; Entrance</Link></li>
+              <li><Link href="/pietra-dura-inlay" prefetch={false} style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Marble Inlay Work</Link></li>
+              <li><Link href="/pooja-sanctums" prefetch={false} style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Jain Temple</Link></li>
+              <li><Link href="/atelier-workshop" prefetch={false} style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Marble All Work</Link></li>
             </ul>
           </div>
 
@@ -294,13 +294,13 @@ export default function Footer() {
               Sacred Craft &amp; Vastu
             </h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '11px' }}>
-              <li><Link href="/ayadi-vastu-shastra" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Ayadi Vastu Architecture</Link></li>
-              <li><Link href="/atelier-workshop" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>4th-Gen Silawat Lineage</Link></li>
-              <li><Link href="/materials-guide" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Makrana Calcite Purity Science</Link></li>
-              <li><Link href="/pre-assembly-trial" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>100% Pre-Assembly Yard</Link></li>
-              <li><Link href="/bespoke-consultation" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>3D Space Dimension Planning</Link></li>
-              <li><Link href="/temple-maintenance-guide" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Abhishek &amp; Stone Care Guide</Link></li>
-              <li><Link href="/pricing-guide" style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Pricing &amp; Investment Guide</Link></li>
+              <li><Link href="/ayadi-vastu-shastra" prefetch={false} style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Ayadi Vastu Architecture</Link></li>
+              <li><Link href="/atelier-workshop" prefetch={false} style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>4th-Gen Silawat Lineage</Link></li>
+              <li><Link href="/materials-guide" prefetch={false} style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Makrana Calcite Purity Science</Link></li>
+              <li><Link href="/pre-assembly-trial" prefetch={false} style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>100% Pre-Assembly Yard</Link></li>
+              <li><Link href="/bespoke-consultation" prefetch={false} style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>3D Space Dimension Planning</Link></li>
+              <li><Link href="/temple-maintenance-guide" prefetch={false} style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Abhishek &amp; Stone Care Guide</Link></li>
+              <li><Link href="/pricing-guide" prefetch={false} style={{ color: '#d4c8b8', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}>Pricing &amp; Investment Guide</Link></li>
             </ul>
           </div>
 

@@ -179,11 +179,13 @@ export default function proxy(request) {
 export const config = {
   matcher: [
     /*
-     * Match all request paths except for the ones starting with:
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
+     * Match only HTML page routes for canonical 308 alias redirects.
+     * Exclude all static assets, images, models, fonts, APIs, and media to save Vercel Edge compute:
+     * - _next/static, _next/image, _next/data
+     * - api routes
+     * - public gallery, models, textures, draco, fonts
+     * - any request with a file extension (.webp, .png, .jpg, .ico, .svg, .json, .xml, .txt, .glb, .bin)
      */
-    '/((?!_next/static|_next/image|favicon.ico).*)',
+    '/((?!_next/static|_next/image|_next/data|api|gallery|models|textures|draco|fonts|.*\\.[a-zA-Z0-9]+$).*)',
   ],
 };
