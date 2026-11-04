@@ -405,15 +405,7 @@ export default function Footer() {
           }}
         >
           <p style={{ margin: 0, color: '#9e9080', fontSize: '12.5px', lineHeight: 1.6 }}>
-            &copy; 2026 A.F.G MARBLE AND ART. All rights reserved. Powered by{' '}
-            <a
-              href="https://morihix.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: '#ecd39b', textDecoration: 'underline', textUnderlineOffset: '3px', fontWeight: 600 }}
-            >
-              Morihix Private Limited
-            </a>
+            &copy; 2026 A.F.G MARBLE AND ART. All rights reserved.
           </p>
 
           <div style={{ display: 'flex', gap: '18px', alignItems: 'center', flexWrap: 'wrap' }}>

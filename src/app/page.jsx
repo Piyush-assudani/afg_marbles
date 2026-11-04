@@ -613,25 +613,25 @@ export default function HomePage() {
               {
                 step: '01',
                 title: 'Selecting Pure White Marble Blocks',
-                img: '/gallery/stone-makrana-calcite-slab.webp?v=spotless100',
+                img: '/gallery/craft-step1-stone.webp',
                 desc: 'Careful selection of 100% pure virgin Makrana marble blocks, tested to ensure zero internal cracks or iron spots.'
               },
               {
                 step: '02',
                 title: 'Master Hand-Carving Work',
-                img: '/gallery/workshop-mandir-trial-dryfit.webp',
+                img: '/gallery/craft-step2-carving.webp',
                 desc: 'Generational master stone carvers hand-chisel pillars, arches, and intricate jali screens using traditional steel tools.'
               },
               {
                 step: '03',
                 title: 'Full Workshop Assembly & Video Check',
-                img: '/gallery/workshop-preassembly-trial-mandir.webp',
+                img: '/gallery/craft-step3-preassembly.webp',
                 desc: 'Every temple is 100% test-assembled in our workshop to verify every joint and measurement before packing.'
               },
               {
                 step: '04',
                 title: 'Polishing & Safe Home Setup',
-                img: '/gallery/mandir-finishing-onsite-installation.webp?v=nov1',
+                img: '/gallery/craft-step4-installation.webp',
                 desc: 'Finished with fine diamond water polish, gold leaf accents, and clean white-glove setup inside your home.'
               }
             ].map((item, idx) => (
@@ -645,7 +645,7 @@ export default function HomePage() {
                 onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-6px)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; }}
               >
-                <div style={{ height: '200px', overflow: 'hidden', position: 'relative' }}>
+                <div style={{ aspectRatio: '4 / 3', width: '100%', overflow: 'hidden', position: 'relative', background: '#1c1813' }}>
                   <img src={item.img} alt={item.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   <span style={{
                     position: 'absolute', top: '12px', left: '12px',

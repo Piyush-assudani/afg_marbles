@@ -859,7 +859,7 @@ export const PRODUCTS = [
       {
         label: 'Pavilion View',
         tag: 'Garden View',
-        src: '/gallery/royal-chhatri-garden-pavilion.webp',
+        src: '/gallery/royal-chhatri-garden-pavilion.webp?v=4k',
         desc: 'Four-pillar garden pavilion with deeply cusped arches and raised marble platform.'
       },
       {
@@ -867,6 +867,12 @@ export const PRODUCTS = [
         tag: 'Dome Detail',
         src: '/gallery/chhatri-makrana-dome.webp',
         desc: 'Hand-chiseled dome with brass kalash finial and acanthus leaf brackets.'
+      },
+      {
+        label: 'Carved Columns',
+        tag: 'Pillar Detail',
+        src: '/gallery/royal-chhatri-pillar-detail.webp',
+        desc: 'Ornate fluted marble columns hand-chiseled with floral capitals and arched spandrels.'
       }
     ],
     specs: [
@@ -892,6 +898,12 @@ export const PRODUCTS = [
         tag: 'Complete View',
         src: '/gallery/makrana-temple-entrance-gate.webp',
         desc: 'Grand hand-carved pure white Makrana marble temple entrance gate with carved pillars, decorative arches, and traditional stone lintels.'
+      },
+      {
+        label: 'Torana Arch & Bell',
+        tag: 'Arch Detail',
+        src: '/gallery/makrana-gate-arch-detail.webp',
+        desc: 'Carved torana arch crown with sacred Swastika crest, ornate scalloping, and suspended brass temple bell.'
       },
       {
         label: 'Carving Detail',
