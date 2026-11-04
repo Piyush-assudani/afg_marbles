@@ -607,28 +607,22 @@ export const PRODUCTS = [
       'Inspected live in our Makrana workshop under the supervision of senior master craftsman Ramswaroop Silawat. Every pillar, arch, and spire of this 7.5ft temple is pre-assembled in the workshop to test the exact fit. Features an extraordinary mother-of-pearl peacock feather halo and sculpted elephant pillars.',
     angles: [
       {
-        label: 'Yard Pre-Assembly Trial',
+        label: 'Workshop Pre-Assembly Trial',
         tag: 'Complete View',
         src: '/gallery/yard-dryfit-raw-calcite-mandir.webp',
-        desc: '7.5ft pre-assembly trial in Jaipur yard verifying pillar alignment, elephant base, and mother-of-pearl halo.'
+        desc: '7.5ft pre-assembly trial in workshop verifying pillar alignment, elephant base, and mother-of-pearl halo.'
       },
       {
         label: 'Dry-Joint Crown Arch',
-        tag: 'Top Dome / Spire',
-        src: '/gallery/yard-dryfit-crown-detail.webp',
-        desc: 'Multi-tier carved arch with interlocking dry joints verified before crating.'
+        tag: 'Crown Arch Detail',
+        src: '/gallery/mandir-workshop-crown-arch.webp',
+        desc: 'Multi-tier hand-carved arch crown with ornate peacocks and dry-joint interlocking brackets.'
       },
       {
-        label: 'Mother-of-Pearl Peacock Inlay',
-        tag: 'Inside Temple',
-        src: '/gallery/yard-dryfit-halo-detail.webp',
-        desc: 'Exquisite peacock feather halo inlaid with authentic iridescent mother-of-pearl and dark border.'
-      },
-      {
-        label: 'Elephant Plinth Alignment',
-        tag: 'Base & Drawers',
-        src: '/gallery/yard-dryfit-base-detail.webp',
-        desc: 'Twin elephant plinths and stepped pedestal aligned to 0.5mm dry-joint tolerance.'
+        label: 'Peacock Halo & Sanctum',
+        tag: 'Sanctum Detail',
+        src: '/gallery/mandir-workshop-sanctum-halo.webp',
+        desc: 'Exquisite sacred Om center with peacock feather halo inlay and idol display pedestals.'
       }
     ],
     specs: [
@@ -774,19 +768,19 @@ export const PRODUCTS = [
         label: 'Tiered Garden View',
         tag: 'Complete View',
         src: '/gallery/fountain-estate-cobblestone.webp',
-        desc: 'Grand multi-tier pure white marble fountain set upon paved courtyard with lush garden flora.'
+        desc: 'Grand 4-tier pure white marble shell fountain installed in private estate garden courtyard with cobblestone paving.'
       },
       {
-        label: 'Driveway Basin Setting',
-        tag: 'Driveway View',
-        src: '/gallery/fountain-driveway-palatial.webp',
-        desc: 'Wide circular marble catch basin with classical spouts installed on a private villa driveway.'
+        label: 'Upper Shell Tiers & Finial',
+        tag: 'Shell Tier Detail',
+        src: '/gallery/fountain-4tier-spout-detail.webp',
+        desc: 'Close-up of the carved four scalloped shell bowls and finial water spout delivering smooth cascading curtains.'
       },
       {
-        label: 'Terrace Garden Setting',
-        tag: 'Garden Terrace',
-        src: '/gallery/fountain-estate-garden-scallop-terrace.webp',
-        desc: 'Finished tiered fountain installation in a formal estate garden courtyard.'
+        label: 'Lower Basin & Carved Base',
+        tag: 'Basin Detail',
+        src: '/gallery/fountain-4tier-basin-detail.webp',
+        desc: 'Master-carved fluted marble catch basin with rounded plinth and stone pool surround.'
       }
     ],
     specs: [
