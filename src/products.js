@@ -853,20 +853,20 @@ export const PRODUCTS = [
       {
         label: 'Pavilion View',
         tag: 'Garden View',
-        src: '/gallery/royal-chhatri-garden-pavilion.webp?v=super4k',
-        desc: 'Four-pillar garden pavilion with deeply cusped arches and raised marble platform.'
+        src: '/gallery/royal-chhatri-garden-pavilion.webp?v=estate4k',
+        desc: 'Four-pillar pure white Makrana marble pavilion in private estate garden with floral landscaping and swimming pool.'
       },
       {
         label: 'Tiered Dome & Arches',
         tag: 'Dome Detail',
-        src: '/gallery/chhatri-4pillar-dome-detail.webp?v=super4k',
-        desc: 'Hand-chiseled tiered Rajput pyramid dome with kalash finial and cusped ornamental arches.'
+        src: '/gallery/chhatri-4pillar-dome-detail.webp?v=estate4k',
+        desc: 'Hand-chiseled stepped pyramid dome, carved kalash finial, and intricate cusped torana arch detail.'
       },
       {
         label: 'Carved Columns & Plinth',
         tag: 'Pillar Detail',
-        src: '/gallery/chhatri-4pillar-plinth-detail.webp?v=super4k',
-        desc: 'Four solid fluted marble columns, carved capital brackets, and stepped pavilion plinth.'
+        src: '/gallery/chhatri-4pillar-plinth-detail.webp?v=estate4k',
+        desc: 'Solid fluted monolithic marble columns with ornamental relief carvings and polished stone pathway.'
       }
     ],
     specs: [
