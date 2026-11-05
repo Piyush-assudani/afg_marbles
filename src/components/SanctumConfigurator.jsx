@@ -37,7 +37,7 @@ const STYLES = [
     id: 'chhatri',
     name: 'Carved Garden Pavilion (Chhatri)',
     subtitle: '8-pillar round marble pavilion with carved dome for gardens',
-    image: '/gallery/royal-chhatri-garden-pavilion.webp',
+    image: '/gallery/luxury-estate-garden-pavilion.webp',
     baseWeight: 1400,
     hours: 620,
     yoni: 'All Sides Open (Garden & Estate)',
